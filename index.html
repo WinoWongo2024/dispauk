@@ -1,245 +1,588 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en-GB">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>DispaUK | Dispatch Headquarters</title>
-  <meta name="description" content="DispaUK – Professional emergency dispatch operations and MissionChief headquarters.">
-  <link rel="stylesheet" href="styles.css">
+  <meta
+    name="description"
+    content="DispaUK is an independent UK emergency dispatch and operational coordination platform focused on realistic multi-agency response."
+  >
+  <meta name="theme-color" content="#0b1220">
+  <link rel="stylesheet" href="/styles.css">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Roboto+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Roboto+Mono:wght@400;500&display=swap"
+    rel="stylesheet"
+  >
 </head>
 <body>
-  <!-- Navigation -->
+  <!-- =========================================================
+       HEADER / NAVIGATION
+       ========================================================= -->
   <header class="header">
     <div class="container header-inner">
-      <a href="/" class="logo">
+      <a href="/" class="logo" aria-label="DispaUK home">
         <span class="logo-mark">DU</span>
         <span class="logo-text">DispaUK</span>
       </a>
-      <nav class="nav">
-        <a href="#about">About</a>
-        <a href="#operations">Operations</a>
-        <a href="#fleet">Fleet</a>
-        <a href="#services">Services</a>
-        <a href="#contact" class="btn btn-small">Contact</a>
+      <nav class="nav" aria-label="Primary navigation">
+        <a href="/about/">About</a>
+        <a href="/operations/">Operations</a>
+        <a href="/fleet/">Fleet</a>
+        <a href="/services/">Services</a>
+        <a href="/status/">Status</a>
+        <a href="/contact/" class="btn btn-small">
+          Contact
+        </a>
       </nav>
-      <button class="nav-toggle" aria-label="Toggle menu">
-        <span></span><span></span><span></span>
+      <button
+        class="nav-toggle"
+        type="button"
+        aria-label="Open navigation menu"
+        aria-expanded="false"
+      >
+        <span></span>
+        <span></span>
+        <span></span>
       </button>
     </div>
   </header>
-
-  <!-- Hero -->
-  <section class="hero">
-    <div class="container hero-content">
-      <div class="hero-badge">24/7 Operations</div>
-      <h1>DispaUK<br><span>Dispatch Headquarters</span></h1>
-      <p class="hero-lead">
-        Coordinating emergency response across the United Kingdom.<br>
-        Professional dispatch operations powered by MissionChief.
-      </p>
-      <div class="hero-actions">
-        <a href="#operations" class="btn btn-primary">View Operations</a>
-        <a href="#contact" class="btn btn-outline">Get in Touch</a>
-      </div>
-    </div>
-    <div class="hero-grid"></div>
-  </section>
-
-  <!-- Status Bar -->
-  <div class="status-bar">
-    <div class="container status-inner">
-      <div class="status-item">
-        <span class="status-dot online"></span>
-        <span>Systems Online</span>
-      </div>
-      <div class="status-item">
-        <span class="status-label">Active Stations</span>
-        <span class="status-value" id="station-count">—</span>
-      </div>
-      <div class="status-item">
-        <span class="status-label">Units Available</span>
-        <span class="status-value" id="unit-count">—</span>
-      </div>
-      <div class="status-item">
-        <span class="status-label">Server</span>
-        <span class="status-value">MissionChief UK</span>
-      </div>
-    </div>
-  </div>
-
-  <!-- About -->
-  <section id="about" class="section">
-    <div class="container">
-      <div class="section-header">
-        <h2>About DispaUK</h2>
-        <p>A dedicated dispatch headquarters combining real-world professionalism with MissionChief operations.</p>
-      </div>
-      <div class="about-grid">
-        <div class="about-card">
-          <div class="card-icon">📡</div>
-          <h3>Command & Control</h3>
-          <p>Centralised coordination of fire, rescue, police and ambulance resources across multiple response areas.</p>
+  <main>
+    <!-- =======================================================
+         HERO
+         ======================================================= -->
+    <section class="hero" aria-labelledby="hero-title">
+      <div class="container hero-content">
+        <div class="hero-badge">
+          <span class="status-dot online"></span>
+          Operations Online
         </div>
-        <div class="about-card">
-          <div class="card-icon">🗺️</div>
-          <h3>UK Coverage</h3>
-          <p>Stations and units positioned for realistic coverage, supporting both local incidents and large-scale alliance operations.</p>
-        </div>
-        <div class="about-card">
-          <div class="card-icon">🤝</div>
-          <h3>Mutual Aid Ready</h3>
-          <p>Structured for teamwork — whether supporting alliance missions or coordinating multi-agency responses.</p>
+        <h1 id="hero-title">
+          DispaUK
+          <br>
+          <span>Dispatch Headquarters</span>
+        </h1>
+        <p class="hero-lead">
+          Independent emergency dispatch operations and
+          multi-agency coordination for the United Kingdom.
+        </p>
+        <p class="hero-support">
+          Built around realistic emergency-service operations,
+          structured resource management and collaborative response.
+        </p>
+        <div class="hero-actions">
+          <a href="/operations/" class="btn btn-primary">
+            View Operations
+          </a>
+          <a href="/contact/" class="btn btn-outline">
+            Contact DispaUK
+          </a>
         </div>
       </div>
-    </div>
-  </section>
-
-  <!-- Operations -->
-  <section id="operations" class="section section-alt">
-    <div class="container">
-      <div class="section-header">
-        <h2>Current Operations</h2>
-        <p>Station overview and response posture. Update this section with live MissionChief data when ready.</p>
+      <div class="hero-grid" aria-hidden="true"></div>
+    </section>
+    <!-- =======================================================
+         PUBLIC STATUS BAR
+         ======================================================= -->
+    <section
+      class="status-bar"
+      aria-label="DispaUK service status"
+    >
+      <div class="container status-inner">
+        <div class="status-item">
+          <span
+            class="status-dot online"
+            aria-hidden="true"
+          ></span>
+          <span>
+            DispaUK Services Operational
+          </span>
+        </div>
+        <div class="status-item">
+          <span class="status-label">
+            Active Stations
+          </span>
+          <span
+            class="status-value"
+            id="station-count"
+            aria-live="polite"
+          >
+            —
+          </span>
+        </div>
+        <div class="status-item">
+          <span class="status-label">
+            Units Available
+          </span>
+          <span
+            class="status-value"
+            id="unit-count"
+            aria-live="polite"
+          >
+            —
+          </span>
+        </div>
+        <div class="status-item">
+          <span class="status-label">
+            Service Status
+          </span>
+          <span class="status-value">
+            Operational
+          </span>
+        </div>
       </div>
-      <div class="ops-placeholder">
-        <div class="placeholder-box">
-          <h3>Stations & Coverage</h3>
-          <p>Add your buildings here (name, type, location, level).</p>
-          <p class="hint">Tip: Export from <code>/api/buildings</code> while logged into MissionChief, or maintain a simple list below.</p>
-          <div class="table-wrap">
-            <table>
-              <thead>
-                <tr>
-                  <th>Station</th>
-                  <th>Type</th>
-                  <th>Area</th>
-                  <th>Status</th>
-                </tr>
-              </thead>
-              <tbody>
-                <tr>
-                  <td colspan="4" class="empty">No stations listed yet — add your first entries in the HTML or connect data later.</td>
-                </tr>
-              </tbody>
-            </table>
+    </section>
+    <!-- =======================================================
+         ABOUT
+         ======================================================= -->
+    <section
+      id="about"
+      class="section"
+      aria-labelledby="about-title"
+    >
+      <div class="container">
+        <div class="section-header">
+          <span class="section-kicker">
+            ABOUT DISPAUK
+          </span>
+          <h2 id="about-title">
+            Independent Dispatch Operations
+          </h2>
+          <p>
+            DispaUK provides a structured environment for
+            emergency-service simulation, operational coordination
+            and realistic multi-agency response.
+          </p>
+        </div>
+        <div class="about-grid">
+          <article class="about-card">
+            <div
+              class="card-icon"
+              aria-hidden="true"
+            >
+              📡
+            </div>
+            <h3>
+              Command &amp; Control
+            </h3>
+            <p>
+              Centralised coordination of fire, rescue, police
+              and ambulance resources across multiple operational
+              areas.
+            </p>
+          </article>
+          <article class="about-card">
+            <div
+              class="card-icon"
+              aria-hidden="true"
+            >
+              🗺️
+            </div>
+            <h3>
+              UK Coverage
+            </h3>
+            <p>
+              Structured station placement and resource deployment
+              designed to support realistic local and large-scale
+              emergency operations.
+            </p>
+          </article>
+          <article class="about-card">
+            <div
+              class="card-icon"
+              aria-hidden="true"
+            >
+              🤝
+            </div>
+            <h3>
+              Mutual Aid
+            </h3>
+            <p>
+              Designed to support collaborative response,
+              shared incidents and multi-agency operational
+              requirements.
+            </p>
+          </article>
+        </div>
+      </div>
+    </section>
+    <!-- =======================================================
+         OPERATIONS
+         ======================================================= -->
+    <section
+      id="operations"
+      class="section section-alt"
+      aria-labelledby="operations-title"
+    >
+      <div class="container">
+        <div class="section-header">
+          <span class="section-kicker">
+            OPERATIONS
+          </span>
+          <h2 id="operations-title">
+            Current Operations
+          </h2>
+          <p>
+            Operational information and station coverage
+            will be displayed here as DispaUK services develop.
+          </p>
+        </div>
+        <div class="ops-placeholder">
+          <div class="placeholder-box">
+            <div class="placeholder-header">
+              <div>
+                <span class="section-kicker">
+                  OPERATIONAL OVERVIEW
+                </span>
+                <h3>
+                  Stations &amp; Coverage
+                </h3>
+              </div>
+              <span class="status-badge">
+                Operational
+              </span>
+            </div>
+            <div class="table-wrap">
+              <table>
+                <caption class="sr-only">
+                  Current DispaUK station overview
+                </caption>
+                <thead>
+                  <tr>
+                    <th scope="col">Station</th>
+                    <th scope="col">Service</th>
+                    <th scope="col">Area</th>
+                    <th scope="col">Status</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td colspan="4" class="empty">
+                      Operational station information
+                      will appear here.
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
           </div>
         </div>
       </div>
-    </div>
-  </section>
-
-  <!-- Fleet -->
-  <section id="fleet" class="section">
-    <div class="container">
-      <div class="section-header">
-        <h2>Fleet & Resources</h2>
-        <p>Key unit types and availability snapshot.</p>
-      </div>
-      <div class="fleet-grid">
-        <div class="fleet-card">
-          <h3>Fire & Rescue</h3>
-          <ul>
-            <li>Pumping Appliances</li>
-            <li>Aerial / Platform</li>
-            <li>Rescue Support</li>
-            <li>Specialist (HazMat, etc.)</li>
-          </ul>
-        </div>
-        <div class="fleet-card">
-          <h3>Ambulance</h3>
-          <ul>
-            <li>Emergency Ambulances</li>
-            <li>Rapid Response</li>
-            <li>Officer / Support</li>
-            <li>Specialist Care</li>
-          </ul>
-        </div>
-        <div class="fleet-card">
-          <h3>Police</h3>
-          <ul>
-            <li>Response Units</li>
-            <li>Traffic / Roads</li>
-            <li>Armed / Specialist</li>
-            <li>Support Vehicles</li>
-          </ul>
-        </div>
-      </div>
-      <p class="fleet-note">Replace these placeholders with your actual vehicle counts and names from MissionChief.</p>
-    </div>
-  </section>
-
-  <!-- Services -->
-  <section id="services" class="section section-alt">
-    <div class="container">
-      <div class="section-header">
-        <h2>What DispaUK Offers</h2>
-        <p>Whether in-game or as a business concept — clear capabilities.</p>
-      </div>
-      <div class="services-grid">
-        <div class="service-item">
-          <h3>Dispatch Operations</h3>
-          <p>Full multi-service coordination on the MissionChief UK platform.</p>
-        </div>
-        <div class="service-item">
-          <h3>Realism Focus</h3>
-          <p>Station placement and unit composition guided by real-world UK emergency services.</p>
-        </div>
-        <div class="service-item">
-          <h3>Alliance Support</h3>
-          <p>Ready to contribute to shared missions and mutual aid when needed.</p>
-        </div>
-        <div class="service-item">
-          <h3>Future Expansion</h3>
-          <p>Space for training content, graphics, or additional business services as DispaUK grows.</p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- Contact -->
-  <section id="contact" class="section">
-    <div class="container">
-      <div class="section-header">
-        <h2>Contact & Join</h2>
-        <p>Get in touch or find DispaUK on MissionChief.</p>
-      </div>
-      <div class="contact-box">
-        <div class="contact-info">
-          <p><strong>MissionChief</strong><br>
-            Search for your player name or alliance on <a href="https://www.missionchief.co.uk" target="_blank" rel="noopener">missionchief.co.uk</a>
-          </p>
-          <p><strong>Website</strong><br>
-            www.dispauk.co.uk.
-          </p>
-          <p><strong>Discord / Other</strong><br>
-            Administrator Email: administrator@dispauk.co.uk.
+    </section>
+    <!-- =======================================================
+         FLEET
+         ======================================================= -->
+    <section
+      id="fleet"
+      class="section"
+      aria-labelledby="fleet-title"
+    >
+      <div class="container">
+        <div class="section-header">
+          <span class="section-kicker">
+            RESOURCES
+          </span>
+          <h2 id="fleet-title">
+            Fleet &amp; Resources
+          </h2>
+          <p>
+            Multi-agency resources supporting operational
+            coverage and emergency response.
           </p>
         </div>
-        <div class="contact-note">
-          <p>Want to collaborate, request mutual aid, or discuss the DispaUK project? Reach out via your preferred channel.</p>
+        <div class="fleet-grid">
+          <article class="fleet-card">
+            <h3>
+              Fire &amp; Rescue
+            </h3>
+            <ul>
+              <li>
+                Pumping Appliances
+              </li>
+              <li>
+                Aerial &amp; Platform Appliances
+              </li>
+              <li>
+                Rescue Support
+              </li>
+              <li>
+                Specialist Response
+              </li>
+            </ul>
+          </article>
+          <article class="fleet-card">
+            <h3>
+              Ambulance
+            </h3>
+            <ul>
+              <li>
+                Emergency Ambulances
+              </li>
+              <li>
+                Rapid Response Vehicles
+              </li>
+              <li>
+                Officer &amp; Support Resources
+              </li>
+              <li>
+                Specialist Care
+              </li>
+            </ul>
+          </article>
+          <article class="fleet-card">
+            <h3>
+              Police
+            </h3>
+            <ul>
+              <li>
+                Response Units
+              </li>
+              <li>
+                Roads &amp; Traffic
+              </li>
+              <li>
+                Specialist Resources
+              </li>
+              <li>
+                Support Vehicles
+              </li>
+            </ul>
+          </article>
         </div>
       </div>
-    </div>
-  </section>
-
-  <!-- Footer -->
+    </section>
+    <!-- =======================================================
+         SERVICES
+         ======================================================= -->
+    <section
+      id="services"
+      class="section section-alt"
+      aria-labelledby="services-title"
+    >
+      <div class="container">
+        <div class="section-header">
+          <span class="section-kicker">
+            CAPABILITIES
+          </span>
+          <h2 id="services-title">
+            What DispaUK Offers
+          </h2>
+          <p>
+            A growing platform focused on realistic,
+            structured and collaborative emergency operations.
+          </p>
+        </div>
+        <div class="services-grid">
+          <article class="service-item">
+            <h3>
+              Dispatch Operations
+            </h3>
+            <p>
+              Structured multi-service coordination and
+              operational management.
+            </p>
+          </article>
+          <article class="service-item">
+            <h3>
+              Realism Focus
+            </h3>
+            <p>
+              Station placement, fleet composition and
+              operational structures informed by real-world
+              UK emergency services.
+            </p>
+          </article>
+          <article class="service-item">
+            <h3>
+              Alliance Support
+            </h3>
+            <p>
+              Designed to support shared incidents,
+              mutual aid and collaborative operations.
+            </p>
+          </article>
+          <article class="service-item">
+            <h3>
+              Future Development
+            </h3>
+            <p>
+              A foundation for future operational tools,
+              training resources, graphics and digital services.
+            </p>
+          </article>
+        </div>
+      </div>
+    </section>
+    <!-- =======================================================
+         CONTACT PREVIEW
+         ======================================================= -->
+    <section
+      id="contact"
+      class="section"
+      aria-labelledby="contact-title"
+    >
+      <div class="container">
+        <div class="section-header">
+          <span class="section-kicker">
+            CONTACT
+          </span>
+          <h2 id="contact-title">
+            Contact DispaUK
+          </h2>
+          <p>
+            Questions, collaboration requests or enquiries
+            about the DispaUK project are welcome.
+          </p>
+        </div>
+        <div class="contact-box">
+          <div class="contact-info">
+            <p>
+              <strong>
+                Administrator
+              </strong>
+              <br>
+              <a href="mailto:administrator@dispauk.co.uk">
+                administrator@dispauk.co.uk
+              </a>
+            </p>
+            <p>
+              <strong>
+                Website
+              </strong>
+              <br>
+              <a href="/">
+                dispauk.co.uk
+              </a>
+            </p>
+            <p>
+              <strong>
+                MissionChief
+              </strong>
+              <br>
+              <a
+                href="https://www.missionchief.co.uk"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                missionchief.co.uk
+              </a>
+            </p>
+          </div>
+          <div class="contact-note">
+            <h3>
+              Work with DispaUK
+            </h3>
+            <p>
+              Interested in collaboration, mutual aid,
+              operational development or the wider DispaUK
+              project?
+            </p>
+            <a
+              href="/contact/"
+              class="btn btn-primary"
+            >
+              Contact DispaUK
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+  <!-- =========================================================
+       FOOTER
+       ========================================================= -->
   <footer class="footer">
-    <div class="container footer-inner">
-      <div class="footer-brand">
-        <span class="logo-mark">DU</span>
-        <span>DispaUK</span>
+    <div class="container">
+      <div class="footer-inner">
+        <!-- Brand -->
+        <div class="footer-brand">
+          <a
+            href="/"
+            class="logo"
+            aria-label="DispaUK home"
+          >
+            <span class="logo-mark">
+              DU
+            </span>
+            <span class="logo-text">
+              DispaUK
+            </span>
+          </a>
+          <p>
+            Independent emergency dispatch operations,
+            coordination and simulation services.
+          </p>
+        </div>
+        <!-- Company -->
+        <div class="footer-column">
+          <h3>
+            Company
+          </h3>
+          <a href="/about/">
+            About
+          </a>
+          <a href="/operations/">
+            Operations
+          </a>
+          <a href="/services/">
+            Services
+          </a>
+          <a href="/contact/">
+            Contact
+          </a>
+        </div>
+        <!-- Information -->
+        <div class="footer-column">
+          <h3>
+            Information
+          </h3>
+          <a href="/status/">
+            System Status
+          </a>
+          <a href="/fleet/">
+            Fleet &amp; Resources
+          </a>
+          <a href="/accessibility/">
+            Accessibility
+          </a>
+        </div>
+        <!-- Legal -->
+        <div class="footer-column">
+          <h3>
+            Legal
+          </h3>
+          <a href="/privacy/">
+            Privacy
+          </a>
+          <a href="/cookies/">
+            Cookies
+          </a>
+          <a href="/terms/">
+            Terms of Use
+          </a>
+          <a href="/legal/">
+            Legal Notice
+          </a>
+        </div>
       </div>
-      <p class="footer-text">
-        Dispatch Headquarters · MissionChief UK<br>
-        Built for coordination, realism and teamwork.
-      </p>
-      <p class="footer-copy">©2026 DispaUK. DispaUK is an independent service and is not affiliated with, endorsed by, sponsored by, or operated by SHPlay GmbH or MissionChief. .</p>
+      <!-- Legal / Disclaimer -->
+      <div class="footer-bottom">
+        <p class="footer-copy">
+          © 2026 DispaUK. All rights reserved.
+        </p>
+        <p class="footer-disclaimer">
+          DispaUK is an independent service and is not
+          affiliated with, endorsed by, sponsored by, or
+          operated by SHPlay GmbH or MissionChief.
+        </p>
+      </div>
     </div>
   </footer>
-
-  <script src="script.js"></script>
+  <!-- =========================================================
+       JAVASCRIPT
+       ========================================================= -->
+  <script src="/script.js" defer></script>
 </body>
 </html>
