@@ -1,0 +1,131 @@
+name: Sync MissionChief Data
+
+on:
+  schedule:
+    - cron: '0 */6 * * *'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  sync:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Fetch MissionChief data
+        env:
+          SESSION: ${{ secrets.MISSIONCHIEF_SESSION }}
+          MC_BASE: https://www.missionchief.co.uk
+        run: |
+          set -euo pipefail
+
+          if [ -z "${SESSION}" ]; then
+            echo "Error: MISSIONCHIEF_SESSION secret is not set."
+            echo "Add it under Settings → Secrets and variables → Actions"
+            exit 1
+          fi
+
+          mkdir -p data
+
+          echo "Fetching buildings..."
+          curl -sS -f \
+            -H "Cookie: ${SESSION}" \
+            -H "Accept: application/json" \
+            -H "User-Agent: DispaUK-Sync/1.0" \
+            "${MC_BASE}/api/buildings" \
+            -o /tmp/buildings.json
+
+          echo "Fetching vehicles..."
+          curl -sS -f \
+            -H "Cookie: ${SESSION}" \
+            -H "Accept: application/json" \
+            -H "User-Agent: DispaUK-Sync/1.0" \
+            "${MC_BASE}/api/vehicles" \
+            -o /tmp/vehicles.json
+
+          python3 - << 'PY'
+          import json, sys
+          for path in ("/tmp/buildings.json", "/tmp/vehicles.json"):
+              with open(path) as f:
+                  data = json.load(f)
+              if not isinstance(data, list):
+                  print(f"Unexpected response shape in {path}", file=sys.stderr)
+                  sys.exit(1)
+              print(f"{path}: {len(data)} records")
+          PY
+
+      - name: Build public stats
+        run: |
+          python3 << 'PY'
+          import json
+          from datetime import datetime, timezone
+          from collections import Counter
+
+          with open("/tmp/buildings.json") as f:
+              buildings = json.load(f)
+          with open("/tmp/vehicles.json") as f:
+              vehicles = json.load(f)
+
+          BUILDING_LABELS = {
+              0: "Fire Station",
+              1: "Fire Station",
+              2: "Ambulance Station",
+              3: "Police Station",
+              4: "Hospital",
+              5: "Helicopter Station",
+              6: "Police Station",
+              7: "Dispatch Centre",
+              13: "Police Station",
+              14: "Ambulance Station",
+              15: "Fire Station",
+          }
+
+          stations = []
+          for b in buildings:
+              stations.append({
+                  "id": b.get("id"),
+                  "name": b.get("caption") or "Unnamed",
+                  "type": BUILDING_LABELS.get(b.get("building_type"), f"Type {b.get('building_type')}"),
+                  "typeId": b.get("building_type"),
+                  "level": b.get("level"),
+                  "lat": b.get("latitude"),
+                  "lon": b.get("longitude"),
+                  "personnel": b.get("personal_count"),
+              })
+
+          status_counts = Counter()
+          for v in vehicles:
+              status_counts[str(v.get("fms_show", "unknown"))] += 1
+
+          stats = {
+              "updatedAt": datetime.now(timezone.utc).isoformat(),
+              "source": "missionchief.co.uk",
+              "totals": {
+                  "stations": len(buildings),
+                  "units": len(vehicles),
+              },
+              "stations": stations,
+              "vehicleStatus": dict(status_counts),
+          }
+
+          with open("data/stats.json", "w") as f:
+              json.dump(stats, f, indent=2, ensure_ascii=False)
+              f.write("\n")
+
+          print(f"Wrote data/stats.json — {len(stations)} stations, {len(vehicles)} units")
+          PY
+
+      - name: Commit if changed
+        run: |
+          git config user.name "DispaUK Sync"
+          git config user.email "actions@dispauk.co.uk"
+          git add data/stats.json
+          if git diff --staged --quiet; then
+            echo "No changes to commit."
+          else
+            git commit -m "chore: sync MissionChief stats $(date -u +%Y-%m-%dT%H:%MZ)"
+            git push
+          fi
