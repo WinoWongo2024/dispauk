@@ -1,27 +1,20 @@
 // DispaUK — Core frontend interactivity
 // Public-facing JavaScript only.
-// No authentication credentials, API keys or private endpoints
-// should ever be placed in this file.
+// No authentication credentials or session cookies belong in this file.
 
 document.addEventListener('DOMContentLoaded', () => {
-
-  /* ==========================================================
-     MOBILE NAVIGATION
-     ========================================================== */
 
   const toggle = document.querySelector('.nav-toggle');
   const nav = document.querySelector('.nav');
 
   if (toggle && nav) {
-
     toggle.addEventListener('click', () => {
       const isOpen = nav.classList.toggle('open');
       toggle.classList.toggle('active', isOpen);
       toggle.setAttribute('aria-expanded', String(isOpen));
     });
 
-    const navLinks = nav.querySelectorAll('a');
-    navLinks.forEach((link) => {
+    nav.querySelectorAll('a').forEach((link) => {
       link.addEventListener('click', () => {
         nav.classList.remove('open');
         toggle.classList.remove('active');
@@ -42,47 +35,9 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 
-
-  /* ==========================================================
-     PUBLIC STATUS VALUES
-     ========================================================== */
-
-  const stationEl = document.getElementById('station-count');
-  const unitEl = document.getElementById('unit-count');
-
-  /*
-   * These remain deliberately blank until a legitimate
-   * DispaUK data service is introduced.
-   *
-   * IMPORTANT:
-   * Never place MissionChief credentials, session cookies,
-   * API keys or private endpoints in frontend JavaScript.
-   */
-
-  if (stationEl) {
-    stationEl.textContent = '—';
-  }
-
-  if (unitEl) {
-    unitEl.textContent = '—';
-  }
-
-
-  /* ==========================================================
-     YEAR HANDLING
-     ========================================================== */
-
-  const yearElements = document.querySelectorAll('[data-current-year]');
-  const currentYear = new Date().getFullYear();
-
-  yearElements.forEach((element) => {
-    element.textContent = currentYear;
+  document.querySelectorAll('[data-current-year]').forEach((el) => {
+    el.textContent = new Date().getFullYear();
   });
-
-
-  /* ==========================================================
-     KEYBOARD ACCESSIBILITY
-     ========================================================== */
 
   document.addEventListener('keydown', (event) => {
     if (event.key === 'Escape' && nav && toggle) {
@@ -93,43 +48,86 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   });
 
+  const stationEl = document.getElementById('station-count');
+  const unitEl = document.getElementById('unit-count');
+  const stationsBody = document.querySelector('[data-stations-body]');
+  const updatedEl = document.querySelector('[data-stats-updated]');
 
-  /* ==========================================================
-     COOKIE CONSENT (GDPR-aligned, minimal)
-     ========================================================== */
+  async function loadStats() {
+    try {
+      const res = await fetch('/data/stats.json', { cache: 'no-cache' });
+      if (!res.ok) return;
+      const data = await res.json();
+
+      if (stationEl && data.totals) {
+        stationEl.textContent = String(data.totals.stations ?? '—');
+      }
+      if (unitEl && data.totals) {
+        unitEl.textContent = String(data.totals.units ?? '—');
+      }
+
+      if (updatedEl && data.updatedAt) {
+        const d = new Date(data.updatedAt);
+        updatedEl.textContent = d.toLocaleString('en-GB', {
+          dateStyle: 'medium',
+          timeStyle: 'short',
+          timeZone: 'Europe/London',
+        });
+      }
+
+      if (stationsBody && Array.isArray(data.stations) && data.stations.length) {
+        stationsBody.innerHTML = data.stations
+          .slice(0, 50)
+          .map((s) => {
+            const name = escapeHtml(s.name || 'Unnamed');
+            const type = escapeHtml(s.type || '—');
+            const area = s.lat != null && s.lon != null
+              ? `${Number(s.lat).toFixed(3)}, ${Number(s.lon).toFixed(3)}`
+              : '—';
+            return `<tr>
+              <td>${name}</td>
+              <td>${type}</td>
+              <td class="mono">${area}</td>
+              <td><span class="status-pill">Active</span></td>
+            </tr>`;
+          })
+          .join('');
+      }
+    } catch (err) {
+      console.warn('Stats unavailable', err);
+    }
+  }
+
+  function escapeHtml(str) {
+    return String(str)
+      .replace(/&/g, '&amp;')
+      .replace(/</g, '&lt;')
+      .replace(/>/g, '&gt;')
+      .replace(/"/g, '&quot;');
+  }
+
+  loadStats();
 
   const CONSENT_KEY = 'dispauk_cookie_consent';
 
   function getConsent() {
-    try {
-      return localStorage.getItem(CONSENT_KEY);
-    } catch (e) {
-      return null;
-    }
+    try { return localStorage.getItem(CONSENT_KEY); }
+    catch { return null; }
   }
 
   function setConsent(value) {
-    try {
-      localStorage.setItem(CONSENT_KEY, value);
-    } catch (e) {
-      // localStorage may be blocked
-    }
+    try { localStorage.setItem(CONSENT_KEY, value); }
+    catch { /* blocked */ }
   }
 
   function hideBanner(banner) {
     if (!banner) return;
     banner.classList.remove('visible');
-    setTimeout(() => {
-      if (banner && banner.parentNode) {
-        banner.parentNode.removeChild(banner);
-      }
-    }, 350);
+    setTimeout(() => banner.remove(), 350);
   }
 
   function showCookieBanner() {
-    if (getConsent() === 'accepted' || getConsent() === 'rejected') {
-      return;
-    }
+    if (getConsent() === 'accepted' || getConsent() === 'rejected') return;
 
     const banner = document.createElement('div');
     banner.className = 'cookie-banner';
@@ -138,41 +136,27 @@ document.addEventListener('DOMContentLoaded', () => {
     banner.innerHTML = `
       <div class="container cookie-banner-inner">
         <p class="cookie-banner-text">
-          We use essential cookies and local storage to remember your preferences.
-          We do not currently use analytics or advertising cookies.
-          See our <a href="/cookies/">Cookie Policy</a> and
-          <a href="/privacy/">Privacy Policy</a>.
+          We use essential storage to remember your preferences.
+          No analytics or advertising cookies.
+          <a href="/cookies/">Cookie Policy</a> ·
+          <a href="/privacy/">Privacy</a>
         </p>
         <div class="cookie-banner-actions">
-          <button type="button" class="btn btn-outline" data-cookie-action="reject">
-            Reject non-essential
-          </button>
-          <button type="button" class="btn btn-primary" data-cookie-action="accept">
-            Accept
-          </button>
+          <button type="button" class="btn btn-ghost" data-cookie-action="reject">Reject</button>
+          <button type="button" class="btn btn-primary" data-cookie-action="accept">Accept</button>
         </div>
       </div>
     `;
-
     document.body.appendChild(banner);
+    requestAnimationFrame(() => banner.classList.add('visible'));
 
-    requestAnimationFrame(() => {
-      banner.classList.add('visible');
-    });
-
-    banner.addEventListener('click', (event) => {
-      const action = event.target.getAttribute('data-cookie-action');
-      if (!action) return;
-
-      if (action === 'accept') {
-        setConsent('accepted');
-      } else if (action === 'reject') {
-        setConsent('rejected');
-      }
-      hideBanner(banner);
+    banner.addEventListener('click', (e) => {
+      const action = e.target.getAttribute('data-cookie-action');
+      if (action === 'accept') setConsent('accepted');
+      if (action === 'reject') setConsent('rejected');
+      if (action) hideBanner(banner);
     });
   }
 
-  setTimeout(showCookieBanner, 600);
-
+  setTimeout(showCookieBanner, 500);
 });
