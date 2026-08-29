@@ -1,8 +1,10 @@
 name: Sync MissionChief Data
 
 on:
+  # Hourly — aggressive enough for a dashboard, gentle enough for unofficial APIs.
+  # MissionChief publishes no public rate limit; avoid sub-15m polling.
   schedule:
-    - cron: '0 */6 * * *'
+    - cron: '0 * * * *'
   workflow_dispatch:
 
 permissions:
@@ -34,12 +36,14 @@ jobs:
 
           echo "Cookie length: ${#COOKIE} chars"
           mkdir -p /tmp/mc data
+          START_TS=$(date +%s)
 
           fetch_api() {
             local name="$1" path="$2" out="$3" required="${4:-1}"
             local code
             echo "--- ${name}: ${MC_BASE}${path} ---"
             code=$(curl -sS -L -o "$out" -w "%{http_code}" \
+              --connect-timeout 20 --max-time 60 \
               -H "Cookie: ${COOKIE}" \
               -H "Accept: application/json, text/javascript, */*;q=0.01" \
               -H "Accept-Language: en-GB,en;q=0.9" \
@@ -48,6 +52,8 @@ jobs:
               -H "User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36" \
               "${MC_BASE}${path}" || true)
             echo "HTTP ${code}"
+            # Small pause between endpoints to avoid burst behaviour
+            sleep 1
             if [ "$code" != "200" ]; then
               if [ "$required" = "1" ]; then
                 echo "::error::${name} failed HTTP ${code}"
@@ -83,7 +89,9 @@ jobs:
           fetch_api einsaetze "/einsaetze.json" /tmp/mc/einsaetze.json 0
           fetch_api alliance_event_types "/alliance_event_types.json" /tmp/mc/alliance_event_types.json 0
 
-      - name: Build public stats.json
+          echo "$(( $(date +%s) - START_TS ))" > /tmp/mc/duration_secs.txt
+
+      - name: Build public stats + history
         run: |
           python3 << 'PY'
           import json, os
@@ -105,6 +113,12 @@ jobs:
           equipments = load("/tmp/mc/equipments.json")
           einsaetze = load("/tmp/mc/einsaetze.json")
 
+          duration = None
+          try:
+              duration = int(open("/tmp/mc/duration_secs.txt").read().strip())
+          except Exception:
+              pass
+
           BUILDING_LABELS = {
               0: "Fire Station", 1: "Fire Station (Large)", 2: "Ambulance Station",
               3: "Police Station", 4: "Hospital", 5: "Helicopter Station",
@@ -117,24 +131,57 @@ jobs:
               35: "Bomb Disposal", 36: "Custody Suite",
           }
 
+          def region_for(lat, lon):
+              if lat is None or lon is None:
+                  return "Unknown"
+              # Rough UK / nearby regions for dashboard grouping only
+              if lat >= 54.8 and lon < -5.5:
+                  return "Northern Ireland"
+              if lat >= 55.0:
+                  return "Scotland"
+              if lat < 53.5 and lon < -3.0 and lat > 51.3:
+                  return "Wales"
+              if lat >= 53.5:
+                  return "North"
+              if lat >= 52.2:
+                  return "Midlands"
+              if lat >= 51.2 and lon > -0.5:
+                  return "South East"
+              if lat >= 50.0 and lon < -1.5:
+                  return "South West"
+              if lat >= 51.2:
+                  return "London & South"
+              return "Other / Overseas"
+
           stations = []
           type_counts = Counter()
+          region_counts = Counter()
           total_personnel = 0
+          missing_name = missing_coords = 0
           for b in buildings:
               label = BUILDING_LABELS.get(b.get("building_type"), f"Type {b.get('building_type')}")
               type_counts[label] += 1
               pc = b.get("personal_count") or 0
               total_personnel += pc if isinstance(pc, int) else 0
+              lat, lon = b.get("latitude"), b.get("longitude")
+              region = region_for(lat, lon)
+              region_counts[region] += 1
+              name = b.get("caption") or "Unnamed"
+              if not b.get("caption"):
+                  missing_name += 1
+              if lat is None or lon is None:
+                  missing_coords += 1
               stations.append({
                   "id": b.get("id"),
-                  "name": b.get("caption") or "Unnamed",
+                  "name": name,
                   "type": label,
                   "typeId": b.get("building_type"),
                   "level": b.get("level"),
-                  "lat": b.get("latitude"),
-                  "lon": b.get("longitude"),
+                  "lat": lat,
+                  "lon": lon,
                   "personnel": b.get("personal_count"),
                   "small": b.get("small_building"),
+                  "region": region,
               })
 
           status_counts = Counter()
@@ -173,9 +220,22 @@ jobs:
           elif isinstance(einsaetze, list):
               mission_types_count = len(einsaetze)
 
+          now = datetime.now(timezone.utc).isoformat()
+
+          quality = {
+              "stationsMissingName": missing_name,
+              "stationsMissingCoords": missing_coords,
+              "duplicateStationIds": len(buildings) - len({b.get("id") for b in buildings}),
+              "ok": missing_name == 0 and missing_coords < max(5, len(buildings) * 0.05),
+          }
+
           stats = {
-              "updatedAt": datetime.now(timezone.utc).isoformat(),
+              "updatedAt": now,
               "source": "missionchief.co.uk",
+              "sync": {
+                  "durationSeconds": duration,
+                  "schedule": "hourly",
+              },
               "endpoints": {
                   "buildings": True,
                   "vehicles": True,
@@ -195,26 +255,50 @@ jobs:
                   "missionTypes": mission_types_count,
               },
               "stationsByType": dict(type_counts),
+              "stationsByRegion": dict(region_counts),
               "vehicleStatus": dict(status_counts) if status_counts else (vehicle_states if isinstance(vehicle_states, dict) else {}),
               "vehiclesByType": dict(type_vehicle_counts.most_common(30)),
+              "quality": quality,
               "stations": stations,
               "unitsSample": units_sample,
               "credits": credits_public,
               "alliance": alliance_public,
           }
 
+          # Only publish if required datasets look sane (transactional-ish)
+          if len(buildings) < 1 or len(vehicles) < 1:
+              raise SystemExit("Refusing to publish empty buildings/vehicles dataset")
+
           with open("data/stats.json", "w") as f:
               json.dump(stats, f, indent=2, ensure_ascii=False)
               f.write("\n")
 
-          print("Wrote data/stats.json", len(stations), "stations", len(vehicles), "units")
+          # Rolling history for charts (cap 168 ≈ 7 days hourly)
+          hist_path = "data/history.json"
+          history = load(hist_path) or []
+          if not isinstance(history, list):
+              history = []
+          history.append({
+              "at": now,
+              "stations": len(buildings),
+              "units": len(vehicles),
+              "personnel": total_personnel,
+              "durationSeconds": duration,
+              "ok": True,
+          })
+          history = history[-168:]
+          with open(hist_path, "w") as f:
+              json.dump(history, f, indent=2, ensure_ascii=False)
+              f.write("\n")
+
+          print("Wrote stats + history", len(stations), "stations", len(vehicles), "units", "duration", duration)
           PY
 
       - name: Commit if changed
         run: |
           git config user.name "DispaUK Sync"
           git config user.email "actions@dispauk.co.uk"
-          git add data/stats.json
+          git add data/stats.json data/history.json
           if git diff --staged --quiet; then
             echo "No changes to commit."
           else
