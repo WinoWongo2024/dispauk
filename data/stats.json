@@ -1,8 +1,8 @@
 {
-  "updatedAt": "2026-08-29T10:16:44.403082+00:00",
+  "updatedAt": "2026-08-29T10:56:27.572502+00:00",
   "source": "missionchief.co.uk",
   "sync": {
-    "durationSeconds": 20,
+    "durationSeconds": 21,
     "schedule": "hourly"
   },
   "endpoints": {
@@ -16,9 +16,9 @@
     "einsaetze": true
   },
   "totals": {
-    "stations": 565,
-    "units": 1454,
-    "personnel": 39155,
+    "stations": 572,
+    "units": 1466,
+    "personnel": 39186,
     "dispatchCentres": 36,
     "allianceBuildings": 1067,
     "equipments": 11,
@@ -34,7 +34,7 @@
     "Custody Suite": 1,
     "Bomb Disposal": 3,
     "Helicopter Station": 3,
-    "Lifeboat Station": 5,
+    "Lifeboat Station": 10,
     "Home Response / HRL": 48,
     "Hospital": 20,
     "HART Base": 5,
@@ -44,25 +44,24 @@
     "Police Aviation": 3,
     "Police Academy": 1,
     "Health Centre": 2,
-    "Mountain Rescue": 3,
+    "Mountain Rescue": 5,
     "GP Surgery": 2,
     "Coastguard CRH": 3
   },
   "stationsByRegion": {
-    "South West": 215,
+    "South West": 220,
     "Midlands": 62,
     "South East": 74,
-    "Wales": 50,
+    "Wales": 52,
     "Scotland": 4,
     "Other / Overseas": 48,
     "North": 95,
     "London & South": 17
   },
   "vehicleStatus": {
-    "2": 1448,
-    "1": 2,
-    "5": 2,
-    "4": 2
+    "2": 1453,
+    "4": 4,
+    "3": 9
   },
   "vehiclesByType": {
     "5": 505,
@@ -77,14 +76,15 @@
     "13": 23,
     "4": 23,
     "81": 19,
+    "34": 18,
     "24": 17,
-    "34": 17,
     "54": 17,
+    "99": 16,
     "105": 15,
-    "33": 14,
-    "99": 14,
+    "33": 15,
+    "95": 14,
     "106": 12,
-    "95": 12,
+    "108": 12,
     "19": 11,
     "79": 11,
     "75": 11,
@@ -93,14 +93,13 @@
     "28": 10,
     "101": 10,
     "104": 10,
-    "108": 10,
     "2": 9
   },
   "quality": {
     "stationsMissingName": 0,
     "stationsMissingCoords": 0,
     "duplicateStationIds": 0,
-    "dcAssignedFromApi": 525,
+    "dcAssignedFromApi": 532,
     "dcAssignedNearest": 4,
     "dispatchCentres": 36,
     "ok": true
@@ -165,17 +164,17 @@
       "lat": 51.62444700946044,
       "lon": -3.9418341685379845,
       "level": 0,
-      "stationCount": 45,
-      "personnel": 896,
+      "stationCount": 48,
+      "personnel": 909,
       "coverageRadiusM": 203544,
       "coveragePolygon": [
         [
-          51.4138294,
-          -3.2850269
+          51.3932900744183,
+          -3.261931942387287
         ],
         [
-          51.42726194851315,
-          -3.172390103917924
+          51.6131759,
+          -2.6482171
         ],
         [
           51.61396539166121,
@@ -284,9 +283,9 @@
       "lat": 50.72380884185867,
       "lon": -3.5212701015617465,
       "level": 0,
-      "stationCount": 32,
-      "personnel": 637,
-      "coverageRadiusM": 63388,
+      "stationCount": 35,
+      "personnel": 652,
+      "coverageRadiusM": 72097,
       "coveragePolygon": [
         [
           50.2846413,
@@ -305,8 +304,12 @@
           -3.8400748
         ],
         [
-          51.00988255585712,
-          -4.223847738874316
+          51.20966159259047,
+          -4.116254810730051
+        ],
+        [
+          50.99833488763527,
+          -4.397599397287033
         ],
         [
           50.8154199,
@@ -596,6 +599,43 @@
       "region": "Midlands"
     },
     {
+      "id": 2635644,
+      "name": "Dorset DC",
+      "lat": 50.712641750704655,
+      "lon": -2.4471134149958846,
+      "level": 0,
+      "stationCount": 10,
+      "personnel": 212,
+      "coverageRadiusM": 42962,
+      "coveragePolygon": [
+        [
+          50.61158056029849,
+          -1.9759062485250058
+        ],
+        [
+          50.7302753,
+          -1.8665543
+        ],
+        [
+          51.03458133915639,
+          -2.2734998930933736
+        ],
+        [
+          50.95022735824215,
+          -2.513111074372369
+        ],
+        [
+          50.74164825635571,
+          -2.7699123567276946
+        ],
+        [
+          50.7326422,
+          -2.7596078
+        ]
+      ],
+      "region": "South West"
+    },
+    {
       "id": 2364325,
       "name": "Nottinghamshire Dispatch Centre",
       "lat": 52.946822813173625,
@@ -627,39 +667,6 @@
         ]
       ],
       "region": "Midlands"
-    },
-    {
-      "id": 2635644,
-      "name": "Dorset DC",
-      "lat": 50.712641750704655,
-      "lon": -2.4471134149958846,
-      "level": 0,
-      "stationCount": 9,
-      "personnel": 209,
-      "coverageRadiusM": 42962,
-      "coveragePolygon": [
-        [
-          50.61158056029849,
-          -1.9759062485250058
-        ],
-        [
-          50.7302753,
-          -1.8665543
-        ],
-        [
-          51.03458133915639,
-          -2.2734998930933736
-        ],
-        [
-          50.74164825635571,
-          -2.7699123567276946
-        ],
-        [
-          50.7326422,
-          -2.7596078
-        ]
-      ],
-      "region": "South West"
     },
     {
       "id": 2328160,
@@ -1447,21 +1454,6 @@
       "dcAssign": "api"
     },
     {
-      "id": 2642430,
-      "name": "Penzance Ambulance Station ",
-      "type": "Ambulance Station",
-      "typeId": 2,
-      "level": 1,
-      "lat": 50.123009518050985,
-      "lon": -5.546813042738823,
-      "personnel": 21,
-      "small": true,
-      "region": "South West",
-      "dcId": 2638184,
-      "dcName": "Cornwall FCR",
-      "dcAssign": "api"
-    },
-    {
       "id": 2652177,
       "name": "Ross-On-Wye Ambulance Station",
       "type": "Ambulance Station",
@@ -1519,21 +1511,6 @@
       "region": "Other / Overseas",
       "dcId": 2649006,
       "dcName": "France 🇫🇷 FCR ",
-      "dcAssign": "api"
-    },
-    {
-      "id": 2567204,
-      "name": "The Bridewell Police Station",
-      "type": "Police Station",
-      "typeId": 6,
-      "level": 2,
-      "lat": 51.45756074078378,
-      "lon": -2.5935292983084244,
-      "personnel": 87,
-      "small": false,
-      "region": "South West",
-      "dcId": 2353684,
-      "dcName": "Somerset FCR ",
       "dcAssign": "api"
     },
     {
@@ -5947,6 +5924,21 @@
       "dcAssign": "api"
     },
     {
+      "id": 2642430,
+      "name": "Penzance Ambulance Station ",
+      "type": "Ambulance Station",
+      "typeId": 2,
+      "level": 3,
+      "lat": 50.123009518050985,
+      "lon": -5.546813042738823,
+      "personnel": 21,
+      "small": false,
+      "region": "South West",
+      "dcId": 2638184,
+      "dcName": "Cornwall FCR",
+      "dcAssign": "api"
+    },
+    {
       "id": 2650386,
       "name": "Wexford Ambulance Station",
       "type": "Ambulance Station",
@@ -5977,6 +5969,36 @@
       "dcAssign": "api"
     },
     {
+      "id": 2567204,
+      "name": "The Bridewell Police Station",
+      "type": "Police Station",
+      "typeId": 6,
+      "level": 2,
+      "lat": 51.45756074078378,
+      "lon": -2.5935292983084244,
+      "personnel": 87,
+      "small": false,
+      "region": "South West",
+      "dcId": 2353684,
+      "dcName": "Somerset FCR ",
+      "dcAssign": "api"
+    },
+    {
+      "id": 2662975,
+      "name": "Severn Area Rescue Association",
+      "type": "Mountain Rescue",
+      "typeId": 33,
+      "level": 0,
+      "lat": 51.6131759,
+      "lon": -2.6482171,
+      "personnel": 3,
+      "small": false,
+      "region": "South West",
+      "dcId": 2469519,
+      "dcName": "𝙒𝙖𝙡𝙚𝙨 🏴󠁧󠁢󠁷󠁬󠁳󠁿 𝘾𝙮𝙢𝙧𝙪",
+      "dcAssign": "api"
+    },
+    {
       "id": 2318768,
       "name": "(LFB-009) Willesden Fire Station",
       "type": "Fire Station",
@@ -5989,6 +6011,96 @@
       "region": "South East",
       "dcId": 1984642,
       "dcName": "West, South, SW,NW North London Dispatch",
+      "dcAssign": "api"
+    },
+    {
+      "id": 2662978,
+      "name": "Sherborne Mountain Rescue",
+      "type": "Mountain Rescue",
+      "typeId": 33,
+      "level": 0,
+      "lat": 50.95022735824215,
+      "lon": -2.513111074372369,
+      "personnel": 3,
+      "small": false,
+      "region": "South West",
+      "dcId": 2635644,
+      "dcName": "Dorset DC",
+      "dcAssign": "api"
+    },
+    {
+      "id": 2662984,
+      "name": "RNLI Penarth",
+      "type": "Lifeboat Station",
+      "typeId": 27,
+      "level": 0,
+      "lat": 51.43247078347797,
+      "lon": -3.1690316183640697,
+      "personnel": 5,
+      "small": false,
+      "region": "Wales",
+      "dcId": 2469519,
+      "dcName": "𝙒𝙖𝙡𝙚𝙨 🏴󠁧󠁢󠁷󠁬󠁳󠁿 𝘾𝙮𝙢𝙧𝙪",
+      "dcAssign": "api"
+    },
+    {
+      "id": 2662990,
+      "name": "RNLI Clovelly",
+      "type": "Lifeboat Station",
+      "typeId": 27,
+      "level": 0,
+      "lat": 50.99833488763527,
+      "lon": -4.397599397287033,
+      "personnel": 5,
+      "small": false,
+      "region": "South West",
+      "dcId": 2635219,
+      "dcName": "Devon DC",
+      "dcAssign": "api"
+    },
+    {
+      "id": 2662985,
+      "name": "RNLI Barry",
+      "type": "Lifeboat Station",
+      "typeId": 27,
+      "level": 0,
+      "lat": 51.3932900744183,
+      "lon": -3.261931942387287,
+      "personnel": 5,
+      "small": false,
+      "region": "Wales",
+      "dcId": 2469519,
+      "dcName": "𝙒𝙖𝙡𝙚𝙨 🏴󠁧󠁢󠁷󠁬󠁳󠁿 𝘾𝙮𝙢𝙧𝙪",
+      "dcAssign": "api"
+    },
+    {
+      "id": 2662987,
+      "name": "RNLI Ilfracombe",
+      "type": "Lifeboat Station",
+      "typeId": 27,
+      "level": 0,
+      "lat": 51.20966159259047,
+      "lon": -4.116254810730051,
+      "personnel": 5,
+      "small": false,
+      "region": "South West",
+      "dcId": 2635219,
+      "dcName": "Devon DC",
+      "dcAssign": "api"
+    },
+    {
+      "id": 2662989,
+      "name": "RNLI Appledore",
+      "type": "Lifeboat Station",
+      "typeId": 27,
+      "level": 0,
+      "lat": 51.05740363516529,
+      "lon": -4.199015948811004,
+      "personnel": 5,
+      "small": false,
+      "region": "South West",
+      "dcId": 2635219,
+      "dcName": "Devon DC",
       "dcAssign": "api"
     },
     {
@@ -6881,7 +6993,7 @@
       "name": "RNLI Weston-super-Mare",
       "type": "Lifeboat Station",
       "typeId": 27,
-      "level": 1,
+      "level": 2,
       "lat": 51.3526694,
       "lon": -2.9876706,
       "personnel": 24,
@@ -9916,7 +10028,7 @@
       "name": "WSTM’R | RNLI-001/ILB-001",
       "type": 68,
       "buildingId": 1984410,
-      "status": 2
+      "status": 4
     },
     {
       "id": 5332265,
@@ -10585,15 +10697,15 @@
     }
   ],
   "credits": {
-    "credits_user_current": 45662,
-    "credits_user_total": 148218093,
-    "credits_alliance_current": 11057645652,
-    "coins_user_current": 1412,
-    "credits_alliance_total": 241533810580
+    "credits_user_current": 3767,
+    "credits_user_total": 148246698,
+    "credits_alliance_current": 11057647829,
+    "coins_user_current": 690,
+    "credits_alliance_total": 241535254113
   },
   "alliance": {
     "users": 431,
-    "online": 24,
+    "online": 21,
     "rank": 2,
     "financeActive": false
   }
