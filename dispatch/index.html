@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dispatch centres | DispaUK</title>
+  <meta name="description" content="DispaUK dispatch centres and assigned station coverage.">
+  <meta name="theme-color" content="#0b1220">
+  <link rel="stylesheet" href="/styles.css">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Roboto+Mono:wght@400;500&display=swap" rel="stylesheet">
+</head>
+<body>
+  <header class="header">
+    <div class="container header-inner">
+      <a href="/" class="logo"><span class="logo-mark">DU</span><span class="logo-text">DispaUK</span></a>
+      <nav class="nav" aria-label="Primary">
+        <a href="/">Dashboard</a>
+        <a href="/dispatch/">Dispatch</a>
+        <a href="/map/">Map</a>
+        <a href="/fleet/">Fleet</a>
+        <a href="/statistics/">Statistics</a>
+        <a href="/status/">Status</a>
+      </nav>
+      <button class="nav-toggle" type="button" aria-label="Menu" aria-expanded="false"><span></span><span></span><span></span></button>
+    </div>
+  </header>
+  <main class="legal-page">
+    <div class="container">
+      <div class="section-header-left" style="margin-bottom:16px">
+        <span class="section-kicker">CONTROL</span>
+        <h1 style="font-size:1.6rem">Dispatch centres</h1>
+        <p class="text-muted">Stations assigned by MissionChief control-centre link when available, otherwise nearest DC.</p>
+      </div>
+
+      <div class="dash-grid" style="margin-bottom:14px">
+        <article class="stat-card"><span class="stat-label">Centres</span><strong class="stat-value" data-dc-total>—</strong></article>
+        <article class="stat-card"><span class="stat-label">Stations covered</span><strong class="stat-value" data-dc-stations>—</strong></article>
+        <article class="stat-card"><span class="stat-label">API assignments</span><strong class="stat-value" data-dc-api>—</strong></article>
+        <article class="stat-card"><span class="stat-label">Nearest fallback</span><strong class="stat-value" data-dc-near>—</strong></article>
+      </div>
+
+      <div id="dc-detail" class="panel" hidden style="margin-bottom:14px">
+        <h2 data-detail-name>Centre</h2>
+        <div class="metric-row"><span>Stations</span><strong data-detail-count>—</strong></div>
+        <div class="metric-row"><span>Personnel (sum)</span><strong data-detail-pers>—</strong></div>
+        <div class="metric-row"><span>Coverage radius</span><strong data-detail-rad>—</strong></div>
+        <div class="metric-row"><span>Region</span><strong data-detail-region>—</strong></div>
+        <p style="margin-top:12px"><a class="btn btn-outline" data-detail-map href="/map/">View on map</a></p>
+        <h2 style="margin-top:18px">Assigned stations</h2>
+        <div class="table-wrap" style="margin-top:8px">
+          <table>
+            <thead><tr><th>Station</th><th>Type</th><th>Assign</th></tr></thead>
+            <tbody data-detail-stations></tbody>
+          </table>
+        </div>
+      </div>
+
+      <div class="table-wrap">
+        <table>
+          <thead>
+            <tr>
+              <th>Dispatch centre</th>
+              <th>Stations</th>
+              <th>Personnel</th>
+              <th>Coverage</th>
+              <th>Region</th>
+            </tr>
+          </thead>
+          <tbody data-dc-body></tbody>
+        </table>
+      </div>
+    </div>
+  </main>
+  <footer class="footer-slim"><div class="container footer-bottom"><p class="footer-copy">© <span data-current-year>2026</span> DispaUK</p></div></footer>
+  <script src="/script.js" defer></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', async () => {
+      const res = await fetch('/data/stats.json', { cache: 'no-cache' });
+      const data = await res.json();
+      const fmt = n => n == null ? '—' : Number(n).toLocaleString('en-GB');
+      const set = (sel, v) => { const el = document.querySelector(sel); if (el) el.textContent = v; };
+
+      const dcs = data.dispatchCentres || [];
+      const stations = data.stations || [];
+      set('[data-dc-total]', fmt(dcs.length));
+      set('[data-dc-stations]', fmt(stations.filter(s => s.dcId && s.typeId !== 7).length));
+      set('[data-dc-api]', fmt(data.quality?.dcAssignedFromApi));
+      set('[data-dc-near]', fmt(data.quality?.dcAssignedNearest));
+
+      const body = document.querySelector('[data-dc-body]');
+      if (body) {
+        body.innerHTML = dcs.map(d => `
+          <tr>
+            <td><a href="/dispatch/?id=${d.id}">${d.name || 'Unnamed'}</a></td>
+            <td class="mono">${fmt(d.stationCount)}</td>
+            <td class="mono">${fmt(d.personnel)}</td>
+            <td class="mono">${d.coverageRadiusM ? Math.round(d.coverageRadiusM/1000) + ' km' : '—'}</td>
+            <td>${d.region || '—'}</td>
+          </tr>`).join('') || '<tr><td colspan="5" class="empty">Run a sync to populate dispatch centres.</td></tr>';
+      }
+
+      const id = new URLSearchParams(location.search).get('id');
+      if (id) {
+        const d = dcs.find(x => String(x.id) === String(id));
+        const panel = document.getElementById('dc-detail');
+        if (d && panel) {
+          panel.hidden = false;
+          set('[data-detail-name]', d.name);
+          set('[data-detail-count]', fmt(d.stationCount));
+          set('[data-detail-pers]', fmt(d.personnel));
+          set('[data-detail-rad]', d.coverageRadiusM ? Math.round(d.coverageRadiusM/1000) + ' km' : '—');
+          set('[data-detail-region]', d.region || '—');
+          const mapLink = document.querySelector('[data-detail-map]');
+          if (mapLink) mapLink.href = '/map/?dc=' + encodeURIComponent(d.id);
+          const members = stations.filter(s => String(s.dcId) === String(d.id) && s.typeId !== 7);
+          const tb = document.querySelector('[data-detail-stations]');
+          if (tb) {
+            tb.innerHTML = members.map(s => `
+              <tr>
+                <td><a href="/stations/?id=${s.id}">${s.name}</a></td>
+                <td>${s.type || '—'}</td>
+                <td class="mono">${s.dcAssign || '—'}</td>
+              </tr>`).join('') || '<tr><td colspan="3" class="empty">No assigned stations</td></tr>';
+          }
+          document.title = (d.name || 'Dispatch') + ' | DispaUK';
+        }
+      }
+    });
+  </script>
+</body>
+</html>

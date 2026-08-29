@@ -4,14 +4,19 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Map | DispaUK</title>
-  <meta name="description" content="DispaUK operations map — station locations from MissionChief sync.">
+  <meta name="description" content="DispaUK operations map — stations and dispatch centre coverage.">
   <meta name="theme-color" content="#0b1220">
   <link rel="stylesheet" href="/styles.css">
   <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin="">
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Roboto+Mono:wght@400;500&display=swap" rel="stylesheet">
   <style>
-    #map { height: min(70vh, 640px); width: 100%; border-radius: 10px; border: 1px solid var(--border); z-index: 1; }
-    .map-toolbar { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 12px; }
+    #map { height: min(72vh, 680px); width: 100%; border-radius: 10px; border: 1px solid var(--border); z-index: 1; }
+    .map-toolbar { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 12px; align-items: center; }
+    .map-toolbar label { font-size: 0.85rem; color: var(--text-muted); }
+    .map-toolbar select {
+      padding: 8px 10px; border-radius: 8px; border: 1px solid var(--border);
+      background: var(--surface); color: var(--text); font: inherit;
+    }
     .leaflet-container { background: #0b1220; font-family: var(--font); }
   </style>
 </head>
@@ -21,10 +26,10 @@
       <a href="/" class="logo"><span class="logo-mark">DU</span><span class="logo-text">DispaUK</span></a>
       <nav class="nav" aria-label="Primary">
         <a href="/">Dashboard</a>
-        <a href="/#stations">Stations</a>
+        <a href="/dispatch/">Dispatch</a>
         <a href="/fleet/">Fleet</a>
-        <a href="/statistics/">Statistics</a>
         <a href="/map/">Map</a>
+        <a href="/statistics/">Statistics</a>
         <a href="/status/">Status</a>
       </nav>
       <button class="nav-toggle" type="button" aria-label="Menu" aria-expanded="false"><span></span><span></span><span></span></button>
@@ -35,17 +40,35 @@
       <div class="section-header-left" style="margin-bottom:12px">
         <span class="section-kicker">GEOGRAPHY</span>
         <h1 style="font-size:1.6rem">Operations map</h1>
-        <p class="text-muted">Stations with coordinates from the last sync. Filter by service.</p>
+        <p class="text-muted">Stations and dispatch-centre coverage (radius to farthest assigned station).</p>
       </div>
-      <div class="map-toolbar filter-row" role="group" aria-label="Map filter">
-        <button type="button" class="filter-btn active" data-map-filter="all">All</button>
-        <button type="button" class="filter-btn" data-map-filter="fire">Fire</button>
-        <button type="button" class="filter-btn" data-map-filter="ambulance">Ambulance</button>
-        <button type="button" class="filter-btn" data-map-filter="police">Police</button>
-        <button type="button" class="filter-btn" data-map-filter="other">Other</button>
+
+      <div class="map-toolbar">
+        <div class="filter-row" role="group" aria-label="Service filter">
+          <button type="button" class="filter-btn active" data-map-filter="all">All</button>
+          <button type="button" class="filter-btn" data-map-filter="fire">Fire</button>
+          <button type="button" class="filter-btn" data-map-filter="ambulance">Ambulance</button>
+          <button type="button" class="filter-btn" data-map-filter="police">Police</button>
+          <button type="button" class="filter-btn" data-map-filter="other">Other</button>
+        </div>
+        <label>
+          Dispatch centre
+          <select id="dc-select">
+            <option value="">All centres</option>
+          </select>
+        </label>
+        <label style="display:inline-flex;align-items:center;gap:6px">
+          <input type="checkbox" id="show-coverage" checked>
+          Show coverage
+        </label>
       </div>
+
       <div id="map" role="application" aria-label="Station map"></div>
-      <p class="text-muted" style="margin-top:10px"><span data-map-count>0</span> markers · not for real-world navigation</p>
+      <p class="text-muted" style="margin-top:10px">
+        <span data-map-count>0</span> stations ·
+        <span data-dc-count>0</span> dispatch centres ·
+        coverage is approximate, not operational boundaries
+      </p>
     </div>
   </main>
   <footer class="footer-slim"><div class="container footer-bottom"><p class="footer-copy">© <span data-current-year>2026</span> DispaUK</p></div></footer>
@@ -62,30 +85,80 @@
       const res = await fetch('/data/stats.json', { cache: 'no-cache' });
       const data = await res.json();
       const stations = (data.stations || []).filter(s => s.lat != null && s.lon != null);
-      let layer = L.layerGroup().addTo(map);
+      const dcs = (data.dispatchCentres || []).filter(d => d.lat != null && d.lon != null);
+
+      const stationLayer = L.layerGroup().addTo(map);
+      const coverageLayer = L.layerGroup().addTo(map);
+      const dcLayer = L.layerGroup().addTo(map);
+
       let filter = 'all';
+      let dcFilter = '';
+      let showCoverage = true;
+
+      const palette = ['#e63946','#3b82f6','#a78bfa','#2ecc71','#f59e0b','#06b6d4','#f472b6','#94a3b8'];
+      const dcColour = {};
+      dcs.forEach((d, i) => { dcColour[d.id] = palette[i % palette.length]; });
 
       const bucket = (type) => {
         const t = (type || '').toLowerCase();
         if (t.includes('fire')) return 'fire';
-        if (t.includes('ambulance') || t.includes('hospital')) return 'ambulance';
-        if (t.includes('police')) return 'police';
+        if (t.includes('ambulance') || t.includes('hospital') || t.includes('hart')) return 'ambulance';
+        if (t.includes('police') || t.includes('custody')) return 'police';
         return 'other';
       };
-
       const colours = { fire: '#e63946', ambulance: '#3b82f6', police: '#a78bfa', other: '#9aadc2' };
 
+      const sel = document.getElementById('dc-select');
+      if (sel) {
+        dcs.forEach(d => {
+          const o = document.createElement('option');
+          o.value = String(d.id);
+          o.textContent = `${d.name} (${d.stationCount || 0})`;
+          sel.appendChild(o);
+        });
+      }
+
+      document.querySelector('[data-dc-count]').textContent = dcs.length;
+
       function redraw() {
-        layer.clearLayers();
-        const list = stations.filter(s => filter === 'all' || bucket(s.type) === filter);
+        stationLayer.clearLayers();
+        coverageLayer.clearLayers();
+        dcLayer.clearLayers();
+
+        const list = stations.filter(s => {
+          if (filter !== 'all' && bucket(s.type) !== filter) return false;
+          if (dcFilter && String(s.dcId) !== dcFilter) return false;
+          return true;
+        });
+
         list.forEach(s => {
           const c = colours[bucket(s.type)] || colours.other;
           const m = L.circleMarker([s.lat, s.lon], {
-            radius: 5, color: c, fillColor: c, fillOpacity: 0.85, weight: 1,
+            radius: s.typeId === 7 ? 7 : 5,
+            color: c, fillColor: c, fillOpacity: 0.85, weight: 1,
           });
-          m.bindPopup(`<strong>${s.name}</strong><br>${s.type}<br><a href="/stations/?id=${s.id}">Details</a>`);
-          m.addTo(layer);
+          const dcLine = s.dcName ? `<br>DC: ${s.dcName}` : '';
+          m.bindPopup(`<strong>${s.name}</strong><br>${s.type}${dcLine}<br><a href="/stations/?id=${s.id}">Details</a>`);
+          m.addTo(stationLayer);
         });
+
+        const dcsToShow = dcs.filter(d => !dcFilter || String(d.id) === dcFilter);
+        dcsToShow.forEach(d => {
+          const col = dcColour[d.id] || '#3b82f6';
+          if (showCoverage && d.coverageRadiusM) {
+            L.circle([d.lat, d.lon], {
+              radius: d.coverageRadiusM,
+              color: col,
+              weight: 1.5,
+              fillColor: col,
+              fillOpacity: 0.08,
+            }).bindPopup(`<strong>${d.name}</strong><br>${d.stationCount || 0} stations<br>Coverage ≈ ${Math.round((d.coverageRadiusM||0)/1000)} km`).addTo(coverageLayer);
+          }
+          L.circleMarker([d.lat, d.lon], {
+            radius: 8, color: '#fff', weight: 2, fillColor: col, fillOpacity: 1,
+          }).bindPopup(`<strong>${d.name}</strong><br>Dispatch Centre<br>${d.stationCount || 0} stations<br><a href="/dispatch/?id=${d.id}">Open</a>`).addTo(dcLayer);
+        });
+
         document.querySelector('[data-map-count]').textContent = list.length;
       }
 
@@ -94,7 +167,15 @@
       const focus = new URLSearchParams(location.search).get('focus');
       if (focus) {
         const s = stations.find(x => String(x.id) === String(focus));
-        if (s) map.setView([s.lat, s.lon], 12);
+        if (s) map.setView([s.lat, s.lon], 11);
+      }
+      const focusDc = new URLSearchParams(location.search).get('dc');
+      if (focusDc && sel) {
+        sel.value = focusDc;
+        dcFilter = focusDc;
+        redraw();
+        const d = dcs.find(x => String(x.id) === String(focusDc));
+        if (d) map.setView([d.lat, d.lon], 9);
       }
 
       document.querySelectorAll('[data-map-filter]').forEach(btn => {
@@ -105,6 +186,9 @@
           redraw();
         });
       });
+      if (sel) sel.addEventListener('change', () => { dcFilter = sel.value; redraw(); });
+      const cov = document.getElementById('show-coverage');
+      if (cov) cov.addEventListener('change', () => { showCoverage = cov.checked; redraw(); });
     });
   </script>
 </body>
