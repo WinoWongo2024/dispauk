@@ -30,9 +30,9 @@ function setText(sel, value) {
 }
 
 function relativeTime(iso) {
-  if (!iso) return { relative: '—', absolute: '' };
+  if (!iso) return { relative: '—', absolute: '', mins: null };
   const d = new Date(iso);
-  if (Number.isNaN(d.getTime())) return { relative: '—', absolute: '' };
+  if (Number.isNaN(d.getTime())) return { relative: '—', absolute: '', mins: null };
   const mins = Math.max(0, Math.floor((Date.now() - d.getTime()) / 60000));
   let relative;
   if (mins < 1) relative = 'just now';
@@ -61,6 +61,10 @@ function serviceBucket(type) {
   if (t.includes('ambulance') || t.includes('hospital')) return 'ambulance';
   if (t.includes('police')) return 'police';
   return 'other';
+}
+
+function stationHref(s) {
+  return `/stations/?id=${encodeURIComponent(s.id)}`;
 }
 
 function applyFilters() {
@@ -99,7 +103,7 @@ function renderStations() {
     } else {
       body.innerHTML = slice.map((s) => `
         <tr>
-          <td>${escapeHtml(s.name || 'Unnamed')}</td>
+          <td><a href="${stationHref(s)}">${escapeHtml(s.name || 'Unnamed')}</a></td>
           <td>${escapeHtml(s.type || '—')}</td>
           <td class="mono">${fmt(s.personnel)}</td>
           <td><span class="status-pill">Active</span></td>
@@ -112,20 +116,18 @@ function renderStations() {
       cards.innerHTML = '<p class="empty-card">No stations match your filters.</p>';
     } else {
       cards.innerHTML = slice.map((s) => `
-        <article class="station-card">
+        <a class="station-card" href="${stationHref(s)}">
           <h3>${escapeHtml(s.name || 'Unnamed')}</h3>
           <p>${escapeHtml(s.type || '—')}</p>
           <div class="station-card-meta">
             <span class="status-pill">Active</span>
             <span class="mono">${fmt(s.personnel)} personnel</span>
           </div>
-        </article>`).join('');
+        </a>`).join('');
     }
   }
 
-  if (more) {
-    more.hidden = slice.length >= filtered.length;
-  }
+  if (more) more.hidden = slice.length >= filtered.length;
 }
 
 function applyFreshness(updatedAt) {
@@ -157,9 +159,7 @@ function applyFreshness(updatedAt) {
 
   const summary = document.querySelector('[data-status-summary]');
   if (summary) {
-    summary.textContent = f.key === 'live'
-      ? 'All systems operational'
-      : `Data freshness: ${f.label}`;
+    summary.textContent = f.key === 'live' ? 'All systems operational' : `Data freshness: ${f.label}`;
   }
 }
 

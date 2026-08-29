@@ -1,6 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url><loc>https://dispauk.co.uk/</loc></url>
+  <url><loc>https://dispauk.co.uk/fleet/</loc></url>
+  <url><loc>https://dispauk.co.uk/statistics/</loc></url>
+  <url><loc>https://dispauk.co.uk/map/</loc></url>
   <url><loc>https://dispauk.co.uk/status/</loc></url>
   <url><loc>https://dispauk.co.uk/about/</loc></url>
   <url><loc>https://dispauk.co.uk/changelog/</loc></url>
