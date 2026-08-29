@@ -4,88 +4,48 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Terms of Use | DispaUK</title>
-  <meta name="description" content="Terms of Use for the DispaUK website.">
   <meta name="theme-color" content="#0b1220">
   <link rel="stylesheet" href="/styles.css">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Roboto+Mono:wght@400;500&display=swap" rel="stylesheet">
 </head>
 <body>
   <header class="header">
     <div class="container header-inner">
-      <a href="/" class="logo" aria-label="DispaUK home">
-        <span class="logo-mark">DU</span>
-        <span class="logo-text">DispaUK</span>
-      </a>
-      <nav class="nav" aria-label="Primary navigation">
-        <a href="/about/">About</a>
-        <a href="/operations/">Operations</a>
+      <a href="/" class="logo"><span class="logo-mark">DU</span><span class="logo-text">DispaUK</span></a>
+      <nav class="nav" aria-label="Primary">
+        <a href="/">Dashboard</a>
+        <a href="/dispatch/">Dispatch</a>
+        <a href="/stations/">Stations</a>
         <a href="/fleet/">Fleet</a>
-        <a href="/services/">Services</a>
+        <a href="/locate/">Locate</a>
+        <a href="/map/">Map</a>
+        <a href="/regions/">Regions</a>
+        <a href="/statistics/">Statistics</a>
         <a href="/status/">Status</a>
-        <a href="/contact/" class="btn btn-small">Contact</a>
       </nav>
-      <button class="nav-toggle" type="button" aria-label="Open navigation menu" aria-expanded="false">
-        <span></span><span></span><span></span>
-      </button>
+      <button class="nav-toggle" type="button" aria-label="Menu" aria-expanded="false"><span></span><span></span><span></span></button>
     </div>
   </header>
-
-  <main>
-    <section class="section legal-page">
-      <div class="container legal-content">
-        <p class="section-kicker">Legal</p>
-        <h1>Terms of Use</h1>
-        <p class="legal-updated">Last updated: 24 August 2026</p>
-
-        <h2>1. About these terms</h2>
-        <p>These Terms of Use govern your use of the website <strong>dispauk.co.uk</strong> (the “Site”). By using the Site you agree to these terms.</p>
-
-        <h2>2. About DispaUK</h2>
-        <p>DispaUK is an independent project. It is <strong>not</strong> affiliated with, endorsed by, sponsored by, or operated by SHPlay GmbH or the MissionChief game.</p>
-
-        <h2>3. Acceptable use</h2>
-        <p>You agree not to:</p>
-        <ul>
-          <li>Use the Site in any way that is unlawful or harmful.</li>
-          <li>Attempt to gain unauthorised access to any systems or data.</li>
-          <li>Interfere with the proper working of the Site.</li>
-          <li>Misrepresent any association between DispaUK and official emergency services or the MissionChief game.</li>
-        </ul>
-
-        <h2>4. Content</h2>
-        <p>Content on the Site is provided for general information and simulation/coordination purposes only. It does not constitute professional advice and should not be relied upon as such.</p>
-
-        <h2>5. Intellectual property</h2>
-        <p>Unless otherwise stated, the design, text and original content of the Site are owned by DispaUK or its licensors. You may view and print pages for personal, non-commercial use.</p>
-
-        <h2>6. Third-party links</h2>
-        <p>The Site may contain links to third-party websites (including MissionChief). We are not responsible for the content or practices of those sites.</p>
-
-        <h2>7. Disclaimer</h2>
-        <p>The Site is provided “as is”. We make no warranties about its availability, accuracy or fitness for any particular purpose. To the fullest extent permitted by law we exclude liability for any loss or damage arising from use of the Site.</p>
-
-        <h2>8. Changes</h2>
-        <p>We may update these Terms from time to time. Continued use of the Site after changes constitutes acceptance of the updated terms.</p>
-
-        <h2>9. Contact</h2>
-        <p>Questions about these Terms: <a href="mailto:administrator@dispauk.co.uk">administrator@dispauk.co.uk</a></p>
-      </div>
-    </section>
-  </main>
-
-  <footer class="footer">
-    <div class="container">
-      <div class="footer-bottom" style="border-top: none; padding-top: 0;">
-        <p class="footer-copy">© <span data-current-year>2026</span> DispaUK. All rights reserved.</p>
-        <p class="footer-disclaimer">
-          DispaUK is an independent service and is not affiliated with, endorsed by, sponsored by, or operated by SHPlay GmbH or MissionChief.
-        </p>
-      </div>
+  <main class="legal-page">
+    <div class="container legal-content">
+      <p class="section-kicker">Legal</p>
+      <h1>Terms of Use</h1>
+      <p class="legal-updated">Last updated: 29 August 2026</p>
+      <h2>1. About these terms</h2>
+      <p>By using dispauk.co.uk you agree to these terms. If you do not agree, do not use the site.</p>
+      <h2>2. Independent service</h2>
+      <p>DispaUK is independent and is not affiliated with, endorsed by, or operated by SHPlay GmbH, MissionChief, or any UK emergency service.</p>
+      <h2>3. Not for emergencies</h2>
+      <p>This site must not be used for real-world emergency response. In an emergency call <strong>999</strong> or <strong>112</strong>.</p>
+      <h2>4. Acceptable use</h2>
+      <p>You must not attempt unauthorised access, interfere with the service, scrape aggressively beyond the published API fair-use guidance, or falsely claim association with MissionChief or emergency services.</p>
+      <h2>5. Data accuracy</h2>
+      <p>Operational data may be delayed, incomplete, or incorrect. Coverage maps are analytical approximations only.</p>
+      <h2>6. Contact</h2>
+      <p><a href="mailto:administrator@dispauk.co.uk">administrator@dispauk.co.uk</a> · <a href="/contact/">Contact page</a></p>
     </div>
-  </footer>
-
+  </main>
+  <footer class="footer-slim"><div class="container footer-bottom"><p class="footer-copy">© <span data-current-year>2026</span> DispaUK · <a href="/privacy/">Privacy</a> · <a href="/legal/">Legal</a></p></div></footer>
   <script src="/script.js" defer></script>
 </body>
 </html>

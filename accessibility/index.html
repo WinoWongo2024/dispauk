@@ -3,83 +3,40 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Accessibility Statement | DispaUK</title>
-  <meta name="description" content="Accessibility Statement for the DispaUK website.">
+  <title>Accessibility | DispaUK</title>
   <meta name="theme-color" content="#0b1220">
   <link rel="stylesheet" href="/styles.css">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Roboto+Mono:wght@400;500&display=swap" rel="stylesheet">
 </head>
 <body>
   <header class="header">
     <div class="container header-inner">
-      <a href="/" class="logo" aria-label="DispaUK home">
-        <span class="logo-mark">DU</span>
-        <span class="logo-text">DispaUK</span>
-      </a>
-      <nav class="nav" aria-label="Primary navigation">
-        <a href="/about/">About</a>
-        <a href="/operations/">Operations</a>
+      <a href="/" class="logo"><span class="logo-mark">DU</span><span class="logo-text">DispaUK</span></a>
+      <nav class="nav" aria-label="Primary">
+        <a href="/">Dashboard</a>
+        <a href="/dispatch/">Dispatch</a>
+        <a href="/stations/">Stations</a>
         <a href="/fleet/">Fleet</a>
-        <a href="/services/">Services</a>
+        <a href="/locate/">Locate</a>
+        <a href="/map/">Map</a>
+        <a href="/regions/">Regions</a>
+        <a href="/statistics/">Statistics</a>
         <a href="/status/">Status</a>
-        <a href="/contact/" class="btn btn-small">Contact</a>
       </nav>
-      <button class="nav-toggle" type="button" aria-label="Open navigation menu" aria-expanded="false">
-        <span></span><span></span><span></span>
-      </button>
+      <button class="nav-toggle" type="button" aria-label="Menu" aria-expanded="false"><span></span><span></span><span></span></button>
     </div>
   </header>
-
-  <main>
-    <section class="section legal-page">
-      <div class="container legal-content">
-        <p class="section-kicker">Information</p>
-        <h1>Accessibility Statement</h1>
-        <p class="legal-updated">Last updated: 24 August 2026</p>
-
-        <h2>Our commitment</h2>
-        <p>DispaUK aims to make this website accessible to as many people as possible, including those with disabilities.</p>
-
-        <h2>Measures we take</h2>
-        <ul>
-          <li>Semantic HTML structure</li>
-          <li>Sufficient colour contrast where possible</li>
-          <li>Keyboard-navigable interactive elements</li>
-          <li>Visible focus indicators</li>
-          <li>Support for reduced-motion preferences</li>
-          <li>Clear page titles and headings</li>
-          <li>Alternative text and labels where relevant</li>
-        </ul>
-
-        <h2>Known limitations</h2>
-        <p>As a small independent project the site may not yet fully meet WCAG 2.2 Level AA in every area. We continue to improve accessibility over time.</p>
-
-        <h2>Feedback</h2>
-        <p>If you experience any accessibility barriers on this website, please contact us:</p>
-        <p>
-          Email: <a href="mailto:administrator@dispauk.co.uk">administrator@dispauk.co.uk</a>
-        </p>
-        <p>Please include the page URL and a description of the problem. We will try to respond and address issues where reasonably possible.</p>
-
-        <h2>Enforcement</h2>
-        <p>If you are not satisfied with our response you may contact the Equality and Human Rights Commission or seek advice from the Equality Advisory and Support Service (EASS).</p>
-      </div>
-    </section>
-  </main>
-
-  <footer class="footer">
-    <div class="container">
-      <div class="footer-bottom" style="border-top: none; padding-top: 0;">
-        <p class="footer-copy">© <span data-current-year>2026</span> DispaUK. All rights reserved.</p>
-        <p class="footer-disclaimer">
-          DispaUK is an independent service and is not affiliated with, endorsed by, sponsored by, or operated by SHPlay GmbH or MissionChief.
-        </p>
-      </div>
+  <main class="legal-page">
+    <div class="container legal-content">
+      <p class="section-kicker">Legal</p>
+      <h1>Accessibility statement</h1>
+      <p class="legal-updated">Last updated: 29 August 2026</p>
+      <p>We aim to make DispaUK usable by as many people as possible. The site uses semantic HTML, visible focus styles, keyboard-friendly controls, and respects reduced-motion preferences where practical.</p>
+      <p>Some areas (especially interactive maps and content loaded from JSON) may not yet fully meet WCAG 2.2 AA. Live regions are used on key status and result areas to announce updates.</p>
+      <p>If you encounter a barrier, email <a href="mailto:administrator@dispauk.co.uk">administrator@dispauk.co.uk</a> with the page URL and what went wrong.</p>
     </div>
-  </footer>
-
+  </main>
+  <footer class="footer-slim"><div class="container footer-bottom"><p class="footer-copy">© <span data-current-year>2026</span> DispaUK · <a href="/contact/">Contact</a></p></div></footer>
   <script src="/script.js" defer></script>
 </body>
 </html>
