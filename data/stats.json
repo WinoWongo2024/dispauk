@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-08-29T14:09:22.411216+00:00",
+  "updatedAt": "2026-08-29T14:58:05.216703+00:00",
   "source": "missionchief.co.uk",
   "sync": {
     "durationSeconds": 23,
@@ -59,10 +59,11 @@
     "London & South": 17
   },
   "vehicleStatus": {
-    "4": 69,
-    "2": 1368,
-    "3": 14,
-    "1": 23
+    "2": 1451,
+    "1": 10,
+    "4": 11,
+    "3": 1,
+    "7": 1
   },
   "vehiclesByType": {
     "5": 505,
@@ -6405,21 +6406,6 @@
       "dcAssign": "api"
     },
     {
-      "id": 2390847,
-      "name": "Royal United Hospital (RUH)",
-      "type": "Hospital",
-      "typeId": 4,
-      "level": 30,
-      "lat": 51.39141658271086,
-      "lon": -2.3916416733188,
-      "personnel": 0,
-      "small": false,
-      "region": "South West",
-      "dcId": 2353684,
-      "dcName": "Somerset FCR ",
-      "dcAssign": "api"
-    },
-    {
       "id": 1988490,
       "name": "(HRLNY-001) Harrogate Fire station",
       "type": "Home Response / HRL",
@@ -8037,6 +8023,21 @@
       "region": "South West",
       "dcId": 2635644,
       "dcName": "Dorset DC",
+      "dcAssign": "api"
+    },
+    {
+      "id": 2390847,
+      "name": "Royal United Hospital (RUH)",
+      "type": "Hospital",
+      "typeId": 4,
+      "level": 30,
+      "lat": 51.39141658271086,
+      "lon": -2.3916416733188,
+      "personnel": 0,
+      "small": false,
+      "region": "South West",
+      "dcId": 2353684,
+      "dcName": "Somerset FCR ",
       "dcAssign": "api"
     },
     {
@@ -9861,14 +9862,14 @@
       "name": "WCP | LFB-008/WL-001",
       "type": 0,
       "buildingId": 1987510,
-      "status": 4
+      "status": 2
     },
     {
       "id": 4926743,
       "name": "WCP | LFB-008/L4x4-001 (P)",
       "type": 1,
       "buildingId": 1844367,
-      "status": 4
+      "status": 2
     },
     {
       "id": 4926750,
@@ -9903,14 +9904,14 @@
       "name": "NWCP | LFB-006/WL-001",
       "type": 0,
       "buildingId": 1844412,
-      "status": 4
+      "status": 2
     },
     {
       "id": 4927854,
       "name": "NWCP | LFB-006/WL-002",
       "type": 0,
       "buildingId": 1844412,
-      "status": 4
+      "status": 2
     },
     {
       "id": 4929073,
@@ -9952,7 +9953,7 @@
       "name": "EUS | LFB-004/WL-001",
       "type": 0,
       "buildingId": 1984004,
-      "status": 4
+      "status": 2
     },
     {
       "id": 5330618,
@@ -9980,7 +9981,7 @@
       "name": "QW | LFB-007/WL-001",
       "type": 0,
       "buildingId": 1984339,
-      "status": 4
+      "status": 2
     },
     {
       "id": 5331507,
@@ -9994,7 +9995,7 @@
       "name": "QW | LFB-007/WL-002",
       "type": 0,
       "buildingId": 1984339,
-      "status": 4
+      "status": 2
     },
     {
       "id": 5331632,
@@ -10029,7 +10030,7 @@
       "name": "WSTM’R | RNLI-001/ILB-001",
       "type": 68,
       "buildingId": 1984410,
-      "status": 4
+      "status": 2
     },
     {
       "id": 5332265,
@@ -10085,7 +10086,7 @@
       "name": "MA | LFB-005/WL-001",
       "type": 0,
       "buildingId": 1987510,
-      "status": 4
+      "status": 2
     },
     {
       "id": 5340155,
@@ -10239,7 +10240,7 @@
       "name": "GWCH | CRS-001/CRV-001",
       "type": 57,
       "buildingId": 2041379,
-      "status": 3
+      "status": 1
     },
     {
       "id": 5489715,
@@ -10267,7 +10268,7 @@
       "name": "CoL | LFB-002/RSU-001",
       "type": 4,
       "buildingId": 2033678,
-      "status": 4
+      "status": 2
     },
     {
       "id": 5496781,
@@ -10386,7 +10387,7 @@
       "name": "LMBTH | HRL-003/FO-001",
       "type": 3,
       "buildingId": 2312031,
-      "status": 4
+      "status": 2
     },
     {
       "id": 6272134,
@@ -10442,7 +10443,7 @@
       "name": "BTGN | LFB-001/WL-001",
       "type": 0,
       "buildingId": 2312415,
-      "status": 3
+      "status": 2
     },
     {
       "id": 6272844,
@@ -10512,7 +10513,7 @@
       "name": "GWCH | CRS-001/CRV-002",
       "type": 57,
       "buildingId": 2041379,
-      "status": 3
+      "status": 1
     },
     {
       "id": 6290331,
@@ -10568,14 +10569,14 @@
       "name": "DEPT | LFB-003/RP-001",
       "type": 16,
       "buildingId": 2318646,
-      "status": 3
+      "status": 2
     },
     {
       "id": 6290534,
       "name": "DEPT| LFB-003/CARP-001",
       "type": 17,
       "buildingId": 2318646,
-      "status": 3
+      "status": 2
     },
     {
       "id": 6290763,
@@ -10617,7 +10618,7 @@
       "name": "WFS | LFB-009/CARP-001",
       "type": 17,
       "buildingId": 2318768,
-      "status": 3
+      "status": 2
     },
     {
       "id": 6290890,
@@ -10698,15 +10699,15 @@
     }
   ],
   "credits": {
-    "credits_user_current": 219240,
-    "credits_user_total": 148504171,
-    "credits_alliance_current": 11057670286,
+    "credits_user_current": 302795,
+    "credits_user_total": 148587726,
+    "credits_alliance_current": 11057673764,
     "coins_user_current": 226,
-    "credits_alliance_total": 241555469018
+    "credits_alliance_total": 241556753017
   },
   "alliance": {
-    "users": 432,
-    "online": 27,
+    "users": 435,
+    "online": 29,
     "rank": 2,
     "financeActive": false
   }
