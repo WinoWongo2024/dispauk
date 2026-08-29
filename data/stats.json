@@ -1,8 +1,8 @@
 {
-  "updatedAt": "2026-08-29T09:29:29.621178+00:00",
+  "updatedAt": "2026-08-29T10:02:42.571888+00:00",
   "source": "missionchief.co.uk",
   "sync": {
-    "durationSeconds": 22,
+    "durationSeconds": 21,
     "schedule": "hourly"
   },
   "endpoints": {
@@ -19,6 +19,7 @@
     "stations": 565,
     "units": 1454,
     "personnel": 39155,
+    "dispatchCentres": 36,
     "allianceBuildings": 1067,
     "equipments": 11,
     "missionTypes": 1067
@@ -58,10 +59,9 @@
     "London & South": 17
   },
   "vehicleStatus": {
-    "2": 1438,
-    "1": 4,
-    "4": 10,
-    "5": 2
+    "2": 1441,
+    "4": 12,
+    "5": 1
   },
   "vehiclesByType": {
     "5": 505,
@@ -99,8 +99,409 @@
     "stationsMissingName": 0,
     "stationsMissingCoords": 0,
     "duplicateStationIds": 0,
+    "dcAssignedFromApi": 525,
+    "dcAssignedNearest": 4,
+    "dispatchCentres": 36,
     "ok": true
   },
+  "dispatchCentres": [
+    {
+      "id": 2353684,
+      "name": "Somerset FCR ",
+      "lat": 51.5484492,
+      "lon": -2.5562629,
+      "level": 0,
+      "stationCount": 99,
+      "personnel": 7990,
+      "coverageRadiusM": 93562,
+      "region": "South West"
+    },
+    {
+      "id": 2469519,
+      "name": "𝙒𝙖𝙡𝙚𝙨 🏴󠁧󠁢󠁷󠁬󠁳󠁿 𝘾𝙮𝙢𝙧𝙪",
+      "lat": 51.62444700946044,
+      "lon": -3.9418341685379845,
+      "level": 0,
+      "stationCount": 45,
+      "personnel": 896,
+      "coverageRadiusM": 203544,
+      "region": "Wales"
+    },
+    {
+      "id": 1844373,
+      "name": "Central,South/North East London Dispatch",
+      "lat": 51.51909877616312,
+      "lon": -0.05814690200677775,
+      "level": 0,
+      "stationCount": 42,
+      "personnel": 6107,
+      "coverageRadiusM": 183933,
+      "region": "South East"
+    },
+    {
+      "id": 2311778,
+      "name": "Hampshire DC",
+      "lat": 50.92479830163213,
+      "lon": -1.395061439554288,
+      "level": 0,
+      "stationCount": 37,
+      "personnel": 4516,
+      "coverageRadiusM": 53722,
+      "region": "Other / Overseas"
+    },
+    {
+      "id": 2635219,
+      "name": "Devon DC",
+      "lat": 50.72380884185867,
+      "lon": -3.5212701015617465,
+      "level": 0,
+      "stationCount": 32,
+      "personnel": 637,
+      "coverageRadiusM": 63388,
+      "region": "South West"
+    },
+    {
+      "id": 1988744,
+      "name": "(M2XN) North Yorkshire DC",
+      "lat": 53.98857861880335,
+      "lon": -1.5384455740283822,
+      "level": 0,
+      "stationCount": 28,
+      "personnel": 3168,
+      "coverageRadiusM": 88912,
+      "region": "North"
+    },
+    {
+      "id": 2620223,
+      "name": "⁠[WY-ECC] West Yorks Emergency Control⁠",
+      "lat": 53.794816144779,
+      "lon": -1.5482316659310116,
+      "level": 0,
+      "stationCount": 25,
+      "personnel": 844,
+      "coverageRadiusM": 29396,
+      "region": "North"
+    },
+    {
+      "id": 2638184,
+      "name": "Cornwall FCR",
+      "lat": 50.46754013760775,
+      "lon": -4.741500533448471,
+      "level": 0,
+      "stationCount": 23,
+      "personnel": 377,
+      "coverageRadiusM": 133615,
+      "region": "South West"
+    },
+    {
+      "id": 2635513,
+      "name": "Wiltshire DC",
+      "lat": 51.560355224592655,
+      "lon": -1.7791513664204774,
+      "level": 0,
+      "stationCount": 21,
+      "personnel": 1573,
+      "coverageRadiusM": 65430,
+      "region": "South West"
+    },
+    {
+      "id": 1984642,
+      "name": "West, South, SW,NW North London Dispatch",
+      "lat": 51.50083164248625,
+      "lon": -0.1506834898507324,
+      "level": 0,
+      "stationCount": 17,
+      "personnel": 2076,
+      "coverageRadiusM": 18148,
+      "region": "South East"
+    },
+    {
+      "id": 2582593,
+      "name": "Gloucestershire Dispatch",
+      "lat": 51.86231296833556,
+      "lon": -2.2486301175423504,
+      "level": 0,
+      "stationCount": 16,
+      "personnel": 711,
+      "coverageRadiusM": 35088,
+      "region": "South West"
+    },
+    {
+      "id": 2325711,
+      "name": "(M2XN) E-Yorks FCR",
+      "lat": 54.27694747056573,
+      "lon": -0.41821213497615445,
+      "level": 0,
+      "stationCount": 14,
+      "personnel": 2033,
+      "coverageRadiusM": 31133,
+      "region": "North"
+    },
+    {
+      "id": 2621011,
+      "name": "Derbyshire DC",
+      "lat": 52.913880954626656,
+      "lon": -1.4705872694789495,
+      "level": 0,
+      "stationCount": 14,
+      "personnel": 511,
+      "coverageRadiusM": 38308,
+      "region": "Midlands"
+    },
+    {
+      "id": 2364325,
+      "name": "Nottinghamshire Dispatch Centre",
+      "lat": 52.946822813173625,
+      "lon": -1.13869749462108,
+      "level": 0,
+      "stationCount": 10,
+      "personnel": 1155,
+      "coverageRadiusM": 46377,
+      "region": "Midlands"
+    },
+    {
+      "id": 2635644,
+      "name": "Dorset DC",
+      "lat": 50.712641750704655,
+      "lon": -2.4471134149958846,
+      "level": 0,
+      "stationCount": 9,
+      "personnel": 209,
+      "coverageRadiusM": 42962,
+      "region": "South West"
+    },
+    {
+      "id": 2328160,
+      "name": "National Highways (South England)",
+      "lat": 51.0538238241076,
+      "lon": -1.2956040314435673,
+      "level": 0,
+      "stationCount": 9,
+      "personnel": 1800,
+      "coverageRadiusM": 76990,
+      "region": "Other / Overseas"
+    },
+    {
+      "id": 2620974,
+      "name": "South Yorkshire DC",
+      "lat": 53.37851880513755,
+      "lon": -1.4931442304581821,
+      "level": 0,
+      "stationCount": 9,
+      "personnel": 333,
+      "coverageRadiusM": 34346,
+      "region": "Midlands"
+    },
+    {
+      "id": 2649006,
+      "name": "France 🇫🇷 FCR ",
+      "lat": 48.8381094548902,
+      "lon": 2.361964152226319,
+      "level": 0,
+      "stationCount": 7,
+      "personnel": 249,
+      "coverageRadiusM": 256900,
+      "region": "Other / Overseas"
+    },
+    {
+      "id": 2650937,
+      "name": "Shropshire FCR ",
+      "lat": 52.692341565526135,
+      "lon": -2.7713298545117584,
+      "level": 0,
+      "stationCount": 7,
+      "personnel": 98,
+      "coverageRadiusM": 38223,
+      "region": "Midlands"
+    },
+    {
+      "id": 2349753,
+      "name": "(M2XN) York city",
+      "lat": 53.96233327709009,
+      "lon": -1.082424501151759,
+      "level": 0,
+      "stationCount": 6,
+      "personnel": 1000,
+      "coverageRadiusM": 5787,
+      "region": "North"
+    },
+    {
+      "id": 2652880,
+      "name": "Belgium 🇧🇪 FCR",
+      "lat": 50.84360327437016,
+      "lon": 4.349442654071824,
+      "level": 0,
+      "stationCount": 6,
+      "personnel": 84,
+      "coverageRadiusM": 128677,
+      "region": "Other / Overseas"
+    },
+    {
+      "id": 2621080,
+      "name": "West Midlands",
+      "lat": 52.47347948103825,
+      "lon": -1.912657241009031,
+      "level": 0,
+      "stationCount": 6,
+      "personnel": 308,
+      "coverageRadiusM": 30591,
+      "region": "Midlands"
+    },
+    {
+      "id": 2319655,
+      "name": "Basingstoke,Alton,Oakley Dispatch",
+      "lat": 51.262286951573614,
+      "lon": -1.0890399872677607,
+      "level": 0,
+      "stationCount": 5,
+      "personnel": 1000,
+      "coverageRadiusM": 3470,
+      "region": "London & South"
+    },
+    {
+      "id": 2652166,
+      "name": "Herefordshire FCR ",
+      "lat": 52.05716888865516,
+      "lon": -2.706243211961644,
+      "level": 0,
+      "stationCount": 5,
+      "personnel": 70,
+      "coverageRadiusM": 29076,
+      "region": "South West"
+    },
+    {
+      "id": 2650412,
+      "name": "Isle Of Man 🇮🇲 ",
+      "lat": 54.23072279575719,
+      "lon": -4.5360852423322005,
+      "level": 0,
+      "stationCount": 5,
+      "personnel": 58,
+      "coverageRadiusM": 22214,
+      "region": "North"
+    },
+    {
+      "id": 2621314,
+      "name": "Southern Scotland DC",
+      "lat": 55.92727075021527,
+      "lon": -3.2182590869673215,
+      "level": 0,
+      "stationCount": 5,
+      "personnel": 144,
+      "coverageRadiusM": 133136,
+      "region": "Scotland"
+    },
+    {
+      "id": 2622184,
+      "name": "East Yorkshire DC",
+      "lat": 53.842315876137604,
+      "lon": -0.42276720620513036,
+      "level": 0,
+      "stationCount": 4,
+      "personnel": 141,
+      "coverageRadiusM": 34375,
+      "region": "North"
+    },
+    {
+      "id": 2650384,
+      "name": "Republic of Ireland (ROI) 🇮🇪",
+      "lat": 53.339497194248956,
+      "lon": -6.295411762092058,
+      "level": 0,
+      "stationCount": 4,
+      "personnel": 59,
+      "coverageRadiusM": 116985,
+      "region": "Wales"
+    },
+    {
+      "id": 2621069,
+      "name": "Worcestershire DC",
+      "lat": 52.189117993569845,
+      "lon": -2.2222760915892956,
+      "level": 0,
+      "stationCount": 4,
+      "personnel": 104,
+      "coverageRadiusM": 22888,
+      "region": "South West"
+    },
+    {
+      "id": 2339242,
+      "name": "Heathrow Airport",
+      "lat": 51.471793716660486,
+      "lon": -0.46553505969875775,
+      "level": 0,
+      "stationCount": 3,
+      "personnel": 600,
+      "coverageRadiusM": 3000,
+      "region": "South East"
+    },
+    {
+      "id": 2621054,
+      "name": "Leicestershire DC",
+      "lat": 52.62720174725001,
+      "lon": -1.1352211796563945,
+      "level": 0,
+      "stationCount": 3,
+      "personnel": 114,
+      "coverageRadiusM": 17598,
+      "region": "Midlands"
+    },
+    {
+      "id": 2621062,
+      "name": "Staffordshire DC",
+      "lat": 52.809699180135574,
+      "lon": -2.108214877646262,
+      "level": 0,
+      "stationCount": 3,
+      "personnel": 114,
+      "coverageRadiusM": 26320,
+      "region": "Midlands"
+    },
+    {
+      "id": 2633103,
+      "name": "Lincolnshire DC",
+      "lat": 53.2303709642346,
+      "lon": -0.5402394078574588,
+      "level": 0,
+      "stationCount": 2,
+      "personnel": 35,
+      "coverageRadiusM": 43013,
+      "region": "Midlands"
+    },
+    {
+      "id": 2652889,
+      "name": "Netherlands 🇳🇱 FCR",
+      "lat": 51.910516212705986,
+      "lon": 4.467490834460478,
+      "level": 0,
+      "stationCount": 2,
+      "personnel": 28,
+      "coverageRadiusM": 89316,
+      "region": "South East"
+    },
+    {
+      "id": 2659464,
+      "name": "Berkshire",
+      "lat": 51.450610971372114,
+      "lon": -0.9862098792154756,
+      "level": 0,
+      "stationCount": 1,
+      "personnel": 3,
+      "coverageRadiusM": 24703,
+      "region": "London & South"
+    },
+    {
+      "id": 2656579,
+      "name": "Surrey FCR",
+      "lat": 51.23566501757763,
+      "lon": -0.584295123546256,
+      "level": 0,
+      "stationCount": 1,
+      "personnel": 10,
+      "coverageRadiusM": 37521,
+      "region": "London & South"
+    }
+  ],
   "stations": [
     {
       "id": 2660728,
@@ -112,7 +513,10 @@
       "lon": -2.6157842185871183,
       "personnel": 5,
       "small": true,
-      "region": "South West"
+      "region": "South West",
+      "dcId": 2353684,
+      "dcName": "Somerset FCR ",
+      "dcAssign": "api"
     },
     {
       "id": 2660724,
@@ -124,7 +528,10 @@
       "lon": -2.595157406713152,
       "personnel": 6,
       "small": false,
-      "region": "South West"
+      "region": "South West",
+      "dcId": 2353684,
+      "dcName": "Somerset FCR ",
+      "dcAssign": "api"
     },
     {
       "id": 2660725,
@@ -136,7 +543,10 @@
       "lon": -2.5950941548407322,
       "personnel": 12,
       "small": false,
-      "region": "South West"
+      "region": "South West",
+      "dcId": 2353684,
+      "dcName": "Somerset FCR ",
+      "dcAssign": "api"
     },
     {
       "id": 2620984,
@@ -148,7 +558,10 @@
       "lon": -1.4622649,
       "personnel": 38,
       "small": true,
-      "region": "Midlands"
+      "region": "Midlands",
+      "dcId": 2620974,
+      "dcName": "South Yorkshire DC",
+      "dcAssign": "api"
     },
     {
       "id": 2656560,
@@ -160,7 +573,10 @@
       "lon": -0.09754761756803777,
       "personnel": 9,
       "small": true,
-      "region": "South East"
+      "region": "South East",
+      "dcId": 1984642,
+      "dcName": "West, South, SW,NW North London Dispatch",
+      "dcAssign": "api"
     },
     {
       "id": 2642423,
@@ -172,7 +588,10 @@
       "lon": -4.455331959290522,
       "personnel": 21,
       "small": true,
-      "region": "South West"
+      "region": "South West",
+      "dcId": 2638184,
+      "dcName": "Cornwall FCR",
+      "dcAssign": "api"
     },
     {
       "id": 2650202,
@@ -184,7 +603,10 @@
       "lon": -4.615494676571625,
       "personnel": 16,
       "small": true,
-      "region": "Wales"
+      "region": "Wales",
+      "dcId": 2469519,
+      "dcName": "𝙒𝙖𝙡𝙚𝙨 🏴󠁧󠁢󠁷󠁬󠁳󠁿 𝘾𝙮𝙢𝙧𝙪",
+      "dcAssign": "api"
     },
     {
       "id": 2462419,
@@ -196,7 +618,10 @@
       "lon": -2.4875711,
       "personnel": 181,
       "small": true,
-      "region": "South West"
+      "region": "South West",
+      "dcId": 2353684,
+      "dcName": "Somerset FCR ",
+      "dcAssign": "api"
     },
     {
       "id": 2626367,
@@ -208,7 +633,10 @@
       "lon": -5.1231965107401924,
       "personnel": 29,
       "small": true,
-      "region": "Scotland"
+      "region": "Scotland",
+      "dcId": 2621314,
+      "dcName": "Southern Scotland DC",
+      "dcAssign": "api"
     },
     {
       "id": 2634272,
@@ -220,7 +648,10 @@
       "lon": -0.7431816,
       "personnel": 3,
       "small": true,
-      "region": "Midlands"
+      "region": "Midlands",
+      "dcId": 2633103,
+      "dcName": "Lincolnshire DC",
+      "dcAssign": "api"
     },
     {
       "id": 2633103,
@@ -232,7 +663,10 @@
       "lon": -0.5402394078574588,
       "personnel": 0,
       "small": false,
-      "region": "Midlands"
+      "region": "Midlands",
+      "dcId": 2633103,
+      "dcName": "Lincolnshire DC",
+      "dcAssign": "self"
     },
     {
       "id": 2590776,
@@ -244,7 +678,10 @@
       "lon": -2.4793914172447127,
       "personnel": 0,
       "small": false,
-      "region": "South West"
+      "region": "South West",
+      "dcId": 2353684,
+      "dcName": "Somerset FCR ",
+      "dcAssign": "api"
     },
     {
       "id": 2642430,
@@ -256,7 +693,10 @@
       "lon": -5.546813042738823,
       "personnel": 21,
       "small": true,
-      "region": "South West"
+      "region": "South West",
+      "dcId": 2638184,
+      "dcName": "Cornwall FCR",
+      "dcAssign": "api"
     },
     {
       "id": 2652177,
@@ -268,7 +708,10 @@
       "lon": -2.5672101259029487,
       "personnel": 14,
       "small": true,
-      "region": "South West"
+      "region": "South West",
+      "dcId": 2652166,
+      "dcName": "Herefordshire FCR ",
+      "dcAssign": "api"
     },
     {
       "id": 2624706,
@@ -280,7 +723,10 @@
       "lon": -2.1338362339527714,
       "personnel": 33,
       "small": true,
-      "region": "South West"
+      "region": "South West",
+      "dcId": 2635513,
+      "dcName": "Wiltshire DC",
+      "dcAssign": "api"
     },
     {
       "id": 2652271,
@@ -292,7 +738,10 @@
       "lon": -6.300130297520047,
       "personnel": 14,
       "small": true,
-      "region": "Wales"
+      "region": "Wales",
+      "dcId": 2650384,
+      "dcName": "Republic of Ireland (ROI) 🇮🇪",
+      "dcAssign": "api"
     },
     {
       "id": 2601002,
@@ -304,7 +753,10 @@
       "lon": 2.1224659410408617,
       "personnel": 57,
       "small": true,
-      "region": "Other / Overseas"
+      "region": "Other / Overseas",
+      "dcId": 2649006,
+      "dcName": "France 🇫🇷 FCR ",
+      "dcAssign": "api"
     },
     {
       "id": 2567204,
@@ -316,7 +768,10 @@
       "lon": -2.5935292983084244,
       "personnel": 87,
       "small": false,
-      "region": "South West"
+      "region": "South West",
+      "dcId": 2353684,
+      "dcName": "Somerset FCR ",
+      "dcAssign": "api"
     },
     {
       "id": 2650741,
@@ -328,7 +783,10 @@
       "lon": -6.571596424975386,
       "personnel": 15,
       "small": true,
-      "region": "Wales"
+      "region": "Wales",
+      "dcId": 2650384,
+      "dcName": "Republic of Ireland (ROI) 🇮🇪",
+      "dcAssign": "api"
     },
     {
       "id": 2567755,
@@ -340,7 +798,10 @@
       "lon": -2.2255833,
       "personnel": 87,
       "small": false,
-      "region": "South West"
+      "region": "South West",
+      "dcId": 2635513,
+      "dcName": "Wiltshire DC",
+      "dcAssign": "api"
     },
     {
       "id": 2620235,
@@ -352,7 +813,10 @@
       "lon": -1.5302058996347294,
       "personnel": 39,
       "small": true,
-      "region": "North"
+      "region": "North",
+      "dcId": 2620223,
+      "dcName": "⁠[WY-ECC] West Yorks Emergency Control⁠",
+      "dcAssign": "api"
     },
     {
       "id": 2652179,
@@ -364,7 +828,10 @@
       "lon": -2.4163338021566347,
       "personnel": 14,
       "small": true,
-      "region": "South West"
+      "region": "South West",
+      "dcId": 2652166,
+      "dcName": "Herefordshire FCR ",
+      "dcAssign": "api"
     },
     {
       "id": 2636836,
@@ -376,7 +843,10 @@
       "lon": -3.2401690573569875,
       "personnel": 24,
       "small": true,
-      "region": "South West"
+      "region": "South West",
+      "dcId": 2635219,
+      "dcName": "Devon DC",
+      "dcAssign": "api"
     },
     {
       "id": 2656568,
@@ -388,7 +858,10 @@
       "lon": -0.3682269234190269,
       "personnel": 10,
       "small": true,
-      "region": "South East"
+      "region": "South East",
+      "dcId": 1984642,
+      "dcName": "West, South, SW,NW North London Dispatch",
+      "dcAssign": "api"
     },
     {
       "id": 2620856,
@@ -400,7 +873,10 @@
       "lon": -1.8987531737172303,
       "personnel": 38,
       "small": true,
-      "region": "North"
+      "region": "North",
+      "dcId": 2620223,
+      "dcName": "⁠[WY-ECC] West Yorks Emergency Control⁠",
+      "dcAssign": "api"
     },
     {
       "id": 2621027,
@@ -412,7 +888,10 @@
       "lon": -1.4858456,
       "personnel": 38,
       "small": true,
-      "region": "Midlands"
+      "region": "Midlands",
+      "dcId": 2621011,
+      "dcName": "Derbyshire DC",
+      "dcAssign": "api"
     },
     {
       "id": 2507319,
@@ -424,7 +903,10 @@
       "lon": -2.5925974649951167,
       "personnel": 138,
       "small": false,
-      "region": "South West"
+      "region": "South West",
+      "dcId": 2353684,
+      "dcName": "Somerset FCR ",
+      "dcAssign": "api"
     },
     {
       "id": 2635213,
@@ -436,7 +918,10 @@
       "lon": -3.3141858,
       "personnel": 27,
       "small": true,
-      "region": "South West"
+      "region": "South West",
+      "dcId": 2353684,
+      "dcName": "Somerset FCR ",
+      "dcAssign": "api"
     },
     {
       "id": 2647876,
@@ -448,7 +933,10 @@
       "lon": -3.5400309,
       "personnel": 18,
       "small": true,
-      "region": "Wales"
+      "region": "Wales",
+      "dcId": 2469519,
+      "dcName": "𝙒𝙖𝙡𝙚𝙨 🏴󠁧󠁢󠁷󠁬󠁳󠁿 𝘾𝙮𝙢𝙧𝙪",
+      "dcAssign": "api"
     },
     {
       "id": 1984642,
@@ -460,7 +948,10 @@
       "lon": -0.1506834898507324,
       "personnel": 0,
       "small": false,
-      "region": "South East"
+      "region": "South East",
+      "dcId": 1984642,
+      "dcName": "West, South, SW,NW North London Dispatch",
+      "dcAssign": "self"
     },
     {
       "id": 2621086,
@@ -472,7 +963,10 @@
       "lon": -1.8027417,
       "personnel": 38,
       "small": true,
-      "region": "Midlands"
+      "region": "Midlands",
+      "dcId": 2621080,
+      "dcName": "West Midlands",
+      "dcAssign": "api"
     },
     {
       "id": 2620993,
@@ -484,7 +978,10 @@
       "lon": -1.091831225667044,
       "personnel": 38,
       "small": true,
-      "region": "North"
+      "region": "North",
+      "dcId": 2620974,
+      "dcName": "South Yorkshire DC",
+      "dcAssign": "api"
     },
     {
       "id": 2621072,
@@ -496,7 +993,10 @@
       "lon": -2.1535861524554365,
       "personnel": 38,
       "small": true,
-      "region": "South West"
+      "region": "South West",
+      "dcId": 2582593,
+      "dcName": "Gloucestershire Dispatch",
+      "dcAssign": "api"
     },
     {
       "id": 2638175,
@@ -508,7 +1008,10 @@
       "lon": -4.0723033,
       "personnel": 24,
       "small": true,
-      "region": "South West"
+      "region": "South West",
+      "dcId": 2635219,
+      "dcName": "Devon DC",
+      "dcAssign": "api"
     },
     {
       "id": 2648337,
@@ -520,7 +1023,10 @@
       "lon": -3.3554926,
       "personnel": 17,
       "small": true,
-      "region": "Wales"
+      "region": "Wales",
+      "dcId": 2469519,
+      "dcName": "𝙒𝙖𝙡𝙚𝙨 🏴󠁧󠁢󠁷󠁬󠁳󠁿 𝘾𝙮𝙢𝙧𝙪",
+      "dcAssign": "api"
     },
     {
       "id": 2620951,
@@ -532,7 +1038,10 @@
       "lon": -1.3830969550984282,
       "personnel": 44,
       "small": true,
-      "region": "North"
+      "region": "North",
+      "dcId": 2620223,
+      "dcName": "⁠[WY-ECC] West Yorks Emergency Control⁠",
+      "dcAssign": "api"
     },
     {
       "id": 2648346,
@@ -544,7 +1053,10 @@
       "lon": -4.979311457268137,
       "personnel": 17,
       "small": true,
-      "region": "Wales"
+      "region": "Wales",
+      "dcId": 2469519,
+      "dcName": "𝙒𝙖𝙡𝙚𝙨 🏴󠁧󠁢󠁷󠁬󠁳󠁿 𝘾𝙮𝙢𝙧𝙪",
+      "dcAssign": "api"
     },
     {
       "id": 2465169,
@@ -556,7 +1068,10 @@
       "lon": -2.1411859989166264,
       "personnel": 175,
       "small": false,
-      "region": "South West"
+      "region": "South West",
+      "dcId": 2635513,
+      "dcName": "Wiltshire DC",
+      "dcAssign": "api"
     },
     {
       "id": 2657269,
@@ -568,7 +1083,10 @@
       "lon": -1.4027914798258918,
       "personnel": 9,
       "small": true,
-      "region": "Other / Overseas"
+      "region": "Other / Overseas",
+      "dcId": 2311778,
+      "dcName": "Hampshire DC",
+      "dcAssign": "api"
     },
     {
       "id": 2636843,
@@ -580,7 +1098,10 @@
       "lon": -3.375965,
       "personnel": 24,
       "small": true,
-      "region": "South West"
+      "region": "South West",
+      "dcId": 2635219,
+      "dcName": "Devon DC",
+      "dcAssign": "api"
     },
     {
       "id": 2650726,
@@ -592,7 +1113,10 @@
       "lon": -3.3763724,
       "personnel": 15,
       "small": true,
-      "region": "Wales"
+      "region": "Wales",
+      "dcId": 2469519,
+      "dcName": "𝙒𝙖𝙡𝙚𝙨 🏴󠁧󠁢󠁷󠁬󠁳󠁿 𝘾𝙮𝙢𝙧𝙪",
+      "dcAssign": "api"
     },
     {
       "id": 2635644,
@@ -604,7 +1128,10 @@
       "lon": -2.4471134149958846,
       "personnel": 0,
       "small": false,
-      "region": "South West"
+      "region": "South West",
+      "dcId": 2635644,
+      "dcName": "Dorset DC",
+      "dcAssign": "self"
     },
     {
       "id": 2657286,
@@ -616,7 +1143,10 @@
       "lon": -1.0541828,
       "personnel": 9,
       "small": true,
-      "region": "Other / Overseas"
+      "region": "Other / Overseas",
+      "dcId": 2311778,
+      "dcName": "Hampshire DC",
+      "dcAssign": "api"
     },
     {
       "id": 2649005,
@@ -628,7 +1158,10 @@
       "lon": -4.2576714438667285,
       "personnel": 16,
       "small": true,
-      "region": "Wales"
+      "region": "Wales",
+      "dcId": 2469519,
+      "dcName": "𝙒𝙖𝙡𝙚𝙨 🏴󠁧󠁢󠁷󠁬󠁳󠁿 𝘾𝙮𝙢𝙧𝙪",
+      "dcAssign": "api"
     },
     {
       "id": 2656579,
@@ -640,7 +1173,10 @@
       "lon": -0.584295123546256,
       "personnel": 0,
       "small": false,
-      "region": "London & South"
+      "region": "London & South",
+      "dcId": 2656579,
+      "dcName": "Surrey FCR",
+      "dcAssign": "self"
     },
     {
       "id": 2650725,
@@ -652,7 +1188,10 @@
       "lon": -3.049472384245318,
       "personnel": 15,
       "small": true,
-      "region": "Wales"
+      "region": "Wales",
+      "dcId": 2469519,
+      "dcName": "𝙒𝙖𝙡𝙚𝙨 🏴󠁧󠁢󠁷󠁬󠁳󠁿 𝘾𝙮𝙢𝙧𝙪",
+      "dcAssign": "api"
     },
     {
       "id": 2649545,
@@ -664,7 +1203,10 @@
       "lon": -4.149441,
       "personnel": 16,
       "small": true,
-      "region": "Wales"
+      "region": "Wales",
+      "dcId": 2469519,
+      "dcName": "𝙒𝙖𝙡𝙚𝙨 🏴󠁧󠁢󠁷󠁬󠁳󠁿 𝘾𝙮𝙢𝙧𝙪",
+      "dcAssign": "api"
     },
     {
       "id": 2481630,
@@ -676,7 +1218,10 @@
       "lon": -2.7180882210559867,
       "personnel": 164,
       "small": false,
-      "region": "South West"
+      "region": "South West",
+      "dcId": 2353684,
+      "dcName": "Somerset FCR ",
+      "dcAssign": "api"
     },
     {
       "id": 2620872,
@@ -688,7 +1233,10 @@
       "lon": -2.0162988933553647,
       "personnel": 45,
       "small": true,
-      "region": "North"
+      "region": "North",
+      "dcId": 1988744,
+      "dcName": "(M2XN) North Yorkshire DC",
+      "dcAssign": "api"
     },
     {
       "id": 1844373,
@@ -700,7 +1248,10 @@
       "lon": -0.05814690200677775,
       "personnel": 0,
       "small": false,
-      "region": "South East"
+      "region": "South East",
+      "dcId": 1844373,
+      "dcName": "Central,South/North East London Dispatch",
+      "dcAssign": "self"
     },
     {
       "id": 2652884,
@@ -712,7 +1263,10 @@
       "lon": 2.9331526423237713,
       "personnel": 14,
       "small": true,
-      "region": "South East"
+      "region": "South East",
+      "dcId": 2652880,
+      "dcName": "Belgium 🇧🇪 FCR",
+      "dcAssign": "api"
     },
     {
       "id": 2635481,
@@ -724,7 +1278,10 @@
       "lon": -2.4116315,
       "personnel": 27,
       "small": true,
-      "region": "South West"
+      "region": "South West",
+      "dcId": 2353684,
+      "dcName": "Somerset FCR ",
+      "dcAssign": "api"
     },
     {
       "id": 2620843,
@@ -736,7 +1293,10 @@
       "lon": -2.0250951959993118,
       "personnel": 45,
       "small": true,
-      "region": "North"
+      "region": "North",
+      "dcId": 1988744,
+      "dcName": "(M2XN) North Yorkshire DC",
+      "dcAssign": "api"
     },
     {
       "id": 2648325,
@@ -748,7 +1308,10 @@
       "lon": -3.8156688,
       "personnel": 17,
       "small": true,
-      "region": "Wales"
+      "region": "Wales",
+      "dcId": 2469519,
+      "dcName": "𝙒𝙖𝙡𝙚𝙨 🏴󠁧󠁢󠁷󠁬󠁳󠁿 𝘾𝙮𝙢𝙧𝙪",
+      "dcAssign": "api"
     },
     {
       "id": 2650693,
@@ -760,7 +1323,10 @@
       "lon": -3.2167231395278275,
       "personnel": 15,
       "small": true,
-      "region": "Wales"
+      "region": "Wales",
+      "dcId": 2469519,
+      "dcName": "𝙒𝙖𝙡𝙚𝙨 🏴󠁧󠁢󠁷󠁬󠁳󠁿 𝘾𝙮𝙢𝙧𝙪",
+      "dcAssign": "api"
     },
     {
       "id": 2620992,
@@ -772,7 +1338,10 @@
       "lon": -1.3127349816323943,
       "personnel": 37,
       "small": true,
-      "region": "North"
+      "region": "North",
+      "dcId": 2620223,
+      "dcName": "⁠[WY-ECC] West Yorks Emergency Control⁠",
+      "dcAssign": "api"
     },
     {
       "id": 2635499,
@@ -784,7 +1353,10 @@
       "lon": -3.3943214,
       "personnel": 27,
       "small": true,
-      "region": "South West"
+      "region": "South West",
+      "dcId": 2635219,
+      "dcName": "Devon DC",
+      "dcAssign": "api"
     },
     {
       "id": 2350539,
@@ -796,7 +1368,10 @@
       "lon": -1.0836231114022965,
       "personnel": 200,
       "small": false,
-      "region": "North"
+      "region": "North",
+      "dcId": 2349753,
+      "dcName": "(M2XN) York city",
+      "dcAssign": "api"
     },
     {
       "id": 2572615,
@@ -808,7 +1383,10 @@
       "lon": -2.7167575706776246,
       "personnel": 103,
       "small": false,
-      "region": "South West"
+      "region": "South West",
+      "dcId": 2353684,
+      "dcName": "Somerset FCR ",
+      "dcAssign": "api"
     },
     {
       "id": 2629164,
@@ -820,7 +1398,10 @@
       "lon": -2.5696126581497745,
       "personnel": 27,
       "small": true,
-      "region": "South West"
+      "region": "South West",
+      "dcId": 2582593,
+      "dcName": "Gloucestershire Dispatch",
+      "dcAssign": "api"
     },
     {
       "id": 2621041,
@@ -832,7 +1413,10 @@
       "lon": -1.422410250798621,
       "personnel": 38,
       "small": true,
-      "region": "Midlands"
+      "region": "Midlands",
+      "dcId": 2621011,
+      "dcName": "Derbyshire DC",
+      "dcAssign": "api"
     },
     {
       "id": 2448103,
@@ -844,7 +1428,10 @@
       "lon": -2.4544787803938712,
       "personnel": 184,
       "small": false,
-      "region": "South West"
+      "region": "South West",
+      "dcId": 2353684,
+      "dcName": "Somerset FCR ",
+      "dcAssign": "api"
     },
     {
       "id": 2621043,
@@ -856,7 +1443,10 @@
       "lon": -1.2598028402246915,
       "personnel": 38,
       "small": true,
-      "region": "Midlands"
+      "region": "Midlands",
+      "dcId": 2364325,
+      "dcName": "Nottinghamshire Dispatch Centre",
+      "dcAssign": "api"
     },
     {
       "id": 2477992,
@@ -868,7 +1458,10 @@
       "lon": -2.9690287,
       "personnel": 157,
       "small": true,
-      "region": "South West"
+      "region": "South West",
+      "dcId": 2353684,
+      "dcName": "Somerset FCR ",
+      "dcAssign": "api"
     },
     {
       "id": 2325712,
@@ -880,7 +1473,10 @@
       "lon": -0.40101126681864463,
       "personnel": 200,
       "small": false,
-      "region": "North"
+      "region": "North",
+      "dcId": 2325711,
+      "dcName": "(M2XN) E-Yorks FCR",
+      "dcAssign": "api"
     },
     {
       "id": 2639112,
@@ -892,7 +1488,10 @@
       "lon": -4.5395221,
       "personnel": 23,
       "small": true,
-      "region": "South West"
+      "region": "South West",
+      "dcId": 2638184,
+      "dcName": "Cornwall FCR",
+      "dcAssign": "api"
     },
     {
       "id": 2636821,
@@ -904,7 +1503,10 @@
       "lon": -2.1159648,
       "personnel": 26,
       "small": true,
-      "region": "South West"
+      "region": "South West",
+      "dcId": 2635644,
+      "dcName": "Dorset DC",
+      "dcAssign": "api"
     },
     {
       "id": 2633101,
@@ -916,7 +1518,10 @@
       "lon": -1.1327364566303637,
       "personnel": 29,
       "small": true,
-      "region": "Midlands"
+      "region": "Midlands",
+      "dcId": 2364325,
+      "dcName": "Nottinghamshire Dispatch Centre",
+      "dcAssign": "api"
     },
     {
       "id": 2652881,
@@ -928,7 +1533,10 @@
       "lon": 2.3958456,
       "personnel": 14,
       "small": true,
-      "region": "Other / Overseas"
+      "region": "Other / Overseas",
+      "dcId": 2649006,
+      "dcName": "France 🇫🇷 FCR ",
+      "dcAssign": "api"
     },
     {
       "id": 2653861,
@@ -940,7 +1548,10 @@
       "lon": -3.1063088305429942,
       "personnel": 12,
       "small": true,
-      "region": "South West"
+      "region": "South West",
+      "dcId": 2353684,
+      "dcName": "Somerset FCR ",
+      "dcAssign": "api"
     },
     {
       "id": 2654954,
@@ -952,7 +1563,10 @@
       "lon": -2.7922988260113812,
       "personnel": 12,
       "small": false,
-      "region": "South West"
+      "region": "South West",
+      "dcId": 2353684,
+      "dcName": "Somerset FCR ",
+      "dcAssign": "api"
     },
     {
       "id": 2648933,
@@ -964,7 +1578,10 @@
       "lon": -4.6563724,
       "personnel": 16,
       "small": true,
-      "region": "Wales"
+      "region": "Wales",
+      "dcId": 2469519,
+      "dcName": "𝙒𝙖𝙡𝙚𝙨 🏴󠁧󠁢󠁷󠁬󠁳󠁿 𝘾𝙮𝙢𝙧𝙪",
+      "dcAssign": "api"
     },
     {
       "id": 2620854,
@@ -976,7 +1593,10 @@
       "lon": -1.89762991270057,
       "personnel": 37,
       "small": true,
-      "region": "North"
+      "region": "North",
+      "dcId": 2620223,
+      "dcName": "⁠[WY-ECC] West Yorks Emergency Control⁠",
+      "dcAssign": "api"
     },
     {
       "id": 2621020,
@@ -988,7 +1608,10 @@
       "lon": -1.3728322941018398,
       "personnel": 38,
       "small": true,
-      "region": "Midlands"
+      "region": "Midlands",
+      "dcId": 2621011,
+      "dcName": "Derbyshire DC",
+      "dcAssign": "api"
     },
     {
       "id": 2652212,
@@ -1000,7 +1623,10 @@
       "lon": -4.744907417464442,
       "personnel": 14,
       "small": true,
-      "region": "North"
+      "region": "North",
+      "dcId": 2650412,
+      "dcName": "Isle Of Man 🇮🇲 ",
+      "dcAssign": "api"
     },
     {
       "id": 2652203,
@@ -1012,7 +1638,10 @@
       "lon": -2.2701814212680707,
       "personnel": 14,
       "small": true,
-      "region": "Midlands"
+      "region": "Midlands",
+      "dcId": 2621069,
+      "dcName": "Worcestershire DC",
+      "dcAssign": "api"
     },
     {
       "id": 2635193,
@@ -1024,7 +1653,10 @@
       "lon": -3.080922437314304,
       "personnel": 27,
       "small": true,
-      "region": "South West"
+      "region": "South West",
+      "dcId": 2353684,
+      "dcName": "Somerset FCR ",
+      "dcAssign": "api"
     },
     {
       "id": 2652172,
@@ -1036,7 +1668,10 @@
       "lon": -2.7215013836998176,
       "personnel": 14,
       "small": true,
-      "region": "South West"
+      "region": "South West",
+      "dcId": 2652166,
+      "dcName": "Herefordshire FCR ",
+      "dcAssign": "api"
     },
     {
       "id": 2633721,
@@ -1048,7 +1683,10 @@
       "lon": -2.627221920634777,
       "personnel": 28,
       "small": true,
-      "region": "South West"
+      "region": "South West",
+      "dcId": 2353684,
+      "dcName": "Somerset FCR ",
+      "dcAssign": "api"
     },
     {
       "id": 2572625,
@@ -1060,7 +1698,10 @@
       "lon": -2.716110201770595,
       "personnel": 96,
       "small": false,
-      "region": "South West"
+      "region": "South West",
+      "dcId": 2353684,
+      "dcName": "Somerset FCR ",
+      "dcAssign": "api"
     },
     {
       "id": 2642429,
@@ -1072,7 +1713,10 @@
       "lon": -5.2465386,
       "personnel": 21,
       "small": true,
-      "region": "South West"
+      "region": "South West",
+      "dcId": 2638184,
+      "dcName": "Cornwall FCR",
+      "dcAssign": "api"
     },
     {
       "id": 2642419,
@@ -1084,7 +1728,10 @@
       "lon": -4.3632817,
       "personnel": 21,
       "small": true,
-      "region": "South West"
+      "region": "South West",
+      "dcId": 2638184,
+      "dcName": "Cornwall FCR",
+      "dcAssign": "api"
     },
     {
       "id": 2465943,
@@ -1096,7 +1743,10 @@
       "lon": -2.3830556,
       "personnel": 175,
       "small": false,
-      "region": "South West"
+      "region": "South West",
+      "dcId": 2353684,
+      "dcName": "Somerset FCR ",
+      "dcAssign": "api"
     },
     {
       "id": 2477933,
@@ -1108,7 +1758,10 @@
       "lon": -3.0394315,
       "personnel": 59,
       "small": true,
-      "region": "Wales"
+      "region": "Wales",
+      "dcId": 2469519,
+      "dcName": "𝙒𝙖𝙡𝙚𝙨 🏴󠁧󠁢󠁷󠁬󠁳󠁿 𝘾𝙮𝙢𝙧𝙪",
+      "dcAssign": "api"
     },
     {
       "id": 2621017,
@@ -1120,7 +1773,10 @@
       "lon": -1.2114973,
       "personnel": 38,
       "small": true,
-      "region": "Midlands"
+      "region": "Midlands",
+      "dcId": 2364325,
+      "dcName": "Nottinghamshire Dispatch Centre",
+      "dcAssign": "api"
     },
     {
       "id": 2621668,
@@ -1132,7 +1788,10 @@
       "lon": -2.4146322,
       "personnel": 37,
       "small": true,
-      "region": "South West"
+      "region": "South West",
+      "dcId": 2353684,
+      "dcName": "Somerset FCR ",
+      "dcAssign": "api"
     },
     {
       "id": 2621045,
@@ -1144,7 +1803,10 @@
       "lon": -1.4093306559738938,
       "personnel": 38,
       "small": true,
-      "region": "Midlands"
+      "region": "Midlands",
+      "dcId": 2621011,
+      "dcName": "Derbyshire DC",
+      "dcAssign": "api"
     },
     {
       "id": 2652880,
@@ -1156,7 +1818,10 @@
       "lon": 4.349442654071824,
       "personnel": 0,
       "small": false,
-      "region": "Other / Overseas"
+      "region": "Other / Overseas",
+      "dcId": 2652880,
+      "dcName": "Belgium 🇧🇪 FCR",
+      "dcAssign": "self"
     },
     {
       "id": 2349733,
@@ -1168,7 +1833,10 @@
       "lon": -1.0846358683991766,
       "personnel": 0,
       "small": false,
-      "region": "North"
+      "region": "North",
+      "dcId": 2349753,
+      "dcName": "(M2XN) York city",
+      "dcAssign": "api"
     },
     {
       "id": 2621033,
@@ -1180,7 +1848,10 @@
       "lon": -1.4820718206839503,
       "personnel": 38,
       "small": true,
-      "region": "Midlands"
+      "region": "Midlands",
+      "dcId": 2621011,
+      "dcName": "Derbyshire DC",
+      "dcAssign": "api"
     },
     {
       "id": 2635502,
@@ -1192,7 +1863,10 @@
       "lon": -3.487809566422185,
       "personnel": 27,
       "small": true,
-      "region": "South West"
+      "region": "South West",
+      "dcId": 2635219,
+      "dcName": "Devon DC",
+      "dcAssign": "api"
     },
     {
       "id": 2620983,
@@ -1204,7 +1878,10 @@
       "lon": -1.4416870516209537,
       "personnel": 38,
       "small": true,
-      "region": "North"
+      "region": "North",
+      "dcId": 2620974,
+      "dcName": "South Yorkshire DC",
+      "dcAssign": "api"
     },
     {
       "id": 2652889,
@@ -1216,7 +1893,10 @@
       "lon": 4.467490834460478,
       "personnel": 0,
       "small": false,
-      "region": "South East"
+      "region": "South East",
+      "dcId": 2652889,
+      "dcName": "Netherlands 🇳🇱 FCR",
+      "dcAssign": "self"
     },
     {
       "id": 2652162,
@@ -1228,7 +1908,10 @@
       "lon": -2.710787753627768,
       "personnel": 14,
       "small": true,
-      "region": "Midlands"
+      "region": "Midlands",
+      "dcId": 2650937,
+      "dcName": "Shropshire FCR ",
+      "dcAssign": "api"
     },
     {
       "id": 2364326,
@@ -1240,7 +1923,10 @@
       "lon": -1.139230979190693,
       "personnel": 258,
       "small": true,
-      "region": "Midlands"
+      "region": "Midlands",
+      "dcId": 2364325,
+      "dcName": "Nottinghamshire Dispatch Centre",
+      "dcAssign": "api"
     },
     {
       "id": 2654844,
@@ -1252,7 +1938,10 @@
       "lon": -2.961621783951354,
       "personnel": 19,
       "small": true,
-      "region": "South West"
+      "region": "South West",
+      "dcId": 2353684,
+      "dcName": "Somerset FCR ",
+      "dcAssign": "api"
     },
     {
       "id": 2567770,
@@ -1264,7 +1953,10 @@
       "lon": -2.1052394,
       "personnel": 94,
       "small": false,
-      "region": "South West"
+      "region": "South West",
+      "dcId": 2635513,
+      "dcName": "Wiltshire DC",
+      "dcAssign": "api"
     },
     {
       "id": 2621355,
@@ -1276,7 +1968,10 @@
       "lon": -3.2513664,
       "personnel": 38,
       "small": true,
-      "region": "North"
+      "region": "North",
+      "dcId": 2621314,
+      "dcName": "Southern Scotland DC",
+      "dcAssign": "api"
     },
     {
       "id": 2626287,
@@ -1288,7 +1983,10 @@
       "lon": -1.6302601780130108,
       "personnel": 33,
       "small": true,
-      "region": "North"
+      "region": "North",
+      "dcId": 2620223,
+      "dcName": "⁠[WY-ECC] West Yorks Emergency Control⁠",
+      "dcAssign": "api"
     },
     {
       "id": 2642424,
@@ -1300,7 +1998,10 @@
       "lon": -4.984137609010314,
       "personnel": 21,
       "small": true,
-      "region": "South West"
+      "region": "South West",
+      "dcId": 2638184,
+      "dcName": "Cornwall FCR",
+      "dcAssign": "api"
     },
     {
       "id": 2354555,
@@ -1312,7 +2013,10 @@
       "lon": -2.4551395021973614,
       "personnel": 138,
       "small": false,
-      "region": "South West"
+      "region": "South West",
+      "dcId": 2353684,
+      "dcName": "Somerset FCR ",
+      "dcAssign": "api"
     },
     {
       "id": 2638169,
@@ -1324,7 +2028,10 @@
       "lon": -4.0624267,
       "personnel": 18,
       "small": true,
-      "region": "South West"
+      "region": "South West",
+      "dcId": 2635219,
+      "dcName": "Devon DC",
+      "dcAssign": "api"
     },
     {
       "id": 2589929,
@@ -1336,7 +2043,10 @@
       "lon": -2.2497843,
       "personnel": 69,
       "small": true,
-      "region": "South West"
+      "region": "South West",
+      "dcId": 2582593,
+      "dcName": "Gloucestershire Dispatch",
+      "dcAssign": "api"
     },
     {
       "id": 2621083,
@@ -1348,7 +2058,10 @@
       "lon": -2.0485183,
       "personnel": 38,
       "small": true,
-      "region": "Midlands"
+      "region": "Midlands",
+      "dcId": 2621069,
+      "dcName": "Worcestershire DC",
+      "dcAssign": "api"
     },
     {
       "id": 2638178,
@@ -1360,7 +2073,10 @@
       "lon": -3.870049438306164,
       "personnel": 24,
       "small": true,
-      "region": "South West"
+      "region": "South West",
+      "dcId": 2635219,
+      "dcName": "Devon DC",
+      "dcAssign": "api"
     },
     {
       "id": 2620995,
@@ -1372,7 +2088,10 @@
       "lon": -1.4659387,
       "personnel": 38,
       "small": true,
-      "region": "Midlands"
+      "region": "Midlands",
+      "dcId": 2620974,
+      "dcName": "South Yorkshire DC",
+      "dcAssign": "api"
     },
     {
       "id": 2642420,
@@ -1384,7 +2103,10 @@
       "lon": -4.3109173,
       "personnel": 21,
       "small": true,
-      "region": "South West"
+      "region": "South West",
+      "dcId": 2638184,
+      "dcName": "Cornwall FCR",
+      "dcAssign": "api"
     },
     {
       "id": 2621091,
@@ -1396,7 +2118,10 @@
       "lon": -2.0466158,
       "personnel": 38,
       "small": true,
-      "region": "Midlands"
+      "region": "Midlands",
+      "dcId": 2621080,
+      "dcName": "West Midlands",
+      "dcAssign": "api"
     },
     {
       "id": 2636824,
@@ -1408,7 +2133,10 @@
       "lon": -2.2734998930933736,
       "personnel": 26,
       "small": true,
-      "region": "South West"
+      "region": "South West",
+      "dcId": 2635644,
+      "dcName": "Dorset DC",
+      "dcAssign": "api"
     },
     {
       "id": 2600989,
@@ -1420,7 +2148,10 @@
       "lon": 1.8343190611904936,
       "personnel": 64,
       "small": true,
-      "region": "Other / Overseas"
+      "region": "Other / Overseas",
+      "dcId": 2649006,
+      "dcName": "France 🇫🇷 FCR ",
+      "dcAssign": "api"
     },
     {
       "id": 2620966,
@@ -1432,7 +2163,10 @@
       "lon": -1.7942266010812833,
       "personnel": 37,
       "small": true,
-      "region": "North"
+      "region": "North",
+      "dcId": 2620223,
+      "dcName": "⁠[WY-ECC] West Yorks Emergency Control⁠",
+      "dcAssign": "api"
     },
     {
       "id": 2657275,
@@ -1444,7 +2178,10 @@
       "lon": -1.3702675176041093,
       "personnel": 9,
       "small": true,
-      "region": "Other / Overseas"
+      "region": "Other / Overseas",
+      "dcId": 2311778,
+      "dcName": "Hampshire DC",
+      "dcAssign": "api"
     },
     {
       "id": 2620257,
@@ -1456,7 +2193,10 @@
       "lon": -1.5527809079515262,
       "personnel": 43,
       "small": true,
-      "region": "North"
+      "region": "North",
+      "dcId": 2620223,
+      "dcName": "⁠[WY-ECC] West Yorks Emergency Control⁠",
+      "dcAssign": "api"
     },
     {
       "id": 2033677,
@@ -1468,7 +2208,10 @@
       "lon": -1.5175985755205312,
       "personnel": 0,
       "small": false,
-      "region": "North"
+      "region": "North",
+      "dcId": 1988744,
+      "dcName": "(M2XN) North Yorkshire DC",
+      "dcAssign": "api"
     },
     {
       "id": 2624712,
@@ -1480,7 +2223,10 @@
       "lon": -1.4946804,
       "personnel": 32,
       "small": true,
-      "region": "London & South"
+      "region": "London & South",
+      "dcId": 2311778,
+      "dcName": "Hampshire DC",
+      "dcAssign": "api"
     },
     {
       "id": 2360736,
@@ -1492,7 +2238,10 @@
       "lon": -2.3659576295539804,
       "personnel": 227,
       "small": false,
-      "region": "South West"
+      "region": "South West",
+      "dcId": 2353684,
+      "dcName": "Somerset FCR ",
+      "dcAssign": "api"
     },
     {
       "id": 2471869,
@@ -1504,7 +2253,10 @@
       "lon": -2.7209071,
       "personnel": 163,
       "small": true,
-      "region": "South West"
+      "region": "South West",
+      "dcId": 2469519,
+      "dcName": "𝙒𝙖𝙡𝙚𝙨 🏴󠁧󠁢󠁷󠁬󠁳󠁿 𝘾𝙮𝙢𝙧𝙪",
+      "dcAssign": "api"
     },
     {
       "id": 2654842,
@@ -1516,7 +2268,10 @@
       "lon": -3.840287877830147,
       "personnel": 19,
       "small": false,
-      "region": "South West"
+      "region": "South West",
+      "dcId": 2635219,
+      "dcName": "Devon DC",
+      "dcAssign": "api"
     },
     {
       "id": 2633087,
@@ -1528,7 +2283,10 @@
       "lon": -0.17660782357418608,
       "personnel": 30,
       "small": false,
-      "region": "North"
+      "region": "North",
+      "dcId": 2622184,
+      "dcName": "East Yorkshire DC",
+      "dcAssign": "api"
     },
     {
       "id": 2633104,
@@ -1540,7 +2298,10 @@
       "lon": -1.223750979867571,
       "personnel": 29,
       "small": true,
-      "region": "Midlands"
+      "region": "Midlands",
+      "dcId": 2620974,
+      "dcName": "South Yorkshire DC",
+      "dcAssign": "api"
     },
     {
       "id": 2464874,
@@ -1552,7 +2313,10 @@
       "lon": -2.479048718575494,
       "personnel": 174,
       "small": false,
-      "region": "South West"
+      "region": "South West",
+      "dcId": 2353684,
+      "dcName": "Somerset FCR ",
+      "dcAssign": "api"
     },
     {
       "id": 1844377,
@@ -1564,7 +2328,10 @@
       "lon": -0.14851748891726274,
       "personnel": 198,
       "small": false,
-      "region": "South East"
+      "region": "South East",
+      "dcId": 1844373,
+      "dcName": "Central,South/North East London Dispatch",
+      "dcAssign": "api"
     },
     {
       "id": 2652192,
@@ -1576,7 +2343,10 @@
       "lon": -3.125239705399588,
       "personnel": 14,
       "small": true,
-      "region": "Wales"
+      "region": "Wales",
+      "dcId": 2469519,
+      "dcName": "𝙒𝙖𝙡𝙚𝙨 🏴󠁧󠁢󠁷󠁬󠁳󠁿 𝘾𝙮𝙢𝙧𝙪",
+      "dcAssign": "api"
     },
     {
       "id": 2657276,
@@ -1588,7 +2358,10 @@
       "lon": -1.3233106,
       "personnel": 9,
       "small": true,
-      "region": "Other / Overseas"
+      "region": "Other / Overseas",
+      "dcId": 2311778,
+      "dcName": "Hampshire DC",
+      "dcAssign": "api"
     },
     {
       "id": 2652200,
@@ -1600,7 +2373,10 @@
       "lon": -2.147594,
       "personnel": 3,
       "small": true,
-      "region": "Midlands"
+      "region": "Midlands",
+      "dcId": 2621080,
+      "dcName": "West Midlands",
+      "dcAssign": "api"
     },
     {
       "id": 2626288,
@@ -1612,7 +2388,10 @@
       "lon": -1.8611307494351959,
       "personnel": 33,
       "small": true,
-      "region": "North"
+      "region": "North",
+      "dcId": 2620223,
+      "dcName": "⁠[WY-ECC] West Yorks Emergency Control⁠",
+      "dcAssign": "api"
     },
     {
       "id": 2620851,
@@ -1624,7 +2403,10 @@
       "lon": -1.9953161262727857,
       "personnel": 37,
       "small": true,
-      "region": "North"
+      "region": "North",
+      "dcId": 1988744,
+      "dcName": "(M2XN) North Yorkshire DC",
+      "dcAssign": "api"
     },
     {
       "id": 2462150,
@@ -1636,7 +2418,10 @@
       "lon": -2.5839743,
       "personnel": 178,
       "small": false,
-      "region": "South West"
+      "region": "South West",
+      "dcId": 2353684,
+      "dcName": "Somerset FCR ",
+      "dcAssign": "api"
     },
     {
       "id": 2620990,
@@ -1648,7 +2433,10 @@
       "lon": -1.3176585,
       "personnel": 38,
       "small": true,
-      "region": "Midlands"
+      "region": "Midlands",
+      "dcId": 2620974,
+      "dcName": "South Yorkshire DC",
+      "dcAssign": "api"
     },
     {
       "id": 2652155,
@@ -1660,7 +2448,10 @@
       "lon": -2.6795527,
       "personnel": 14,
       "small": true,
-      "region": "Midlands"
+      "region": "Midlands",
+      "dcId": 2650937,
+      "dcName": "Shropshire FCR ",
+      "dcAssign": "api"
     },
     {
       "id": 2506064,
@@ -1672,7 +2463,10 @@
       "lon": -2.4662712660384254,
       "personnel": 138,
       "small": false,
-      "region": "South West"
+      "region": "South West",
+      "dcId": 2353684,
+      "dcName": "Somerset FCR ",
+      "dcAssign": "api"
     },
     {
       "id": 2318739,
@@ -1684,7 +2478,10 @@
       "lon": -1.48804159034456,
       "personnel": 200,
       "small": false,
-      "region": "Other / Overseas"
+      "region": "Other / Overseas",
+      "dcId": 2311778,
+      "dcName": "Hampshire DC",
+      "dcAssign": "api"
     },
     {
       "id": 2620868,
@@ -1696,7 +2493,10 @@
       "lon": -1.9998923411683391,
       "personnel": 38,
       "small": true,
-      "region": "North"
+      "region": "North",
+      "dcId": 1988744,
+      "dcName": "(M2XN) North Yorkshire DC",
+      "dcAssign": "api"
     },
     {
       "id": 2621008,
@@ -1708,7 +2508,10 @@
       "lon": -1.4716601,
       "personnel": 38,
       "small": true,
-      "region": "Midlands"
+      "region": "Midlands",
+      "dcId": 2621011,
+      "dcName": "Derbyshire DC",
+      "dcAssign": "api"
     },
     {
       "id": 2620734,
@@ -1720,7 +2523,10 @@
       "lon": -1.574467761036136,
       "personnel": 45,
       "small": false,
-      "region": "North"
+      "region": "North",
+      "dcId": 2620223,
+      "dcName": "⁠[WY-ECC] West Yorks Emergency Control⁠",
+      "dcAssign": "api"
     },
     {
       "id": 2647874,
@@ -1732,7 +2538,10 @@
       "lon": -3.0455418,
       "personnel": 18,
       "small": true,
-      "region": "Wales"
+      "region": "Wales",
+      "dcId": 2469519,
+      "dcName": "𝙒𝙖𝙡𝙚𝙨 🏴󠁧󠁢󠁷󠁬󠁳󠁿 𝘾𝙮𝙢𝙧𝙪",
+      "dcAssign": "api"
     },
     {
       "id": 2567211,
@@ -1744,7 +2553,10 @@
       "lon": -2.6560257456479883,
       "personnel": 95,
       "small": false,
-      "region": "South West"
+      "region": "South West",
+      "dcId": 2353684,
+      "dcName": "Somerset FCR ",
+      "dcAssign": "api"
     },
     {
       "id": 2648329,
@@ -1756,7 +2568,10 @@
       "lon": -3.916701072187619,
       "personnel": 17,
       "small": true,
-      "region": "Wales"
+      "region": "Wales",
+      "dcId": 2469519,
+      "dcName": "𝙒𝙖𝙡𝙚𝙨 🏴󠁧󠁢󠁷󠁬󠁳󠁿 𝘾𝙮𝙢𝙧𝙪",
+      "dcAssign": "api"
     },
     {
       "id": 2652189,
@@ -1768,7 +2583,10 @@
       "lon": -2.9869905977750486,
       "personnel": 14,
       "small": true,
-      "region": "Midlands"
+      "region": "Midlands",
+      "dcId": 2469519,
+      "dcName": "𝙒𝙖𝙡𝙚𝙨 🏴󠁧󠁢󠁷󠁬󠁳󠁿 𝘾𝙮𝙢𝙧𝙪",
+      "dcAssign": "api"
     },
     {
       "id": 2657378,
@@ -1780,7 +2598,10 @@
       "lon": -2.648202433158423,
       "personnel": 10,
       "small": false,
-      "region": "South West"
+      "region": "South West",
+      "dcId": 2469519,
+      "dcName": "𝙒𝙖𝙡𝙚𝙨 🏴󠁧󠁢󠁷󠁬󠁳󠁿 𝘾𝙮𝙢𝙧𝙪",
+      "dcAssign": "api"
     },
     {
       "id": 2635195,
@@ -1792,7 +2613,10 @@
       "lon": -2.9105403126677314,
       "personnel": 27,
       "small": true,
-      "region": "South West"
+      "region": "South West",
+      "dcId": 2353684,
+      "dcName": "Somerset FCR ",
+      "dcAssign": "api"
     },
     {
       "id": 2635482,
@@ -1804,7 +2628,10 @@
       "lon": -1.7702906,
       "personnel": 27,
       "small": true,
-      "region": "South West"
+      "region": "South West",
+      "dcId": 2635513,
+      "dcName": "Wiltshire DC",
+      "dcAssign": "api"
     },
     {
       "id": 2357981,
@@ -1816,7 +2643,10 @@
       "lon": -0.8065662604262706,
       "personnel": 0,
       "small": false,
-      "region": "North"
+      "region": "North",
+      "dcId": 2325711,
+      "dcName": "(M2XN) E-Yorks FCR",
+      "dcAssign": "api"
     },
     {
       "id": 2624709,
@@ -1828,7 +2658,10 @@
       "lon": -2.1003077,
       "personnel": 33,
       "small": true,
-      "region": "South West"
+      "region": "South West",
+      "dcId": 2635513,
+      "dcName": "Wiltshire DC",
+      "dcAssign": "api"
     },
     {
       "id": 2662770,
@@ -1840,7 +2673,10 @@
       "lon": -5.541500715226537,
       "personnel": 2,
       "small": true,
-      "region": "South West"
+      "region": "South West",
+      "dcId": 2638184,
+      "dcName": "Cornwall FCR",
+      "dcAssign": "api"
     },
     {
       "id": 2316087,
@@ -1852,7 +2688,10 @@
       "lon": -0.14999625437834727,
       "personnel": 200,
       "small": false,
-      "region": "South East"
+      "region": "South East",
+      "dcId": 1844373,
+      "dcName": "Central,South/North East London Dispatch",
+      "dcAssign": "api"
     },
     {
       "id": 2662773,
@@ -1864,7 +2703,10 @@
       "lon": -5.0556792,
       "personnel": 2,
       "small": true,
-      "region": "South West"
+      "region": "South West",
+      "dcId": 2638184,
+      "dcName": "Cornwall FCR",
+      "dcAssign": "api"
     },
     {
       "id": 2662771,
@@ -1876,7 +2718,10 @@
       "lon": -5.3004205,
       "personnel": 2,
       "small": true,
-      "region": "South West"
+      "region": "South West",
+      "dcId": 2638184,
+      "dcName": "Cornwall FCR",
+      "dcAssign": "api"
     },
     {
       "id": 2636872,
@@ -1888,7 +2733,10 @@
       "lon": -2.7699123567276946,
       "personnel": 1,
       "small": false,
-      "region": "South West"
+      "region": "South West",
+      "dcId": 2635644,
+      "dcName": "Dorset DC",
+      "dcAssign": "api"
     },
     {
       "id": 2650723,
@@ -1900,7 +2748,10 @@
       "lon": -3.143259685210553,
       "personnel": 15,
       "small": true,
-      "region": "Wales"
+      "region": "Wales",
+      "dcId": 2469519,
+      "dcName": "𝙒𝙖𝙡𝙚𝙨 🏴󠁧󠁢󠁷󠁬󠁳󠁿 𝘾𝙮𝙢𝙧𝙪",
+      "dcAssign": "api"
     },
     {
       "id": 2635490,
@@ -1912,7 +2763,10 @@
       "lon": -1.8568519725652552,
       "personnel": 27,
       "small": true,
-      "region": "South West"
+      "region": "South West",
+      "dcId": 2635513,
+      "dcName": "Wiltshire DC",
+      "dcAssign": "api"
     },
     {
       "id": 2650384,
@@ -1924,7 +2778,10 @@
       "lon": -6.295411762092058,
       "personnel": 0,
       "small": false,
-      "region": "Wales"
+      "region": "Wales",
+      "dcId": 2650384,
+      "dcName": "Republic of Ireland (ROI) 🇮🇪",
+      "dcAssign": "self"
     },
     {
       "id": 2041409,
@@ -1936,7 +2793,10 @@
       "lon": 1.724145656800696,
       "personnel": 30,
       "small": false,
-      "region": "Midlands"
+      "region": "Midlands",
+      "dcId": 1844373,
+      "dcName": "Central,South/North East London Dispatch",
+      "dcAssign": "api"
     },
     {
       "id": 2311793,
@@ -1948,7 +2808,10 @@
       "lon": -1.4317997415756638,
       "personnel": 200,
       "small": false,
-      "region": "Other / Overseas"
+      "region": "Other / Overseas",
+      "dcId": 2311778,
+      "dcName": "Hampshire DC",
+      "dcAssign": "api"
     },
     {
       "id": 2638184,
@@ -1960,7 +2823,10 @@
       "lon": -4.741500533448471,
       "personnel": 0,
       "small": false,
-      "region": "South West"
+      "region": "South West",
+      "dcId": 2638184,
+      "dcName": "Cornwall FCR",
+      "dcAssign": "self"
     },
     {
       "id": 2635219,
@@ -1972,7 +2838,10 @@
       "lon": -3.5212701015617465,
       "personnel": 0,
       "small": false,
-      "region": "South West"
+      "region": "South West",
+      "dcId": 2635219,
+      "dcName": "Devon DC",
+      "dcAssign": "self"
     },
     {
       "id": 2662778,
@@ -1984,7 +2853,10 @@
       "lon": -4.7871671,
       "personnel": 2,
       "small": true,
-      "region": "South West"
+      "region": "South West",
+      "dcId": 2638184,
+      "dcName": "Cornwall FCR",
+      "dcAssign": "api"
     },
     {
       "id": 2662779,
@@ -1996,7 +2868,10 @@
       "lon": -4.700875374669279,
       "personnel": 2,
       "small": true,
-      "region": "South West"
+      "region": "South West",
+      "dcId": 2638184,
+      "dcName": "Cornwall FCR",
+      "dcAssign": "api"
     },
     {
       "id": 2662780,
@@ -2008,7 +2883,10 @@
       "lon": -4.372398720722698,
       "personnel": 2,
       "small": true,
-      "region": "South West"
+      "region": "South West",
+      "dcId": 2638184,
+      "dcName": "Cornwall FCR",
+      "dcAssign": "api"
     },
     {
       "id": 2662781,
@@ -2020,7 +2898,10 @@
       "lon": -4.1446227807398195,
       "personnel": 2,
       "small": true,
-      "region": "South West"
+      "region": "South West",
+      "dcId": 2635219,
+      "dcName": "Devon DC",
+      "dcAssign": "api"
     },
     {
       "id": 2662787,
@@ -2032,7 +2913,10 @@
       "lon": -3.1927023,
       "personnel": 2,
       "small": true,
-      "region": "South West"
+      "region": "South West",
+      "dcId": 2635219,
+      "dcName": "Devon DC",
+      "dcAssign": "api"
     },
     {
       "id": 2662782,
@@ -2044,7 +2928,10 @@
       "lon": -4.1338285603281095,
       "personnel": 2,
       "small": true,
-      "region": "South West"
+      "region": "South West",
+      "dcId": 2635219,
+      "dcName": "Devon DC",
+      "dcAssign": "api"
     },
     {
       "id": 2662783,
@@ -2056,7 +2943,10 @@
       "lon": -3.61282486321618,
       "personnel": 2,
       "small": true,
-      "region": "South West"
+      "region": "South West",
+      "dcId": 2635219,
+      "dcName": "Devon DC",
+      "dcAssign": "api"
     },
     {
       "id": 2662785,
@@ -2068,7 +2958,10 @@
       "lon": -3.995794534435744,
       "personnel": 2,
       "small": true,
-      "region": "South West"
+      "region": "South West",
+      "dcId": 2635219,
+      "dcName": "Devon DC",
+      "dcAssign": "api"
     },
     {
       "id": 2662786,
@@ -2080,7 +2973,10 @@
       "lon": -3.478077502316138,
       "personnel": 2,
       "small": true,
-      "region": "South West"
+      "region": "South West",
+      "dcId": 2635219,
+      "dcName": "Devon DC",
+      "dcAssign": "api"
     },
     {
       "id": 2333200,
@@ -2092,7 +2988,10 @@
       "lon": -0.1232120652229192,
       "personnel": 200,
       "small": true,
-      "region": "South East"
+      "region": "South East",
+      "dcId": 1984642,
+      "dcName": "West, South, SW,NW North London Dispatch",
+      "dcAssign": "api"
     },
     {
       "id": 2601003,
@@ -2104,7 +3003,10 @@
       "lon": 1.8916250200624523,
       "personnel": 0,
       "small": false,
-      "region": "Other / Overseas"
+      "region": "Other / Overseas",
+      "dcId": 2649006,
+      "dcName": "France 🇫🇷 FCR ",
+      "dcAssign": "api"
     },
     {
       "id": 2318649,
@@ -2116,7 +3018,10 @@
       "lon": -1.445294369445018,
       "personnel": 0,
       "small": false,
-      "region": "Other / Overseas"
+      "region": "Other / Overseas",
+      "dcId": 2311778,
+      "dcName": "Hampshire DC",
+      "dcAssign": "api"
     },
     {
       "id": 2357963,
@@ -2128,7 +3033,10 @@
       "lon": -1.1435238402052907,
       "personnel": 200,
       "small": false,
-      "region": "North"
+      "region": "North",
+      "dcId": 2349753,
+      "dcName": "(M2XN) York city",
+      "dcAssign": "api"
     },
     {
       "id": 2620833,
@@ -2140,7 +3048,10 @@
       "lon": -1.5268278173343166,
       "personnel": 1,
       "small": false,
-      "region": "North"
+      "region": "North",
+      "dcId": 2620223,
+      "dcName": "⁠[WY-ECC] West Yorks Emergency Control⁠",
+      "dcAssign": "api"
     },
     {
       "id": 2312415,
@@ -2152,7 +3063,10 @@
       "lon": -0.053416867613505434,
       "personnel": 200,
       "small": false,
-      "region": "South East"
+      "region": "South East",
+      "dcId": 1844373,
+      "dcName": "Central,South/North East London Dispatch",
+      "dcAssign": "api"
     },
     {
       "id": 2654847,
@@ -2164,7 +3078,10 @@
       "lon": -2.7632316,
       "personnel": 12,
       "small": true,
-      "region": "South West"
+      "region": "South West",
+      "dcId": 2353684,
+      "dcName": "Somerset FCR ",
+      "dcAssign": "api"
     },
     {
       "id": 2041099,
@@ -2176,7 +3093,10 @@
       "lon": -0.12614907053071542,
       "personnel": 30,
       "small": false,
-      "region": "South East"
+      "region": "South East",
+      "dcId": 1844373,
+      "dcName": "Central,South/North East London Dispatch",
+      "dcAssign": "api"
     },
     {
       "id": 2320466,
@@ -2188,7 +3108,10 @@
       "lon": -0.9138820867798075,
       "personnel": 0,
       "small": false,
-      "region": "Other / Overseas"
+      "region": "Other / Overseas",
+      "dcId": 2311778,
+      "dcName": "Hampshire DC",
+      "dcAssign": "nearest"
     },
     {
       "id": 2583595,
@@ -2200,7 +3123,10 @@
       "lon": -2.2285588,
       "personnel": 67,
       "small": true,
-      "region": "South West"
+      "region": "South West",
+      "dcId": 2582593,
+      "dcName": "Gloucestershire Dispatch",
+      "dcAssign": "api"
     },
     {
       "id": 2649544,
@@ -2212,7 +3138,10 @@
       "lon": -3.8817774,
       "personnel": 16,
       "small": true,
-      "region": "Wales"
+      "region": "Wales",
+      "dcId": 2469519,
+      "dcName": "𝙒𝙖𝙡𝙚𝙨 🏴󠁧󠁢󠁷󠁬󠁳󠁿 𝘾𝙮𝙢𝙧𝙪",
+      "dcAssign": "api"
     },
     {
       "id": 2525694,
@@ -2224,7 +3153,10 @@
       "lon": -2.416692393218236,
       "personnel": 2,
       "small": false,
-      "region": "South West"
+      "region": "South West",
+      "dcId": 2353684,
+      "dcName": "Somerset FCR ",
+      "dcAssign": "api"
     },
     {
       "id": 2525696,
@@ -2236,7 +3168,10 @@
       "lon": -2.391168031485906,
       "personnel": 2,
       "small": false,
-      "region": "South West"
+      "region": "South West",
+      "dcId": 2353684,
+      "dcName": "Somerset FCR ",
+      "dcAssign": "api"
     },
     {
       "id": 2312455,
@@ -2248,7 +3183,10 @@
       "lon": -1.396745199857654,
       "personnel": 200,
       "small": false,
-      "region": "Other / Overseas"
+      "region": "Other / Overseas",
+      "dcId": 2311778,
+      "dcName": "Hampshire DC",
+      "dcAssign": "api"
     },
     {
       "id": 2374919,
@@ -2260,7 +3198,10 @@
       "lon": -1.7893678274240048,
       "personnel": 200,
       "small": true,
-      "region": "South West"
+      "region": "South West",
+      "dcId": 2635513,
+      "dcName": "Wiltshire DC",
+      "dcAssign": "api"
     },
     {
       "id": 2320452,
@@ -2272,7 +3213,10 @@
       "lon": -1.0411005568313725,
       "personnel": 0,
       "small": false,
-      "region": "Other / Overseas"
+      "region": "Other / Overseas",
+      "dcId": 2311778,
+      "dcName": "Hampshire DC",
+      "dcAssign": "nearest"
     },
     {
       "id": 2638162,
@@ -2284,7 +3228,10 @@
       "lon": -3.7091312,
       "personnel": 24,
       "small": true,
-      "region": "South West"
+      "region": "South West",
+      "dcId": 2635219,
+      "dcName": "Devon DC",
+      "dcAssign": "api"
     },
     {
       "id": 2328160,
@@ -2296,7 +3243,10 @@
       "lon": -1.2956040314435673,
       "personnel": 0,
       "small": false,
-      "region": "Other / Overseas"
+      "region": "Other / Overseas",
+      "dcId": 2328160,
+      "dcName": "National Highways (South England)",
+      "dcAssign": "self"
     },
     {
       "id": 2638160,
@@ -2308,7 +3258,10 @@
       "lon": -4.153784557966588,
       "personnel": 24,
       "small": true,
-      "region": "South West"
+      "region": "South West",
+      "dcId": 2635219,
+      "dcName": "Devon DC",
+      "dcAssign": "api"
     },
     {
       "id": 2638165,
@@ -2320,7 +3273,10 @@
       "lon": -3.7635471,
       "personnel": 24,
       "small": true,
-      "region": "South West"
+      "region": "South West",
+      "dcId": 2635219,
+      "dcName": "Devon DC",
+      "dcAssign": "api"
     },
     {
       "id": 2635209,
@@ -2332,7 +3288,10 @@
       "lon": -3.3232070413135038,
       "personnel": 27,
       "small": true,
-      "region": "South West"
+      "region": "South West",
+      "dcId": 2353684,
+      "dcName": "Somerset FCR ",
+      "dcAssign": "api"
     },
     {
       "id": 2366734,
@@ -2344,7 +3303,10 @@
       "lon": -2.181104027630783,
       "personnel": 200,
       "small": true,
-      "region": "South West"
+      "region": "South West",
+      "dcId": 2635513,
+      "dcName": "Wiltshire DC",
+      "dcAssign": "api"
     },
     {
       "id": 2320439,
@@ -2356,7 +3318,10 @@
       "lon": -1.0461933576585867,
       "personnel": 0,
       "small": false,
-      "region": "Other / Overseas"
+      "region": "Other / Overseas",
+      "dcId": 2311778,
+      "dcName": "Hampshire DC",
+      "dcAssign": "nearest"
     },
     {
       "id": 2318599,
@@ -2368,7 +3333,10 @@
       "lon": -1.4397581121403762,
       "personnel": 200,
       "small": false,
-      "region": "Other / Overseas"
+      "region": "Other / Overseas",
+      "dcId": 2311778,
+      "dcName": "Hampshire DC",
+      "dcAssign": "api"
     },
     {
       "id": 2621686,
@@ -2380,7 +3348,10 @@
       "lon": -1.2523321,
       "personnel": 37,
       "small": true,
-      "region": "North"
+      "region": "North",
+      "dcId": 1988744,
+      "dcName": "(M2XN) North Yorkshire DC",
+      "dcAssign": "api"
     },
     {
       "id": 2567744,
@@ -2392,7 +3363,10 @@
       "lon": -2.4115486310924785,
       "personnel": 1,
       "small": false,
-      "region": "South West"
+      "region": "South West",
+      "dcId": 2353684,
+      "dcName": "Somerset FCR ",
+      "dcAssign": "api"
     },
     {
       "id": 2624707,
@@ -2404,7 +3378,10 @@
       "lon": -1.9734244538300727,
       "personnel": 27,
       "small": true,
-      "region": "South West"
+      "region": "South West",
+      "dcId": 2582593,
+      "dcName": "Gloucestershire Dispatch",
+      "dcAssign": "api"
     },
     {
       "id": 2620306,
@@ -2416,7 +3393,10 @@
       "lon": -1.697518249255444,
       "personnel": 1,
       "small": false,
-      "region": "North"
+      "region": "North",
+      "dcId": 1988744,
+      "dcName": "(M2XN) North Yorkshire DC",
+      "dcAssign": "api"
     },
     {
       "id": 1987519,
@@ -2428,7 +3408,10 @@
       "lon": -0.15935976855465364,
       "personnel": 200,
       "small": true,
-      "region": "South East"
+      "region": "South East",
+      "dcId": 1984642,
+      "dcName": "West, South, SW,NW North London Dispatch",
+      "dcAssign": "api"
     },
     {
       "id": 2622173,
@@ -2440,7 +3423,10 @@
       "lon": -0.8735159520680303,
       "personnel": 37,
       "small": true,
-      "region": "North"
+      "region": "North",
+      "dcId": 2622184,
+      "dcName": "East Yorkshire DC",
+      "dcAssign": "api"
     },
     {
       "id": 2636830,
@@ -2452,7 +3438,10 @@
       "lon": -1.5462218967851775,
       "personnel": 13,
       "small": true,
-      "region": "South West"
+      "region": "South West",
+      "dcId": 2311778,
+      "dcName": "Hampshire DC",
+      "dcAssign": "api"
     },
     {
       "id": 2622180,
@@ -2464,7 +3453,10 @@
       "lon": -0.2937627,
       "personnel": 28,
       "small": true,
-      "region": "North"
+      "region": "North",
+      "dcId": 1988744,
+      "dcName": "(M2XN) North Yorkshire DC",
+      "dcAssign": "api"
     },
     {
       "id": 2466015,
@@ -2476,7 +3468,10 @@
       "lon": -2.4569888317285336,
       "personnel": 168,
       "small": false,
-      "region": "South West"
+      "region": "South West",
+      "dcId": 2353684,
+      "dcName": "Somerset FCR ",
+      "dcAssign": "api"
     },
     {
       "id": 2620979,
@@ -2488,7 +3483,10 @@
       "lon": -1.4506132905387528,
       "personnel": 38,
       "small": true,
-      "region": "North"
+      "region": "North",
+      "dcId": 2620974,
+      "dcName": "South Yorkshire DC",
+      "dcAssign": "api"
     },
     {
       "id": 2344108,
@@ -2500,7 +3498,10 @@
       "lon": -0.08515603511284188,
       "personnel": 30,
       "small": false,
-      "region": "South East"
+      "region": "South East",
+      "dcId": 1844373,
+      "dcName": "Central,South/North East London Dispatch",
+      "dcAssign": "api"
     },
     {
       "id": 2567740,
@@ -2512,7 +3513,10 @@
       "lon": -2.3951533,
       "personnel": 1,
       "small": false,
-      "region": "South West"
+      "region": "South West",
+      "dcId": 2353684,
+      "dcName": "Somerset FCR ",
+      "dcAssign": "api"
     },
     {
       "id": 2567745,
@@ -2524,7 +3528,10 @@
       "lon": -2.3432438927984296,
       "personnel": 1,
       "small": false,
-      "region": "South West"
+      "region": "South West",
+      "dcId": 2353684,
+      "dcName": "Somerset FCR ",
+      "dcAssign": "api"
     },
     {
       "id": 2567739,
@@ -2536,7 +3543,10 @@
       "lon": -2.4071486,
       "personnel": 1,
       "small": false,
-      "region": "South West"
+      "region": "South West",
+      "dcId": 2353684,
+      "dcName": "Somerset FCR ",
+      "dcAssign": "api"
     },
     {
       "id": 2567741,
@@ -2548,7 +3558,10 @@
       "lon": -2.350517468715936,
       "personnel": 1,
       "small": false,
-      "region": "South West"
+      "region": "South West",
+      "dcId": 2353684,
+      "dcName": "Somerset FCR ",
+      "dcAssign": "api"
     },
     {
       "id": 2567743,
@@ -2560,7 +3573,10 @@
       "lon": -2.330387305781954,
       "personnel": 1,
       "small": false,
-      "region": "South West"
+      "region": "South West",
+      "dcId": 2353684,
+      "dcName": "Somerset FCR ",
+      "dcAssign": "api"
     },
     {
       "id": 2572689,
@@ -2572,7 +3588,10 @@
       "lon": -2.562642843589315,
       "personnel": 0,
       "small": false,
-      "region": "South West"
+      "region": "South West",
+      "dcId": 2353684,
+      "dcName": "Somerset FCR ",
+      "dcAssign": "api"
     },
     {
       "id": 2567747,
@@ -2584,7 +3603,10 @@
       "lon": -2.3822031,
       "personnel": 1,
       "small": false,
-      "region": "South West"
+      "region": "South West",
+      "dcId": 2353684,
+      "dcName": "Somerset FCR ",
+      "dcAssign": "api"
     },
     {
       "id": 2572696,
@@ -2596,7 +3618,10 @@
       "lon": -2.1315297087517884,
       "personnel": 0,
       "small": false,
-      "region": "South West"
+      "region": "South West",
+      "dcId": 2635513,
+      "dcName": "Wiltshire DC",
+      "dcAssign": "api"
     },
     {
       "id": 1988767,
@@ -2608,7 +3633,10 @@
       "lon": -1.759263660225907,
       "personnel": 200,
       "small": false,
-      "region": "North"
+      "region": "North",
+      "dcId": 1988744,
+      "dcName": "(M2XN) North Yorkshire DC",
+      "dcAssign": "api"
     },
     {
       "id": 2329952,
@@ -2620,7 +3648,10 @@
       "lon": -0.41871610243257446,
       "personnel": 200,
       "small": false,
-      "region": "South East"
+      "region": "South East",
+      "dcId": 2328160,
+      "dcName": "National Highways (South England)",
+      "dcAssign": "api"
     },
     {
       "id": 2328378,
@@ -2632,7 +3663,10 @@
       "lon": -0.7195117732410674,
       "personnel": 200,
       "small": true,
-      "region": "London & South"
+      "region": "London & South",
+      "dcId": 2328160,
+      "dcName": "National Highways (South England)",
+      "dcAssign": "api"
     },
     {
       "id": 2620973,
@@ -2644,7 +3678,10 @@
       "lon": -1.6694151718904071,
       "personnel": 1,
       "small": false,
-      "region": "North"
+      "region": "North",
+      "dcId": 2620223,
+      "dcName": "⁠[WY-ECC] West Yorks Emergency Control⁠",
+      "dcAssign": "api"
     },
     {
       "id": 2567760,
@@ -2656,7 +3693,10 @@
       "lon": -2.2519857,
       "personnel": 1,
       "small": false,
-      "region": "South West"
+      "region": "South West",
+      "dcId": 2635513,
+      "dcName": "Wiltshire DC",
+      "dcAssign": "api"
     },
     {
       "id": 2325714,
@@ -2668,7 +3708,10 @@
       "lon": -0.4348590208237545,
       "personnel": 200,
       "small": false,
-      "region": "North"
+      "region": "North",
+      "dcId": 2325711,
+      "dcName": "(M2XN) E-Yorks FCR",
+      "dcAssign": "api"
     },
     {
       "id": 2318782,
@@ -2680,7 +3723,10 @@
       "lon": -1.4481515459677103,
       "personnel": 200,
       "small": true,
-      "region": "Other / Overseas"
+      "region": "Other / Overseas",
+      "dcId": 2311778,
+      "dcName": "Hampshire DC",
+      "dcAssign": "api"
     },
     {
       "id": 1984340,
@@ -2692,7 +3738,10 @@
       "lon": -0.1918020804381004,
       "personnel": 200,
       "small": true,
-      "region": "South East"
+      "region": "South East",
+      "dcId": 1844373,
+      "dcName": "Central,South/North East London Dispatch",
+      "dcAssign": "api"
     },
     {
       "id": 1988057,
@@ -2704,7 +3753,10 @@
       "lon": -1.5336575512231425,
       "personnel": 200,
       "small": false,
-      "region": "North"
+      "region": "North",
+      "dcId": 1988744,
+      "dcName": "(M2XN) North Yorkshire DC",
+      "dcAssign": "api"
     },
     {
       "id": 2318734,
@@ -2716,7 +3768,10 @@
       "lon": -1.3941558230724214,
       "personnel": 200,
       "small": false,
-      "region": "Other / Overseas"
+      "region": "Other / Overseas",
+      "dcId": 2311778,
+      "dcName": "Hampshire DC",
+      "dcAssign": "api"
     },
     {
       "id": 2319706,
@@ -2728,7 +3783,10 @@
       "lon": -1.0957847275118895,
       "personnel": 200,
       "small": true,
-      "region": "London & South"
+      "region": "London & South",
+      "dcId": 2319655,
+      "dcName": "Basingstoke,Alton,Oakley Dispatch",
+      "dcAssign": "api"
     },
     {
       "id": 2319699,
@@ -2740,7 +3798,10 @@
       "lon": -1.079291483858756,
       "personnel": 200,
       "small": false,
-      "region": "London & South"
+      "region": "London & South",
+      "dcId": 2319655,
+      "dcName": "Basingstoke,Alton,Oakley Dispatch",
+      "dcAssign": "api"
     },
     {
       "id": 2390845,
@@ -2752,7 +3813,10 @@
       "lon": -2.3545286959194076,
       "personnel": 200,
       "small": false,
-      "region": "South West"
+      "region": "South West",
+      "dcId": 2353684,
+      "dcName": "Somerset FCR ",
+      "dcAssign": "api"
     },
     {
       "id": 2390846,
@@ -2764,7 +3828,10 @@
       "lon": -2.370117747329321,
       "personnel": 200,
       "small": false,
-      "region": "South West"
+      "region": "South West",
+      "dcId": 2353684,
+      "dcName": "Somerset FCR ",
+      "dcAssign": "api"
     },
     {
       "id": 1987510,
@@ -2776,7 +3843,10 @@
       "lon": -0.1620149275971857,
       "personnel": 200,
       "small": false,
-      "region": "South East"
+      "region": "South East",
+      "dcId": 1984642,
+      "dcName": "West, South, SW,NW North London Dispatch",
+      "dcAssign": "api"
     },
     {
       "id": 1988549,
@@ -2788,7 +3858,10 @@
       "lon": -1.697529355075875,
       "personnel": 200,
       "small": false,
-      "region": "North"
+      "region": "North",
+      "dcId": 1988744,
+      "dcName": "(M2XN) North Yorkshire DC",
+      "dcAssign": "api"
     },
     {
       "id": 2357961,
@@ -2800,7 +3873,10 @@
       "lon": -0.7487147360389355,
       "personnel": 200,
       "small": false,
-      "region": "North"
+      "region": "North",
+      "dcId": 2325711,
+      "dcName": "(M2XN) E-Yorks FCR",
+      "dcAssign": "api"
     },
     {
       "id": 2319651,
@@ -2812,7 +3888,10 @@
       "lon": -1.3716681521452652,
       "personnel": 200,
       "small": false,
-      "region": "Other / Overseas"
+      "region": "Other / Overseas",
+      "dcId": 2311778,
+      "dcName": "Hampshire DC",
+      "dcAssign": "api"
     },
     {
       "id": 2330344,
@@ -2824,7 +3903,10 @@
       "lon": -0.7968705123013997,
       "personnel": 200,
       "small": false,
-      "region": "London & South"
+      "region": "London & South",
+      "dcId": 2328160,
+      "dcName": "National Highways (South England)",
+      "dcAssign": "api"
     },
     {
       "id": 2406061,
@@ -2836,7 +3918,10 @@
       "lon": -2.5678542,
       "personnel": 200,
       "small": false,
-      "region": "South West"
+      "region": "South West",
+      "dcId": 2353684,
+      "dcName": "Somerset FCR ",
+      "dcAssign": "api"
     },
     {
       "id": 2330342,
@@ -2848,7 +3933,10 @@
       "lon": -0.7968853135581386,
       "personnel": 200,
       "small": false,
-      "region": "London & South"
+      "region": "London & South",
+      "dcId": 2328160,
+      "dcName": "National Highways (South England)",
+      "dcAssign": "api"
     },
     {
       "id": 2326146,
@@ -2860,7 +3948,10 @@
       "lon": -0.4083365846604122,
       "personnel": 200,
       "small": false,
-      "region": "North"
+      "region": "North",
+      "dcId": 2325711,
+      "dcName": "(M2XN) E-Yorks FCR",
+      "dcAssign": "api"
     },
     {
       "id": 2349728,
@@ -2872,7 +3963,10 @@
       "lon": -1.067160469301125,
       "personnel": 200,
       "small": false,
-      "region": "North"
+      "region": "North",
+      "dcId": 2349753,
+      "dcName": "(M2XN) York city",
+      "dcAssign": "api"
     },
     {
       "id": 2349753,
@@ -2884,7 +3978,10 @@
       "lon": -1.082424501151759,
       "personnel": 0,
       "small": false,
-      "region": "North"
+      "region": "North",
+      "dcId": 2349753,
+      "dcName": "(M2XN) York city",
+      "dcAssign": "self"
     },
     {
       "id": 2188370,
@@ -2896,7 +3993,10 @@
       "lon": -1.5176643693862952,
       "personnel": 200,
       "small": false,
-      "region": "North"
+      "region": "North",
+      "dcId": 1988744,
+      "dcName": "(M2XN) North Yorkshire DC",
+      "dcAssign": "api"
     },
     {
       "id": 2318783,
@@ -2908,7 +4008,10 @@
       "lon": -1.3761107813133375,
       "personnel": 200,
       "small": true,
-      "region": "Other / Overseas"
+      "region": "Other / Overseas",
+      "dcId": 2311778,
+      "dcName": "Hampshire DC",
+      "dcAssign": "api"
     },
     {
       "id": 2464097,
@@ -2920,7 +4023,10 @@
       "lon": -2.3568027913360323,
       "personnel": 1,
       "small": false,
-      "region": "South West"
+      "region": "South West",
+      "dcId": 2353684,
+      "dcName": "Somerset FCR ",
+      "dcAssign": "api"
     },
     {
       "id": 1984930,
@@ -2932,7 +4038,10 @@
       "lon": -0.1265651696802748,
       "personnel": 30,
       "small": false,
-      "region": "South East"
+      "region": "South East",
+      "dcId": 1844373,
+      "dcName": "Central,South/North East London Dispatch",
+      "dcAssign": "api"
     },
     {
       "id": 2350773,
@@ -2944,7 +4053,10 @@
       "lon": -0.4010350766636038,
       "personnel": 3,
       "small": false,
-      "region": "North"
+      "region": "North",
+      "dcId": 2325711,
+      "dcName": "(M2XN) E-Yorks FCR",
+      "dcAssign": "api"
     },
     {
       "id": 2320463,
@@ -2956,7 +4068,10 @@
       "lon": -0.9676574518525632,
       "personnel": 0,
       "small": false,
-      "region": "Other / Overseas"
+      "region": "Other / Overseas",
+      "dcId": 2311778,
+      "dcName": "Hampshire DC",
+      "dcAssign": "nearest"
     },
     {
       "id": 2327749,
@@ -2968,7 +4083,10 @@
       "lon": -1.4215468240612301,
       "personnel": 200,
       "small": false,
-      "region": "Other / Overseas"
+      "region": "Other / Overseas",
+      "dcId": 2311778,
+      "dcName": "Hampshire DC",
+      "dcAssign": "api"
     },
     {
       "id": 2329882,
@@ -2980,7 +4098,10 @@
       "lon": -0.1408035521204124,
       "personnel": 30,
       "small": false,
-      "region": "South East"
+      "region": "South East",
+      "dcId": 1844373,
+      "dcName": "Central,South/North East London Dispatch",
+      "dcAssign": "api"
     },
     {
       "id": 1844375,
@@ -2992,7 +4113,10 @@
       "lon": -0.12309606807956552,
       "personnel": 200,
       "small": false,
-      "region": "South East"
+      "region": "South East",
+      "dcId": 1844373,
+      "dcName": "Central,South/North East London Dispatch",
+      "dcAssign": "api"
     },
     {
       "id": 2319653,
@@ -3004,7 +4128,10 @@
       "lon": -1.3605310147322331,
       "personnel": 200,
       "small": false,
-      "region": "Other / Overseas"
+      "region": "Other / Overseas",
+      "dcId": 2311778,
+      "dcName": "Hampshire DC",
+      "dcAssign": "api"
     },
     {
       "id": 2364328,
@@ -3016,7 +4143,10 @@
       "lon": -1.167976805880616,
       "personnel": 200,
       "small": true,
-      "region": "Midlands"
+      "region": "Midlands",
+      "dcId": 2364325,
+      "dcName": "Nottinghamshire Dispatch Centre",
+      "dcAssign": "api"
     },
     {
       "id": 2364327,
@@ -3028,7 +4158,10 @@
       "lon": -1.156077594185795,
       "personnel": 200,
       "small": true,
-      "region": "Midlands"
+      "region": "Midlands",
+      "dcId": 2364325,
+      "dcName": "Nottinghamshire Dispatch Centre",
+      "dcAssign": "api"
     },
     {
       "id": 2312409,
@@ -3040,7 +4173,10 @@
       "lon": -1.3986689371734289,
       "personnel": 200,
       "small": false,
-      "region": "Other / Overseas"
+      "region": "Other / Overseas",
+      "dcId": 2311778,
+      "dcName": "Hampshire DC",
+      "dcAssign": "api"
     },
     {
       "id": 2311527,
@@ -3052,7 +4188,10 @@
       "lon": -1.514033350205127,
       "personnel": 200,
       "small": false,
-      "region": "North"
+      "region": "North",
+      "dcId": 1988744,
+      "dcName": "(M2XN) North Yorkshire DC",
+      "dcAssign": "api"
     },
     {
       "id": 2318780,
@@ -3064,7 +4203,10 @@
       "lon": -1.4484077092113785,
       "personnel": 200,
       "small": false,
-      "region": "Other / Overseas"
+      "region": "Other / Overseas",
+      "dcId": 2311778,
+      "dcName": "Hampshire DC",
+      "dcAssign": "api"
     },
     {
       "id": 2621048,
@@ -3076,7 +4218,10 @@
       "lon": -1.6722820154361877,
       "personnel": 38,
       "small": true,
-      "region": "Midlands"
+      "region": "Midlands",
+      "dcId": 2621011,
+      "dcName": "Derbyshire DC",
+      "dcAssign": "api"
     },
     {
       "id": 2312456,
@@ -3088,7 +4233,10 @@
       "lon": -1.4041426405619384,
       "personnel": 200,
       "small": false,
-      "region": "Other / Overseas"
+      "region": "Other / Overseas",
+      "dcId": 2311778,
+      "dcName": "Hampshire DC",
+      "dcAssign": "api"
     },
     {
       "id": 2333227,
@@ -3100,7 +4248,10 @@
       "lon": -1.5082697214037528,
       "personnel": 200,
       "small": false,
-      "region": "North"
+      "region": "North",
+      "dcId": 1988744,
+      "dcName": "(M2XN) North Yorkshire DC",
+      "dcAssign": "api"
     },
     {
       "id": 2648331,
@@ -3112,7 +4263,10 @@
       "lon": -2.7237848872059427,
       "personnel": 17,
       "small": true,
-      "region": "South West"
+      "region": "South West",
+      "dcId": 2469519,
+      "dcName": "𝙒𝙖𝙡𝙚𝙨 🏴󠁧󠁢󠁷󠁬󠁳󠁿 𝘾𝙮𝙢𝙧𝙪",
+      "dcAssign": "api"
     },
     {
       "id": 2648335,
@@ -3124,7 +4278,10 @@
       "lon": -3.1927816,
       "personnel": 17,
       "small": true,
-      "region": "Wales"
+      "region": "Wales",
+      "dcId": 2469519,
+      "dcName": "𝙒𝙖𝙡𝙚𝙨 🏴󠁧󠁢󠁷󠁬󠁳󠁿 𝘾𝙮𝙢𝙧𝙪",
+      "dcAssign": "api"
     },
     {
       "id": 2621036,
@@ -3136,7 +4293,10 @@
       "lon": -1.5429983634774567,
       "personnel": 38,
       "small": true,
-      "region": "Midlands"
+      "region": "Midlands",
+      "dcId": 2621011,
+      "dcName": "Derbyshire DC",
+      "dcAssign": "api"
     },
     {
       "id": 2652211,
@@ -3148,7 +4308,10 @@
       "lon": -4.389824795642367,
       "personnel": 14,
       "small": true,
-      "region": "North"
+      "region": "North",
+      "dcId": 2650412,
+      "dcName": "Isle Of Man 🇮🇲 ",
+      "dcAssign": "api"
     },
     {
       "id": 2650670,
@@ -3160,7 +4323,10 @@
       "lon": -3.480096028872069,
       "personnel": 15,
       "small": true,
-      "region": "Wales"
+      "region": "Wales",
+      "dcId": 2469519,
+      "dcName": "𝙒𝙖𝙡𝙚𝙨 🏴󠁧󠁢󠁷󠁬󠁳󠁿 𝘾𝙮𝙢𝙧𝙪",
+      "dcAssign": "api"
     },
     {
       "id": 2364329,
@@ -3172,7 +4338,10 @@
       "lon": -1.7632022875951003,
       "personnel": 200,
       "small": true,
-      "region": "North"
+      "region": "North",
+      "dcId": 1988744,
+      "dcName": "(M2XN) North Yorkshire DC",
+      "dcAssign": "api"
     },
     {
       "id": 2586557,
@@ -3184,7 +4353,10 @@
       "lon": -2.2179299,
       "personnel": 73,
       "small": true,
-      "region": "South West"
+      "region": "South West",
+      "dcId": 2582593,
+      "dcName": "Gloucestershire Dispatch",
+      "dcAssign": "api"
     },
     {
       "id": 1845638,
@@ -3196,7 +4368,10 @@
       "lon": -0.05252080199873268,
       "personnel": 30,
       "small": false,
-      "region": "South East"
+      "region": "South East",
+      "dcId": 1844373,
+      "dcName": "Central,South/North East London Dispatch",
+      "dcAssign": "api"
     },
     {
       "id": 2465959,
@@ -3208,7 +4383,10 @@
       "lon": -2.2028266,
       "personnel": 169,
       "small": true,
-      "region": "South West"
+      "region": "South West",
+      "dcId": 2635513,
+      "dcName": "Wiltshire DC",
+      "dcAssign": "api"
     },
     {
       "id": 2657265,
@@ -3220,7 +4398,10 @@
       "lon": -2.7588917,
       "personnel": 10,
       "small": false,
-      "region": "South West"
+      "region": "South West",
+      "dcId": 2353684,
+      "dcName": "Somerset FCR ",
+      "dcAssign": "api"
     },
     {
       "id": 2342750,
@@ -3232,7 +4413,10 @@
       "lon": -0.4598039263608579,
       "personnel": 200,
       "small": false,
-      "region": "North"
+      "region": "North",
+      "dcId": 2325711,
+      "dcName": "(M2XN) E-Yorks FCR",
+      "dcAssign": "api"
     },
     {
       "id": 2657467,
@@ -3244,7 +4428,10 @@
       "lon": -3.3257722602398254,
       "personnel": 10,
       "small": false,
-      "region": "South West"
+      "region": "South West",
+      "dcId": 2353684,
+      "dcName": "Somerset FCR ",
+      "dcAssign": "api"
     },
     {
       "id": 2638173,
@@ -3256,7 +4443,10 @@
       "lon": -4.3531368,
       "personnel": 24,
       "small": true,
-      "region": "South West"
+      "region": "South West",
+      "dcId": 2635219,
+      "dcName": "Devon DC",
+      "dcAssign": "api"
     },
     {
       "id": 2620986,
@@ -3268,7 +4458,10 @@
       "lon": -1.3451500681250146,
       "personnel": 38,
       "small": true,
-      "region": "Midlands"
+      "region": "Midlands",
+      "dcId": 2620974,
+      "dcName": "South Yorkshire DC",
+      "dcAssign": "api"
     },
     {
       "id": 2652161,
@@ -3280,7 +4473,10 @@
       "lon": -2.401796027634625,
       "personnel": 14,
       "small": true,
-      "region": "Midlands"
+      "region": "Midlands",
+      "dcId": 2650937,
+      "dcName": "Shropshire FCR ",
+      "dcAssign": "api"
     },
     {
       "id": 2652888,
@@ -3292,7 +4488,10 @@
       "lon": 3.2870554,
       "personnel": 14,
       "small": true,
-      "region": "South East"
+      "region": "South East",
+      "dcId": 2652880,
+      "dcName": "Belgium 🇧🇪 FCR",
+      "dcAssign": "api"
     },
     {
       "id": 2583584,
@@ -3304,7 +4503,10 @@
       "lon": -2.3029485,
       "personnel": 68,
       "small": false,
-      "region": "South West"
+      "region": "South West",
+      "dcId": 2582593,
+      "dcName": "Gloucestershire Dispatch",
+      "dcAssign": "api"
     },
     {
       "id": 2662881,
@@ -3316,7 +4518,10 @@
       "lon": -2.795406758336174,
       "personnel": 10,
       "small": true,
-      "region": "South West"
+      "region": "South West",
+      "dcId": 2353684,
+      "dcName": "Somerset FCR ",
+      "dcAssign": "api"
     },
     {
       "id": 2662883,
@@ -3328,7 +4533,10 @@
       "lon": -4.4753006,
       "personnel": 2,
       "small": true,
-      "region": "North"
+      "region": "North",
+      "dcId": 2650412,
+      "dcName": "Isle Of Man 🇮🇲 ",
+      "dcAssign": "api"
     },
     {
       "id": 2662880,
@@ -3340,7 +4548,10 @@
       "lon": -2.795794962236199,
       "personnel": 2,
       "small": true,
-      "region": "South West"
+      "region": "South West",
+      "dcId": 2353684,
+      "dcName": "Somerset FCR ",
+      "dcAssign": "api"
     },
     {
       "id": 2041379,
@@ -3352,7 +4563,10 @@
       "lon": -0.022279564732651615,
       "personnel": 200,
       "small": false,
-      "region": "South East"
+      "region": "South East",
+      "dcId": 1844373,
+      "dcName": "Central,South/North East London Dispatch",
+      "dcAssign": "api"
     },
     {
       "id": 2657728,
@@ -3364,7 +4578,10 @@
       "lon": -2.4671357694065015,
       "personnel": 8,
       "small": true,
-      "region": "North"
+      "region": "North",
+      "dcId": 1988744,
+      "dcName": "(M2XN) North Yorkshire DC",
+      "dcAssign": "api"
     },
     {
       "id": 2657763,
@@ -3376,7 +4593,10 @@
       "lon": -4.632411159260764,
       "personnel": 9,
       "small": false,
-      "region": "Wales"
+      "region": "Wales",
+      "dcId": 2469519,
+      "dcName": "𝙒𝙖𝙡𝙚𝙨 🏴󠁧󠁢󠁷󠁬󠁳󠁿 𝘾𝙮𝙢𝙧𝙪",
+      "dcAssign": "api"
     },
     {
       "id": 2635501,
@@ -3388,7 +4608,10 @@
       "lon": -3.212304928772454,
       "personnel": 27,
       "small": true,
-      "region": "South West"
+      "region": "South West",
+      "dcId": 2635219,
+      "dcName": "Devon DC",
+      "dcAssign": "api"
     },
     {
       "id": 2621358,
@@ -3400,7 +4623,10 @@
       "lon": -3.35372,
       "personnel": 38,
       "small": true,
-      "region": "Scotland"
+      "region": "Scotland",
+      "dcId": 2621314,
+      "dcName": "Southern Scotland DC",
+      "dcAssign": "api"
     },
     {
       "id": 2620247,
@@ -3412,7 +4638,10 @@
       "lon": -1.5744734656209993,
       "personnel": 39,
       "small": true,
-      "region": "North"
+      "region": "North",
+      "dcId": 2620223,
+      "dcName": "⁠[WY-ECC] West Yorks Emergency Control⁠",
+      "dcAssign": "api"
     },
     {
       "id": 2312174,
@@ -3424,7 +4653,10 @@
       "lon": -1.4163815176393246,
       "personnel": 200,
       "small": false,
-      "region": "Other / Overseas"
+      "region": "Other / Overseas",
+      "dcId": 2311778,
+      "dcName": "Hampshire DC",
+      "dcAssign": "api"
     },
     {
       "id": 2312445,
@@ -3436,7 +4668,10 @@
       "lon": -1.390125771668341,
       "personnel": 200,
       "small": false,
-      "region": "Other / Overseas"
+      "region": "Other / Overseas",
+      "dcId": 2311778,
+      "dcName": "Hampshire DC",
+      "dcAssign": "api"
     },
     {
       "id": 2311779,
@@ -3448,7 +4683,10 @@
       "lon": -1.4327044622663652,
       "personnel": 200,
       "small": false,
-      "region": "Other / Overseas"
+      "region": "Other / Overseas",
+      "dcId": 2311778,
+      "dcName": "Hampshire DC",
+      "dcAssign": "api"
     },
     {
       "id": 2354534,
@@ -3460,7 +4698,10 @@
       "lon": -2.456675292832151,
       "personnel": 285,
       "small": false,
-      "region": "South West"
+      "region": "South West",
+      "dcId": 2353684,
+      "dcName": "Somerset FCR ",
+      "dcAssign": "api"
     },
     {
       "id": 2525834,
@@ -3472,7 +4713,10 @@
       "lon": -2.3830260568223762,
       "personnel": 1,
       "small": false,
-      "region": "South West"
+      "region": "South West",
+      "dcId": 2353684,
+      "dcName": "Somerset FCR ",
+      "dcAssign": "api"
     },
     {
       "id": 2633096,
@@ -3484,7 +4728,10 @@
       "lon": -1.42593391323988,
       "personnel": 28,
       "small": true,
-      "region": "Midlands"
+      "region": "Midlands",
+      "dcId": 2621011,
+      "dcName": "Derbyshire DC",
+      "dcAssign": "api"
     },
     {
       "id": 2620846,
@@ -3496,7 +4743,10 @@
       "lon": -2.0111322924643953,
       "personnel": 37,
       "small": true,
-      "region": "North"
+      "region": "North",
+      "dcId": 1988744,
+      "dcName": "(M2XN) North Yorkshire DC",
+      "dcAssign": "api"
     },
     {
       "id": 2572699,
@@ -3508,7 +4758,10 @@
       "lon": -2.371638192902137,
       "personnel": 0,
       "small": false,
-      "region": "South West"
+      "region": "South West",
+      "dcId": 2353684,
+      "dcName": "Somerset FCR ",
+      "dcAssign": "api"
     },
     {
       "id": 2639116,
@@ -3520,7 +4773,10 @@
       "lon": -4.728886413118822,
       "personnel": 23,
       "small": true,
-      "region": "South West"
+      "region": "South West",
+      "dcId": 2638184,
+      "dcName": "Cornwall FCR",
+      "dcAssign": "api"
     },
     {
       "id": 2621058,
@@ -3532,7 +4788,10 @@
       "lon": -1.1745279,
       "personnel": 38,
       "small": true,
-      "region": "Midlands"
+      "region": "Midlands",
+      "dcId": 2621054,
+      "dcName": "Leicestershire DC",
+      "dcAssign": "api"
     },
     {
       "id": 2657777,
@@ -3544,7 +4803,10 @@
       "lon": -2.4825888912266403,
       "personnel": 9,
       "small": false,
-      "region": "South West"
+      "region": "South West",
+      "dcId": 2582593,
+      "dcName": "Gloucestershire Dispatch",
+      "dcAssign": "api"
     },
     {
       "id": 2340692,
@@ -3556,7 +4818,10 @@
       "lon": -0.07796579553495732,
       "personnel": 200,
       "small": false,
-      "region": "South East"
+      "region": "South East",
+      "dcId": 1844373,
+      "dcName": "Central,South/North East London Dispatch",
+      "dcAssign": "api"
     },
     {
       "id": 2327192,
@@ -3568,7 +4833,10 @@
       "lon": -0.1836170109149681,
       "personnel": 200,
       "small": true,
-      "region": "South East"
+      "region": "South East",
+      "dcId": 1984642,
+      "dcName": "West, South, SW,NW North London Dispatch",
+      "dcAssign": "api"
     },
     {
       "id": 2646529,
@@ -3580,7 +4848,10 @@
       "lon": -3.083849183664912,
       "personnel": 26,
       "small": true,
-      "region": "South West"
+      "region": "South West",
+      "dcId": 2353684,
+      "dcName": "Somerset FCR ",
+      "dcAssign": "api"
     },
     {
       "id": 1845393,
@@ -3592,7 +4863,10 @@
       "lon": -0.10902400618233912,
       "personnel": 30,
       "small": false,
-      "region": "South East"
+      "region": "South East",
+      "dcId": 1844373,
+      "dcName": "Central,South/North East London Dispatch",
+      "dcAssign": "api"
     },
     {
       "id": 2567759,
@@ -3604,7 +4878,10 @@
       "lon": -2.1365683,
       "personnel": 86,
       "small": false,
-      "region": "South West"
+      "region": "South West",
+      "dcId": 2635513,
+      "dcName": "Wiltshire DC",
+      "dcAssign": "api"
     },
     {
       "id": 2033681,
@@ -3616,7 +4893,10 @@
       "lon": -0.09822466896601018,
       "personnel": 30,
       "small": false,
-      "region": "South East"
+      "region": "South East",
+      "dcId": 1844373,
+      "dcName": "Central,South/North East London Dispatch",
+      "dcAssign": "api"
     },
     {
       "id": 2041100,
@@ -3628,7 +4908,10 @@
       "lon": -0.09765417244227617,
       "personnel": 30,
       "small": false,
-      "region": "South East"
+      "region": "South East",
+      "dcId": 1844373,
+      "dcName": "Central,South/North East London Dispatch",
+      "dcAssign": "api"
     },
     {
       "id": 2330343,
@@ -3640,7 +4923,10 @@
       "lon": -0.7968871995844199,
       "personnel": 200,
       "small": true,
-      "region": "London & South"
+      "region": "London & South",
+      "dcId": 2328160,
+      "dcName": "National Highways (South England)",
+      "dcAssign": "api"
     },
     {
       "id": 2366733,
@@ -3652,7 +4938,10 @@
       "lon": -2.181450722484675,
       "personnel": 200,
       "small": true,
-      "region": "South West"
+      "region": "South West",
+      "dcId": 2635513,
+      "dcName": "Wiltshire DC",
+      "dcAssign": "api"
     },
     {
       "id": 2429046,
@@ -3664,7 +4953,10 @@
       "lon": -2.596142441448984,
       "personnel": 0,
       "small": false,
-      "region": "South West"
+      "region": "South West",
+      "dcId": 2353684,
+      "dcName": "Somerset FCR ",
+      "dcAssign": "api"
     },
     {
       "id": 2635206,
@@ -3676,7 +4968,10 @@
       "lon": -3.4729151,
       "personnel": 27,
       "small": true,
-      "region": "South West"
+      "region": "South West",
+      "dcId": 2353684,
+      "dcName": "Somerset FCR ",
+      "dcAssign": "api"
     },
     {
       "id": 2621056,
@@ -3688,7 +4983,10 @@
       "lon": -1.2224403,
       "personnel": 38,
       "small": true,
-      "region": "Midlands"
+      "region": "Midlands",
+      "dcId": 2621054,
+      "dcName": "Leicestershire DC",
+      "dcAssign": "api"
     },
     {
       "id": 2621321,
@@ -3700,7 +4998,10 @@
       "lon": -4.259879513540496,
       "personnel": 38,
       "small": true,
-      "region": "Scotland"
+      "region": "Scotland",
+      "dcId": 2621314,
+      "dcName": "Southern Scotland DC",
+      "dcAssign": "api"
     },
     {
       "id": 2650714,
@@ -3712,7 +5013,10 @@
       "lon": -3.0139971,
       "personnel": 15,
       "small": true,
-      "region": "Wales"
+      "region": "Wales",
+      "dcId": 2469519,
+      "dcName": "𝙒𝙖𝙡𝙚𝙨 🏴󠁧󠁢󠁷󠁬󠁳󠁿 𝘾𝙮𝙢𝙧𝙪",
+      "dcAssign": "api"
     },
     {
       "id": 2357987,
@@ -3724,7 +5028,10 @@
       "lon": -2.4165690272642224,
       "personnel": 0,
       "small": false,
-      "region": "South West"
+      "region": "South West",
+      "dcId": 2353684,
+      "dcName": "Somerset FCR ",
+      "dcAssign": "api"
     },
     {
       "id": 2312031,
@@ -3736,7 +5043,10 @@
       "lon": -0.12123953489482854,
       "personnel": 30,
       "small": false,
-      "region": "South East"
+      "region": "South East",
+      "dcId": 1844373,
+      "dcName": "Central,South/North East London Dispatch",
+      "dcAssign": "api"
     },
     {
       "id": 2659456,
@@ -3748,7 +5058,10 @@
       "lon": -2.3594959218384526,
       "personnel": 10,
       "small": true,
-      "region": "South West"
+      "region": "South West",
+      "dcId": 2582593,
+      "dcName": "Gloucestershire Dispatch",
+      "dcAssign": "api"
     },
     {
       "id": 2621667,
@@ -3760,7 +5073,10 @@
       "lon": -2.7931366,
       "personnel": 37,
       "small": true,
-      "region": "South West"
+      "region": "South West",
+      "dcId": 2353684,
+      "dcName": "Somerset FCR ",
+      "dcAssign": "api"
     },
     {
       "id": 2471875,
@@ -3772,7 +5088,10 @@
       "lon": -2.4453439028427693,
       "personnel": 165,
       "small": false,
-      "region": "South West"
+      "region": "South West",
+      "dcId": 2353684,
+      "dcName": "Somerset FCR ",
+      "dcAssign": "api"
     },
     {
       "id": 2659464,
@@ -3784,7 +5103,10 @@
       "lon": -0.9862098792154756,
       "personnel": 0,
       "small": false,
-      "region": "London & South"
+      "region": "London & South",
+      "dcId": 2659464,
+      "dcName": "Berkshire",
+      "dcAssign": "self"
     },
     {
       "id": 2650740,
@@ -3796,7 +5118,10 @@
       "lon": -3.3847649452342896,
       "personnel": 15,
       "small": true,
-      "region": "Wales"
+      "region": "Wales",
+      "dcId": 2469519,
+      "dcName": "𝙒𝙖𝙡𝙚𝙨 🏴󠁧󠁢󠁷󠁬󠁳󠁿 𝘾𝙮𝙢𝙧𝙪",
+      "dcAssign": "api"
     },
     {
       "id": 2650724,
@@ -3808,7 +5133,10 @@
       "lon": -3.3142778897541563,
       "personnel": 15,
       "small": true,
-      "region": "Wales"
+      "region": "Wales",
+      "dcId": 2469519,
+      "dcName": "𝙒𝙖𝙡𝙚𝙨 🏴󠁧󠁢󠁷󠁬󠁳󠁿 𝘾𝙮𝙢𝙧𝙪",
+      "dcAssign": "api"
     },
     {
       "id": 2659467,
@@ -3820,7 +5148,10 @@
       "lon": -1.318489188386671,
       "personnel": 3,
       "small": true,
-      "region": "London & South"
+      "region": "London & South",
+      "dcId": 2659464,
+      "dcName": "Berkshire",
+      "dcAssign": "api"
     },
     {
       "id": 2448097,
@@ -3832,7 +5163,10 @@
       "lon": -2.4464523810888887,
       "personnel": 184,
       "small": false,
-      "region": "South West"
+      "region": "South West",
+      "dcId": 2353684,
+      "dcName": "Somerset FCR ",
+      "dcAssign": "api"
     },
     {
       "id": 2330770,
@@ -3844,7 +5178,10 @@
       "lon": -1.4346149417334773,
       "personnel": 0,
       "small": false,
-      "region": "Other / Overseas"
+      "region": "Other / Overseas",
+      "dcId": 2311778,
+      "dcName": "Hampshire DC",
+      "dcAssign": "api"
     },
     {
       "id": 2650386,
@@ -3856,7 +5193,10 @@
       "lon": -6.484274125339155,
       "personnel": 16,
       "small": true,
-      "region": "Wales"
+      "region": "Wales",
+      "dcId": 2650384,
+      "dcName": "Republic of Ireland (ROI) 🇮🇪",
+      "dcAssign": "api"
     },
     {
       "id": 2649595,
@@ -3868,7 +5208,10 @@
       "lon": -4.2497021,
       "personnel": 16,
       "small": true,
-      "region": "Wales"
+      "region": "Wales",
+      "dcId": 2469519,
+      "dcName": "𝙒𝙖𝙡𝙚𝙨 🏴󠁧󠁢󠁷󠁬󠁳󠁿 𝘾𝙮𝙢𝙧𝙪",
+      "dcAssign": "api"
     },
     {
       "id": 2318768,
@@ -3880,7 +5223,10 @@
       "lon": -0.23660438762004396,
       "personnel": 200,
       "small": false,
-      "region": "South East"
+      "region": "South East",
+      "dcId": 1984642,
+      "dcName": "West, South, SW,NW North London Dispatch",
+      "dcAssign": "api"
     },
     {
       "id": 2364563,
@@ -3892,7 +5238,10 @@
       "lon": -1.154971,
       "personnel": 200,
       "small": true,
-      "region": "Midlands"
+      "region": "Midlands",
+      "dcId": 2364325,
+      "dcName": "Nottinghamshire Dispatch Centre",
+      "dcAssign": "api"
     },
     {
       "id": 2481579,
@@ -3904,7 +5253,10 @@
       "lon": -2.7180287121072353,
       "personnel": 164,
       "small": false,
-      "region": "South West"
+      "region": "South West",
+      "dcId": 2353684,
+      "dcName": "Somerset FCR ",
+      "dcAssign": "api"
     },
     {
       "id": 2586553,
@@ -3916,7 +5268,10 @@
       "lon": -2.333228,
       "personnel": 65,
       "small": true,
-      "region": "South West"
+      "region": "South West",
+      "dcId": 2582593,
+      "dcName": "Gloucestershire Dispatch",
+      "dcAssign": "api"
     },
     {
       "id": 2319865,
@@ -3928,7 +5283,10 @@
       "lon": -0.08545064940241709,
       "personnel": 200,
       "small": true,
-      "region": "South East"
+      "region": "South East",
+      "dcId": 1844373,
+      "dcName": "Central,South/North East London Dispatch",
+      "dcAssign": "api"
     },
     {
       "id": 2648333,
@@ -3940,7 +5298,10 @@
       "lon": -3.030815,
       "personnel": 17,
       "small": true,
-      "region": "Wales"
+      "region": "Wales",
+      "dcId": 2469519,
+      "dcName": "𝙒𝙖𝙡𝙚𝙨 🏴󠁧󠁢󠁷󠁬󠁳󠁿 𝘾𝙮𝙢𝙧𝙪",
+      "dcAssign": "api"
     },
     {
       "id": 2350542,
@@ -3952,7 +5313,10 @@
       "lon": -1.4487172046324637,
       "personnel": 200,
       "small": true,
-      "region": "North"
+      "region": "North",
+      "dcId": 1988744,
+      "dcName": "(M2XN) North Yorkshire DC",
+      "dcAssign": "api"
     },
     {
       "id": 2330766,
@@ -3964,7 +5328,10 @@
       "lon": -0.11859392142196024,
       "personnel": 0,
       "small": false,
-      "region": "South East"
+      "region": "South East",
+      "dcId": 1844373,
+      "dcName": "Central,South/North East London Dispatch",
+      "dcAssign": "api"
     },
     {
       "id": 1984339,
@@ -3976,7 +5343,10 @@
       "lon": -0.18933693861441778,
       "personnel": 200,
       "small": false,
-      "region": "South East"
+      "region": "South East",
+      "dcId": 1844373,
+      "dcName": "Central,South/North East London Dispatch",
+      "dcAssign": "api"
     },
     {
       "id": 2462423,
@@ -3988,7 +5358,10 @@
       "lon": -2.4872321062565255,
       "personnel": 1,
       "small": false,
-      "region": "South West"
+      "region": "South West",
+      "dcId": 2353684,
+      "dcName": "Somerset FCR ",
+      "dcAssign": "api"
     },
     {
       "id": 2328050,
@@ -4000,7 +5373,10 @@
       "lon": -1.0443292233068258,
       "personnel": 200,
       "small": true,
-      "region": "London & South"
+      "region": "London & South",
+      "dcId": 2319655,
+      "dcName": "Basingstoke,Alton,Oakley Dispatch",
+      "dcAssign": "api"
     },
     {
       "id": 2642427,
@@ -4012,7 +5388,10 @@
       "lon": -5.2444244,
       "personnel": 21,
       "small": true,
-      "region": "South West"
+      "region": "South West",
+      "dcId": 2638184,
+      "dcName": "Cornwall FCR",
+      "dcAssign": "api"
     },
     {
       "id": 1984600,
@@ -4024,7 +5403,10 @@
       "lon": -0.05532885858920619,
       "personnel": 200,
       "small": true,
-      "region": "South East"
+      "region": "South East",
+      "dcId": 1844373,
+      "dcName": "Central,South/North East London Dispatch",
+      "dcAssign": "api"
     },
     {
       "id": 2647804,
@@ -4036,7 +5418,10 @@
       "lon": -3.1176314,
       "personnel": 18,
       "small": true,
-      "region": "Wales"
+      "region": "Wales",
+      "dcId": 2469519,
+      "dcName": "𝙒𝙖𝙡𝙚𝙨 🏴󠁧󠁢󠁷󠁬󠁳󠁿 𝘾𝙮𝙢𝙧𝙪",
+      "dcAssign": "api"
     },
     {
       "id": 2638177,
@@ -4048,7 +5433,10 @@
       "lon": -3.8400748,
       "personnel": 24,
       "small": true,
-      "region": "South West"
+      "region": "South West",
+      "dcId": 2635219,
+      "dcName": "Devon DC",
+      "dcAssign": "api"
     },
     {
       "id": 2620832,
@@ -4060,7 +5448,10 @@
       "lon": -1.5263618668626668,
       "personnel": 1,
       "small": false,
-      "region": "North"
+      "region": "North",
+      "dcId": 1988744,
+      "dcName": "(M2XN) North Yorkshire DC",
+      "dcAssign": "api"
     },
     {
       "id": 2505578,
@@ -4072,7 +5463,10 @@
       "lon": -2.356747928237651,
       "personnel": 144,
       "small": false,
-      "region": "South West"
+      "region": "South West",
+      "dcId": 2353684,
+      "dcName": "Somerset FCR ",
+      "dcAssign": "api"
     },
     {
       "id": 2658825,
@@ -4084,7 +5478,10 @@
       "lon": -2.583967803345702,
       "personnel": 1,
       "small": false,
-      "region": "South West"
+      "region": "South West",
+      "dcId": 2353684,
+      "dcName": "Somerset FCR ",
+      "dcAssign": "api"
     },
     {
       "id": 2621314,
@@ -4096,7 +5493,10 @@
       "lon": -3.2182590869673215,
       "personnel": 0,
       "small": false,
-      "region": "Scotland"
+      "region": "Scotland",
+      "dcId": 2621314,
+      "dcName": "Southern Scotland DC",
+      "dcAssign": "self"
     },
     {
       "id": 2312467,
@@ -4108,7 +5508,10 @@
       "lon": -1.5178581711838002,
       "personnel": 200,
       "small": false,
-      "region": "North"
+      "region": "North",
+      "dcId": 1988744,
+      "dcName": "(M2XN) North Yorkshire DC",
+      "dcAssign": "api"
     },
     {
       "id": 2621344,
@@ -4120,7 +5523,10 @@
       "lon": -3.053422247945874,
       "personnel": 1,
       "small": false,
-      "region": "North"
+      "region": "North",
+      "dcId": 2621314,
+      "dcName": "Southern Scotland DC",
+      "dcAssign": "api"
     },
     {
       "id": 2658838,
@@ -4132,7 +5538,10 @@
       "lon": -2.9646772686502736,
       "personnel": 1,
       "small": false,
-      "region": "South West"
+      "region": "South West",
+      "dcId": 2353684,
+      "dcName": "Somerset FCR ",
+      "dcAssign": "api"
     },
     {
       "id": 1987514,
@@ -4144,7 +5553,10 @@
       "lon": -0.15934475660952505,
       "personnel": 200,
       "small": false,
-      "region": "South East"
+      "region": "South East",
+      "dcId": 1984642,
+      "dcName": "West, South, SW,NW North London Dispatch",
+      "dcAssign": "api"
     },
     {
       "id": 2633723,
@@ -4156,7 +5568,10 @@
       "lon": -2.9929528,
       "personnel": 28,
       "small": true,
-      "region": "South West"
+      "region": "South West",
+      "dcId": 2353684,
+      "dcName": "Somerset FCR ",
+      "dcAssign": "api"
     },
     {
       "id": 2033678,
@@ -4168,7 +5583,10 @@
       "lon": -0.09586077309575829,
       "personnel": 200,
       "small": false,
-      "region": "South East"
+      "region": "South East",
+      "dcId": 1844373,
+      "dcName": "Central,South/North East London Dispatch",
+      "dcAssign": "api"
     },
     {
       "id": 1984068,
@@ -4180,7 +5598,10 @@
       "lon": -0.1360894345703035,
       "personnel": 200,
       "small": false,
-      "region": "South East"
+      "region": "South East",
+      "dcId": 1844373,
+      "dcName": "Central,South/North East London Dispatch",
+      "dcAssign": "api"
     },
     {
       "id": 1984004,
@@ -4192,7 +5613,10 @@
       "lon": -0.13069131081189714,
       "personnel": 200,
       "small": false,
-      "region": "South East"
+      "region": "South East",
+      "dcId": 1844373,
+      "dcName": "Central,South/North East London Dispatch",
+      "dcAssign": "api"
     },
     {
       "id": 2327980,
@@ -4204,7 +5628,10 @@
       "lon": -0.08541212724164834,
       "personnel": 200,
       "small": false,
-      "region": "South East"
+      "region": "South East",
+      "dcId": 1844373,
+      "dcName": "Central,South/North East London Dispatch",
+      "dcAssign": "api"
     },
     {
       "id": 2319695,
@@ -4216,7 +5643,10 @@
       "lon": -1.0952816585198275,
       "personnel": 200,
       "small": false,
-      "region": "London & South"
+      "region": "London & South",
+      "dcId": 2319655,
+      "dcName": "Basingstoke,Alton,Oakley Dispatch",
+      "dcAssign": "api"
     },
     {
       "id": 2638176,
@@ -4228,7 +5658,10 @@
       "lon": -3.9542683,
       "personnel": 24,
       "small": true,
-      "region": "South West"
+      "region": "South West",
+      "dcId": 2635219,
+      "dcName": "Devon DC",
+      "dcAssign": "api"
     },
     {
       "id": 2600986,
@@ -4240,7 +5673,10 @@
       "lon": 1.8916948,
       "personnel": 57,
       "small": false,
-      "region": "Other / Overseas"
+      "region": "Other / Overseas",
+      "dcId": 2649006,
+      "dcName": "France 🇫🇷 FCR ",
+      "dcAssign": "api"
     },
     {
       "id": 2390847,
@@ -4252,7 +5688,10 @@
       "lon": -2.3916416733188,
       "personnel": 0,
       "small": false,
-      "region": "South West"
+      "region": "South West",
+      "dcId": 2353684,
+      "dcName": "Somerset FCR ",
+      "dcAssign": "api"
     },
     {
       "id": 1988490,
@@ -4264,7 +5703,10 @@
       "lon": -1.5335783556917681,
       "personnel": 200,
       "small": false,
-      "region": "North"
+      "region": "North",
+      "dcId": 1988744,
+      "dcName": "(M2XN) North Yorkshire DC",
+      "dcAssign": "api"
     },
     {
       "id": 1984864,
@@ -4276,7 +5718,10 @@
       "lon": -0.1341802363227259,
       "personnel": 200,
       "small": false,
-      "region": "South East"
+      "region": "South East",
+      "dcId": 1984642,
+      "dcName": "West, South, SW,NW North London Dispatch",
+      "dcAssign": "api"
     },
     {
       "id": 2638161,
@@ -4288,7 +5733,10 @@
       "lon": -3.6094583,
       "personnel": 24,
       "small": true,
-      "region": "South West"
+      "region": "South West",
+      "dcId": 2635219,
+      "dcName": "Devon DC",
+      "dcAssign": "api"
     },
     {
       "id": 2328384,
@@ -4300,7 +5748,10 @@
       "lon": -0.41867093340787376,
       "personnel": 200,
       "small": true,
-      "region": "South East"
+      "region": "South East",
+      "dcId": 2328160,
+      "dcName": "National Highways (South England)",
+      "dcAssign": "api"
     },
     {
       "id": 2328773,
@@ -4312,7 +5763,10 @@
       "lon": -0.7195050585298484,
       "personnel": 200,
       "small": false,
-      "region": "London & South"
+      "region": "London & South",
+      "dcId": 2328160,
+      "dcName": "National Highways (South England)",
+      "dcAssign": "api"
     },
     {
       "id": 2374908,
@@ -4324,7 +5778,10 @@
       "lon": -2.59112576516333,
       "personnel": 200,
       "small": true,
-      "region": "South West"
+      "region": "South West",
+      "dcId": 2353684,
+      "dcName": "Somerset FCR ",
+      "dcAssign": "api"
     },
     {
       "id": 2622181,
@@ -4336,7 +5793,10 @@
       "lon": -0.4443277,
       "personnel": 37,
       "small": true,
-      "region": "North"
+      "region": "North",
+      "dcId": 2622184,
+      "dcName": "East Yorkshire DC",
+      "dcAssign": "api"
     },
     {
       "id": 2636828,
@@ -4348,7 +5808,10 @@
       "lon": -1.9759062485250058,
       "personnel": 26,
       "small": true,
-      "region": "South West"
+      "region": "South West",
+      "dcId": 2635644,
+      "dcName": "Dorset DC",
+      "dcAssign": "api"
     },
     {
       "id": 2326147,
@@ -4360,7 +5823,10 @@
       "lon": -0.41011515597785947,
       "personnel": 200,
       "small": false,
-      "region": "North"
+      "region": "North",
+      "dcId": 2325711,
+      "dcName": "(M2XN) E-Yorks FCR",
+      "dcAssign": "api"
     },
     {
       "id": 2652168,
@@ -4372,7 +5838,10 @@
       "lon": -2.7340718203972867,
       "personnel": 14,
       "small": true,
-      "region": "Midlands"
+      "region": "Midlands",
+      "dcId": 2652166,
+      "dcName": "Herefordshire FCR ",
+      "dcAssign": "api"
     },
     {
       "id": 2582594,
@@ -4384,7 +5853,10 @@
       "lon": -2.4590578,
       "personnel": 69,
       "small": false,
-      "region": "South West"
+      "region": "South West",
+      "dcId": 2582593,
+      "dcName": "Gloucestershire Dispatch",
+      "dcAssign": "api"
     },
     {
       "id": 2330200,
@@ -4396,7 +5868,10 @@
       "lon": -0.7195036366357542,
       "personnel": 200,
       "small": false,
-      "region": "London & South"
+      "region": "London & South",
+      "dcId": 2328160,
+      "dcName": "National Highways (South England)",
+      "dcAssign": "api"
     },
     {
       "id": 2333215,
@@ -4408,7 +5883,10 @@
       "lon": -0.9291737011750661,
       "personnel": 200,
       "small": true,
-      "region": "London & South"
+      "region": "London & South",
+      "dcId": 2328160,
+      "dcName": "National Highways (South England)",
+      "dcAssign": "api"
     },
     {
       "id": 2638163,
@@ -4420,7 +5898,10 @@
       "lon": -3.7777856,
       "personnel": 24,
       "small": true,
-      "region": "South West"
+      "region": "South West",
+      "dcId": 2635219,
+      "dcName": "Devon DC",
+      "dcAssign": "api"
     },
     {
       "id": 2638166,
@@ -4432,7 +5913,10 @@
       "lon": -4.1439756,
       "personnel": 24,
       "small": true,
-      "region": "South West"
+      "region": "South West",
+      "dcId": 2635219,
+      "dcName": "Devon DC",
+      "dcAssign": "api"
     },
     {
       "id": 2651009,
@@ -4444,7 +5928,10 @@
       "lon": -2.77143020030613,
       "personnel": 14,
       "small": true,
-      "region": "Midlands"
+      "region": "Midlands",
+      "dcId": 2650937,
+      "dcName": "Shropshire FCR ",
+      "dcAssign": "api"
     },
     {
       "id": 1983967,
@@ -4456,7 +5943,10 @@
       "lon": -0.12629740715276055,
       "personnel": 200,
       "small": false,
-      "region": "South East"
+      "region": "South East",
+      "dcId": 1844373,
+      "dcName": "Central,South/North East London Dispatch",
+      "dcAssign": "api"
     },
     {
       "id": 2635513,
@@ -4468,7 +5958,10 @@
       "lon": -1.7791513664204774,
       "personnel": 0,
       "small": false,
-      "region": "South West"
+      "region": "South West",
+      "dcId": 2635513,
+      "dcName": "Wiltshire DC",
+      "dcAssign": "self"
     },
     {
       "id": 2319692,
@@ -4480,7 +5973,10 @@
       "lon": -1.3596020528143282,
       "personnel": 200,
       "small": false,
-      "region": "Other / Overseas"
+      "region": "Other / Overseas",
+      "dcId": 2311778,
+      "dcName": "Hampshire DC",
+      "dcAssign": "api"
     },
     {
       "id": 1844412,
@@ -4492,7 +5988,10 @@
       "lon": -0.05532037907216101,
       "personnel": 200,
       "small": false,
-      "region": "South East"
+      "region": "South East",
+      "dcId": 1844373,
+      "dcName": "Central,South/North East London Dispatch",
+      "dcAssign": "api"
     },
     {
       "id": 2636820,
@@ -4504,7 +6003,10 @@
       "lon": -2.446820035050778,
       "personnel": 26,
       "small": true,
-      "region": "South West"
+      "region": "South West",
+      "dcId": 2635644,
+      "dcName": "Dorset DC",
+      "dcAssign": "api"
     },
     {
       "id": 2650412,
@@ -4516,7 +6018,10 @@
       "lon": -4.5360852423322005,
       "personnel": 0,
       "small": false,
-      "region": "North"
+      "region": "North",
+      "dcId": 2650412,
+      "dcName": "Isle Of Man 🇮🇲 ",
+      "dcAssign": "self"
     },
     {
       "id": 2621066,
@@ -4528,7 +6033,10 @@
       "lon": -1.8209697,
       "personnel": 38,
       "small": true,
-      "region": "Midlands"
+      "region": "Midlands",
+      "dcId": 2621062,
+      "dcName": "Staffordshire DC",
+      "dcAssign": "api"
     },
     {
       "id": 2620972,
@@ -4540,7 +6048,10 @@
       "lon": -1.6182427,
       "personnel": 38,
       "small": true,
-      "region": "North"
+      "region": "North",
+      "dcId": 2620974,
+      "dcName": "South Yorkshire DC",
+      "dcAssign": "api"
     },
     {
       "id": 1987703,
@@ -4552,7 +6063,10 @@
       "lon": -0.1180623846231183,
       "personnel": 200,
       "small": true,
-      "region": "South East"
+      "region": "South East",
+      "dcId": 1844373,
+      "dcName": "Central,South/North East London Dispatch",
+      "dcAssign": "api"
     },
     {
       "id": 2620962,
@@ -4564,7 +6078,10 @@
       "lon": -1.786863122031501,
       "personnel": 37,
       "small": true,
-      "region": "North"
+      "region": "North",
+      "dcId": 2620223,
+      "dcName": "⁠[WY-ECC] West Yorks Emergency Control⁠",
+      "dcAssign": "api"
     },
     {
       "id": 2567229,
@@ -4576,7 +6093,10 @@
       "lon": -2.971186856353536,
       "personnel": 0,
       "small": false,
-      "region": "South West"
+      "region": "South West",
+      "dcId": 2353684,
+      "dcName": "Somerset FCR ",
+      "dcAssign": "api"
     },
     {
       "id": 2620662,
@@ -4588,7 +6108,10 @@
       "lon": -1.5612811342479633,
       "personnel": 37,
       "small": false,
-      "region": "North"
+      "region": "North",
+      "dcId": 2620223,
+      "dcName": "⁠[WY-ECC] West Yorks Emergency Control⁠",
+      "dcAssign": "api"
     },
     {
       "id": 2654837,
@@ -4600,7 +6123,10 @@
       "lon": -2.9876706,
       "personnel": 24,
       "small": false,
-      "region": "South West"
+      "region": "South West",
+      "dcId": 2353684,
+      "dcName": "Somerset FCR ",
+      "dcAssign": "api"
     },
     {
       "id": 2349644,
@@ -4612,7 +6138,10 @@
       "lon": -1.0702550395224386,
       "personnel": 200,
       "small": false,
-      "region": "North"
+      "region": "North",
+      "dcId": 2349753,
+      "dcName": "(M2XN) York city",
+      "dcAssign": "api"
     },
     {
       "id": 2328513,
@@ -4624,7 +6153,10 @@
       "lon": -0.17492531125666225,
       "personnel": 200,
       "small": false,
-      "region": "South East"
+      "region": "South East",
+      "dcId": 1984642,
+      "dcName": "West, South, SW,NW North London Dispatch",
+      "dcAssign": "api"
     },
     {
       "id": 2357958,
@@ -4636,7 +6168,10 @@
       "lon": -2.4468191350576167,
       "personnel": 227,
       "small": false,
-      "region": "South West"
+      "region": "South West",
+      "dcId": 2353684,
+      "dcName": "Somerset FCR ",
+      "dcAssign": "api"
     },
     {
       "id": 2319797,
@@ -4648,7 +6183,10 @@
       "lon": -1.1099635533279315,
       "personnel": 200,
       "small": false,
-      "region": "London & South"
+      "region": "London & South",
+      "dcId": 2319655,
+      "dcName": "Basingstoke,Alton,Oakley Dispatch",
+      "dcAssign": "api"
     },
     {
       "id": 1987515,
@@ -4660,7 +6198,10 @@
       "lon": -0.1588935017426944,
       "personnel": 200,
       "small": false,
-      "region": "South East"
+      "region": "South East",
+      "dcId": 1984642,
+      "dcName": "West, South, SW,NW North London Dispatch",
+      "dcAssign": "api"
     },
     {
       "id": 2325715,
@@ -4672,7 +6213,10 @@
       "lon": -0.39304236909934537,
       "personnel": 200,
       "small": false,
-      "region": "North"
+      "region": "North",
+      "dcId": 2325711,
+      "dcName": "(M2XN) E-Yorks FCR",
+      "dcAssign": "api"
     },
     {
       "id": 2656571,
@@ -4684,7 +6228,10 @@
       "lon": -0.27882237567282653,
       "personnel": 10,
       "small": true,
-      "region": "South East"
+      "region": "South East",
+      "dcId": 1984642,
+      "dcName": "West, South, SW,NW North London Dispatch",
+      "dcAssign": "api"
     },
     {
       "id": 2652882,
@@ -4696,7 +6243,10 @@
       "lon": 2.682034,
       "personnel": 14,
       "small": true,
-      "region": "Other / Overseas"
+      "region": "Other / Overseas",
+      "dcId": 2652880,
+      "dcName": "Belgium 🇧🇪 FCR",
+      "dcAssign": "api"
     },
     {
       "id": 2642433,
@@ -4708,7 +6258,10 @@
       "lon": -4.6814228,
       "personnel": 21,
       "small": true,
-      "region": "South West"
+      "region": "South West",
+      "dcId": 2638184,
+      "dcName": "Cornwall FCR",
+      "dcAssign": "api"
     },
     {
       "id": 1988488,
@@ -4720,7 +6273,10 @@
       "lon": -1.539725223926126,
       "personnel": 200,
       "small": false,
-      "region": "North"
+      "region": "North",
+      "dcId": 1988744,
+      "dcName": "(M2XN) North Yorkshire DC",
+      "dcAssign": "api"
     },
     {
       "id": 2652194,
@@ -4732,7 +6288,10 @@
       "lon": -2.2596412,
       "personnel": 14,
       "small": true,
-      "region": "Midlands"
+      "region": "Midlands",
+      "dcId": 2621069,
+      "dcName": "Worcestershire DC",
+      "dcAssign": "api"
     },
     {
       "id": 2654848,
@@ -4744,7 +6303,10 @@
       "lon": -2.567312584388859,
       "personnel": 12,
       "small": true,
-      "region": "South West"
+      "region": "South West",
+      "dcId": 2353684,
+      "dcName": "Somerset FCR ",
+      "dcAssign": "api"
     },
     {
       "id": 2319380,
@@ -4756,7 +6318,10 @@
       "lon": -1.4016221735665497,
       "personnel": 200,
       "small": false,
-      "region": "Other / Overseas"
+      "region": "Other / Overseas",
+      "dcId": 2311778,
+      "dcName": "Hampshire DC",
+      "dcAssign": "api"
     },
     {
       "id": 2318784,
@@ -4768,7 +6333,10 @@
       "lon": -1.4480734116612288,
       "personnel": 200,
       "small": false,
-      "region": "Other / Overseas"
+      "region": "Other / Overseas",
+      "dcId": 2311778,
+      "dcName": "Hampshire DC",
+      "dcAssign": "api"
     },
     {
       "id": 2319201,
@@ -4780,7 +6348,10 @@
       "lon": -0.0875536641096022,
       "personnel": 200,
       "small": false,
-      "region": "South East"
+      "region": "South East",
+      "dcId": 1844373,
+      "dcName": "Central,South/North East London Dispatch",
+      "dcAssign": "api"
     },
     {
       "id": 1984841,
@@ -4792,7 +6363,10 @@
       "lon": -0.13420135625188256,
       "personnel": 200,
       "small": true,
-      "region": "South East"
+      "region": "South East",
+      "dcId": 1984642,
+      "dcName": "West, South, SW,NW North London Dispatch",
+      "dcAssign": "api"
     },
     {
       "id": 2041378,
@@ -4804,7 +6378,10 @@
       "lon": -0.12275986079634861,
       "personnel": 200,
       "small": false,
-      "region": "South East"
+      "region": "South East",
+      "dcId": 1844373,
+      "dcName": "Central,South/North East London Dispatch",
+      "dcAssign": "api"
     },
     {
       "id": 2649579,
@@ -4816,7 +6393,10 @@
       "lon": -4.4240069732379705,
       "personnel": 16,
       "small": true,
-      "region": "Wales"
+      "region": "Wales",
+      "dcId": 2469519,
+      "dcName": "𝙒𝙖𝙡𝙚𝙨 🏴󠁧󠁢󠁷󠁬󠁳󠁿 𝘾𝙮𝙢𝙧𝙪",
+      "dcAssign": "api"
     },
     {
       "id": 2311530,
@@ -4828,7 +6408,10 @@
       "lon": -1.568681194543798,
       "personnel": 200,
       "small": false,
-      "region": "North"
+      "region": "North",
+      "dcId": 1988744,
+      "dcName": "(M2XN) North Yorkshire DC",
+      "dcAssign": "api"
     },
     {
       "id": 2642428,
@@ -4840,7 +6423,10 @@
       "lon": -5.0861887,
       "personnel": 21,
       "small": true,
-      "region": "South West"
+      "region": "South West",
+      "dcId": 2638184,
+      "dcName": "Cornwall FCR",
+      "dcAssign": "api"
     },
     {
       "id": 2620255,
@@ -4852,7 +6438,10 @@
       "lon": -1.5456551,
       "personnel": 43,
       "small": true,
-      "region": "North"
+      "region": "North",
+      "dcId": 2620223,
+      "dcName": "⁠[WY-ECC] West Yorks Emergency Control⁠",
+      "dcAssign": "api"
     },
     {
       "id": 2311534,
@@ -4864,7 +6453,10 @@
       "lon": -1.5182799318439455,
       "personnel": 200,
       "small": false,
-      "region": "North"
+      "region": "North",
+      "dcId": 1988744,
+      "dcName": "(M2XN) North Yorkshire DC",
+      "dcAssign": "api"
     },
     {
       "id": 2656580,
@@ -4876,7 +6468,10 @@
       "lon": -0.075795,
       "personnel": 10,
       "small": true,
-      "region": "South East"
+      "region": "South East",
+      "dcId": 2656579,
+      "dcName": "Surrey FCR",
+      "dcAssign": "api"
     },
     {
       "id": 2620959,
@@ -4888,7 +6483,10 @@
       "lon": -1.6518805,
       "personnel": 37,
       "small": true,
-      "region": "North"
+      "region": "North",
+      "dcId": 2620223,
+      "dcName": "⁠[WY-ECC] West Yorks Emergency Control⁠",
+      "dcAssign": "api"
     },
     {
       "id": 2033679,
@@ -4900,7 +6498,10 @@
       "lon": -0.09735702364887618,
       "personnel": 200,
       "small": false,
-      "region": "South East"
+      "region": "South East",
+      "dcId": 1844373,
+      "dcName": "Central,South/North East London Dispatch",
+      "dcAssign": "api"
     },
     {
       "id": 2325710,
@@ -4912,7 +6513,10 @@
       "lon": -0.40698258763913125,
       "personnel": 200,
       "small": false,
-      "region": "North"
+      "region": "North",
+      "dcId": 2325711,
+      "dcName": "(M2XN) E-Yorks FCR",
+      "dcAssign": "api"
     },
     {
       "id": 2320404,
@@ -4924,7 +6528,10 @@
       "lon": -0.4590044680442218,
       "personnel": 200,
       "small": false,
-      "region": "South East"
+      "region": "South East",
+      "dcId": 2339242,
+      "dcName": "Heathrow Airport",
+      "dcAssign": "api"
     },
     {
       "id": 2318646,
@@ -4936,7 +6543,10 @@
       "lon": -0.033829908434200355,
       "personnel": 200,
       "small": false,
-      "region": "South East"
+      "region": "South East",
+      "dcId": 1844373,
+      "dcName": "Central,South/North East London Dispatch",
+      "dcAssign": "api"
     },
     {
       "id": 2360732,
@@ -4948,7 +6558,10 @@
       "lon": -2.3716528792951537,
       "personnel": 200,
       "small": false,
-      "region": "South West"
+      "region": "South West",
+      "dcId": 2353684,
+      "dcName": "Somerset FCR ",
+      "dcAssign": "api"
     },
     {
       "id": 2318732,
@@ -4960,7 +6573,10 @@
       "lon": -1.4055767474657461,
       "personnel": 200,
       "small": false,
-      "region": "Other / Overseas"
+      "region": "Other / Overseas",
+      "dcId": 2311778,
+      "dcName": "Hampshire DC",
+      "dcAssign": "api"
     },
     {
       "id": 2636822,
@@ -4972,7 +6588,10 @@
       "lon": -1.8665543,
       "personnel": 26,
       "small": true,
-      "region": "South West"
+      "region": "South West",
+      "dcId": 2635644,
+      "dcName": "Dorset DC",
+      "dcAssign": "api"
     },
     {
       "id": 2635199,
@@ -4984,7 +6603,10 @@
       "lon": -2.9606053373878924,
       "personnel": 27,
       "small": true,
-      "region": "South West"
+      "region": "South West",
+      "dcId": 2353684,
+      "dcName": "Somerset FCR ",
+      "dcAssign": "api"
     },
     {
       "id": 2311778,
@@ -4996,7 +6618,10 @@
       "lon": -1.395061439554288,
       "personnel": 0,
       "small": false,
-      "region": "Other / Overseas"
+      "region": "Other / Overseas",
+      "dcId": 2311778,
+      "dcName": "Hampshire DC",
+      "dcAssign": "self"
     },
     {
       "id": 2317874,
@@ -5008,7 +6633,10 @@
       "lon": -0.4589267897798176,
       "personnel": 200,
       "small": false,
-      "region": "South East"
+      "region": "South East",
+      "dcId": 2339242,
+      "dcName": "Heathrow Airport",
+      "dcAssign": "api"
     },
     {
       "id": 2325716,
@@ -5020,7 +6648,10 @@
       "lon": -0.41736325615897896,
       "personnel": 200,
       "small": false,
-      "region": "North"
+      "region": "North",
+      "dcId": 2325711,
+      "dcName": "(M2XN) E-Yorks FCR",
+      "dcAssign": "api"
     },
     {
       "id": 2312349,
@@ -5032,7 +6663,10 @@
       "lon": -1.4036165381705772,
       "personnel": 200,
       "small": false,
-      "region": "Other / Overseas"
+      "region": "Other / Overseas",
+      "dcId": 2311778,
+      "dcName": "Hampshire DC",
+      "dcAssign": "api"
     },
     {
       "id": 2041380,
@@ -5044,7 +6678,10 @@
       "lon": -0.11885529196542406,
       "personnel": 200,
       "small": false,
-      "region": "South East"
+      "region": "South East",
+      "dcId": 1844373,
+      "dcName": "Central,South/North East London Dispatch",
+      "dcAssign": "api"
     },
     {
       "id": 2506985,
@@ -5056,7 +6693,10 @@
       "lon": -2.311358561144637,
       "personnel": 0,
       "small": false,
-      "region": "South West"
+      "region": "South West",
+      "dcId": 2353684,
+      "dcName": "Somerset FCR ",
+      "dcAssign": "api"
     },
     {
       "id": 2349731,
@@ -5068,7 +6708,10 @@
       "lon": -1.072185743925276,
       "personnel": 200,
       "small": false,
-      "region": "North"
+      "region": "North",
+      "dcId": 2349753,
+      "dcName": "(M2XN) York city",
+      "dcAssign": "api"
     },
     {
       "id": 2481623,
@@ -5080,7 +6723,10 @@
       "lon": -2.5495452,
       "personnel": 156,
       "small": true,
-      "region": "South West"
+      "region": "South West",
+      "dcId": 2353684,
+      "dcName": "Somerset FCR ",
+      "dcAssign": "api"
     },
     {
       "id": 2620223,
@@ -5092,7 +6738,10 @@
       "lon": -1.5482316659310116,
       "personnel": 0,
       "small": false,
-      "region": "North"
+      "region": "North",
+      "dcId": 2620223,
+      "dcName": "⁠[WY-ECC] West Yorks Emergency Control⁠",
+      "dcAssign": "self"
     },
     {
       "id": 2654951,
@@ -5104,7 +6753,10 @@
       "lon": -2.8663935442003736,
       "personnel": 12,
       "small": false,
-      "region": "South West"
+      "region": "South West",
+      "dcId": 2353684,
+      "dcName": "Somerset FCR ",
+      "dcAssign": "api"
     },
     {
       "id": 2311542,
@@ -5116,7 +6768,10 @@
       "lon": -1.4647879237126022,
       "personnel": 200,
       "small": false,
-      "region": "North"
+      "region": "North",
+      "dcId": 1988744,
+      "dcName": "(M2XN) North Yorkshire DC",
+      "dcAssign": "api"
     },
     {
       "id": 2353684,
@@ -5128,7 +6783,10 @@
       "lon": -2.5562629,
       "personnel": 0,
       "small": false,
-      "region": "South West"
+      "region": "South West",
+      "dcId": 2353684,
+      "dcName": "Somerset FCR ",
+      "dcAssign": "self"
     },
     {
       "id": 2633720,
@@ -5140,7 +6798,10 @@
       "lon": -2.7315327,
       "personnel": 28,
       "small": true,
-      "region": "South West"
+      "region": "South West",
+      "dcId": 2353684,
+      "dcName": "Somerset FCR ",
+      "dcAssign": "api"
     },
     {
       "id": 2318596,
@@ -5152,7 +6813,10 @@
       "lon": -0.17390483465053036,
       "personnel": 200,
       "small": false,
-      "region": "South East"
+      "region": "South East",
+      "dcId": 1844373,
+      "dcName": "Central,South/North East London Dispatch",
+      "dcAssign": "api"
     },
     {
       "id": 2333522,
@@ -5164,7 +6828,10 @@
       "lon": -0.10486581445809218,
       "personnel": 200,
       "small": true,
-      "region": "South East"
+      "region": "South East",
+      "dcId": 1844373,
+      "dcName": "Central,South/North East London Dispatch",
+      "dcAssign": "api"
     },
     {
       "id": 2033689,
@@ -5176,7 +6843,10 @@
       "lon": -0.10331891087059228,
       "personnel": 200,
       "small": false,
-      "region": "South East"
+      "region": "South East",
+      "dcId": 1844373,
+      "dcName": "Central,South/North East London Dispatch",
+      "dcAssign": "api"
     },
     {
       "id": 1984387,
@@ -5188,7 +6858,10 @@
       "lon": -0.19071993868881512,
       "personnel": 200,
       "small": false,
-      "region": "South East"
+      "region": "South East",
+      "dcId": 1844373,
+      "dcName": "Central,South/North East London Dispatch",
+      "dcAssign": "api"
     },
     {
       "id": 2352918,
@@ -5200,7 +6873,10 @@
       "lon": -0.8041484841334148,
       "personnel": 200,
       "small": false,
-      "region": "North"
+      "region": "North",
+      "dcId": 2325711,
+      "dcName": "(M2XN) E-Yorks FCR",
+      "dcAssign": "api"
     },
     {
       "id": 2477884,
@@ -5212,7 +6888,10 @@
       "lon": -1.507644245412419,
       "personnel": 153,
       "small": false,
-      "region": "Midlands"
+      "region": "Midlands",
+      "dcId": 2621080,
+      "dcName": "West Midlands",
+      "dcAssign": "api"
     },
     {
       "id": 2621094,
@@ -5224,7 +6903,10 @@
       "lon": -2.2024662,
       "personnel": 38,
       "small": true,
-      "region": "Midlands"
+      "region": "Midlands",
+      "dcId": 2621062,
+      "dcName": "Staffordshire DC",
+      "dcAssign": "api"
     },
     {
       "id": 2648341,
@@ -5236,7 +6918,10 @@
       "lon": -4.2860023,
       "personnel": 17,
       "small": true,
-      "region": "Wales"
+      "region": "Wales",
+      "dcId": 2469519,
+      "dcName": "𝙒𝙖𝙡𝙚𝙨 🏴󠁧󠁢󠁷󠁬󠁳󠁿 𝘾𝙮𝙢𝙧𝙪",
+      "dcAssign": "api"
     },
     {
       "id": 2339238,
@@ -5248,7 +6933,10 @@
       "lon": -0.4577461057321879,
       "personnel": 200,
       "small": false,
-      "region": "South East"
+      "region": "South East",
+      "dcId": 2339242,
+      "dcName": "Heathrow Airport",
+      "dcAssign": "api"
     },
     {
       "id": 2353683,
@@ -5260,7 +6948,10 @@
       "lon": -2.456687298230694,
       "personnel": 200,
       "small": false,
-      "region": "South West"
+      "region": "South West",
+      "dcId": 2353684,
+      "dcName": "Somerset FCR ",
+      "dcAssign": "api"
     },
     {
       "id": 2648343,
@@ -5272,7 +6963,10 @@
       "lon": -4.9213215278773035,
       "personnel": 17,
       "small": true,
-      "region": "Wales"
+      "region": "Wales",
+      "dcId": 2469519,
+      "dcName": "𝙒𝙖𝙡𝙚𝙨 🏴󠁧󠁢󠁷󠁬󠁳󠁿 𝘾𝙮𝙢𝙧𝙪",
+      "dcAssign": "api"
     },
     {
       "id": 2635584,
@@ -5284,7 +6978,10 @@
       "lon": -1.4934589,
       "personnel": 13,
       "small": true,
-      "region": "Other / Overseas"
+      "region": "Other / Overseas",
+      "dcId": 2311778,
+      "dcName": "Hampshire DC",
+      "dcAssign": "api"
     },
     {
       "id": 2654834,
@@ -5296,7 +6993,10 @@
       "lon": -2.981580427113947,
       "personnel": 13,
       "small": false,
-      "region": "South West"
+      "region": "South West",
+      "dcId": 2353684,
+      "dcName": "Somerset FCR ",
+      "dcAssign": "api"
     },
     {
       "id": 2572701,
@@ -5308,7 +7008,10 @@
       "lon": -1.9813429906228315,
       "personnel": 0,
       "small": false,
-      "region": "South West"
+      "region": "South West",
+      "dcId": 2635513,
+      "dcName": "Wiltshire DC",
+      "dcAssign": "api"
     },
     {
       "id": 2650941,
@@ -5320,7 +7023,10 @@
       "lon": -3.0476990254114105,
       "personnel": 14,
       "small": true,
-      "region": "Wales"
+      "region": "Wales",
+      "dcId": 2650937,
+      "dcName": "Shropshire FCR ",
+      "dcAssign": "api"
     },
     {
       "id": 2657264,
@@ -5332,7 +7038,10 @@
       "lon": -2.9992715725343557,
       "personnel": 10,
       "small": false,
-      "region": "South West"
+      "region": "South West",
+      "dcId": 2353684,
+      "dcName": "Somerset FCR ",
+      "dcAssign": "api"
     },
     {
       "id": 2636829,
@@ -5344,7 +7053,10 @@
       "lon": -1.7917471093523079,
       "personnel": 13,
       "small": true,
-      "region": "South West"
+      "region": "South West",
+      "dcId": 2311778,
+      "dcName": "Hampshire DC",
+      "dcAssign": "api"
     },
     {
       "id": 2620355,
@@ -5356,7 +7068,10 @@
       "lon": -1.554507023226996,
       "personnel": 0,
       "small": false,
-      "region": "North"
+      "region": "North",
+      "dcId": 2620223,
+      "dcName": "⁠[WY-ECC] West Yorks Emergency Control⁠",
+      "dcAssign": "api"
     },
     {
       "id": 2657281,
@@ -5368,7 +7083,10 @@
       "lon": -0.9298533,
       "personnel": 9,
       "small": true,
-      "region": "Other / Overseas"
+      "region": "Other / Overseas",
+      "dcId": 2311778,
+      "dcName": "Hampshire DC",
+      "dcAssign": "api"
     },
     {
       "id": 1844367,
@@ -5380,7 +7098,10 @@
       "lon": -0.07236909155816951,
       "personnel": 200,
       "small": false,
-      "region": "South East"
+      "region": "South East",
+      "dcId": 1844373,
+      "dcName": "Central,South/North East London Dispatch",
+      "dcAssign": "api"
     },
     {
       "id": 2636839,
@@ -5392,7 +7113,10 @@
       "lon": -3.4651380366755107,
       "personnel": 24,
       "small": true,
-      "region": "South West"
+      "region": "South West",
+      "dcId": 2635219,
+      "dcName": "Devon DC",
+      "dcAssign": "api"
     },
     {
       "id": 2648345,
@@ -5404,7 +7128,10 @@
       "lon": -4.9682102,
       "personnel": 17,
       "small": true,
-      "region": "Wales"
+      "region": "Wales",
+      "dcId": 2469519,
+      "dcName": "𝙒𝙖𝙡𝙚𝙨 🏴󠁧󠁢󠁷󠁬󠁳󠁿 𝘾𝙮𝙢𝙧𝙪",
+      "dcAssign": "api"
     },
     {
       "id": 2650698,
@@ -5416,7 +7143,10 @@
       "lon": -3.027466951142558,
       "personnel": 15,
       "small": true,
-      "region": "Wales"
+      "region": "Wales",
+      "dcId": 2469519,
+      "dcName": "𝙒𝙖𝙡𝙚𝙨 🏴󠁧󠁢󠁷󠁬󠁳󠁿 𝘾𝙮𝙢𝙧𝙪",
+      "dcAssign": "api"
     },
     {
       "id": 2636826,
@@ -5428,7 +7158,10 @@
       "lon": -2.301659718136811,
       "personnel": 26,
       "small": true,
-      "region": "South West"
+      "region": "South West",
+      "dcId": 2635644,
+      "dcName": "Dorset DC",
+      "dcAssign": "api"
     },
     {
       "id": 2652209,
@@ -5440,7 +7173,10 @@
       "lon": -4.490164602375596,
       "personnel": 14,
       "small": true,
-      "region": "North"
+      "region": "North",
+      "dcId": 2650412,
+      "dcName": "Isle Of Man 🇮🇲 ",
+      "dcAssign": "api"
     },
     {
       "id": 2360510,
@@ -5452,7 +7188,10 @@
       "lon": -2.3267124370156784,
       "personnel": 200,
       "small": false,
-      "region": "South West"
+      "region": "South West",
+      "dcId": 2353684,
+      "dcName": "Somerset FCR ",
+      "dcAssign": "api"
     },
     {
       "id": 2624708,
@@ -5464,7 +7203,10 @@
       "lon": -1.7684743,
       "personnel": 33,
       "small": true,
-      "region": "South West"
+      "region": "South West",
+      "dcId": 2635513,
+      "dcName": "Wiltshire DC",
+      "dcAssign": "api"
     },
     {
       "id": 2633092,
@@ -5476,7 +7218,10 @@
       "lon": -0.28433153372713493,
       "personnel": 30,
       "small": false,
-      "region": "North"
+      "region": "North",
+      "dcId": 2325711,
+      "dcName": "(M2XN) E-Yorks FCR",
+      "dcAssign": "api"
     },
     {
       "id": 2657727,
@@ -5488,7 +7233,10 @@
       "lon": -2.282898963424587,
       "personnel": 8,
       "small": true,
-      "region": "North"
+      "region": "North",
+      "dcId": 1988744,
+      "dcName": "(M2XN) North Yorkshire DC",
+      "dcAssign": "api"
     },
     {
       "id": 2635479,
@@ -5500,7 +7248,10 @@
       "lon": -2.7981752,
       "personnel": 27,
       "small": true,
-      "region": "South West"
+      "region": "South West",
+      "dcId": 2353684,
+      "dcName": "Somerset FCR ",
+      "dcAssign": "api"
     },
     {
       "id": 2657760,
@@ -5512,7 +7263,10 @@
       "lon": -3.172390103917924,
       "personnel": 9,
       "small": false,
-      "region": "Wales"
+      "region": "Wales",
+      "dcId": 2469519,
+      "dcName": "𝙒𝙖𝙡𝙚𝙨 🏴󠁧󠁢󠁷󠁬󠁳󠁿 𝘾𝙮𝙢𝙧𝙪",
+      "dcAssign": "api"
     },
     {
       "id": 2648339,
@@ -5524,7 +7278,10 @@
       "lon": -4.135345023786211,
       "personnel": 17,
       "small": true,
-      "region": "Wales"
+      "region": "Wales",
+      "dcId": 2469519,
+      "dcName": "𝙒𝙖𝙡𝙚𝙨 🏴󠁧󠁢󠁷󠁬󠁳󠁿 𝘾𝙮𝙢𝙧𝙪",
+      "dcAssign": "api"
     },
     {
       "id": 2650937,
@@ -5536,7 +7293,10 @@
       "lon": -2.7713298545117584,
       "personnel": 0,
       "small": false,
-      "region": "Midlands"
+      "region": "Midlands",
+      "dcId": 2650937,
+      "dcName": "Shropshire FCR ",
+      "dcAssign": "self"
     },
     {
       "id": 2621069,
@@ -5548,7 +7308,10 @@
       "lon": -2.2222760915892956,
       "personnel": 0,
       "small": false,
-      "region": "South West"
+      "region": "South West",
+      "dcId": 2621069,
+      "dcName": "Worcestershire DC",
+      "dcAssign": "self"
     },
     {
       "id": 2652166,
@@ -5560,7 +7323,10 @@
       "lon": -2.706243211961644,
       "personnel": 0,
       "small": false,
-      "region": "South West"
+      "region": "South West",
+      "dcId": 2652166,
+      "dcName": "Herefordshire FCR ",
+      "dcAssign": "self"
     },
     {
       "id": 2642421,
@@ -5572,7 +7338,10 @@
       "lon": -4.463332740159219,
       "personnel": 21,
       "small": true,
-      "region": "South West"
+      "region": "South West",
+      "dcId": 2638184,
+      "dcName": "Cornwall FCR",
+      "dcAssign": "api"
     },
     {
       "id": 2621089,
@@ -5584,7 +7353,10 @@
       "lon": -1.5569444,
       "personnel": 38,
       "small": true,
-      "region": "Midlands"
+      "region": "Midlands",
+      "dcId": 2621011,
+      "dcName": "Derbyshire DC",
+      "dcAssign": "api"
     },
     {
       "id": 2652890,
@@ -5596,7 +7368,10 @@
       "lon": 3.8606632,
       "personnel": 14,
       "small": true,
-      "region": "South East"
+      "region": "South East",
+      "dcId": 2652889,
+      "dcName": "Netherlands 🇳🇱 FCR",
+      "dcAssign": "api"
     },
     {
       "id": 2657778,
@@ -5608,7 +7383,10 @@
       "lon": -2.4823785689930267,
       "personnel": 10,
       "small": false,
-      "region": "South West"
+      "region": "South West",
+      "dcId": 2582593,
+      "dcName": "Gloucestershire Dispatch",
+      "dcAssign": "api"
     },
     {
       "id": 2390840,
@@ -5620,7 +7398,10 @@
       "lon": -2.3573133894477687,
       "personnel": 200,
       "small": false,
-      "region": "South West"
+      "region": "South West",
+      "dcId": 2353684,
+      "dcName": "Somerset FCR ",
+      "dcAssign": "api"
     },
     {
       "id": 2659457,
@@ -5632,7 +7413,10 @@
       "lon": -2.3548276276925777,
       "personnel": 7,
       "small": true,
-      "region": "South West"
+      "region": "South West",
+      "dcId": 2582593,
+      "dcName": "Gloucestershire Dispatch",
+      "dcAssign": "api"
     },
     {
       "id": 2658580,
@@ -5644,7 +7428,10 @@
       "lon": -3.4391048,
       "personnel": 8,
       "small": false,
-      "region": "Wales"
+      "region": "Wales",
+      "dcId": 2353684,
+      "dcName": "Somerset FCR ",
+      "dcAssign": "api"
     },
     {
       "id": 2642426,
@@ -5656,7 +7443,10 @@
       "lon": -5.0915109,
       "personnel": 21,
       "small": true,
-      "region": "South West"
+      "region": "South West",
+      "dcId": 2638184,
+      "dcName": "Cornwall FCR",
+      "dcAssign": "api"
     },
     {
       "id": 2638164,
@@ -5668,7 +7458,10 @@
       "lon": -3.6783256,
       "personnel": 24,
       "small": true,
-      "region": "South West"
+      "region": "South West",
+      "dcId": 2635219,
+      "dcName": "Devon DC",
+      "dcAssign": "api"
     },
     {
       "id": 2639115,
@@ -5680,7 +7473,10 @@
       "lon": -4.8366036,
       "personnel": 23,
       "small": true,
-      "region": "South West"
+      "region": "South West",
+      "dcId": 2638184,
+      "dcName": "Cornwall FCR",
+      "dcAssign": "api"
     },
     {
       "id": 2572679,
@@ -5692,7 +7488,10 @@
       "lon": -2.5914042228812084,
       "personnel": 0,
       "small": false,
-      "region": "South West"
+      "region": "South West",
+      "dcId": 2353684,
+      "dcName": "Somerset FCR ",
+      "dcAssign": "api"
     },
     {
       "id": 2342741,
@@ -5704,7 +7503,10 @@
       "lon": -1.424432510482214,
       "personnel": 200,
       "small": false,
-      "region": "Other / Overseas"
+      "region": "Other / Overseas",
+      "dcId": 2311778,
+      "dcName": "Hampshire DC",
+      "dcAssign": "api"
     },
     {
       "id": 2481571,
@@ -5716,7 +7518,10 @@
       "lon": -2.5839830641080153,
       "personnel": 167,
       "small": false,
-      "region": "South West"
+      "region": "South West",
+      "dcId": 2353684,
+      "dcName": "Somerset FCR ",
+      "dcAssign": "api"
     },
     {
       "id": 2621096,
@@ -5728,7 +7533,10 @@
       "lon": -1.483454997737234,
       "personnel": 38,
       "small": true,
-      "region": "Midlands"
+      "region": "Midlands",
+      "dcId": 2621080,
+      "dcName": "West Midlands",
+      "dcAssign": "api"
     },
     {
       "id": 2567757,
@@ -5740,7 +7548,10 @@
       "lon": -2.1876938,
       "personnel": 94,
       "small": false,
-      "region": "South West"
+      "region": "South West",
+      "dcId": 2635513,
+      "dcName": "Wiltshire DC",
+      "dcAssign": "api"
     },
     {
       "id": 2650604,
@@ -5752,7 +7563,10 @@
       "lon": -3.7103439019962305,
       "personnel": 15,
       "small": true,
-      "region": "Wales"
+      "region": "Wales",
+      "dcId": 2469519,
+      "dcName": "𝙒𝙖𝙡𝙚𝙨 🏴󠁧󠁢󠁷󠁬󠁳󠁿 𝘾𝙮𝙢𝙧𝙪",
+      "dcAssign": "api"
     },
     {
       "id": 2622184,
@@ -5764,7 +7578,10 @@
       "lon": -0.42276720620513036,
       "personnel": 0,
       "small": false,
-      "region": "North"
+      "region": "North",
+      "dcId": 2622184,
+      "dcName": "East Yorkshire DC",
+      "dcAssign": "self"
     },
     {
       "id": 1984410,
@@ -5776,7 +7593,10 @@
       "lon": -0.12123448737449749,
       "personnel": 199,
       "small": false,
-      "region": "South East"
+      "region": "South East",
+      "dcId": 1844373,
+      "dcName": "Central,South/North East London Dispatch",
+      "dcAssign": "api"
     },
     {
       "id": 2648323,
@@ -5788,7 +7608,10 @@
       "lon": -3.2850269,
       "personnel": 17,
       "small": true,
-      "region": "Wales"
+      "region": "Wales",
+      "dcId": 2469519,
+      "dcName": "𝙒𝙖𝙡𝙚𝙨 🏴󠁧󠁢󠁷󠁬󠁳󠁿 𝘾𝙮𝙢𝙧𝙪",
+      "dcAssign": "api"
     },
     {
       "id": 2319655,
@@ -5800,7 +7623,10 @@
       "lon": -1.0890399872677607,
       "personnel": 0,
       "small": false,
-      "region": "London & South"
+      "region": "London & South",
+      "dcId": 2319655,
+      "dcName": "Basingstoke,Alton,Oakley Dispatch",
+      "dcAssign": "self"
     },
     {
       "id": 2582593,
@@ -5812,7 +7638,10 @@
       "lon": -2.2486301175423504,
       "personnel": 0,
       "small": false,
-      "region": "South West"
+      "region": "South West",
+      "dcId": 2582593,
+      "dcName": "Gloucestershire Dispatch",
+      "dcAssign": "self"
     },
     {
       "id": 2631322,
@@ -5824,7 +7653,10 @@
       "lon": -1.5020676629319831,
       "personnel": 29,
       "small": true,
-      "region": "North"
+      "region": "North",
+      "dcId": 2620223,
+      "dcName": "⁠[WY-ECC] West Yorks Emergency Control⁠",
+      "dcAssign": "api"
     },
     {
       "id": 2621054,
@@ -5836,7 +7668,10 @@
       "lon": -1.1352211796563945,
       "personnel": 0,
       "small": false,
-      "region": "Midlands"
+      "region": "Midlands",
+      "dcId": 2621054,
+      "dcName": "Leicestershire DC",
+      "dcAssign": "self"
     },
     {
       "id": 1988744,
@@ -5848,7 +7683,10 @@
       "lon": -1.5384455740283822,
       "personnel": 0,
       "small": false,
-      "region": "North"
+      "region": "North",
+      "dcId": 1988744,
+      "dcName": "(M2XN) North Yorkshire DC",
+      "dcAssign": "self"
     },
     {
       "id": 2364325,
@@ -5860,7 +7698,10 @@
       "lon": -1.13869749462108,
       "personnel": 0,
       "small": false,
-      "region": "Midlands"
+      "region": "Midlands",
+      "dcId": 2364325,
+      "dcName": "Nottinghamshire Dispatch Centre",
+      "dcAssign": "self"
     },
     {
       "id": 2621011,
@@ -5872,7 +7713,10 @@
       "lon": -1.4705872694789495,
       "personnel": 0,
       "small": false,
-      "region": "Midlands"
+      "region": "Midlands",
+      "dcId": 2621011,
+      "dcName": "Derbyshire DC",
+      "dcAssign": "self"
     },
     {
       "id": 2325711,
@@ -5884,7 +7728,10 @@
       "lon": -0.41821213497615445,
       "personnel": 0,
       "small": false,
-      "region": "North"
+      "region": "North",
+      "dcId": 2325711,
+      "dcName": "(M2XN) E-Yorks FCR",
+      "dcAssign": "self"
     },
     {
       "id": 2648342,
@@ -5896,7 +7743,10 @@
       "lon": -4.7091015,
       "personnel": 17,
       "small": true,
-      "region": "Wales"
+      "region": "Wales",
+      "dcId": 2469519,
+      "dcName": "𝙒𝙖𝙡𝙚𝙨 🏴󠁧󠁢󠁷󠁬󠁳󠁿 𝘾𝙮𝙢𝙧𝙪",
+      "dcAssign": "api"
     },
     {
       "id": 2633098,
@@ -5908,7 +7758,10 @@
       "lon": -1.429146157639583,
       "personnel": 36,
       "small": true,
-      "region": "Midlands"
+      "region": "Midlands",
+      "dcId": 2621011,
+      "dcName": "Derbyshire DC",
+      "dcAssign": "api"
     },
     {
       "id": 2633082,
@@ -5920,7 +7773,10 @@
       "lon": -0.35499023898236515,
       "personnel": 32,
       "small": false,
-      "region": "North"
+      "region": "North",
+      "dcId": 2633103,
+      "dcName": "Lincolnshire DC",
+      "dcAssign": "api"
     },
     {
       "id": 2621085,
@@ -5932,7 +7788,10 @@
       "lon": -1.998907892024531,
       "personnel": 38,
       "small": true,
-      "region": "Midlands"
+      "region": "Midlands",
+      "dcId": 2621080,
+      "dcName": "West Midlands",
+      "dcAssign": "api"
     },
     {
       "id": 2620974,
@@ -5944,7 +7803,10 @@
       "lon": -1.4931442304581821,
       "personnel": 0,
       "small": false,
-      "region": "Midlands"
+      "region": "Midlands",
+      "dcId": 2620974,
+      "dcName": "South Yorkshire DC",
+      "dcAssign": "self"
     },
     {
       "id": 2621080,
@@ -5956,7 +7818,10 @@
       "lon": -1.912657241009031,
       "personnel": 0,
       "small": false,
-      "region": "Midlands"
+      "region": "Midlands",
+      "dcId": 2621080,
+      "dcName": "West Midlands",
+      "dcAssign": "self"
     },
     {
       "id": 2621062,
@@ -5968,7 +7833,10 @@
       "lon": -2.108214877646262,
       "personnel": 0,
       "small": false,
-      "region": "Midlands"
+      "region": "Midlands",
+      "dcId": 2621062,
+      "dcName": "Staffordshire DC",
+      "dcAssign": "self"
     },
     {
       "id": 2339242,
@@ -5980,7 +7848,10 @@
       "lon": -0.46553505969875775,
       "personnel": 0,
       "small": false,
-      "region": "South East"
+      "region": "South East",
+      "dcId": 2339242,
+      "dcName": "Heathrow Airport",
+      "dcAssign": "self"
     },
     {
       "id": 2465954,
@@ -5992,7 +7863,10 @@
       "lon": -2.5016294,
       "personnel": 168,
       "small": false,
-      "region": "South West"
+      "region": "South West",
+      "dcId": 2353684,
+      "dcName": "Somerset FCR ",
+      "dcAssign": "api"
     },
     {
       "id": 2648936,
@@ -6004,7 +7878,10 @@
       "lon": -4.065782876648873,
       "personnel": 16,
       "small": true,
-      "region": "Wales"
+      "region": "Wales",
+      "dcId": 2469519,
+      "dcName": "𝙒𝙖𝙡𝙚𝙨 🏴󠁧󠁢󠁷󠁬󠁳󠁿 𝘾𝙮𝙢𝙧𝙪",
+      "dcAssign": "api"
     },
     {
       "id": 2656577,
@@ -6016,7 +7893,10 @@
       "lon": -0.1931677,
       "personnel": 10,
       "small": true,
-      "region": "South East"
+      "region": "South East",
+      "dcId": 1984642,
+      "dcName": "West, South, SW,NW North London Dispatch",
+      "dcAssign": "api"
     },
     {
       "id": 2621070,
@@ -6028,7 +7908,10 @@
       "lon": -2.191222980004024,
       "personnel": 38,
       "small": true,
-      "region": "South West"
+      "region": "South West",
+      "dcId": 2621069,
+      "dcName": "Worcestershire DC",
+      "dcAssign": "api"
     },
     {
       "id": 2390843,
@@ -6040,7 +7923,10 @@
       "lon": -2.3547692051119964,
       "personnel": 227,
       "small": false,
-      "region": "South West"
+      "region": "South West",
+      "dcId": 2353684,
+      "dcName": "Somerset FCR ",
+      "dcAssign": "api"
     },
     {
       "id": 2639117,
@@ -6052,7 +7938,10 @@
       "lon": -4.783462865451735,
       "personnel": 23,
       "small": true,
-      "region": "South West"
+      "region": "South West",
+      "dcId": 2638184,
+      "dcName": "Cornwall FCR",
+      "dcAssign": "api"
     },
     {
       "id": 2620870,
@@ -6064,7 +7953,10 @@
       "lon": -1.9978296489247747,
       "personnel": 45,
       "small": false,
-      "region": "North"
+      "region": "North",
+      "dcId": 1988744,
+      "dcName": "(M2XN) North Yorkshire DC",
+      "dcAssign": "api"
     },
     {
       "id": 2633100,
@@ -6076,7 +7968,10 @@
       "lon": -1.3258881403335987,
       "personnel": 29,
       "small": true,
-      "region": "Midlands"
+      "region": "Midlands",
+      "dcId": 2621011,
+      "dcName": "Derbyshire DC",
+      "dcAssign": "api"
     },
     {
       "id": 2620244,
@@ -6088,7 +7983,10 @@
       "lon": -1.551981394859632,
       "personnel": 39,
       "small": true,
-      "region": "North"
+      "region": "North",
+      "dcId": 2620223,
+      "dcName": "⁠[WY-ECC] West Yorks Emergency Control⁠",
+      "dcAssign": "api"
     },
     {
       "id": 2572619,
@@ -6100,7 +7998,10 @@
       "lon": -2.716475249695491,
       "personnel": 95,
       "small": false,
-      "region": "South West"
+      "region": "South West",
+      "dcId": 2353684,
+      "dcName": "Somerset FCR ",
+      "dcAssign": "api"
     },
     {
       "id": 2429826,
@@ -6112,7 +8013,10 @@
       "lon": -2.4933505365978057,
       "personnel": 197,
       "small": false,
-      "region": "South West"
+      "region": "South West",
+      "dcId": 2353684,
+      "dcName": "Somerset FCR ",
+      "dcAssign": "api"
     },
     {
       "id": 2620948,
@@ -6124,7 +8028,10 @@
       "lon": -1.3810328,
       "personnel": 37,
       "small": true,
-      "region": "North"
+      "region": "North",
+      "dcId": 2620223,
+      "dcName": "⁠[WY-ECC] West Yorks Emergency Control⁠",
+      "dcAssign": "api"
     },
     {
       "id": 2567206,
@@ -6136,7 +8043,10 @@
       "lon": -2.5866705789044167,
       "personnel": 95,
       "small": false,
-      "region": "South West"
+      "region": "South West",
+      "dcId": 2353684,
+      "dcName": "Somerset FCR ",
+      "dcAssign": "api"
     },
     {
       "id": 2652157,
@@ -6148,7 +8058,10 @@
       "lon": -2.4868739445124035,
       "personnel": 14,
       "small": true,
-      "region": "Midlands"
+      "region": "Midlands",
+      "dcId": 2650937,
+      "dcName": "Shropshire FCR ",
+      "dcAssign": "api"
     },
     {
       "id": 2621681,
@@ -6160,7 +8073,10 @@
       "lon": -1.3583310709940095,
       "personnel": 37,
       "small": true,
-      "region": "North"
+      "region": "North",
+      "dcId": 2620223,
+      "dcName": "⁠[WY-ECC] West Yorks Emergency Control⁠",
+      "dcAssign": "api"
     },
     {
       "id": 2638159,
@@ -6172,7 +8088,10 @@
       "lon": -3.9901327,
       "personnel": 24,
       "small": true,
-      "region": "South West"
+      "region": "South West",
+      "dcId": 2635219,
+      "dcName": "Devon DC",
+      "dcAssign": "api"
     },
     {
       "id": 2364565,
@@ -6184,7 +8103,10 @@
       "lon": -1.1369139,
       "personnel": 126,
       "small": true,
-      "region": "Midlands"
+      "region": "Midlands",
+      "dcId": 2364325,
+      "dcName": "Nottinghamshire Dispatch Centre",
+      "dcAssign": "api"
     },
     {
       "id": 2652272,
@@ -6196,7 +8118,10 @@
       "lon": -6.154932257825366,
       "personnel": 14,
       "small": true,
-      "region": "Wales"
+      "region": "Wales",
+      "dcId": 2650384,
+      "dcName": "Republic of Ireland (ROI) 🇮🇪",
+      "dcAssign": "api"
     },
     {
       "id": 2652208,
@@ -6208,7 +8133,10 @@
       "lon": -4.512472338899224,
       "personnel": 14,
       "small": true,
-      "region": "North"
+      "region": "North",
+      "dcId": 2650412,
+      "dcName": "Isle Of Man 🇮🇲 ",
+      "dcAssign": "api"
     },
     {
       "id": 2652187,
@@ -6220,7 +8148,10 @@
       "lon": -3.034321817630258,
       "personnel": 14,
       "small": true,
-      "region": "Wales"
+      "region": "Wales",
+      "dcId": 2652166,
+      "dcName": "Herefordshire FCR ",
+      "dcAssign": "api"
     },
     {
       "id": 2636823,
@@ -6232,7 +8163,10 @@
       "lon": -2.1564143,
       "personnel": 26,
       "small": true,
-      "region": "South West"
+      "region": "South West",
+      "dcId": 2635644,
+      "dcName": "Dorset DC",
+      "dcAssign": "api"
     },
     {
       "id": 2635484,
@@ -6244,7 +8178,10 @@
       "lon": -2.267742084061592,
       "personnel": 27,
       "small": true,
-      "region": "South West"
+      "region": "South West",
+      "dcId": 2635513,
+      "dcName": "Wiltshire DC",
+      "dcAssign": "api"
     },
     {
       "id": 2635489,
@@ -6256,7 +8193,10 @@
       "lon": -1.6063853021179715,
       "personnel": 27,
       "small": true,
-      "region": "South West"
+      "region": "South West",
+      "dcId": 2635513,
+      "dcName": "Wiltshire DC",
+      "dcAssign": "api"
     },
     {
       "id": 2635515,
@@ -6268,7 +8208,10 @@
       "lon": -2.9356135,
       "personnel": 27,
       "small": true,
-      "region": "South West"
+      "region": "South West",
+      "dcId": 2635219,
+      "dcName": "Devon DC",
+      "dcAssign": "api"
     },
     {
       "id": 2590010,
@@ -6280,7 +8223,10 @@
       "lon": -2.2515876,
       "personnel": 71,
       "small": false,
-      "region": "South West"
+      "region": "South West",
+      "dcId": 2582593,
+      "dcName": "Gloucestershire Dispatch",
+      "dcAssign": "api"
     },
     {
       "id": 2647806,
@@ -6292,7 +8238,10 @@
       "lon": -3.367842795250535,
       "personnel": 18,
       "small": true,
-      "region": "Wales"
+      "region": "Wales",
+      "dcId": 2469519,
+      "dcName": "𝙒𝙖𝙡𝙚𝙨 🏴󠁧󠁢󠁷󠁬󠁳󠁿 𝘾𝙮𝙢𝙧𝙪",
+      "dcAssign": "api"
     },
     {
       "id": 2642431,
@@ -6304,7 +8253,10 @@
       "lon": -4.119448911799589,
       "personnel": 21,
       "small": true,
-      "region": "South West"
+      "region": "South West",
+      "dcId": 2635219,
+      "dcName": "Devon DC",
+      "dcAssign": "api"
     },
     {
       "id": 2624710,
@@ -6316,7 +8268,10 @@
       "lon": -1.7199561,
       "personnel": 33,
       "small": true,
-      "region": "South West"
+      "region": "South West",
+      "dcId": 2635513,
+      "dcName": "Wiltshire DC",
+      "dcAssign": "api"
     },
     {
       "id": 2620838,
@@ -6328,7 +8283,10 @@
       "lon": -2.0297929,
       "personnel": 38,
       "small": true,
-      "region": "North"
+      "region": "North",
+      "dcId": 1988744,
+      "dcName": "(M2XN) North Yorkshire DC",
+      "dcAssign": "api"
     },
     {
       "id": 2622177,
@@ -6340,7 +8298,10 @@
       "lon": -0.7740105655019428,
       "personnel": 37,
       "small": true,
-      "region": "North"
+      "region": "North",
+      "dcId": 2622184,
+      "dcName": "East Yorkshire DC",
+      "dcAssign": "api"
     },
     {
       "id": 2634259,
@@ -6352,7 +8313,10 @@
       "lon": -0.9595714000254363,
       "personnel": 28,
       "small": true,
-      "region": "Midlands"
+      "region": "Midlands",
+      "dcId": 2364325,
+      "dcName": "Nottinghamshire Dispatch Centre",
+      "dcAssign": "api"
     },
     {
       "id": 2646534,
@@ -6364,7 +8328,10 @@
       "lon": -6.3079298,
       "personnel": 19,
       "small": true,
-      "region": "Other / Overseas"
+      "region": "Other / Overseas",
+      "dcId": 2638184,
+      "dcName": "Cornwall FCR",
+      "dcAssign": "api"
     },
     {
       "id": 2656578,
@@ -6376,7 +8343,10 @@
       "lon": -0.06013011929070028,
       "personnel": 10,
       "small": true,
-      "region": "South East"
+      "region": "South East",
+      "dcId": 1844373,
+      "dcName": "Central,South/North East London Dispatch",
+      "dcAssign": "api"
     },
     {
       "id": 2656576,
@@ -6388,7 +8358,10 @@
       "lon": -0.1940303,
       "personnel": 10,
       "small": true,
-      "region": "South East"
+      "region": "South East",
+      "dcId": 1984642,
+      "dcName": "West, South, SW,NW North London Dispatch",
+      "dcAssign": "api"
     },
     {
       "id": 2656581,
@@ -6400,7 +8373,10 @@
       "lon": -0.1212483,
       "personnel": 17,
       "small": true,
-      "region": "South East"
+      "region": "South East",
+      "dcId": 1984642,
+      "dcName": "West, South, SW,NW North London Dispatch",
+      "dcAssign": "api"
     },
     {
       "id": 2656573,
@@ -6412,7 +8388,10 @@
       "lon": -0.2691518897957037,
       "personnel": 10,
       "small": true,
-      "region": "South East"
+      "region": "South East",
+      "dcId": 1984642,
+      "dcName": "West, South, SW,NW North London Dispatch",
+      "dcAssign": "api"
     },
     {
       "id": 2649541,
@@ -6424,7 +8403,10 @@
       "lon": -4.0808656,
       "personnel": 16,
       "small": true,
-      "region": "Wales"
+      "region": "Wales",
+      "dcId": 2469519,
+      "dcName": "𝙒𝙖𝙡𝙚𝙨 🏴󠁧󠁢󠁷󠁬󠁳󠁿 𝘾𝙮𝙢𝙧𝙪",
+      "dcAssign": "api"
     },
     {
       "id": 2652883,
@@ -6436,7 +8418,10 @@
       "lon": 2.6493489895372813,
       "personnel": 14,
       "small": true,
-      "region": "Other / Overseas"
+      "region": "Other / Overseas",
+      "dcId": 2652880,
+      "dcName": "Belgium 🇧🇪 FCR",
+      "dcAssign": "api"
     },
     {
       "id": 2652891,
@@ -6448,7 +8433,10 @@
       "lon": 3.55867,
       "personnel": 14,
       "small": true,
-      "region": "South East"
+      "region": "South East",
+      "dcId": 2652889,
+      "dcName": "Netherlands 🇳🇱 FCR",
+      "dcAssign": "api"
     },
     {
       "id": 2652159,
@@ -6460,7 +8448,10 @@
       "lon": -2.437365256525007,
       "personnel": 14,
       "small": true,
-      "region": "Midlands"
+      "region": "Midlands",
+      "dcId": 2650937,
+      "dcName": "Shropshire FCR ",
+      "dcAssign": "api"
     },
     {
       "id": 2649692,
@@ -6472,7 +8463,10 @@
       "lon": -4.1599624202183945,
       "personnel": 16,
       "small": true,
-      "region": "Wales"
+      "region": "Wales",
+      "dcId": 2469519,
+      "dcName": "𝙒𝙖𝙡𝙚𝙨 🏴󠁧󠁢󠁷󠁬󠁳󠁿 𝘾𝙮𝙢𝙧𝙪",
+      "dcAssign": "api"
     },
     {
       "id": 2621063,
@@ -6484,7 +8478,10 @@
       "lon": -2.1091786,
       "personnel": 38,
       "small": true,
-      "region": "Midlands"
+      "region": "Midlands",
+      "dcId": 2621062,
+      "dcName": "Staffordshire DC",
+      "dcAssign": "api"
     },
     {
       "id": 2325713,
@@ -6496,7 +8493,10 @@
       "lon": -0.4370821595078071,
       "personnel": 0,
       "small": false,
-      "region": "North"
+      "region": "North",
+      "dcId": 2325711,
+      "dcName": "(M2XN) E-Yorks FCR",
+      "dcAssign": "api"
     },
     {
       "id": 2638167,
@@ -6508,7 +8508,10 @@
       "lon": -4.223847738874316,
       "personnel": 24,
       "small": true,
-      "region": "South West"
+      "region": "South West",
+      "dcId": 2635219,
+      "dcName": "Devon DC",
+      "dcAssign": "api"
     },
     {
       "id": 2620970,
@@ -6520,7 +8523,10 @@
       "lon": -1.4868034542363004,
       "personnel": 37,
       "small": true,
-      "region": "North"
+      "region": "North",
+      "dcId": 2620223,
+      "dcName": "⁠[WY-ECC] West Yorks Emergency Control⁠",
+      "dcAssign": "api"
     },
     {
       "id": 2636818,
@@ -6532,7 +8538,10 @@
       "lon": -2.7596078,
       "personnel": 26,
       "small": true,
-      "region": "South West"
+      "region": "South West",
+      "dcId": 2635644,
+      "dcName": "Dorset DC",
+      "dcAssign": "api"
     },
     {
       "id": 2621059,
@@ -6544,7 +8553,10 @@
       "lon": -1.0821938021084405,
       "personnel": 38,
       "small": true,
-      "region": "Midlands"
+      "region": "Midlands",
+      "dcId": 2621054,
+      "dcName": "Leicestershire DC",
+      "dcAssign": "api"
     },
     {
       "id": 2620249,
@@ -6556,7 +8568,10 @@
       "lon": -1.5473890470867506,
       "personnel": 46,
       "small": true,
-      "region": "North"
+      "region": "North",
+      "dcId": 2620223,
+      "dcName": "⁠[WY-ECC] West Yorks Emergency Control⁠",
+      "dcAssign": "api"
     },
     {
       "id": 2488628,
@@ -6568,7 +8583,10 @@
       "lon": -2.5504767649084843,
       "personnel": 137,
       "small": true,
-      "region": "South West"
+      "region": "South West",
+      "dcId": 2353684,
+      "dcName": "Somerset FCR ",
+      "dcAssign": "api"
     },
     {
       "id": 2621031,
@@ -6580,7 +8598,10 @@
       "lon": -1.2149117,
       "personnel": 38,
       "small": true,
-      "region": "Midlands"
+      "region": "Midlands",
+      "dcId": 2364325,
+      "dcName": "Nottinghamshire Dispatch Centre",
+      "dcAssign": "api"
     },
     {
       "id": 2635212,
@@ -6592,7 +8613,10 @@
       "lon": -3.5448407,
       "personnel": 27,
       "small": true,
-      "region": "South West"
+      "region": "South West",
+      "dcId": 2353684,
+      "dcName": "Somerset FCR ",
+      "dcAssign": "api"
     },
     {
       "id": 2650501,
@@ -6604,7 +8628,10 @@
       "lon": -3.8307387740412966,
       "personnel": 15,
       "small": true,
-      "region": "Wales"
+      "region": "Wales",
+      "dcId": 2469519,
+      "dcName": "𝙒𝙖𝙡𝙚𝙨 🏴󠁧󠁢󠁷󠁬󠁳󠁿 𝘾𝙮𝙢𝙧𝙪",
+      "dcAssign": "api"
     },
     {
       "id": 2471255,
@@ -6616,7 +8643,10 @@
       "lon": -2.5576298,
       "personnel": 163,
       "small": false,
-      "region": "South West"
+      "region": "South West",
+      "dcId": 2353684,
+      "dcName": "Somerset FCR ",
+      "dcAssign": "api"
     },
     {
       "id": 2635503,
@@ -6628,7 +8658,10 @@
       "lon": -2.9962753,
       "personnel": 27,
       "small": true,
-      "region": "South West"
+      "region": "South West",
+      "dcId": 2635219,
+      "dcName": "Devon DC",
+      "dcAssign": "api"
     },
     {
       "id": 2636838,
@@ -6640,7 +8673,10 @@
       "lon": -3.28262662186587,
       "personnel": 24,
       "small": true,
-      "region": "South West"
+      "region": "South West",
+      "dcId": 2635219,
+      "dcName": "Devon DC",
+      "dcAssign": "api"
     },
     {
       "id": 2639114,
@@ -6652,7 +8688,10 @@
       "lon": -4.4873226,
       "personnel": 23,
       "small": true,
-      "region": "South West"
+      "region": "South West",
+      "dcId": 2638184,
+      "dcName": "Cornwall FCR",
+      "dcAssign": "api"
     },
     {
       "id": 2652886,
@@ -6664,7 +8703,10 @@
       "lon": 2.9339938,
       "personnel": 14,
       "small": true,
-      "region": "South East"
+      "region": "South East",
+      "dcId": 2652880,
+      "dcName": "Belgium 🇧🇪 FCR",
+      "dcAssign": "api"
     },
     {
       "id": 2652887,
@@ -6676,7 +8718,10 @@
       "lon": 3.1225203,
       "personnel": 14,
       "small": true,
-      "region": "South East"
+      "region": "South East",
+      "dcId": 2652880,
+      "dcName": "Belgium 🇧🇪 FCR",
+      "dcAssign": "api"
     },
     {
       "id": 2469519,
@@ -6688,7 +8733,10 @@
       "lon": -3.9418341685379845,
       "personnel": 0,
       "small": false,
-      "region": "Wales"
+      "region": "Wales",
+      "dcId": 2469519,
+      "dcName": "𝙒𝙖𝙡𝙚𝙨 🏴󠁧󠁢󠁷󠁬󠁳󠁿 𝘾𝙮𝙢𝙧𝙪",
+      "dcAssign": "self"
     },
     {
       "id": 1984392,
@@ -6700,7 +8748,10 @@
       "lon": -0.17422326377227623,
       "personnel": 0,
       "small": false,
-      "region": "South East"
+      "region": "South East",
+      "dcId": 1844373,
+      "dcName": "Central,South/North East London Dispatch",
+      "dcAssign": "api"
     },
     {
       "id": 2635487,
@@ -6712,7 +8763,10 @@
       "lon": -1.665403,
       "personnel": 27,
       "small": true,
-      "region": "South West"
+      "region": "South West",
+      "dcId": 2635513,
+      "dcName": "Wiltshire DC",
+      "dcAssign": "api"
     },
     {
       "id": 2601180,
@@ -6724,7 +8778,10 @@
       "lon": 1.8579613948887528,
       "personnel": 1,
       "small": false,
-      "region": "Other / Overseas"
+      "region": "Other / Overseas",
+      "dcId": 2649006,
+      "dcName": "France 🇫🇷 FCR ",
+      "dcAssign": "api"
     },
     {
       "id": 2600988,
@@ -6736,7 +8793,10 @@
       "lon": 1.8550827337770985,
       "personnel": 56,
       "small": true,
-      "region": "Other / Overseas"
+      "region": "Other / Overseas",
+      "dcId": 2649006,
+      "dcName": "France 🇫🇷 FCR ",
+      "dcAssign": "api"
     },
     {
       "id": 2620876,
@@ -6748,7 +8808,10 @@
       "lon": -1.7849750659542662,
       "personnel": 38,
       "small": true,
-      "region": "North"
+      "region": "North",
+      "dcId": 2620223,
+      "dcName": "⁠[WY-ECC] West Yorks Emergency Control⁠",
+      "dcAssign": "api"
     },
     {
       "id": 2649006,
@@ -6760,7 +8823,10 @@
       "lon": 2.361964152226319,
       "personnel": 0,
       "small": false,
-      "region": "Other / Overseas"
+      "region": "Other / Overseas",
+      "dcId": 2649006,
+      "dcName": "France 🇫🇷 FCR ",
+      "dcAssign": "self"
     },
     {
       "id": 1984638,
@@ -6772,7 +8838,10 @@
       "lon": -0.12683875345071638,
       "personnel": 200,
       "small": false,
-      "region": "South East"
+      "region": "South East",
+      "dcId": 1844373,
+      "dcName": "Central,South/North East London Dispatch",
+      "dcAssign": "api"
     },
     {
       "id": 2635204,
@@ -6784,7 +8853,10 @@
       "lon": -2.9859351,
       "personnel": 27,
       "small": true,
-      "region": "South West"
+      "region": "South West",
+      "dcId": 2353684,
+      "dcName": "Somerset FCR ",
+      "dcAssign": "api"
     },
     {
       "id": 2483497,
@@ -6796,7 +8868,10 @@
       "lon": -2.5626692312751667,
       "personnel": 154,
       "small": true,
-      "region": "South West"
+      "region": "South West",
+      "dcId": 2353684,
+      "dcName": "Somerset FCR ",
+      "dcAssign": "api"
     },
     {
       "id": 2354627,
@@ -6808,7 +8883,10 @@
       "lon": -2.4566864,
       "personnel": 275,
       "small": false,
-      "region": "South West"
+      "region": "South West",
+      "dcId": 2353684,
+      "dcName": "Somerset FCR ",
+      "dcAssign": "api"
     },
     {
       "id": 2360734,
@@ -6820,7 +8898,10 @@
       "lon": -2.391265142966487,
       "personnel": 227,
       "small": false,
-      "region": "South West"
+      "region": "South West",
+      "dcId": 2353684,
+      "dcName": "Somerset FCR ",
+      "dcAssign": "api"
     },
     {
       "id": 2621050,
@@ -6832,7 +8913,10 @@
       "lon": -1.5476708152294496,
       "personnel": 38,
       "small": true,
-      "region": "Midlands"
+      "region": "Midlands",
+      "dcId": 2621011,
+      "dcName": "Derbyshire DC",
+      "dcAssign": "api"
     },
     {
       "id": 2621012,
@@ -6844,7 +8928,10 @@
       "lon": -1.4000486,
       "personnel": 38,
       "small": true,
-      "region": "Midlands"
+      "region": "Midlands",
+      "dcId": 2621011,
+      "dcName": "Derbyshire DC",
+      "dcAssign": "api"
     },
     {
       "id": 2583388,
@@ -6856,7 +8943,10 @@
       "lon": -2.517918090196061,
       "personnel": 76,
       "small": false,
-      "region": "South West"
+      "region": "South West",
+      "dcId": 2582593,
+      "dcName": "Gloucestershire Dispatch",
+      "dcAssign": "api"
     },
     {
       "id": 2567212,
@@ -6868,7 +8958,10 @@
       "lon": -2.767669185575443,
       "personnel": 98,
       "small": false,
-      "region": "South West"
+      "region": "South West",
+      "dcId": 2353684,
+      "dcName": "Somerset FCR ",
+      "dcAssign": "api"
     },
     {
       "id": 2647798,
@@ -6880,7 +8973,10 @@
       "lon": -2.5730852121621863,
       "personnel": 25,
       "small": true,
-      "region": "South West"
+      "region": "South West",
+      "dcId": 2582593,
+      "dcName": "Gloucestershire Dispatch",
+      "dcAssign": "api"
     }
   ],
   "unitsSample": [
@@ -7726,12 +9822,12 @@
     }
   ],
   "credits": {
-    "credits_user_current": 33112,
-    "credits_user_total": 148205543
+    "credits_user_current": 34262,
+    "credits_user_total": 148206693
   },
   "alliance": {
     "users": 431,
-    "online": 23,
+    "online": 24,
     "rank": 2,
     "financeActive": false
   }
