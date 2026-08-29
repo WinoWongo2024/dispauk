@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>About | DispaUK</title>
+  <meta name="description" content="What DispaUK is, where data comes from, and how synchronisation works.">
+  <meta name="theme-color" content="#0b1220">
+  <link rel="stylesheet" href="/styles.css">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Roboto+Mono:wght@400;500&display=swap" rel="stylesheet">
+</head>
+<body>
+  <header class="header">
+    <div class="container header-inner">
+      <a href="/" class="logo"><span class="logo-mark">DU</span><span class="logo-text">DispaUK</span></a>
+      <nav class="nav" aria-label="Primary">
+        <a href="/">Dashboard</a>
+        <a href="/status/">Status</a>
+        <a href="/about/">About</a>
+        <a href="/changelog/">Changelog</a>
+      </nav>
+      <button class="nav-toggle" type="button" aria-label="Menu" aria-expanded="false"><span></span><span></span><span></span></button>
+    </div>
+  </header>
+  <main class="legal-page">
+    <div class="container legal-content">
+      <h1>About DispaUK</h1>
+      <p class="legal-updated">Independent UK dispatch information dashboard</p>
+
+      <h2>What DispaUK is</h2>
+      <p>DispaUK is an independent information site presenting synchronised MissionChief operational summaries — stations, units and personnel totals — for transparency and coordination within the game community.</p>
+
+      <h2>What DispaUK is not</h2>
+      <ul>
+        <li>Not a real emergency service</li>
+        <li>Not affiliated with SHPlay GmbH or official MissionChief</li>
+        <li>Not a substitute for 999 / 112</li>
+      </ul>
+
+      <h2>Data source</h2>
+      <p>Operational figures are synchronised periodically from MissionChief UK APIs into a public cache (<code>data/stats.json</code>). Credentials never appear in the browser.</p>
+
+      <h2>Freshness</h2>
+      <p>The dashboard shows whether data is live, delayed or stale based on the last successful sync time. If MissionChief is unavailable, the last good dataset remains visible with a clear warning.</p>
+
+      <h2>Contact</h2>
+      <p><a href="mailto:administrator@dispauk.co.uk">administrator@dispauk.co.uk</a></p>
+    </div>
+  </main>
+  <footer class="footer-slim">
+    <div class="container footer-bottom">
+      <p class="footer-copy">© <span data-current-year>2026</span> DispaUK</p>
+    </div>
+  </footer>
+  <script src="/script.js" defer></script>
+</body>
+</html>
