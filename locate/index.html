@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Locate | DispaUK</title>
+  <meta name="description" content="Find which DispaUK dispatch centre and nearest station cover your location.">
+  <meta name="theme-color" content="#0b1220">
+  <link rel="stylesheet" href="/styles.css">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Roboto+Mono:wght@400;500&display=swap" rel="stylesheet">
+</head>
+<body>
+  <header class="header">
+    <div class="container header-inner">
+      <a href="/" class="logo"><span class="logo-mark">DU</span><span class="logo-text">DispaUK</span></a>
+      <nav class="nav" aria-label="Primary">
+        <a href="/">Dashboard</a>
+        <a href="/dispatch/">Dispatch</a>
+        <a href="/locate/">Locate</a>
+        <a href="/map/">Map</a>
+        <a href="/status/">Status</a>
+      </nav>
+      <button class="nav-toggle" type="button" aria-label="Menu" aria-expanded="false"><span></span><span></span><span></span></button>
+    </div>
+  </header>
+  <main class="legal-page">
+    <div class="container">
+      <div class="section-header-left" style="margin-bottom:16px">
+        <span class="section-kicker">COVERAGE</span>
+        <h1 style="font-size:1.6rem">Find your coverage</h1>
+        <p class="text-muted">Uses your device location (with permission) or a postcode/place search via OpenStreetMap Nominatim.</p>
+      </div>
+
+      <div class="panel" style="margin-bottom:14px">
+        <div style="display:flex;flex-wrap:wrap;gap:10px;align-items:center">
+          <button type="button" class="btn btn-primary" id="btn-geo">Use my location</button>
+          <label style="flex:1;min-width:200px">
+            <span class="sr-only">Search place</span>
+            <input type="search" id="place-search" placeholder="Town, postcode, or address…" style="width:100%;padding:10px;border-radius:8px;border:1px solid var(--border);background:var(--surface);color:var(--text);font:inherit">
+          </label>
+          <button type="button" class="btn btn-outline" id="btn-search">Search</button>
+        </div>
+        <p class="text-muted" style="margin-top:10px" id="locate-status">Location stays in your browser — not sent to DispaUK servers.</p>
+      </div>
+
+      <div class="dash-grid" id="locate-results" hidden>
+        <article class="stat-card">
+          <span class="stat-label">Your position</span>
+          <strong class="stat-value" style="font-size:1rem" data-loc-coords>—</strong>
+        </article>
+        <article class="stat-card">
+          <span class="stat-label">Nearest station</span>
+          <strong class="stat-value" style="font-size:1rem" data-loc-station>—</strong>
+          <p class="text-muted" data-loc-station-dist></p>
+        </article>
+        <article class="stat-card">
+          <span class="stat-label">Dispatch centre</span>
+          <strong class="stat-value" style="font-size:1rem" data-loc-dc>—</strong>
+          <p class="text-muted" data-loc-dc-how></p>
+        </article>
+      </div>
+
+      <p style="margin-top:14px" id="locate-links" hidden>
+        <a class="btn btn-outline" data-link-station href="#">Station details</a>
+        <a class="btn btn-outline" data-link-dc href="#">DC dashboard</a>
+        <a class="btn btn-outline" data-link-map href="#">Map</a>
+      </p>
+
+      <p class="disclaimer-bar" style="margin-top:20px">Not for real emergencies. Call <strong>999 / 112</strong>.</p>
+    </div>
+  </main>
+  <footer class="footer-slim"><div class="container footer-bottom"><p class="footer-copy">© <span data-current-year>2026</span> DispaUK</p></div></footer>
+  <script src="/script.js" defer></script>
+  <script>
+    function haversineKm(lat1, lon1, lat2, lon2) {
+      const R = 6371;
+      const toR = d => d * Math.PI / 180;
+      const dLat = toR(lat2 - lat1), dLon = toR(lon2 - lon1);
+      const a = Math.sin(dLat/2)**2 + Math.cos(toR(lat1))*Math.cos(toR(lat2))*Math.sin(dLon/2)**2;
+      return 2 * R * Math.asin(Math.sqrt(a));
+    }
+
+    async function resolveCoverage(lat, lon, stations, dcs) {
+      let best = null, bestD = Infinity;
+      stations.filter(s => s.lat != null && s.typeId !== 7).forEach(s => {
+        const d = haversineKm(lat, lon, s.lat, s.lon);
+        if (d < bestD) { bestD = d; best = s; }
+      });
+
+      // Prefer station's assigned DC; else nearest DC by distance
+      let dc = null, how = '';
+      if (best && best.dcId) {
+        dc = dcs.find(d => String(d.id) === String(best.dcId));
+        how = 'From nearest station assignment';
+      }
+      if (!dc) {
+        let bd = Infinity;
+        dcs.forEach(d => {
+          if (d.lat == null) return;
+          const dist = haversineKm(lat, lon, d.lat, d.lon);
+          if (dist < bd) { bd = dist; dc = d; }
+        });
+        how = 'Nearest dispatch centre by distance';
+      }
+      return { station: best, stationKm: bestD, dc, how };
+    }
+
+    document.addEventListener('DOMContentLoaded', async () => {
+      const status = document.getElementById('locate-status');
+      const results = document.getElementById('locate-results');
+      const links = document.getElementById('locate-links');
+      const set = (sel, v) => { const el = document.querySelector(sel); if (el) el.textContent = v; };
+
+      const res = await fetch('/data/stats.json', { cache: 'no-cache' });
+      const data = await res.json();
+      const stations = data.stations || [];
+      const dcs = data.dispatchCentres || [];
+
+      async function show(lat, lon, label) {
+        status.textContent = label || 'Resolved.';
+        const r = await resolveCoverage(lat, lon, stations, dcs);
+        results.hidden = false;
+        links.hidden = false;
+        set('[data-loc-coords]', lat.toFixed(4) + ', ' + lon.toFixed(4));
+        set('[data-loc-station]', r.station ? r.station.name : 'None nearby');
+        set('[data-loc-station-dist]', r.station ? r.stationKm.toFixed(1) + ' km away · ' + (r.station.type || '') : '');
+        set('[data-loc-dc]', r.dc ? r.dc.name : 'Unknown');
+        set('[data-loc-dc-how]', r.how || '');
+
+        const ls = document.querySelector('[data-link-station]');
+        const ld = document.querySelector('[data-link-dc]');
+        const lm = document.querySelector('[data-link-map]');
+        if (ls && r.station) ls.href = '/stations/?id=' + encodeURIComponent(r.station.id);
+        if (ld && r.dc) ld.href = '/dispatch/?id=' + encodeURIComponent(r.dc.id);
+        if (lm && r.station) lm.href = '/map/?focus=' + encodeURIComponent(r.station.id);
+        else if (lm && r.dc) lm.href = '/map/?dc=' + encodeURIComponent(r.dc.id);
+      }
+
+      document.getElementById('btn-geo').addEventListener('click', () => {
+        if (!navigator.geolocation) {
+          status.textContent = 'Geolocation not supported on this device.';
+          return;
+        }
+        status.textContent = 'Requesting location…';
+        navigator.geolocation.getCurrentPosition(
+          pos => show(pos.coords.latitude, pos.coords.longitude, 'Using device location.'),
+          err => { status.textContent = 'Location denied or unavailable. Try a place search.'; },
+          { enableHighAccuracy: true, timeout: 12000 }
+        );
+      });
+
+      document.getElementById('btn-search').addEventListener('click', async () => {
+        const q = document.getElementById('place-search').value.trim();
+        if (!q) return;
+        status.textContent = 'Searching…';
+        try {
+          const url = 'https://nominatim.openstreetmap.org/search?format=json&limit=1&q=' + encodeURIComponent(q);
+          const r = await fetch(url, { headers: { 'Accept-Language': 'en-GB' } });
+          const rows = await r.json();
+          if (!rows.length) { status.textContent = 'No place found.'; return; }
+          await show(parseFloat(rows[0].lat), parseFloat(rows[0].lon), 'Matched: ' + (rows[0].display_name || q));
+        } catch (e) {
+          status.textContent = 'Search failed. Try again later.';
+        }
+      });
+    });
+  </script>
+</body>
+</html>

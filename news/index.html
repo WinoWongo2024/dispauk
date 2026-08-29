@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>News | DispaUK</title>
+  <meta name="description" content="DispaUK operational news and mission feed status.">
+  <meta name="theme-color" content="#0b1220">
+  <link rel="stylesheet" href="/styles.css">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Roboto+Mono:wght@400;500&display=swap" rel="stylesheet">
+</head>
+<body>
+  <header class="header">
+    <div class="container header-inner">
+      <a href="/" class="logo"><span class="logo-mark">DU</span><span class="logo-text">DispaUK</span></a>
+      <nav class="nav" aria-label="Primary">
+        <a href="/">Dashboard</a>
+        <a href="/dispatch/">Dispatch</a>
+        <a href="/news/">News</a>
+        <a href="/status/">Status</a>
+        <a href="/about/">About</a>
+      </nav>
+      <button class="nav-toggle" type="button" aria-label="Menu" aria-expanded="false"><span></span><span></span><span></span></button>
+    </div>
+  </header>
+  <main class="legal-page">
+    <div class="container legal-content">
+      <h1>News &amp; missions</h1>
+      <p class="legal-updated">Operational updates</p>
+
+      <div class="panel" style="margin-bottom:16px">
+        <h2>Live mission feed</h2>
+        <p>MissionChief does <strong>not</strong> publish a stable public API for recent completed missions (units on scene, payout, mission title). Documented APIs cover buildings, vehicles, credits, alliance info, and the mission-<em>type</em> catalogue (<code>einsaetze.json</code>), not a history of individual calls.</p>
+        <p>When or if a reliable missions history endpoint becomes available, this page will list the last five missions with responding units and credits earned. Until then, credit movement is tracked on the <a href="/">dashboard</a> via hourly snapshots.</p>
+      </div>
+
+      <div class="panel">
+        <h2>Site updates</h2>
+        <ul>
+          <li>Non-overlapping Voronoi coverage borders on the map</li>
+          <li>Locate page — nearest station and dispatch centre</li>
+          <li>Per-centre dashboards under Dispatch</li>
+          <li>Credit up/down indicators from history</li>
+        </ul>
+        <p><a href="/changelog/">Full changelog →</a></p>
+      </div>
+    </div>
+  </main>
+  <footer class="footer-slim"><div class="container footer-bottom"><p class="footer-copy">© <span data-current-year>2026</span> DispaUK</p></div></footer>
+  <script src="/script.js" defer></script>
+</body>
+</html>
