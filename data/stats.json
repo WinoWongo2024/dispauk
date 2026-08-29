@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-08-29T12:53:03.026785+00:00",
+  "updatedAt": "2026-08-29T13:30:36.516093+00:00",
   "source": "missionchief.co.uk",
   "sync": {
     "durationSeconds": 21,
@@ -17,8 +17,8 @@
   },
   "totals": {
     "stations": 572,
-    "units": 1466,
-    "personnel": 39186,
+    "units": 1474,
+    "personnel": 39206,
     "dispatchCentres": 36,
     "allianceBuildings": 1067,
     "equipments": 11,
@@ -59,9 +59,11 @@
     "London & South": 17
   },
   "vehicleStatus": {
-    "2": 1417,
-    "3": 28,
-    "4": 21
+    "2": 1346,
+    "1": 39,
+    "4": 64,
+    "7": 1,
+    "3": 24
   },
   "vehiclesByType": {
     "5": 505,
@@ -112,7 +114,7 @@
       "lon": -2.5562629,
       "level": 0,
       "stationCount": 99,
-      "personnel": 7990,
+      "personnel": 8010,
       "coverageRadiusM": 93562,
       "coveragePolygon": [
         [
@@ -3434,21 +3436,6 @@
       "dcAssign": "api"
     },
     {
-      "id": 2662773,
-      "name": "Truro Police Station",
-      "type": "Police Station",
-      "typeId": 6,
-      "level": 0,
-      "lat": 50.2659861,
-      "lon": -5.0556792,
-      "personnel": 2,
-      "small": true,
-      "region": "South West",
-      "dcId": 2638184,
-      "dcName": "Cornwall FCR",
-      "dcAssign": "api"
-    },
-    {
       "id": 2662771,
       "name": "Camborne Police Station",
       "type": "Police Station",
@@ -3651,51 +3638,6 @@
       "level": 0,
       "lat": 50.7988025,
       "lon": -3.1927023,
-      "personnel": 2,
-      "small": true,
-      "region": "South West",
-      "dcId": 2635219,
-      "dcName": "Devon DC",
-      "dcAssign": "api"
-    },
-    {
-      "id": 2662782,
-      "name": "Crown Hill Police Station",
-      "type": "Police Station",
-      "typeId": 6,
-      "level": 0,
-      "lat": 50.41077884150148,
-      "lon": -4.1338285603281095,
-      "personnel": 2,
-      "small": true,
-      "region": "South West",
-      "dcId": 2635219,
-      "dcName": "Devon DC",
-      "dcAssign": "api"
-    },
-    {
-      "id": 2662783,
-      "name": "Newton Abbot Police Station",
-      "type": "Police Station",
-      "typeId": 6,
-      "level": 0,
-      "lat": 50.52773448966632,
-      "lon": -3.61282486321618,
-      "personnel": 2,
-      "small": true,
-      "region": "South West",
-      "dcId": 2635219,
-      "dcName": "Devon DC",
-      "dcAssign": "api"
-    },
-    {
-      "id": 2662785,
-      "name": "Okehampton Police Station ",
-      "type": "Police Station",
-      "typeId": 6,
-      "level": 0,
-      "lat": 50.73998956888979,
-      "lon": -3.995794534435744,
       "personnel": 2,
       "small": true,
       "region": "South West",
@@ -5249,21 +5191,6 @@
       "dcAssign": "api"
     },
     {
-      "id": 2662881,
-      "name": "Portishead Fire Station",
-      "type": "Fire Station",
-      "typeId": 0,
-      "level": 0,
-      "lat": 51.47577217697484,
-      "lon": -2.795406758336174,
-      "personnel": 10,
-      "small": true,
-      "region": "South West",
-      "dcId": 2353684,
-      "dcName": "Somerset FCR ",
-      "dcAssign": "api"
-    },
-    {
       "id": 2662883,
       "name": "Isle of Man Police HQ - Douglas",
       "type": "Police Station",
@@ -5879,21 +5806,6 @@
       "dcAssign": "api"
     },
     {
-      "id": 2659467,
-      "name": "Newbury Ambulance Station",
-      "type": "Ambulance Station",
-      "typeId": 2,
-      "level": 0,
-      "lat": 51.40762161176569,
-      "lon": -1.318489188386671,
-      "personnel": 3,
-      "small": true,
-      "region": "London & South",
-      "dcId": 2659464,
-      "dcName": "Berkshire",
-      "dcAssign": "api"
-    },
-    {
       "id": 2448097,
       "name": "Bath old Rd. Midwife station",
       "type": "Home Response / HRL",
@@ -5969,21 +5881,6 @@
       "dcAssign": "api"
     },
     {
-      "id": 2567204,
-      "name": "The Bridewell Police Station",
-      "type": "Police Station",
-      "typeId": 6,
-      "level": 2,
-      "lat": 51.45756074078378,
-      "lon": -2.5935292983084244,
-      "personnel": 87,
-      "small": false,
-      "region": "South West",
-      "dcId": 2353684,
-      "dcName": "Somerset FCR ",
-      "dcAssign": "api"
-    },
-    {
       "id": 2662975,
       "name": "Severn Area Rescue Association",
       "type": "Mountain Rescue",
@@ -6044,21 +5941,6 @@
       "dcAssign": "api"
     },
     {
-      "id": 2662990,
-      "name": "RNLI Clovelly",
-      "type": "Lifeboat Station",
-      "typeId": 27,
-      "level": 0,
-      "lat": 50.99833488763527,
-      "lon": -4.397599397287033,
-      "personnel": 5,
-      "small": false,
-      "region": "South West",
-      "dcId": 2635219,
-      "dcName": "Devon DC",
-      "dcAssign": "api"
-    },
-    {
       "id": 2662985,
       "name": "RNLI Barry",
       "type": "Lifeboat Station",
@@ -6071,21 +5953,6 @@
       "region": "Wales",
       "dcId": 2469519,
       "dcName": "𝙒𝙖𝙡𝙚𝙨 🏴󠁧󠁢󠁷󠁬󠁳󠁿 𝘾𝙮𝙢𝙧𝙪",
-      "dcAssign": "api"
-    },
-    {
-      "id": 2662987,
-      "name": "RNLI Ilfracombe",
-      "type": "Lifeboat Station",
-      "typeId": 27,
-      "level": 0,
-      "lat": 51.20966159259047,
-      "lon": -4.116254810730051,
-      "personnel": 5,
-      "small": false,
-      "region": "South West",
-      "dcId": 2635219,
-      "dcName": "Devon DC",
       "dcAssign": "api"
     },
     {
@@ -6993,7 +6860,7 @@
       "name": "RNLI Weston-super-Mare",
       "type": "Lifeboat Station",
       "typeId": 27,
-      "level": 2,
+      "level": 5,
       "lat": 51.3526694,
       "lon": -2.9876706,
       "personnel": 24,
@@ -7064,6 +6931,51 @@
       "dcAssign": "api"
     },
     {
+      "id": 2659467,
+      "name": "Newbury Ambulance Station",
+      "type": "Ambulance Station",
+      "typeId": 2,
+      "level": 0,
+      "lat": 51.40762161176569,
+      "lon": -1.318489188386671,
+      "personnel": 3,
+      "small": true,
+      "region": "London & South",
+      "dcId": 2659464,
+      "dcName": "Berkshire",
+      "dcAssign": "api"
+    },
+    {
+      "id": 2662773,
+      "name": "Truro Police Station",
+      "type": "Police Station",
+      "typeId": 6,
+      "level": 0,
+      "lat": 50.2659861,
+      "lon": -5.0556792,
+      "personnel": 2,
+      "small": true,
+      "region": "South West",
+      "dcId": 2638184,
+      "dcName": "Cornwall FCR",
+      "dcAssign": "api"
+    },
+    {
+      "id": 2662782,
+      "name": "Crown Hill Police Station",
+      "type": "Police Station",
+      "typeId": 6,
+      "level": 0,
+      "lat": 50.41077884150148,
+      "lon": -4.1338285603281095,
+      "personnel": 2,
+      "small": true,
+      "region": "South West",
+      "dcId": 2635219,
+      "dcName": "Devon DC",
+      "dcAssign": "api"
+    },
+    {
       "id": 1987515,
       "name": "(LAS-004) MarbleArch Station",
       "type": "Ambulance Station",
@@ -7121,6 +7033,66 @@
       "region": "Other / Overseas",
       "dcId": 2652880,
       "dcName": "Belgium 🇧🇪 FCR",
+      "dcAssign": "api"
+    },
+    {
+      "id": 2662783,
+      "name": "Newton Abbot Police Station",
+      "type": "Police Station",
+      "typeId": 6,
+      "level": 0,
+      "lat": 50.52773448966632,
+      "lon": -3.61282486321618,
+      "personnel": 2,
+      "small": true,
+      "region": "South West",
+      "dcId": 2635219,
+      "dcName": "Devon DC",
+      "dcAssign": "api"
+    },
+    {
+      "id": 2662785,
+      "name": "Okehampton Police Station ",
+      "type": "Police Station",
+      "typeId": 6,
+      "level": 0,
+      "lat": 50.73998956888979,
+      "lon": -3.995794534435744,
+      "personnel": 2,
+      "small": true,
+      "region": "South West",
+      "dcId": 2635219,
+      "dcName": "Devon DC",
+      "dcAssign": "api"
+    },
+    {
+      "id": 2662990,
+      "name": "RNLI Clovelly",
+      "type": "Lifeboat Station",
+      "typeId": 27,
+      "level": 0,
+      "lat": 50.99833488763527,
+      "lon": -4.397599397287033,
+      "personnel": 5,
+      "small": false,
+      "region": "South West",
+      "dcId": 2635219,
+      "dcName": "Devon DC",
+      "dcAssign": "api"
+    },
+    {
+      "id": 2662987,
+      "name": "RNLI Ilfracombe",
+      "type": "Lifeboat Station",
+      "typeId": 27,
+      "level": 0,
+      "lat": 51.20966159259047,
+      "lon": -4.116254810730051,
+      "personnel": 5,
+      "small": false,
+      "region": "South West",
+      "dcId": 2635219,
+      "dcName": "Devon DC",
       "dcAssign": "api"
     },
     {
@@ -7196,6 +7168,21 @@
       "region": "Other / Overseas",
       "dcId": 2311778,
       "dcName": "Hampshire DC",
+      "dcAssign": "api"
+    },
+    {
+      "id": 2662881,
+      "name": "Portishead Fire Station",
+      "type": "Fire Station",
+      "typeId": 0,
+      "level": 0,
+      "lat": 51.47577217697484,
+      "lon": -2.795406758336174,
+      "personnel": 10,
+      "small": true,
+      "region": "South West",
+      "dcId": 2353684,
+      "dcName": "Somerset FCR ",
       "dcAssign": "api"
     },
     {
@@ -7617,6 +7604,21 @@
       "dcId": 2620223,
       "dcName": "⁠[WY-ECC] West Yorks Emergency Control⁠",
       "dcAssign": "self"
+    },
+    {
+      "id": 2567204,
+      "name": "The Bridewell Police Station",
+      "type": "Police Station",
+      "typeId": 6,
+      "level": 3,
+      "lat": 51.45756074078378,
+      "lon": -2.5935292983084244,
+      "personnel": 87,
+      "small": false,
+      "region": "South West",
+      "dcId": 2353684,
+      "dcName": "Somerset FCR ",
+      "dcAssign": "api"
     },
     {
       "id": 2654951,
@@ -8301,7 +8303,7 @@
       "level": 0,
       "lat": 51.4008244,
       "lon": -3.4391048,
-      "personnel": 8,
+      "personnel": 28,
       "small": false,
       "region": "Wales",
       "dcId": 2353684,
@@ -9867,7 +9869,7 @@
       "name": "WCP | LFB-008/L4x4-001 (P)",
       "type": 1,
       "buildingId": 1844367,
-      "status": 3
+      "status": 1
     },
     {
       "id": 4926750,
@@ -9902,14 +9904,14 @@
       "name": "NWCP | LFB-006/WL-001",
       "type": 0,
       "buildingId": 1844412,
-      "status": 4
+      "status": 2
     },
     {
       "id": 4927854,
       "name": "NWCP | LFB-006/WL-002",
       "type": 0,
       "buildingId": 1844412,
-      "status": 4
+      "status": 1
     },
     {
       "id": 4929073,
@@ -9923,7 +9925,7 @@
       "name": "HLBRN | HRL-004/FO-001",
       "type": 3,
       "buildingId": 1845393,
-      "status": 2
+      "status": 1
     },
     {
       "id": 4929766,
@@ -9937,14 +9939,14 @@
       "name": "KGXSP | BTP-002/IRV-001",
       "type": 8,
       "buildingId": 1983967,
-      "status": 2
+      "status": 1
     },
     {
       "id": 5330403,
       "name": "KGXSP | BTP-002/IRV-002",
       "type": 8,
       "buildingId": 1983967,
-      "status": 2
+      "status": 1
     },
     {
       "id": 5330499,
@@ -10035,14 +10037,14 @@
       "name": "THML | MET-007/IRV-001",
       "type": 8,
       "buildingId": 1984600,
-      "status": 4
+      "status": 2
     },
     {
       "id": 5332267,
       "name": "THML | MET-007/IRV-002",
       "type": 8,
       "buildingId": 1984600,
-      "status": 4
+      "status": 2
     },
     {
       "id": 5332349,
@@ -10098,14 +10100,14 @@
       "name": "MA | LAS-004/AMB-001",
       "type": 5,
       "buildingId": 1987515,
-      "status": 2
+      "status": 1
     },
     {
       "id": 5340166,
       "name": "MA | LAS-004/AMB-002",
       "type": 5,
       "buildingId": 1987515,
-      "status": 2
+      "status": 1
     },
     {
       "id": 5340169,
@@ -10203,21 +10205,21 @@
       "name": "CoLP | MET-001/IRV-001",
       "type": 8,
       "buildingId": 2033679,
-      "status": 3
+      "status": 2
     },
     {
       "id": 5467027,
       "name": "CoL | HRL-001/FO-001",
       "type": 3,
       "buildingId": 2033681,
-      "status": 2
+      "status": 1
     },
     {
       "id": 5467039,
       "name": "ING | MET-002/IRV-001",
       "type": 8,
       "buildingId": 2033689,
-      "status": 3
+      "status": 2
     },
     {
       "id": 5488513,
@@ -10266,7 +10268,7 @@
       "name": "CoL | LFB-002/RSU-001",
       "type": 4,
       "buildingId": 2033678,
-      "status": 3
+      "status": 2
     },
     {
       "id": 5496781,
@@ -10280,7 +10282,7 @@
       "name": "SJP | BTP-003/RTPC-001",
       "type": 24,
       "buildingId": 1984841,
-      "status": 3
+      "status": 2
     },
     {
       "id": 5496793,
@@ -10385,7 +10387,7 @@
       "name": "LMBTH | HRL-003/FO-001",
       "type": 3,
       "buildingId": 2312031,
-      "status": 2
+      "status": 1
     },
     {
       "id": 6272134,
@@ -10420,7 +10422,7 @@
       "name": "CoLP | MET-001/IRV-002",
       "type": 8,
       "buildingId": 2033679,
-      "status": 3
+      "status": 2
     },
     {
       "id": 6272828,
@@ -10441,14 +10443,14 @@
       "name": "BTGN | LFB-001/WL-001",
       "type": 0,
       "buildingId": 2312415,
-      "status": 4
+      "status": 1
     },
     {
       "id": 6272844,
       "name": "BTGN | LFB-001/WC-001",
       "type": 6,
       "buildingId": 2312415,
-      "status": 2
+      "status": 1
     },
     {
       "id": 6272923,
@@ -10490,7 +10492,7 @@
       "name": "HC292A1",
       "type": 5,
       "buildingId": 2316087,
-      "status": 2
+      "status": 1
     },
     {
       "id": 6283751,
@@ -10518,7 +10520,7 @@
       "name": "ING | MET-002/IRV-002",
       "type": 8,
       "buildingId": 2033689,
-      "status": 3
+      "status": 2
     },
     {
       "id": 6290338,
@@ -10567,7 +10569,7 @@
       "name": "DEPT | LFB-003/RP-001",
       "type": 16,
       "buildingId": 2318646,
-      "status": 3
+      "status": 2
     },
     {
       "id": 6290534,
@@ -10697,15 +10699,15 @@
     }
   ],
   "credits": {
-    "credits_user_current": 4558,
-    "credits_user_total": 148247489,
-    "credits_alliance_current": 11057664671,
-    "coins_user_current": 690,
-    "credits_alliance_total": 241551813702
+    "credits_user_current": 78859,
+    "credits_user_total": 148363790,
+    "credits_alliance_current": 11057669246,
+    "coins_user_current": 238,
+    "credits_alliance_total": 241553562566
   },
   "alliance": {
     "users": 431,
-    "online": 30,
+    "online": 24,
     "rank": 2,
     "financeActive": false
   }
