@@ -53,8 +53,8 @@ a:focus-visible, button:focus-visible, input:focus-visible, select:focus-visible
   display: grid; place-items: center; width: 32px; height: 32px;
   background: var(--accent); color: #fff; border-radius: 8px; font-size: 0.8rem; font-weight: 700;
 }
-.nav { display: flex; align-items: center; gap: 22px; }
-.nav a { color: var(--text-muted); font-size: 0.92rem; font-weight: 500; }
+.nav { display: flex; align-items: center; gap: 18px; flex-wrap: wrap; }
+.nav a { color: var(--text-muted); font-size: 0.9rem; font-weight: 500; }
 .nav a:hover { color: var(--text); }
 .nav-toggle { display: none; flex-direction: column; gap: 5px; background: none; border: none; cursor: pointer; padding: 6px; }
 .nav-toggle span { display: block; width: 22px; height: 2px; background: var(--text); }
@@ -70,7 +70,6 @@ a:focus-visible, button:focus-visible, input:focus-visible, select:focus-visible
 .btn-outline:hover { border-color: var(--border-light); color: #fff; }
 .btn-ghost { border-color: var(--border); color: var(--text-muted); }
 .btn-small { padding: 7px 14px; font-size: 0.85rem; background: var(--accent); color: #fff; border-radius: 6px; }
-.btn-small:hover { background: var(--accent-hover); color: #fff; }
 
 .hero-compact { padding: 28px 0 12px; }
 .hero-top { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 16px; margin-bottom: 16px; }
@@ -103,10 +102,7 @@ a:focus-visible, button:focus-visible, input:focus-visible, select:focus-visible
   display: grid; grid-template-columns: repeat(3, 1fr); gap: 8px;
   background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius); padding: 12px;
 }
-.status-stack.compact { margin-bottom: 4px; }
-.status-row {
-  display: flex; align-items: center; gap: 8px; font-size: 0.85rem; color: var(--text-muted);
-}
+.status-row { display: flex; align-items: center; gap: 8px; font-size: 0.85rem; color: var(--text-muted); }
 .status-row strong { margin-left: auto; color: var(--text); font-weight: 600; font-size: 0.82rem; }
 
 .dash { padding: 12px 0 24px; }
@@ -114,6 +110,7 @@ a:focus-visible, button:focus-visible, input:focus-visible, select:focus-visible
 .stat-card { background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius); padding: 16px 18px; }
 .stat-label { display: block; color: var(--text-muted); font-size: 0.75rem; font-weight: 500; text-transform: uppercase; letter-spacing: 0.04em; margin-bottom: 6px; }
 .stat-value { font-family: var(--mono); font-size: 1.6rem; font-weight: 600; line-height: 1.1; }
+.stat-value-sm { font-size: 0.95rem; font-weight: 500; }
 
 .dash-panels { display: grid; grid-template-columns: 1.2fr 1fr 0.9fr; gap: 12px; }
 .panel { background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius); padding: 16px 18px; }
@@ -171,14 +168,18 @@ td.empty { color: var(--text-muted); text-align: center; padding: 24px 12px; fon
 .desktop-only { display: block; }
 .mobile-only { display: none; }
 .station-cards { display: grid; gap: 10px; }
-.station-card {
-  background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius); padding: 14px 16px;
+a.station-card, .station-card {
+  display: block; background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius);
+  padding: 14px 16px; color: inherit;
 }
-.station-card h3 { font-size: 1rem; margin-bottom: 4px; }
+a.station-card:hover { border-color: var(--border-light); color: inherit; }
+.station-card h3 { font-size: 1rem; margin-bottom: 4px; color: var(--text); }
 .station-card p { color: var(--text-muted); font-size: 0.88rem; margin-bottom: 8px; }
 .station-card-meta { display: flex; justify-content: space-between; align-items: center; gap: 8px; font-size: 0.82rem; color: var(--text-muted); }
 .empty-card { color: var(--text-muted); text-align: center; padding: 24px; }
 .load-more-wrap { margin-top: 14px; text-align: center; }
+
+.detail-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin: 18px 0; }
 
 .contact-slim { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 18px; }
 .contact-slim h2 { font-size: 1.3rem; margin: 4px 0 6px; }
@@ -216,6 +217,7 @@ td.empty { color: var(--text-muted); text-align: center; padding: 24px 12px; fon
   .dash-grid { grid-template-columns: repeat(2, 1fr); }
   .dash-panels { grid-template-columns: 1fr; }
   .status-stack { grid-template-columns: 1fr; }
+  .detail-grid { grid-template-columns: 1fr; }
 }
 @media (max-width: 768px) {
   .nav {
