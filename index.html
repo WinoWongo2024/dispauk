@@ -3,9 +3,13 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>DispaUK | Dispatch Headquarters</title>
-  <meta name="description" content="DispaUK — independent UK emergency dispatch HQ. Live operational summary from MissionChief.">
+  <title>DispaUK — Dispatch Headquarters</title>
+  <meta name="description" content="DispaUK: independent UK emergency-response coordination dashboard with synchronised MissionChief station and fleet data.">
   <meta name="theme-color" content="#0b1220">
+  <link rel="canonical" href="https://dispauk.co.uk/">
+  <meta property="og:title" content="DispaUK — Dispatch Headquarters">
+  <meta property="og:description" content="Independent UK multi-agency dispatch information platform.">
+  <meta property="og:url" content="https://dispauk.co.uk/">
   <link rel="stylesheet" href="/styles.css">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -14,74 +18,68 @@
 <body>
   <header class="header">
     <div class="container header-inner">
-      <a href="/" class="logo" aria-label="DispaUK home">
-        <span class="logo-mark">DU</span>
-        <span class="logo-text">DispaUK</span>
-      </a>
+      <a href="/" class="logo" aria-label="DispaUK home"><span class="logo-mark">DU</span><span class="logo-text">DispaUK</span></a>
       <nav class="nav" aria-label="Primary navigation">
         <a href="#dashboard">Dashboard</a>
         <a href="#stations">Stations</a>
-        <a href="#fleet">Fleet</a>
-        <a href="#contact">Contact</a>
-        <a href="/privacy/" class="btn btn-small">Legal</a>
+        <a href="/status/">Status</a>
+        <a href="/about/">About</a>
+        <a href="#contact" class="btn btn-small">Contact</a>
       </nav>
-      <button class="nav-toggle" type="button" aria-label="Open navigation menu" aria-expanded="false">
-        <span></span><span></span><span></span>
-      </button>
+      <button class="nav-toggle" type="button" aria-label="Open menu" aria-expanded="false"><span></span><span></span><span></span></button>
     </div>
   </header>
 
   <main>
-    <!-- Compact hero + metrics -->
     <section class="hero hero-compact" aria-labelledby="hero-title">
-      <div class="container hero-content">
-        <div class="hero-badge"><span class="status-dot online"></span> Operations Online</div>
-        <h1 id="hero-title">DispaUK <span>Dispatch HQ</span></h1>
-        <p class="hero-lead">Independent UK multi-agency dispatch coordination.</p>
+      <div class="container">
+        <div class="hero-top">
+          <div>
+            <div class="hero-badge" data-freshness-badge>
+              <span class="status-dot online" data-freshness-dot></span>
+              <span data-freshness-text>Checking…</span>
+            </div>
+            <h1 id="hero-title">DispaUK <span>Dispatch HQ</span></h1>
+            <p class="hero-lead">Independent UK multi-agency coordination dashboard.</p>
+          </div>
+          <p class="sync-meta">Last sync: <strong data-sync-relative>—</strong><br><span class="text-muted" data-sync-absolute></span></p>
+        </div>
+
+        <div class="status-stack compact" data-system-status aria-label="System status">
+          <div class="status-row"><span class="status-dot online"></span><span>Website</span><strong>Operational</strong></div>
+          <div class="status-row"><span class="status-dot" data-dot="sync"></span><span>Data sync</span><strong data-sync-label>—</strong></div>
+          <div class="status-row"><span class="status-dot" data-dot="api"></span><span>MissionChief</span><strong data-api-label>—</strong></div>
+        </div>
       </div>
     </section>
 
     <section id="dashboard" class="dash">
       <div class="container">
         <div class="dash-grid">
-          <article class="stat-card">
-            <span class="stat-label">Stations</span>
-            <strong class="stat-value" id="station-count">—</strong>
-          </article>
-          <article class="stat-card">
-            <span class="stat-label">Units</span>
-            <strong class="stat-value" id="unit-count">—</strong>
-          </article>
-          <article class="stat-card">
-            <span class="stat-label">Personnel</span>
-            <strong class="stat-value" id="personnel-count">—</strong>
-          </article>
-          <article class="stat-card">
-            <span class="stat-label">Last sync</span>
-            <strong class="stat-value stat-value-sm" data-stats-updated>—</strong>
-          </article>
+          <article class="stat-card"><span class="stat-label">Stations</span><strong class="stat-value" id="station-count">—</strong></article>
+          <article class="stat-card"><span class="stat-label">Units</span><strong class="stat-value" id="unit-count">—</strong></article>
+          <article class="stat-card"><span class="stat-label">Personnel</span><strong class="stat-value" id="personnel-count">—</strong></article>
+          <article class="stat-card"><span class="stat-label">Alliance online</span><strong class="stat-value" data-alliance-online>—</strong></article>
         </div>
 
         <div class="dash-panels">
           <div class="panel">
-            <h2>Unit status</h2>
-            <div class="chip-row" data-vehicle-status>
-              <span class="text-muted">Waiting for sync…</span>
-            </div>
+            <h2>Unit status codes</h2>
+            <div class="chip-row" data-vehicle-status><span class="text-muted">Loading…</span></div>
           </div>
           <div class="panel">
             <h2>Stations by type</h2>
-            <div data-station-types>
-              <span class="text-muted">Waiting for sync…</span>
-            </div>
+            <div data-station-types><span class="text-muted">Loading…</span></div>
           </div>
           <div class="panel">
             <h2>Alliance</h2>
             <div class="metric-row"><span>Members</span><strong data-alliance-users>—</strong></div>
-            <div class="metric-row"><span>Online</span><strong data-alliance-online>—</strong></div>
+            <div class="metric-row"><span>Online</span><strong data-alliance-online-2>—</strong></div>
             <div class="metric-row"><span>Rank</span><strong data-alliance-rank>—</strong></div>
           </div>
         </div>
+
+        <p class="disclaimer-bar">Not an emergency service. Do not rely on this data for real-world response. Call <strong>999 / 112</strong>.</p>
       </div>
     </section>
 
@@ -91,59 +89,75 @@
           <span class="section-kicker">OPERATIONS</span>
           <h2>Stations</h2>
         </div>
-        <div class="table-wrap">
+
+        <div class="toolbar">
+          <label class="search-wrap">
+            <span class="sr-only">Search stations</span>
+            <input type="search" id="station-search" placeholder="Search stations…" autocomplete="off">
+          </label>
+          <div class="filter-row" role="group" aria-label="Service filter">
+            <button type="button" class="filter-btn active" data-filter="all">All</button>
+            <button type="button" class="filter-btn" data-filter="fire">Fire</button>
+            <button type="button" class="filter-btn" data-filter="ambulance">Ambulance</button>
+            <button type="button" class="filter-btn" data-filter="police">Police</button>
+            <button type="button" class="filter-btn" data-filter="other">Other</button>
+          </div>
+          <label class="sort-wrap">
+            <span class="sr-only">Sort</span>
+            <select id="station-sort">
+              <option value="name-asc">Name A–Z</option>
+              <option value="name-desc">Name Z–A</option>
+              <option value="type">Service</option>
+              <option value="personnel-desc">Personnel ↓</option>
+            </select>
+          </label>
+        </div>
+
+        <p class="result-meta"><span data-result-count>0</span> stations · showing <span data-showing-count>0</span></p>
+
+        <div class="table-wrap desktop-only">
           <table>
-            <caption class="sr-only">Station overview</caption>
+            <caption class="sr-only">Stations</caption>
             <thead>
               <tr>
                 <th scope="col">Station</th>
                 <th scope="col">Service</th>
-                <th scope="col">Area</th>
+                <th scope="col">Personnel</th>
                 <th scope="col">Status</th>
               </tr>
             </thead>
-            <tbody data-stations-body>
-              <tr><td colspan="4" class="empty">Data appears after a successful MissionChief sync.</td></tr>
-            </tbody>
+            <tbody data-stations-body></tbody>
           </table>
         </div>
-        <p class="endpoints-line">APIs: <span data-endpoints class="chip-row inline"></span></p>
-      </div>
-    </section>
 
-    <section id="fleet" class="section section-tight">
-      <div class="container">
-        <div class="section-header section-header-left">
-          <span class="section-kicker">RESOURCES</span>
-          <h2>Fleet focus</h2>
-        </div>
-        <div class="fleet-grid compact">
-          <article class="fleet-card"><h3>Fire &amp; Rescue</h3><ul><li>Pumps &amp; aerials</li><li>Rescue support</li><li>Specialist response</li></ul></article>
-          <article class="fleet-card"><h3>Ambulance</h3><ul><li>Emergency ambulances</li><li>RRVs</li><li>Specialist care</li></ul></article>
-          <article class="fleet-card"><h3>Police</h3><ul><li>Response units</li><li>Roads &amp; traffic</li><li>Support vehicles</li></ul></article>
+        <div class="station-cards mobile-only" data-stations-cards></div>
+
+        <div class="load-more-wrap">
+          <button type="button" class="btn btn-outline" id="load-more" hidden>Load more</button>
         </div>
       </div>
     </section>
 
-    <section id="contact" class="section section-tight section-alt">
+    <section id="contact" class="section section-tight">
       <div class="container contact-slim">
         <div>
           <span class="section-kicker">CONTACT</span>
           <h2>DispaUK</h2>
-          <p class="text-muted">Collaboration, mutual aid, operational enquiries.</p>
+          <p class="text-muted">Collaboration and operational enquiries.</p>
         </div>
         <div class="contact-actions">
-          <a class="btn btn-primary" href="mailto:administrator@dispauk.co.uk">administrator@dispauk.co.uk</a>
-          <a class="btn btn-outline" href="https://www.missionchief.co.uk" target="_blank" rel="noopener noreferrer">MissionChief UK</a>
+          <a class="btn btn-primary" href="mailto:administrator@dispauk.co.uk">Email</a>
+          <a class="btn btn-outline" href="/status/">System status</a>
+          <a class="btn btn-outline" href="/about/">About</a>
         </div>
       </div>
     </section>
   </main>
 
-  <footer class="footer footer-slim">
-    <div class="container footer-bottom" style="border-top:none;padding-top:0">
-      <p class="footer-copy">© <span data-current-year>2026</span> DispaUK · <a href="/privacy/">Privacy</a> · <a href="/cookies/">Cookies</a> · <a href="/terms/">Terms</a> · <a href="/legal/">Legal</a> · <a href="/accessibility/">Accessibility</a></p>
-      <p class="footer-disclaimer">Independent project — not affiliated with SHPlay GmbH or MissionChief.</p>
+  <footer class="footer-slim">
+    <div class="container footer-bottom">
+      <p class="footer-copy">© <span data-current-year>2026</span> DispaUK · <a href="/privacy/">Privacy</a> · <a href="/cookies/">Cookies</a> · <a href="/terms/">Terms</a> · <a href="/legal/">Legal</a> · <a href="/accessibility/">Accessibility</a> · <a href="/changelog/">Changelog</a></p>
+      <p class="footer-disclaimer">Independent project — not affiliated with SHPlay GmbH or MissionChief. Operational data may be delayed. Not for real-world emergency use.</p>
     </div>
   </footer>
   <script src="/script.js" defer></script>
