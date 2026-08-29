@@ -1,38 +1,42 @@
 # DispaUK – Dispatch Headquarters
 
-Static website for **DispaUK**, a MissionChief-focused dispatch HQ / business presence.
+Static website for **DispaUK** — independent UK emergency dispatch HQ presence, integrated with MissionChief data.
 
-Built for **GitHub Pages**.
+**Live site:** https://dispauk.co.uk
 
-## Live Site
+## Stack
 
-Once GitHub Pages is enabled: **https://winowongo2024.github.io/dispauk/**
+- GitHub Pages (static HTML/CSS/JS)
+- Custom domain: `dispauk.co.uk`
+- MissionChief data sync via GitHub Actions → `data/stats.json`
+- No frontend secrets (session cookie lives only in Actions secrets)
 
-## Setup (already done)
+## GitHub Actions sync
 
-Repository created and files pushed. To enable GitHub Pages:
+Workflow: `.github/workflows/sync-missionchief.yml`
 
-1. Go to https://github.com/WinoWongo2024/dispauk/settings/pages
-2. Under **Source**, select Branch: `main`, Folder: `/ (root)`
-3. Click Save
+- Uses `actions/checkout@v6` (Node 24)
+- Secret required: `MISSIONCHIEF_SESSION`
+  - Format: `_session_id=YOUR_VALUE`
+- Runs every 6 hours + manual `workflow_dispatch`
+- Writes public `data/stats.json` (no cookie in repo)
 
-The site will be live at https://winowongo2024.github.io/dispauk/ within a minute or two.
+If the sync fails with HTTP 401/403, refresh the MissionChief session cookie and update the secret.
 
-## Customising
+## Local structure
 
-- **Branding** – Edit the logo text, hero title, and colours in `styles.css` (`--accent`, etc.).
-- **Stations & Fleet** – Replace the placeholder tables and lists in `index.html` with your real MissionChief data.
-- **Contact** – Add Discord, email, or Alliance links in the Contact section.
-- **Live stats** – Later you can add a `data/stats.json` and load it from `script.js`, or use a small backend proxy for the unofficial MissionChief API endpoints.
+```
+/
+  index.html          Homepage
+  styles.css
+  script.js           Nav, cookie banner, loads /data/stats.json
+  404.html
+  data/stats.json     Public station/unit summary (Action-updated)
+  privacy/ cookies/ terms/ legal/ accessibility/
+```
 
-## MissionChief Data Tips
+## Notes
 
-While logged into MissionChief you can access:
-- `https://www.missionchief.co.uk/api/buildings`
-- `https://www.missionchief.co.uk/api/vehicles`
-
-(Use the correct domain for your server.) These require a valid session. For a public static site the safest approach is to export the data occasionally and keep the HTML/JSON updated, or run a private proxy.
-
-## Licence / Disclaimer
-
-This site is an independent project. Not affiliated with SHPlay GmbH or the official MissionChief game.
+- Nav links to `/about/`, `/operations/`, etc. need dedicated pages (currently 404 except legal pages).
+- Homepage operations table fills from `data/stats.json` when the Action succeeds.
+- Not affiliated with SHPlay GmbH or MissionChief.
