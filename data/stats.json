@@ -1,8 +1,8 @@
 {
-  "updatedAt": "2026-08-29T14:58:05.216703+00:00",
+  "updatedAt": "2026-08-29T18:20:47.083317+00:00",
   "source": "missionchief.co.uk",
   "sync": {
-    "durationSeconds": 23,
+    "durationSeconds": 21,
     "schedule": "hourly"
   },
   "endpoints": {
@@ -59,11 +59,12 @@
     "London & South": 17
   },
   "vehicleStatus": {
-    "2": 1451,
-    "1": 10,
-    "4": 11,
-    "3": 1,
-    "7": 1
+    "2": 1383,
+    "3": 55,
+    "1": 6,
+    "4": 27,
+    "6": 1,
+    "7": 2
   },
   "vehiclesByType": {
     "5": 505,
@@ -5596,21 +5597,6 @@
       "dcAssign": "api"
     },
     {
-      "id": 2429046,
-      "name": "Bristol Royal Infirmary ",
-      "type": "Hospital",
-      "typeId": 4,
-      "level": 6,
-      "lat": 51.459167869232125,
-      "lon": -2.596142441448984,
-      "personnel": 0,
-      "small": false,
-      "region": "South West",
-      "dcId": 2353684,
-      "dcName": "Somerset FCR ",
-      "dcAssign": "api"
-    },
-    {
       "id": 2635206,
       "name": "Minehead Ambulance Station",
       "type": "Ambulance Station",
@@ -8236,6 +8222,21 @@
       "dcAssign": "api"
     },
     {
+      "id": 2429046,
+      "name": "Bristol Royal Infirmary ",
+      "type": "Hospital",
+      "typeId": 4,
+      "level": 6,
+      "lat": 51.459167869232125,
+      "lon": -2.596142441448984,
+      "personnel": 0,
+      "small": false,
+      "region": "South West",
+      "dcId": 2353684,
+      "dcName": "Somerset FCR ",
+      "dcAssign": "api"
+    },
+    {
       "id": 2652890,
       "name": "Terneuzen Ambulance Station",
       "type": "Ambulance Station",
@@ -9869,7 +9870,7 @@
       "name": "WCP | LFB-008/L4x4-001 (P)",
       "type": 1,
       "buildingId": 1844367,
-      "status": 2
+      "status": 3
     },
     {
       "id": 4926750,
@@ -9939,14 +9940,14 @@
       "name": "KGXSP | BTP-002/IRV-001",
       "type": 8,
       "buildingId": 1983967,
-      "status": 2
+      "status": 1
     },
     {
       "id": 5330403,
       "name": "KGXSP | BTP-002/IRV-002",
       "type": 8,
       "buildingId": 1983967,
-      "status": 2
+      "status": 1
     },
     {
       "id": 5330499,
@@ -10037,14 +10038,14 @@
       "name": "THML | MET-007/IRV-001",
       "type": 8,
       "buildingId": 1984600,
-      "status": 2
+      "status": 3
     },
     {
       "id": 5332267,
       "name": "THML | MET-007/IRV-002",
       "type": 8,
       "buildingId": 1984600,
-      "status": 2
+      "status": 3
     },
     {
       "id": 5332349,
@@ -10240,7 +10241,7 @@
       "name": "GWCH | CRS-001/CRV-001",
       "type": 57,
       "buildingId": 2041379,
-      "status": 1
+      "status": 2
     },
     {
       "id": 5489715,
@@ -10324,7 +10325,7 @@
       "name": "HGTAS | YAS-002/AMB-001",
       "type": 5,
       "buildingId": 2311527,
-      "status": 2
+      "status": 3
     },
     {
       "id": 6269473,
@@ -10352,14 +10353,14 @@
       "name": "KBR | NYF-002/WL-001",
       "type": 0,
       "buildingId": 2311542,
-      "status": 2
+      "status": 3
     },
     {
       "id": 6269521,
       "name": "KBR | NYF-002/FO-001",
       "type": 3,
       "buildingId": 2311542,
-      "status": 2
+      "status": 3
     },
     {
       "id": 6270702,
@@ -10513,7 +10514,7 @@
       "name": "GWCH | CRS-001/CRV-002",
       "type": 57,
       "buildingId": 2041379,
-      "status": 1
+      "status": 2
     },
     {
       "id": 6290331,
@@ -10569,14 +10570,14 @@
       "name": "DEPT | LFB-003/RP-001",
       "type": 16,
       "buildingId": 2318646,
-      "status": 2
+      "status": 4
     },
     {
       "id": 6290534,
       "name": "DEPT| LFB-003/CARP-001",
       "type": 17,
       "buildingId": 2318646,
-      "status": 2
+      "status": 4
     },
     {
       "id": 6290763,
@@ -10699,15 +10700,15 @@
     }
   ],
   "credits": {
-    "credits_user_current": 302795,
-    "credits_user_total": 148587726,
-    "credits_alliance_current": 11057673764,
-    "coins_user_current": 226,
-    "credits_alliance_total": 241556753017
+    "credits_user_current": 335726,
+    "credits_user_total": 148620657,
+    "credits_alliance_current": 11057731103,
+    "coins_user_current": 220,
+    "credits_alliance_total": 241578268291
   },
   "alliance": {
     "users": 435,
-    "online": 29,
+    "online": 23,
     "rank": 2,
     "financeActive": false
   }
