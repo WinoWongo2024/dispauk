@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Fleet | DispaUK</title>
+  <meta name="description" content="DispaUK fleet overview — unit status and type breakdown.">
+  <meta name="theme-color" content="#0b1220">
+  <link rel="stylesheet" href="/styles.css">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Roboto+Mono:wght@400;500&display=swap" rel="stylesheet">
+</head>
+<body>
+  <header class="header">
+    <div class="container header-inner">
+      <a href="/" class="logo"><span class="logo-mark">DU</span><span class="logo-text">DispaUK</span></a>
+      <nav class="nav" aria-label="Primary">
+        <a href="/">Dashboard</a>
+        <a href="/#stations">Stations</a>
+        <a href="/fleet/">Fleet</a>
+        <a href="/statistics/">Statistics</a>
+        <a href="/map/">Map</a>
+        <a href="/status/">Status</a>
+      </nav>
+      <button class="nav-toggle" type="button" aria-label="Menu" aria-expanded="false"><span></span><span></span><span></span></button>
+    </div>
+  </header>
+  <main class="legal-page">
+    <div class="container">
+      <div class="section-header-left" style="margin-bottom:18px">
+        <span class="section-kicker">RESOURCES</span>
+        <h1 style="font-size:1.6rem">Fleet</h1>
+        <p class="text-muted">Unit totals and status from the last successful sync.</p>
+      </div>
+
+      <div class="dash-grid" style="margin-bottom:16px">
+        <article class="stat-card"><span class="stat-label">Total units</span><strong class="stat-value" data-f-units>—</strong></article>
+        <article class="stat-card"><span class="stat-label">Status codes</span><strong class="stat-value" data-f-status-n>—</strong></article>
+        <article class="stat-card"><span class="stat-label">Unit types (top)</span><strong class="stat-value" data-f-types-n>—</strong></article>
+        <article class="stat-card"><span class="stat-label">Last sync</span><strong class="stat-value stat-value-sm" data-sync-relative>—</strong></article>
+      </div>
+
+      <div class="dash-panels">
+        <div class="panel">
+          <h2>Unit status</h2>
+          <div data-f-status></div>
+        </div>
+        <div class="panel" style="grid-column: span 2">
+          <h2>Top unit types</h2>
+          <div data-f-types></div>
+        </div>
+      </div>
+
+      <h2 style="margin:24px 0 10px;font-size:1.1rem">Unit sample</h2>
+      <div class="toolbar">
+        <label class="search-wrap">
+          <span class="sr-only">Search units</span>
+          <input type="search" id="unit-search" placeholder="Search units…">
+        </label>
+      </div>
+      <div class="table-wrap">
+        <table>
+          <thead><tr><th>Unit</th><th>Type</th><th>Status</th><th>Station ID</th></tr></thead>
+          <tbody data-f-units-body></tbody>
+        </table>
+      </div>
+    </div>
+  </main>
+  <footer class="footer-slim"><div class="container footer-bottom"><p class="footer-copy">© <span data-current-year>2026</span> DispaUK · <a href="/about/">About</a></p></div></footer>
+  <script src="/script.js" defer></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', async () => {
+      const res = await fetch('/data/stats.json', { cache: 'no-cache' });
+      const data = await res.json();
+      const fmt = n => n == null ? '—' : Number(n).toLocaleString('en-GB');
+      const set = (sel, v) => document.querySelectorAll(sel).forEach(el => el.textContent = v);
+
+      set('[data-f-units]', fmt(data.totals?.units));
+      const vs = data.vehicleStatus || {};
+      const vt = data.vehiclesByType || {};
+      set('[data-f-status-n]', fmt(Object.keys(vs).length));
+      set('[data-f-types-n]', fmt(Object.keys(vt).length));
+
+      if (data.updatedAt) {
+        const mins = Math.floor((Date.now() - new Date(data.updatedAt).getTime()) / 60000);
+        set('[data-sync-relative]', mins < 60 ? mins + ' min ago' : Math.floor(mins/60) + ' h ago');
+      }
+
+      const statusEl = document.querySelector('[data-f-status]');
+      if (statusEl) {
+        statusEl.innerHTML = Object.entries(vs).map(([k,v]) =>
+          `<div class="metric-row"><span>Status ${k}</span><strong>${fmt(v)}</strong></div>`).join('') || '<p class="text-muted">No data</p>';
+      }
+      const typesEl = document.querySelector('[data-f-types]');
+      if (typesEl) {
+        typesEl.innerHTML = Object.entries(vt).map(([k,v]) =>
+          `<div class="metric-row"><span>Type ${k}</span><strong>${fmt(v)}</strong></div>`).join('') || '<p class="text-muted">No data</p>';
+      }
+
+      let units = data.unitsSample || [];
+      const body = document.querySelector('[data-f-units-body]');
+      const render = (list) => {
+        if (!body) return;
+        body.innerHTML = list.slice(0, 80).map(u =>
+          `<tr><td>${String(u.name||'').replace(/</g,'&lt;')}</td><td>${u.type}</td><td>S${u.status}</td><td class="mono"><a href="/stations/?id=${u.buildingId}">${u.buildingId}</a></td></tr>`
+        ).join('') || '<tr><td colspan="4" class="empty">No units</td></tr>';
+      };
+      render(units);
+      const search = document.getElementById('unit-search');
+      if (search) search.addEventListener('input', () => {
+        const q = search.value.toLowerCase();
+        render(units.filter(u => `${u.name} ${u.type}`.toLowerCase().includes(q)));
+      });
+    });
+  </script>
+</body>
+</html>

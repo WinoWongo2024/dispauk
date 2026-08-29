@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Station | DispaUK</title>
+  <meta name="theme-color" content="#0b1220">
+  <link rel="stylesheet" href="/styles.css">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Roboto+Mono:wght@400;500&display=swap" rel="stylesheet">
+</head>
+<body>
+  <header class="header">
+    <div class="container header-inner">
+      <a href="/" class="logo"><span class="logo-mark">DU</span><span class="logo-text">DispaUK</span></a>
+      <nav class="nav" aria-label="Primary">
+        <a href="/">Dashboard</a>
+        <a href="/#stations">Stations</a>
+        <a href="/fleet/">Fleet</a>
+        <a href="/statistics/">Statistics</a>
+        <a href="/map/">Map</a>
+        <a href="/status/">Status</a>
+      </nav>
+      <button class="nav-toggle" type="button" aria-label="Menu" aria-expanded="false"><span></span><span></span><span></span></button>
+    </div>
+  </header>
+  <main class="legal-page">
+    <div class="container legal-content" id="station-detail">
+      <p class="text-muted"><a href="/#stations">← Back to stations</a></p>
+      <h1 data-s-name>Loading…</h1>
+      <p class="legal-updated"><span data-s-type></span> · <span class="status-pill">Active</span></p>
+
+      <div class="detail-grid">
+        <div class="panel">
+          <h2>Station information</h2>
+          <div class="metric-row"><span>Service</span><strong data-s-type-2>—</strong></div>
+          <div class="metric-row"><span>Type ID</span><strong class="mono" data-s-typeid>—</strong></div>
+          <div class="metric-row"><span>Level</span><strong data-s-level>—</strong></div>
+          <div class="metric-row"><span>Personnel</span><strong data-s-personnel>—</strong></div>
+          <div class="metric-row"><span>Record ID</span><strong class="mono" data-s-id>—</strong></div>
+        </div>
+        <div class="panel">
+          <h2>Location</h2>
+          <div class="metric-row"><span>Latitude</span><strong class="mono" data-s-lat>—</strong></div>
+          <div class="metric-row"><span>Longitude</span><strong class="mono" data-s-lon>—</strong></div>
+          <p style="margin-top:14px"><a class="btn btn-outline" data-s-map-link href="/map/" target="_blank" rel="noopener">View on map</a></p>
+        </div>
+      </div>
+
+      <h2>Linked units (sample)</h2>
+      <div class="table-wrap" style="margin-top:10px">
+        <table>
+          <thead><tr><th>Unit</th><th>Type</th><th>Status</th></tr></thead>
+          <tbody data-s-units><tr><td colspan="3" class="empty">No unit sample for this station</td></tr></tbody>
+        </table>
+      </div>
+      <p class="text-muted" style="margin-top:16px">Data from last MissionChief sync. Not for real-world emergency use.</p>
+    </div>
+  </main>
+  <footer class="footer-slim"><div class="container footer-bottom"><p class="footer-copy">© <span data-current-year>2026</span> DispaUK</p></div></footer>
+  <script src="/script.js" defer></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', async () => {
+      const params = new URLSearchParams(location.search);
+      const id = params.get('id');
+      if (!id) {
+        document.querySelector('[data-s-name]').textContent = 'Station not found';
+        return;
+      }
+      try {
+        const res = await fetch('/data/stats.json', { cache: 'no-cache' });
+        const data = await res.json();
+        const s = (data.stations || []).find(x => String(x.id) === String(id));
+        if (!s) {
+          document.querySelector('[data-s-name]').textContent = 'Station not found';
+          return;
+        }
+        document.title = (s.name || 'Station') + ' | DispaUK';
+        const set = (sel, v) => { const el = document.querySelector(sel); if (el) el.textContent = v == null ? '—' : String(v); };
+        set('[data-s-name]', s.name);
+        set('[data-s-type]', s.type);
+        set('[data-s-type-2]', s.type);
+        set('[data-s-typeid]', s.typeId);
+        set('[data-s-level]', s.level);
+        set('[data-s-personnel]', Number(s.personnel || 0).toLocaleString('en-GB'));
+        set('[data-s-id]', s.id);
+        set('[data-s-lat]', s.lat != null ? Number(s.lat).toFixed(5) : '—');
+        set('[data-s-lon]', s.lon != null ? Number(s.lon).toFixed(5) : '—');
+        const mapLink = document.querySelector('[data-s-map-link]');
+        if (mapLink && s.lat != null) mapLink.href = '/map/?focus=' + encodeURIComponent(s.id);
+
+        const units = (data.unitsSample || []).filter(u => String(u.buildingId) === String(s.id));
+        const tbody = document.querySelector('[data-s-units]');
+        if (tbody && units.length) {
+          tbody.innerHTML = units.map(u => `<tr><td>${String(u.name||'').replace(/</g,'&lt;')}</td><td>${u.type}</td><td>S${u.status}</td></tr>`).join('');
+        }
+      } catch (e) {
+        document.querySelector('[data-s-name]').textContent = 'Failed to load station';
+      }
+    });
+  </script>
+</body>
+</html>

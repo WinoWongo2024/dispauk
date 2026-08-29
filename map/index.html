@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Map | DispaUK</title>
+  <meta name="description" content="DispaUK operations map — station locations from MissionChief sync.">
+  <meta name="theme-color" content="#0b1220">
+  <link rel="stylesheet" href="/styles.css">
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin="">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Roboto+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <style>
+    #map { height: min(70vh, 640px); width: 100%; border-radius: 10px; border: 1px solid var(--border); z-index: 1; }
+    .map-toolbar { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 12px; }
+    .leaflet-container { background: #0b1220; font-family: var(--font); }
+  </style>
+</head>
+<body>
+  <header class="header">
+    <div class="container header-inner">
+      <a href="/" class="logo"><span class="logo-mark">DU</span><span class="logo-text">DispaUK</span></a>
+      <nav class="nav" aria-label="Primary">
+        <a href="/">Dashboard</a>
+        <a href="/#stations">Stations</a>
+        <a href="/fleet/">Fleet</a>
+        <a href="/statistics/">Statistics</a>
+        <a href="/map/">Map</a>
+        <a href="/status/">Status</a>
+      </nav>
+      <button class="nav-toggle" type="button" aria-label="Menu" aria-expanded="false"><span></span><span></span><span></span></button>
+    </div>
+  </header>
+  <main class="legal-page">
+    <div class="container">
+      <div class="section-header-left" style="margin-bottom:12px">
+        <span class="section-kicker">GEOGRAPHY</span>
+        <h1 style="font-size:1.6rem">Operations map</h1>
+        <p class="text-muted">Stations with coordinates from the last sync. Filter by service.</p>
+      </div>
+      <div class="map-toolbar filter-row" role="group" aria-label="Map filter">
+        <button type="button" class="filter-btn active" data-map-filter="all">All</button>
+        <button type="button" class="filter-btn" data-map-filter="fire">Fire</button>
+        <button type="button" class="filter-btn" data-map-filter="ambulance">Ambulance</button>
+        <button type="button" class="filter-btn" data-map-filter="police">Police</button>
+        <button type="button" class="filter-btn" data-map-filter="other">Other</button>
+      </div>
+      <div id="map" role="application" aria-label="Station map"></div>
+      <p class="text-muted" style="margin-top:10px"><span data-map-count>0</span> markers · not for real-world navigation</p>
+    </div>
+  </main>
+  <footer class="footer-slim"><div class="container footer-bottom"><p class="footer-copy">© <span data-current-year>2026</span> DispaUK</p></div></footer>
+  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
+  <script src="/script.js" defer></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', async () => {
+      const map = L.map('map').setView([54.5, -2.5], 6);
+      L.tileLayer('https://{s}.basemaps.cartocdn.com/dark_all/{z}/{x}/{y}{r}.png', {
+        attribution: '&copy; OpenStreetMap &copy; CARTO',
+        maxZoom: 18,
+      }).addTo(map);
+
+      const res = await fetch('/data/stats.json', { cache: 'no-cache' });
+      const data = await res.json();
+      const stations = (data.stations || []).filter(s => s.lat != null && s.lon != null);
+      let layer = L.layerGroup().addTo(map);
+      let filter = 'all';
+
+      const bucket = (type) => {
+        const t = (type || '').toLowerCase();
+        if (t.includes('fire')) return 'fire';
+        if (t.includes('ambulance') || t.includes('hospital')) return 'ambulance';
+        if (t.includes('police')) return 'police';
+        return 'other';
+      };
+
+      const colours = { fire: '#e63946', ambulance: '#3b82f6', police: '#a78bfa', other: '#9aadc2' };
+
+      function redraw() {
+        layer.clearLayers();
+        const list = stations.filter(s => filter === 'all' || bucket(s.type) === filter);
+        list.forEach(s => {
+          const c = colours[bucket(s.type)] || colours.other;
+          const m = L.circleMarker([s.lat, s.lon], {
+            radius: 5, color: c, fillColor: c, fillOpacity: 0.85, weight: 1,
+          });
+          m.bindPopup(`<strong>${s.name}</strong><br>${s.type}<br><a href="/stations/?id=${s.id}">Details</a>`);
+          m.addTo(layer);
+        });
+        document.querySelector('[data-map-count]').textContent = list.length;
+      }
+
+      redraw();
+
+      const focus = new URLSearchParams(location.search).get('focus');
+      if (focus) {
+        const s = stations.find(x => String(x.id) === String(focus));
+        if (s) map.setView([s.lat, s.lon], 12);
+      }
+
+      document.querySelectorAll('[data-map-filter]').forEach(btn => {
+        btn.addEventListener('click', () => {
+          document.querySelectorAll('[data-map-filter]').forEach(b => b.classList.remove('active'));
+          btn.classList.add('active');
+          filter = btn.getAttribute('data-map-filter');
+          redraw();
+        });
+      });
+    });
+  </script>
+</body>
+</html>

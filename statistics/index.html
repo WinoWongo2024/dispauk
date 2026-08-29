@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Statistics | DispaUK</title>
+  <meta name="description" content="DispaUK operational statistics — stations, units, personnel and service breakdown.">
+  <meta name="theme-color" content="#0b1220">
+  <link rel="stylesheet" href="/styles.css">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Roboto+Mono:wght@400;500&display=swap" rel="stylesheet">
+</head>
+<body>
+  <header class="header">
+    <div class="container header-inner">
+      <a href="/" class="logo"><span class="logo-mark">DU</span><span class="logo-text">DispaUK</span></a>
+      <nav class="nav" aria-label="Primary">
+        <a href="/">Dashboard</a>
+        <a href="/#stations">Stations</a>
+        <a href="/fleet/">Fleet</a>
+        <a href="/statistics/">Statistics</a>
+        <a href="/map/">Map</a>
+        <a href="/status/">Status</a>
+      </nav>
+      <button class="nav-toggle" type="button" aria-label="Menu" aria-expanded="false"><span></span><span></span><span></span></button>
+    </div>
+  </header>
+  <main class="legal-page">
+    <div class="container">
+      <div class="section-header-left" style="margin-bottom:18px">
+        <span class="section-kicker">INSIGHTS</span>
+        <h1 style="font-size:1.6rem">Statistics</h1>
+      </div>
+
+      <div class="dash-grid">
+        <article class="stat-card"><span class="stat-label">Stations</span><strong class="stat-value" data-st-stations>—</strong></article>
+        <article class="stat-card"><span class="stat-label">Units</span><strong class="stat-value" data-st-units>—</strong></article>
+        <article class="stat-card"><span class="stat-label">Personnel</span><strong class="stat-value" data-st-personnel>—</strong></article>
+        <article class="stat-card"><span class="stat-label">Mission types</span><strong class="stat-value" data-st-missions>—</strong></article>
+      </div>
+
+      <div class="dash-panels" style="margin-top:14px">
+        <div class="panel">
+          <h2>Stations by type</h2>
+          <div data-st-types></div>
+        </div>
+        <div class="panel">
+          <h2>Service groups</h2>
+          <div data-st-groups></div>
+        </div>
+        <div class="panel">
+          <h2>Alliance</h2>
+          <div class="metric-row"><span>Members</span><strong data-alliance-users>—</strong></div>
+          <div class="metric-row"><span>Online</span><strong data-alliance-online>—</strong></div>
+          <div class="metric-row"><span>Rank</span><strong data-alliance-rank>—</strong></div>
+          <div class="metric-row"><span>Alliance buildings</span><strong data-st-ab —></strong></div>
+        </div>
+      </div>
+
+      <p class="text-muted" style="margin-top:20px">Snapshot from last sync · <span data-sync-relative>—</span></p>
+    </div>
+  </main>
+  <footer class="footer-slim"><div class="container footer-bottom"><p class="footer-copy">© <span data-current-year>2026</span> DispaUK</p></div></footer>
+  <script src="/script.js" defer></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', async () => {
+      const res = await fetch('/data/stats.json', { cache: 'no-cache' });
+      const data = await res.json();
+      const fmt = n => n == null ? '—' : Number(n).toLocaleString('en-GB');
+      const set = (sel, v) => document.querySelectorAll(sel).forEach(el => { if (el) el.textContent = v; });
+
+      set('[data-st-stations]', fmt(data.totals?.stations));
+      set('[data-st-units]', fmt(data.totals?.units));
+      set('[data-st-personnel]', fmt(data.totals?.personnel));
+      set('[data-st-missions]', fmt(data.totals?.missionTypes));
+      set('[data-st-ab]', fmt(data.totals?.allianceBuildings));
+
+      if (data.alliance) {
+        set('[data-alliance-users]', fmt(data.alliance.users));
+        set('[data-alliance-online]', fmt(data.alliance.online));
+        set('[data-alliance-rank]', fmt(data.alliance.rank));
+      }
+      if (data.updatedAt) {
+        const mins = Math.floor((Date.now() - new Date(data.updatedAt).getTime()) / 60000);
+        set('[data-sync-relative]', mins < 60 ? mins + ' min ago' : Math.floor(mins/60) + ' h ago');
+      }
+
+      const types = data.stationsByType || {};
+      const typesEl = document.querySelector('[data-st-types]');
+      if (typesEl) {
+        typesEl.innerHTML = Object.entries(types).sort((a,b)=>b[1]-a[1]).map(([k,v]) =>
+          `<div class="metric-row"><span>${k}</span><strong>${fmt(v)}</strong></div>`).join('');
+      }
+
+      const groups = { Fire: 0, Ambulance: 0, Police: 0, Other: 0 };
+      Object.entries(types).forEach(([k,v]) => {
+        const t = k.toLowerCase();
+        if (t.includes('fire')) groups.Fire += v;
+        else if (t.includes('ambulance') || t.includes('hospital')) groups.Ambulance += v;
+        else if (t.includes('police')) groups.Police += v;
+        else groups.Other += v;
+      });
+      const gEl = document.querySelector('[data-st-groups]');
+      if (gEl) {
+        gEl.innerHTML = Object.entries(groups).map(([k,v]) =>
+          `<div class="metric-row"><span>${k}</span><strong>${fmt(v)}</strong></div>`).join('');
+      }
+    });
+  </script>
+</body>
+</html>
