@@ -13,7 +13,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
-        uses: actions/checkout@v5
+        uses: actions/checkout@v6
 
       - name: Fetch MissionChief data
         env:
@@ -22,40 +22,68 @@ jobs:
         run: |
           set -euo pipefail
 
-          if [ -z "${SESSION}" ]; then
-            echo "Error: MISSIONCHIEF_SESSION secret is not set."
-            echo "Add it under Settings → Secrets and variables → Actions"
+          if [ -z "${SESSION:-}" ]; then
+            echo "::error::MISSIONCHIEF_SESSION secret is not set."
+            echo "Settings → Secrets and variables → Actions → MISSIONCHIEF_SESSION"
+            echo "Value must look like: _session_id=YOUR_VALUE"
             exit 1
           fi
 
+          # Normalise cookie: allow raw value or full Cookie header fragment
+          COOKIE="$SESSION"
+          if [[ "$COOKIE" != *"="* ]]; then
+            COOKIE="_session_id=${COOKIE}"
+            echo "Normalised cookie to include _session_id= prefix"
+          fi
+
+          # Never print the full cookie
+          echo "Cookie length: ${#COOKIE} chars"
+          echo "Cookie starts with: ${COOKIE%%=*}=***"
+
           mkdir -p data
 
-          echo "Fetching buildings..."
-          curl -sS -f \
-            -H "Cookie: ${SESSION}" \
-            -H "Accept: application/json" \
-            -H "User-Agent: DispaUK-Sync/1.0" \
-            "${MC_BASE}/api/buildings" \
-            -o /tmp/buildings.json
+          fetch_api() {
+            local name="$1"
+            local path="$2"
+            local out="$3"
+            local code
 
-          echo "Fetching vehicles..."
-          curl -sS -f \
-            -H "Cookie: ${SESSION}" \
-            -H "Accept: application/json" \
-            -H "User-Agent: DispaUK-Sync/1.0" \
-            "${MC_BASE}/api/vehicles" \
-            -o /tmp/vehicles.json
+            echo "--- Fetching ${name} (${MC_BASE}${path}) ---"
 
-          python3 - << 'PY'
-          import json, sys
-          for path in ("/tmp/buildings.json", "/tmp/vehicles.json"):
-              with open(path) as f:
-                  data = json.load(f)
-              if not isinstance(data, list):
-                  print(f"Unexpected response shape in {path}", file=sys.stderr)
-                  sys.exit(1)
-              print(f"{path}: {len(data)} records")
-          PY
+            code=$(curl -sS -L -o "$out" -w "%{http_code}" \
+              -H "Cookie: ${COOKIE}" \
+              -H "Accept: application/json, text/javascript, */*;q=0.01" \
+              -H "Accept-Language: en-GB,en;q=0.9" \
+              -H "X-Requested-With: XMLHttpRequest" \
+              -H "Referer: ${MC_BASE}/" \
+              -H "User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36" \
+              "${MC_BASE}${path}" || true)
+
+            echo "HTTP status: ${code}"
+
+            if [ "$code" != "200" ]; then
+              echo "::error::${name} failed with HTTP ${code}"
+              echo "Response body (first 500 chars):"
+              head -c 500 "$out" || true
+              echo
+              if [ "$code" = "401" ] || [ "$code" = "403" ] || [ "$code" = "302" ]; then
+                echo "::error::Session cookie looks invalid or expired. Log into missionchief.co.uk, copy a fresh _session_id, update the secret, and re-run."
+              fi
+              exit 22
+            fi
+
+            # Basic JSON sanity
+            if ! python3 -c "import json,sys; json.load(open(sys.argv[1]))" "$out" 2>/dev/null; then
+              echo "::error::${name} response is not valid JSON"
+              head -c 500 "$out" || true
+              exit 1
+            fi
+
+            python3 -c "import json,sys; d=json.load(open(sys.argv[1])); print(f'{sys.argv[2]}: {len(d) if isinstance(d,list) else type(d).__name__}')" "$out" "$name"
+          }
+
+          fetch_api "buildings" "/api/buildings" /tmp/buildings.json
+          fetch_api "vehicles" "/api/vehicles" /tmp/vehicles.json
 
       - name: Build public stats
         run: |
@@ -68,6 +96,9 @@ jobs:
               buildings = json.load(f)
           with open("/tmp/vehicles.json") as f:
               vehicles = json.load(f)
+
+          if not isinstance(buildings, list) or not isinstance(vehicles, list):
+              raise SystemExit("Expected list responses from buildings/vehicles APIs")
 
           BUILDING_LABELS = {
               0: "Fire Station",
