@@ -1,9 +1,80 @@
 {
-  "updatedAt": "2026-08-29T07:00:19.633096+00:00",
+  "updatedAt": "2026-08-29T08:53:55.128304+00:00",
   "source": "missionchief.co.uk",
+  "endpoints": {
+    "buildings": true,
+    "vehicles": true,
+    "vehicle_states": true,
+    "credits": true,
+    "allianceinfo": true,
+    "alliance_buildings": true,
+    "equipments": true,
+    "vehicle_distances": true,
+    "einsaetze": true,
+    "alliance_event_types": true
+  },
   "totals": {
-    "stations": 562,
-    "units": 1451
+    "stations": 565,
+    "units": 1454,
+    "personnel": 39155,
+    "allianceBuildings": 1067,
+    "equipments": 11,
+    "missionTypes": 1067
+  },
+  "stationsByType": {
+    "Ambulance Station": 281,
+    "Type 28": 17,
+    "Type 31": 7,
+    "Police Station": 69,
+    "Fire Station": 51,
+    "Dispatch Centre": 36,
+    "Type 36": 1,
+    "Type 35": 3,
+    "Helicopter Station": 3,
+    "Type 27": 5,
+    "Type 22": 48,
+    "Hospital": 20,
+    "Type 25": 5,
+    "Type 29": 1,
+    "Type 34": 7,
+    "Type 8": 1,
+    "Type 21": 2,
+    "Type 33": 3,
+    "Type 32": 2,
+    "Type 30": 3
+  },
+  "vehicleStatus": {
+    "2": 1433,
+    "3": 1,
+    "4": 18,
+    "5": 2
+  },
+  "vehiclesByType": {
+    "5": 505,
+    "8": 142,
+    "17": 60,
+    "10": 47,
+    "3": 31,
+    "0": 28,
+    "12": 25,
+    "20": 24,
+    "57": 24,
+    "13": 23,
+    "4": 23,
+    "81": 19,
+    "24": 17,
+    "34": 17,
+    "54": 17,
+    "105": 15,
+    "33": 14,
+    "99": 14,
+    "106": 12,
+    "95": 12,
+    "19": 11,
+    "79": 11,
+    "75": 11,
+    "39": 11,
+    "27": 10
   },
   "stations": [
     {
@@ -14,7 +85,8 @@
       "level": 1,
       "lat": 51.45410442511617,
       "lon": -2.6157842185871183,
-      "personnel": 5
+      "personnel": 5,
+      "small": true
     },
     {
       "id": 2660724,
@@ -24,7 +96,8 @@
       "level": 0,
       "lat": 51.44651114920214,
       "lon": -2.595157406713152,
-      "personnel": 6
+      "personnel": 6,
+      "small": false
     },
     {
       "id": 2660725,
@@ -34,7 +107,8 @@
       "level": 1,
       "lat": 51.44651726537111,
       "lon": -2.5950941548407322,
-      "personnel": 12
+      "personnel": 12,
+      "small": false
     },
     {
       "id": 2620984,
@@ -44,7 +118,8 @@
       "level": 1,
       "lat": 53.415596,
       "lon": -1.4622649,
-      "personnel": 38
+      "personnel": 38,
+      "small": true
     },
     {
       "id": 2656560,
@@ -54,7 +129,8 @@
       "level": 1,
       "lat": 51.489249963412924,
       "lon": -0.09754761756803777,
-      "personnel": 9
+      "personnel": 9,
+      "small": true
     },
     {
       "id": 2642423,
@@ -64,7 +140,8 @@
       "level": 0,
       "lat": 50.3567867390525,
       "lon": -4.455331959290522,
-      "personnel": 21
+      "personnel": 21,
+      "small": true
     },
     {
       "id": 2650202,
@@ -74,7 +151,8 @@
       "level": 0,
       "lat": 53.299822395225114,
       "lon": -4.615494676571625,
-      "personnel": 16
+      "personnel": 16,
+      "small": true
     },
     {
       "id": 2462419,
@@ -84,7 +162,8 @@
       "level": 3,
       "lat": 51.4647007,
       "lon": -2.4875711,
-      "personnel": 181
+      "personnel": 181,
+      "small": true
     },
     {
       "id": 2626367,
@@ -94,7 +173,8 @@
       "level": 1,
       "lat": 55.53992523880695,
       "lon": -5.1231965107401924,
-      "personnel": 29
+      "personnel": 29,
+      "small": true
     },
     {
       "id": 2634272,
@@ -104,7 +184,8 @@
       "level": 1,
       "lat": 53.404164,
       "lon": -0.7431816,
-      "personnel": 3
+      "personnel": 3,
+      "small": true
     },
     {
       "id": 2633103,
@@ -114,7 +195,8 @@
       "level": 0,
       "lat": 53.2303709642346,
       "lon": -0.5402394078574588,
-      "personnel": 0
+      "personnel": 0,
+      "small": false
     },
     {
       "id": 2590776,
@@ -124,7 +206,8 @@
       "level": 0,
       "lat": 51.4125873641809,
       "lon": -2.4793914172447127,
-      "personnel": 0
+      "personnel": 0,
+      "small": false
     },
     {
       "id": 2642430,
@@ -134,7 +217,8 @@
       "level": 1,
       "lat": 50.123009518050985,
       "lon": -5.546813042738823,
-      "personnel": 21
+      "personnel": 21,
+      "small": true
     },
     {
       "id": 2652177,
@@ -144,7 +228,8 @@
       "level": 0,
       "lat": 51.91303275577997,
       "lon": -2.5672101259029487,
-      "personnel": 14
+      "personnel": 14,
+      "small": true
     },
     {
       "id": 2624706,
@@ -154,7 +239,8 @@
       "level": 0,
       "lat": 51.451910650044084,
       "lon": -2.1338362339527714,
-      "personnel": 33
+      "personnel": 33,
+      "small": true
     },
     {
       "id": 2652271,
@@ -164,7 +250,8 @@
       "level": 1,
       "lat": 52.674944320517255,
       "lon": -6.300130297520047,
-      "personnel": 14
+      "personnel": 14,
+      "small": true
     },
     {
       "id": 2601002,
@@ -174,7 +261,8 @@
       "level": 1,
       "lat": 50.98338786802665,
       "lon": 2.1224659410408617,
-      "personnel": 57
+      "personnel": 57,
+      "small": true
     },
     {
       "id": 2567204,
@@ -184,7 +272,8 @@
       "level": 2,
       "lat": 51.45756074078378,
       "lon": -2.5935292983084244,
-      "personnel": 87
+      "personnel": 87,
+      "small": false
     },
     {
       "id": 2650741,
@@ -194,7 +283,8 @@
       "level": 1,
       "lat": 52.51060237958435,
       "lon": -6.571596424975386,
-      "personnel": 15
+      "personnel": 15,
+      "small": true
     },
     {
       "id": 2567755,
@@ -204,7 +294,8 @@
       "level": 3,
       "lat": 51.4283988,
       "lon": -2.2255833,
-      "personnel": 87
+      "personnel": 87,
+      "small": false
     },
     {
       "id": 2620235,
@@ -214,7 +305,8 @@
       "level": 2,
       "lat": 53.79553554652806,
       "lon": -1.5302058996347294,
-      "personnel": 39
+      "personnel": 39,
+      "small": true
     },
     {
       "id": 2652179,
@@ -224,7 +316,8 @@
       "level": 0,
       "lat": 52.0389634915135,
       "lon": -2.4163338021566347,
-      "personnel": 14
+      "personnel": 14,
+      "small": true
     },
     {
       "id": 2636836,
@@ -234,7 +327,8 @@
       "level": 0,
       "lat": 50.69398756164623,
       "lon": -3.2401690573569875,
-      "personnel": 24
+      "personnel": 24,
+      "small": true
     },
     {
       "id": 2656568,
@@ -244,7 +338,8 @@
       "level": 1,
       "lat": 51.57733979121902,
       "lon": -0.3682269234190269,
-      "personnel": 10
+      "personnel": 10,
+      "small": true
     },
     {
       "id": 2620856,
@@ -254,7 +349,8 @@
       "level": 1,
       "lat": 53.874922980082125,
       "lon": -1.8987531737172303,
-      "personnel": 38
+      "personnel": 38,
+      "small": true
     },
     {
       "id": 2621027,
@@ -264,7 +360,8 @@
       "level": 1,
       "lat": 53.0189626,
       "lon": -1.4858456,
-      "personnel": 38
+      "personnel": 38,
+      "small": true
     },
     {
       "id": 2507319,
@@ -274,7 +371,8 @@
       "level": 1,
       "lat": 51.45322114986661,
       "lon": -2.5925974649951167,
-      "personnel": 138
+      "personnel": 138,
+      "small": false
     },
     {
       "id": 2635213,
@@ -284,7 +382,8 @@
       "level": 0,
       "lat": 51.0421606,
       "lon": -3.3141858,
-      "personnel": 27
+      "personnel": 27,
+      "small": true
     },
     {
       "id": 2647876,
@@ -294,7 +393,8 @@
       "level": 0,
       "lat": 51.5018657,
       "lon": -3.5400309,
-      "personnel": 18
+      "personnel": 18,
+      "small": true
     },
     {
       "id": 1984642,
@@ -304,7 +404,8 @@
       "level": 0,
       "lat": 51.50083164248625,
       "lon": -0.1506834898507324,
-      "personnel": 0
+      "personnel": 0,
+      "small": false
     },
     {
       "id": 2621086,
@@ -314,7 +415,8 @@
       "level": 1,
       "lat": 52.5210857,
       "lon": -1.8027417,
-      "personnel": 38
+      "personnel": 38,
+      "small": true
     },
     {
       "id": 2620993,
@@ -324,7 +426,8 @@
       "level": 1,
       "lat": 53.55016410760775,
       "lon": -1.091831225667044,
-      "personnel": 38
+      "personnel": 38,
+      "small": true
     },
     {
       "id": 2621072,
@@ -334,7 +437,8 @@
       "level": 1,
       "lat": 51.99731201145418,
       "lon": -2.1535861524554365,
-      "personnel": 38
+      "personnel": 38,
+      "small": true
     },
     {
       "id": 2638175,
@@ -344,7 +448,8 @@
       "level": 0,
       "lat": 50.8216408,
       "lon": -4.0723033,
-      "personnel": 24
+      "personnel": 24,
+      "small": true
     },
     {
       "id": 2648337,
@@ -354,7 +459,8 @@
       "level": 0,
       "lat": 51.7199799,
       "lon": -3.3554926,
-      "personnel": 17
+      "personnel": 17,
+      "small": true
     },
     {
       "id": 2620951,
@@ -364,7 +470,8 @@
       "level": 1,
       "lat": 53.92740483179125,
       "lon": -1.3830969550984282,
-      "personnel": 44
+      "personnel": 44,
+      "small": true
     },
     {
       "id": 2648346,
@@ -374,7 +481,8 @@
       "level": 1,
       "lat": 51.99479594257962,
       "lon": -4.979311457268137,
-      "personnel": 17
+      "personnel": 17,
+      "small": true
     },
     {
       "id": 2465169,
@@ -384,7 +492,8 @@
       "level": 2,
       "lat": 51.351977898408045,
       "lon": -2.1411859989166264,
-      "personnel": 175
+      "personnel": 175,
+      "small": false
     },
     {
       "id": 2657269,
@@ -394,7 +503,8 @@
       "level": 0,
       "lat": 50.85877037137267,
       "lon": -1.4027914798258918,
-      "personnel": 9
+      "personnel": 9,
+      "small": true
     },
     {
       "id": 2636843,
@@ -404,7 +514,8 @@
       "level": 0,
       "lat": 50.6312439,
       "lon": -3.375965,
-      "personnel": 24
+      "personnel": 24,
+      "small": true
     },
     {
       "id": 2650726,
@@ -414,7 +525,8 @@
       "level": 0,
       "lat": 52.2384266,
       "lon": -3.3763724,
-      "personnel": 15
+      "personnel": 15,
+      "small": true
     },
     {
       "id": 2635644,
@@ -424,7 +536,8 @@
       "level": 0,
       "lat": 50.712641750704655,
       "lon": -2.4471134149958846,
-      "personnel": 0
+      "personnel": 0,
+      "small": false
     },
     {
       "id": 2657286,
@@ -434,7 +547,8 @@
       "level": 0,
       "lat": 50.8022376,
       "lon": -1.0541828,
-      "personnel": 9
+      "personnel": 9,
+      "small": true
     },
     {
       "id": 2649005,
@@ -444,7 +558,8 @@
       "level": 0,
       "lat": 52.23782670303796,
       "lon": -4.2576714438667285,
-      "personnel": 16
+      "personnel": 16,
+      "small": true
     },
     {
       "id": 2656579,
@@ -454,7 +569,8 @@
       "level": 0,
       "lat": 51.23566501757763,
       "lon": -0.584295123546256,
-      "personnel": 0
+      "personnel": 0,
+      "small": false
     },
     {
       "id": 2650725,
@@ -464,7 +580,8 @@
       "level": 0,
       "lat": 52.34197202693712,
       "lon": -3.049472384245318,
-      "personnel": 15
+      "personnel": 15,
+      "small": true
     },
     {
       "id": 2649545,
@@ -474,7 +591,8 @@
       "level": 0,
       "lat": 52.9406135,
       "lon": -4.149441,
-      "personnel": 16
+      "personnel": 16,
+      "small": true
     },
     {
       "id": 2481630,
@@ -484,7 +602,8 @@
       "level": 5,
       "lat": 51.508137207321646,
       "lon": -2.7180882210559867,
-      "personnel": 164
+      "personnel": 164,
+      "small": false
     },
     {
       "id": 2620872,
@@ -494,7 +613,8 @@
       "level": 1,
       "lat": 54.06948354332409,
       "lon": -2.0162988933553647,
-      "personnel": 45
+      "personnel": 45,
+      "small": true
     },
     {
       "id": 1844373,
@@ -504,7 +624,8 @@
       "level": 0,
       "lat": 51.51909877616312,
       "lon": -0.05814690200677775,
-      "personnel": 0
+      "personnel": 0,
+      "small": false
     },
     {
       "id": 2652884,
@@ -514,7 +635,8 @@
       "level": 1,
       "lat": 51.218984952914866,
       "lon": 2.9331526423237713,
-      "personnel": 14
+      "personnel": 14,
+      "small": true
     },
     {
       "id": 2635481,
@@ -524,7 +646,8 @@
       "level": 1,
       "lat": 51.0521074,
       "lon": -2.4116315,
-      "personnel": 27
+      "personnel": 27,
+      "small": true
     },
     {
       "id": 2620843,
@@ -534,7 +657,8 @@
       "level": 0,
       "lat": 53.95910650755544,
       "lon": -2.0250951959993118,
-      "personnel": 45
+      "personnel": 45,
+      "small": true
     },
     {
       "id": 2648325,
@@ -544,7 +668,8 @@
       "level": 0,
       "lat": 51.6631958,
       "lon": -3.8156688,
-      "personnel": 17
+      "personnel": 17,
+      "small": true
     },
     {
       "id": 2650693,
@@ -554,7 +679,8 @@
       "level": 0,
       "lat": 53.2693217690536,
       "lon": -3.2167231395278275,
-      "personnel": 15
+      "personnel": 15,
+      "small": true
     },
     {
       "id": 2620992,
@@ -564,7 +690,8 @@
       "level": 1,
       "lat": 53.59404616954714,
       "lon": -1.3127349816323943,
-      "personnel": 37
+      "personnel": 37,
+      "small": true
     },
     {
       "id": 2635499,
@@ -574,7 +701,8 @@
       "level": 0,
       "lat": 50.8550939,
       "lon": -3.3943214,
-      "personnel": 27
+      "personnel": 27,
+      "small": true
     },
     {
       "id": 2350539,
@@ -584,7 +712,8 @@
       "level": 3,
       "lat": 53.969317957099406,
       "lon": -1.0836231114022965,
-      "personnel": 200
+      "personnel": 200,
+      "small": false
     },
     {
       "id": 2572615,
@@ -594,7 +723,8 @@
       "level": 18,
       "lat": 51.385805802952746,
       "lon": -2.7167575706776246,
-      "personnel": 103
+      "personnel": 103,
+      "small": false
     },
     {
       "id": 2629164,
@@ -604,7 +734,8 @@
       "level": 1,
       "lat": 51.646766247826335,
       "lon": -2.5696126581497745,
-      "personnel": 27
+      "personnel": 27,
+      "small": true
     },
     {
       "id": 2621041,
@@ -614,7 +745,8 @@
       "level": 1,
       "lat": 52.91357638035486,
       "lon": -1.422410250798621,
-      "personnel": 38
+      "personnel": 38,
+      "small": true
     },
     {
       "id": 2448103,
@@ -624,7 +756,8 @@
       "level": 0,
       "lat": 51.28866947780681,
       "lon": -2.4544787803938712,
-      "personnel": 184
+      "personnel": 184,
+      "small": false
     },
     {
       "id": 2621043,
@@ -634,7 +767,8 @@
       "level": 1,
       "lat": 52.93523097734856,
       "lon": -1.2598028402246915,
-      "personnel": 38
+      "personnel": 38,
+      "small": true
     },
     {
       "id": 2477992,
@@ -644,7 +778,8 @@
       "level": 5,
       "lat": 51.3396515,
       "lon": -2.9690287,
-      "personnel": 157
+      "personnel": 157,
+      "small": true
     },
     {
       "id": 2325712,
@@ -654,7 +789,8 @@
       "level": 3,
       "lat": 54.286175722088295,
       "lon": -0.40101126681864463,
-      "personnel": 200
+      "personnel": 200,
+      "small": false
     },
     {
       "id": 2639112,
@@ -664,7 +800,8 @@
       "level": 0,
       "lat": 50.8354737,
       "lon": -4.5395221,
-      "personnel": 23
+      "personnel": 23,
+      "small": true
     },
     {
       "id": 2636821,
@@ -674,7 +811,8 @@
       "level": 0,
       "lat": 50.6868461,
       "lon": -2.1159648,
-      "personnel": 26
+      "personnel": 26,
+      "small": true
     },
     {
       "id": 2633101,
@@ -684,7 +822,8 @@
       "level": 1,
       "lat": 53.320229116794195,
       "lon": -1.1327364566303637,
-      "personnel": 29
+      "personnel": 29,
+      "small": true
     },
     {
       "id": 2652881,
@@ -694,7 +833,8 @@
       "level": 1,
       "lat": 51.0383451,
       "lon": 2.3958456,
-      "personnel": 14
+      "personnel": 14,
+      "small": true
     },
     {
       "id": 2653861,
@@ -704,7 +844,8 @@
       "level": 1,
       "lat": 51.0210748006649,
       "lon": -3.1063088305429942,
-      "personnel": 12
+      "personnel": 12,
+      "small": true
     },
     {
       "id": 2654954,
@@ -714,7 +855,8 @@
       "level": 0,
       "lat": 51.4859285875409,
       "lon": -2.7922988260113812,
-      "personnel": 12
+      "personnel": 12,
+      "small": false
     },
     {
       "id": 2648933,
@@ -724,7 +866,8 @@
       "level": 1,
       "lat": 52.0844841,
       "lon": -4.6563724,
-      "personnel": 16
+      "personnel": 16,
+      "small": true
     },
     {
       "id": 2620854,
@@ -734,7 +877,8 @@
       "level": 1,
       "lat": 53.875818344006056,
       "lon": -1.89762991270057,
-      "personnel": 37
+      "personnel": 37,
+      "small": true
     },
     {
       "id": 2621020,
@@ -744,7 +888,8 @@
       "level": 1,
       "lat": 53.10102240366773,
       "lon": -1.3728322941018398,
-      "personnel": 38
+      "personnel": 38,
+      "small": true
     },
     {
       "id": 2652212,
@@ -754,7 +899,8 @@
       "level": 1,
       "lat": 54.0849480898457,
       "lon": -4.744907417464442,
-      "personnel": 14
+      "personnel": 14,
+      "small": true
     },
     {
       "id": 2652203,
@@ -764,7 +910,8 @@
       "level": 0,
       "lat": 52.339193984142945,
       "lon": -2.2701814212680707,
-      "personnel": 14
+      "personnel": 14,
+      "small": true
     },
     {
       "id": 2635193,
@@ -774,7 +921,8 @@
       "level": 1,
       "lat": 51.01498242529312,
       "lon": -3.080922437314304,
-      "personnel": 27
+      "personnel": 27,
+      "small": true
     },
     {
       "id": 2652172,
@@ -784,7 +932,8 @@
       "level": 0,
       "lat": 52.034846197971355,
       "lon": -2.7215013836998176,
-      "personnel": 14
+      "personnel": 14,
+      "small": true
     },
     {
       "id": 2633721,
@@ -794,7 +943,8 @@
       "level": 1,
       "lat": 50.94303738084141,
       "lon": -2.627221920634777,
-      "personnel": 28
+      "personnel": 28,
+      "small": true
     },
     {
       "id": 2572625,
@@ -804,7 +954,8 @@
       "level": 9,
       "lat": 51.385835033641214,
       "lon": -2.716110201770595,
-      "personnel": 96
+      "personnel": 96,
+      "small": false
     },
     {
       "id": 2642429,
@@ -814,7 +965,8 @@
       "level": 0,
       "lat": 50.0880086,
       "lon": -5.2465386,
-      "personnel": 21
+      "personnel": 21,
+      "small": true
     },
     {
       "id": 2642419,
@@ -824,7 +976,8 @@
       "level": 0,
       "lat": 50.6472193,
       "lon": -4.3632817,
-      "personnel": 21
+      "personnel": 21,
+      "small": true
     },
     {
       "id": 2465943,
@@ -834,7 +987,8 @@
       "level": 7,
       "lat": 51.3824663,
       "lon": -2.3830556,
-      "personnel": 175
+      "personnel": 175,
+      "small": false
     },
     {
       "id": 2477933,
@@ -844,7 +998,8 @@
       "level": 1,
       "lat": 51.5783985,
       "lon": -3.0394315,
-      "personnel": 59
+      "personnel": 59,
+      "small": true
     },
     {
       "id": 2621017,
@@ -854,7 +1009,8 @@
       "level": 1,
       "lat": 53.1323617,
       "lon": -1.2114973,
-      "personnel": 38
+      "personnel": 38,
+      "small": true
     },
     {
       "id": 2621668,
@@ -864,7 +1020,8 @@
       "level": 1,
       "lat": 51.5413206,
       "lon": -2.4146322,
-      "personnel": 37
+      "personnel": 37,
+      "small": true
     },
     {
       "id": 2621045,
@@ -874,7 +1031,8 @@
       "level": 1,
       "lat": 53.04792307967036,
       "lon": -1.4093306559738938,
-      "personnel": 38
+      "personnel": 38,
+      "small": true
     },
     {
       "id": 2652880,
@@ -884,7 +1042,8 @@
       "level": 0,
       "lat": 50.84360327437016,
       "lon": 4.349442654071824,
-      "personnel": 0
+      "personnel": 0,
+      "small": false
     },
     {
       "id": 2349733,
@@ -894,7 +1053,8 @@
       "level": 7,
       "lat": 53.96958756989064,
       "lon": -1.0846358683991766,
-      "personnel": 0
+      "personnel": 0,
+      "small": false
     },
     {
       "id": 2621033,
@@ -904,7 +1064,8 @@
       "level": 1,
       "lat": 52.92474767798348,
       "lon": -1.4820718206839503,
-      "personnel": 38
+      "personnel": 38,
+      "small": true
     },
     {
       "id": 2635502,
@@ -914,7 +1075,8 @@
       "level": 0,
       "lat": 50.90104739304163,
       "lon": -3.487809566422185,
-      "personnel": 27
+      "personnel": 27,
+      "small": true
     },
     {
       "id": 2620983,
@@ -924,7 +1086,8 @@
       "level": 1,
       "lat": 53.50792389064267,
       "lon": -1.4416870516209537,
-      "personnel": 38
+      "personnel": 38,
+      "small": true
     },
     {
       "id": 2652889,
@@ -934,7 +1097,8 @@
       "level": 0,
       "lat": 51.910516212705986,
       "lon": 4.467490834460478,
-      "personnel": 0
+      "personnel": 0,
+      "small": false
     },
     {
       "id": 2652162,
@@ -944,7 +1108,8 @@
       "level": 0,
       "lat": 52.36703687305451,
       "lon": -2.710787753627768,
-      "personnel": 14
+      "personnel": 14,
+      "small": true
     },
     {
       "id": 2364326,
@@ -954,7 +1119,8 @@
       "level": 2,
       "lat": 52.93799307982985,
       "lon": -1.139230979190693,
-      "personnel": 258
+      "personnel": 258,
+      "small": true
     },
     {
       "id": 2654844,
@@ -964,7 +1130,8 @@
       "level": 1,
       "lat": 51.349447708795786,
       "lon": -2.961621783951354,
-      "personnel": 19
+      "personnel": 19,
+      "small": true
     },
     {
       "id": 2567770,
@@ -974,7 +1141,8 @@
       "level": 0,
       "lat": 51.4680786,
       "lon": -2.1052394,
-      "personnel": 94
+      "personnel": 94,
+      "small": false
     },
     {
       "id": 2621355,
@@ -984,7 +1152,8 @@
       "level": 1,
       "lat": 54.9887961,
       "lon": -3.2513664,
-      "personnel": 38
+      "personnel": 38,
+      "small": true
     },
     {
       "id": 2626287,
@@ -994,7 +1163,8 @@
       "level": 1,
       "lat": 53.80611966481919,
       "lon": -1.6302601780130108,
-      "personnel": 33
+      "personnel": 33,
+      "small": true
     },
     {
       "id": 2642424,
@@ -1004,7 +1174,8 @@
       "level": 0,
       "lat": 50.43249670678331,
       "lon": -4.984137609010314,
-      "personnel": 21
+      "personnel": 21,
+      "small": true
     },
     {
       "id": 2354555,
@@ -1014,7 +1185,8 @@
       "level": 0,
       "lat": 51.28907488581096,
       "lon": -2.4551395021973614,
-      "personnel": 138
+      "personnel": 138,
+      "small": false
     },
     {
       "id": 2638169,
@@ -1024,7 +1196,8 @@
       "level": 1,
       "lat": 51.0855247,
       "lon": -4.0624267,
-      "personnel": 18
+      "personnel": 18,
+      "small": true
     },
     {
       "id": 2589929,
@@ -1034,7 +1207,8 @@
       "level": 4,
       "lat": 51.8657745,
       "lon": -2.2497843,
-      "personnel": 69
+      "personnel": 69,
+      "small": true
     },
     {
       "id": 2621083,
@@ -1044,7 +1218,8 @@
       "level": 1,
       "lat": 52.3538175,
       "lon": -2.0485183,
-      "personnel": 38
+      "personnel": 38,
+      "small": true
     },
     {
       "id": 2638178,
@@ -1054,7 +1229,8 @@
       "level": 1,
       "lat": 50.91223926014623,
       "lon": -3.870049438306164,
-      "personnel": 24
+      "personnel": 24,
+      "small": true
     },
     {
       "id": 2620995,
@@ -1064,7 +1240,8 @@
       "level": 1,
       "lat": 53.319868,
       "lon": -1.4659387,
-      "personnel": 38
+      "personnel": 38,
+      "small": true
     },
     {
       "id": 2642420,
@@ -1074,7 +1251,8 @@
       "level": 0,
       "lat": 50.503315,
       "lon": -4.3109173,
-      "personnel": 21
+      "personnel": 21,
+      "small": true
     },
     {
       "id": 2621091,
@@ -1084,7 +1262,8 @@
       "level": 1,
       "lat": 52.5949132,
       "lon": -2.0466158,
-      "personnel": 38
+      "personnel": 38,
+      "small": true
     },
     {
       "id": 2636824,
@@ -1094,7 +1273,8 @@
       "level": 0,
       "lat": 51.03458133915639,
       "lon": -2.2734998930933736,
-      "personnel": 26
+      "personnel": 26,
+      "small": true
     },
     {
       "id": 2600989,
@@ -1104,7 +1284,8 @@
       "level": 1,
       "lat": 50.94924217107994,
       "lon": 1.8343190611904936,
-      "personnel": 64
+      "personnel": 64,
+      "small": true
     },
     {
       "id": 2620966,
@@ -1114,7 +1295,8 @@
       "level": 1,
       "lat": 53.60184404342695,
       "lon": -1.7942266010812833,
-      "personnel": 37
+      "personnel": 37,
+      "small": true
     },
     {
       "id": 2657275,
@@ -1124,7 +1306,8 @@
       "level": 0,
       "lat": 50.975589815101124,
       "lon": -1.3702675176041093,
-      "personnel": 9
+      "personnel": 9,
+      "small": true
     },
     {
       "id": 2620257,
@@ -1134,7 +1317,8 @@
       "level": 1,
       "lat": 53.80053324371871,
       "lon": -1.5527809079515262,
-      "personnel": 43
+      "personnel": 43,
+      "small": true
     },
     {
       "id": 2033677,
@@ -1144,7 +1328,8 @@
       "level": 30,
       "lat": 53.99371725146289,
       "lon": -1.5175985755205312,
-      "personnel": 0
+      "personnel": 0,
+      "small": false
     },
     {
       "id": 2624712,
@@ -1154,7 +1339,8 @@
       "level": 0,
       "lat": 51.2157329,
       "lon": -1.4946804,
-      "personnel": 32
+      "personnel": 32,
+      "small": true
     },
     {
       "id": 2360736,
@@ -1164,7 +1350,8 @@
       "level": 5,
       "lat": 51.38170897174006,
       "lon": -2.3659576295539804,
-      "personnel": 227
+      "personnel": 227,
+      "small": false
     },
     {
       "id": 2471869,
@@ -1174,7 +1361,8 @@
       "level": 1,
       "lat": 51.6106653,
       "lon": -2.7209071,
-      "personnel": 163
+      "personnel": 163,
+      "small": true
     },
     {
       "id": 2654842,
@@ -1184,7 +1372,8 @@
       "level": 0,
       "lat": 51.028366990816075,
       "lon": -3.840287877830147,
-      "personnel": 19
+      "personnel": 19,
+      "small": false
     },
     {
       "id": 2633087,
@@ -1194,7 +1383,8 @@
       "level": 0,
       "lat": 54.09396994026414,
       "lon": -0.17660782357418608,
-      "personnel": 30
+      "personnel": 30,
+      "small": false
     },
     {
       "id": 2633104,
@@ -1204,7 +1394,8 @@
       "level": 1,
       "lat": 53.422270356138135,
       "lon": -1.223750979867571,
-      "personnel": 29
+      "personnel": 29,
+      "small": true
     },
     {
       "id": 2464874,
@@ -1214,7 +1405,8 @@
       "level": 7,
       "lat": 51.4127460863733,
       "lon": -2.479048718575494,
-      "personnel": 174
+      "personnel": 174,
+      "small": false
     },
     {
       "id": 1844377,
@@ -1224,7 +1416,8 @@
       "level": 19,
       "lat": 51.48622621154306,
       "lon": -0.14851748891726274,
-      "personnel": 198
+      "personnel": 198,
+      "small": false
     },
     {
       "id": 2652192,
@@ -1234,7 +1427,8 @@
       "level": 0,
       "lat": 52.07674134108595,
       "lon": -3.125239705399588,
-      "personnel": 14
+      "personnel": 14,
+      "small": true
     },
     {
       "id": 2657276,
@@ -1244,7 +1438,8 @@
       "level": 0,
       "lat": 50.9018056,
       "lon": -1.3233106,
-      "personnel": 9
+      "personnel": 9,
+      "small": true
     },
     {
       "id": 2652200,
@@ -1254,7 +1449,8 @@
       "level": 0,
       "lat": 52.4639808,
       "lon": -2.147594,
-      "personnel": 3
+      "personnel": 3,
+      "small": true
     },
     {
       "id": 2626288,
@@ -1264,7 +1460,8 @@
       "level": 1,
       "lat": 53.72604023256026,
       "lon": -1.8611307494351959,
-      "personnel": 33
+      "personnel": 33,
+      "small": true
     },
     {
       "id": 2620851,
@@ -1274,7 +1471,8 @@
       "level": 1,
       "lat": 53.900703161396315,
       "lon": -1.9953161262727857,
-      "personnel": 37
+      "personnel": 37,
+      "small": true
     },
     {
       "id": 2462150,
@@ -1284,7 +1482,8 @@
       "level": 5,
       "lat": 51.4983837,
       "lon": -2.5839743,
-      "personnel": 178
+      "personnel": 178,
+      "small": false
     },
     {
       "id": 2620990,
@@ -1294,7 +1493,8 @@
       "level": 1,
       "lat": 53.4972196,
       "lon": -1.3176585,
-      "personnel": 38
+      "personnel": 38,
+      "small": true
     },
     {
       "id": 2652155,
@@ -1304,7 +1504,8 @@
       "level": 0,
       "lat": 52.967659,
       "lon": -2.6795527,
-      "personnel": 14
+      "personnel": 14,
+      "small": true
     },
     {
       "id": 2506064,
@@ -1314,7 +1515,8 @@
       "level": 4,
       "lat": 51.40389797089546,
       "lon": -2.4662712660384254,
-      "personnel": 138
+      "personnel": 138,
+      "small": false
     },
     {
       "id": 2318739,
@@ -1324,7 +1526,8 @@
       "level": 2,
       "lat": 50.91999445733035,
       "lon": -1.48804159034456,
-      "personnel": 200
+      "personnel": 200,
+      "small": false
     },
     {
       "id": 2620868,
@@ -1334,7 +1537,8 @@
       "level": 1,
       "lat": 54.07102216033529,
       "lon": -1.9998923411683391,
-      "personnel": 38
+      "personnel": 38,
+      "small": true
     },
     {
       "id": 2621008,
@@ -1344,7 +1548,8 @@
       "level": 1,
       "lat": 53.2390596,
       "lon": -1.4716601,
-      "personnel": 38
+      "personnel": 38,
+      "small": true
     },
     {
       "id": 2620734,
@@ -1354,7 +1559,8 @@
       "level": 0,
       "lat": 53.76832651257258,
       "lon": -1.574467761036136,
-      "personnel": 45
+      "personnel": 45,
+      "small": false
     },
     {
       "id": 2647874,
@@ -1364,7 +1570,8 @@
       "level": 0,
       "lat": 51.7055673,
       "lon": -3.0455418,
-      "personnel": 18
+      "personnel": 18,
+      "small": true
     },
     {
       "id": 2567211,
@@ -1374,7 +1581,8 @@
       "level": 2,
       "lat": 51.20735154014582,
       "lon": -2.6560257456479883,
-      "personnel": 95
+      "personnel": 95,
+      "small": false
     },
     {
       "id": 2648329,
@@ -1384,7 +1592,8 @@
       "level": 1,
       "lat": 51.65193010640901,
       "lon": -3.916701072187619,
-      "personnel": 17
+      "personnel": 17,
+      "small": true
     },
     {
       "id": 2652189,
@@ -1394,7 +1603,8 @@
       "level": 0,
       "lat": 52.267535298354915,
       "lon": -2.9869905977750486,
-      "personnel": 14
+      "personnel": 14,
+      "small": true
     },
     {
       "id": 2657378,
@@ -1404,7 +1614,8 @@
       "level": 0,
       "lat": 51.61396539166121,
       "lon": -2.648202433158423,
-      "personnel": 10
+      "personnel": 10,
+      "small": false
     },
     {
       "id": 2635195,
@@ -1414,7 +1625,8 @@
       "level": 1,
       "lat": 50.92835509187179,
       "lon": -2.9105403126677314,
-      "personnel": 27
+      "personnel": 27,
+      "small": true
     },
     {
       "id": 2635482,
@@ -1424,7 +1636,8 @@
       "level": 0,
       "lat": 51.1636791,
       "lon": -1.7702906,
-      "personnel": 27
+      "personnel": 27,
+      "small": true
     },
     {
       "id": 2357981,
@@ -1434,7 +1647,8 @@
       "level": 10,
       "lat": 54.13724884206793,
       "lon": -0.8065662604262706,
-      "personnel": 0
+      "personnel": 0,
+      "small": false
     },
     {
       "id": 2624709,
@@ -1444,7 +1658,8 @@
       "level": 1,
       "lat": 51.5885522,
       "lon": -2.1003077,
-      "personnel": 33
+      "personnel": 33,
+      "small": true
     },
     {
       "id": 2662770,
@@ -1454,7 +1669,8 @@
       "level": 0,
       "lat": 50.1187682972608,
       "lon": -5.541500715226537,
-      "personnel": 2
+      "personnel": 2,
+      "small": true
     },
     {
       "id": 2316087,
@@ -1464,7 +1680,8 @@
       "level": 20,
       "lat": 51.48656272520012,
       "lon": -0.14999625437834727,
-      "personnel": 200
+      "personnel": 200,
+      "small": false
     },
     {
       "id": 2662773,
@@ -1474,7 +1691,8 @@
       "level": 0,
       "lat": 50.2659861,
       "lon": -5.0556792,
-      "personnel": 2
+      "personnel": 2,
+      "small": true
     },
     {
       "id": 2662771,
@@ -1484,7 +1702,8 @@
       "level": 0,
       "lat": 50.2096476,
       "lon": -5.3004205,
-      "personnel": 2
+      "personnel": 2,
+      "small": true
     },
     {
       "id": 2636872,
@@ -1494,7 +1713,8 @@
       "level": 0,
       "lat": 50.74164825635571,
       "lon": -2.7699123567276946,
-      "personnel": 1
+      "personnel": 1,
+      "small": false
     },
     {
       "id": 2650723,
@@ -1504,7 +1724,8 @@
       "level": 0,
       "lat": 52.66230805538002,
       "lon": -3.143259685210553,
-      "personnel": 15
+      "personnel": 15,
+      "small": true
     },
     {
       "id": 2635490,
@@ -1514,7 +1735,8 @@
       "level": 0,
       "lat": 51.64054080635327,
       "lon": -1.8568519725652552,
-      "personnel": 27
+      "personnel": 27,
+      "small": true
     },
     {
       "id": 2650384,
@@ -1524,7 +1746,8 @@
       "level": 0,
       "lat": 53.339497194248956,
       "lon": -6.295411762092058,
-      "personnel": 0
+      "personnel": 0,
+      "small": false
     },
     {
       "id": 2041409,
@@ -1534,7 +1757,8 @@
       "level": 0,
       "lat": 52.65165675351029,
       "lon": 1.724145656800696,
-      "personnel": 30
+      "personnel": 30,
+      "small": false
     },
     {
       "id": 2311793,
@@ -1544,7 +1768,8 @@
       "level": 0,
       "lat": 50.93082983649866,
       "lon": -1.4317997415756638,
-      "personnel": 200
+      "personnel": 200,
+      "small": false
     },
     {
       "id": 2638184,
@@ -1554,7 +1779,8 @@
       "level": 0,
       "lat": 50.46754013760775,
       "lon": -4.741500533448471,
-      "personnel": 0
+      "personnel": 0,
+      "small": false
     },
     {
       "id": 2635219,
@@ -1564,7 +1790,8 @@
       "level": 0,
       "lat": 50.72380884185867,
       "lon": -3.5212701015617465,
-      "personnel": 0
+      "personnel": 0,
+      "small": false
     },
     {
       "id": 2662778,
@@ -1574,7 +1801,8 @@
       "level": 0,
       "lat": 50.3396041,
       "lon": -4.7871671,
-      "personnel": 2
+      "personnel": 2,
+      "small": true
     },
     {
       "id": 2662779,
@@ -1584,7 +1812,8 @@
       "level": 0,
       "lat": 50.46687655337385,
       "lon": -4.700875374669279,
-      "personnel": 2
+      "personnel": 2,
+      "small": true
     },
     {
       "id": 2662780,
@@ -1594,7 +1823,8 @@
       "level": 0,
       "lat": 50.6295666191529,
       "lon": -4.372398720722698,
-      "personnel": 2
+      "personnel": 2,
+      "small": true
     },
     {
       "id": 2662781,
@@ -1604,7 +1834,8 @@
       "level": 0,
       "lat": 50.37614737987876,
       "lon": -4.1446227807398195,
-      "personnel": 2
+      "personnel": 2,
+      "small": true
     },
     {
       "id": 2662787,
@@ -1614,7 +1845,8 @@
       "level": 0,
       "lat": 50.7988025,
       "lon": -3.1927023,
-      "personnel": 2
+      "personnel": 2,
+      "small": true
     },
     {
       "id": 2662782,
@@ -1624,7 +1856,8 @@
       "level": 0,
       "lat": 50.41077884150148,
       "lon": -4.1338285603281095,
-      "personnel": 2
+      "personnel": 2,
+      "small": true
     },
     {
       "id": 2662783,
@@ -1634,7 +1867,8 @@
       "level": 0,
       "lat": 50.52773448966632,
       "lon": -3.61282486321618,
-      "personnel": 2
+      "personnel": 2,
+      "small": true
     },
     {
       "id": 2662785,
@@ -1644,7 +1878,8 @@
       "level": 0,
       "lat": 50.73998956888979,
       "lon": -3.995794534435744,
-      "personnel": 2
+      "personnel": 2,
+      "small": true
     },
     {
       "id": 2662786,
@@ -1654,7 +1889,8 @@
       "level": 0,
       "lat": 50.71909686502323,
       "lon": -3.478077502316138,
-      "personnel": 2
+      "personnel": 2,
+      "small": true
     },
     {
       "id": 2333200,
@@ -1664,7 +1900,8 @@
       "level": 5,
       "lat": 51.4711076683393,
       "lon": -0.1232120652229192,
-      "personnel": 200
+      "personnel": 200,
+      "small": true
     },
     {
       "id": 2601003,
@@ -1674,7 +1911,8 @@
       "level": 0,
       "lat": 50.94134178407311,
       "lon": 1.8916250200624523,
-      "personnel": 0
+      "personnel": 0,
+      "small": false
     },
     {
       "id": 2318649,
@@ -1684,7 +1922,8 @@
       "level": 30,
       "lat": 50.88109730173385,
       "lon": -1.445294369445018,
-      "personnel": 0
+      "personnel": 0,
+      "small": false
     },
     {
       "id": 2357963,
@@ -1694,7 +1933,8 @@
       "level": 2,
       "lat": 53.92821653979514,
       "lon": -1.1435238402052907,
-      "personnel": 200
+      "personnel": 200,
+      "small": false
     },
     {
       "id": 2620833,
@@ -1704,7 +1944,8 @@
       "level": 0,
       "lat": 53.910288408096356,
       "lon": -1.5268278173343166,
-      "personnel": 1
+      "personnel": 1,
+      "small": false
     },
     {
       "id": 2312415,
@@ -1714,7 +1955,8 @@
       "level": 7,
       "lat": 51.52782453421807,
       "lon": -0.053416867613505434,
-      "personnel": 200
+      "personnel": 200,
+      "small": false
     },
     {
       "id": 2654847,
@@ -1724,7 +1966,8 @@
       "level": 1,
       "lat": 51.4407505,
       "lon": -2.7632316,
-      "personnel": 12
+      "personnel": 12,
+      "small": true
     },
     {
       "id": 2041099,
@@ -1734,7 +1977,8 @@
       "level": 0,
       "lat": 51.4849332186188,
       "lon": -0.12614907053071542,
-      "personnel": 30
+      "personnel": 30,
+      "small": false
     },
     {
       "id": 2320466,
@@ -1744,7 +1988,8 @@
       "level": 0,
       "lat": 50.623368801508626,
       "lon": -0.9138820867798075,
-      "personnel": 0
+      "personnel": 0,
+      "small": false
     },
     {
       "id": 2583595,
@@ -1754,7 +1999,8 @@
       "level": 1,
       "lat": 51.864298,
       "lon": -2.2285588,
-      "personnel": 67
+      "personnel": 67,
+      "small": true
     },
     {
       "id": 2649544,
@@ -1764,7 +2010,8 @@
       "level": 0,
       "lat": 52.7407511,
       "lon": -3.8817774,
-      "personnel": 16
+      "personnel": 16,
+      "small": true
     },
     {
       "id": 2525694,
@@ -1774,7 +2021,8 @@
       "level": 0,
       "lat": 51.311282694528,
       "lon": -2.416692393218236,
-      "personnel": 2
+      "personnel": 2,
+      "small": false
     },
     {
       "id": 2525696,
@@ -1784,7 +2032,8 @@
       "level": 0,
       "lat": 51.391784441297425,
       "lon": -2.391168031485906,
-      "personnel": 2
+      "personnel": 2,
+      "small": false
     },
     {
       "id": 2312455,
@@ -1794,7 +2043,8 @@
       "level": 0,
       "lat": 50.90130780403091,
       "lon": -1.396745199857654,
-      "personnel": 200
+      "personnel": 200,
+      "small": false
     },
     {
       "id": 2374919,
@@ -1804,7 +2054,8 @@
       "level": 5,
       "lat": 51.044443817059985,
       "lon": -1.7893678274240048,
-      "personnel": 200
+      "personnel": 200,
+      "small": true
     },
     {
       "id": 2320452,
@@ -1814,7 +2065,8 @@
       "level": 0,
       "lat": 50.59395909805397,
       "lon": -1.0411005568313725,
-      "personnel": 0
+      "personnel": 0,
+      "small": false
     },
     {
       "id": 2638162,
@@ -1824,7 +2076,8 @@
       "level": 0,
       "lat": 50.4315482,
       "lon": -3.7091312,
-      "personnel": 24
+      "personnel": 24,
+      "small": true
     },
     {
       "id": 2328160,
@@ -1834,7 +2087,8 @@
       "level": 0,
       "lat": 51.0538238241076,
       "lon": -1.2956040314435673,
-      "personnel": 0
+      "personnel": 0,
+      "small": false
     },
     {
       "id": 2638160,
@@ -1844,7 +2098,8 @@
       "level": 1,
       "lat": 50.54711506218094,
       "lon": -4.153784557966588,
-      "personnel": 24
+      "personnel": 24,
+      "small": true
     },
     {
       "id": 2638165,
@@ -1854,7 +2109,8 @@
       "level": 0,
       "lat": 50.6590501,
       "lon": -3.7635471,
-      "personnel": 24
+      "personnel": 24,
+      "small": true
     },
     {
       "id": 2635209,
@@ -1864,7 +2120,8 @@
       "level": 0,
       "lat": 51.163019991540644,
       "lon": -3.3232070413135038,
-      "personnel": 27
+      "personnel": 27,
+      "small": true
     },
     {
       "id": 2366734,
@@ -1874,7 +2131,8 @@
       "level": 4,
       "lat": 51.206664023210045,
       "lon": -2.181104027630783,
-      "personnel": 200
+      "personnel": 200,
+      "small": true
     },
     {
       "id": 2320439,
@@ -1884,7 +2142,8 @@
       "level": 0,
       "lat": 50.521131403075444,
       "lon": -1.0461933576585867,
-      "personnel": 0
+      "personnel": 0,
+      "small": false
     },
     {
       "id": 2318599,
@@ -1894,7 +2153,8 @@
       "level": 2,
       "lat": 50.91836811250314,
       "lon": -1.4397581121403762,
-      "personnel": 200
+      "personnel": 200,
+      "small": false
     },
     {
       "id": 2621686,
@@ -1904,7 +2164,8 @@
       "level": 1,
       "lat": 53.8006809,
       "lon": -1.2523321,
-      "personnel": 37
+      "personnel": 37,
+      "small": true
     },
     {
       "id": 2567744,
@@ -1914,7 +2175,8 @@
       "level": 0,
       "lat": 51.389115437286904,
       "lon": -2.4115486310924785,
-      "personnel": 1
+      "personnel": 1,
+      "small": false
     },
     {
       "id": 2624707,
@@ -1924,7 +2186,8 @@
       "level": 1,
       "lat": 51.71189093737082,
       "lon": -1.9734244538300727,
-      "personnel": 27
+      "personnel": 27,
+      "small": true
     },
     {
       "id": 2620306,
@@ -1934,7 +2197,8 @@
       "level": 0,
       "lat": 54.060442455030625,
       "lon": -1.697518249255444,
-      "personnel": 1
+      "personnel": 1,
+      "small": false
     },
     {
       "id": 1987519,
@@ -1944,7 +2208,8 @@
       "level": 2,
       "lat": 51.51473303698452,
       "lon": -0.15935976855465364,
-      "personnel": 200
+      "personnel": 200,
+      "small": true
     },
     {
       "id": 2622173,
@@ -1954,7 +2219,8 @@
       "level": 1,
       "lat": 53.716834403964555,
       "lon": -0.8735159520680303,
-      "personnel": 37
+      "personnel": 37,
+      "small": true
     },
     {
       "id": 2636830,
@@ -1964,7 +2230,8 @@
       "level": 0,
       "lat": 50.769410807721385,
       "lon": -1.5462218967851775,
-      "personnel": 13
+      "personnel": 13,
+      "small": true
     },
     {
       "id": 2622180,
@@ -1974,7 +2241,8 @@
       "level": 1,
       "lat": 54.2058456,
       "lon": -0.2937627,
-      "personnel": 28
+      "personnel": 28,
+      "small": true
     },
     {
       "id": 2466015,
@@ -1984,7 +2252,8 @@
       "level": 5,
       "lat": 51.40229553379466,
       "lon": -2.4569888317285336,
-      "personnel": 168
+      "personnel": 168,
+      "small": false
     },
     {
       "id": 2620979,
@@ -1994,7 +2263,8 @@
       "level": 1,
       "lat": 53.57825784325828,
       "lon": -1.4506132905387528,
-      "personnel": 38
+      "personnel": 38,
+      "small": true
     },
     {
       "id": 2344108,
@@ -2004,7 +2274,8 @@
       "level": 3,
       "lat": 51.52614913023767,
       "lon": -0.08515603511284188,
-      "personnel": 30
+      "personnel": 30,
+      "small": false
     },
     {
       "id": 2567740,
@@ -2014,7 +2285,8 @@
       "level": 0,
       "lat": 51.3798335,
       "lon": -2.3951533,
-      "personnel": 1
+      "personnel": 1,
+      "small": false
     },
     {
       "id": 2567745,
@@ -2024,7 +2296,8 @@
       "level": 0,
       "lat": 51.37412274750203,
       "lon": -2.3432438927984296,
-      "personnel": 1
+      "personnel": 1,
+      "small": false
     },
     {
       "id": 2567739,
@@ -2034,7 +2307,8 @@
       "level": 0,
       "lat": 51.4183585,
       "lon": -2.4071486,
-      "personnel": 1
+      "personnel": 1,
+      "small": false
     },
     {
       "id": 2567741,
@@ -2044,7 +2318,8 @@
       "level": 0,
       "lat": 51.359121279143956,
       "lon": -2.350517468715936,
-      "personnel": 1
+      "personnel": 1,
+      "small": false
     },
     {
       "id": 2567743,
@@ -2054,7 +2329,8 @@
       "level": 0,
       "lat": 51.40132414069592,
       "lon": -2.330387305781954,
-      "personnel": 1
+      "personnel": 1,
+      "small": false
     },
     {
       "id": 2572689,
@@ -2064,7 +2340,8 @@
       "level": 0,
       "lat": 51.190459349120026,
       "lon": -2.562642843589315,
-      "personnel": 0
+      "personnel": 0,
+      "small": false
     },
     {
       "id": 2567747,
@@ -2074,7 +2351,8 @@
       "level": 0,
       "lat": 51.3535038,
       "lon": -2.3822031,
-      "personnel": 1
+      "personnel": 1,
+      "small": false
     },
     {
       "id": 2572696,
@@ -2084,7 +2362,8 @@
       "level": 0,
       "lat": 51.367182844061084,
       "lon": -2.1315297087517884,
-      "personnel": 0
+      "personnel": 0,
+      "small": false
     },
     {
       "id": 1988767,
@@ -2094,7 +2373,8 @@
       "level": 5,
       "lat": 54.087752920802856,
       "lon": -1.759263660225907,
-      "personnel": 200
+      "personnel": 200,
+      "small": false
     },
     {
       "id": 2329952,
@@ -2104,7 +2384,8 @@
       "level": 0,
       "lat": 51.4190103351562,
       "lon": -0.41871610243257446,
-      "personnel": 200
+      "personnel": 200,
+      "small": false
     },
     {
       "id": 2328378,
@@ -2114,7 +2395,8 @@
       "level": 3,
       "lat": 51.336169568217805,
       "lon": -0.7195117732410674,
-      "personnel": 200
+      "personnel": 200,
+      "small": true
     },
     {
       "id": 2620973,
@@ -2124,7 +2406,8 @@
       "level": 0,
       "lat": 53.55349021054423,
       "lon": -1.6694151718904071,
-      "personnel": 1
+      "personnel": 1,
+      "small": false
     },
     {
       "id": 2567760,
@@ -2134,7 +2417,8 @@
       "level": 0,
       "lat": 51.4141289,
       "lon": -2.2519857,
-      "personnel": 1
+      "personnel": 1,
+      "small": false
     },
     {
       "id": 2325714,
@@ -2144,7 +2428,8 @@
       "level": 11,
       "lat": 54.28243147535983,
       "lon": -0.4348590208237545,
-      "personnel": 200
+      "personnel": 200,
+      "small": false
     },
     {
       "id": 2318782,
@@ -2154,7 +2439,8 @@
       "level": 2,
       "lat": 50.926510950925575,
       "lon": -1.4481515459677103,
-      "personnel": 200
+      "personnel": 200,
+      "small": true
     },
     {
       "id": 1984340,
@@ -2164,7 +2450,8 @@
       "level": 5,
       "lat": 51.509522849223515,
       "lon": -0.1918020804381004,
-      "personnel": 200
+      "personnel": 200,
+      "small": true
     },
     {
       "id": 1988057,
@@ -2174,7 +2461,8 @@
       "level": 4,
       "lat": 54.001350468272115,
       "lon": -1.5336575512231425,
-      "personnel": 200
+      "personnel": 200,
+      "small": false
     },
     {
       "id": 2318734,
@@ -2184,7 +2472,8 @@
       "level": 5,
       "lat": 50.88326784858202,
       "lon": -1.3941558230724214,
-      "personnel": 200
+      "personnel": 200,
+      "small": false
     },
     {
       "id": 2319706,
@@ -2194,7 +2483,8 @@
       "level": 1,
       "lat": 51.245529758960416,
       "lon": -1.0957847275118895,
-      "personnel": 200
+      "personnel": 200,
+      "small": true
     },
     {
       "id": 2319699,
@@ -2204,7 +2494,8 @@
       "level": 2,
       "lat": 51.267463680763164,
       "lon": -1.079291483858756,
-      "personnel": 200
+      "personnel": 200,
+      "small": false
     },
     {
       "id": 2390845,
@@ -2214,7 +2505,8 @@
       "level": 19,
       "lat": 51.3886298016049,
       "lon": -2.3545286959194076,
-      "personnel": 200
+      "personnel": 200,
+      "small": false
     },
     {
       "id": 2390846,
@@ -2224,7 +2516,8 @@
       "level": 5,
       "lat": 51.38060598729199,
       "lon": -2.370117747329321,
-      "personnel": 200
+      "personnel": 200,
+      "small": false
     },
     {
       "id": 1987510,
@@ -2234,7 +2527,8 @@
       "level": 2,
       "lat": 51.51402824157516,
       "lon": -0.1620149275971857,
-      "personnel": 200
+      "personnel": 200,
+      "small": false
     },
     {
       "id": 1988549,
@@ -2244,7 +2538,8 @@
       "level": 2,
       "lat": 54.060463558256345,
       "lon": -1.697529355075875,
-      "personnel": 200
+      "personnel": 200,
+      "small": false
     },
     {
       "id": 2357961,
@@ -2254,7 +2549,8 @@
       "level": 1,
       "lat": 54.25507855301422,
       "lon": -0.7487147360389355,
-      "personnel": 200
+      "personnel": 200,
+      "small": false
     },
     {
       "id": 2319651,
@@ -2264,7 +2560,8 @@
       "level": 4,
       "lat": 50.97303017707115,
       "lon": -1.3716681521452652,
-      "personnel": 200
+      "personnel": 200,
+      "small": false
     },
     {
       "id": 2330344,
@@ -2274,7 +2571,8 @@
       "level": 3,
       "lat": 51.30416408910616,
       "lon": -0.7968705123013997,
-      "personnel": 200
+      "personnel": 200,
+      "small": false
     },
     {
       "id": 2406061,
@@ -2284,7 +2582,8 @@
       "level": 8,
       "lat": 51.518607,
       "lon": -2.5678542,
-      "personnel": 200
+      "personnel": 200,
+      "small": false
     },
     {
       "id": 2330342,
@@ -2294,7 +2593,8 @@
       "level": 1,
       "lat": 51.30415667631387,
       "lon": -0.7968853135581386,
-      "personnel": 200
+      "personnel": 200,
+      "small": false
     },
     {
       "id": 2326146,
@@ -2304,7 +2604,8 @@
       "level": 3,
       "lat": 54.29446839508862,
       "lon": -0.4083365846604122,
-      "personnel": 200
+      "personnel": 200,
+      "small": false
     },
     {
       "id": 2349728,
@@ -2314,7 +2615,8 @@
       "level": 2,
       "lat": 53.95842193848291,
       "lon": -1.067160469301125,
-      "personnel": 200
+      "personnel": 200,
+      "small": false
     },
     {
       "id": 2349753,
@@ -2324,7 +2626,8 @@
       "level": 0,
       "lat": 53.96233327709009,
       "lon": -1.082424501151759,
-      "personnel": 0
+      "personnel": 0,
+      "small": false
     },
     {
       "id": 2188370,
@@ -2334,7 +2637,8 @@
       "level": 5,
       "lat": 53.99366085792722,
       "lon": -1.5176643693862952,
-      "personnel": 200
+      "personnel": 200,
+      "small": false
     },
     {
       "id": 2318783,
@@ -2344,7 +2648,8 @@
       "level": 1,
       "lat": 50.94123522554029,
       "lon": -1.3761107813133375,
-      "personnel": 200
+      "personnel": 200,
+      "small": true
     },
     {
       "id": 2464097,
@@ -2354,7 +2659,8 @@
       "level": 0,
       "lat": 51.377668459845864,
       "lon": -2.3568027913360323,
-      "personnel": 1
+      "personnel": 1,
+      "small": false
     },
     {
       "id": 1984930,
@@ -2364,7 +2670,8 @@
       "level": 0,
       "lat": 51.506204411728866,
       "lon": -0.1265651696802748,
-      "personnel": 30
+      "personnel": 30,
+      "small": false
     },
     {
       "id": 2350773,
@@ -2374,7 +2681,8 @@
       "level": 0,
       "lat": 54.28609118576108,
       "lon": -0.4010350766636038,
-      "personnel": 3
+      "personnel": 3,
+      "small": false
     },
     {
       "id": 2320463,
@@ -2384,7 +2692,8 @@
       "level": 0,
       "lat": 50.65996478922529,
       "lon": -0.9676574518525632,
-      "personnel": 0
+      "personnel": 0,
+      "small": false
     },
     {
       "id": 2327749,
@@ -2394,7 +2703,8 @@
       "level": 3,
       "lat": 50.96675668434428,
       "lon": -1.4215468240612301,
-      "personnel": 200
+      "personnel": 200,
+      "small": false
     },
     {
       "id": 2329882,
@@ -2404,7 +2714,8 @@
       "level": 0,
       "lat": 51.488406474878964,
       "lon": -0.1408035521204124,
-      "personnel": 30
+      "personnel": 30,
+      "small": false
     },
     {
       "id": 1844375,
@@ -2414,7 +2725,8 @@
       "level": 19,
       "lat": 51.50924855235162,
       "lon": -0.12309606807956552,
-      "personnel": 200
+      "personnel": 200,
+      "small": false
     },
     {
       "id": 2319653,
@@ -2424,7 +2736,8 @@
       "level": 3,
       "lat": 50.95089257447586,
       "lon": -1.3605310147322331,
-      "personnel": 200
+      "personnel": 200,
+      "small": false
     },
     {
       "id": 2364328,
@@ -2434,7 +2747,8 @@
       "level": 2,
       "lat": 52.95864527745207,
       "lon": -1.167976805880616,
-      "personnel": 200
+      "personnel": 200,
+      "small": true
     },
     {
       "id": 2364327,
@@ -2444,7 +2758,8 @@
       "level": 2,
       "lat": 52.98947154696455,
       "lon": -1.156077594185795,
-      "personnel": 200
+      "personnel": 200,
+      "small": true
     },
     {
       "id": 2312409,
@@ -2454,7 +2769,8 @@
       "level": 3,
       "lat": 50.90978533615443,
       "lon": -1.3986689371734289,
-      "personnel": 200
+      "personnel": 200,
+      "small": false
     },
     {
       "id": 2311527,
@@ -2464,7 +2780,8 @@
       "level": 2,
       "lat": 53.992301907233596,
       "lon": -1.514033350205127,
-      "personnel": 200
+      "personnel": 200,
+      "small": false
     },
     {
       "id": 2318780,
@@ -2474,7 +2791,8 @@
       "level": 1,
       "lat": 50.92588680307581,
       "lon": -1.4484077092113785,
-      "personnel": 200
+      "personnel": 200,
+      "small": false
     },
     {
       "id": 2621048,
@@ -2484,7 +2802,8 @@
       "level": 1,
       "lat": 53.218792434885,
       "lon": -1.6722820154361877,
-      "personnel": 38
+      "personnel": 38,
+      "small": true
     },
     {
       "id": 2312456,
@@ -2494,7 +2813,8 @@
       "level": 0,
       "lat": 50.91922531542322,
       "lon": -1.4041426405619384,
-      "personnel": 200
+      "personnel": 200,
+      "small": false
     },
     {
       "id": 2333227,
@@ -2504,7 +2824,8 @@
       "level": 2,
       "lat": 53.99651665380682,
       "lon": -1.5082697214037528,
-      "personnel": 200
+      "personnel": 200,
+      "small": false
     },
     {
       "id": 2648331,
@@ -2514,7 +2835,8 @@
       "level": 1,
       "lat": 51.810845592340186,
       "lon": -2.7237848872059427,
-      "personnel": 17
+      "personnel": 17,
+      "small": true
     },
     {
       "id": 2648335,
@@ -2524,7 +2846,8 @@
       "level": 0,
       "lat": 51.6667149,
       "lon": -3.1927816,
-      "personnel": 17
+      "personnel": 17,
+      "small": true
     },
     {
       "id": 2621036,
@@ -2534,7 +2857,8 @@
       "level": 1,
       "lat": 52.90586773718391,
       "lon": -1.5429983634774567,
-      "personnel": 38
+      "personnel": 38,
+      "small": true
     },
     {
       "id": 2652211,
@@ -2544,7 +2868,8 @@
       "level": 0,
       "lat": 54.32871526215685,
       "lon": -4.389824795642367,
-      "personnel": 14
+      "personnel": 14,
+      "small": true
     },
     {
       "id": 2650670,
@@ -2554,7 +2879,8 @@
       "level": 0,
       "lat": 53.326284778061435,
       "lon": -3.480096028872069,
-      "personnel": 15
+      "personnel": 15,
+      "small": true
     },
     {
       "id": 2364329,
@@ -2564,7 +2890,8 @@
       "level": 2,
       "lat": 54.087388804287315,
       "lon": -1.7632022875951003,
-      "personnel": 200
+      "personnel": 200,
+      "small": true
     },
     {
       "id": 2586557,
@@ -2574,7 +2901,8 @@
       "level": 1,
       "lat": 51.6963977,
       "lon": -2.2179299,
-      "personnel": 73
+      "personnel": 73,
+      "small": true
     },
     {
       "id": 1845638,
@@ -2584,7 +2912,8 @@
       "level": 0,
       "lat": 51.501813680880346,
       "lon": -0.05252080199873268,
-      "personnel": 30
+      "personnel": 30,
+      "small": false
     },
     {
       "id": 2465959,
@@ -2594,7 +2923,8 @@
       "level": 5,
       "lat": 51.3207907,
       "lon": -2.2028266,
-      "personnel": 169
+      "personnel": 169,
+      "small": true
     },
     {
       "id": 2657265,
@@ -2604,7 +2934,8 @@
       "level": 0,
       "lat": 51.4879406,
       "lon": -2.7588917,
-      "personnel": 10
+      "personnel": 10,
+      "small": false
     },
     {
       "id": 2342750,
@@ -2614,7 +2945,8 @@
       "level": 4,
       "lat": 54.30000298075552,
       "lon": -0.4598039263608579,
-      "personnel": 200
+      "personnel": 200,
+      "small": false
     },
     {
       "id": 2657467,
@@ -2624,7 +2956,8 @@
       "level": 0,
       "lat": 51.18236249487377,
       "lon": -3.3257722602398254,
-      "personnel": 10
+      "personnel": 10,
+      "small": false
     },
     {
       "id": 2638173,
@@ -2634,7 +2967,8 @@
       "level": 0,
       "lat": 50.8154199,
       "lon": -4.3531368,
-      "personnel": 24
+      "personnel": 24,
+      "small": true
     },
     {
       "id": 2620986,
@@ -2644,7 +2978,8 @@
       "level": 1,
       "lat": 53.415125698302504,
       "lon": -1.3451500681250146,
-      "personnel": 38
+      "personnel": 38,
+      "small": true
     },
     {
       "id": 2652161,
@@ -2654,7 +2989,8 @@
       "level": 0,
       "lat": 52.529478822688695,
       "lon": -2.401796027634625,
-      "personnel": 14
+      "personnel": 14,
+      "small": true
     },
     {
       "id": 2652888,
@@ -2664,7 +3000,8 @@
       "level": 0,
       "lat": 51.3398168,
       "lon": 3.2870554,
-      "personnel": 14
+      "personnel": 14,
+      "small": true
     },
     {
       "id": 2583584,
@@ -2674,7 +3011,41 @@
       "level": 1,
       "lat": 51.7505439,
       "lon": -2.3029485,
-      "personnel": 68
+      "personnel": 68,
+      "small": false
+    },
+    {
+      "id": 2662881,
+      "name": "Portishead Fire Station",
+      "type": "Fire Station",
+      "typeId": 0,
+      "level": 0,
+      "lat": 51.47577217697484,
+      "lon": -2.795406758336174,
+      "personnel": 10,
+      "small": true
+    },
+    {
+      "id": 2662883,
+      "name": "Isle of Man Police HQ - Douglas",
+      "type": "Police Station",
+      "typeId": 6,
+      "level": 0,
+      "lat": 54.1647155,
+      "lon": -4.4753006,
+      "personnel": 2,
+      "small": true
+    },
+    {
+      "id": 2662880,
+      "name": "Portishead Police Station",
+      "type": "Police Station",
+      "typeId": 6,
+      "level": 0,
+      "lat": 51.475694917754424,
+      "lon": -2.795794962236199,
+      "personnel": 2,
+      "small": true
     },
     {
       "id": 2041379,
@@ -2684,7 +3055,8 @@
       "level": 3,
       "lat": 51.48748944713841,
       "lon": -0.022279564732651615,
-      "personnel": 200
+      "personnel": 200,
+      "small": false
     },
     {
       "id": 2657728,
@@ -2694,7 +3066,8 @@
       "level": 0,
       "lat": 54.15142926871821,
       "lon": -2.4671357694065015,
-      "personnel": 8
+      "personnel": 8,
+      "small": true
     },
     {
       "id": 2657763,
@@ -2704,7 +3077,8 @@
       "level": 0,
       "lat": 53.31630563879956,
       "lon": -4.632411159260764,
-      "personnel": 9
+      "personnel": 9,
+      "small": false
     },
     {
       "id": 2635501,
@@ -2714,7 +3088,8 @@
       "level": 0,
       "lat": 50.79216566421435,
       "lon": -3.212304928772454,
-      "personnel": 27
+      "personnel": 27,
+      "small": true
     },
     {
       "id": 2621358,
@@ -2724,7 +3099,8 @@
       "level": 1,
       "lat": 55.1314117,
       "lon": -3.35372,
-      "personnel": 38
+      "personnel": 38,
+      "small": true
     },
     {
       "id": 2620247,
@@ -2734,7 +3110,8 @@
       "level": 1,
       "lat": 53.76833905623855,
       "lon": -1.5744734656209993,
-      "personnel": 39
+      "personnel": 39,
+      "small": true
     },
     {
       "id": 2312174,
@@ -2744,7 +3121,8 @@
       "level": 6,
       "lat": 50.90617839592439,
       "lon": -1.4163815176393246,
-      "personnel": 200
+      "personnel": 200,
+      "small": false
     },
     {
       "id": 2312445,
@@ -2754,7 +3132,8 @@
       "level": 2,
       "lat": 50.92561742139679,
       "lon": -1.390125771668341,
-      "personnel": 200
+      "personnel": 200,
+      "small": false
     },
     {
       "id": 2311779,
@@ -2764,7 +3143,8 @@
       "level": 6,
       "lat": 50.9306092491856,
       "lon": -1.4327044622663652,
-      "personnel": 200
+      "personnel": 200,
+      "small": false
     },
     {
       "id": 2354534,
@@ -2774,7 +3154,8 @@
       "level": 11,
       "lat": 51.28943312282601,
       "lon": -2.456675292832151,
-      "personnel": 285
+      "personnel": 285,
+      "small": false
     },
     {
       "id": 2525834,
@@ -2784,7 +3165,8 @@
       "level": 0,
       "lat": 51.382488708645674,
       "lon": -2.3830260568223762,
-      "personnel": 1
+      "personnel": 1,
+      "small": false
     },
     {
       "id": 2633096,
@@ -2794,7 +3176,8 @@
       "level": 1,
       "lat": 53.233722010663875,
       "lon": -1.42593391323988,
-      "personnel": 28
+      "personnel": 28,
+      "small": true
     },
     {
       "id": 2620846,
@@ -2804,7 +3187,8 @@
       "level": 1,
       "lat": 53.96153770887709,
       "lon": -2.0111322924643953,
-      "personnel": 37
+      "personnel": 37,
+      "small": true
     },
     {
       "id": 2572699,
@@ -2814,7 +3198,8 @@
       "level": 0,
       "lat": 51.357944655837294,
       "lon": -2.371638192902137,
-      "personnel": 0
+      "personnel": 0,
+      "small": false
     },
     {
       "id": 2639116,
@@ -2824,7 +3209,8 @@
       "level": 0,
       "lat": 50.469138250623274,
       "lon": -4.728886413118822,
-      "personnel": 23
+      "personnel": 23,
+      "small": true
     },
     {
       "id": 2621058,
@@ -2834,7 +3220,8 @@
       "level": 1,
       "lat": 52.6621817,
       "lon": -1.1745279,
-      "personnel": 38
+      "personnel": 38,
+      "small": true
     },
     {
       "id": 2657777,
@@ -2844,7 +3231,8 @@
       "level": 0,
       "lat": 51.71566774504608,
       "lon": -2.4825888912266403,
-      "personnel": 9
+      "personnel": 9,
+      "small": false
     },
     {
       "id": 2340692,
@@ -2854,7 +3242,8 @@
       "level": 0,
       "lat": 51.48918034845197,
       "lon": -0.07796579553495732,
-      "personnel": 200
+      "personnel": 200,
+      "small": false
     },
     {
       "id": 2327192,
@@ -2864,7 +3253,8 @@
       "level": 2,
       "lat": 51.55047795842578,
       "lon": -0.1836170109149681,
-      "personnel": 200
+      "personnel": 200,
+      "small": true
     },
     {
       "id": 2646529,
@@ -2874,7 +3264,8 @@
       "level": 1,
       "lat": 51.01616149184288,
       "lon": -3.083849183664912,
-      "personnel": 26
+      "personnel": 26,
+      "small": true
     },
     {
       "id": 1845393,
@@ -2884,7 +3275,8 @@
       "level": 0,
       "lat": 51.510999161377384,
       "lon": -0.10902400618233912,
-      "personnel": 30
+      "personnel": 30,
+      "small": false
     },
     {
       "id": 2567759,
@@ -2894,7 +3286,8 @@
       "level": 2,
       "lat": 51.4496673,
       "lon": -2.1365683,
-      "personnel": 86
+      "personnel": 86,
+      "small": false
     },
     {
       "id": 2033681,
@@ -2904,7 +3297,8 @@
       "level": 0,
       "lat": 51.51064039150632,
       "lon": -0.09822466896601018,
-      "personnel": 30
+      "personnel": 30,
+      "small": false
     },
     {
       "id": 2041100,
@@ -2914,7 +3308,8 @@
       "level": 0,
       "lat": 51.49838693321645,
       "lon": -0.09765417244227617,
-      "personnel": 30
+      "personnel": 30,
+      "small": false
     },
     {
       "id": 2330343,
@@ -2924,7 +3319,8 @@
       "level": 2,
       "lat": 51.30412720806707,
       "lon": -0.7968871995844199,
-      "personnel": 200
+      "personnel": 200,
+      "small": true
     },
     {
       "id": 2366733,
@@ -2934,7 +3330,8 @@
       "level": 1,
       "lat": 51.20744945694732,
       "lon": -2.181450722484675,
-      "personnel": 200
+      "personnel": 200,
+      "small": true
     },
     {
       "id": 2429046,
@@ -2944,7 +3341,8 @@
       "level": 6,
       "lat": 51.459167869232125,
       "lon": -2.596142441448984,
-      "personnel": 0
+      "personnel": 0,
+      "small": false
     },
     {
       "id": 2635206,
@@ -2954,7 +3352,8 @@
       "level": 1,
       "lat": 51.200206,
       "lon": -3.4729151,
-      "personnel": 27
+      "personnel": 27,
+      "small": true
     },
     {
       "id": 2621056,
@@ -2964,7 +3363,8 @@
       "level": 1,
       "lat": 52.7683615,
       "lon": -1.2224403,
-      "personnel": 38
+      "personnel": 38,
+      "small": true
     },
     {
       "id": 2621321,
@@ -2974,7 +3374,8 @@
       "level": 1,
       "lat": 55.84044275339354,
       "lon": -4.259879513540496,
-      "personnel": 38
+      "personnel": 38,
+      "small": true
     },
     {
       "id": 2650714,
@@ -2984,7 +3385,8 @@
       "level": 0,
       "lat": 53.0454558,
       "lon": -3.0139971,
-      "personnel": 15
+      "personnel": 15,
+      "small": true
     },
     {
       "id": 2357987,
@@ -2994,7 +3396,8 @@
       "level": 30,
       "lat": 51.311304694976165,
       "lon": -2.4165690272642224,
-      "personnel": 0
+      "personnel": 0,
+      "small": false
     },
     {
       "id": 2312031,
@@ -3004,7 +3407,8 @@
       "level": 0,
       "lat": 51.492910816331,
       "lon": -0.12123953489482854,
-      "personnel": 30
+      "personnel": 30,
+      "small": false
     },
     {
       "id": 2659456,
@@ -3014,7 +3418,8 @@
       "level": 0,
       "lat": 51.68787567315339,
       "lon": -2.3594959218384526,
-      "personnel": 10
+      "personnel": 10,
+      "small": true
     },
     {
       "id": 2621667,
@@ -3024,7 +3429,8 @@
       "level": 1,
       "lat": 51.3355919,
       "lon": -2.7931366,
-      "personnel": 37
+      "personnel": 37,
+      "small": true
     },
     {
       "id": 2471875,
@@ -3034,7 +3440,8 @@
       "level": 3,
       "lat": 51.29264592569361,
       "lon": -2.4453439028427693,
-      "personnel": 165
+      "personnel": 165,
+      "small": false
     },
     {
       "id": 2659464,
@@ -3044,7 +3451,8 @@
       "level": 0,
       "lat": 51.450610971372114,
       "lon": -0.9862098792154756,
-      "personnel": 0
+      "personnel": 0,
+      "small": false
     },
     {
       "id": 2650740,
@@ -3054,7 +3462,8 @@
       "level": 0,
       "lat": 51.94863553763058,
       "lon": -3.3847649452342896,
-      "personnel": 15
+      "personnel": 15,
+      "small": true
     },
     {
       "id": 2650724,
@@ -3064,7 +3473,8 @@
       "level": 0,
       "lat": 52.52096702409138,
       "lon": -3.3142778897541563,
-      "personnel": 15
+      "personnel": 15,
+      "small": true
     },
     {
       "id": 2659467,
@@ -3074,7 +3484,8 @@
       "level": 0,
       "lat": 51.40762161176569,
       "lon": -1.318489188386671,
-      "personnel": 3
+      "personnel": 3,
+      "small": true
     },
     {
       "id": 2448097,
@@ -3084,7 +3495,8 @@
       "level": 0,
       "lat": 51.2968883999816,
       "lon": -2.4464523810888887,
-      "personnel": 184
+      "personnel": 184,
+      "small": false
     },
     {
       "id": 2330770,
@@ -3094,7 +3506,8 @@
       "level": 1,
       "lat": 50.93284454963561,
       "lon": -1.4346149417334773,
-      "personnel": 0
+      "personnel": 0,
+      "small": false
     },
     {
       "id": 2650386,
@@ -3104,7 +3517,8 @@
       "level": 1,
       "lat": 52.344032806146664,
       "lon": -6.484274125339155,
-      "personnel": 16
+      "personnel": 16,
+      "small": true
     },
     {
       "id": 2649595,
@@ -3114,7 +3528,8 @@
       "level": 0,
       "lat": 53.1404185,
       "lon": -4.2497021,
-      "personnel": 16
+      "personnel": 16,
+      "small": true
     },
     {
       "id": 2318768,
@@ -3124,7 +3539,8 @@
       "level": 2,
       "lat": 51.54436733165658,
       "lon": -0.23660438762004396,
-      "personnel": 200
+      "personnel": 200,
+      "small": false
     },
     {
       "id": 2364563,
@@ -3134,7 +3550,8 @@
       "level": 4,
       "lat": 52.9529616,
       "lon": -1.154971,
-      "personnel": 200
+      "personnel": 200,
+      "small": true
     },
     {
       "id": 2481579,
@@ -3144,7 +3561,8 @@
       "level": 5,
       "lat": 51.508180562630336,
       "lon": -2.7180287121072353,
-      "personnel": 164
+      "personnel": 164,
+      "small": false
     },
     {
       "id": 2586553,
@@ -3154,7 +3572,8 @@
       "level": 4,
       "lat": 51.7007221,
       "lon": -2.333228,
-      "personnel": 65
+      "personnel": 65,
+      "small": true
     },
     {
       "id": 2319865,
@@ -3164,7 +3583,8 @@
       "level": 2,
       "lat": 51.52647467394875,
       "lon": -0.08545064940241709,
-      "personnel": 200
+      "personnel": 200,
+      "small": true
     },
     {
       "id": 2648333,
@@ -3174,7 +3594,8 @@
       "level": 1,
       "lat": 51.8241252,
       "lon": -3.030815,
-      "personnel": 17
+      "personnel": 17,
+      "small": true
     },
     {
       "id": 2350542,
@@ -3184,7 +3605,8 @@
       "level": 2,
       "lat": 54.00866354870889,
       "lon": -1.4487172046324637,
-      "personnel": 200
+      "personnel": 200,
+      "small": true
     },
     {
       "id": 2330766,
@@ -3194,7 +3616,8 @@
       "level": 30,
       "lat": 51.49882104927478,
       "lon": -0.11859392142196024,
-      "personnel": 0
+      "personnel": 0,
+      "small": false
     },
     {
       "id": 1984339,
@@ -3204,7 +3627,8 @@
       "level": 5,
       "lat": 51.51024301008607,
       "lon": -0.18933693861441778,
-      "personnel": 200
+      "personnel": 200,
+      "small": false
     },
     {
       "id": 2462423,
@@ -3214,7 +3638,8 @@
       "level": 0,
       "lat": 51.46437221450008,
       "lon": -2.4872321062565255,
-      "personnel": 1
+      "personnel": 1,
+      "small": false
     },
     {
       "id": 2328050,
@@ -3224,7 +3649,8 @@
       "level": 2,
       "lat": 51.272331031376446,
       "lon": -1.0443292233068258,
-      "personnel": 200
+      "personnel": 200,
+      "small": true
     },
     {
       "id": 2642427,
@@ -3234,7 +3660,8 @@
       "level": 0,
       "lat": 50.2293714,
       "lon": -5.2444244,
-      "personnel": 21
+      "personnel": 21,
+      "small": true
     },
     {
       "id": 1984600,
@@ -3244,7 +3671,8 @@
       "level": 2,
       "lat": 51.517343449596495,
       "lon": -0.05532885858920619,
-      "personnel": 200
+      "personnel": 200,
+      "small": true
     },
     {
       "id": 2647804,
@@ -3254,7 +3682,8 @@
       "level": 1,
       "lat": 51.5022468,
       "lon": -3.1176314,
-      "personnel": 18
+      "personnel": 18,
+      "small": true
     },
     {
       "id": 2638177,
@@ -3264,7 +3693,8 @@
       "level": 1,
       "lat": 51.2282628,
       "lon": -3.8400748,
-      "personnel": 24
+      "personnel": 24,
+      "small": true
     },
     {
       "id": 2620832,
@@ -3274,7 +3704,8 @@
       "level": 0,
       "lat": 53.91083465003108,
       "lon": -1.5263618668626668,
-      "personnel": 1
+      "personnel": 1,
+      "small": false
     },
     {
       "id": 2505578,
@@ -3284,7 +3715,8 @@
       "level": 5,
       "lat": 51.378737042867975,
       "lon": -2.356747928237651,
-      "personnel": 144
+      "personnel": 144,
+      "small": false
     },
     {
       "id": 2658825,
@@ -3294,7 +3726,8 @@
       "level": 0,
       "lat": 51.4983737579629,
       "lon": -2.583967803345702,
-      "personnel": 1
+      "personnel": 1,
+      "small": false
     },
     {
       "id": 2621314,
@@ -3304,7 +3737,8 @@
       "level": 0,
       "lat": 55.92727075021527,
       "lon": -3.2182590869673215,
-      "personnel": 0
+      "personnel": 0,
+      "small": false
     },
     {
       "id": 2312467,
@@ -3314,7 +3748,8 @@
       "level": 5,
       "lat": 54.13837689281015,
       "lon": -1.5178581711838002,
-      "personnel": 200
+      "personnel": 200,
+      "small": false
     },
     {
       "id": 2621344,
@@ -3324,7 +3759,8 @@
       "level": 0,
       "lat": 54.99356770053821,
       "lon": -3.053422247945874,
-      "personnel": 1
+      "personnel": 1,
+      "small": false
     },
     {
       "id": 2658838,
@@ -3334,7 +3770,8 @@
       "level": 0,
       "lat": 51.365176557885164,
       "lon": -2.9646772686502736,
-      "personnel": 1
+      "personnel": 1,
+      "small": false
     },
     {
       "id": 1987514,
@@ -3344,7 +3781,8 @@
       "level": 0,
       "lat": 51.51350839653871,
       "lon": -0.15934475660952505,
-      "personnel": 200
+      "personnel": 200,
+      "small": false
     },
     {
       "id": 2633723,
@@ -3354,7 +3792,8 @@
       "level": 1,
       "lat": 51.2381095,
       "lon": -2.9929528,
-      "personnel": 28
+      "personnel": 28,
+      "small": true
     },
     {
       "id": 2033678,
@@ -3364,7 +3803,8 @@
       "level": 2,
       "lat": 51.51185535186849,
       "lon": -0.09586077309575829,
-      "personnel": 200
+      "personnel": 200,
+      "small": false
     },
     {
       "id": 1984068,
@@ -3374,7 +3814,8 @@
       "level": 3,
       "lat": 51.524939320963426,
       "lon": -0.1360894345703035,
-      "personnel": 200
+      "personnel": 200,
+      "small": false
     },
     {
       "id": 1984004,
@@ -3384,7 +3825,8 @@
       "level": 2,
       "lat": 51.52762044825181,
       "lon": -0.13069131081189714,
-      "personnel": 200
+      "personnel": 200,
+      "small": false
     },
     {
       "id": 2327980,
@@ -3394,7 +3836,8 @@
       "level": 0,
       "lat": 51.50929473158206,
       "lon": -0.08541212724164834,
-      "personnel": 200
+      "personnel": 200,
+      "small": false
     },
     {
       "id": 2319695,
@@ -3404,7 +3847,8 @@
       "level": 1,
       "lat": 51.24520327400317,
       "lon": -1.0952816585198275,
-      "personnel": 200
+      "personnel": 200,
+      "small": false
     },
     {
       "id": 2638176,
@@ -3414,7 +3858,8 @@
       "level": 0,
       "lat": 50.3887785,
       "lon": -3.9542683,
-      "personnel": 24
+      "personnel": 24,
+      "small": true
     },
     {
       "id": 2600986,
@@ -3424,7 +3869,8 @@
       "level": 1,
       "lat": 50.9413653,
       "lon": 1.8916948,
-      "personnel": 57
+      "personnel": 57,
+      "small": false
     },
     {
       "id": 2390847,
@@ -3434,7 +3880,8 @@
       "level": 30,
       "lat": 51.39141658271086,
       "lon": -2.3916416733188,
-      "personnel": 0
+      "personnel": 0,
+      "small": false
     },
     {
       "id": 1988490,
@@ -3444,7 +3891,8 @@
       "level": 0,
       "lat": 54.00125679087549,
       "lon": -1.5335783556917681,
-      "personnel": 200
+      "personnel": 200,
+      "small": false
     },
     {
       "id": 1984864,
@@ -3454,7 +3902,8 @@
       "level": 0,
       "lat": 51.509394518603614,
       "lon": -0.1341802363227259,
-      "personnel": 200
+      "personnel": 200,
+      "small": false
     },
     {
       "id": 2638161,
@@ -3464,7 +3913,8 @@
       "level": 0,
       "lat": 50.5374223,
       "lon": -3.6094583,
-      "personnel": 24
+      "personnel": 24,
+      "small": true
     },
     {
       "id": 2328384,
@@ -3474,7 +3924,8 @@
       "level": 1,
       "lat": 51.41904851183741,
       "lon": -0.41867093340787376,
-      "personnel": 200
+      "personnel": 200,
+      "small": true
     },
     {
       "id": 2328773,
@@ -3484,7 +3935,8 @@
       "level": 1,
       "lat": 51.336168277988904,
       "lon": -0.7195050585298484,
-      "personnel": 200
+      "personnel": 200,
+      "small": false
     },
     {
       "id": 2374908,
@@ -3494,7 +3946,8 @@
       "level": 3,
       "lat": 51.49510491561572,
       "lon": -2.59112576516333,
-      "personnel": 200
+      "personnel": 200,
+      "small": true
     },
     {
       "id": 2622181,
@@ -3504,7 +3957,8 @@
       "level": 1,
       "lat": 54.0060232,
       "lon": -0.4443277,
-      "personnel": 37
+      "personnel": 37,
+      "small": true
     },
     {
       "id": 2636828,
@@ -3514,7 +3968,8 @@
       "level": 0,
       "lat": 50.61158056029849,
       "lon": -1.9759062485250058,
-      "personnel": 26
+      "personnel": 26,
+      "small": true
     },
     {
       "id": 2326147,
@@ -3524,7 +3979,8 @@
       "level": 2,
       "lat": 54.29881023455065,
       "lon": -0.41011515597785947,
-      "personnel": 200
+      "personnel": 200,
+      "small": false
     },
     {
       "id": 2652168,
@@ -3534,7 +3990,8 @@
       "level": 0,
       "lat": 52.21853401918792,
       "lon": -2.7340718203972867,
-      "personnel": 14
+      "personnel": 14,
+      "small": true
     },
     {
       "id": 2582594,
@@ -3544,7 +4001,8 @@
       "level": 1,
       "lat": 51.6369879,
       "lon": -2.4590578,
-      "personnel": 69
+      "personnel": 69,
+      "small": false
     },
     {
       "id": 2330200,
@@ -3554,7 +4012,8 @@
       "level": 5,
       "lat": 51.33615727895048,
       "lon": -0.7195036366357542,
-      "personnel": 200
+      "personnel": 200,
+      "small": false
     },
     {
       "id": 2333215,
@@ -3564,7 +4023,8 @@
       "level": 2,
       "lat": 51.2793446737704,
       "lon": -0.9291737011750661,
-      "personnel": 200
+      "personnel": 200,
+      "small": true
     },
     {
       "id": 2638163,
@@ -3574,7 +4034,8 @@
       "level": 0,
       "lat": 50.2846413,
       "lon": -3.7777856,
-      "personnel": 24
+      "personnel": 24,
+      "small": true
     },
     {
       "id": 2638166,
@@ -3584,7 +4045,8 @@
       "level": 0,
       "lat": 50.9517146,
       "lon": -4.1439756,
-      "personnel": 24
+      "personnel": 24,
+      "small": true
     },
     {
       "id": 2651009,
@@ -3594,7 +4056,8 @@
       "level": 0,
       "lat": 52.69214554838593,
       "lon": -2.77143020030613,
-      "personnel": 14
+      "personnel": 14,
+      "small": true
     },
     {
       "id": 1983967,
@@ -3604,7 +4067,8 @@
       "level": 4,
       "lat": 51.52919437052441,
       "lon": -0.12629740715276055,
-      "personnel": 200
+      "personnel": 200,
+      "small": false
     },
     {
       "id": 2635513,
@@ -3614,7 +4078,8 @@
       "level": 0,
       "lat": 51.560355224592655,
       "lon": -1.7791513664204774,
-      "personnel": 0
+      "personnel": 0,
+      "small": false
     },
     {
       "id": 2319692,
@@ -3624,7 +4089,8 @@
       "level": 2,
       "lat": 50.99680535159174,
       "lon": -1.3596020528143282,
-      "personnel": 200
+      "personnel": 200,
+      "small": false
     },
     {
       "id": 1844412,
@@ -3634,7 +4100,8 @@
       "level": 3,
       "lat": 51.51864389562072,
       "lon": -0.05532037907216101,
-      "personnel": 200
+      "personnel": 200,
+      "small": false
     },
     {
       "id": 2636820,
@@ -3644,7 +4111,8 @@
       "level": 1,
       "lat": 50.71280602919093,
       "lon": -2.446820035050778,
-      "personnel": 26
+      "personnel": 26,
+      "small": true
     },
     {
       "id": 2650412,
@@ -3654,7 +4122,8 @@
       "level": 0,
       "lat": 54.23072279575719,
       "lon": -4.5360852423322005,
-      "personnel": 0
+      "personnel": 0,
+      "small": false
     },
     {
       "id": 2621066,
@@ -3664,7 +4133,8 @@
       "level": 1,
       "lat": 52.7003311,
       "lon": -1.8209697,
-      "personnel": 38
+      "personnel": 38,
+      "small": true
     },
     {
       "id": 2620972,
@@ -3674,7 +4144,8 @@
       "level": 1,
       "lat": 53.5254038,
       "lon": -1.6182427,
-      "personnel": 38
+      "personnel": 38,
+      "small": true
     },
     {
       "id": 1987703,
@@ -3684,7 +4155,8 @@
       "level": 3,
       "lat": 51.50040423160425,
       "lon": -0.1180623846231183,
-      "personnel": 200
+      "personnel": 200,
+      "small": true
     },
     {
       "id": 2620962,
@@ -3694,7 +4166,8 @@
       "level": 1,
       "lat": 53.704057937631774,
       "lon": -1.786863122031501,
-      "personnel": 37
+      "personnel": 37,
+      "small": true
     },
     {
       "id": 2567229,
@@ -3704,7 +4177,8 @@
       "level": 6,
       "lat": 51.321611143618476,
       "lon": -2.971186856353536,
-      "personnel": 0
+      "personnel": 0,
+      "small": false
     },
     {
       "id": 2620662,
@@ -3714,7 +4188,8 @@
       "level": 1,
       "lat": 53.79896513767852,
       "lon": -1.5612811342479633,
-      "personnel": 37
+      "personnel": 37,
+      "small": false
     },
     {
       "id": 2654837,
@@ -3724,7 +4199,8 @@
       "level": 1,
       "lat": 51.3526694,
       "lon": -2.9876706,
-      "personnel": 24
+      "personnel": 24,
+      "small": false
     },
     {
       "id": 2349644,
@@ -3734,7 +4210,8 @@
       "level": 5,
       "lat": 53.962588318299844,
       "lon": -1.0702550395224386,
-      "personnel": 200
+      "personnel": 200,
+      "small": false
     },
     {
       "id": 2328513,
@@ -3744,7 +4221,8 @@
       "level": 0,
       "lat": 51.501497821875475,
       "lon": -0.17492531125666225,
-      "personnel": 200
+      "personnel": 200,
+      "small": false
     },
     {
       "id": 2357958,
@@ -3754,7 +4232,8 @@
       "level": 4,
       "lat": 51.29150769261796,
       "lon": -2.4468191350576167,
-      "personnel": 227
+      "personnel": 227,
+      "small": false
     },
     {
       "id": 2319797,
@@ -3764,7 +4243,8 @@
       "level": 2,
       "lat": 51.280443780096036,
       "lon": -1.1099635533279315,
-      "personnel": 200
+      "personnel": 200,
+      "small": false
     },
     {
       "id": 1987515,
@@ -3774,7 +4254,8 @@
       "level": 8,
       "lat": 51.51374018951918,
       "lon": -0.1588935017426944,
-      "personnel": 200
+      "personnel": 200,
+      "small": false
     },
     {
       "id": 2325715,
@@ -3784,7 +4265,8 @@
       "level": 3,
       "lat": 54.283255480292134,
       "lon": -0.39304236909934537,
-      "personnel": 200
+      "personnel": 200,
+      "small": false
     },
     {
       "id": 2656571,
@@ -3794,7 +4276,8 @@
       "level": 1,
       "lat": 51.548238408811024,
       "lon": -0.27882237567282653,
-      "personnel": 10
+      "personnel": 10,
+      "small": true
     },
     {
       "id": 2652882,
@@ -3804,7 +4287,8 @@
       "level": 1,
       "lat": 51.0662498,
       "lon": 2.682034,
-      "personnel": 14
+      "personnel": 14,
+      "small": true
     },
     {
       "id": 2642433,
@@ -3814,7 +4298,8 @@
       "level": 0,
       "lat": 50.619074,
       "lon": -4.6814228,
-      "personnel": 21
+      "personnel": 21,
+      "small": true
     },
     {
       "id": 1988488,
@@ -3824,7 +4309,8 @@
       "level": 4,
       "lat": 53.99036156770937,
       "lon": -1.539725223926126,
-      "personnel": 200
+      "personnel": 200,
+      "small": false
     },
     {
       "id": 2652194,
@@ -3834,7 +4320,8 @@
       "level": 0,
       "lat": 52.3633634,
       "lon": -2.2596412,
-      "personnel": 14
+      "personnel": 14,
+      "small": true
     },
     {
       "id": 2654848,
@@ -3844,7 +4331,8 @@
       "level": 1,
       "lat": 51.45940903427346,
       "lon": -2.567312584388859,
-      "personnel": 12
+      "personnel": 12,
+      "small": true
     },
     {
       "id": 2319380,
@@ -3854,7 +4342,8 @@
       "level": 3,
       "lat": 50.87133726042925,
       "lon": -1.4016221735665497,
-      "personnel": 200
+      "personnel": 200,
+      "small": false
     },
     {
       "id": 2318784,
@@ -3864,7 +4353,8 @@
       "level": 0,
       "lat": 50.92652653581974,
       "lon": -1.4480734116612288,
-      "personnel": 200
+      "personnel": 200,
+      "small": false
     },
     {
       "id": 2319201,
@@ -3874,7 +4364,8 @@
       "level": 2,
       "lat": 51.503161152683504,
       "lon": -0.0875536641096022,
-      "personnel": 200
+      "personnel": 200,
+      "small": false
     },
     {
       "id": 1984841,
@@ -3884,7 +4375,8 @@
       "level": 4,
       "lat": 51.498871912221546,
       "lon": -0.13420135625188256,
-      "personnel": 200
+      "personnel": 200,
+      "small": true
     },
     {
       "id": 2041378,
@@ -3894,7 +4386,8 @@
       "level": 5,
       "lat": 51.51350678894119,
       "lon": -0.12275986079634861,
-      "personnel": 200
+      "personnel": 200,
+      "small": false
     },
     {
       "id": 2649579,
@@ -3904,7 +4397,8 @@
       "level": 0,
       "lat": 52.88731373456664,
       "lon": -4.4240069732379705,
-      "personnel": 16
+      "personnel": 16,
+      "small": true
     },
     {
       "id": 2311530,
@@ -3914,7 +4408,8 @@
       "level": 4,
       "lat": 53.97853496970604,
       "lon": -1.568681194543798,
-      "personnel": 200
+      "personnel": 200,
+      "small": false
     },
     {
       "id": 2642428,
@@ -3924,7 +4419,8 @@
       "level": 0,
       "lat": 50.1556715,
       "lon": -5.0861887,
-      "personnel": 21
+      "personnel": 21,
+      "small": true
     },
     {
       "id": 2620255,
@@ -3934,7 +4430,8 @@
       "level": 2,
       "lat": 53.79485,
       "lon": -1.5456551,
-      "personnel": 43
+      "personnel": 43,
+      "small": true
     },
     {
       "id": 2311534,
@@ -3944,7 +4441,8 @@
       "level": 0,
       "lat": 53.99280146395164,
       "lon": -1.5182799318439455,
-      "personnel": 200
+      "personnel": 200,
+      "small": false
     },
     {
       "id": 2656580,
@@ -3954,7 +4452,8 @@
       "level": 1,
       "lat": 51.2805415,
       "lon": -0.075795,
-      "personnel": 10
+      "personnel": 10,
+      "small": true
     },
     {
       "id": 2620959,
@@ -3964,7 +4463,8 @@
       "level": 1,
       "lat": 53.7022673,
       "lon": -1.6518805,
-      "personnel": 37
+      "personnel": 37,
+      "small": true
     },
     {
       "id": 2033679,
@@ -3974,7 +4474,8 @@
       "level": 2,
       "lat": 51.51198223018847,
       "lon": -0.09735702364887618,
-      "personnel": 200
+      "personnel": 200,
+      "small": false
     },
     {
       "id": 2325710,
@@ -3984,7 +4485,8 @@
       "level": 7,
       "lat": 54.281178237148936,
       "lon": -0.40698258763913125,
-      "personnel": 200
+      "personnel": 200,
+      "small": false
     },
     {
       "id": 2320404,
@@ -3994,7 +4496,8 @@
       "level": 2,
       "lat": 51.47166626305653,
       "lon": -0.4590044680442218,
-      "personnel": 200
+      "personnel": 200,
+      "small": false
     },
     {
       "id": 2318646,
@@ -4004,7 +4507,8 @@
       "level": 2,
       "lat": 51.48484769056286,
       "lon": -0.033829908434200355,
-      "personnel": 200
+      "personnel": 200,
+      "small": false
     },
     {
       "id": 2360732,
@@ -4014,7 +4518,8 @@
       "level": 5,
       "lat": 51.35780802362551,
       "lon": -2.3716528792951537,
-      "personnel": 200
+      "personnel": 200,
+      "small": false
     },
     {
       "id": 2318732,
@@ -4024,7 +4529,8 @@
       "level": 4,
       "lat": 50.89256226163509,
       "lon": -1.4055767474657461,
-      "personnel": 200
+      "personnel": 200,
+      "small": false
     },
     {
       "id": 2636822,
@@ -4034,7 +4540,8 @@
       "level": 0,
       "lat": 50.7302753,
       "lon": -1.8665543,
-      "personnel": 26
+      "personnel": 26,
+      "small": true
     },
     {
       "id": 2635199,
@@ -4044,7 +4551,8 @@
       "level": 0,
       "lat": 50.874254649874004,
       "lon": -2.9606053373878924,
-      "personnel": 27
+      "personnel": 27,
+      "small": true
     },
     {
       "id": 2311778,
@@ -4054,7 +4562,8 @@
       "level": 0,
       "lat": 50.92479830163213,
       "lon": -1.395061439554288,
-      "personnel": 0
+      "personnel": 0,
+      "small": false
     },
     {
       "id": 2317874,
@@ -4064,7 +4573,8 @@
       "level": 2,
       "lat": 51.47153443644387,
       "lon": -0.4589267897798176,
-      "personnel": 200
+      "personnel": 200,
+      "small": false
     },
     {
       "id": 2325716,
@@ -4074,7 +4584,8 @@
       "level": 3,
       "lat": 54.271882615570604,
       "lon": -0.41736325615897896,
-      "personnel": 200
+      "personnel": 200,
+      "small": false
     },
     {
       "id": 2312349,
@@ -4084,7 +4595,8 @@
       "level": 4,
       "lat": 50.90372366511442,
       "lon": -1.4036165381705772,
-      "personnel": 200
+      "personnel": 200,
+      "small": false
     },
     {
       "id": 2041380,
@@ -4094,7 +4606,8 @@
       "level": 2,
       "lat": 51.51130186992515,
       "lon": -0.11885529196542406,
-      "personnel": 200
+      "personnel": 200,
+      "small": false
     },
     {
       "id": 2506985,
@@ -4104,7 +4617,8 @@
       "level": 0,
       "lat": 51.23805840499514,
       "lon": -2.311358561144637,
-      "personnel": 0
+      "personnel": 0,
+      "small": false
     },
     {
       "id": 2349731,
@@ -4114,7 +4628,8 @@
       "level": 4,
       "lat": 53.9463895546954,
       "lon": -1.072185743925276,
-      "personnel": 200
+      "personnel": 200,
+      "small": false
     },
     {
       "id": 2481623,
@@ -4124,7 +4639,8 @@
       "level": 2,
       "lat": 51.1886791,
       "lon": -2.5495452,
-      "personnel": 156
+      "personnel": 156,
+      "small": true
     },
     {
       "id": 2620223,
@@ -4134,7 +4650,8 @@
       "level": 0,
       "lat": 53.794816144779,
       "lon": -1.5482316659310116,
-      "personnel": 0
+      "personnel": 0,
+      "small": false
     },
     {
       "id": 2654951,
@@ -4144,7 +4661,8 @@
       "level": 0,
       "lat": 51.43667779482982,
       "lon": -2.8663935442003736,
-      "personnel": 12
+      "personnel": 12,
+      "small": false
     },
     {
       "id": 2311542,
@@ -4154,7 +4672,8 @@
       "level": 2,
       "lat": 54.0071004729002,
       "lon": -1.4647879237126022,
-      "personnel": 200
+      "personnel": 200,
+      "small": false
     },
     {
       "id": 2353684,
@@ -4164,7 +4683,8 @@
       "level": 0,
       "lat": 51.5484492,
       "lon": -2.5562629,
-      "personnel": 0
+      "personnel": 0,
+      "small": false
     },
     {
       "id": 2633720,
@@ -4174,7 +4694,8 @@
       "level": 1,
       "lat": 51.1437288,
       "lon": -2.7315327,
-      "personnel": 28
+      "personnel": 28,
+      "small": true
     },
     {
       "id": 2318596,
@@ -4184,7 +4705,8 @@
       "level": 4,
       "lat": 51.482276298683466,
       "lon": -0.17390483465053036,
-      "personnel": 200
+      "personnel": 200,
+      "small": false
     },
     {
       "id": 2333522,
@@ -4194,7 +4716,8 @@
       "level": 2,
       "lat": 51.49721529471481,
       "lon": -0.10486581445809218,
-      "personnel": 200
+      "personnel": 200,
+      "small": true
     },
     {
       "id": 2033689,
@@ -4204,7 +4727,8 @@
       "level": 2,
       "lat": 51.54642007721322,
       "lon": -0.10331891087059228,
-      "personnel": 200
+      "personnel": 200,
+      "small": false
     },
     {
       "id": 1984387,
@@ -4214,7 +4738,8 @@
       "level": 2,
       "lat": 51.51246206568565,
       "lon": -0.19071993868881512,
-      "personnel": 200
+      "personnel": 200,
+      "small": false
     },
     {
       "id": 2352918,
@@ -4224,7 +4749,8 @@
       "level": 2,
       "lat": 54.13808720369759,
       "lon": -0.8041484841334148,
-      "personnel": 200
+      "personnel": 200,
+      "small": false
     },
     {
       "id": 2477884,
@@ -4234,7 +4760,8 @@
       "level": 0,
       "lat": 52.40708813072416,
       "lon": -1.507644245412419,
-      "personnel": 153
+      "personnel": 153,
+      "small": false
     },
     {
       "id": 2621094,
@@ -4244,7 +4771,8 @@
       "level": 1,
       "lat": 53.0278542,
       "lon": -2.2024662,
-      "personnel": 38
+      "personnel": 38,
+      "small": true
     },
     {
       "id": 2648341,
@@ -4254,7 +4782,8 @@
       "level": 0,
       "lat": 51.8662586,
       "lon": -4.2860023,
-      "personnel": 17
+      "personnel": 17,
+      "small": true
     },
     {
       "id": 2339238,
@@ -4264,7 +4793,8 @@
       "level": 4,
       "lat": 51.47003159010851,
       "lon": -0.4577461057321879,
-      "personnel": 200
+      "personnel": 200,
+      "small": false
     },
     {
       "id": 2353683,
@@ -4274,7 +4804,8 @@
       "level": 5,
       "lat": 51.2894235085542,
       "lon": -2.456687298230694,
-      "personnel": 200
+      "personnel": 200,
+      "small": false
     },
     {
       "id": 2648343,
@@ -4284,7 +4815,8 @@
       "level": 0,
       "lat": 51.691325392340694,
       "lon": -4.9213215278773035,
-      "personnel": 17
+      "personnel": 17,
+      "small": true
     },
     {
       "id": 2635584,
@@ -4294,7 +4826,8 @@
       "level": 0,
       "lat": 50.9904534,
       "lon": -1.4934589,
-      "personnel": 13
+      "personnel": 13,
+      "small": true
     },
     {
       "id": 2654834,
@@ -4304,7 +4837,8 @@
       "level": 1,
       "lat": 51.344258160582136,
       "lon": -2.981580427113947,
-      "personnel": 13
+      "personnel": 13,
+      "small": false
     },
     {
       "id": 2572701,
@@ -4314,7 +4848,8 @@
       "level": 0,
       "lat": 51.338962961579824,
       "lon": -1.9813429906228315,
-      "personnel": 0
+      "personnel": 0,
+      "small": false
     },
     {
       "id": 2650941,
@@ -4324,7 +4859,8 @@
       "level": 0,
       "lat": 52.86239493159805,
       "lon": -3.0476990254114105,
-      "personnel": 14
+      "personnel": 14,
+      "small": true
     },
     {
       "id": 2657264,
@@ -4334,7 +4870,8 @@
       "level": 0,
       "lat": 51.235258813224014,
       "lon": -2.9992715725343557,
-      "personnel": 10
+      "personnel": 10,
+      "small": false
     },
     {
       "id": 2636829,
@@ -4344,7 +4881,8 @@
       "level": 0,
       "lat": 50.84697068332217,
       "lon": -1.7917471093523079,
-      "personnel": 13
+      "personnel": 13,
+      "small": true
     },
     {
       "id": 2620355,
@@ -4354,7 +4892,8 @@
       "level": 10,
       "lat": 53.8023946581611,
       "lon": -1.554507023226996,
-      "personnel": 0
+      "personnel": 0,
+      "small": false
     },
     {
       "id": 2657281,
@@ -4364,7 +4903,8 @@
       "level": 0,
       "lat": 51.0077322,
       "lon": -0.9298533,
-      "personnel": 9
+      "personnel": 9,
+      "small": true
     },
     {
       "id": 1844367,
@@ -4374,7 +4914,8 @@
       "level": 15,
       "lat": 51.5100864481953,
       "lon": -0.07236909155816951,
-      "personnel": 200
+      "personnel": 200,
+      "small": false
     },
     {
       "id": 2636839,
@@ -4384,7 +4925,8 @@
       "level": 0,
       "lat": 50.72063910634473,
       "lon": -3.4651380366755107,
-      "personnel": 24
+      "personnel": 24,
+      "small": true
     },
     {
       "id": 2648345,
@@ -4394,7 +4936,8 @@
       "level": 0,
       "lat": 51.7979362,
       "lon": -4.9682102,
-      "personnel": 17
+      "personnel": 17,
+      "small": true
     },
     {
       "id": 2650698,
@@ -4404,7 +4947,8 @@
       "level": 0,
       "lat": 53.20674753471517,
       "lon": -3.027466951142558,
-      "personnel": 15
+      "personnel": 15,
+      "small": true
     },
     {
       "id": 2636826,
@@ -4414,7 +4958,8 @@
       "level": 0,
       "lat": 50.92760551795115,
       "lon": -2.301659718136811,
-      "personnel": 26
+      "personnel": 26,
+      "small": true
     },
     {
       "id": 2652209,
@@ -4424,7 +4969,8 @@
       "level": 1,
       "lat": 54.15257684745951,
       "lon": -4.490164602375596,
-      "personnel": 14
+      "personnel": 14,
+      "small": true
     },
     {
       "id": 2360510,
@@ -4434,7 +4980,8 @@
       "level": 5,
       "lat": 51.21952374062008,
       "lon": -2.3267124370156784,
-      "personnel": 200
+      "personnel": 200,
+      "small": false
     },
     {
       "id": 2624708,
@@ -4444,7 +4991,8 @@
       "level": 1,
       "lat": 51.5628858,
       "lon": -1.7684743,
-      "personnel": 33
+      "personnel": 33,
+      "small": true
     },
     {
       "id": 2633092,
@@ -4454,7 +5002,8 @@
       "level": 0,
       "lat": 54.210236725013374,
       "lon": -0.28433153372713493,
-      "personnel": 30
+      "personnel": 30,
+      "small": false
     },
     {
       "id": 2657727,
@@ -4464,7 +5013,8 @@
       "level": 0,
       "lat": 54.06490422116287,
       "lon": -2.282898963424587,
-      "personnel": 8
+      "personnel": 8,
+      "small": true
     },
     {
       "id": 2635479,
@@ -4474,7 +5024,8 @@
       "level": 0,
       "lat": 50.8806232,
       "lon": -2.7981752,
-      "personnel": 27
+      "personnel": 27,
+      "small": true
     },
     {
       "id": 2657760,
@@ -4484,7 +5035,8 @@
       "level": 0,
       "lat": 51.42726194851315,
       "lon": -3.172390103917924,
-      "personnel": 9
+      "personnel": 9,
+      "small": false
     },
     {
       "id": 2648339,
@@ -4494,7 +5046,8 @@
       "level": 0,
       "lat": 51.69184102080288,
       "lon": -4.135345023786211,
-      "personnel": 17
+      "personnel": 17,
+      "small": true
     },
     {
       "id": 2650937,
@@ -4504,7 +5057,8 @@
       "level": 0,
       "lat": 52.692341565526135,
       "lon": -2.7713298545117584,
-      "personnel": 0
+      "personnel": 0,
+      "small": false
     },
     {
       "id": 2621069,
@@ -4514,7 +5068,8 @@
       "level": 0,
       "lat": 52.189117993569845,
       "lon": -2.2222760915892956,
-      "personnel": 0
+      "personnel": 0,
+      "small": false
     },
     {
       "id": 2652166,
@@ -4524,7 +5079,8 @@
       "level": 0,
       "lat": 52.05716888865516,
       "lon": -2.706243211961644,
-      "personnel": 0
+      "personnel": 0,
+      "small": false
     },
     {
       "id": 2642421,
@@ -4534,7 +5090,8 @@
       "level": 0,
       "lat": 50.4576879845531,
       "lon": -4.463332740159219,
-      "personnel": 21
+      "personnel": 21,
+      "small": true
     },
     {
       "id": 2621089,
@@ -4544,7 +5101,8 @@
       "level": 1,
       "lat": 52.776945,
       "lon": -1.5569444,
-      "personnel": 38
+      "personnel": 38,
+      "small": true
     },
     {
       "id": 2652890,
@@ -4554,7 +5112,8 @@
       "level": 1,
       "lat": 51.3091531,
       "lon": 3.8606632,
-      "personnel": 14
+      "personnel": 14,
+      "small": true
     },
     {
       "id": 2657778,
@@ -4564,7 +5123,8 @@
       "level": 0,
       "lat": 51.72384587340189,
       "lon": -2.4823785689930267,
-      "personnel": 10
+      "personnel": 10,
+      "small": false
     },
     {
       "id": 2390840,
@@ -4574,7 +5134,8 @@
       "level": 19,
       "lat": 51.3794051782381,
       "lon": -2.3573133894477687,
-      "personnel": 200
+      "personnel": 200,
+      "small": false
     },
     {
       "id": 2659457,
@@ -4584,7 +5145,8 @@
       "level": 0,
       "lat": 51.68913836277935,
       "lon": -2.3548276276925777,
-      "personnel": 7
+      "personnel": 7,
+      "small": true
     },
     {
       "id": 2658580,
@@ -4594,7 +5156,8 @@
       "level": 0,
       "lat": 51.4008244,
       "lon": -3.4391048,
-      "personnel": 8
+      "personnel": 8,
+      "small": false
     },
     {
       "id": 2642426,
@@ -4604,7 +5167,8 @@
       "level": 1,
       "lat": 50.2666752,
       "lon": -5.0915109,
-      "personnel": 21
+      "personnel": 21,
+      "small": true
     },
     {
       "id": 2638164,
@@ -4614,7 +5178,8 @@
       "level": 0,
       "lat": 50.5916215,
       "lon": -3.6783256,
-      "personnel": 24
+      "personnel": 24,
+      "small": true
     },
     {
       "id": 2639115,
@@ -4624,7 +5189,8 @@
       "level": 0,
       "lat": 50.513367,
       "lon": -4.8366036,
-      "personnel": 23
+      "personnel": 23,
+      "small": true
     },
     {
       "id": 2572679,
@@ -4634,7 +5200,8 @@
       "level": 0,
       "lat": 51.49474349492543,
       "lon": -2.5914042228812084,
-      "personnel": 0
+      "personnel": 0,
+      "small": false
     },
     {
       "id": 2342741,
@@ -4644,7 +5211,8 @@
       "level": 0,
       "lat": 50.89390585587295,
       "lon": -1.424432510482214,
-      "personnel": 200
+      "personnel": 200,
+      "small": false
     },
     {
       "id": 2481571,
@@ -4654,7 +5222,8 @@
       "level": 14,
       "lat": 51.49837969070646,
       "lon": -2.5839830641080153,
-      "personnel": 167
+      "personnel": 167,
+      "small": false
     },
     {
       "id": 2621096,
@@ -4664,7 +5233,8 @@
       "level": 1,
       "lat": 52.45693106435432,
       "lon": -1.483454997737234,
-      "personnel": 38
+      "personnel": 38,
+      "small": true
     },
     {
       "id": 2567757,
@@ -4674,7 +5244,8 @@
       "level": 2,
       "lat": 51.4312083,
       "lon": -2.1876938,
-      "personnel": 94
+      "personnel": 94,
+      "small": false
     },
     {
       "id": 2650604,
@@ -4684,7 +5255,8 @@
       "level": 0,
       "lat": 53.28828763196834,
       "lon": -3.7103439019962305,
-      "personnel": 15
+      "personnel": 15,
+      "small": true
     },
     {
       "id": 2622184,
@@ -4694,7 +5266,8 @@
       "level": 0,
       "lat": 53.842315876137604,
       "lon": -0.42276720620513036,
-      "personnel": 0
+      "personnel": 0,
+      "small": false
     },
     {
       "id": 1984410,
@@ -4704,7 +5277,8 @@
       "level": 5,
       "lat": 51.507233614675144,
       "lon": -0.12123448737449749,
-      "personnel": 199
+      "personnel": 199,
+      "small": false
     },
     {
       "id": 2648323,
@@ -4714,7 +5288,8 @@
       "level": 0,
       "lat": 51.4138294,
       "lon": -3.2850269,
-      "personnel": 17
+      "personnel": 17,
+      "small": true
     },
     {
       "id": 2319655,
@@ -4724,7 +5299,8 @@
       "level": 0,
       "lat": 51.262286951573614,
       "lon": -1.0890399872677607,
-      "personnel": 0
+      "personnel": 0,
+      "small": false
     },
     {
       "id": 2582593,
@@ -4734,7 +5310,8 @@
       "level": 0,
       "lat": 51.86231296833556,
       "lon": -2.2486301175423504,
-      "personnel": 0
+      "personnel": 0,
+      "small": false
     },
     {
       "id": 2631322,
@@ -4744,7 +5321,8 @@
       "level": 1,
       "lat": 53.68553363727742,
       "lon": -1.5020676629319831,
-      "personnel": 29
+      "personnel": 29,
+      "small": true
     },
     {
       "id": 2621054,
@@ -4754,7 +5332,8 @@
       "level": 0,
       "lat": 52.62720174725001,
       "lon": -1.1352211796563945,
-      "personnel": 0
+      "personnel": 0,
+      "small": false
     },
     {
       "id": 1988744,
@@ -4764,7 +5343,8 @@
       "level": 0,
       "lat": 53.98857861880335,
       "lon": -1.5384455740283822,
-      "personnel": 0
+      "personnel": 0,
+      "small": false
     },
     {
       "id": 2364325,
@@ -4774,7 +5354,8 @@
       "level": 0,
       "lat": 52.946822813173625,
       "lon": -1.13869749462108,
-      "personnel": 0
+      "personnel": 0,
+      "small": false
     },
     {
       "id": 2621011,
@@ -4784,7 +5365,8 @@
       "level": 0,
       "lat": 52.913880954626656,
       "lon": -1.4705872694789495,
-      "personnel": 0
+      "personnel": 0,
+      "small": false
     },
     {
       "id": 2325711,
@@ -4794,7 +5376,8 @@
       "level": 0,
       "lat": 54.27694747056573,
       "lon": -0.41821213497615445,
-      "personnel": 0
+      "personnel": 0,
+      "small": false
     },
     {
       "id": 2648342,
@@ -4804,7 +5387,8 @@
       "level": 0,
       "lat": 51.6715301,
       "lon": -4.7091015,
-      "personnel": 17
+      "personnel": 17,
+      "small": true
     },
     {
       "id": 2633098,
@@ -4814,7 +5398,8 @@
       "level": 1,
       "lat": 53.23044465540728,
       "lon": -1.429146157639583,
-      "personnel": 36
+      "personnel": 36,
+      "small": true
     },
     {
       "id": 2633082,
@@ -4824,7 +5409,8 @@
       "level": 0,
       "lat": 53.581843586794335,
       "lon": -0.35499023898236515,
-      "personnel": 32
+      "personnel": 32,
+      "small": false
     },
     {
       "id": 2621085,
@@ -4834,7 +5420,8 @@
       "level": 1,
       "lat": 52.40067920386779,
       "lon": -1.998907892024531,
-      "personnel": 38
+      "personnel": 38,
+      "small": true
     },
     {
       "id": 2620974,
@@ -4844,7 +5431,8 @@
       "level": 0,
       "lat": 53.37851880513755,
       "lon": -1.4931442304581821,
-      "personnel": 0
+      "personnel": 0,
+      "small": false
     },
     {
       "id": 2621080,
@@ -4854,7 +5442,8 @@
       "level": 0,
       "lat": 52.47347948103825,
       "lon": -1.912657241009031,
-      "personnel": 0
+      "personnel": 0,
+      "small": false
     },
     {
       "id": 2621062,
@@ -4864,7 +5453,8 @@
       "level": 0,
       "lat": 52.809699180135574,
       "lon": -2.108214877646262,
-      "personnel": 0
+      "personnel": 0,
+      "small": false
     },
     {
       "id": 2339242,
@@ -4874,7 +5464,8 @@
       "level": 0,
       "lat": 51.471793716660486,
       "lon": -0.46553505969875775,
-      "personnel": 0
+      "personnel": 0,
+      "small": false
     },
     {
       "id": 2465954,
@@ -4884,7 +5475,8 @@
       "level": 3,
       "lat": 51.4152639,
       "lon": -2.5016294,
-      "personnel": 168
+      "personnel": 168,
+      "small": false
     },
     {
       "id": 2648936,
@@ -4894,7 +5486,8 @@
       "level": 1,
       "lat": 52.411049532803695,
       "lon": -4.065782876648873,
-      "personnel": 16
+      "personnel": 16,
+      "small": true
     },
     {
       "id": 2656577,
@@ -4904,7 +5497,8 @@
       "level": 1,
       "lat": 51.4100008,
       "lon": -0.1931677,
-      "personnel": 10
+      "personnel": 10,
+      "small": true
     },
     {
       "id": 2621070,
@@ -4914,7 +5508,8 @@
       "level": 1,
       "lat": 52.18170264244431,
       "lon": -2.191222980004024,
-      "personnel": 38
+      "personnel": 38,
+      "small": true
     },
     {
       "id": 2390843,
@@ -4924,7 +5519,8 @@
       "level": 24,
       "lat": 51.3888864379704,
       "lon": -2.3547692051119964,
-      "personnel": 227
+      "personnel": 227,
+      "small": false
     },
     {
       "id": 2639117,
@@ -4934,7 +5530,8 @@
       "level": 1,
       "lat": 50.33929202759314,
       "lon": -4.783462865451735,
-      "personnel": 23
+      "personnel": 23,
+      "small": true
     },
     {
       "id": 2620870,
@@ -4944,7 +5541,8 @@
       "level": 5,
       "lat": 54.07054890956068,
       "lon": -1.9978296489247747,
-      "personnel": 45
+      "personnel": 45,
+      "small": false
     },
     {
       "id": 2633100,
@@ -4954,7 +5552,8 @@
       "level": 1,
       "lat": 53.19617333374617,
       "lon": -1.3258881403335987,
-      "personnel": 29
+      "personnel": 29,
+      "small": true
     },
     {
       "id": 2620244,
@@ -4964,7 +5563,8 @@
       "level": 1,
       "lat": 53.803281262801555,
       "lon": -1.551981394859632,
-      "personnel": 39
+      "personnel": 39,
+      "small": true
     },
     {
       "id": 2572619,
@@ -4974,7 +5574,8 @@
       "level": 11,
       "lat": 51.38578818066822,
       "lon": -2.716475249695491,
-      "personnel": 95
+      "personnel": 95,
+      "small": false
     },
     {
       "id": 2429826,
@@ -4984,7 +5585,8 @@
       "level": 5,
       "lat": 51.29874962661729,
       "lon": -2.4933505365978057,
-      "personnel": 197
+      "personnel": 197,
+      "small": false
     },
     {
       "id": 2620948,
@@ -4994,7 +5596,8 @@
       "level": 1,
       "lat": 53.9279819,
       "lon": -1.3810328,
-      "personnel": 37
+      "personnel": 37,
+      "small": true
     },
     {
       "id": 2567206,
@@ -5004,7 +5607,8 @@
       "level": 3,
       "lat": 51.45303237025197,
       "lon": -2.5866705789044167,
-      "personnel": 95
+      "personnel": 95,
+      "small": false
     },
     {
       "id": 2652157,
@@ -5014,7 +5618,8 @@
       "level": 0,
       "lat": 52.90840548511547,
       "lon": -2.4868739445124035,
-      "personnel": 14
+      "personnel": 14,
+      "small": true
     },
     {
       "id": 2621681,
@@ -5024,7 +5629,8 @@
       "level": 1,
       "lat": 53.71960503013452,
       "lon": -1.3583310709940095,
-      "personnel": 37
+      "personnel": 37,
+      "small": true
     },
     {
       "id": 2638159,
@@ -5034,7 +5640,8 @@
       "level": 0,
       "lat": 50.7200729,
       "lon": -3.9901327,
-      "personnel": 24
+      "personnel": 24,
+      "small": true
     },
     {
       "id": 2364565,
@@ -5044,7 +5651,8 @@
       "level": 1,
       "lat": 52.9178716,
       "lon": -1.1369139,
-      "personnel": 126
+      "personnel": 126,
+      "small": true
     },
     {
       "id": 2652272,
@@ -5054,7 +5662,8 @@
       "level": 1,
       "lat": 52.79746949846148,
       "lon": -6.154932257825366,
-      "personnel": 14
+      "personnel": 14,
+      "small": true
     },
     {
       "id": 2652208,
@@ -5064,7 +5673,8 @@
       "level": 0,
       "lat": 54.17252431374711,
       "lon": -4.512472338899224,
-      "personnel": 14
+      "personnel": 14,
+      "small": true
     },
     {
       "id": 2652187,
@@ -5074,7 +5684,8 @@
       "level": 0,
       "lat": 52.203658991826735,
       "lon": -3.034321817630258,
-      "personnel": 14
+      "personnel": 14,
+      "small": true
     },
     {
       "id": 2636823,
@@ -5084,7 +5695,8 @@
       "level": 0,
       "lat": 50.8675752,
       "lon": -2.1564143,
-      "personnel": 26
+      "personnel": 26,
+      "small": true
     },
     {
       "id": 2635484,
@@ -5094,7 +5706,8 @@
       "level": 1,
       "lat": 51.09041743336493,
       "lon": -2.267742084061592,
-      "personnel": 27
+      "personnel": 27,
+      "small": true
     },
     {
       "id": 2635489,
@@ -5104,7 +5717,8 @@
       "level": 0,
       "lat": 51.443583115127076,
       "lon": -1.6063853021179715,
-      "personnel": 27
+      "personnel": 27,
+      "small": true
     },
     {
       "id": 2635515,
@@ -5114,7 +5728,8 @@
       "level": 1,
       "lat": 50.7339426,
       "lon": -2.9356135,
-      "personnel": 27
+      "personnel": 27,
+      "small": true
     },
     {
       "id": 2590010,
@@ -5124,7 +5739,8 @@
       "level": 2,
       "lat": 51.8662022,
       "lon": -2.2515876,
-      "personnel": 71
+      "personnel": 71,
+      "small": false
     },
     {
       "id": 2647806,
@@ -5134,7 +5750,8 @@
       "level": 1,
       "lat": 51.5018487581716,
       "lon": -3.367842795250535,
-      "personnel": 18
+      "personnel": 18,
+      "small": true
     },
     {
       "id": 2642431,
@@ -5144,7 +5761,8 @@
       "level": 0,
       "lat": 50.445795255131785,
       "lon": -4.119448911799589,
-      "personnel": 21
+      "personnel": 21,
+      "small": true
     },
     {
       "id": 2624710,
@@ -5154,7 +5772,8 @@
       "level": 0,
       "lat": 51.4208155,
       "lon": -1.7199561,
-      "personnel": 33
+      "personnel": 33,
+      "small": true
     },
     {
       "id": 2620838,
@@ -5164,7 +5783,8 @@
       "level": 1,
       "lat": 53.9587074,
       "lon": -2.0297929,
-      "personnel": 38
+      "personnel": 38,
+      "small": true
     },
     {
       "id": 2622177,
@@ -5174,7 +5794,8 @@
       "level": 1,
       "lat": 53.929560349932714,
       "lon": -0.7740105655019428,
-      "personnel": 37
+      "personnel": 37,
+      "small": true
     },
     {
       "id": 2634259,
@@ -5184,7 +5805,8 @@
       "level": 1,
       "lat": 53.32923344538835,
       "lon": -0.9595714000254363,
-      "personnel": 28
+      "personnel": 28,
+      "small": true
     },
     {
       "id": 2646534,
@@ -5194,7 +5816,8 @@
       "level": 0,
       "lat": 49.9161408,
       "lon": -6.3079298,
-      "personnel": 19
+      "personnel": 19,
+      "small": true
     },
     {
       "id": 2656578,
@@ -5204,7 +5827,8 @@
       "level": 1,
       "lat": 51.37796650193354,
       "lon": -0.06013011929070028,
-      "personnel": 10
+      "personnel": 10,
+      "small": true
     },
     {
       "id": 2656576,
@@ -5214,7 +5838,8 @@
       "level": 1,
       "lat": 51.4844398,
       "lon": -0.1940303,
-      "personnel": 10
+      "personnel": 10,
+      "small": true
     },
     {
       "id": 2656581,
@@ -5224,7 +5849,8 @@
       "level": 1,
       "lat": 51.4929168,
       "lon": -0.1212483,
-      "personnel": 17
+      "personnel": 17,
+      "small": true
     },
     {
       "id": 2656573,
@@ -5234,7 +5860,8 @@
       "level": 1,
       "lat": 51.53095521260887,
       "lon": -0.2691518897957037,
-      "personnel": 10
+      "personnel": 10,
+      "small": true
     },
     {
       "id": 2649541,
@@ -5244,7 +5871,8 @@
       "level": 1,
       "lat": 52.5826406,
       "lon": -4.0808656,
-      "personnel": 16
+      "personnel": 16,
+      "small": true
     },
     {
       "id": 2652883,
@@ -5254,7 +5882,8 @@
       "level": 0,
       "lat": 51.105862520377244,
       "lon": 2.6493489895372813,
-      "personnel": 14
+      "personnel": 14,
+      "small": true
     },
     {
       "id": 2652891,
@@ -5264,7 +5893,8 @@
       "level": 1,
       "lat": 51.39352,
       "lon": 3.55867,
-      "personnel": 14
+      "personnel": 14,
+      "small": true
     },
     {
       "id": 2652159,
@@ -5274,7 +5904,8 @@
       "level": 0,
       "lat": 52.71508941895851,
       "lon": -2.437365256525007,
-      "personnel": 14
+      "personnel": 14,
+      "small": true
     },
     {
       "id": 2649692,
@@ -5284,7 +5915,8 @@
       "level": 0,
       "lat": 53.20921130446036,
       "lon": -4.1599624202183945,
-      "personnel": 16
+      "personnel": 16,
+      "small": true
     },
     {
       "id": 2621063,
@@ -5294,7 +5926,8 @@
       "level": 1,
       "lat": 52.8242958,
       "lon": -2.1091786,
-      "personnel": 38
+      "personnel": 38,
+      "small": true
     },
     {
       "id": 2325713,
@@ -5304,7 +5937,8 @@
       "level": 4,
       "lat": 54.28179980467448,
       "lon": -0.4370821595078071,
-      "personnel": 0
+      "personnel": 0,
+      "small": false
     },
     {
       "id": 2638167,
@@ -5314,7 +5948,8 @@
       "level": 0,
       "lat": 51.00988255585712,
       "lon": -4.223847738874316,
-      "personnel": 24
+      "personnel": 24,
+      "small": true
     },
     {
       "id": 2620970,
@@ -5324,7 +5959,8 @@
       "level": 1,
       "lat": 53.681487638698044,
       "lon": -1.4868034542363004,
-      "personnel": 37
+      "personnel": 37,
+      "small": true
     },
     {
       "id": 2636818,
@@ -5334,7 +5970,8 @@
       "level": 2,
       "lat": 50.7326422,
       "lon": -2.7596078,
-      "personnel": 26
+      "personnel": 26,
+      "small": true
     },
     {
       "id": 2621059,
@@ -5344,7 +5981,8 @@
       "level": 1,
       "lat": 52.632155936913556,
       "lon": -1.0821938021084405,
-      "personnel": 38
+      "personnel": 38,
+      "small": true
     },
     {
       "id": 2620249,
@@ -5354,7 +5992,8 @@
       "level": 5,
       "lat": 53.77337939296604,
       "lon": -1.5473890470867506,
-      "personnel": 46
+      "personnel": 46,
+      "small": true
     },
     {
       "id": 2488628,
@@ -5364,7 +6003,8 @@
       "level": 2,
       "lat": 51.18991375614429,
       "lon": -2.5504767649084843,
-      "personnel": 137
+      "personnel": 137,
+      "small": true
     },
     {
       "id": 2621031,
@@ -5374,7 +6014,8 @@
       "level": 1,
       "lat": 53.0490631,
       "lon": -1.2149117,
-      "personnel": 38
+      "personnel": 38,
+      "small": true
     },
     {
       "id": 2635212,
@@ -5384,7 +6025,8 @@
       "level": 1,
       "lat": 51.0385026,
       "lon": -3.5448407,
-      "personnel": 27
+      "personnel": 27,
+      "small": true
     },
     {
       "id": 2650501,
@@ -5394,7 +6036,8 @@
       "level": 0,
       "lat": 53.31335581606016,
       "lon": -3.8307387740412966,
-      "personnel": 15
+      "personnel": 15,
+      "small": true
     },
     {
       "id": 2471255,
@@ -5404,7 +6047,8 @@
       "level": 1,
       "lat": 51.5517246,
       "lon": -2.5576298,
-      "personnel": 163
+      "personnel": 163,
+      "small": false
     },
     {
       "id": 2635503,
@@ -5414,7 +6058,8 @@
       "level": 0,
       "lat": 50.783882,
       "lon": -2.9962753,
-      "personnel": 27
+      "personnel": 27,
+      "small": true
     },
     {
       "id": 2636838,
@@ -5424,7 +6069,8 @@
       "level": 0,
       "lat": 50.75188248198351,
       "lon": -3.28262662186587,
-      "personnel": 24
+      "personnel": 24,
+      "small": true
     },
     {
       "id": 2639114,
@@ -5434,7 +6080,8 @@
       "level": 0,
       "lat": 50.8735513,
       "lon": -4.4873226,
-      "personnel": 23
+      "personnel": 23,
+      "small": true
     },
     {
       "id": 2652886,
@@ -5444,7 +6091,8 @@
       "level": 1,
       "lat": 51.2352141,
       "lon": 2.9339938,
-      "personnel": 14
+      "personnel": 14,
+      "small": true
     },
     {
       "id": 2652887,
@@ -5454,7 +6102,8 @@
       "level": 1,
       "lat": 51.3104065,
       "lon": 3.1225203,
-      "personnel": 14
+      "personnel": 14,
+      "small": true
     },
     {
       "id": 2469519,
@@ -5464,7 +6113,8 @@
       "level": 0,
       "lat": 51.62444700946044,
       "lon": -3.9418341685379845,
-      "personnel": 0
+      "personnel": 0,
+      "small": false
     },
     {
       "id": 1984392,
@@ -5474,7 +6124,8 @@
       "level": 30,
       "lat": 51.51711454186931,
       "lon": -0.17422326377227623,
-      "personnel": 0
+      "personnel": 0,
+      "small": false
     },
     {
       "id": 2635487,
@@ -5484,7 +6135,8 @@
       "level": 0,
       "lat": 51.2431416,
       "lon": -1.665403,
-      "personnel": 27
+      "personnel": 27,
+      "small": true
     },
     {
       "id": 2601180,
@@ -5494,7 +6146,8 @@
       "level": 0,
       "lat": 50.94938084960407,
       "lon": 1.8579613948887528,
-      "personnel": 1
+      "personnel": 1,
+      "small": false
     },
     {
       "id": 2600988,
@@ -5504,7 +6157,8 @@
       "level": 2,
       "lat": 50.9573744768261,
       "lon": 1.8550827337770985,
-      "personnel": 56
+      "personnel": 56,
+      "small": true
     },
     {
       "id": 2620876,
@@ -5514,7 +6168,8 @@
       "level": 1,
       "lat": 53.79165476251375,
       "lon": -1.7849750659542662,
-      "personnel": 38
+      "personnel": 38,
+      "small": true
     },
     {
       "id": 2649006,
@@ -5524,7 +6179,8 @@
       "level": 0,
       "lat": 48.8381094548902,
       "lon": 2.361964152226319,
-      "personnel": 0
+      "personnel": 0,
+      "small": false
     },
     {
       "id": 1984638,
@@ -5534,7 +6190,8 @@
       "level": 2,
       "lat": 51.50162261450828,
       "lon": -0.12683875345071638,
-      "personnel": 200
+      "personnel": 200,
+      "small": false
     },
     {
       "id": 2635204,
@@ -5544,7 +6201,8 @@
       "level": 0,
       "lat": 51.1551068,
       "lon": -2.9859351,
-      "personnel": 27
+      "personnel": 27,
+      "small": true
     },
     {
       "id": 2483497,
@@ -5554,7 +6212,8 @@
       "level": 1,
       "lat": 51.19046716179557,
       "lon": -2.5626692312751667,
-      "personnel": 154
+      "personnel": 154,
+      "small": true
     },
     {
       "id": 2354627,
@@ -5564,7 +6223,8 @@
       "level": 19,
       "lat": 51.289412,
       "lon": -2.4566864,
-      "personnel": 275
+      "personnel": 275,
+      "small": false
     },
     {
       "id": 2360734,
@@ -5574,7 +6234,8 @@
       "level": 7,
       "lat": 51.391555007497075,
       "lon": -2.391265142966487,
-      "personnel": 227
+      "personnel": 227,
+      "small": false
     },
     {
       "id": 2621050,
@@ -5584,7 +6245,8 @@
       "level": 1,
       "lat": 53.13609083424673,
       "lon": -1.5476708152294496,
-      "personnel": 38
+      "personnel": 38,
+      "small": true
     },
     {
       "id": 2621012,
@@ -5594,7 +6256,8 @@
       "level": 1,
       "lat": 53.2362328,
       "lon": -1.4000486,
-      "personnel": 38
+      "personnel": 38,
+      "small": true
     },
     {
       "id": 2583388,
@@ -5604,7 +6267,8 @@
       "level": 3,
       "lat": 51.61229602753461,
       "lon": -2.517918090196061,
-      "personnel": 76
+      "personnel": 76,
+      "small": false
     },
     {
       "id": 2567212,
@@ -5614,7 +6278,8 @@
       "level": 9,
       "lat": 51.28179543578878,
       "lon": -2.767669185575443,
-      "personnel": 98
+      "personnel": 98,
+      "small": false
     },
     {
       "id": 2647798,
@@ -5624,11 +6289,580 @@
       "level": 1,
       "lat": 51.64865563891083,
       "lon": -2.5730852121621863,
-      "personnel": 25
+      "personnel": 25,
+      "small": true
     }
   ],
-  "vehicleStatus": {
-    "2": 1441,
-    "4": 10
+  "unitsSample": [
+    {
+      "id": 4926731,
+      "name": "WCP | LFB-008/WL-001",
+      "type": 0,
+      "buildingId": 1987510,
+      "status": 2
+    },
+    {
+      "id": 4926743,
+      "name": "WCP | LFB-008/L4x4-001 (P)",
+      "type": 1,
+      "buildingId": 1844367,
+      "status": 2
+    },
+    {
+      "id": 4926750,
+      "name": "CoW | LAS-001/AMB-001",
+      "type": 5,
+      "buildingId": 1844375,
+      "status": 2
+    },
+    {
+      "id": 4926753,
+      "name": "BTPV&P | BTP-001/IRV-001",
+      "type": 8,
+      "buildingId": 1844377,
+      "status": 2
+    },
+    {
+      "id": 4926757,
+      "name": "CoW | LAS-001/RRV-001",
+      "type": 10,
+      "buildingId": 1844375,
+      "status": 2
+    },
+    {
+      "id": 4926761,
+      "name": "WX-001 | 103 (S)",
+      "type": 8,
+      "buildingId": 1844377,
+      "status": 2
+    },
+    {
+      "id": 4926884,
+      "name": "NWCP | LFB-006/WL-001",
+      "type": 0,
+      "buildingId": 1844412,
+      "status": 2
+    },
+    {
+      "id": 4927854,
+      "name": "NWCP | LFB-006/WL-002",
+      "type": 0,
+      "buildingId": 1844412,
+      "status": 2
+    },
+    {
+      "id": 4929073,
+      "name": "CoW | LAS-001/AMB-002",
+      "type": 5,
+      "buildingId": 1844375,
+      "status": 2
+    },
+    {
+      "id": 4929313,
+      "name": "HLBRN | HRL-004/FO-001",
+      "type": 3,
+      "buildingId": 1845393,
+      "status": 2
+    },
+    {
+      "id": 4929766,
+      "name": "RHTHT | HRL-008/SAR4x4-001",
+      "type": 93,
+      "buildingId": 1845638,
+      "status": 2
+    },
+    {
+      "id": 5330397,
+      "name": "KGXSP | BTP-002/IRV-001",
+      "type": 8,
+      "buildingId": 1983967,
+      "status": 2
+    },
+    {
+      "id": 5330403,
+      "name": "KGXSP | BTP-002/IRV-002",
+      "type": 8,
+      "buildingId": 1983967,
+      "status": 2
+    },
+    {
+      "id": 5330499,
+      "name": "EUS | LFB-004/WL-001",
+      "type": 0,
+      "buildingId": 1984004,
+      "status": 2
+    },
+    {
+      "id": 5330618,
+      "name": "EUS | LFB-004/ARAP-001",
+      "type": 2,
+      "buildingId": 1984004,
+      "status": 2
+    },
+    {
+      "id": 5330650,
+      "name": "EUS | LAS-002/AMB-001",
+      "type": 5,
+      "buildingId": 1984068,
+      "status": 2
+    },
+    {
+      "id": 5330657,
+      "name": "EUS | LAS-002/OTL-001",
+      "type": 20,
+      "buildingId": 1984068,
+      "status": 2
+    },
+    {
+      "id": 5331506,
+      "name": "QW | LFB-007/WL-001",
+      "type": 0,
+      "buildingId": 1984339,
+      "status": 2
+    },
+    {
+      "id": 5331507,
+      "name": "KBR | LAS-003/AMB-001",
+      "type": 5,
+      "buildingId": 1984340,
+      "status": 2
+    },
+    {
+      "id": 5331514,
+      "name": "QW | LFB-007/WL-002",
+      "type": 0,
+      "buildingId": 1984339,
+      "status": 2
+    },
+    {
+      "id": 5331632,
+      "name": "K4T2",
+      "type": 8,
+      "buildingId": 1984387,
+      "status": 2
+    },
+    {
+      "id": 5331635,
+      "name": "K4A1",
+      "type": 13,
+      "buildingId": 1984387,
+      "status": 2
+    },
+    {
+      "id": 5331678,
+      "name": "KBR | LAS-003/RRV-001",
+      "type": 10,
+      "buildingId": 1984340,
+      "status": 2
+    },
+    {
+      "id": 5331705,
+      "name": "WSTM’R | RNLI-001/4×4-001",
+      "type": 66,
+      "buildingId": 1984410,
+      "status": 2
+    },
+    {
+      "id": 5331712,
+      "name": "WSTM’R | RNLI-001/ILB-001",
+      "type": 68,
+      "buildingId": 1984410,
+      "status": 2
+    },
+    {
+      "id": 5332265,
+      "name": "THML | MET-007/IRV-001",
+      "type": 8,
+      "buildingId": 1984600,
+      "status": 2
+    },
+    {
+      "id": 5332267,
+      "name": "THML | MET-007/IRV-002",
+      "type": 8,
+      "buildingId": 1984600,
+      "status": 2
+    },
+    {
+      "id": 5332349,
+      "name": "WM10 | MET-004/IRV-001",
+      "type": 8,
+      "buildingId": 1984638,
+      "status": 2
+    },
+    {
+      "id": 5332371,
+      "name": "WM10 | MET-004/DSU-001",
+      "type": 12,
+      "buildingId": 1984638,
+      "status": 2
+    },
+    {
+      "id": 5332969,
+      "name": "SJP | BTP-003/IRV-001",
+      "type": 8,
+      "buildingId": 1984841,
+      "status": 2
+    },
+    {
+      "id": 5333055,
+      "name": "PCDLY | HRL-007/CFR-001",
+      "type": 22,
+      "buildingId": 1984864,
+      "status": 2
+    },
+    {
+      "id": 5333298,
+      "name": "TRFSQR | HRL-009/CFR",
+      "type": 22,
+      "buildingId": 1984930,
+      "status": 2
+    },
+    {
+      "id": 5340152,
+      "name": "MA | LFB-005/WL-001",
+      "type": 0,
+      "buildingId": 1987510,
+      "status": 2
+    },
+    {
+      "id": 5340155,
+      "name": "MA | LFB-005/RSU-001",
+      "type": 4,
+      "buildingId": 1987510,
+      "status": 2
+    },
+    {
+      "id": 5340164,
+      "name": "MA | LAS-004/AMB-001",
+      "type": 5,
+      "buildingId": 1987515,
+      "status": 2
+    },
+    {
+      "id": 5340166,
+      "name": "MA | LAS-004/AMB-002",
+      "type": 5,
+      "buildingId": 1987515,
+      "status": 2
+    },
+    {
+      "id": 5340169,
+      "name": "MA | HRL-005/RRV-001",
+      "type": 10,
+      "buildingId": 1987514,
+      "status": 2
+    },
+    {
+      "id": 5340171,
+      "name": "MBA | MET-003/IRV-001",
+      "type": 8,
+      "buildingId": 1987519,
+      "status": 2
+    },
+    {
+      "id": 5340598,
+      "name": "WBR | LAS-005/AMB-001",
+      "type": 5,
+      "buildingId": 1987703,
+      "status": 2
+    },
+    {
+      "id": 5340621,
+      "name": "WBR | LAS-005/AMB-002",
+      "type": 5,
+      "buildingId": 1987703,
+      "status": 2
+    },
+    {
+      "id": 5340835,
+      "name": "K4T1",
+      "type": 8,
+      "buildingId": 1984387,
+      "status": 2
+    },
+    {
+      "id": 5341628,
+      "name": "HFS | NYF-001/WL-001",
+      "type": 0,
+      "buildingId": 1988057,
+      "status": 2
+    },
+    {
+      "id": 5341847,
+      "name": "HFS | NYF-001/WL-002",
+      "type": 0,
+      "buildingId": 1988057,
+      "status": 2
+    },
+    {
+      "id": 5342846,
+      "name": "HMC | M2XN/IRV-001",
+      "type": 8,
+      "buildingId": 1988488,
+      "status": 2
+    },
+    {
+      "id": 5342848,
+      "name": "HGFS | HRLNY-001/FO-001",
+      "type": 3,
+      "buildingId": 1988490,
+      "status": 2
+    },
+    {
+      "id": 5343001,
+      "name": "SMBR | NYF-004/WL-001",
+      "type": 0,
+      "buildingId": 1988549,
+      "status": 2
+    },
+    {
+      "id": 5343568,
+      "name": "SMBR | NYF-004/WL-002",
+      "type": 0,
+      "buildingId": 1988549,
+      "status": 2
+    },
+    {
+      "id": 5343593,
+      "name": "H3T1",
+      "type": 8,
+      "buildingId": 1988767,
+      "status": 2
+    },
+    {
+      "id": 5467024,
+      "name": "CoL | LFB-002/WL-001",
+      "type": 0,
+      "buildingId": 2033678,
+      "status": 2
+    },
+    {
+      "id": 5467025,
+      "name": "CoLP | MET-001/IRV-001",
+      "type": 8,
+      "buildingId": 2033679,
+      "status": 2
+    },
+    {
+      "id": 5467027,
+      "name": "CoL | HRL-001/FO-001",
+      "type": 3,
+      "buildingId": 2033681,
+      "status": 2
+    },
+    {
+      "id": 5467039,
+      "name": "ING | MET-002/IRV-001",
+      "type": 8,
+      "buildingId": 2033689,
+      "status": 2
+    },
+    {
+      "id": 5488513,
+      "name": "VXHL | HRL-006/RRV-001",
+      "type": 10,
+      "buildingId": 2041099,
+      "status": 2
+    },
+    {
+      "id": 5488517,
+      "name": "EaC | HRL-002/GNRL-PRAC-001",
+      "type": 21,
+      "buildingId": 2041100,
+      "status": 2
+    },
+    {
+      "id": 5489713,
+      "name": "GWCH | CRS-001/CRV-001",
+      "type": 57,
+      "buildingId": 2041379,
+      "status": 2
+    },
+    {
+      "id": 5489715,
+      "name": "STR | MET-006/IRV-001",
+      "type": 8,
+      "buildingId": 2041380,
+      "status": 2
+    },
+    {
+      "id": 5489761,
+      "name": "WSTM’R | SAR-001/OSV-001",
+      "type": 86,
+      "buildingId": 2041378,
+      "status": 2
+    },
+    {
+      "id": 5489786,
+      "name": "RRV",
+      "type": 10,
+      "buildingId": 2041409,
+      "status": 2
+    },
+    {
+      "id": 5496761,
+      "name": "CoL | LFB-002/RSU-001",
+      "type": 4,
+      "buildingId": 2033678,
+      "status": 2
+    },
+    {
+      "id": 5496781,
+      "name": "STR | MET-006/MRAV-001",
+      "type": 56,
+      "buildingId": 2041380,
+      "status": 2
+    },
+    {
+      "id": 5496791,
+      "name": "SJP | BTP-003/RTPC-001",
+      "type": 24,
+      "buildingId": 1984841,
+      "status": 2
+    },
+    {
+      "id": 5496793,
+      "name": "H3T2",
+      "type": 8,
+      "buildingId": 1988767,
+      "status": 2
+    },
+    {
+      "id": 5496872,
+      "name": "HMC | M2XN/IRV-002",
+      "type": 8,
+      "buildingId": 1988488,
+      "status": 2
+    },
+    {
+      "id": 5921429,
+      "name": "H’GTE | YAS-001/AMB-001",
+      "type": 5,
+      "buildingId": 2188370,
+      "status": 2
+    },
+    {
+      "id": 5921430,
+      "name": "H’GTE | YAS-001/RRV-001",
+      "type": 10,
+      "buildingId": 2188370,
+      "status": 2
+    },
+    {
+      "id": 6269467,
+      "name": "HGTAS | YAS-002/AMB-002",
+      "type": 5,
+      "buildingId": 2311527,
+      "status": 2
+    },
+    {
+      "id": 6269468,
+      "name": "HGTAS | YAS-002/AMB-001",
+      "type": 5,
+      "buildingId": 2311527,
+      "status": 2
+    },
+    {
+      "id": 6269473,
+      "name": "HPS | M2XN/IRV-001",
+      "type": 8,
+      "buildingId": 2311530,
+      "status": 2
+    },
+    {
+      "id": 6269475,
+      "name": "HPS | M2XN/DSU-001",
+      "type": 12,
+      "buildingId": 2311530,
+      "status": 2
+    },
+    {
+      "id": 6269495,
+      "name": "HDH | HRLNY-OTL-001",
+      "type": 20,
+      "buildingId": 2311534,
+      "status": 2
+    },
+    {
+      "id": 6269519,
+      "name": "KBR | NYF-002/WL-001",
+      "type": 0,
+      "buildingId": 2311542,
+      "status": 2
+    },
+    {
+      "id": 6269521,
+      "name": "KBR | NYF-002/FO-001",
+      "type": 3,
+      "buildingId": 2311542,
+      "status": 2
+    },
+    {
+      "id": 6270702,
+      "name": "STHPGS | SCAS-001/AMB-001",
+      "type": 5,
+      "buildingId": 2311779,
+      "status": 2
+    },
+    {
+      "id": 6270703,
+      "name": "STHPGS | SCAS-001/AMB-002",
+      "type": 5,
+      "buildingId": 2311779,
+      "status": 2
+    },
+    {
+      "id": 6270739,
+      "name": "Coastguard Commander",
+      "type": 60,
+      "buildingId": 2311793,
+      "status": 2
+    },
+    {
+      "id": 6271712,
+      "name": "LMBTH | HRL-003/FO-001",
+      "type": 3,
+      "buildingId": 2312031,
+      "status": 2
+    },
+    {
+      "id": 6272134,
+      "name": "SMPC | HPS-001/IRV-001",
+      "type": 8,
+      "buildingId": 2312174,
+      "status": 2
+    },
+    {
+      "id": 6272172,
+      "name": "SMPC | HPS-001/IRV-002",
+      "type": 8,
+      "buildingId": 2312174,
+      "status": 2
+    },
+    {
+      "id": 6272673,
+      "name": "SHPTCFS | HFS-001/WL-001",
+      "type": 0,
+      "buildingId": 2312349,
+      "status": 2
+    },
+    {
+      "id": 6272676,
+      "name": "SHPTCFS | HFS-001/WL-002",
+      "type": 0,
+      "buildingId": 2312349,
+      "status": 2
+    }
+  ],
+  "credits": {
+    "credits_user_current": 24523,
+    "credits_user_total": 148196954
+  },
+  "alliance": {
+    "users": 431,
+    "online": 21,
+    "rank": 2,
+    "financeActive": false
   }
 }
