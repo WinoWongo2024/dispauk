@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-08-29T10:56:27.572502+00:00",
+  "updatedAt": "2026-08-29T12:53:03.026785+00:00",
   "source": "missionchief.co.uk",
   "sync": {
     "durationSeconds": 21,
@@ -59,9 +59,9 @@
     "London & South": 17
   },
   "vehicleStatus": {
-    "2": 1453,
-    "4": 4,
-    "3": 9
+    "2": 1417,
+    "3": 28,
+    "4": 21
   },
   "vehiclesByType": {
     "5": 505,
@@ -9867,7 +9867,7 @@
       "name": "WCP | LFB-008/L4x4-001 (P)",
       "type": 1,
       "buildingId": 1844367,
-      "status": 2
+      "status": 3
     },
     {
       "id": 4926750,
@@ -9902,14 +9902,14 @@
       "name": "NWCP | LFB-006/WL-001",
       "type": 0,
       "buildingId": 1844412,
-      "status": 2
+      "status": 4
     },
     {
       "id": 4927854,
       "name": "NWCP | LFB-006/WL-002",
       "type": 0,
       "buildingId": 1844412,
-      "status": 2
+      "status": 4
     },
     {
       "id": 4929073,
@@ -10035,14 +10035,14 @@
       "name": "THML | MET-007/IRV-001",
       "type": 8,
       "buildingId": 1984600,
-      "status": 2
+      "status": 4
     },
     {
       "id": 5332267,
       "name": "THML | MET-007/IRV-002",
       "type": 8,
       "buildingId": 1984600,
-      "status": 2
+      "status": 4
     },
     {
       "id": 5332349,
@@ -10203,7 +10203,7 @@
       "name": "CoLP | MET-001/IRV-001",
       "type": 8,
       "buildingId": 2033679,
-      "status": 2
+      "status": 3
     },
     {
       "id": 5467027,
@@ -10217,7 +10217,7 @@
       "name": "ING | MET-002/IRV-001",
       "type": 8,
       "buildingId": 2033689,
-      "status": 2
+      "status": 3
     },
     {
       "id": 5488513,
@@ -10266,7 +10266,7 @@
       "name": "CoL | LFB-002/RSU-001",
       "type": 4,
       "buildingId": 2033678,
-      "status": 2
+      "status": 3
     },
     {
       "id": 5496781,
@@ -10280,7 +10280,7 @@
       "name": "SJP | BTP-003/RTPC-001",
       "type": 24,
       "buildingId": 1984841,
-      "status": 2
+      "status": 3
     },
     {
       "id": 5496793,
@@ -10420,7 +10420,7 @@
       "name": "CoLP | MET-001/IRV-002",
       "type": 8,
       "buildingId": 2033679,
-      "status": 2
+      "status": 3
     },
     {
       "id": 6272828,
@@ -10441,7 +10441,7 @@
       "name": "BTGN | LFB-001/WL-001",
       "type": 0,
       "buildingId": 2312415,
-      "status": 2
+      "status": 4
     },
     {
       "id": 6272844,
@@ -10518,7 +10518,7 @@
       "name": "ING | MET-002/IRV-002",
       "type": 8,
       "buildingId": 2033689,
-      "status": 2
+      "status": 3
     },
     {
       "id": 6290338,
@@ -10567,7 +10567,7 @@
       "name": "DEPT | LFB-003/RP-001",
       "type": 16,
       "buildingId": 2318646,
-      "status": 2
+      "status": 3
     },
     {
       "id": 6290534,
@@ -10697,15 +10697,15 @@
     }
   ],
   "credits": {
-    "credits_user_current": 3767,
-    "credits_user_total": 148246698,
-    "credits_alliance_current": 11057647829,
+    "credits_user_current": 4558,
+    "credits_user_total": 148247489,
+    "credits_alliance_current": 11057664671,
     "coins_user_current": 690,
-    "credits_alliance_total": 241535254113
+    "credits_alliance_total": 241551813702
   },
   "alliance": {
     "users": 431,
-    "online": 21,
+    "online": 30,
     "rank": 2,
     "financeActive": false
   }
