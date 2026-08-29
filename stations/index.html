@@ -14,10 +14,9 @@
       <a href="/" class="logo"><span class="logo-mark">DU</span><span class="logo-text">DispaUK</span></a>
       <nav class="nav" aria-label="Primary">
         <a href="/">Dashboard</a>
-        <a href="/#stations">Stations</a>
-        <a href="/fleet/">Fleet</a>
-        <a href="/statistics/">Statistics</a>
+        <a href="/dispatch/">Dispatch</a>
         <a href="/map/">Map</a>
+        <a href="/fleet/">Fleet</a>
         <a href="/status/">Status</a>
       </nav>
       <button class="nav-toggle" type="button" aria-label="Menu" aria-expanded="false"><span></span><span></span><span></span></button>
@@ -39,10 +38,16 @@
           <div class="metric-row"><span>Record ID</span><strong class="mono" data-s-id>—</strong></div>
         </div>
         <div class="panel">
-          <h2>Location</h2>
+          <h2>Dispatch &amp; location</h2>
+          <div class="metric-row"><span>Dispatch centre</span><strong data-s-dc>—</strong></div>
+          <div class="metric-row"><span>Assignment</span><strong data-s-dc-assign>—</strong></div>
+          <div class="metric-row"><span>Region</span><strong data-s-region>—</strong></div>
           <div class="metric-row"><span>Latitude</span><strong class="mono" data-s-lat>—</strong></div>
           <div class="metric-row"><span>Longitude</span><strong class="mono" data-s-lon>—</strong></div>
-          <p style="margin-top:14px"><a class="btn btn-outline" data-s-map-link href="/map/" target="_blank" rel="noopener">View on map</a></p>
+          <p style="margin-top:14px;display:flex;flex-wrap:wrap;gap:8px">
+            <a class="btn btn-outline" data-s-map-link href="/map/">Map</a>
+            <a class="btn btn-outline" data-s-dc-link href="/dispatch/">Dispatch centre</a>
+          </p>
         </div>
       </div>
 
@@ -75,7 +80,7 @@
           return;
         }
         document.title = (s.name || 'Station') + ' | DispaUK';
-        const set = (sel, v) => { const el = document.querySelector(sel); if (el) el.textContent = v == null ? '—' : String(v); };
+        const set = (sel, v) => { const el = document.querySelector(sel); if (el) el.textContent = v == null || v === '' ? '—' : String(v); };
         set('[data-s-name]', s.name);
         set('[data-s-type]', s.type);
         set('[data-s-type-2]', s.type);
@@ -83,10 +88,15 @@
         set('[data-s-level]', s.level);
         set('[data-s-personnel]', Number(s.personnel || 0).toLocaleString('en-GB'));
         set('[data-s-id]', s.id);
+        set('[data-s-dc]', s.dcName || 'Unassigned');
+        set('[data-s-dc-assign]', s.dcAssign === 'api' ? 'MissionChief link' : s.dcAssign === 'nearest' ? 'Nearest centre' : s.dcAssign || '—');
+        set('[data-s-region]', s.region);
         set('[data-s-lat]', s.lat != null ? Number(s.lat).toFixed(5) : '—');
         set('[data-s-lon]', s.lon != null ? Number(s.lon).toFixed(5) : '—');
         const mapLink = document.querySelector('[data-s-map-link]');
         if (mapLink && s.lat != null) mapLink.href = '/map/?focus=' + encodeURIComponent(s.id);
+        const dcLink = document.querySelector('[data-s-dc-link]');
+        if (dcLink && s.dcId) dcLink.href = '/dispatch/?id=' + encodeURIComponent(s.dcId);
 
         const units = (data.unitsSample || []).filter(u => String(u.buildingId) === String(s.id));
         const tbody = document.querySelector('[data-s-units]');
