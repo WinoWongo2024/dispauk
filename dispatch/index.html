@@ -4,10 +4,15 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Dispatch centres | DispaUK</title>
-  <meta name="description" content="DispaUK dispatch centres and assigned station coverage.">
+  <meta name="description" content="DispaUK dispatch centre dashboards — stations, services, coverage.">
   <meta name="theme-color" content="#0b1220">
   <link rel="stylesheet" href="/styles.css">
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Roboto+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <style>
+    .delta-up { color: #22c55e; font-size: 0.75em; font-weight: 600; }
+    .delta-down { color: #ef4444; font-size: 0.75em; font-weight: 600; }
+    .service-mix { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 8px; }
+  </style>
 </head>
 <body>
   <header class="header">
@@ -16,9 +21,10 @@
       <nav class="nav" aria-label="Primary">
         <a href="/">Dashboard</a>
         <a href="/dispatch/">Dispatch</a>
+        <a href="/locate/">Locate</a>
         <a href="/map/">Map</a>
         <a href="/fleet/">Fleet</a>
-        <a href="/statistics/">Statistics</a>
+        <a href="/news/">News</a>
         <a href="/status/">Status</a>
       </nav>
       <button class="nav-toggle" type="button" aria-label="Menu" aria-expanded="false"><span></span><span></span><span></span></button>
@@ -28,41 +34,65 @@
     <div class="container">
       <div class="section-header-left" style="margin-bottom:16px">
         <span class="section-kicker">CONTROL</span>
-        <h1 style="font-size:1.6rem">Dispatch centres</h1>
-        <p class="text-muted">Stations assigned by MissionChief control-centre link when available, otherwise nearest DC.</p>
+        <h1 style="font-size:1.6rem" id="page-title">Dispatch centres</h1>
+        <p class="text-muted" id="page-lead">Multi-agency control rooms and their assigned stations.</p>
       </div>
 
-      <div class="dash-grid" style="margin-bottom:14px">
+      <div class="dash-grid" style="margin-bottom:14px" id="summary-grid">
         <article class="stat-card"><span class="stat-label">Centres</span><strong class="stat-value" data-dc-total>—</strong></article>
         <article class="stat-card"><span class="stat-label">Stations covered</span><strong class="stat-value" data-dc-stations>—</strong></article>
         <article class="stat-card"><span class="stat-label">API assignments</span><strong class="stat-value" data-dc-api>—</strong></article>
         <article class="stat-card"><span class="stat-label">Nearest fallback</span><strong class="stat-value" data-dc-near>—</strong></article>
       </div>
 
-      <div id="dc-detail" class="panel" hidden style="margin-bottom:14px">
-        <h2 data-detail-name>Centre</h2>
-        <div class="metric-row"><span>Stations</span><strong data-detail-count>—</strong></div>
-        <div class="metric-row"><span>Personnel (sum)</span><strong data-detail-pers>—</strong></div>
-        <div class="metric-row"><span>Coverage radius</span><strong data-detail-rad>—</strong></div>
-        <div class="metric-row"><span>Region</span><strong data-detail-region>—</strong></div>
-        <p style="margin-top:12px"><a class="btn btn-outline" data-detail-map href="/map/">View on map</a></p>
-        <h2 style="margin-top:18px">Assigned stations</h2>
-        <div class="table-wrap" style="margin-top:8px">
-          <table>
-            <thead><tr><th>Station</th><th>Type</th><th>Assign</th></tr></thead>
-            <tbody data-detail-stations></tbody>
-          </table>
+      <!-- Per-DC service dashboard -->
+      <div id="dc-detail" hidden>
+        <div class="dash-grid" style="margin-bottom:14px">
+          <article class="stat-card"><span class="stat-label">Stations</span><strong class="stat-value" data-detail-count>—</strong></article>
+          <article class="stat-card"><span class="stat-label">Personnel</span><strong class="stat-value" data-detail-pers>—</strong></article>
+          <article class="stat-card"><span class="stat-label">Fire sites</span><strong class="stat-value" data-svc-fire>—</strong></article>
+          <article class="stat-card"><span class="stat-label">Ambulance sites</span><strong class="stat-value" data-svc-amb>—</strong></article>
+          <article class="stat-card"><span class="stat-label">Police sites</span><strong class="stat-value" data-svc-pol>—</strong></article>
+          <article class="stat-card"><span class="stat-label">Other sites</span><strong class="stat-value" data-svc-other>—</strong></article>
+        </div>
+
+        <div class="dash-panels" style="margin-bottom:14px">
+          <div class="panel">
+            <h2>Control room</h2>
+            <div class="metric-row"><span>Region</span><strong data-detail-region>—</strong></div>
+            <div class="metric-row"><span>Coordinates</span><strong class="mono" data-detail-coords>—</strong></div>
+            <div class="metric-row"><span>Level</span><strong data-detail-level>—</strong></div>
+            <p style="margin-top:12px;display:flex;flex-wrap:wrap;gap:8px">
+              <a class="btn btn-outline" data-detail-map href="/map/">Coverage map</a>
+              <a class="btn btn-outline" href="/locate/">Locate me</a>
+              <a class="btn btn-outline" href="/news/">News</a>
+            </p>
+          </div>
+          <div class="panel">
+            <h2>Service mix</h2>
+            <div class="service-mix" data-svc-chips></div>
+            <p class="text-muted" style="margin-top:12px">Missions feed not available from MissionChief public APIs yet — see <a href="/news/">News</a>.</p>
+          </div>
+        </div>
+
+        <div class="panel" style="margin-bottom:14px">
+          <h2>Assigned stations</h2>
+          <div class="table-wrap" style="margin-top:8px">
+            <table>
+              <thead><tr><th>Station</th><th>Service</th><th>Personnel</th><th>Assign</th></tr></thead>
+              <tbody data-detail-stations></tbody>
+            </table>
+          </div>
         </div>
       </div>
 
-      <div class="table-wrap">
+      <div class="table-wrap" id="dc-list-wrap">
         <table>
           <thead>
             <tr>
               <th>Dispatch centre</th>
               <th>Stations</th>
               <th>Personnel</th>
-              <th>Coverage</th>
               <th>Region</th>
             </tr>
           </thead>
@@ -84,19 +114,17 @@
       const stations = data.stations || [];
       set('[data-dc-total]', fmt(dcs.length));
       set('[data-dc-stations]', fmt(stations.filter(s => s.dcId && s.typeId !== 7).length));
-      set('[data-dc-api]', fmt(data.quality?.dcAssignedFromApi));
-      set('[data-dc-near]', fmt(data.quality?.dcAssignedNearest));
+      set('[data-dc-api]', fmt(data.quality && data.quality.dcAssignedFromApi));
+      set('[data-dc-near]', fmt(data.quality && data.quality.dcAssignedNearest));
 
       const body = document.querySelector('[data-dc-body]');
       if (body) {
-        body.innerHTML = dcs.map(d => `
-          <tr>
-            <td><a href="/dispatch/?id=${d.id}">${d.name || 'Unnamed'}</a></td>
-            <td class="mono">${fmt(d.stationCount)}</td>
-            <td class="mono">${fmt(d.personnel)}</td>
-            <td class="mono">${d.coverageRadiusM ? Math.round(d.coverageRadiusM/1000) + ' km' : '—'}</td>
-            <td>${d.region || '—'}</td>
-          </tr>`).join('') || '<tr><td colspan="5" class="empty">Run a sync to populate dispatch centres.</td></tr>';
+        body.innerHTML = dcs.map(d =>
+          '<tr><td><a href="/dispatch/?id=' + d.id + '">' + (d.name || 'Unnamed') + '</a></td>' +
+          '<td class="mono">' + fmt(d.stationCount) + '</td>' +
+          '<td class="mono">' + fmt(d.personnel) + '</td>' +
+          '<td>' + (d.region || '—') + '</td></tr>'
+        ).join('') || '<tr><td colspan="4" class="empty">Run a sync to populate.</td></tr>';
       }
 
       const id = new URLSearchParams(location.search).get('id');
@@ -104,25 +132,54 @@
         const d = dcs.find(x => String(x.id) === String(id));
         const panel = document.getElementById('dc-detail');
         if (d && panel) {
+          document.getElementById('summary-grid').hidden = true;
+          document.getElementById('dc-list-wrap').hidden = true;
           panel.hidden = false;
-          set('[data-detail-name]', d.name);
+          document.getElementById('page-title').textContent = d.name || 'Dispatch centre';
+          document.getElementById('page-lead').textContent = 'Multi-agency control room dashboard · ' + (d.region || '');
+          document.title = (d.name || 'Dispatch') + ' | DispaUK';
+
+          const members = stations.filter(s => String(s.dcId) === String(d.id) && s.typeId !== 7);
+          let fire = 0, amb = 0, pol = 0, other = 0;
+          const typeCounts = {};
+          members.forEach(s => {
+            const t = (s.type || '').toLowerCase();
+            typeCounts[s.type] = (typeCounts[s.type] || 0) + 1;
+            if (t.includes('fire')) fire++;
+            else if (t.includes('ambulance') || t.includes('hospital') || t.includes('hart')) amb++;
+            else if (t.includes('police') || t.includes('custody')) pol++;
+            else other++;
+          });
+
           set('[data-detail-count]', fmt(d.stationCount));
           set('[data-detail-pers]', fmt(d.personnel));
-          set('[data-detail-rad]', d.coverageRadiusM ? Math.round(d.coverageRadiusM/1000) + ' km' : '—');
+          set('[data-svc-fire]', fmt(fire));
+          set('[data-svc-amb]', fmt(amb));
+          set('[data-svc-pol]', fmt(pol));
+          set('[data-svc-other]', fmt(other));
           set('[data-detail-region]', d.region || '—');
+          set('[data-detail-level]', d.level != null ? String(d.level) : '—');
+          set('[data-detail-coords]', d.lat != null ? Number(d.lat).toFixed(4) + ', ' + Number(d.lon).toFixed(4) : '—');
+
           const mapLink = document.querySelector('[data-detail-map]');
           if (mapLink) mapLink.href = '/map/?dc=' + encodeURIComponent(d.id);
-          const members = stations.filter(s => String(s.dcId) === String(d.id) && s.typeId !== 7);
+
+          const chips = document.querySelector('[data-svc-chips]');
+          if (chips) {
+            chips.innerHTML = Object.entries(typeCounts).sort((a,b)=>b[1]-a[1]).map(([k,v]) =>
+              '<span class="chip"><span class="chip-k">' + k + '</span><span class="chip-v">' + v + '</span></span>'
+            ).join('') || '<span class="text-muted">No stations</span>';
+          }
+
           const tb = document.querySelector('[data-detail-stations]');
           if (tb) {
-            tb.innerHTML = members.map(s => `
-              <tr>
-                <td><a href="/stations/?id=${s.id}">${s.name}</a></td>
-                <td>${s.type || '—'}</td>
-                <td class="mono">${s.dcAssign || '—'}</td>
-              </tr>`).join('') || '<tr><td colspan="3" class="empty">No assigned stations</td></tr>';
+            tb.innerHTML = members.map(s =>
+              '<tr><td><a href="/stations/?id=' + s.id + '">' + (s.name || '') + '</a></td>' +
+              '<td>' + (s.type || '—') + '</td>' +
+              '<td class="mono">' + fmt(s.personnel) + '</td>' +
+              '<td class="mono">' + (s.dcAssign || '—') + '</td></tr>'
+            ).join('') || '<tr><td colspan="4" class="empty">No assigned stations</td></tr>';
           }
-          document.title = (d.name || 'Dispatch') + ' | DispaUK';
         }
       }
     });

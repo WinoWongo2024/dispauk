@@ -10,10 +10,10 @@ let sortMode = 'name-asc';
 
 function escapeHtml(str) {
   return String(str)
-    .replace(/&/g, '&')
-    .replace(/</g, '<')
-    .replace(/>/g, '>')
-    .replace(/"/g, '"');
+    .replace(/&/g, '&amp;')
+    .replace(/</g, '&lt;')
+    .replace(/>/g, '&gt;')
+    .replace(/"/g, '&quot;');
 }
 
 function fmt(n) {
@@ -36,9 +36,9 @@ function relativeTime(iso) {
   const mins = Math.max(0, Math.floor((Date.now() - d.getTime()) / 60000));
   let relative;
   if (mins < 1) relative = 'just now';
-  else if (mins < 60) relative = `${mins} min ago`;
-  else if (mins < 1440) relative = `${Math.floor(mins / 60)} h ago`;
-  else relative = `${Math.floor(mins / 1440)} d ago`;
+  else if (mins < 60) relative = mins + ' min ago';
+  else if (mins < 1440) relative = Math.floor(mins / 60) + ' h ago';
+  else relative = Math.floor(mins / 1440) + ' d ago';
   const absolute = d.toLocaleString('en-GB', {
     dateStyle: 'medium',
     timeStyle: 'short',
@@ -64,7 +64,15 @@ function serviceBucket(type) {
 }
 
 function stationHref(s) {
-  return `/stations/?id=${encodeURIComponent(s.id)}`;
+  return '/stations/?id=' + encodeURIComponent(s.id);
+}
+
+function deltaBadge(delta) {
+  if (delta == null || delta === 0) return '';
+  const up = delta > 0;
+  const cls = up ? 'delta-up' : 'delta-down';
+  const arrow = up ? '▲' : '▼';
+  return ' <span class="' + cls + '">' + arrow + ' ' + fmt(Math.abs(delta)) + '</span>';
 }
 
 function applyFilters() {
@@ -73,8 +81,8 @@ function applyFilters() {
     const bucket = serviceBucket(s.type);
     if (activeFilter !== 'all' && bucket !== activeFilter) return false;
     if (!q) return true;
-    const hay = `${s.name || ''} ${s.type || ''} ${s.dcName || ''}`.toLowerCase();
-    return hay.includes(q);
+    const hay = (s.name || '') + ' ' + (s.type || '') + ' ' + (s.dcName || '');
+    return hay.toLowerCase().includes(q);
   });
 
   filtered.sort((a, b) => {
@@ -101,14 +109,15 @@ function renderStations() {
     if (!slice.length) {
       body.innerHTML = '<tr><td colspan="5" class="empty">No stations match your filters.</td></tr>';
     } else {
-      body.innerHTML = slice.map((s) => `
-        <tr>
-          <td><a href="${stationHref(s)}">${escapeHtml(s.name || 'Unnamed')}</a></td>
-          <td>${escapeHtml(s.type || '—')}</td>
-          <td>${s.dcId ? `<a href="/dispatch/?id=${encodeURIComponent(s.dcId)}">${escapeHtml(s.dcName || 'DC')}</a>` : '—'}</td>
-          <td class="mono">${fmt(s.personnel)}</td>
-          <td><span class="status-pill">Active</span></td>
-        </tr>`).join('');
+      body.innerHTML = slice.map((s) =>
+        '<tr>' +
+          '<td><a href="' + stationHref(s) + '">' + escapeHtml(s.name || 'Unnamed') + '</a></td>' +
+          '<td>' + escapeHtml(s.type || '—') + '</td>' +
+          '<td>' + (s.dcId ? '<a href="/dispatch/?id=' + encodeURIComponent(s.dcId) + '">' + escapeHtml(s.dcName || 'DC') + '</a>' : '—') + '</td>' +
+          '<td class="mono">' + fmt(s.personnel) + '</td>' +
+          '<td><span class="status-pill">Active</span></td>' +
+        '</tr>'
+      ).join('');
     }
   }
 
@@ -116,15 +125,15 @@ function renderStations() {
     if (!slice.length) {
       cards.innerHTML = '<p class="empty-card">No stations match your filters.</p>';
     } else {
-      cards.innerHTML = slice.map((s) => `
-        <a class="station-card" href="${stationHref(s)}">
-          <h3>${escapeHtml(s.name || 'Unnamed')}</h3>
-          <p>${escapeHtml(s.type || '—')}${s.dcName ? ' · ' + escapeHtml(s.dcName) : ''}</p>
-          <div class="station-card-meta">
-            <span class="status-pill">Active</span>
-            <span class="mono">${fmt(s.personnel)} personnel</span>
-          </div>
-        </a>`).join('');
+      cards.innerHTML = slice.map((s) =>
+        '<a class="station-card" href="' + stationHref(s) + '">' +
+          '<h3>' + escapeHtml(s.name || 'Unnamed') + '</h3>' +
+          '<p>' + escapeHtml(s.type || '—') + (s.dcName ? ' · ' + escapeHtml(s.dcName) : '') + '</p>' +
+          '<div class="station-card-meta">' +
+            '<span class="status-pill">Active</span>' +
+            '<span class="mono">' + fmt(s.personnel) + ' personnel</span>' +
+          '</div></a>'
+      ).join('');
     }
   }
 
@@ -132,11 +141,11 @@ function renderStations() {
 }
 
 function applyFreshness(updatedAt) {
-  const { relative, absolute, mins } = relativeTime(updatedAt);
-  const f = freshnessFromAge(mins);
+  const rt = relativeTime(updatedAt);
+  const f = freshnessFromAge(rt.mins);
 
-  setText('[data-sync-relative]', relative);
-  setText('[data-sync-absolute]', absolute);
+  setText('[data-sync-relative]', rt.relative);
+  setText('[data-sync-absolute]', rt.absolute);
   setText('[data-freshness-text]', f.label);
 
   const badge = document.querySelector('[data-freshness-badge]');
@@ -146,7 +155,7 @@ function applyFreshness(updatedAt) {
   }
 
   const syncLabel = f.key === 'live' ? 'Operational' : f.label;
-  const apiLabel = mins != null && mins < 60 ? 'Operational' : (mins != null ? 'Degraded' : 'Unknown');
+  const apiLabel = rt.mins != null && rt.mins < 60 ? 'Operational' : (rt.mins != null ? 'Degraded' : 'Unknown');
 
   setText('[data-sync-label]', syncLabel);
   setText('[data-api-label]', apiLabel);
@@ -157,11 +166,32 @@ function applyFreshness(updatedAt) {
   document.querySelectorAll('[data-dot="api"]').forEach((el) => {
     el.className = 'status-dot ' + (apiLabel === 'Operational' ? 'online' : 'warn');
   });
+}
 
-  const summary = document.querySelector('[data-status-summary]');
-  if (summary) {
-    summary.textContent = f.key === 'live' ? 'All systems operational' : `Data freshness: ${f.label}`;
-  }
+async function loadCreditDeltas(currentCredits) {
+  try {
+    const res = await fetch('/data/history.json', { cache: 'no-cache' });
+    if (!res.ok) return;
+    const history = await res.json();
+    if (!Array.isArray(history) || history.length < 2) return;
+    const prev = history[history.length - 2];
+    const cur = currentCredits || {};
+    const dCur = (cur.credits_user_current != null && prev.creditsCurrent != null)
+      ? cur.credits_user_current - prev.creditsCurrent : null;
+    const dTot = (cur.credits_user_total != null && prev.creditsTotal != null)
+      ? cur.credits_user_total - prev.creditsTotal : null;
+
+    document.querySelectorAll('[data-credits-current]').forEach((el) => {
+      if (dCur != null && dCur !== 0) {
+        el.insertAdjacentHTML('beforeend', deltaBadge(dCur));
+      }
+    });
+    document.querySelectorAll('[data-credits-total]').forEach((el) => {
+      if (dTot != null && dTot !== 0) {
+        el.insertAdjacentHTML('beforeend', deltaBadge(dTot));
+      }
+    });
+  } catch (e) { /* ignore */ }
 }
 
 async function loadStats() {
@@ -196,12 +226,13 @@ async function loadStats() {
       setText('[data-credits-current-2]', fmt(cur));
       setText('[data-credits-total]', fmt(tot));
       setText('[data-credits-total-2]', fmt(tot));
+      loadCreditDeltas(data.credits);
     }
 
     const statusBox = document.querySelector('[data-vehicle-status]');
     if (statusBox && data.vehicleStatus) {
       statusBox.innerHTML = Object.entries(data.vehicleStatus)
-        .map(([k, v]) => `<span class="chip"><span class="chip-k">S${escapeHtml(k)}</span><span class="chip-v">${fmt(v)}</span></span>`)
+        .map(([k, v]) => '<span class="chip"><span class="chip-k">S' + escapeHtml(k) + '</span><span class="chip-v">' + fmt(v) + '</span></span>')
         .join('') || '<span class="text-muted">None</span>';
     }
 
@@ -210,14 +241,14 @@ async function loadStats() {
       typeBox.innerHTML = Object.entries(data.stationsByType)
         .sort((a, b) => b[1] - a[1])
         .slice(0, 12)
-        .map(([k, v]) => `<div class="metric-row"><span>${escapeHtml(k)}</span><strong>${fmt(v)}</strong></div>`)
+        .map(([k, v]) => '<div class="metric-row"><span>' + escapeHtml(k) + '</span><strong>' + fmt(v) + '</strong></div>')
         .join('');
     }
 
     const ep = document.querySelector('[data-endpoints]');
     if (ep && data.endpoints) {
       ep.innerHTML = Object.entries(data.endpoints)
-        .map(([k, ok]) => `<span class="chip ${ok ? 'ok' : 'off'}">${escapeHtml(k)}</span>`)
+        .map(([k, ok]) => '<span class="chip ' + (ok ? 'ok' : 'off') + '">' + escapeHtml(k) + '</span>')
         .join('');
     }
 
@@ -284,34 +315,33 @@ function initToolbar() {
 function initCookies() {
   const KEY = 'dispauk_cookie_consent';
   let existing = null;
-  try { existing = localStorage.getItem(KEY); } catch { /* */ }
+  try { existing = localStorage.getItem(KEY); } catch (e) { /* */ }
   if (existing === 'accepted' || existing === 'rejected') return;
 
   const banner = document.createElement('div');
   banner.className = 'cookie-banner';
   banner.setAttribute('role', 'dialog');
   banner.setAttribute('aria-label', 'Cookie consent');
-  banner.innerHTML = `
-    <div class="container cookie-banner-inner">
-      <p class="cookie-banner-text">Essential storage only. <a href="/cookies/">Cookies</a> · <a href="/privacy/">Privacy</a></p>
-      <div class="cookie-banner-actions">
-        <button type="button" class="btn btn-ghost" data-c="reject">Reject</button>
-        <button type="button" class="btn btn-primary" data-c="accept">Accept</button>
-      </div>
-    </div>`;
+  banner.innerHTML =
+    '<div class="container cookie-banner-inner">' +
+      '<p class="cookie-banner-text">Essential storage only. <a href="/cookies/">Cookies</a> · <a href="/privacy/">Privacy</a></p>' +
+      '<div class="cookie-banner-actions">' +
+        '<button type="button" class="btn btn-ghost" data-c="reject">Reject</button>' +
+        '<button type="button" class="btn btn-primary" data-c="accept">Accept</button>' +
+      '</div></div>';
   document.body.appendChild(banner);
-  requestAnimationFrame(() => banner.classList.add('visible'));
-  banner.addEventListener('click', (e) => {
+  requestAnimationFrame(function () { banner.classList.add('visible'); });
+  banner.addEventListener('click', function (e) {
     const c = e.target.getAttribute('data-c');
     if (!c) return;
-    try { localStorage.setItem(KEY, c === 'accept' ? 'accepted' : 'rejected'); } catch { /* */ }
+    try { localStorage.setItem(KEY, c === 'accept' ? 'accepted' : 'rejected'); } catch (err) { /* */ }
     banner.classList.remove('visible');
-    setTimeout(() => banner.remove(), 300);
+    setTimeout(function () { banner.remove(); }, 300);
   });
 }
 
-document.addEventListener('DOMContentLoaded', () => {
-  document.querySelectorAll('[data-current-year]').forEach((el) => {
+document.addEventListener('DOMContentLoaded', function () {
+  document.querySelectorAll('[data-current-year]').forEach(function (el) {
     el.textContent = String(new Date().getFullYear());
   });
   initNav();
