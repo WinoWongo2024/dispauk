@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Developers | DispaUK</title>
+  <meta name="description" content="DispaUK public data API documentation.">
+  <meta name="theme-color" content="#0b1220">
+  <link rel="stylesheet" href="/styles.css">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Roboto+Mono:wght@400;500&display=swap" rel="stylesheet">
+</head>
+<body>
+  <header class="header">
+    <div class="container header-inner">
+      <a href="/" class="logo"><span class="logo-mark">DU</span><span class="logo-text">DispaUK</span></a>
+      <nav class="nav" aria-label="Primary">
+        <a href="/">Dashboard</a>
+        <a href="/status/">Status</a>
+        <a href="/developers/">Developers</a>
+        <a href="/about/">About</a>
+      </nav>
+      <button class="nav-toggle" type="button" aria-label="Menu" aria-expanded="false"><span></span><span></span><span></span></button>
+    </div>
+  </header>
+  <main class="legal-page">
+    <div class="container legal-content">
+      <h1>Public data API</h1>
+      <p class="legal-updated">Read-only JSON snapshots · no authentication · v1</p>
+
+      <h2>Base</h2>
+      <p>All responses are static files on GitHub Pages. Prefer caching clientside.</p>
+
+      <h2>GET /data/stats.json</h2>
+      <p>Primary operational snapshot after each successful sync.</p>
+      <ul>
+        <li><code>updatedAt</code> — ISO timestamp (UTC)</li>
+        <li><code>sync.durationSeconds</code> — fetch duration</li>
+        <li><code>totals</code> — stations, units, personnel, …</li>
+        <li><code>stations[]</code> — id, name, type, region, lat/lon, personnel</li>
+        <li><code>stationsByType</code> / <code>stationsByRegion</code></li>
+        <li><code>vehicleStatus</code> / <code>vehiclesByType</code></li>
+        <li><code>unitsSample[]</code> — limited unit list</li>
+        <li><code>quality</code> — missing names/coords flags</li>
+        <li><code>alliance</code> — public alliance summary</li>
+        <li><code>endpoints</code> — which upstream calls succeeded</li>
+      </ul>
+
+      <h2>GET /data/history.json</h2>
+      <p>Rolling list of hourly totals (up to ~7 days) for simple charts.</p>
+      <ul>
+        <li><code>at</code>, <code>stations</code>, <code>units</code>, <code>personnel</code>, <code>durationSeconds</code>, <code>ok</code></li>
+      </ul>
+
+      <h2>Rate limits</h2>
+      <p>No API key. Please cache responses and avoid aggressive polling — data updates about hourly.</p>
+
+      <h2>Status codes</h2>
+      <p>Standard static hosting: <code>200</code> or <code>404</code>. There is no dynamic error payload.</p>
+
+      <h2>Disclaimer</h2>
+      <p>Not affiliated with MissionChief / SHPlay. Not for real-world emergency use.</p>
+    </div>
+  </main>
+  <footer class="footer-slim"><div class="container footer-bottom"><p class="footer-copy">© <span data-current-year>2026</span> DispaUK</p></div></footer>
+  <script src="/script.js" defer></script>
+</body>
+</html>

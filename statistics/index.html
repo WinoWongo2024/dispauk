@@ -4,10 +4,16 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Statistics | DispaUK</title>
-  <meta name="description" content="DispaUK operational statistics — stations, units, personnel and service breakdown.">
+  <meta name="description" content="DispaUK operational statistics and growth history.">
   <meta name="theme-color" content="#0b1220">
   <link rel="stylesheet" href="/styles.css">
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Roboto+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <style>
+    .bar-chart { display: flex; align-items: flex-end; gap: 3px; height: 120px; margin-top: 12px; }
+    .bar-chart span {
+      flex: 1; min-width: 2px; background: rgba(59,130,246,0.65); border-radius: 2px 2px 0 0;
+    }
+  </style>
 </head>
 <body>
   <header class="header">
@@ -15,9 +21,9 @@
       <a href="/" class="logo"><span class="logo-mark">DU</span><span class="logo-text">DispaUK</span></a>
       <nav class="nav" aria-label="Primary">
         <a href="/">Dashboard</a>
-        <a href="/#stations">Stations</a>
         <a href="/fleet/">Fleet</a>
         <a href="/statistics/">Statistics</a>
+        <a href="/regions/">Regions</a>
         <a href="/map/">Map</a>
         <a href="/status/">Status</a>
       </nav>
@@ -48,37 +54,46 @@
           <div data-st-groups></div>
         </div>
         <div class="panel">
-          <h2>Alliance</h2>
-          <div class="metric-row"><span>Members</span><strong data-alliance-users>—</strong></div>
-          <div class="metric-row"><span>Online</span><strong data-alliance-online>—</strong></div>
-          <div class="metric-row"><span>Rank</span><strong data-alliance-rank>—</strong></div>
-          <div class="metric-row"><span>Alliance buildings</span><strong data-st-ab —></strong></div>
+          <h2>Data quality</h2>
+          <div class="metric-row"><span>Missing names</span><strong data-q-name>—</strong></div>
+          <div class="metric-row"><span>Missing coords</span><strong data-q-coords>—</strong></div>
+          <div class="metric-row"><span>Quality OK</span><strong data-q-ok>—</strong></div>
+          <div class="metric-row"><span>Sync duration</span><strong data-q-dur>—</strong></div>
         </div>
       </div>
 
-      <p class="text-muted" style="margin-top:20px">Snapshot from last sync · <span data-sync-relative>—</span></p>
+      <div class="panel" style="margin-top:14px">
+        <h2>Station count history</h2>
+        <p class="text-muted" style="margin-bottom:0">Hourly snapshots (builds after syncs accumulate)</p>
+        <div class="bar-chart" data-history-chart aria-hidden="true"></div>
+        <p class="text-muted" style="margin-top:8px" data-history-meta>No history yet — will fill after hourly syncs.</p>
+      </div>
+
+      <p class="text-muted" style="margin-top:20px">Snapshot · <span data-sync-relative>—</span></p>
     </div>
   </main>
-  <footer class="footer-slim"><div class="container footer-bottom"><p class="footer-copy">© <span data-current-year>2026</span> DispaUK</p></div></footer>
+  <footer class="footer-slim"><div class="container footer-bottom"><p class="footer-copy">© <span data-current-year>2026</span> DispaUK · <a href="/developers/">API</a></p></div></footer>
   <script src="/script.js" defer></script>
   <script>
     document.addEventListener('DOMContentLoaded', async () => {
-      const res = await fetch('/data/stats.json', { cache: 'no-cache' });
-      const data = await res.json();
       const fmt = n => n == null ? '—' : Number(n).toLocaleString('en-GB');
       const set = (sel, v) => document.querySelectorAll(sel).forEach(el => { if (el) el.textContent = v; });
+
+      const res = await fetch('/data/stats.json', { cache: 'no-cache' });
+      const data = await res.json();
 
       set('[data-st-stations]', fmt(data.totals?.stations));
       set('[data-st-units]', fmt(data.totals?.units));
       set('[data-st-personnel]', fmt(data.totals?.personnel));
       set('[data-st-missions]', fmt(data.totals?.missionTypes));
-      set('[data-st-ab]', fmt(data.totals?.allianceBuildings));
 
-      if (data.alliance) {
-        set('[data-alliance-users]', fmt(data.alliance.users));
-        set('[data-alliance-online]', fmt(data.alliance.online));
-        set('[data-alliance-rank]', fmt(data.alliance.rank));
+      if (data.quality) {
+        set('[data-q-name]', fmt(data.quality.stationsMissingName));
+        set('[data-q-coords]', fmt(data.quality.stationsMissingCoords));
+        set('[data-q-ok]', data.quality.ok ? 'Yes' : 'Review');
       }
+      if (data.sync?.durationSeconds != null) set('[data-q-dur]', data.sync.durationSeconds + 's');
+
       if (data.updatedAt) {
         const mins = Math.floor((Date.now() - new Date(data.updatedAt).getTime()) / 60000);
         set('[data-sync-relative]', mins < 60 ? mins + ' min ago' : Math.floor(mins/60) + ' h ago');
@@ -95,8 +110,8 @@
       Object.entries(types).forEach(([k,v]) => {
         const t = k.toLowerCase();
         if (t.includes('fire')) groups.Fire += v;
-        else if (t.includes('ambulance') || t.includes('hospital')) groups.Ambulance += v;
-        else if (t.includes('police')) groups.Police += v;
+        else if (t.includes('ambulance') || t.includes('hospital') || t.includes('hart')) groups.Ambulance += v;
+        else if (t.includes('police') || t.includes('custody')) groups.Police += v;
         else groups.Other += v;
       });
       const gEl = document.querySelector('[data-st-groups]');
@@ -104,6 +119,19 @@
         gEl.innerHTML = Object.entries(groups).map(([k,v]) =>
           `<div class="metric-row"><span>${k}</span><strong>${fmt(v)}</strong></div>`).join('');
       }
+
+      try {
+        const hr = await fetch('/data/history.json', { cache: 'no-cache' });
+        const history = await hr.json();
+        const chart = document.querySelector('[data-history-chart]');
+        const meta = document.querySelector('[data-history-meta]');
+        if (Array.isArray(history) && history.length && chart) {
+          const vals = history.map(h => h.stations || 0);
+          const max = Math.max(...vals, 1);
+          chart.innerHTML = vals.map(v => `<span style="height:${Math.max(4, Math.round((v/max)*100))}%" title="${v}"></span>`).join('');
+          if (meta) meta.textContent = history.length + ' snapshots · latest ' + fmt(vals[vals.length-1]) + ' stations';
+        }
+      } catch (e) { /* */ }
     });
   </script>
 </body>

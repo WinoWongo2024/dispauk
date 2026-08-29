@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Regions | DispaUK</title>
+  <meta name="description" content="DispaUK regional station breakdown.">
+  <meta name="theme-color" content="#0b1220">
+  <link rel="stylesheet" href="/styles.css">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Roboto+Mono:wght@400;500&display=swap" rel="stylesheet">
+</head>
+<body>
+  <header class="header">
+    <div class="container header-inner">
+      <a href="/" class="logo"><span class="logo-mark">DU</span><span class="logo-text">DispaUK</span></a>
+      <nav class="nav" aria-label="Primary">
+        <a href="/">Dashboard</a>
+        <a href="/fleet/">Fleet</a>
+        <a href="/statistics/">Statistics</a>
+        <a href="/regions/">Regions</a>
+        <a href="/map/">Map</a>
+        <a href="/status/">Status</a>
+      </nav>
+      <button class="nav-toggle" type="button" aria-label="Menu" aria-expanded="false"><span></span><span></span><span></span></button>
+    </div>
+  </header>
+  <main class="legal-page">
+    <div class="container">
+      <div class="section-header-left" style="margin-bottom:16px">
+        <span class="section-kicker">GEOGRAPHY</span>
+        <h1 style="font-size:1.6rem">Regions</h1>
+        <p class="text-muted">Approximate regions from station coordinates (not official boundaries).</p>
+      </div>
+      <div class="dash-grid" data-region-cards style="grid-template-columns:repeat(auto-fit,minmax(160px,1fr))"></div>
+      <div class="panel" style="margin-top:16px">
+        <h2>Breakdown</h2>
+        <div data-region-rows></div>
+      </div>
+    </div>
+  </main>
+  <footer class="footer-slim"><div class="container footer-bottom"><p class="footer-copy">© <span data-current-year>2026</span> DispaUK</p></div></footer>
+  <script src="/script.js" defer></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', async () => {
+      const res = await fetch('/data/stats.json', { cache: 'no-cache' });
+      const data = await res.json();
+      const regions = data.stationsByRegion || {};
+      const fmt = n => Number(n).toLocaleString('en-GB');
+      const total = Object.values(regions).reduce((a,b)=>a+b,0) || 1;
+      const cards = document.querySelector('[data-region-cards]');
+      const rows = document.querySelector('[data-region-rows]');
+      const entries = Object.entries(regions).sort((a,b)=>b[1]-a[1]);
+      if (cards) {
+        cards.innerHTML = entries.map(([k,v]) =>
+          `<article class="stat-card"><span class="stat-label">${k}</span><strong class="stat-value">${fmt(v)}</strong></article>`
+        ).join('') || '<p class="text-muted">Run a sync to populate regions.</p>';
+      }
+      if (rows) {
+        rows.innerHTML = entries.map(([k,v]) => {
+          const pct = Math.round((v/total)*100);
+          return `<div class="metric-row"><span>${k}</span><strong>${fmt(v)} · ${pct}%</strong></div>`;
+        }).join('');
+      }
+    });
+  </script>
+</body>
+</html>
