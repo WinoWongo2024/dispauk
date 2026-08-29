@@ -1,8 +1,6 @@
 name: Sync MissionChief Data
 
 on:
-  # Hourly — aggressive enough for a dashboard, gentle enough for unofficial APIs.
-  # MissionChief publishes no public rate limit; avoid sub-15m polling.
   schedule:
     - cron: '0 * * * *'
   workflow_dispatch:
@@ -52,7 +50,6 @@ jobs:
               -H "User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36" \
               "${MC_BASE}${path}" || true)
             echo "HTTP ${code}"
-            # Small pause between endpoints to avoid burst behaviour
             sleep 1
             if [ "$code" != "200" ]; then
               if [ "$required" = "1" ]; then
@@ -94,15 +91,23 @@ jobs:
       - name: Build public stats + history
         run: |
           python3 << 'PY'
-          import json, os
+          import json, os, math
           from datetime import datetime, timezone
-          from collections import Counter
+          from collections import Counter, defaultdict
 
           def load(path):
               if not os.path.isfile(path):
                   return None
               with open(path) as f:
                   return json.load(f)
+
+          def haversine_m(lat1, lon1, lat2, lon2):
+              R = 6371000.0
+              p1, p2 = math.radians(lat1), math.radians(lat2)
+              dp = math.radians(lat2 - lat1)
+              dl = math.radians(lon2 - lon1)
+              a = math.sin(dp/2)**2 + math.cos(p1)*math.cos(p2)*math.sin(dl/2)**2
+              return 2 * R * math.asin(math.sqrt(a))
 
           buildings = load("/tmp/mc/buildings.json") or []
           vehicles = load("/tmp/mc/vehicles.json") or []
@@ -134,7 +139,6 @@ jobs:
           def region_for(lat, lon):
               if lat is None or lon is None:
                   return "Unknown"
-              # Rough UK / nearby regions for dashboard grouping only
               if lat >= 54.8 and lon < -5.5:
                   return "Northern Ireland"
               if lat >= 55.0:
@@ -153,11 +157,44 @@ jobs:
                   return "London & South"
               return "Other / Overseas"
 
+          def extract_dc_id(b):
+              # Common MissionChief / Leitstelle field names across versions
+              for key in (
+                  "leitstelle_building_id", "leitstelle_id", "control_center_id",
+                  "dispatch_center_id", "leitstelle", "related_building_id",
+              ):
+                  val = b.get(key)
+                  if val is None or val is False or val == "" or val == 0:
+                      continue
+                  if isinstance(val, dict):
+                      val = val.get("id") or val.get("building_id")
+                  try:
+                      return int(val)
+                  except (TypeError, ValueError):
+                      continue
+              return None
+
+          # Index buildings and dispatch centres (type 7)
+          by_id = {b.get("id"): b for b in buildings if b.get("id") is not None}
+          dcs_raw = [b for b in buildings if b.get("building_type") == 7]
+          dc_ids = {b.get("id") for b in dcs_raw}
+
           stations = []
           type_counts = Counter()
           region_counts = Counter()
           total_personnel = 0
           missing_name = missing_coords = 0
+          assigned_from_api = 0
+          assigned_nearest = 0
+
+          # Precompute DC coords for nearest assignment
+          dc_coords = []
+          for d in dcs_raw:
+              lat, lon = d.get("latitude"), d.get("longitude")
+              if lat is None or lon is None:
+                  continue
+              dc_coords.append((d.get("id"), d.get("caption") or "Dispatch Centre", float(lat), float(lon)))
+
           for b in buildings:
               label = BUILDING_LABELS.get(b.get("building_type"), f"Type {b.get('building_type')}")
               type_counts[label] += 1
@@ -171,6 +208,33 @@ jobs:
                   missing_name += 1
               if lat is None or lon is None:
                   missing_coords += 1
+
+              dc_id = extract_dc_id(b)
+              assign_method = None
+              # Don't assign a DC to itself as coverage station in the same way
+              if b.get("building_type") == 7:
+                  dc_id = b.get("id")
+                  assign_method = "self"
+              elif dc_id is not None and dc_id in dc_ids:
+                  assign_method = "api"
+                  assigned_from_api += 1
+              elif lat is not None and lon is not None and dc_coords:
+                  best = None
+                  best_d = None
+                  for did, dname, dlat, dlon in dc_coords:
+                      dist = haversine_m(float(lat), float(lon), dlat, dlon)
+                      if best_d is None or dist < best_d:
+                          best_d = dist
+                          best = (did, dname)
+                  if best:
+                      dc_id = best[0]
+                      assign_method = "nearest"
+                      assigned_nearest += 1
+
+              dc_name = None
+              if dc_id is not None and dc_id in by_id:
+                  dc_name = by_id[dc_id].get("caption") or "Dispatch Centre"
+
               stations.append({
                   "id": b.get("id"),
                   "name": name,
@@ -182,7 +246,45 @@ jobs:
                   "personnel": b.get("personal_count"),
                   "small": b.get("small_building"),
                   "region": region,
+                  "dcId": dc_id,
+                  "dcName": dc_name,
+                  "dcAssign": assign_method,
               })
+
+          # Build dispatch centre summaries + coverage
+          stations_by_dc = defaultdict(list)
+          for s in stations:
+              if s.get("dcId") is not None and s.get("typeId") != 7:
+                  stations_by_dc[s["dcId"]].append(s)
+
+          dispatch_centres = []
+          for d in dcs_raw:
+              did = d.get("id")
+              dlat, dlon = d.get("latitude"), d.get("longitude")
+              members = stations_by_dc.get(did, [])
+              max_m = 0.0
+              for s in members:
+                  if s.get("lat") is None or s.get("lon") is None or dlat is None or dlon is None:
+                      continue
+                  dist = haversine_m(float(dlat), float(dlon), float(s["lat"]), float(s["lon"]))
+                  if dist > max_m:
+                      max_m = dist
+              # Minimum visible radius so empty DCs still show a small circle
+              radius_m = int(max(max_m * 1.05, 3000)) if members else 2500
+              personnel = sum((s.get("personnel") or 0) if isinstance(s.get("personnel"), int) else 0 for s in members)
+              dispatch_centres.append({
+                  "id": did,
+                  "name": d.get("caption") or "Dispatch Centre",
+                  "lat": dlat,
+                  "lon": dlon,
+                  "level": d.get("level"),
+                  "stationCount": len(members),
+                  "personnel": personnel,
+                  "coverageRadiusM": radius_m,
+                  "region": region_for(dlat, dlon),
+              })
+
+          dispatch_centres.sort(key=lambda x: (-x["stationCount"], x["name"] or ""))
 
           status_counts = Counter()
           type_vehicle_counts = Counter()
@@ -226,16 +328,16 @@ jobs:
               "stationsMissingName": missing_name,
               "stationsMissingCoords": missing_coords,
               "duplicateStationIds": len(buildings) - len({b.get("id") for b in buildings}),
+              "dcAssignedFromApi": assigned_from_api,
+              "dcAssignedNearest": assigned_nearest,
+              "dispatchCentres": len(dispatch_centres),
               "ok": missing_name == 0 and missing_coords < max(5, len(buildings) * 0.05),
           }
 
           stats = {
               "updatedAt": now,
               "source": "missionchief.co.uk",
-              "sync": {
-                  "durationSeconds": duration,
-                  "schedule": "hourly",
-              },
+              "sync": {"durationSeconds": duration, "schedule": "hourly"},
               "endpoints": {
                   "buildings": True,
                   "vehicles": True,
@@ -250,6 +352,7 @@ jobs:
                   "stations": len(buildings),
                   "units": len(vehicles),
                   "personnel": total_personnel,
+                  "dispatchCentres": len(dispatch_centres),
                   "allianceBuildings": len(alliance_buildings) if isinstance(alliance_buildings, list) else None,
                   "equipments": len(equipments) if isinstance(equipments, list) else None,
                   "missionTypes": mission_types_count,
@@ -259,13 +362,13 @@ jobs:
               "vehicleStatus": dict(status_counts) if status_counts else (vehicle_states if isinstance(vehicle_states, dict) else {}),
               "vehiclesByType": dict(type_vehicle_counts.most_common(30)),
               "quality": quality,
+              "dispatchCentres": dispatch_centres,
               "stations": stations,
               "unitsSample": units_sample,
               "credits": credits_public,
               "alliance": alliance_public,
           }
 
-          # Only publish if required datasets look sane (transactional-ish)
           if len(buildings) < 1 or len(vehicles) < 1:
               raise SystemExit("Refusing to publish empty buildings/vehicles dataset")
 
@@ -273,7 +376,6 @@ jobs:
               json.dump(stats, f, indent=2, ensure_ascii=False)
               f.write("\n")
 
-          # Rolling history for charts (cap 168 ≈ 7 days hourly)
           hist_path = "data/history.json"
           history = load(hist_path) or []
           if not isinstance(history, list):
@@ -283,6 +385,7 @@ jobs:
               "stations": len(buildings),
               "units": len(vehicles),
               "personnel": total_personnel,
+              "dispatchCentres": len(dispatch_centres),
               "durationSeconds": duration,
               "ok": True,
           })
@@ -291,7 +394,8 @@ jobs:
               json.dump(history, f, indent=2, ensure_ascii=False)
               f.write("\n")
 
-          print("Wrote stats + history", len(stations), "stations", len(vehicles), "units", "duration", duration)
+          print("DCs", len(dispatch_centres), "api-assign", assigned_from_api, "nearest", assigned_nearest)
+          print("Wrote stats + history", len(stations), "stations", len(vehicles), "units")
           PY
 
       - name: Commit if changed
