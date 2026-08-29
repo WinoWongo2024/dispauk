@@ -14,9 +14,14 @@
       <a href="/" class="logo"><span class="logo-mark">DU</span><span class="logo-text">DispaUK</span></a>
       <nav class="nav" aria-label="Primary">
         <a href="/">Dashboard</a>
+        <a href="/dispatch/">Dispatch</a>
+        <a href="/stations/">Stations</a>
+        <a href="/fleet/">Fleet</a>
+        <a href="/locate/">Locate</a>
+        <a href="/map/">Map</a>
+        <a href="/regions/">Regions</a>
+        <a href="/statistics/">Statistics</a>
         <a href="/status/">Status</a>
-        <a href="/about/">About</a>
-        <a href="/changelog/">Changelog</a>
       </nav>
       <button class="nav-toggle" type="button" aria-label="Menu" aria-expanded="false"><span></span><span></span><span></span></button>
     </div>
@@ -25,6 +30,26 @@
     <div class="container legal-content">
       <h1>Changelog</h1>
       <p class="legal-updated">Product history</p>
+
+      <h2>29 August 2026 — v1.5.2 (Integration polish)</h2>
+      <ul>
+        <li>Standard navigation across all pages</li>
+        <li>Fixed broken /operations/, /services/, /contact/ routes</li>
+        <li>Changelog aligned with live features</li>
+        <li>Richer regional dashboards with service mix</li>
+        <li>API rate-limit and versioning guidance</li>
+        <li>Clearer status page (platform / dataset / upstream)</li>
+      </ul>
+
+      <h2>29 August 2026 — v1.5.1</h2>
+      <ul>
+        <li>Locate page — device location and place search</li>
+        <li>Nearest-station and dispatch-centre lookup (browser-local)</li>
+        <li>Per-centre multi-agency dashboards under /dispatch/</li>
+        <li>Non-overlapping Voronoi coverage borders on the map</li>
+        <li>Credit movement indicators (▲/▼) from history snapshots</li>
+        <li>News page documenting mission-feed limitation</li>
+      </ul>
 
       <h2>29 August 2026 — v1.5.0 (P2)</h2>
       <ul>
@@ -46,7 +71,7 @@
       </ul>
     </div>
   </main>
-  <footer class="footer-slim"><div class="container footer-bottom"><p class="footer-copy">© <span data-current-year>2026</span> DispaUK</p></div></footer>
+  <footer class="footer-slim"><div class="container footer-bottom"><p class="footer-copy">© <span data-current-year>2026</span> DispaUK · <a href="/news/">News</a> · <a href="/developers/">API</a> · <a href="/contact/">Contact</a></p></div></footer>
   <script src="/script.js" defer></script>
 </body>
 </html>

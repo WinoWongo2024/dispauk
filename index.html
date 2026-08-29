@@ -20,11 +20,13 @@
     <div class="container header-inner">
       <a href="/" class="logo" aria-label="DispaUK home"><span class="logo-mark">DU</span><span class="logo-text">DispaUK</span></a>
       <nav class="nav" aria-label="Primary navigation">
-        <a href="#dashboard">Dashboard</a>
+        <a href="/">Dashboard</a>
         <a href="/dispatch/">Dispatch</a>
-        <a href="#stations">Stations</a>
+        <a href="/stations/">Stations</a>
         <a href="/fleet/">Fleet</a>
+        <a href="/locate/">Locate</a>
         <a href="/map/">Map</a>
+        <a href="/regions/">Regions</a>
         <a href="/statistics/">Statistics</a>
         <a href="/status/">Status</a>
       </nav>
@@ -33,6 +35,12 @@
   </header>
 
   <main>
+    <noscript>
+      <div class="container" style="padding:16px">
+        <p><strong>JavaScript is required</strong> for live operational figures. Static data is available at <a href="/data/stats.json">/data/stats.json</a>.</p>
+      </div>
+    </noscript>
+
     <section class="hero hero-compact" aria-labelledby="hero-title">
       <div class="container">
         <div class="hero-top">
@@ -47,17 +55,17 @@
           <p class="sync-meta">Last sync: <strong data-sync-relative>—</strong><br><span class="text-muted" data-sync-absolute></span></p>
         </div>
 
-        <div class="status-stack compact" data-system-status aria-label="System status">
-          <div class="status-row"><span class="status-dot online"></span><span>Website</span><strong>Operational</strong></div>
-          <div class="status-row"><span class="status-dot" data-dot="sync"></span><span>Data sync</span><strong data-sync-label>—</strong></div>
-          <div class="status-row"><span class="status-dot" data-dot="api"></span><span>MissionChief</span><strong data-api-label>—</strong></div>
+        <div class="status-stack compact" data-system-status aria-label="System status" aria-live="polite">
+          <div class="status-row"><span class="status-dot online"></span><span>Website</span><strong>Online</strong></div>
+          <div class="status-row"><span class="status-dot" data-dot="sync"></span><span>Data sync</span><strong data-sync-label>Checking…</strong></div>
+          <div class="status-row"><span class="status-dot" data-dot="api"></span><span>MissionChief</span><strong data-api-label>Checking…</strong></div>
         </div>
       </div>
     </section>
 
     <section id="dashboard" class="dash">
       <div class="container">
-        <div class="dash-grid">
+        <div class="dash-grid" aria-live="polite">
           <article class="stat-card"><span class="stat-label">Stations</span><strong class="stat-value" id="station-count">—</strong></article>
           <article class="stat-card"><span class="stat-label">Units</span><strong class="stat-value" id="unit-count">—</strong></article>
           <article class="stat-card"><span class="stat-label">Personnel</span><strong class="stat-value" id="personnel-count">—</strong></article>
@@ -84,7 +92,7 @@
             <div class="metric-row"><span>Rank</span><strong data-alliance-rank>—</strong></div>
             <div class="metric-row"><span>Credits now</span><strong data-credits-current-2>—</strong></div>
             <div class="metric-row"><span>Credits total</span><strong data-credits-total-2>—</strong></div>
-            <p style="margin-top:10px"><a href="/dispatch/">Dispatch centres →</a> · <a href="/map/">Map →</a></p>
+            <p style="margin-top:10px"><a href="/dispatch/">Dispatch →</a> · <a href="/map/">Map →</a> · <a href="/locate/">Locate →</a> · <a href="/regions/">Regions →</a></p>
           </div>
         </div>
 
@@ -122,7 +130,7 @@
           </label>
         </div>
 
-        <p class="result-meta"><span data-result-count>0</span> stations · showing <span data-showing-count>0</span></p>
+        <p class="result-meta" aria-live="polite"><span data-result-count>0</span> stations · showing <span data-showing-count>0</span></p>
 
         <div class="table-wrap desktop-only">
           <table>
@@ -157,8 +165,8 @@
         </div>
         <div class="contact-actions">
           <a class="btn btn-primary" href="mailto:administrator@dispauk.co.uk">Email</a>
+          <a class="btn btn-outline" href="/contact/">Contact page</a>
           <a class="btn btn-outline" href="/dispatch/">Dispatch</a>
-          <a class="btn btn-outline" href="/map/">Map</a>
           <a class="btn btn-outline" href="/status/">Status</a>
         </div>
       </div>
@@ -167,8 +175,8 @@
 
   <footer class="footer-slim">
     <div class="container footer-bottom">
-      <p class="footer-copy">© <span data-current-year>2026</span> DispaUK · <a href="/privacy/">Privacy</a> · <a href="/cookies/">Cookies</a> · <a href="/terms/">Terms</a> · <a href="/legal/">Legal</a> · <a href="/accessibility/">Accessibility</a> · <a href="/developers/">API</a> · <a href="/changelog/">Changelog</a></p>
-      <p class="footer-disclaimer">Independent project — not affiliated with SHPlay GmbH or MissionChief. Operational data may be delayed. Not for real-world emergency use.</p>
+      <p class="footer-copy">© <span data-current-year>2026</span> DispaUK · <a href="/news/">News</a> · <a href="/developers/">API</a> · <a href="/about/">About</a> · <a href="/contact/">Contact</a> · <a href="/privacy/">Privacy</a> · <a href="/cookies/">Cookies</a> · <a href="/terms/">Terms</a> · <a href="/legal/">Legal</a> · <a href="/accessibility/">Accessibility</a> · <a href="/changelog/">Changelog</a></p>
+      <p class="footer-disclaimer">Independent project — not affiliated with SHPlay GmbH or MissionChief. Operational data may be delayed. Not for real-world emergency use. Map coverage is an analytical approximation, not official emergency-service boundaries.</p>
     </div>
   </footer>
   <script src="/script.js" defer></script>

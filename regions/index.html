@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Regions | DispaUK</title>
-  <meta name="description" content="DispaUK regional station breakdown.">
+  <meta name="description" content="DispaUK regional station breakdown with service mix.">
   <meta name="theme-color" content="#0b1220">
   <link rel="stylesheet" href="/styles.css">
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Roboto+Mono:wght@400;500&display=swap" rel="stylesheet">
@@ -15,10 +15,13 @@
       <a href="/" class="logo"><span class="logo-mark">DU</span><span class="logo-text">DispaUK</span></a>
       <nav class="nav" aria-label="Primary">
         <a href="/">Dashboard</a>
+        <a href="/dispatch/">Dispatch</a>
+        <a href="/stations/">Stations</a>
         <a href="/fleet/">Fleet</a>
-        <a href="/statistics/">Statistics</a>
-        <a href="/regions/">Regions</a>
+        <a href="/locate/">Locate</a>
         <a href="/map/">Map</a>
+        <a href="/regions/">Regions</a>
+        <a href="/statistics/">Statistics</a>
         <a href="/status/">Status</a>
       </nav>
       <button class="nav-toggle" type="button" aria-label="Menu" aria-expanded="false"><span></span><span></span><span></span></button>
@@ -31,36 +34,61 @@
         <h1 style="font-size:1.6rem">Regions</h1>
         <p class="text-muted">Approximate regions from station coordinates (not official boundaries).</p>
       </div>
-      <div class="dash-grid" data-region-cards style="grid-template-columns:repeat(auto-fit,minmax(160px,1fr))"></div>
-      <div class="panel" style="margin-top:16px">
-        <h2>Breakdown</h2>
-        <div data-region-rows></div>
-      </div>
+      <div id="region-list" class="dash-panels"></div>
+      <p class="disclaimer-bar" style="margin-top:16px">Analytical geography only — not real emergency-service areas.</p>
     </div>
   </main>
-  <footer class="footer-slim"><div class="container footer-bottom"><p class="footer-copy">© <span data-current-year>2026</span> DispaUK</p></div></footer>
+  <footer class="footer-slim"><div class="container footer-bottom"><p class="footer-copy">© <span data-current-year>2026</span> DispaUK · <a href="/map/">Map</a> · <a href="/dispatch/">Dispatch</a></p></div></footer>
   <script src="/script.js" defer></script>
   <script>
+    function bucket(type) {
+      const t = (type || '').toLowerCase();
+      if (t.includes('fire')) return 'fire';
+      if (t.includes('ambulance') || t.includes('hospital') || t.includes('hart')) return 'ambulance';
+      if (t.includes('police') || t.includes('custody')) return 'police';
+      return 'other';
+    }
     document.addEventListener('DOMContentLoaded', async () => {
       const res = await fetch('/data/stats.json', { cache: 'no-cache' });
       const data = await res.json();
-      const regions = data.stationsByRegion || {};
-      const fmt = n => Number(n).toLocaleString('en-GB');
-      const total = Object.values(regions).reduce((a,b)=>a+b,0) || 1;
-      const cards = document.querySelector('[data-region-cards]');
-      const rows = document.querySelector('[data-region-rows]');
-      const entries = Object.entries(regions).sort((a,b)=>b[1]-a[1]);
-      if (cards) {
-        cards.innerHTML = entries.map(([k,v]) =>
-          `<article class="stat-card"><span class="stat-label">${k}</span><strong class="stat-value">${fmt(v)}</strong></article>`
-        ).join('') || '<p class="text-muted">Run a sync to populate regions.</p>';
-      }
-      if (rows) {
-        rows.innerHTML = entries.map(([k,v]) => {
-          const pct = Math.round((v/total)*100);
-          return `<div class="metric-row"><span>${k}</span><strong>${fmt(v)} · ${pct}%</strong></div>`;
-        }).join('');
-      }
+      const stations = (data.stations || []).filter(s => s.typeId !== 7);
+      const dcs = data.dispatchCentres || [];
+      const fmt = n => Number(n || 0).toLocaleString('en-GB');
+      const byRegion = {};
+      stations.forEach(s => {
+        const r = s.region || 'Unknown';
+        if (!byRegion[r]) byRegion[r] = { stations: 0, personnel: 0, fire: 0, amb: 0, pol: 0, other: 0, dcs: new Set() };
+        const g = byRegion[r];
+        g.stations++;
+        g.personnel += (typeof s.personnel === 'number' ? s.personnel : 0);
+        g[bucket(s.type) === 'fire' ? 'fire' : bucket(s.type) === 'ambulance' ? 'amb' : bucket(s.type) === 'police' ? 'pol' : 'other']++;
+        if (s.dcId) g.dcs.add(s.dcId);
+      });
+      dcs.forEach(d => {
+        const r = d.region || 'Unknown';
+        if (!byRegion[r]) byRegion[r] = { stations: 0, personnel: 0, fire: 0, amb: 0, pol: 0, other: 0, dcs: new Set() };
+        byRegion[r].dcs.add(d.id);
+      });
+      const list = document.getElementById('region-list');
+      const entries = Object.entries(byRegion).sort((a, b) => b[1].stations - a[1].stations);
+      list.innerHTML = entries.map(([name, g]) => {
+        const totalSvc = g.fire + g.amb + g.pol + g.other || 1;
+        return '<div class="panel">' +
+          '<h2>' + name + '</h2>' +
+          '<div class="dash-grid" style="margin:12px 0">' +
+            '<article class="stat-card"><span class="stat-label">Stations</span><strong class="stat-value">' + fmt(g.stations) + '</strong></article>' +
+            '<article class="stat-card"><span class="stat-label">Personnel</span><strong class="stat-value">' + fmt(g.personnel) + '</strong></article>' +
+            '<article class="stat-card"><span class="stat-label">Dispatch centres</span><strong class="stat-value">' + fmt(g.dcs.size) + '</strong></article>' +
+          '</div>' +
+          '<div class="chip-row">' +
+            '<span class="chip"><span class="chip-k">Fire</span><span class="chip-v">' + fmt(g.fire) + ' (' + Math.round(g.fire/totalSvc*100) + '%)</span></span>' +
+            '<span class="chip"><span class="chip-k">Ambulance</span><span class="chip-v">' + fmt(g.amb) + ' (' + Math.round(g.amb/totalSvc*100) + '%)</span></span>' +
+            '<span class="chip"><span class="chip-k">Police</span><span class="chip-v">' + fmt(g.pol) + ' (' + Math.round(g.pol/totalSvc*100) + '%)</span></span>' +
+            '<span class="chip"><span class="chip-k">Other</span><span class="chip-v">' + fmt(g.other) + '</span></span>' +
+          '</div>' +
+          '<p style="margin-top:12px"><a href="/map/">Map →</a> · <a href="/dispatch/">Dispatch →</a> · <a href="/stations/">Stations →</a></p>' +
+        '</div>';
+      }).join('') || '<p class="text-muted">Run a sync to populate regions.</p>';
     });
   </script>
 </body>

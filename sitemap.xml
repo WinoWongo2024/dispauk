@@ -2,14 +2,18 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url><loc>https://dispauk.co.uk/</loc></url>
   <url><loc>https://dispauk.co.uk/dispatch/</loc></url>
+  <url><loc>https://dispauk.co.uk/stations/</loc></url>
   <url><loc>https://dispauk.co.uk/fleet/</loc></url>
-  <url><loc>https://dispauk.co.uk/statistics/</loc></url>
-  <url><loc>https://dispauk.co.uk/regions/</loc></url>
+  <url><loc>https://dispauk.co.uk/locate/</loc></url>
   <url><loc>https://dispauk.co.uk/map/</loc></url>
+  <url><loc>https://dispauk.co.uk/regions/</loc></url>
+  <url><loc>https://dispauk.co.uk/statistics/</loc></url>
   <url><loc>https://dispauk.co.uk/status/</loc></url>
+  <url><loc>https://dispauk.co.uk/news/</loc></url>
   <url><loc>https://dispauk.co.uk/developers/</loc></url>
   <url><loc>https://dispauk.co.uk/about/</loc></url>
   <url><loc>https://dispauk.co.uk/changelog/</loc></url>
+  <url><loc>https://dispauk.co.uk/contact/</loc></url>
   <url><loc>https://dispauk.co.uk/privacy/</loc></url>
   <url><loc>https://dispauk.co.uk/cookies/</loc></url>
   <url><loc>https://dispauk.co.uk/terms/</loc></url>

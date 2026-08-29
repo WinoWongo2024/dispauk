@@ -7,8 +7,6 @@
   <meta name="description" content="DispaUK system status — website, data sync and MissionChief feed health.">
   <meta name="theme-color" content="#0b1220">
   <link rel="stylesheet" href="/styles.css">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Roboto+Mono:wght@400;500&display=swap" rel="stylesheet">
 </head>
 <body>
@@ -17,9 +15,14 @@
       <a href="/" class="logo" aria-label="DispaUK home"><span class="logo-mark">DU</span><span class="logo-text">DispaUK</span></a>
       <nav class="nav" aria-label="Primary">
         <a href="/">Dashboard</a>
+        <a href="/dispatch/">Dispatch</a>
+        <a href="/stations/">Stations</a>
+        <a href="/fleet/">Fleet</a>
+        <a href="/locate/">Locate</a>
+        <a href="/map/">Map</a>
+        <a href="/regions/">Regions</a>
+        <a href="/statistics/">Statistics</a>
         <a href="/status/">Status</a>
-        <a href="/about/">About</a>
-        <a href="/changelog/">Changelog</a>
       </nav>
       <button class="nav-toggle" type="button" aria-label="Menu" aria-expanded="false"><span></span><span></span><span></span></button>
     </div>
@@ -27,12 +30,22 @@
   <main class="legal-page">
     <div class="container legal-content">
       <h1>System status</h1>
-      <p class="legal-updated" data-status-summary>Checking…</p>
+      <p class="legal-updated" data-status-summary aria-live="polite">Checking…</p>
 
-      <div class="status-stack" data-status-stack>
-        <div class="status-row"><span class="status-dot online"></span><span>Website</span><strong>Operational</strong></div>
-        <div class="status-row" data-row="sync"><span class="status-dot" data-dot="sync"></span><span>Data sync</span><strong data-sync-label>—</strong></div>
-        <div class="status-row" data-row="api"><span class="status-dot" data-dot="api"></span><span>MissionChief feed</span><strong data-api-label>—</strong></div>
+      <h2>Platform</h2>
+      <div class="status-stack">
+        <div class="status-row"><span class="status-dot online"></span><span>Website</span><strong>Online</strong></div>
+        <div class="status-row"><span class="status-dot online"></span><span>Public API (static JSON)</span><strong>Online</strong></div>
+      </div>
+
+      <h2>Dataset</h2>
+      <div class="status-stack">
+        <div class="status-row" data-row="sync"><span class="status-dot" data-dot="sync"></span><span>Data freshness</span><strong data-sync-label>Checking…</strong></div>
+      </div>
+
+      <h2>Upstream</h2>
+      <div class="status-stack">
+        <div class="status-row" data-row="api"><span class="status-dot" data-dot="api"></span><span>MissionChief feed</span><strong data-api-label>Checking…</strong></div>
       </div>
 
       <h2>Last successful sync</h2>
@@ -43,16 +56,17 @@
       <div class="metric-row"><span>Stations</span><strong data-m-stations>—</strong></div>
       <div class="metric-row"><span>Units</span><strong data-m-units>—</strong></div>
       <div class="metric-row"><span>Personnel</span><strong data-m-personnel>—</strong></div>
+      <div class="metric-row"><span>Dispatch centres</span><strong data-dc-total>—</strong></div>
 
       <h2>API endpoints (last sync)</h2>
-      <div class="chip-row" data-endpoints style="margin-top:12px"></div>
+      <div class="chip-row" data-endpoints style="margin-top:12px"><span class="text-muted">Loading…</span></div>
 
-      <p class="text-muted" style="margin-top:28px">DispaUK is not an emergency service. Do not use this site for real-world emergency response. Call 999 / 112.</p>
+      <p class="text-muted" style="margin-top:28px">DispaUK is not an emergency service. Call 999 / 112 for real emergencies.</p>
     </div>
   </main>
   <footer class="footer-slim">
     <div class="container footer-bottom">
-      <p class="footer-copy">© <span data-current-year>2026</span> DispaUK · <a href="/privacy/">Privacy</a> · <a href="/cookies/">Cookies</a></p>
+      <p class="footer-copy">© <span data-current-year>2026</span> DispaUK · <a href="/developers/">API</a> · <a href="/changelog/">Changelog</a> · <a href="/contact/">Contact</a></p>
     </div>
   </footer>
   <script src="/script.js" defer></script>

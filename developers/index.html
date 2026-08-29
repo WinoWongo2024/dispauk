@@ -15,9 +15,14 @@
       <a href="/" class="logo"><span class="logo-mark">DU</span><span class="logo-text">DispaUK</span></a>
       <nav class="nav" aria-label="Primary">
         <a href="/">Dashboard</a>
+        <a href="/dispatch/">Dispatch</a>
+        <a href="/stations/">Stations</a>
+        <a href="/fleet/">Fleet</a>
+        <a href="/locate/">Locate</a>
+        <a href="/map/">Map</a>
+        <a href="/regions/">Regions</a>
+        <a href="/statistics/">Statistics</a>
         <a href="/status/">Status</a>
-        <a href="/developers/">Developers</a>
-        <a href="/about/">About</a>
       </nav>
       <button class="nav-toggle" type="button" aria-label="Menu" aria-expanded="false"><span></span><span></span><span></span></button>
     </div>
@@ -25,7 +30,10 @@
   <main class="legal-page">
     <div class="container legal-content">
       <h1>Public data API</h1>
-      <p class="legal-updated">Read-only JSON snapshots · no authentication · v1</p>
+      <p class="legal-updated">Read-only JSON snapshots · no authentication · <strong>v1</strong></p>
+
+      <h2>Versioning</h2>
+      <p><code>/data/stats.json</code> and <code>/data/history.json</code> are the <strong>v1</strong> surface. Backwards-incompatible field renames or removals will be published under a new path (for example <code>/data/v2/</code>) with notice on this page and the changelog. Additive fields may appear on v1 without a path change.</p>
 
       <h2>Base</h2>
       <p>All responses are static files on GitHub Pages. Prefer caching clientside.</p>
@@ -35,24 +43,32 @@
       <ul>
         <li><code>updatedAt</code> — ISO timestamp (UTC)</li>
         <li><code>sync.durationSeconds</code> — fetch duration</li>
-        <li><code>totals</code> — stations, units, personnel, …</li>
-        <li><code>stations[]</code> — id, name, type, region, lat/lon, personnel</li>
+        <li><code>totals</code> — stations, units, personnel, dispatchCentres, …</li>
+        <li><code>stations[]</code> — id, name, type, region, lat/lon, personnel, dcId, dcName</li>
+        <li><code>dispatchCentres[]</code> — id, name, stationCount, personnel, region, lat/lon</li>
         <li><code>stationsByType</code> / <code>stationsByRegion</code></li>
         <li><code>vehicleStatus</code> / <code>vehiclesByType</code></li>
         <li><code>unitsSample[]</code> — limited unit list</li>
+        <li><code>credits</code> — public numeric credit fields when available</li>
         <li><code>quality</code> — missing names/coords flags</li>
         <li><code>alliance</code> — public alliance summary</li>
         <li><code>endpoints</code> — which upstream calls succeeded</li>
       </ul>
 
       <h2>GET /data/history.json</h2>
-      <p>Rolling list of hourly totals (up to ~7 days) for simple charts.</p>
+      <p>Rolling list of hourly totals (up to ~7 days / 168 rows) for simple charts.</p>
       <ul>
-        <li><code>at</code>, <code>stations</code>, <code>units</code>, <code>personnel</code>, <code>durationSeconds</code>, <code>ok</code></li>
+        <li><code>at</code>, <code>stations</code>, <code>units</code>, <code>personnel</code>, <code>dispatchCentres</code>, <code>durationSeconds</code>, <code>ok</code></li>
+        <li><code>creditsCurrent</code> / <code>creditsTotal</code> when present</li>
       </ul>
 
-      <h2>Rate limits</h2>
-      <p>No API key. Please cache responses and avoid aggressive polling — data updates about hourly.</p>
+      <h2>Rate limits &amp; fair use</h2>
+      <ul>
+        <li><strong>Recommended polling interval: ≥ 15 minutes.</strong></li>
+        <li>Do not poll more frequently than once every <strong>5 minutes</strong>.</li>
+        <li>Data normally changes approximately <strong>hourly</strong>.</li>
+        <li>Cache responses; prefer conditional requests / local cache where possible.</li>
+      </ul>
 
       <h2>Status codes</h2>
       <p>Standard static hosting: <code>200</code> or <code>404</code>. There is no dynamic error payload.</p>
@@ -61,7 +77,7 @@
       <p>Not affiliated with MissionChief / SHPlay. Not for real-world emergency use.</p>
     </div>
   </main>
-  <footer class="footer-slim"><div class="container footer-bottom"><p class="footer-copy">© <span data-current-year>2026</span> DispaUK</p></div></footer>
+  <footer class="footer-slim"><div class="container footer-bottom"><p class="footer-copy">© <span data-current-year>2026</span> DispaUK · <a href="/changelog/">Changelog</a> · <a href="/contact/">Contact</a></p></div></footer>
   <script src="/script.js" defer></script>
 </body>
 </html>
