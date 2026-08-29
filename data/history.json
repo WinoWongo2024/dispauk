@@ -1,1 +1,10 @@
-[]
+[
+  {
+    "at": "2026-08-29T09:29:29.621178+00:00",
+    "stations": 565,
+    "units": 1454,
+    "personnel": 39155,
+    "durationSeconds": 22,
+    "ok": true
+  }
+]

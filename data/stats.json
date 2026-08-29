@@ -1,6 +1,10 @@
 {
-  "updatedAt": "2026-08-29T08:53:55.128304+00:00",
+  "updatedAt": "2026-08-29T09:29:29.621178+00:00",
   "source": "missionchief.co.uk",
+  "sync": {
+    "durationSeconds": 22,
+    "schedule": "hourly"
+  },
   "endpoints": {
     "buildings": true,
     "vehicles": true,
@@ -9,9 +13,7 @@
     "allianceinfo": true,
     "alliance_buildings": true,
     "equipments": true,
-    "vehicle_distances": true,
-    "einsaetze": true,
-    "alliance_event_types": true
+    "einsaetze": true
   },
   "totals": {
     "stations": 565,
@@ -23,30 +25,42 @@
   },
   "stationsByType": {
     "Ambulance Station": 281,
-    "Type 28": 17,
-    "Type 31": 7,
-    "Police Station": 69,
-    "Fire Station": 51,
+    "Coastguard Station": 17,
+    "Search & Rescue HQ": 7,
+    "Police Station": 66,
+    "Fire Station": 50,
     "Dispatch Centre": 36,
-    "Type 36": 1,
-    "Type 35": 3,
+    "Custody Suite": 1,
+    "Bomb Disposal": 3,
     "Helicopter Station": 3,
-    "Type 27": 5,
-    "Type 22": 48,
+    "Lifeboat Station": 5,
+    "Home Response / HRL": 48,
     "Hospital": 20,
-    "Type 25": 5,
-    "Type 29": 1,
-    "Type 34": 7,
-    "Type 8": 1,
-    "Type 21": 2,
-    "Type 33": 3,
-    "Type 32": 2,
-    "Type 30": 3
+    "HART Base": 5,
+    "SAR Resource Centre": 1,
+    "Fire Station (Large)": 1,
+    "Workshop / RCC": 7,
+    "Police Aviation": 3,
+    "Police Academy": 1,
+    "Health Centre": 2,
+    "Mountain Rescue": 3,
+    "GP Surgery": 2,
+    "Coastguard CRH": 3
+  },
+  "stationsByRegion": {
+    "South West": 215,
+    "Midlands": 62,
+    "South East": 74,
+    "Wales": 50,
+    "Scotland": 4,
+    "Other / Overseas": 48,
+    "North": 95,
+    "London & South": 17
   },
   "vehicleStatus": {
-    "2": 1433,
-    "3": 1,
-    "4": 18,
+    "2": 1438,
+    "1": 4,
+    "4": 10,
     "5": 2
   },
   "vehiclesByType": {
@@ -74,7 +88,18 @@
     "79": 11,
     "75": 11,
     "39": 11,
-    "27": 10
+    "27": 10,
+    "28": 10,
+    "101": 10,
+    "104": 10,
+    "108": 10,
+    "2": 9
+  },
+  "quality": {
+    "stationsMissingName": 0,
+    "stationsMissingCoords": 0,
+    "duplicateStationIds": 0,
+    "ok": true
   },
   "stations": [
     {
@@ -86,29 +111,32 @@
       "lat": 51.45410442511617,
       "lon": -2.6157842185871183,
       "personnel": 5,
-      "small": true
+      "small": true,
+      "region": "South West"
     },
     {
       "id": 2660724,
       "name": "Bristol City HM Coastguard Station",
-      "type": "Type 28",
+      "type": "Coastguard Station",
       "typeId": 28,
       "level": 0,
       "lat": 51.44651114920214,
       "lon": -2.595157406713152,
       "personnel": 6,
-      "small": false
+      "small": false,
+      "region": "South West"
     },
     {
       "id": 2660725,
       "name": "Bristol City SAR HQ",
-      "type": "Type 31",
+      "type": "Search & Rescue HQ",
       "typeId": 31,
       "level": 1,
       "lat": 51.44651726537111,
       "lon": -2.5950941548407322,
       "personnel": 12,
-      "small": false
+      "small": false,
+      "region": "South West"
     },
     {
       "id": 2620984,
@@ -119,7 +147,8 @@
       "lat": 53.415596,
       "lon": -1.4622649,
       "personnel": 38,
-      "small": true
+      "small": true,
+      "region": "Midlands"
     },
     {
       "id": 2656560,
@@ -130,7 +159,8 @@
       "lat": 51.489249963412924,
       "lon": -0.09754761756803777,
       "personnel": 9,
-      "small": true
+      "small": true,
+      "region": "South East"
     },
     {
       "id": 2642423,
@@ -141,7 +171,8 @@
       "lat": 50.3567867390525,
       "lon": -4.455331959290522,
       "personnel": 21,
-      "small": true
+      "small": true,
+      "region": "South West"
     },
     {
       "id": 2650202,
@@ -152,7 +183,8 @@
       "lat": 53.299822395225114,
       "lon": -4.615494676571625,
       "personnel": 16,
-      "small": true
+      "small": true,
+      "region": "Wales"
     },
     {
       "id": 2462419,
@@ -163,7 +195,8 @@
       "lat": 51.4647007,
       "lon": -2.4875711,
       "personnel": 181,
-      "small": true
+      "small": true,
+      "region": "South West"
     },
     {
       "id": 2626367,
@@ -174,7 +207,8 @@
       "lat": 55.53992523880695,
       "lon": -5.1231965107401924,
       "personnel": 29,
-      "small": true
+      "small": true,
+      "region": "Scotland"
     },
     {
       "id": 2634272,
@@ -185,7 +219,8 @@
       "lat": 53.404164,
       "lon": -0.7431816,
       "personnel": 3,
-      "small": true
+      "small": true,
+      "region": "Midlands"
     },
     {
       "id": 2633103,
@@ -196,18 +231,20 @@
       "lat": 53.2303709642346,
       "lon": -0.5402394078574588,
       "personnel": 0,
-      "small": false
+      "small": false,
+      "region": "Midlands"
     },
     {
       "id": 2590776,
       "name": "Keynsham Custody suite",
-      "type": "Type 36",
+      "type": "Custody Suite",
       "typeId": 36,
       "level": 0,
       "lat": 51.4125873641809,
       "lon": -2.4793914172447127,
       "personnel": 0,
-      "small": false
+      "small": false,
+      "region": "South West"
     },
     {
       "id": 2642430,
@@ -218,7 +255,8 @@
       "lat": 50.123009518050985,
       "lon": -5.546813042738823,
       "personnel": 21,
-      "small": true
+      "small": true,
+      "region": "South West"
     },
     {
       "id": 2652177,
@@ -229,7 +267,8 @@
       "lat": 51.91303275577997,
       "lon": -2.5672101259029487,
       "personnel": 14,
-      "small": true
+      "small": true,
+      "region": "South West"
     },
     {
       "id": 2624706,
@@ -240,7 +279,8 @@
       "lat": 51.451910650044084,
       "lon": -2.1338362339527714,
       "personnel": 33,
-      "small": true
+      "small": true,
+      "region": "South West"
     },
     {
       "id": 2652271,
@@ -251,7 +291,8 @@
       "lat": 52.674944320517255,
       "lon": -6.300130297520047,
       "personnel": 14,
-      "small": true
+      "small": true,
+      "region": "Wales"
     },
     {
       "id": 2601002,
@@ -262,7 +303,8 @@
       "lat": 50.98338786802665,
       "lon": 2.1224659410408617,
       "personnel": 57,
-      "small": true
+      "small": true,
+      "region": "Other / Overseas"
     },
     {
       "id": 2567204,
@@ -273,7 +315,8 @@
       "lat": 51.45756074078378,
       "lon": -2.5935292983084244,
       "personnel": 87,
-      "small": false
+      "small": false,
+      "region": "South West"
     },
     {
       "id": 2650741,
@@ -284,7 +327,8 @@
       "lat": 52.51060237958435,
       "lon": -6.571596424975386,
       "personnel": 15,
-      "small": true
+      "small": true,
+      "region": "Wales"
     },
     {
       "id": 2567755,
@@ -295,7 +339,8 @@
       "lat": 51.4283988,
       "lon": -2.2255833,
       "personnel": 87,
-      "small": false
+      "small": false,
+      "region": "South West"
     },
     {
       "id": 2620235,
@@ -306,7 +351,8 @@
       "lat": 53.79553554652806,
       "lon": -1.5302058996347294,
       "personnel": 39,
-      "small": true
+      "small": true,
+      "region": "North"
     },
     {
       "id": 2652179,
@@ -317,7 +363,8 @@
       "lat": 52.0389634915135,
       "lon": -2.4163338021566347,
       "personnel": 14,
-      "small": true
+      "small": true,
+      "region": "South West"
     },
     {
       "id": 2636836,
@@ -328,7 +375,8 @@
       "lat": 50.69398756164623,
       "lon": -3.2401690573569875,
       "personnel": 24,
-      "small": true
+      "small": true,
+      "region": "South West"
     },
     {
       "id": 2656568,
@@ -339,7 +387,8 @@
       "lat": 51.57733979121902,
       "lon": -0.3682269234190269,
       "personnel": 10,
-      "small": true
+      "small": true,
+      "region": "South East"
     },
     {
       "id": 2620856,
@@ -350,7 +399,8 @@
       "lat": 53.874922980082125,
       "lon": -1.8987531737172303,
       "personnel": 38,
-      "small": true
+      "small": true,
+      "region": "North"
     },
     {
       "id": 2621027,
@@ -361,18 +411,20 @@
       "lat": 53.0189626,
       "lon": -1.4858456,
       "personnel": 38,
-      "small": true
+      "small": true,
+      "region": "Midlands"
     },
     {
       "id": 2507319,
       "name": "Bristol Bomb Squad",
-      "type": "Type 35",
+      "type": "Bomb Disposal",
       "typeId": 35,
       "level": 1,
       "lat": 51.45322114986661,
       "lon": -2.5925974649951167,
       "personnel": 138,
-      "small": false
+      "small": false,
+      "region": "South West"
     },
     {
       "id": 2635213,
@@ -383,7 +435,8 @@
       "lat": 51.0421606,
       "lon": -3.3141858,
       "personnel": 27,
-      "small": true
+      "small": true,
+      "region": "South West"
     },
     {
       "id": 2647876,
@@ -394,7 +447,8 @@
       "lat": 51.5018657,
       "lon": -3.5400309,
       "personnel": 18,
-      "small": true
+      "small": true,
+      "region": "Wales"
     },
     {
       "id": 1984642,
@@ -405,7 +459,8 @@
       "lat": 51.50083164248625,
       "lon": -0.1506834898507324,
       "personnel": 0,
-      "small": false
+      "small": false,
+      "region": "South East"
     },
     {
       "id": 2621086,
@@ -416,7 +471,8 @@
       "lat": 52.5210857,
       "lon": -1.8027417,
       "personnel": 38,
-      "small": true
+      "small": true,
+      "region": "Midlands"
     },
     {
       "id": 2620993,
@@ -427,7 +483,8 @@
       "lat": 53.55016410760775,
       "lon": -1.091831225667044,
       "personnel": 38,
-      "small": true
+      "small": true,
+      "region": "North"
     },
     {
       "id": 2621072,
@@ -438,7 +495,8 @@
       "lat": 51.99731201145418,
       "lon": -2.1535861524554365,
       "personnel": 38,
-      "small": true
+      "small": true,
+      "region": "South West"
     },
     {
       "id": 2638175,
@@ -449,7 +507,8 @@
       "lat": 50.8216408,
       "lon": -4.0723033,
       "personnel": 24,
-      "small": true
+      "small": true,
+      "region": "South West"
     },
     {
       "id": 2648337,
@@ -460,7 +519,8 @@
       "lat": 51.7199799,
       "lon": -3.3554926,
       "personnel": 17,
-      "small": true
+      "small": true,
+      "region": "Wales"
     },
     {
       "id": 2620951,
@@ -471,7 +531,8 @@
       "lat": 53.92740483179125,
       "lon": -1.3830969550984282,
       "personnel": 44,
-      "small": true
+      "small": true,
+      "region": "North"
     },
     {
       "id": 2648346,
@@ -482,7 +543,8 @@
       "lat": 51.99479594257962,
       "lon": -4.979311457268137,
       "personnel": 17,
-      "small": true
+      "small": true,
+      "region": "Wales"
     },
     {
       "id": 2465169,
@@ -493,7 +555,8 @@
       "lat": 51.351977898408045,
       "lon": -2.1411859989166264,
       "personnel": 175,
-      "small": false
+      "small": false,
+      "region": "South West"
     },
     {
       "id": 2657269,
@@ -504,7 +567,8 @@
       "lat": 50.85877037137267,
       "lon": -1.4027914798258918,
       "personnel": 9,
-      "small": true
+      "small": true,
+      "region": "Other / Overseas"
     },
     {
       "id": 2636843,
@@ -515,7 +579,8 @@
       "lat": 50.6312439,
       "lon": -3.375965,
       "personnel": 24,
-      "small": true
+      "small": true,
+      "region": "South West"
     },
     {
       "id": 2650726,
@@ -526,7 +591,8 @@
       "lat": 52.2384266,
       "lon": -3.3763724,
       "personnel": 15,
-      "small": true
+      "small": true,
+      "region": "Wales"
     },
     {
       "id": 2635644,
@@ -537,7 +603,8 @@
       "lat": 50.712641750704655,
       "lon": -2.4471134149958846,
       "personnel": 0,
-      "small": false
+      "small": false,
+      "region": "South West"
     },
     {
       "id": 2657286,
@@ -548,7 +615,8 @@
       "lat": 50.8022376,
       "lon": -1.0541828,
       "personnel": 9,
-      "small": true
+      "small": true,
+      "region": "Other / Overseas"
     },
     {
       "id": 2649005,
@@ -559,7 +627,8 @@
       "lat": 52.23782670303796,
       "lon": -4.2576714438667285,
       "personnel": 16,
-      "small": true
+      "small": true,
+      "region": "Wales"
     },
     {
       "id": 2656579,
@@ -570,7 +639,8 @@
       "lat": 51.23566501757763,
       "lon": -0.584295123546256,
       "personnel": 0,
-      "small": false
+      "small": false,
+      "region": "London & South"
     },
     {
       "id": 2650725,
@@ -581,7 +651,8 @@
       "lat": 52.34197202693712,
       "lon": -3.049472384245318,
       "personnel": 15,
-      "small": true
+      "small": true,
+      "region": "Wales"
     },
     {
       "id": 2649545,
@@ -592,18 +663,20 @@
       "lat": 52.9406135,
       "lon": -4.149441,
       "personnel": 16,
-      "small": true
+      "small": true,
+      "region": "Wales"
     },
     {
       "id": 2481630,
       "name": "Avonmouth lifeboat Station",
-      "type": "Type 27",
+      "type": "Lifeboat Station",
       "typeId": 27,
       "level": 5,
       "lat": 51.508137207321646,
       "lon": -2.7180882210559867,
       "personnel": 164,
-      "small": false
+      "small": false,
+      "region": "South West"
     },
     {
       "id": 2620872,
@@ -614,7 +687,8 @@
       "lat": 54.06948354332409,
       "lon": -2.0162988933553647,
       "personnel": 45,
-      "small": true
+      "small": true,
+      "region": "North"
     },
     {
       "id": 1844373,
@@ -625,7 +699,8 @@
       "lat": 51.51909877616312,
       "lon": -0.05814690200677775,
       "personnel": 0,
-      "small": false
+      "small": false,
+      "region": "South East"
     },
     {
       "id": 2652884,
@@ -636,7 +711,8 @@
       "lat": 51.218984952914866,
       "lon": 2.9331526423237713,
       "personnel": 14,
-      "small": true
+      "small": true,
+      "region": "South East"
     },
     {
       "id": 2635481,
@@ -647,7 +723,8 @@
       "lat": 51.0521074,
       "lon": -2.4116315,
       "personnel": 27,
-      "small": true
+      "small": true,
+      "region": "South West"
     },
     {
       "id": 2620843,
@@ -658,7 +735,8 @@
       "lat": 53.95910650755544,
       "lon": -2.0250951959993118,
       "personnel": 45,
-      "small": true
+      "small": true,
+      "region": "North"
     },
     {
       "id": 2648325,
@@ -669,7 +747,8 @@
       "lat": 51.6631958,
       "lon": -3.8156688,
       "personnel": 17,
-      "small": true
+      "small": true,
+      "region": "Wales"
     },
     {
       "id": 2650693,
@@ -680,7 +759,8 @@
       "lat": 53.2693217690536,
       "lon": -3.2167231395278275,
       "personnel": 15,
-      "small": true
+      "small": true,
+      "region": "Wales"
     },
     {
       "id": 2620992,
@@ -691,7 +771,8 @@
       "lat": 53.59404616954714,
       "lon": -1.3127349816323943,
       "personnel": 37,
-      "small": true
+      "small": true,
+      "region": "North"
     },
     {
       "id": 2635499,
@@ -702,7 +783,8 @@
       "lat": 50.8550939,
       "lon": -3.3943214,
       "personnel": 27,
-      "small": true
+      "small": true,
+      "region": "South West"
     },
     {
       "id": 2350539,
@@ -713,7 +795,8 @@
       "lat": 53.969317957099406,
       "lon": -1.0836231114022965,
       "personnel": 200,
-      "small": false
+      "small": false,
+      "region": "North"
     },
     {
       "id": 2572615,
@@ -724,7 +807,8 @@
       "lat": 51.385805802952746,
       "lon": -2.7167575706776246,
       "personnel": 103,
-      "small": false
+      "small": false,
+      "region": "South West"
     },
     {
       "id": 2629164,
@@ -735,7 +819,8 @@
       "lat": 51.646766247826335,
       "lon": -2.5696126581497745,
       "personnel": 27,
-      "small": true
+      "small": true,
+      "region": "South West"
     },
     {
       "id": 2621041,
@@ -746,18 +831,20 @@
       "lat": 52.91357638035486,
       "lon": -1.422410250798621,
       "personnel": 38,
-      "small": true
+      "small": true,
+      "region": "Midlands"
     },
     {
       "id": 2448103,
       "name": "SWAST: Westfield (Community Health)",
-      "type": "Type 22",
+      "type": "Home Response / HRL",
       "typeId": 22,
       "level": 0,
       "lat": 51.28866947780681,
       "lon": -2.4544787803938712,
       "personnel": 184,
-      "small": false
+      "small": false,
+      "region": "South West"
     },
     {
       "id": 2621043,
@@ -768,7 +855,8 @@
       "lat": 52.93523097734856,
       "lon": -1.2598028402246915,
       "personnel": 38,
-      "small": true
+      "small": true,
+      "region": "Midlands"
     },
     {
       "id": 2477992,
@@ -779,7 +867,8 @@
       "lat": 51.3396515,
       "lon": -2.9690287,
       "personnel": 157,
-      "small": true
+      "small": true,
+      "region": "South West"
     },
     {
       "id": 2325712,
@@ -790,7 +879,8 @@
       "lat": 54.286175722088295,
       "lon": -0.40101126681864463,
       "personnel": 200,
-      "small": false
+      "small": false,
+      "region": "North"
     },
     {
       "id": 2639112,
@@ -801,7 +891,8 @@
       "lat": 50.8354737,
       "lon": -4.5395221,
       "personnel": 23,
-      "small": true
+      "small": true,
+      "region": "South West"
     },
     {
       "id": 2636821,
@@ -812,7 +903,8 @@
       "lat": 50.6868461,
       "lon": -2.1159648,
       "personnel": 26,
-      "small": true
+      "small": true,
+      "region": "South West"
     },
     {
       "id": 2633101,
@@ -823,7 +915,8 @@
       "lat": 53.320229116794195,
       "lon": -1.1327364566303637,
       "personnel": 29,
-      "small": true
+      "small": true,
+      "region": "Midlands"
     },
     {
       "id": 2652881,
@@ -834,7 +927,8 @@
       "lat": 51.0383451,
       "lon": 2.3958456,
       "personnel": 14,
-      "small": true
+      "small": true,
+      "region": "Other / Overseas"
     },
     {
       "id": 2653861,
@@ -845,18 +939,20 @@
       "lat": 51.0210748006649,
       "lon": -3.1063088305429942,
       "personnel": 12,
-      "small": true
+      "small": true,
+      "region": "South West"
     },
     {
       "id": 2654954,
       "name": "HM Coastguard Portishead Beach",
-      "type": "Type 28",
+      "type": "Coastguard Station",
       "typeId": 28,
       "level": 0,
       "lat": 51.4859285875409,
       "lon": -2.7922988260113812,
       "personnel": 12,
-      "small": false
+      "small": false,
+      "region": "South West"
     },
     {
       "id": 2648933,
@@ -867,7 +963,8 @@
       "lat": 52.0844841,
       "lon": -4.6563724,
       "personnel": 16,
-      "small": true
+      "small": true,
+      "region": "Wales"
     },
     {
       "id": 2620854,
@@ -878,7 +975,8 @@
       "lat": 53.875818344006056,
       "lon": -1.89762991270057,
       "personnel": 37,
-      "small": true
+      "small": true,
+      "region": "North"
     },
     {
       "id": 2621020,
@@ -889,7 +987,8 @@
       "lat": 53.10102240366773,
       "lon": -1.3728322941018398,
       "personnel": 38,
-      "small": true
+      "small": true,
+      "region": "Midlands"
     },
     {
       "id": 2652212,
@@ -900,7 +999,8 @@
       "lat": 54.0849480898457,
       "lon": -4.744907417464442,
       "personnel": 14,
-      "small": true
+      "small": true,
+      "region": "North"
     },
     {
       "id": 2652203,
@@ -911,7 +1011,8 @@
       "lat": 52.339193984142945,
       "lon": -2.2701814212680707,
       "personnel": 14,
-      "small": true
+      "small": true,
+      "region": "Midlands"
     },
     {
       "id": 2635193,
@@ -922,7 +1023,8 @@
       "lat": 51.01498242529312,
       "lon": -3.080922437314304,
       "personnel": 27,
-      "small": true
+      "small": true,
+      "region": "South West"
     },
     {
       "id": 2652172,
@@ -933,7 +1035,8 @@
       "lat": 52.034846197971355,
       "lon": -2.7215013836998176,
       "personnel": 14,
-      "small": true
+      "small": true,
+      "region": "South West"
     },
     {
       "id": 2633721,
@@ -944,7 +1047,8 @@
       "lat": 50.94303738084141,
       "lon": -2.627221920634777,
       "personnel": 28,
-      "small": true
+      "small": true,
+      "region": "South West"
     },
     {
       "id": 2572625,
@@ -955,7 +1059,8 @@
       "lat": 51.385835033641214,
       "lon": -2.716110201770595,
       "personnel": 96,
-      "small": false
+      "small": false,
+      "region": "South West"
     },
     {
       "id": 2642429,
@@ -966,7 +1071,8 @@
       "lat": 50.0880086,
       "lon": -5.2465386,
       "personnel": 21,
-      "small": true
+      "small": true,
+      "region": "South West"
     },
     {
       "id": 2642419,
@@ -977,7 +1083,8 @@
       "lat": 50.6472193,
       "lon": -4.3632817,
       "personnel": 21,
-      "small": true
+      "small": true,
+      "region": "South West"
     },
     {
       "id": 2465943,
@@ -988,7 +1095,8 @@
       "lat": 51.3824663,
       "lon": -2.3830556,
       "personnel": 175,
-      "small": false
+      "small": false,
+      "region": "South West"
     },
     {
       "id": 2477933,
@@ -999,7 +1107,8 @@
       "lat": 51.5783985,
       "lon": -3.0394315,
       "personnel": 59,
-      "small": true
+      "small": true,
+      "region": "Wales"
     },
     {
       "id": 2621017,
@@ -1010,7 +1119,8 @@
       "lat": 53.1323617,
       "lon": -1.2114973,
       "personnel": 38,
-      "small": true
+      "small": true,
+      "region": "Midlands"
     },
     {
       "id": 2621668,
@@ -1021,7 +1131,8 @@
       "lat": 51.5413206,
       "lon": -2.4146322,
       "personnel": 37,
-      "small": true
+      "small": true,
+      "region": "South West"
     },
     {
       "id": 2621045,
@@ -1032,7 +1143,8 @@
       "lat": 53.04792307967036,
       "lon": -1.4093306559738938,
       "personnel": 38,
-      "small": true
+      "small": true,
+      "region": "Midlands"
     },
     {
       "id": 2652880,
@@ -1043,7 +1155,8 @@
       "lat": 50.84360327437016,
       "lon": 4.349442654071824,
       "personnel": 0,
-      "small": false
+      "small": false,
+      "region": "Other / Overseas"
     },
     {
       "id": 2349733,
@@ -1054,7 +1167,8 @@
       "lat": 53.96958756989064,
       "lon": -1.0846358683991766,
       "personnel": 0,
-      "small": false
+      "small": false,
+      "region": "North"
     },
     {
       "id": 2621033,
@@ -1065,7 +1179,8 @@
       "lat": 52.92474767798348,
       "lon": -1.4820718206839503,
       "personnel": 38,
-      "small": true
+      "small": true,
+      "region": "Midlands"
     },
     {
       "id": 2635502,
@@ -1076,7 +1191,8 @@
       "lat": 50.90104739304163,
       "lon": -3.487809566422185,
       "personnel": 27,
-      "small": true
+      "small": true,
+      "region": "South West"
     },
     {
       "id": 2620983,
@@ -1087,7 +1203,8 @@
       "lat": 53.50792389064267,
       "lon": -1.4416870516209537,
       "personnel": 38,
-      "small": true
+      "small": true,
+      "region": "North"
     },
     {
       "id": 2652889,
@@ -1098,7 +1215,8 @@
       "lat": 51.910516212705986,
       "lon": 4.467490834460478,
       "personnel": 0,
-      "small": false
+      "small": false,
+      "region": "South East"
     },
     {
       "id": 2652162,
@@ -1109,7 +1227,8 @@
       "lat": 52.36703687305451,
       "lon": -2.710787753627768,
       "personnel": 14,
-      "small": true
+      "small": true,
+      "region": "Midlands"
     },
     {
       "id": 2364326,
@@ -1120,7 +1239,8 @@
       "lat": 52.93799307982985,
       "lon": -1.139230979190693,
       "personnel": 258,
-      "small": true
+      "small": true,
+      "region": "Midlands"
     },
     {
       "id": 2654844,
@@ -1131,18 +1251,20 @@
       "lat": 51.349447708795786,
       "lon": -2.961621783951354,
       "personnel": 19,
-      "small": true
+      "small": true,
+      "region": "South West"
     },
     {
       "id": 2567770,
       "name": "Chippenham (A4) HART",
-      "type": "Type 25",
+      "type": "HART Base",
       "typeId": 25,
       "level": 0,
       "lat": 51.4680786,
       "lon": -2.1052394,
       "personnel": 94,
-      "small": false
+      "small": false,
+      "region": "South West"
     },
     {
       "id": 2621355,
@@ -1153,7 +1275,8 @@
       "lat": 54.9887961,
       "lon": -3.2513664,
       "personnel": 38,
-      "small": true
+      "small": true,
+      "region": "North"
     },
     {
       "id": 2626287,
@@ -1164,7 +1287,8 @@
       "lat": 53.80611966481919,
       "lon": -1.6302601780130108,
       "personnel": 33,
-      "small": true
+      "small": true,
+      "region": "North"
     },
     {
       "id": 2642424,
@@ -1175,18 +1299,20 @@
       "lat": 50.43249670678331,
       "lon": -4.984137609010314,
       "personnel": 21,
-      "small": true
+      "small": true,
+      "region": "South West"
     },
     {
       "id": 2354555,
       "name": "AFRS: Radstock Mobile (Officer)",
-      "type": "Type 22",
+      "type": "Home Response / HRL",
       "typeId": 22,
       "level": 0,
       "lat": 51.28907488581096,
       "lon": -2.4551395021973614,
       "personnel": 138,
-      "small": false
+      "small": false,
+      "region": "South West"
     },
     {
       "id": 2638169,
@@ -1197,7 +1323,8 @@
       "lat": 51.0855247,
       "lon": -4.0624267,
       "personnel": 18,
-      "small": true
+      "small": true,
+      "region": "South West"
     },
     {
       "id": 2589929,
@@ -1208,7 +1335,8 @@
       "lat": 51.8657745,
       "lon": -2.2497843,
       "personnel": 69,
-      "small": true
+      "small": true,
+      "region": "South West"
     },
     {
       "id": 2621083,
@@ -1219,7 +1347,8 @@
       "lat": 52.3538175,
       "lon": -2.0485183,
       "personnel": 38,
-      "small": true
+      "small": true,
+      "region": "Midlands"
     },
     {
       "id": 2638178,
@@ -1230,7 +1359,8 @@
       "lat": 50.91223926014623,
       "lon": -3.870049438306164,
       "personnel": 24,
-      "small": true
+      "small": true,
+      "region": "South West"
     },
     {
       "id": 2620995,
@@ -1241,7 +1371,8 @@
       "lat": 53.319868,
       "lon": -1.4659387,
       "personnel": 38,
-      "small": true
+      "small": true,
+      "region": "Midlands"
     },
     {
       "id": 2642420,
@@ -1252,7 +1383,8 @@
       "lat": 50.503315,
       "lon": -4.3109173,
       "personnel": 21,
-      "small": true
+      "small": true,
+      "region": "South West"
     },
     {
       "id": 2621091,
@@ -1263,7 +1395,8 @@
       "lat": 52.5949132,
       "lon": -2.0466158,
       "personnel": 38,
-      "small": true
+      "small": true,
+      "region": "Midlands"
     },
     {
       "id": 2636824,
@@ -1274,7 +1407,8 @@
       "lat": 51.03458133915639,
       "lon": -2.2734998930933736,
       "personnel": 26,
-      "small": true
+      "small": true,
+      "region": "South West"
     },
     {
       "id": 2600989,
@@ -1285,7 +1419,8 @@
       "lat": 50.94924217107994,
       "lon": 1.8343190611904936,
       "personnel": 64,
-      "small": true
+      "small": true,
+      "region": "Other / Overseas"
     },
     {
       "id": 2620966,
@@ -1296,7 +1431,8 @@
       "lat": 53.60184404342695,
       "lon": -1.7942266010812833,
       "personnel": 37,
-      "small": true
+      "small": true,
+      "region": "North"
     },
     {
       "id": 2657275,
@@ -1307,7 +1443,8 @@
       "lat": 50.975589815101124,
       "lon": -1.3702675176041093,
       "personnel": 9,
-      "small": true
+      "small": true,
+      "region": "Other / Overseas"
     },
     {
       "id": 2620257,
@@ -1318,7 +1455,8 @@
       "lat": 53.80053324371871,
       "lon": -1.5527809079515262,
       "personnel": 43,
-      "small": true
+      "small": true,
+      "region": "North"
     },
     {
       "id": 2033677,
@@ -1329,7 +1467,8 @@
       "lat": 53.99371725146289,
       "lon": -1.5175985755205312,
       "personnel": 0,
-      "small": false
+      "small": false,
+      "region": "North"
     },
     {
       "id": 2624712,
@@ -1340,7 +1479,8 @@
       "lat": 51.2157329,
       "lon": -1.4946804,
       "personnel": 32,
-      "small": true
+      "small": true,
+      "region": "London & South"
     },
     {
       "id": 2360736,
@@ -1351,7 +1491,8 @@
       "lat": 51.38170897174006,
       "lon": -2.3659576295539804,
       "personnel": 227,
-      "small": false
+      "small": false,
+      "region": "South West"
     },
     {
       "id": 2471869,
@@ -1362,29 +1503,32 @@
       "lat": 51.6106653,
       "lon": -2.7209071,
       "personnel": 163,
-      "small": true
+      "small": true,
+      "region": "South West"
     },
     {
       "id": 2654842,
       "name": "Exmoor Search & Rescue Team (ESRT)",
-      "type": "Type 31",
+      "type": "Search & Rescue HQ",
       "typeId": 31,
       "level": 0,
       "lat": 51.028366990816075,
       "lon": -3.840287877830147,
       "personnel": 19,
-      "small": false
+      "small": false,
+      "region": "South West"
     },
     {
       "id": 2633087,
       "name": "Bridlington CRS RNLI",
-      "type": "Type 28",
+      "type": "Coastguard Station",
       "typeId": 28,
       "level": 0,
       "lat": 54.09396994026414,
       "lon": -0.17660782357418608,
       "personnel": 30,
-      "small": false
+      "small": false,
+      "region": "North"
     },
     {
       "id": 2633104,
@@ -1395,7 +1539,8 @@
       "lat": 53.422270356138135,
       "lon": -1.223750979867571,
       "personnel": 29,
-      "small": true
+      "small": true,
+      "region": "Midlands"
     },
     {
       "id": 2464874,
@@ -1406,7 +1551,8 @@
       "lat": 51.4127460863733,
       "lon": -2.479048718575494,
       "personnel": 174,
-      "small": false
+      "small": false,
+      "region": "South West"
     },
     {
       "id": 1844377,
@@ -1417,7 +1563,8 @@
       "lat": 51.48622621154306,
       "lon": -0.14851748891726274,
       "personnel": 198,
-      "small": false
+      "small": false,
+      "region": "South East"
     },
     {
       "id": 2652192,
@@ -1428,7 +1575,8 @@
       "lat": 52.07674134108595,
       "lon": -3.125239705399588,
       "personnel": 14,
-      "small": true
+      "small": true,
+      "region": "Wales"
     },
     {
       "id": 2657276,
@@ -1439,7 +1587,8 @@
       "lat": 50.9018056,
       "lon": -1.3233106,
       "personnel": 9,
-      "small": true
+      "small": true,
+      "region": "Other / Overseas"
     },
     {
       "id": 2652200,
@@ -1450,7 +1599,8 @@
       "lat": 52.4639808,
       "lon": -2.147594,
       "personnel": 3,
-      "small": true
+      "small": true,
+      "region": "Midlands"
     },
     {
       "id": 2626288,
@@ -1461,7 +1611,8 @@
       "lat": 53.72604023256026,
       "lon": -1.8611307494351959,
       "personnel": 33,
-      "small": true
+      "small": true,
+      "region": "North"
     },
     {
       "id": 2620851,
@@ -1472,18 +1623,20 @@
       "lat": 53.900703161396315,
       "lon": -1.9953161262727857,
       "personnel": 37,
-      "small": true
+      "small": true,
+      "region": "North"
     },
     {
       "id": 2462150,
       "name": "ASSAR base Bristol",
-      "type": "Type 31",
+      "type": "Search & Rescue HQ",
       "typeId": 31,
       "level": 5,
       "lat": 51.4983837,
       "lon": -2.5839743,
       "personnel": 178,
-      "small": false
+      "small": false,
+      "region": "South West"
     },
     {
       "id": 2620990,
@@ -1494,7 +1647,8 @@
       "lat": 53.4972196,
       "lon": -1.3176585,
       "personnel": 38,
-      "small": true
+      "small": true,
+      "region": "Midlands"
     },
     {
       "id": 2652155,
@@ -1505,18 +1659,20 @@
       "lat": 52.967659,
       "lon": -2.6795527,
       "personnel": 14,
-      "small": true
+      "small": true,
+      "region": "Midlands"
     },
     {
       "id": 2506064,
       "name": "Saltford Bomb Disposal HQ",
-      "type": "Type 35",
+      "type": "Bomb Disposal",
       "typeId": 35,
       "level": 4,
       "lat": 51.40389797089546,
       "lon": -2.4662712660384254,
       "personnel": 138,
-      "small": false
+      "small": false,
+      "region": "South West"
     },
     {
       "id": 2318739,
@@ -1527,7 +1683,8 @@
       "lat": 50.91999445733035,
       "lon": -1.48804159034456,
       "personnel": 200,
-      "small": false
+      "small": false,
+      "region": "Other / Overseas"
     },
     {
       "id": 2620868,
@@ -1538,7 +1695,8 @@
       "lat": 54.07102216033529,
       "lon": -1.9998923411683391,
       "personnel": 38,
-      "small": true
+      "small": true,
+      "region": "North"
     },
     {
       "id": 2621008,
@@ -1549,18 +1707,20 @@
       "lat": 53.2390596,
       "lon": -1.4716601,
       "personnel": 38,
-      "small": true
+      "small": true,
+      "region": "Midlands"
     },
     {
       "id": 2620734,
       "name": "⁠[YAS-HART] Manor Mill⁠",
-      "type": "Type 25",
+      "type": "HART Base",
       "typeId": 25,
       "level": 0,
       "lat": 53.76832651257258,
       "lon": -1.574467761036136,
       "personnel": 45,
-      "small": false
+      "small": false,
+      "region": "North"
     },
     {
       "id": 2647874,
@@ -1571,7 +1731,8 @@
       "lat": 51.7055673,
       "lon": -3.0455418,
       "personnel": 18,
-      "small": true
+      "small": true,
+      "region": "Wales"
     },
     {
       "id": 2567211,
@@ -1582,7 +1743,8 @@
       "lat": 51.20735154014582,
       "lon": -2.6560257456479883,
       "personnel": 95,
-      "small": false
+      "small": false,
+      "region": "South West"
     },
     {
       "id": 2648329,
@@ -1593,7 +1755,8 @@
       "lat": 51.65193010640901,
       "lon": -3.916701072187619,
       "personnel": 17,
-      "small": true
+      "small": true,
+      "region": "Wales"
     },
     {
       "id": 2652189,
@@ -1604,18 +1767,20 @@
       "lat": 52.267535298354915,
       "lon": -2.9869905977750486,
       "personnel": 14,
-      "small": true
+      "small": true,
+      "region": "Midlands"
     },
     {
       "id": 2657378,
       "name": "HM Coastguard Newport",
-      "type": "Type 28",
+      "type": "Coastguard Station",
       "typeId": 28,
       "level": 0,
       "lat": 51.61396539166121,
       "lon": -2.648202433158423,
       "personnel": 10,
-      "small": false
+      "small": false,
+      "region": "South West"
     },
     {
       "id": 2635195,
@@ -1626,7 +1791,8 @@
       "lat": 50.92835509187179,
       "lon": -2.9105403126677314,
       "personnel": 27,
-      "small": true
+      "small": true,
+      "region": "South West"
     },
     {
       "id": 2635482,
@@ -1637,7 +1803,8 @@
       "lat": 51.1636791,
       "lon": -1.7702906,
       "personnel": 27,
-      "small": true
+      "small": true,
+      "region": "South West"
     },
     {
       "id": 2357981,
@@ -1648,7 +1815,8 @@
       "lat": 54.13724884206793,
       "lon": -0.8065662604262706,
       "personnel": 0,
-      "small": false
+      "small": false,
+      "region": "North"
     },
     {
       "id": 2624709,
@@ -1659,7 +1827,8 @@
       "lat": 51.5885522,
       "lon": -2.1003077,
       "personnel": 33,
-      "small": true
+      "small": true,
+      "region": "South West"
     },
     {
       "id": 2662770,
@@ -1670,18 +1839,20 @@
       "lat": 50.1187682972608,
       "lon": -5.541500715226537,
       "personnel": 2,
-      "small": true
+      "small": true,
+      "region": "South West"
     },
     {
       "id": 2316087,
       "name": "(HC2) Chelsea HART BASE (S/B)",
-      "type": "Type 25",
+      "type": "HART Base",
       "typeId": 25,
       "level": 20,
       "lat": 51.48656272520012,
       "lon": -0.14999625437834727,
       "personnel": 200,
-      "small": false
+      "small": false,
+      "region": "South East"
     },
     {
       "id": 2662773,
@@ -1692,7 +1863,8 @@
       "lat": 50.2659861,
       "lon": -5.0556792,
       "personnel": 2,
-      "small": true
+      "small": true,
+      "region": "South West"
     },
     {
       "id": 2662771,
@@ -1703,18 +1875,20 @@
       "lat": 50.2096476,
       "lon": -5.3004205,
       "personnel": 2,
-      "small": true
+      "small": true,
+      "region": "South West"
     },
     {
       "id": 2636872,
       "name": "Bridport hospital HRL",
-      "type": "Type 22",
+      "type": "Home Response / HRL",
       "typeId": 22,
       "level": 0,
       "lat": 50.74164825635571,
       "lon": -2.7699123567276946,
       "personnel": 1,
-      "small": false
+      "small": false,
+      "region": "South West"
     },
     {
       "id": 2650723,
@@ -1725,7 +1899,8 @@
       "lat": 52.66230805538002,
       "lon": -3.143259685210553,
       "personnel": 15,
-      "small": true
+      "small": true,
+      "region": "Wales"
     },
     {
       "id": 2635490,
@@ -1736,7 +1911,8 @@
       "lat": 51.64054080635327,
       "lon": -1.8568519725652552,
       "personnel": 27,
-      "small": true
+      "small": true,
+      "region": "South West"
     },
     {
       "id": 2650384,
@@ -1747,29 +1923,32 @@
       "lat": 53.339497194248956,
       "lon": -6.295411762092058,
       "personnel": 0,
-      "small": false
+      "small": false,
+      "region": "Wales"
     },
     {
       "id": 2041409,
       "name": "ORM-B-T-01 NR30",
-      "type": "Type 22",
+      "type": "Home Response / HRL",
       "typeId": 22,
       "level": 0,
       "lat": 52.65165675351029,
       "lon": 1.724145656800696,
       "personnel": 30,
-      "small": false
+      "small": false,
+      "region": "Midlands"
     },
     {
       "id": 2311793,
       "name": "SGH/HRL",
-      "type": "Type 22",
+      "type": "Home Response / HRL",
       "typeId": 22,
       "level": 0,
       "lat": 50.93082983649866,
       "lon": -1.4317997415756638,
       "personnel": 200,
-      "small": false
+      "small": false,
+      "region": "Other / Overseas"
     },
     {
       "id": 2638184,
@@ -1780,7 +1959,8 @@
       "lat": 50.46754013760775,
       "lon": -4.741500533448471,
       "personnel": 0,
-      "small": false
+      "small": false,
+      "region": "South West"
     },
     {
       "id": 2635219,
@@ -1791,7 +1971,8 @@
       "lat": 50.72380884185867,
       "lon": -3.5212701015617465,
       "personnel": 0,
-      "small": false
+      "small": false,
+      "region": "South West"
     },
     {
       "id": 2662778,
@@ -1802,7 +1983,8 @@
       "lat": 50.3396041,
       "lon": -4.7871671,
       "personnel": 2,
-      "small": true
+      "small": true,
+      "region": "South West"
     },
     {
       "id": 2662779,
@@ -1813,7 +1995,8 @@
       "lat": 50.46687655337385,
       "lon": -4.700875374669279,
       "personnel": 2,
-      "small": true
+      "small": true,
+      "region": "South West"
     },
     {
       "id": 2662780,
@@ -1824,7 +2007,8 @@
       "lat": 50.6295666191529,
       "lon": -4.372398720722698,
       "personnel": 2,
-      "small": true
+      "small": true,
+      "region": "South West"
     },
     {
       "id": 2662781,
@@ -1835,7 +2019,8 @@
       "lat": 50.37614737987876,
       "lon": -4.1446227807398195,
       "personnel": 2,
-      "small": true
+      "small": true,
+      "region": "South West"
     },
     {
       "id": 2662787,
@@ -1846,7 +2031,8 @@
       "lat": 50.7988025,
       "lon": -3.1927023,
       "personnel": 2,
-      "small": true
+      "small": true,
+      "region": "South West"
     },
     {
       "id": 2662782,
@@ -1857,7 +2043,8 @@
       "lat": 50.41077884150148,
       "lon": -4.1338285603281095,
       "personnel": 2,
-      "small": true
+      "small": true,
+      "region": "South West"
     },
     {
       "id": 2662783,
@@ -1868,7 +2055,8 @@
       "lat": 50.52773448966632,
       "lon": -3.61282486321618,
       "personnel": 2,
-      "small": true
+      "small": true,
+      "region": "South West"
     },
     {
       "id": 2662785,
@@ -1879,7 +2067,8 @@
       "lat": 50.73998956888979,
       "lon": -3.995794534435744,
       "personnel": 2,
-      "small": true
+      "small": true,
+      "region": "South West"
     },
     {
       "id": 2662786,
@@ -1890,7 +2079,8 @@
       "lat": 50.71909686502323,
       "lon": -3.478077502316138,
       "personnel": 2,
-      "small": true
+      "small": true,
+      "region": "South West"
     },
     {
       "id": 2333200,
@@ -1901,7 +2091,8 @@
       "lat": 51.4711076683393,
       "lon": -0.1232120652229192,
       "personnel": 200,
-      "small": true
+      "small": true,
+      "region": "South East"
     },
     {
       "id": 2601003,
@@ -1912,7 +2103,8 @@
       "lat": 50.94134178407311,
       "lon": 1.8916250200624523,
       "personnel": 0,
-      "small": false
+      "small": false,
+      "region": "Other / Overseas"
     },
     {
       "id": 2318649,
@@ -1923,7 +2115,8 @@
       "lat": 50.88109730173385,
       "lon": -1.445294369445018,
       "personnel": 0,
-      "small": false
+      "small": false,
+      "region": "Other / Overseas"
     },
     {
       "id": 2357963,
@@ -1934,18 +2127,20 @@
       "lat": 53.92821653979514,
       "lon": -1.1435238402052907,
       "personnel": 200,
-      "small": false
+      "small": false,
+      "region": "North"
     },
     {
       "id": 2620833,
       "name": "[WYFRS-HQ] Border FO⁠",
-      "type": "Type 22",
+      "type": "Home Response / HRL",
       "typeId": 22,
       "level": 0,
       "lat": 53.910288408096356,
       "lon": -1.5268278173343166,
       "personnel": 1,
-      "small": false
+      "small": false,
+      "region": "North"
     },
     {
       "id": 2312415,
@@ -1956,7 +2151,8 @@
       "lat": 51.52782453421807,
       "lon": -0.053416867613505434,
       "personnel": 200,
-      "small": false
+      "small": false,
+      "region": "South East"
     },
     {
       "id": 2654847,
@@ -1967,29 +2163,32 @@
       "lat": 51.4407505,
       "lon": -2.7632316,
       "personnel": 12,
-      "small": true
+      "small": true,
+      "region": "South West"
     },
     {
       "id": 2041099,
       "name": "(HRL-006) Vauxhall LAS HRL",
-      "type": "Type 22",
+      "type": "Home Response / HRL",
       "typeId": 22,
       "level": 0,
       "lat": 51.4849332186188,
       "lon": -0.12614907053071542,
       "personnel": 30,
-      "small": false
+      "small": false,
+      "region": "South East"
     },
     {
       "id": 2320466,
       "name": "SAR RC",
-      "type": "Type 29",
+      "type": "SAR Resource Centre",
       "typeId": 29,
       "level": 0,
       "lat": 50.623368801508626,
       "lon": -0.9138820867798075,
       "personnel": 0,
-      "small": false
+      "small": false,
+      "region": "Other / Overseas"
     },
     {
       "id": 2583595,
@@ -2000,7 +2199,8 @@
       "lat": 51.864298,
       "lon": -2.2285588,
       "personnel": 67,
-      "small": true
+      "small": true,
+      "region": "South West"
     },
     {
       "id": 2649544,
@@ -2011,40 +2211,44 @@
       "lat": 52.7407511,
       "lon": -3.8817774,
       "personnel": 16,
-      "small": true
+      "small": true,
+      "region": "Wales"
     },
     {
       "id": 2525694,
       "name": "Sulis Hospital- AO1",
-      "type": "Type 22",
+      "type": "Home Response / HRL",
       "typeId": 22,
       "level": 0,
       "lat": 51.311282694528,
       "lon": -2.416692393218236,
       "personnel": 2,
-      "small": false
+      "small": false,
+      "region": "South West"
     },
     {
       "id": 2525696,
       "name": "RUH - AO1",
-      "type": "Type 22",
+      "type": "Home Response / HRL",
       "typeId": 22,
       "level": 0,
       "lat": 51.391784441297425,
       "lon": -2.391168031485906,
       "personnel": 2,
-      "small": false
+      "small": false,
+      "region": "South West"
     },
     {
       "id": 2312455,
       "name": "Marsh Lane HRL",
-      "type": "Type 22",
+      "type": "Home Response / HRL",
       "typeId": 22,
       "level": 0,
       "lat": 50.90130780403091,
       "lon": -1.396745199857654,
       "personnel": 200,
-      "small": false
+      "small": false,
+      "region": "Other / Overseas"
     },
     {
       "id": 2374919,
@@ -2055,7 +2259,8 @@
       "lat": 51.044443817059985,
       "lon": -1.7893678274240048,
       "personnel": 200,
-      "small": true
+      "small": true,
+      "region": "South West"
     },
     {
       "id": 2320452,
@@ -2066,7 +2271,8 @@
       "lat": 50.59395909805397,
       "lon": -1.0411005568313725,
       "personnel": 0,
-      "small": false
+      "small": false,
+      "region": "Other / Overseas"
     },
     {
       "id": 2638162,
@@ -2077,7 +2283,8 @@
       "lat": 50.4315482,
       "lon": -3.7091312,
       "personnel": 24,
-      "small": true
+      "small": true,
+      "region": "South West"
     },
     {
       "id": 2328160,
@@ -2088,7 +2295,8 @@
       "lat": 51.0538238241076,
       "lon": -1.2956040314435673,
       "personnel": 0,
-      "small": false
+      "small": false,
+      "region": "Other / Overseas"
     },
     {
       "id": 2638160,
@@ -2099,7 +2307,8 @@
       "lat": 50.54711506218094,
       "lon": -4.153784557966588,
       "personnel": 24,
-      "small": true
+      "small": true,
+      "region": "South West"
     },
     {
       "id": 2638165,
@@ -2110,7 +2319,8 @@
       "lat": 50.6590501,
       "lon": -3.7635471,
       "personnel": 24,
-      "small": true
+      "small": true,
+      "region": "South West"
     },
     {
       "id": 2635209,
@@ -2121,7 +2331,8 @@
       "lat": 51.163019991540644,
       "lon": -3.3232070413135038,
       "personnel": 27,
-      "small": true
+      "small": true,
+      "region": "South West"
     },
     {
       "id": 2366734,
@@ -2132,29 +2343,32 @@
       "lat": 51.206664023210045,
       "lon": -2.181104027630783,
       "personnel": 200,
-      "small": true
+      "small": true,
+      "region": "South West"
     },
     {
       "id": 2320439,
       "name": "Fire academy",
-      "type": "Fire Station",
+      "type": "Fire Station (Large)",
       "typeId": 1,
       "level": 0,
       "lat": 50.521131403075444,
       "lon": -1.0461933576585867,
       "personnel": 0,
-      "small": false
+      "small": false,
+      "region": "Other / Overseas"
     },
     {
       "id": 2318599,
       "name": "Regent’s Park Southampton RCC",
-      "type": "Type 34",
+      "type": "Workshop / RCC",
       "typeId": 34,
       "level": 2,
       "lat": 50.91836811250314,
       "lon": -1.4397581121403762,
       "personnel": 200,
-      "small": false
+      "small": false,
+      "region": "Other / Overseas"
     },
     {
       "id": 2621686,
@@ -2165,18 +2379,20 @@
       "lat": 53.8006809,
       "lon": -1.2523321,
       "personnel": 37,
-      "small": true
+      "small": true,
+      "region": "North"
     },
     {
       "id": 2567744,
       "name": "Newbridge RRV HRL",
-      "type": "Type 22",
+      "type": "Home Response / HRL",
       "typeId": 22,
       "level": 0,
       "lat": 51.389115437286904,
       "lon": -2.4115486310924785,
       "personnel": 1,
-      "small": false
+      "small": false,
+      "region": "South West"
     },
     {
       "id": 2624707,
@@ -2187,18 +2403,20 @@
       "lat": 51.71189093737082,
       "lon": -1.9734244538300727,
       "personnel": 27,
-      "small": true
+      "small": true,
+      "region": "South West"
     },
     {
       "id": 2620306,
       "name": "Summerbridge FO HRL",
-      "type": "Type 22",
+      "type": "Home Response / HRL",
       "typeId": 22,
       "level": 0,
       "lat": 54.060442455030625,
       "lon": -1.697518249255444,
       "personnel": 1,
-      "small": false
+      "small": false,
+      "region": "North"
     },
     {
       "id": 1987519,
@@ -2209,7 +2427,8 @@
       "lat": 51.51473303698452,
       "lon": -0.15935976855465364,
       "personnel": 200,
-      "small": true
+      "small": true,
+      "region": "South East"
     },
     {
       "id": 2622173,
@@ -2220,7 +2439,8 @@
       "lat": 53.716834403964555,
       "lon": -0.8735159520680303,
       "personnel": 37,
-      "small": true
+      "small": true,
+      "region": "North"
     },
     {
       "id": 2636830,
@@ -2231,7 +2451,8 @@
       "lat": 50.769410807721385,
       "lon": -1.5462218967851775,
       "personnel": 13,
-      "small": true
+      "small": true,
+      "region": "South West"
     },
     {
       "id": 2622180,
@@ -2242,18 +2463,20 @@
       "lat": 54.2058456,
       "lon": -0.2937627,
       "personnel": 28,
-      "small": true
+      "small": true,
+      "region": "North"
     },
     {
       "id": 2466015,
       "name": "Saltford Motor Services",
-      "type": "Type 34",
+      "type": "Workshop / RCC",
       "typeId": 34,
       "level": 5,
       "lat": 51.40229553379466,
       "lon": -2.4569888317285336,
       "personnel": 168,
-      "small": false
+      "small": false,
+      "region": "South West"
     },
     {
       "id": 2620979,
@@ -2264,7 +2487,8 @@
       "lat": 53.57825784325828,
       "lon": -1.4506132905387528,
       "personnel": 38,
-      "small": true
+      "small": true,
+      "region": "North"
     },
     {
       "id": 2344108,
@@ -2275,62 +2499,68 @@
       "lat": 51.52614913023767,
       "lon": -0.08515603511284188,
       "personnel": 30,
-      "small": false
+      "small": false,
+      "region": "South East"
     },
     {
       "id": 2567740,
       "name": "Twerton FO HRL",
-      "type": "Type 22",
+      "type": "Home Response / HRL",
       "typeId": 22,
       "level": 0,
       "lat": 51.3798335,
       "lon": -2.3951533,
       "personnel": 1,
-      "small": false
+      "small": false,
+      "region": "South West"
     },
     {
       "id": 2567745,
       "name": "Widcombe GP HRL",
-      "type": "Type 22",
+      "type": "Home Response / HRL",
       "typeId": 22,
       "level": 0,
       "lat": 51.37412274750203,
       "lon": -2.3432438927984296,
       "personnel": 1,
-      "small": false
+      "small": false,
+      "region": "South West"
     },
     {
       "id": 2567739,
       "name": "Lansdown FO HRL",
-      "type": "Type 22",
+      "type": "Home Response / HRL",
       "typeId": 22,
       "level": 0,
       "lat": 51.4183585,
       "lon": -2.4071486,
       "personnel": 1,
-      "small": false
+      "small": false,
+      "region": "South West"
     },
     {
       "id": 2567741,
       "name": "Combe down HRL FO",
-      "type": "Type 22",
+      "type": "Home Response / HRL",
       "typeId": 22,
       "level": 0,
       "lat": 51.359121279143956,
       "lon": -2.350517468715936,
       "personnel": 1,
-      "small": false
+      "small": false,
+      "region": "South West"
     },
     {
       "id": 2567743,
       "name": "BathEastom OTL HRL",
-      "type": "Type 22",
+      "type": "Home Response / HRL",
       "typeId": 22,
       "level": 0,
       "lat": 51.40132414069592,
       "lon": -2.330387305781954,
       "personnel": 1,
-      "small": false
+      "small": false,
+      "region": "South West"
     },
     {
       "id": 2572689,
@@ -2341,18 +2571,20 @@
       "lat": 51.190459349120026,
       "lon": -2.562642843589315,
       "personnel": 0,
-      "small": false
+      "small": false,
+      "region": "South West"
     },
     {
       "id": 2567747,
       "name": "Odd down K9 HRL",
-      "type": "Type 22",
+      "type": "Home Response / HRL",
       "typeId": 22,
       "level": 0,
       "lat": 51.3535038,
       "lon": -2.3822031,
       "personnel": 1,
-      "small": false
+      "small": false,
+      "region": "South West"
     },
     {
       "id": 2572696,
@@ -2363,7 +2595,8 @@
       "lat": 51.367182844061084,
       "lon": -2.1315297087517884,
       "personnel": 0,
-      "small": false
+      "small": false,
+      "region": "South West"
     },
     {
       "id": 1988767,
@@ -2374,18 +2607,20 @@
       "lat": 54.087752920802856,
       "lon": -1.759263660225907,
       "personnel": 200,
-      "small": false
+      "small": false,
+      "region": "North"
     },
     {
       "id": 2329952,
       "name": "(NHE-002) HRL-FO",
-      "type": "Type 22",
+      "type": "Home Response / HRL",
       "typeId": 22,
       "level": 0,
       "lat": 51.4190103351562,
       "lon": -0.41871610243257446,
       "personnel": 200,
-      "small": false
+      "small": false,
+      "region": "South East"
     },
     {
       "id": 2328378,
@@ -2396,29 +2631,32 @@
       "lat": 51.336169568217805,
       "lon": -0.7195117732410674,
       "personnel": 200,
-      "small": true
+      "small": true,
+      "region": "London & South"
     },
     {
       "id": 2620973,
       "name": "West Yorkshire Border FO",
-      "type": "Type 22",
+      "type": "Home Response / HRL",
       "typeId": 22,
       "level": 0,
       "lat": 53.55349021054423,
       "lon": -1.6694151718904071,
       "personnel": 1,
-      "small": false
+      "small": false,
+      "region": "North"
     },
     {
       "id": 2567760,
       "name": "Box RRV HRL",
-      "type": "Type 22",
+      "type": "Home Response / HRL",
       "typeId": 22,
       "level": 0,
       "lat": 51.4141289,
       "lon": -2.2519857,
       "personnel": 1,
-      "small": false
+      "small": false,
+      "region": "South West"
     },
     {
       "id": 2325714,
@@ -2429,7 +2667,8 @@
       "lat": 54.28243147535983,
       "lon": -0.4348590208237545,
       "personnel": 200,
-      "small": false
+      "small": false,
+      "region": "North"
     },
     {
       "id": 2318782,
@@ -2440,7 +2679,8 @@
       "lat": 50.926510950925575,
       "lon": -1.4481515459677103,
       "personnel": 200,
-      "small": true
+      "small": true,
+      "region": "Other / Overseas"
     },
     {
       "id": 1984340,
@@ -2451,7 +2691,8 @@
       "lat": 51.509522849223515,
       "lon": -0.1918020804381004,
       "personnel": 200,
-      "small": true
+      "small": true,
+      "region": "South East"
     },
     {
       "id": 1988057,
@@ -2462,18 +2703,20 @@
       "lat": 54.001350468272115,
       "lon": -1.5336575512231425,
       "personnel": 200,
-      "small": false
+      "small": false,
+      "region": "North"
     },
     {
       "id": 2318734,
       "name": "Southampton Port SRHQ",
-      "type": "Type 31",
+      "type": "Search & Rescue HQ",
       "typeId": 31,
       "level": 5,
       "lat": 50.88326784858202,
       "lon": -1.3941558230724214,
       "personnel": 200,
-      "small": false
+      "small": false,
+      "region": "Other / Overseas"
     },
     {
       "id": 2319706,
@@ -2484,7 +2727,8 @@
       "lat": 51.245529758960416,
       "lon": -1.0957847275118895,
       "personnel": 200,
-      "small": true
+      "small": true,
+      "region": "London & South"
     },
     {
       "id": 2319699,
@@ -2495,7 +2739,8 @@
       "lat": 51.267463680763164,
       "lon": -1.079291483858756,
       "personnel": 200,
-      "small": false
+      "small": false,
+      "region": "London & South"
     },
     {
       "id": 2390845,
@@ -2506,18 +2751,20 @@
       "lat": 51.3886298016049,
       "lon": -2.3545286959194076,
       "personnel": 200,
-      "small": false
+      "small": false,
+      "region": "South West"
     },
     {
       "id": 2390846,
       "name": "Bath - Screwfix",
-      "type": "Type 34",
+      "type": "Workshop / RCC",
       "typeId": 34,
       "level": 5,
       "lat": 51.38060598729199,
       "lon": -2.370117747329321,
       "personnel": 200,
-      "small": false
+      "small": false,
+      "region": "South West"
     },
     {
       "id": 1987510,
@@ -2528,7 +2775,8 @@
       "lat": 51.51402824157516,
       "lon": -0.1620149275971857,
       "personnel": 200,
-      "small": false
+      "small": false,
+      "region": "South East"
     },
     {
       "id": 1988549,
@@ -2539,18 +2787,20 @@
       "lat": 54.060463558256345,
       "lon": -1.697529355075875,
       "personnel": 200,
-      "small": false
+      "small": false,
+      "region": "North"
     },
     {
       "id": 2357961,
       "name": "East Coast NPAS",
-      "type": "Police Station",
+      "type": "Police Aviation",
       "typeId": 13,
       "level": 1,
       "lat": 54.25507855301422,
       "lon": -0.7487147360389355,
       "personnel": 200,
-      "small": false
+      "small": false,
+      "region": "North"
     },
     {
       "id": 2319651,
@@ -2561,7 +2811,8 @@
       "lat": 50.97303017707115,
       "lon": -1.3716681521452652,
       "personnel": 200,
-      "small": false
+      "small": false,
+      "region": "Other / Overseas"
     },
     {
       "id": 2330344,
@@ -2572,18 +2823,20 @@
       "lat": 51.30416408910616,
       "lon": -0.7968705123013997,
       "personnel": 200,
-      "small": false
+      "small": false,
+      "region": "London & South"
     },
     {
       "id": 2406061,
       "name": "SWAS HART Base",
-      "type": "Type 25",
+      "type": "HART Base",
       "typeId": 25,
       "level": 8,
       "lat": 51.518607,
       "lon": -2.5678542,
       "personnel": 200,
-      "small": false
+      "small": false,
+      "region": "South West"
     },
     {
       "id": 2330342,
@@ -2594,18 +2847,20 @@
       "lat": 51.30415667631387,
       "lon": -0.7968853135581386,
       "personnel": 200,
-      "small": false
+      "small": false,
+      "region": "London & South"
     },
     {
       "id": 2326146,
       "name": "Scarborough SARHQ",
-      "type": "Type 31",
+      "type": "Search & Rescue HQ",
       "typeId": 31,
       "level": 3,
       "lat": 54.29446839508862,
       "lon": -0.4083365846604122,
       "personnel": 200,
-      "small": false
+      "small": false,
+      "region": "North"
     },
     {
       "id": 2349728,
@@ -2616,7 +2871,8 @@
       "lat": 53.95842193848291,
       "lon": -1.067160469301125,
       "personnel": 200,
-      "small": false
+      "small": false,
+      "region": "North"
     },
     {
       "id": 2349753,
@@ -2627,7 +2883,8 @@
       "lat": 53.96233327709009,
       "lon": -1.082424501151759,
       "personnel": 0,
-      "small": false
+      "small": false,
+      "region": "North"
     },
     {
       "id": 2188370,
@@ -2638,7 +2895,8 @@
       "lat": 53.99366085792722,
       "lon": -1.5176643693862952,
       "personnel": 200,
-      "small": false
+      "small": false,
+      "region": "North"
     },
     {
       "id": 2318783,
@@ -2649,51 +2907,56 @@
       "lat": 50.94123522554029,
       "lon": -1.3761107813133375,
       "personnel": 200,
-      "small": true
+      "small": true,
+      "region": "Other / Overseas"
     },
     {
       "id": 2464097,
       "name": "Bath Spa HRL",
-      "type": "Type 22",
+      "type": "Home Response / HRL",
       "typeId": 22,
       "level": 0,
       "lat": 51.377668459845864,
       "lon": -2.3568027913360323,
       "personnel": 1,
-      "small": false
+      "small": false,
+      "region": "South West"
     },
     {
       "id": 1984930,
       "name": "(HRL-009) Traffalgar SQR HRL",
-      "type": "Type 22",
+      "type": "Home Response / HRL",
       "typeId": 22,
       "level": 0,
       "lat": 51.506204411728866,
       "lon": -0.1265651696802748,
       "personnel": 30,
-      "small": false
+      "small": false,
+      "region": "South East"
     },
     {
       "id": 2350773,
       "name": "Scarborough NYF&R-FO",
-      "type": "Type 22",
+      "type": "Home Response / HRL",
       "typeId": 22,
       "level": 0,
       "lat": 54.28609118576108,
       "lon": -0.4010350766636038,
       "personnel": 3,
-      "small": false
+      "small": false,
+      "region": "North"
     },
     {
       "id": 2320463,
       "name": "UK police training",
-      "type": "Type 8",
+      "type": "Police Academy",
       "typeId": 8,
       "level": 0,
       "lat": 50.65996478922529,
       "lon": -0.9676574518525632,
       "personnel": 0,
-      "small": false
+      "small": false,
+      "region": "Other / Overseas"
     },
     {
       "id": 2327749,
@@ -2704,18 +2967,20 @@
       "lat": 50.96675668434428,
       "lon": -1.4215468240612301,
       "personnel": 200,
-      "small": false
+      "small": false,
+      "region": "Other / Overseas"
     },
     {
       "id": 2329882,
       "name": "Pimlico HRL",
-      "type": "Type 22",
+      "type": "Home Response / HRL",
       "typeId": 22,
       "level": 0,
       "lat": 51.488406474878964,
       "lon": -0.1408035521204124,
       "personnel": 30,
-      "small": false
+      "small": false,
+      "region": "South East"
     },
     {
       "id": 1844375,
@@ -2726,7 +2991,8 @@
       "lat": 51.50924855235162,
       "lon": -0.12309606807956552,
       "personnel": 200,
-      "small": false
+      "small": false,
+      "region": "South East"
     },
     {
       "id": 2319653,
@@ -2737,7 +3003,8 @@
       "lat": 50.95089257447586,
       "lon": -1.3605310147322331,
       "personnel": 200,
-      "small": false
+      "small": false,
+      "region": "Other / Overseas"
     },
     {
       "id": 2364328,
@@ -2748,7 +3015,8 @@
       "lat": 52.95864527745207,
       "lon": -1.167976805880616,
       "personnel": 200,
-      "small": true
+      "small": true,
+      "region": "Midlands"
     },
     {
       "id": 2364327,
@@ -2759,7 +3027,8 @@
       "lat": 52.98947154696455,
       "lon": -1.156077594185795,
       "personnel": 200,
-      "small": true
+      "small": true,
+      "region": "Midlands"
     },
     {
       "id": 2312409,
@@ -2770,7 +3039,8 @@
       "lat": 50.90978533615443,
       "lon": -1.3986689371734289,
       "personnel": 200,
-      "small": false
+      "small": false,
+      "region": "Other / Overseas"
     },
     {
       "id": 2311527,
@@ -2781,7 +3051,8 @@
       "lat": 53.992301907233596,
       "lon": -1.514033350205127,
       "personnel": 200,
-      "small": false
+      "small": false,
+      "region": "North"
     },
     {
       "id": 2318780,
@@ -2792,7 +3063,8 @@
       "lat": 50.92588680307581,
       "lon": -1.4484077092113785,
       "personnel": 200,
-      "small": false
+      "small": false,
+      "region": "Other / Overseas"
     },
     {
       "id": 2621048,
@@ -2803,29 +3075,32 @@
       "lat": 53.218792434885,
       "lon": -1.6722820154361877,
       "personnel": 38,
-      "small": true
+      "small": true,
+      "region": "Midlands"
     },
     {
       "id": 2312456,
       "name": "Southampton Common HRL (S)",
-      "type": "Type 22",
+      "type": "Home Response / HRL",
       "typeId": 22,
       "level": 0,
       "lat": 50.91922531542322,
       "lon": -1.4041426405619384,
       "personnel": 200,
-      "small": false
+      "small": false,
+      "region": "Other / Overseas"
     },
     {
       "id": 2333227,
       "name": "The health centre Starbeck",
-      "type": "Type 21",
+      "type": "Health Centre",
       "typeId": 21,
       "level": 2,
       "lat": 53.99651665380682,
       "lon": -1.5082697214037528,
       "personnel": 200,
-      "small": false
+      "small": false,
+      "region": "North"
     },
     {
       "id": 2648331,
@@ -2836,7 +3111,8 @@
       "lat": 51.810845592340186,
       "lon": -2.7237848872059427,
       "personnel": 17,
-      "small": true
+      "small": true,
+      "region": "South West"
     },
     {
       "id": 2648335,
@@ -2847,7 +3123,8 @@
       "lat": 51.6667149,
       "lon": -3.1927816,
       "personnel": 17,
-      "small": true
+      "small": true,
+      "region": "Wales"
     },
     {
       "id": 2621036,
@@ -2858,7 +3135,8 @@
       "lat": 52.90586773718391,
       "lon": -1.5429983634774567,
       "personnel": 38,
-      "small": true
+      "small": true,
+      "region": "Midlands"
     },
     {
       "id": 2652211,
@@ -2869,7 +3147,8 @@
       "lat": 54.32871526215685,
       "lon": -4.389824795642367,
       "personnel": 14,
-      "small": true
+      "small": true,
+      "region": "North"
     },
     {
       "id": 2650670,
@@ -2880,7 +3159,8 @@
       "lat": 53.326284778061435,
       "lon": -3.480096028872069,
       "personnel": 15,
-      "small": true
+      "small": true,
+      "region": "Wales"
     },
     {
       "id": 2364329,
@@ -2891,7 +3171,8 @@
       "lat": 54.087388804287315,
       "lon": -1.7632022875951003,
       "personnel": 200,
-      "small": true
+      "small": true,
+      "region": "North"
     },
     {
       "id": 2586557,
@@ -2902,18 +3183,20 @@
       "lat": 51.6963977,
       "lon": -2.2179299,
       "personnel": 73,
-      "small": true
+      "small": true,
+      "region": "South West"
     },
     {
       "id": 1845638,
       "name": "(HRL-008)  Rotherhithe SAR HRL",
-      "type": "Type 22",
+      "type": "Home Response / HRL",
       "typeId": 22,
       "level": 0,
       "lat": 51.501813680880346,
       "lon": -0.05252080199873268,
       "personnel": 30,
-      "small": false
+      "small": false,
+      "region": "South East"
     },
     {
       "id": 2465959,
@@ -2924,40 +3207,44 @@
       "lat": 51.3207907,
       "lon": -2.2028266,
       "personnel": 169,
-      "small": true
+      "small": true,
+      "region": "South West"
     },
     {
       "id": 2657265,
       "name": "HM Coastguard Portishead",
-      "type": "Type 28",
+      "type": "Coastguard Station",
       "typeId": 28,
       "level": 0,
       "lat": 51.4879406,
       "lon": -2.7588917,
       "personnel": 10,
-      "small": false
+      "small": false,
+      "region": "South West"
     },
     {
       "id": 2342750,
       "name": "Scalby gate MR Base",
-      "type": "Type 33",
+      "type": "Mountain Rescue",
       "typeId": 33,
       "level": 4,
       "lat": 54.30000298075552,
       "lon": -0.4598039263608579,
       "personnel": 200,
-      "small": false
+      "small": false,
+      "region": "North"
     },
     {
       "id": 2657467,
       "name": "HM Coastguard Watchet Lookout",
-      "type": "Type 28",
+      "type": "Coastguard Station",
       "typeId": 28,
       "level": 0,
       "lat": 51.18236249487377,
       "lon": -3.3257722602398254,
       "personnel": 10,
-      "small": false
+      "small": false,
+      "region": "South West"
     },
     {
       "id": 2638173,
@@ -2968,7 +3255,8 @@
       "lat": 50.8154199,
       "lon": -4.3531368,
       "personnel": 24,
-      "small": true
+      "small": true,
+      "region": "South West"
     },
     {
       "id": 2620986,
@@ -2979,7 +3267,8 @@
       "lat": 53.415125698302504,
       "lon": -1.3451500681250146,
       "personnel": 38,
-      "small": true
+      "small": true,
+      "region": "Midlands"
     },
     {
       "id": 2652161,
@@ -2990,7 +3279,8 @@
       "lat": 52.529478822688695,
       "lon": -2.401796027634625,
       "personnel": 14,
-      "small": true
+      "small": true,
+      "region": "Midlands"
     },
     {
       "id": 2652888,
@@ -3001,7 +3291,8 @@
       "lat": 51.3398168,
       "lon": 3.2870554,
       "personnel": 14,
-      "small": true
+      "small": true,
+      "region": "South East"
     },
     {
       "id": 2583584,
@@ -3012,7 +3303,8 @@
       "lat": 51.7505439,
       "lon": -2.3029485,
       "personnel": 68,
-      "small": false
+      "small": false,
+      "region": "South West"
     },
     {
       "id": 2662881,
@@ -3023,7 +3315,8 @@
       "lat": 51.47577217697484,
       "lon": -2.795406758336174,
       "personnel": 10,
-      "small": true
+      "small": true,
+      "region": "South West"
     },
     {
       "id": 2662883,
@@ -3034,7 +3327,8 @@
       "lat": 54.1647155,
       "lon": -4.4753006,
       "personnel": 2,
-      "small": true
+      "small": true,
+      "region": "North"
     },
     {
       "id": 2662880,
@@ -3045,18 +3339,20 @@
       "lat": 51.475694917754424,
       "lon": -2.795794962236199,
       "personnel": 2,
-      "small": true
+      "small": true,
+      "region": "South West"
     },
     {
       "id": 2041379,
       "name": "(CRS-001) Greenwich  (Millwall)",
-      "type": "Type 28",
+      "type": "Coastguard Station",
       "typeId": 28,
       "level": 3,
       "lat": 51.48748944713841,
       "lon": -0.022279564732651615,
       "personnel": 200,
-      "small": false
+      "small": false,
+      "region": "South East"
     },
     {
       "id": 2657728,
@@ -3067,18 +3363,20 @@
       "lat": 54.15142926871821,
       "lon": -2.4671357694065015,
       "personnel": 8,
-      "small": true
+      "small": true,
+      "region": "North"
     },
     {
       "id": 2657763,
       "name": "HM Coastguard Holyhead CRT",
-      "type": "Type 28",
+      "type": "Coastguard Station",
       "typeId": 28,
       "level": 0,
       "lat": 53.31630563879956,
       "lon": -4.632411159260764,
       "personnel": 9,
-      "small": false
+      "small": false,
+      "region": "Wales"
     },
     {
       "id": 2635501,
@@ -3089,7 +3387,8 @@
       "lat": 50.79216566421435,
       "lon": -3.212304928772454,
       "personnel": 27,
-      "small": true
+      "small": true,
+      "region": "South West"
     },
     {
       "id": 2621358,
@@ -3100,7 +3399,8 @@
       "lat": 55.1314117,
       "lon": -3.35372,
       "personnel": 38,
-      "small": true
+      "small": true,
+      "region": "Scotland"
     },
     {
       "id": 2620247,
@@ -3111,7 +3411,8 @@
       "lat": 53.76833905623855,
       "lon": -1.5744734656209993,
       "personnel": 39,
-      "small": true
+      "small": true,
+      "region": "North"
     },
     {
       "id": 2312174,
@@ -3122,7 +3423,8 @@
       "lat": 50.90617839592439,
       "lon": -1.4163815176393246,
       "personnel": 200,
-      "small": false
+      "small": false,
+      "region": "Other / Overseas"
     },
     {
       "id": 2312445,
@@ -3133,7 +3435,8 @@
       "lat": 50.92561742139679,
       "lon": -1.390125771668341,
       "personnel": 200,
-      "small": false
+      "small": false,
+      "region": "Other / Overseas"
     },
     {
       "id": 2311779,
@@ -3144,7 +3447,8 @@
       "lat": 50.9306092491856,
       "lon": -1.4327044622663652,
       "personnel": 200,
-      "small": false
+      "small": false,
+      "region": "Other / Overseas"
     },
     {
       "id": 2354534,
@@ -3155,18 +3459,20 @@
       "lat": 51.28943312282601,
       "lon": -2.456675292832151,
       "personnel": 285,
-      "small": false
+      "small": false,
+      "region": "South West"
     },
     {
       "id": 2525834,
       "name": "Roseberry plc - FO",
-      "type": "Type 22",
+      "type": "Home Response / HRL",
       "typeId": 22,
       "level": 0,
       "lat": 51.382488708645674,
       "lon": -2.3830260568223762,
       "personnel": 1,
-      "small": false
+      "small": false,
+      "region": "South West"
     },
     {
       "id": 2633096,
@@ -3177,7 +3483,8 @@
       "lat": 53.233722010663875,
       "lon": -1.42593391323988,
       "personnel": 28,
-      "small": true
+      "small": true,
+      "region": "Midlands"
     },
     {
       "id": 2620846,
@@ -3188,7 +3495,8 @@
       "lat": 53.96153770887709,
       "lon": -2.0111322924643953,
       "personnel": 37,
-      "small": true
+      "small": true,
+      "region": "North"
     },
     {
       "id": 2572699,
@@ -3199,7 +3507,8 @@
       "lat": 51.357944655837294,
       "lon": -2.371638192902137,
       "personnel": 0,
-      "small": false
+      "small": false,
+      "region": "South West"
     },
     {
       "id": 2639116,
@@ -3210,7 +3519,8 @@
       "lat": 50.469138250623274,
       "lon": -4.728886413118822,
       "personnel": 23,
-      "small": true
+      "small": true,
+      "region": "South West"
     },
     {
       "id": 2621058,
@@ -3221,29 +3531,32 @@
       "lat": 52.6621817,
       "lon": -1.1745279,
       "personnel": 38,
-      "small": true
+      "small": true,
+      "region": "Midlands"
     },
     {
       "id": 2657777,
       "name": "HM Coastguard Sharpness",
-      "type": "Type 28",
+      "type": "Coastguard Station",
       "typeId": 28,
       "level": 0,
       "lat": 51.71566774504608,
       "lon": -2.4825888912266403,
       "personnel": 9,
-      "small": false
+      "small": false,
+      "region": "South West"
     },
     {
       "id": 2340692,
       "name": "Bermondsey (North)",
-      "type": "Type 22",
+      "type": "Home Response / HRL",
       "typeId": 22,
       "level": 0,
       "lat": 51.48918034845197,
       "lon": -0.07796579553495732,
       "personnel": 200,
-      "small": false
+      "small": false,
+      "region": "South East"
     },
     {
       "id": 2327192,
@@ -3254,7 +3567,8 @@
       "lat": 51.55047795842578,
       "lon": -0.1836170109149681,
       "personnel": 200,
-      "small": true
+      "small": true,
+      "region": "South East"
     },
     {
       "id": 2646529,
@@ -3265,18 +3579,20 @@
       "lat": 51.01616149184288,
       "lon": -3.083849183664912,
       "personnel": 26,
-      "small": true
+      "small": true,
+      "region": "South West"
     },
     {
       "id": 1845393,
       "name": "(HRL-004) Holborn HRL Station",
-      "type": "Type 22",
+      "type": "Home Response / HRL",
       "typeId": 22,
       "level": 0,
       "lat": 51.510999161377384,
       "lon": -0.10902400618233912,
       "personnel": 30,
-      "small": false
+      "small": false,
+      "region": "South East"
     },
     {
       "id": 2567759,
@@ -3287,29 +3603,32 @@
       "lat": 51.4496673,
       "lon": -2.1365683,
       "personnel": 86,
-      "small": false
+      "small": false,
+      "region": "South West"
     },
     {
       "id": 2033681,
       "name": "(HRL-001) City of London Fire officer",
-      "type": "Type 22",
+      "type": "Home Response / HRL",
       "typeId": 22,
       "level": 0,
       "lat": 51.51064039150632,
       "lon": -0.09822466896601018,
       "personnel": 30,
-      "small": false
+      "small": false,
+      "region": "South East"
     },
     {
       "id": 2041100,
       "name": "(HRL-002) Elephant and Castle",
-      "type": "Type 22",
+      "type": "Home Response / HRL",
       "typeId": 22,
       "level": 0,
       "lat": 51.49838693321645,
       "lon": -0.09765417244227617,
       "personnel": 30,
-      "small": false
+      "small": false,
+      "region": "South East"
     },
     {
       "id": 2330343,
@@ -3320,7 +3639,8 @@
       "lat": 51.30412720806707,
       "lon": -0.7968871995844199,
       "personnel": 200,
-      "small": true
+      "small": true,
+      "region": "London & South"
     },
     {
       "id": 2366733,
@@ -3331,7 +3651,8 @@
       "lat": 51.20744945694732,
       "lon": -2.181450722484675,
       "personnel": 200,
-      "small": true
+      "small": true,
+      "region": "South West"
     },
     {
       "id": 2429046,
@@ -3342,7 +3663,8 @@
       "lat": 51.459167869232125,
       "lon": -2.596142441448984,
       "personnel": 0,
-      "small": false
+      "small": false,
+      "region": "South West"
     },
     {
       "id": 2635206,
@@ -3353,7 +3675,8 @@
       "lat": 51.200206,
       "lon": -3.4729151,
       "personnel": 27,
-      "small": true
+      "small": true,
+      "region": "South West"
     },
     {
       "id": 2621056,
@@ -3364,7 +3687,8 @@
       "lat": 52.7683615,
       "lon": -1.2224403,
       "personnel": 38,
-      "small": true
+      "small": true,
+      "region": "Midlands"
     },
     {
       "id": 2621321,
@@ -3375,7 +3699,8 @@
       "lat": 55.84044275339354,
       "lon": -4.259879513540496,
       "personnel": 38,
-      "small": true
+      "small": true,
+      "region": "Scotland"
     },
     {
       "id": 2650714,
@@ -3386,7 +3711,8 @@
       "lat": 53.0454558,
       "lon": -3.0139971,
       "personnel": 15,
-      "small": true
+      "small": true,
+      "region": "Wales"
     },
     {
       "id": 2357987,
@@ -3397,18 +3723,20 @@
       "lat": 51.311304694976165,
       "lon": -2.4165690272642224,
       "personnel": 0,
-      "small": false
+      "small": false,
+      "region": "South West"
     },
     {
       "id": 2312031,
       "name": "(HRL-003) Lambeth HRL/SB",
-      "type": "Type 22",
+      "type": "Home Response / HRL",
       "typeId": 22,
       "level": 0,
       "lat": 51.492910816331,
       "lon": -0.12123953489482854,
       "personnel": 30,
-      "small": false
+      "small": false,
+      "region": "South East"
     },
     {
       "id": 2659456,
@@ -3419,7 +3747,8 @@
       "lat": 51.68787567315339,
       "lon": -2.3594959218384526,
       "personnel": 10,
-      "small": true
+      "small": true,
+      "region": "South West"
     },
     {
       "id": 2621667,
@@ -3430,18 +3759,20 @@
       "lat": 51.3355919,
       "lon": -2.7931366,
       "personnel": 37,
-      "small": true
+      "small": true,
+      "region": "South West"
     },
     {
       "id": 2471875,
       "name": "Hope House Surgery (NHS)",
-      "type": "Type 32",
+      "type": "GP Surgery",
       "typeId": 32,
       "level": 3,
       "lat": 51.29264592569361,
       "lon": -2.4453439028427693,
       "personnel": 165,
-      "small": false
+      "small": false,
+      "region": "South West"
     },
     {
       "id": 2659464,
@@ -3452,7 +3783,8 @@
       "lat": 51.450610971372114,
       "lon": -0.9862098792154756,
       "personnel": 0,
-      "small": false
+      "small": false,
+      "region": "London & South"
     },
     {
       "id": 2650740,
@@ -3463,7 +3795,8 @@
       "lat": 51.94863553763058,
       "lon": -3.3847649452342896,
       "personnel": 15,
-      "small": true
+      "small": true,
+      "region": "Wales"
     },
     {
       "id": 2650724,
@@ -3474,7 +3807,8 @@
       "lat": 52.52096702409138,
       "lon": -3.3142778897541563,
       "personnel": 15,
-      "small": true
+      "small": true,
+      "region": "Wales"
     },
     {
       "id": 2659467,
@@ -3485,18 +3819,20 @@
       "lat": 51.40762161176569,
       "lon": -1.318489188386671,
       "personnel": 3,
-      "small": true
+      "small": true,
+      "region": "London & South"
     },
     {
       "id": 2448097,
       "name": "Bath old Rd. Midwife station",
-      "type": "Type 22",
+      "type": "Home Response / HRL",
       "typeId": 22,
       "level": 0,
       "lat": 51.2968883999816,
       "lon": -2.4464523810888887,
       "personnel": 184,
-      "small": false
+      "small": false,
+      "region": "South West"
     },
     {
       "id": 2330770,
@@ -3507,7 +3843,8 @@
       "lat": 50.93284454963561,
       "lon": -1.4346149417334773,
       "personnel": 0,
-      "small": false
+      "small": false,
+      "region": "Other / Overseas"
     },
     {
       "id": 2650386,
@@ -3518,7 +3855,8 @@
       "lat": 52.344032806146664,
       "lon": -6.484274125339155,
       "personnel": 16,
-      "small": true
+      "small": true,
+      "region": "Wales"
     },
     {
       "id": 2649595,
@@ -3529,7 +3867,8 @@
       "lat": 53.1404185,
       "lon": -4.2497021,
       "personnel": 16,
-      "small": true
+      "small": true,
+      "region": "Wales"
     },
     {
       "id": 2318768,
@@ -3540,7 +3879,8 @@
       "lat": 51.54436733165658,
       "lon": -0.23660438762004396,
       "personnel": 200,
-      "small": false
+      "small": false,
+      "region": "South East"
     },
     {
       "id": 2364563,
@@ -3551,18 +3891,20 @@
       "lat": 52.9529616,
       "lon": -1.154971,
       "personnel": 200,
-      "small": true
+      "small": true,
+      "region": "Midlands"
     },
     {
       "id": 2481579,
       "name": "RNLI Avonmouth",
-      "type": "Type 28",
+      "type": "Coastguard Station",
       "typeId": 28,
       "level": 5,
       "lat": 51.508180562630336,
       "lon": -2.7180287121072353,
       "personnel": 164,
-      "small": false
+      "small": false,
+      "region": "South West"
     },
     {
       "id": 2586553,
@@ -3573,7 +3915,8 @@
       "lat": 51.7007221,
       "lon": -2.333228,
       "personnel": 65,
-      "small": true
+      "small": true,
+      "region": "South West"
     },
     {
       "id": 2319865,
@@ -3584,7 +3927,8 @@
       "lat": 51.52647467394875,
       "lon": -0.08545064940241709,
       "personnel": 200,
-      "small": true
+      "small": true,
+      "region": "South East"
     },
     {
       "id": 2648333,
@@ -3595,7 +3939,8 @@
       "lat": 51.8241252,
       "lon": -3.030815,
       "personnel": 17,
-      "small": true
+      "small": true,
+      "region": "Wales"
     },
     {
       "id": 2350542,
@@ -3606,7 +3951,8 @@
       "lat": 54.00866354870889,
       "lon": -1.4487172046324637,
       "personnel": 200,
-      "small": true
+      "small": true,
+      "region": "North"
     },
     {
       "id": 2330766,
@@ -3617,7 +3963,8 @@
       "lat": 51.49882104927478,
       "lon": -0.11859392142196024,
       "personnel": 0,
-      "small": false
+      "small": false,
+      "region": "South East"
     },
     {
       "id": 1984339,
@@ -3628,18 +3975,20 @@
       "lat": 51.51024301008607,
       "lon": -0.18933693861441778,
       "personnel": 200,
-      "small": false
+      "small": false,
+      "region": "South East"
     },
     {
       "id": 2462423,
       "name": "Kingswood FO Office",
-      "type": "Type 22",
+      "type": "Home Response / HRL",
       "typeId": 22,
       "level": 0,
       "lat": 51.46437221450008,
       "lon": -2.4872321062565255,
       "personnel": 1,
-      "small": false
+      "small": false,
+      "region": "South West"
     },
     {
       "id": 2328050,
@@ -3650,7 +3999,8 @@
       "lat": 51.272331031376446,
       "lon": -1.0443292233068258,
       "personnel": 200,
-      "small": true
+      "small": true,
+      "region": "London & South"
     },
     {
       "id": 2642427,
@@ -3661,7 +4011,8 @@
       "lat": 50.2293714,
       "lon": -5.2444244,
       "personnel": 21,
-      "small": true
+      "small": true,
+      "region": "South West"
     },
     {
       "id": 1984600,
@@ -3672,7 +4023,8 @@
       "lat": 51.517343449596495,
       "lon": -0.05532885858920619,
       "personnel": 200,
-      "small": true
+      "small": true,
+      "region": "South East"
     },
     {
       "id": 2647804,
@@ -3683,7 +4035,8 @@
       "lat": 51.5022468,
       "lon": -3.1176314,
       "personnel": 18,
-      "small": true
+      "small": true,
+      "region": "Wales"
     },
     {
       "id": 2638177,
@@ -3694,40 +4047,44 @@
       "lat": 51.2282628,
       "lon": -3.8400748,
       "personnel": 24,
-      "small": true
+      "small": true,
+      "region": "South West"
     },
     {
       "id": 2620832,
       "name": "North Yorkshire border FO",
-      "type": "Type 22",
+      "type": "Home Response / HRL",
       "typeId": 22,
       "level": 0,
       "lat": 53.91083465003108,
       "lon": -1.5263618668626668,
       "personnel": 1,
-      "small": false
+      "small": false,
+      "region": "North"
     },
     {
       "id": 2505578,
       "name": "Bath Bomb Squad",
-      "type": "Type 35",
+      "type": "Bomb Disposal",
       "typeId": 35,
       "level": 5,
       "lat": 51.378737042867975,
       "lon": -2.356747928237651,
       "personnel": 144,
-      "small": false
+      "small": false,
+      "region": "South West"
     },
     {
       "id": 2658825,
       "name": "Filton HRL SAR 4×4 #001",
-      "type": "Type 22",
+      "type": "Home Response / HRL",
       "typeId": 22,
       "level": 0,
       "lat": 51.4983737579629,
       "lon": -2.583967803345702,
       "personnel": 1,
-      "small": false
+      "small": false,
+      "region": "South West"
     },
     {
       "id": 2621314,
@@ -3738,7 +4095,8 @@
       "lat": 55.92727075021527,
       "lon": -3.2182590869673215,
       "personnel": 0,
-      "small": false
+      "small": false,
+      "region": "Scotland"
     },
     {
       "id": 2312467,
@@ -3749,40 +4107,44 @@
       "lat": 54.13837689281015,
       "lon": -1.5178581711838002,
       "personnel": 200,
-      "small": false
+      "small": false,
+      "region": "North"
     },
     {
       "id": 2621344,
       "name": "Scotland border RRV",
-      "type": "Type 22",
+      "type": "Home Response / HRL",
       "typeId": 22,
       "level": 0,
       "lat": 54.99356770053821,
       "lon": -3.053422247945874,
       "personnel": 1,
-      "small": false
+      "small": false,
+      "region": "North"
     },
     {
       "id": 2658838,
       "name": "West Somerset HM Coastguard CRV HRL 001",
-      "type": "Type 22",
+      "type": "Home Response / HRL",
       "typeId": 22,
       "level": 0,
       "lat": 51.365176557885164,
       "lon": -2.9646772686502736,
       "personnel": 1,
-      "small": false
+      "small": false,
+      "region": "South West"
     },
     {
       "id": 1987514,
       "name": "(HRL-005) MarbleArch LAS HRL",
-      "type": "Type 22",
+      "type": "Home Response / HRL",
       "typeId": 22,
       "level": 0,
       "lat": 51.51350839653871,
       "lon": -0.15934475660952505,
       "personnel": 200,
-      "small": false
+      "small": false,
+      "region": "South East"
     },
     {
       "id": 2633723,
@@ -3793,7 +4155,8 @@
       "lat": 51.2381095,
       "lon": -2.9929528,
       "personnel": 28,
-      "small": true
+      "small": true,
+      "region": "South West"
     },
     {
       "id": 2033678,
@@ -3804,7 +4167,8 @@
       "lat": 51.51185535186849,
       "lon": -0.09586077309575829,
       "personnel": 200,
-      "small": false
+      "small": false,
+      "region": "South East"
     },
     {
       "id": 1984068,
@@ -3815,7 +4179,8 @@
       "lat": 51.524939320963426,
       "lon": -0.1360894345703035,
       "personnel": 200,
-      "small": false
+      "small": false,
+      "region": "South East"
     },
     {
       "id": 1984004,
@@ -3826,18 +4191,20 @@
       "lat": 51.52762044825181,
       "lon": -0.13069131081189714,
       "personnel": 200,
-      "small": false
+      "small": false,
+      "region": "South East"
     },
     {
       "id": 2327980,
       "name": "Monument HRL",
-      "type": "Type 22",
+      "type": "Home Response / HRL",
       "typeId": 22,
       "level": 0,
       "lat": 51.50929473158206,
       "lon": -0.08541212724164834,
       "personnel": 200,
-      "small": false
+      "small": false,
+      "region": "South East"
     },
     {
       "id": 2319695,
@@ -3848,7 +4215,8 @@
       "lat": 51.24520327400317,
       "lon": -1.0952816585198275,
       "personnel": 200,
-      "small": false
+      "small": false,
+      "region": "London & South"
     },
     {
       "id": 2638176,
@@ -3859,7 +4227,8 @@
       "lat": 50.3887785,
       "lon": -3.9542683,
       "personnel": 24,
-      "small": true
+      "small": true,
+      "region": "South West"
     },
     {
       "id": 2600986,
@@ -3870,7 +4239,8 @@
       "lat": 50.9413653,
       "lon": 1.8916948,
       "personnel": 57,
-      "small": false
+      "small": false,
+      "region": "Other / Overseas"
     },
     {
       "id": 2390847,
@@ -3881,29 +4251,32 @@
       "lat": 51.39141658271086,
       "lon": -2.3916416733188,
       "personnel": 0,
-      "small": false
+      "small": false,
+      "region": "South West"
     },
     {
       "id": 1988490,
       "name": "(HRLNY-001) Harrogate Fire station",
-      "type": "Type 22",
+      "type": "Home Response / HRL",
       "typeId": 22,
       "level": 0,
       "lat": 54.00125679087549,
       "lon": -1.5335783556917681,
       "personnel": 200,
-      "small": false
+      "small": false,
+      "region": "North"
     },
     {
       "id": 1984864,
       "name": "(HRL-007) Piccadilly CFR HRL",
-      "type": "Type 22",
+      "type": "Home Response / HRL",
       "typeId": 22,
       "level": 0,
       "lat": 51.509394518603614,
       "lon": -0.1341802363227259,
       "personnel": 200,
-      "small": false
+      "small": false,
+      "region": "South East"
     },
     {
       "id": 2638161,
@@ -3914,7 +4287,8 @@
       "lat": 50.5374223,
       "lon": -3.6094583,
       "personnel": 24,
-      "small": true
+      "small": true,
+      "region": "South West"
     },
     {
       "id": 2328384,
@@ -3925,7 +4299,8 @@
       "lat": 51.41904851183741,
       "lon": -0.41867093340787376,
       "personnel": 200,
-      "small": true
+      "small": true,
+      "region": "South East"
     },
     {
       "id": 2328773,
@@ -3936,7 +4311,8 @@
       "lat": 51.336168277988904,
       "lon": -0.7195050585298484,
       "personnel": 200,
-      "small": false
+      "small": false,
+      "region": "London & South"
     },
     {
       "id": 2374908,
@@ -3947,7 +4323,8 @@
       "lat": 51.49510491561572,
       "lon": -2.59112576516333,
       "personnel": 200,
-      "small": true
+      "small": true,
+      "region": "South West"
     },
     {
       "id": 2622181,
@@ -3958,7 +4335,8 @@
       "lat": 54.0060232,
       "lon": -0.4443277,
       "personnel": 37,
-      "small": true
+      "small": true,
+      "region": "North"
     },
     {
       "id": 2636828,
@@ -3969,18 +4347,20 @@
       "lat": 50.61158056029849,
       "lon": -1.9759062485250058,
       "personnel": 26,
-      "small": true
+      "small": true,
+      "region": "South West"
     },
     {
       "id": 2326147,
       "name": "North Bay CRS",
-      "type": "Type 28",
+      "type": "Coastguard Station",
       "typeId": 28,
       "level": 2,
       "lat": 54.29881023455065,
       "lon": -0.41011515597785947,
       "personnel": 200,
-      "small": false
+      "small": false,
+      "region": "North"
     },
     {
       "id": 2652168,
@@ -3991,7 +4371,8 @@
       "lat": 52.21853401918792,
       "lon": -2.7340718203972867,
       "personnel": 14,
-      "small": true
+      "small": true,
+      "region": "Midlands"
     },
     {
       "id": 2582594,
@@ -4002,7 +4383,8 @@
       "lat": 51.6369879,
       "lon": -2.4590578,
       "personnel": 69,
-      "small": false
+      "small": false,
+      "region": "South West"
     },
     {
       "id": 2330200,
@@ -4013,7 +4395,8 @@
       "lat": 51.33615727895048,
       "lon": -0.7195036366357542,
       "personnel": 200,
-      "small": false
+      "small": false,
+      "region": "London & South"
     },
     {
       "id": 2333215,
@@ -4024,7 +4407,8 @@
       "lat": 51.2793446737704,
       "lon": -0.9291737011750661,
       "personnel": 200,
-      "small": true
+      "small": true,
+      "region": "London & South"
     },
     {
       "id": 2638163,
@@ -4035,7 +4419,8 @@
       "lat": 50.2846413,
       "lon": -3.7777856,
       "personnel": 24,
-      "small": true
+      "small": true,
+      "region": "South West"
     },
     {
       "id": 2638166,
@@ -4046,7 +4431,8 @@
       "lat": 50.9517146,
       "lon": -4.1439756,
       "personnel": 24,
-      "small": true
+      "small": true,
+      "region": "South West"
     },
     {
       "id": 2651009,
@@ -4057,7 +4443,8 @@
       "lat": 52.69214554838593,
       "lon": -2.77143020030613,
       "personnel": 14,
-      "small": true
+      "small": true,
+      "region": "Midlands"
     },
     {
       "id": 1983967,
@@ -4068,7 +4455,8 @@
       "lat": 51.52919437052441,
       "lon": -0.12629740715276055,
       "personnel": 200,
-      "small": false
+      "small": false,
+      "region": "South East"
     },
     {
       "id": 2635513,
@@ -4079,7 +4467,8 @@
       "lat": 51.560355224592655,
       "lon": -1.7791513664204774,
       "personnel": 0,
-      "small": false
+      "small": false,
+      "region": "South West"
     },
     {
       "id": 2319692,
@@ -4090,7 +4479,8 @@
       "lat": 50.99680535159174,
       "lon": -1.3596020528143282,
       "personnel": 200,
-      "small": false
+      "small": false,
+      "region": "Other / Overseas"
     },
     {
       "id": 1844412,
@@ -4101,7 +4491,8 @@
       "lat": 51.51864389562072,
       "lon": -0.05532037907216101,
       "personnel": 200,
-      "small": false
+      "small": false,
+      "region": "South East"
     },
     {
       "id": 2636820,
@@ -4112,7 +4503,8 @@
       "lat": 50.71280602919093,
       "lon": -2.446820035050778,
       "personnel": 26,
-      "small": true
+      "small": true,
+      "region": "South West"
     },
     {
       "id": 2650412,
@@ -4123,7 +4515,8 @@
       "lat": 54.23072279575719,
       "lon": -4.5360852423322005,
       "personnel": 0,
-      "small": false
+      "small": false,
+      "region": "North"
     },
     {
       "id": 2621066,
@@ -4134,7 +4527,8 @@
       "lat": 52.7003311,
       "lon": -1.8209697,
       "personnel": 38,
-      "small": true
+      "small": true,
+      "region": "Midlands"
     },
     {
       "id": 2620972,
@@ -4145,7 +4539,8 @@
       "lat": 53.5254038,
       "lon": -1.6182427,
       "personnel": 38,
-      "small": true
+      "small": true,
+      "region": "North"
     },
     {
       "id": 1987703,
@@ -4156,7 +4551,8 @@
       "lat": 51.50040423160425,
       "lon": -0.1180623846231183,
       "personnel": 200,
-      "small": true
+      "small": true,
+      "region": "South East"
     },
     {
       "id": 2620962,
@@ -4167,7 +4563,8 @@
       "lat": 53.704057937631774,
       "lon": -1.786863122031501,
       "personnel": 37,
-      "small": true
+      "small": true,
+      "region": "North"
     },
     {
       "id": 2567229,
@@ -4178,62 +4575,68 @@
       "lat": 51.321611143618476,
       "lon": -2.971186856353536,
       "personnel": 0,
-      "small": false
+      "small": false,
+      "region": "South West"
     },
     {
       "id": 2620662,
       "name": "AMT Auto Leeds",
-      "type": "Type 34",
+      "type": "Workshop / RCC",
       "typeId": 34,
       "level": 1,
       "lat": 53.79896513767852,
       "lon": -1.5612811342479633,
       "personnel": 37,
-      "small": false
+      "small": false,
+      "region": "North"
     },
     {
       "id": 2654837,
       "name": "RNLI Weston-super-Mare",
-      "type": "Type 27",
+      "type": "Lifeboat Station",
       "typeId": 27,
       "level": 1,
       "lat": 51.3526694,
       "lon": -2.9876706,
       "personnel": 24,
-      "small": false
+      "small": false,
+      "region": "South West"
     },
     {
       "id": 2349644,
       "name": "(YH1) YORK-YORKSHIRE HART",
-      "type": "Type 25",
+      "type": "HART Base",
       "typeId": 25,
       "level": 5,
       "lat": 53.962588318299844,
       "lon": -1.0702550395224386,
       "personnel": 200,
-      "small": false
+      "small": false,
+      "region": "North"
     },
     {
       "id": 2328513,
       "name": "Knightsbridge HRL (FO)",
-      "type": "Type 22",
+      "type": "Home Response / HRL",
       "typeId": 22,
       "level": 0,
       "lat": 51.501497821875475,
       "lon": -0.17492531125666225,
       "personnel": 200,
-      "small": false
+      "small": false,
+      "region": "South East"
     },
     {
       "id": 2357958,
       "name": "ASP: Radstock Recovery (North)",
-      "type": "Type 34",
+      "type": "Workshop / RCC",
       "typeId": 34,
       "level": 4,
       "lat": 51.29150769261796,
       "lon": -2.4468191350576167,
       "personnel": 227,
-      "small": false
+      "small": false,
+      "region": "South West"
     },
     {
       "id": 2319797,
@@ -4244,7 +4647,8 @@
       "lat": 51.280443780096036,
       "lon": -1.1099635533279315,
       "personnel": 200,
-      "small": false
+      "small": false,
+      "region": "London & South"
     },
     {
       "id": 1987515,
@@ -4255,18 +4659,20 @@
       "lat": 51.51374018951918,
       "lon": -0.1588935017426944,
       "personnel": 200,
-      "small": false
+      "small": false,
+      "region": "South East"
     },
     {
       "id": 2325715,
       "name": "Scarborough lifeboat station",
-      "type": "Type 27",
+      "type": "Lifeboat Station",
       "typeId": 27,
       "level": 3,
       "lat": 54.283255480292134,
       "lon": -0.39304236909934537,
       "personnel": 200,
-      "small": false
+      "small": false,
+      "region": "North"
     },
     {
       "id": 2656571,
@@ -4277,7 +4683,8 @@
       "lat": 51.548238408811024,
       "lon": -0.27882237567282653,
       "personnel": 10,
-      "small": true
+      "small": true,
+      "region": "South East"
     },
     {
       "id": 2652882,
@@ -4288,7 +4695,8 @@
       "lat": 51.0662498,
       "lon": 2.682034,
       "personnel": 14,
-      "small": true
+      "small": true,
+      "region": "Other / Overseas"
     },
     {
       "id": 2642433,
@@ -4299,7 +4707,8 @@
       "lat": 50.619074,
       "lon": -4.6814228,
       "personnel": 21,
-      "small": true
+      "small": true,
+      "region": "South West"
     },
     {
       "id": 1988488,
@@ -4310,7 +4719,8 @@
       "lat": 53.99036156770937,
       "lon": -1.539725223926126,
       "personnel": 200,
-      "small": false
+      "small": false,
+      "region": "North"
     },
     {
       "id": 2652194,
@@ -4321,7 +4731,8 @@
       "lat": 52.3633634,
       "lon": -2.2596412,
       "personnel": 14,
-      "small": true
+      "small": true,
+      "region": "Midlands"
     },
     {
       "id": 2654848,
@@ -4332,7 +4743,8 @@
       "lat": 51.45940903427346,
       "lon": -2.567312584388859,
       "personnel": 12,
-      "small": true
+      "small": true,
+      "region": "South West"
     },
     {
       "id": 2319380,
@@ -4343,18 +4755,20 @@
       "lat": 50.87133726042925,
       "lon": -1.4016221735665497,
       "personnel": 200,
-      "small": false
+      "small": false,
+      "region": "Other / Overseas"
     },
     {
       "id": 2318784,
       "name": "Redbridge HRL/FO",
-      "type": "Type 22",
+      "type": "Home Response / HRL",
       "typeId": 22,
       "level": 0,
       "lat": 50.92652653581974,
       "lon": -1.4480734116612288,
       "personnel": 200,
-      "small": false
+      "small": false,
+      "region": "Other / Overseas"
     },
     {
       "id": 2319201,
@@ -4365,7 +4779,8 @@
       "lat": 51.503161152683504,
       "lon": -0.0875536641096022,
       "personnel": 200,
-      "small": false
+      "small": false,
+      "region": "South East"
     },
     {
       "id": 1984841,
@@ -4376,18 +4791,20 @@
       "lat": 51.498871912221546,
       "lon": -0.13420135625188256,
       "personnel": 200,
-      "small": true
+      "small": true,
+      "region": "South East"
     },
     {
       "id": 2041378,
       "name": "(SAR-001) HQ Westminster ",
-      "type": "Type 31",
+      "type": "Search & Rescue HQ",
       "typeId": 31,
       "level": 5,
       "lat": 51.51350678894119,
       "lon": -0.12275986079634861,
       "personnel": 200,
-      "small": false
+      "small": false,
+      "region": "South East"
     },
     {
       "id": 2649579,
@@ -4398,7 +4815,8 @@
       "lat": 52.88731373456664,
       "lon": -4.4240069732379705,
       "personnel": 16,
-      "small": true
+      "small": true,
+      "region": "Wales"
     },
     {
       "id": 2311530,
@@ -4409,7 +4827,8 @@
       "lat": 53.97853496970604,
       "lon": -1.568681194543798,
       "personnel": 200,
-      "small": false
+      "small": false,
+      "region": "North"
     },
     {
       "id": 2642428,
@@ -4420,7 +4839,8 @@
       "lat": 50.1556715,
       "lon": -5.0861887,
       "personnel": 21,
-      "small": true
+      "small": true,
+      "region": "South West"
     },
     {
       "id": 2620255,
@@ -4431,18 +4851,20 @@
       "lat": 53.79485,
       "lon": -1.5456551,
       "personnel": 43,
-      "small": true
+      "small": true,
+      "region": "North"
     },
     {
       "id": 2311534,
       "name": "(HRLNY-002) HDH OTL",
-      "type": "Type 22",
+      "type": "Home Response / HRL",
       "typeId": 22,
       "level": 0,
       "lat": 53.99280146395164,
       "lon": -1.5182799318439455,
       "personnel": 200,
-      "small": false
+      "small": false,
+      "region": "North"
     },
     {
       "id": 2656580,
@@ -4453,7 +4875,8 @@
       "lat": 51.2805415,
       "lon": -0.075795,
       "personnel": 10,
-      "small": true
+      "small": true,
+      "region": "South East"
     },
     {
       "id": 2620959,
@@ -4464,7 +4887,8 @@
       "lat": 53.7022673,
       "lon": -1.6518805,
       "personnel": 37,
-      "small": true
+      "small": true,
+      "region": "North"
     },
     {
       "id": 2033679,
@@ -4475,7 +4899,8 @@
       "lat": 51.51198223018847,
       "lon": -0.09735702364887618,
       "personnel": 200,
-      "small": false
+      "small": false,
+      "region": "South East"
     },
     {
       "id": 2325710,
@@ -4486,18 +4911,20 @@
       "lat": 54.281178237148936,
       "lon": -0.40698258763913125,
       "personnel": 200,
-      "small": false
+      "small": false,
+      "region": "North"
     },
     {
       "id": 2320404,
       "name": "(NPAS-001) Heathrow Airport",
-      "type": "Police Station",
+      "type": "Police Aviation",
       "typeId": 13,
       "level": 2,
       "lat": 51.47166626305653,
       "lon": -0.4590044680442218,
       "personnel": 200,
-      "small": false
+      "small": false,
+      "region": "South East"
     },
     {
       "id": 2318646,
@@ -4508,7 +4935,8 @@
       "lat": 51.48484769056286,
       "lon": -0.033829908434200355,
       "personnel": 200,
-      "small": false
+      "small": false,
+      "region": "South East"
     },
     {
       "id": 2360732,
@@ -4519,18 +4947,20 @@
       "lat": 51.35780802362551,
       "lon": -2.3716528792951537,
       "personnel": 200,
-      "small": false
+      "small": false,
+      "region": "South West"
     },
     {
       "id": 2318732,
       "name": "Southampton CGS",
-      "type": "Type 28",
+      "type": "Coastguard Station",
       "typeId": 28,
       "level": 4,
       "lat": 50.89256226163509,
       "lon": -1.4055767474657461,
       "personnel": 200,
-      "small": false
+      "small": false,
+      "region": "Other / Overseas"
     },
     {
       "id": 2636822,
@@ -4541,7 +4971,8 @@
       "lat": 50.7302753,
       "lon": -1.8665543,
       "personnel": 26,
-      "small": true
+      "small": true,
+      "region": "South West"
     },
     {
       "id": 2635199,
@@ -4552,7 +4983,8 @@
       "lat": 50.874254649874004,
       "lon": -2.9606053373878924,
       "personnel": 27,
-      "small": true
+      "small": true,
+      "region": "South West"
     },
     {
       "id": 2311778,
@@ -4563,7 +4995,8 @@
       "lat": 50.92479830163213,
       "lon": -1.395061439554288,
       "personnel": 0,
-      "small": false
+      "small": false,
+      "region": "Other / Overseas"
     },
     {
       "id": 2317874,
@@ -4574,18 +5007,20 @@
       "lat": 51.47153443644387,
       "lon": -0.4589267897798176,
       "personnel": 200,
-      "small": false
+      "small": false,
+      "region": "South East"
     },
     {
       "id": 2325716,
       "name": "Scarborough RCC",
-      "type": "Type 34",
+      "type": "Workshop / RCC",
       "typeId": 34,
       "level": 3,
       "lat": 54.271882615570604,
       "lon": -0.41736325615897896,
       "personnel": 200,
-      "small": false
+      "small": false,
+      "region": "North"
     },
     {
       "id": 2312349,
@@ -4596,7 +5031,8 @@
       "lat": 50.90372366511442,
       "lon": -1.4036165381705772,
       "personnel": 200,
-      "small": false
+      "small": false,
+      "region": "Other / Overseas"
     },
     {
       "id": 2041380,
@@ -4607,7 +5043,8 @@
       "lat": 51.51130186992515,
       "lon": -0.11885529196542406,
       "personnel": 200,
-      "small": false
+      "small": false,
+      "region": "South East"
     },
     {
       "id": 2506985,
@@ -4618,7 +5055,8 @@
       "lat": 51.23805840499514,
       "lon": -2.311358561144637,
       "personnel": 0,
-      "small": false
+      "small": false,
+      "region": "South West"
     },
     {
       "id": 2349731,
@@ -4629,7 +5067,8 @@
       "lat": 53.9463895546954,
       "lon": -1.072185743925276,
       "personnel": 200,
-      "small": false
+      "small": false,
+      "region": "North"
     },
     {
       "id": 2481623,
@@ -4640,7 +5079,8 @@
       "lat": 51.1886791,
       "lon": -2.5495452,
       "personnel": 156,
-      "small": true
+      "small": true,
+      "region": "South West"
     },
     {
       "id": 2620223,
@@ -4651,18 +5091,20 @@
       "lat": 53.794816144779,
       "lon": -1.5482316659310116,
       "personnel": 0,
-      "small": false
+      "small": false,
+      "region": "North"
     },
     {
       "id": 2654951,
       "name": "Clevedon Coastguard Rescue Station",
-      "type": "Type 28",
+      "type": "Coastguard Station",
       "typeId": 28,
       "level": 0,
       "lat": 51.43667779482982,
       "lon": -2.8663935442003736,
       "personnel": 12,
-      "small": false
+      "small": false,
+      "region": "South West"
     },
     {
       "id": 2311542,
@@ -4673,7 +5115,8 @@
       "lat": 54.0071004729002,
       "lon": -1.4647879237126022,
       "personnel": 200,
-      "small": false
+      "small": false,
+      "region": "North"
     },
     {
       "id": 2353684,
@@ -4684,7 +5127,8 @@
       "lat": 51.5484492,
       "lon": -2.5562629,
       "personnel": 0,
-      "small": false
+      "small": false,
+      "region": "South West"
     },
     {
       "id": 2633720,
@@ -4695,18 +5139,20 @@
       "lat": 51.1437288,
       "lon": -2.7315327,
       "personnel": 28,
-      "small": true
+      "small": true,
+      "region": "South West"
     },
     {
       "id": 2318596,
       "name": "(RCC-001) Chelsea RCC",
-      "type": "Type 34",
+      "type": "Workshop / RCC",
       "typeId": 34,
       "level": 4,
       "lat": 51.482276298683466,
       "lon": -0.17390483465053036,
       "personnel": 200,
-      "small": false
+      "small": false,
+      "region": "South East"
     },
     {
       "id": 2333522,
@@ -4717,7 +5163,8 @@
       "lat": 51.49721529471481,
       "lon": -0.10486581445809218,
       "personnel": 200,
-      "small": true
+      "small": true,
+      "region": "South East"
     },
     {
       "id": 2033689,
@@ -4728,7 +5175,8 @@
       "lat": 51.54642007721322,
       "lon": -0.10331891087059228,
       "personnel": 200,
-      "small": false
+      "small": false,
+      "region": "South East"
     },
     {
       "id": 1984387,
@@ -4739,7 +5187,8 @@
       "lat": 51.51246206568565,
       "lon": -0.19071993868881512,
       "personnel": 200,
-      "small": false
+      "small": false,
+      "region": "South East"
     },
     {
       "id": 2352918,
@@ -4750,18 +5199,20 @@
       "lat": 54.13808720369759,
       "lon": -0.8041484841334148,
       "personnel": 200,
-      "small": false
+      "small": false,
+      "region": "North"
     },
     {
       "id": 2477884,
       "name": "Coventry HRL",
-      "type": "Type 22",
+      "type": "Home Response / HRL",
       "typeId": 22,
       "level": 0,
       "lat": 52.40708813072416,
       "lon": -1.507644245412419,
       "personnel": 153,
-      "small": false
+      "small": false,
+      "region": "Midlands"
     },
     {
       "id": 2621094,
@@ -4772,7 +5223,8 @@
       "lat": 53.0278542,
       "lon": -2.2024662,
       "personnel": 38,
-      "small": true
+      "small": true,
+      "region": "Midlands"
     },
     {
       "id": 2648341,
@@ -4783,7 +5235,8 @@
       "lat": 51.8662586,
       "lon": -4.2860023,
       "personnel": 17,
-      "small": true
+      "small": true,
+      "region": "Wales"
     },
     {
       "id": 2339238,
@@ -4794,7 +5247,8 @@
       "lat": 51.47003159010851,
       "lon": -0.4577461057321879,
       "personnel": 200,
-      "small": false
+      "small": false,
+      "region": "South East"
     },
     {
       "id": 2353683,
@@ -4805,7 +5259,8 @@
       "lat": 51.2894235085542,
       "lon": -2.456687298230694,
       "personnel": 200,
-      "small": false
+      "small": false,
+      "region": "South West"
     },
     {
       "id": 2648343,
@@ -4816,7 +5271,8 @@
       "lat": 51.691325392340694,
       "lon": -4.9213215278773035,
       "personnel": 17,
-      "small": true
+      "small": true,
+      "region": "Wales"
     },
     {
       "id": 2635584,
@@ -4827,18 +5283,20 @@
       "lat": 50.9904534,
       "lon": -1.4934589,
       "personnel": 13,
-      "small": true
+      "small": true,
+      "region": "Other / Overseas"
     },
     {
       "id": 2654834,
       "name": "Weston-super-mare Coastguard Station",
-      "type": "Type 28",
+      "type": "Coastguard Station",
       "typeId": 28,
       "level": 1,
       "lat": 51.344258160582136,
       "lon": -2.981580427113947,
       "personnel": 13,
-      "small": false
+      "small": false,
+      "region": "South West"
     },
     {
       "id": 2572701,
@@ -4849,7 +5307,8 @@
       "lat": 51.338962961579824,
       "lon": -1.9813429906228315,
       "personnel": 0,
-      "small": false
+      "small": false,
+      "region": "South West"
     },
     {
       "id": 2650941,
@@ -4860,18 +5319,20 @@
       "lat": 52.86239493159805,
       "lon": -3.0476990254114105,
       "personnel": 14,
-      "small": true
+      "small": true,
+      "region": "Wales"
     },
     {
       "id": 2657264,
       "name": "HM Coastguard Burnham-on-Sea",
-      "type": "Type 28",
+      "type": "Coastguard Station",
       "typeId": 28,
       "level": 0,
       "lat": 51.235258813224014,
       "lon": -2.9992715725343557,
       "personnel": 10,
-      "small": false
+      "small": false,
+      "region": "South West"
     },
     {
       "id": 2636829,
@@ -4882,7 +5343,8 @@
       "lat": 50.84697068332217,
       "lon": -1.7917471093523079,
       "personnel": 13,
-      "small": true
+      "small": true,
+      "region": "South West"
     },
     {
       "id": 2620355,
@@ -4893,7 +5355,8 @@
       "lat": 53.8023946581611,
       "lon": -1.554507023226996,
       "personnel": 0,
-      "small": false
+      "small": false,
+      "region": "North"
     },
     {
       "id": 2657281,
@@ -4904,7 +5367,8 @@
       "lat": 51.0077322,
       "lon": -0.9298533,
       "personnel": 9,
-      "small": true
+      "small": true,
+      "region": "Other / Overseas"
     },
     {
       "id": 1844367,
@@ -4915,7 +5379,8 @@
       "lat": 51.5100864481953,
       "lon": -0.07236909155816951,
       "personnel": 200,
-      "small": false
+      "small": false,
+      "region": "South East"
     },
     {
       "id": 2636839,
@@ -4926,7 +5391,8 @@
       "lat": 50.72063910634473,
       "lon": -3.4651380366755107,
       "personnel": 24,
-      "small": true
+      "small": true,
+      "region": "South West"
     },
     {
       "id": 2648345,
@@ -4937,7 +5403,8 @@
       "lat": 51.7979362,
       "lon": -4.9682102,
       "personnel": 17,
-      "small": true
+      "small": true,
+      "region": "Wales"
     },
     {
       "id": 2650698,
@@ -4948,7 +5415,8 @@
       "lat": 53.20674753471517,
       "lon": -3.027466951142558,
       "personnel": 15,
-      "small": true
+      "small": true,
+      "region": "Wales"
     },
     {
       "id": 2636826,
@@ -4959,7 +5427,8 @@
       "lat": 50.92760551795115,
       "lon": -2.301659718136811,
       "personnel": 26,
-      "small": true
+      "small": true,
+      "region": "South West"
     },
     {
       "id": 2652209,
@@ -4970,7 +5439,8 @@
       "lat": 54.15257684745951,
       "lon": -4.490164602375596,
       "personnel": 14,
-      "small": true
+      "small": true,
+      "region": "North"
     },
     {
       "id": 2360510,
@@ -4981,7 +5451,8 @@
       "lat": 51.21952374062008,
       "lon": -2.3267124370156784,
       "personnel": 200,
-      "small": false
+      "small": false,
+      "region": "South West"
     },
     {
       "id": 2624708,
@@ -4992,18 +5463,20 @@
       "lat": 51.5628858,
       "lon": -1.7684743,
       "personnel": 33,
-      "small": true
+      "small": true,
+      "region": "South West"
     },
     {
       "id": 2633092,
       "name": "Filey CRS RNLI",
-      "type": "Type 28",
+      "type": "Coastguard Station",
       "typeId": 28,
       "level": 0,
       "lat": 54.210236725013374,
       "lon": -0.28433153372713493,
       "personnel": 30,
-      "small": false
+      "small": false,
+      "region": "North"
     },
     {
       "id": 2657727,
@@ -5014,7 +5487,8 @@
       "lat": 54.06490422116287,
       "lon": -2.282898963424587,
       "personnel": 8,
-      "small": true
+      "small": true,
+      "region": "North"
     },
     {
       "id": 2635479,
@@ -5025,18 +5499,20 @@
       "lat": 50.8806232,
       "lon": -2.7981752,
       "personnel": 27,
-      "small": true
+      "small": true,
+      "region": "South West"
     },
     {
       "id": 2657760,
       "name": "HM Coastguard Penarth ",
-      "type": "Type 28",
+      "type": "Coastguard Station",
       "typeId": 28,
       "level": 0,
       "lat": 51.42726194851315,
       "lon": -3.172390103917924,
       "personnel": 9,
-      "small": false
+      "small": false,
+      "region": "Wales"
     },
     {
       "id": 2648339,
@@ -5047,7 +5523,8 @@
       "lat": 51.69184102080288,
       "lon": -4.135345023786211,
       "personnel": 17,
-      "small": true
+      "small": true,
+      "region": "Wales"
     },
     {
       "id": 2650937,
@@ -5058,7 +5535,8 @@
       "lat": 52.692341565526135,
       "lon": -2.7713298545117584,
       "personnel": 0,
-      "small": false
+      "small": false,
+      "region": "Midlands"
     },
     {
       "id": 2621069,
@@ -5069,7 +5547,8 @@
       "lat": 52.189117993569845,
       "lon": -2.2222760915892956,
       "personnel": 0,
-      "small": false
+      "small": false,
+      "region": "South West"
     },
     {
       "id": 2652166,
@@ -5080,7 +5559,8 @@
       "lat": 52.05716888865516,
       "lon": -2.706243211961644,
       "personnel": 0,
-      "small": false
+      "small": false,
+      "region": "South West"
     },
     {
       "id": 2642421,
@@ -5091,7 +5571,8 @@
       "lat": 50.4576879845531,
       "lon": -4.463332740159219,
       "personnel": 21,
-      "small": true
+      "small": true,
+      "region": "South West"
     },
     {
       "id": 2621089,
@@ -5102,7 +5583,8 @@
       "lat": 52.776945,
       "lon": -1.5569444,
       "personnel": 38,
-      "small": true
+      "small": true,
+      "region": "Midlands"
     },
     {
       "id": 2652890,
@@ -5113,18 +5595,20 @@
       "lat": 51.3091531,
       "lon": 3.8606632,
       "personnel": 14,
-      "small": true
+      "small": true,
+      "region": "South East"
     },
     {
       "id": 2657778,
       "name": "RNLI Sharpness",
-      "type": "Type 27",
+      "type": "Lifeboat Station",
       "typeId": 27,
       "level": 0,
       "lat": 51.72384587340189,
       "lon": -2.4823785689930267,
       "personnel": 10,
-      "small": false
+      "small": false,
+      "region": "South West"
     },
     {
       "id": 2390840,
@@ -5135,7 +5619,8 @@
       "lat": 51.3794051782381,
       "lon": -2.3573133894477687,
       "personnel": 200,
-      "small": false
+      "small": false,
+      "region": "South West"
     },
     {
       "id": 2659457,
@@ -5146,18 +5631,20 @@
       "lat": 51.68913836277935,
       "lon": -2.3548276276925777,
       "personnel": 7,
-      "small": true
+      "small": true,
+      "region": "South West"
     },
     {
       "id": 2658580,
       "name": "HMCT St Athans",
-      "type": "Type 30",
+      "type": "Coastguard CRH",
       "typeId": 30,
       "level": 0,
       "lat": 51.4008244,
       "lon": -3.4391048,
       "personnel": 8,
-      "small": false
+      "small": false,
+      "region": "Wales"
     },
     {
       "id": 2642426,
@@ -5168,7 +5655,8 @@
       "lat": 50.2666752,
       "lon": -5.0915109,
       "personnel": 21,
-      "small": true
+      "small": true,
+      "region": "South West"
     },
     {
       "id": 2638164,
@@ -5179,7 +5667,8 @@
       "lat": 50.5916215,
       "lon": -3.6783256,
       "personnel": 24,
-      "small": true
+      "small": true,
+      "region": "South West"
     },
     {
       "id": 2639115,
@@ -5190,7 +5679,8 @@
       "lat": 50.513367,
       "lon": -4.8366036,
       "personnel": 23,
-      "small": true
+      "small": true,
+      "region": "South West"
     },
     {
       "id": 2572679,
@@ -5201,29 +5691,32 @@
       "lat": 51.49474349492543,
       "lon": -2.5914042228812084,
       "personnel": 0,
-      "small": false
+      "small": false,
+      "region": "South West"
     },
     {
       "id": 2342741,
       "name": "Hythe CRH",
-      "type": "Type 30",
+      "type": "Coastguard CRH",
       "typeId": 30,
       "level": 0,
       "lat": 50.89390585587295,
       "lon": -1.424432510482214,
       "personnel": 200,
-      "small": false
+      "small": false,
+      "region": "Other / Overseas"
     },
     {
       "id": 2481571,
       "name": "ASSAR - Somerset MTNRSQ",
-      "type": "Type 33",
+      "type": "Mountain Rescue",
       "typeId": 33,
       "level": 14,
       "lat": 51.49837969070646,
       "lon": -2.5839830641080153,
       "personnel": 167,
-      "small": false
+      "small": false,
+      "region": "South West"
     },
     {
       "id": 2621096,
@@ -5234,7 +5727,8 @@
       "lat": 52.45693106435432,
       "lon": -1.483454997737234,
       "personnel": 38,
-      "small": true
+      "small": true,
+      "region": "Midlands"
     },
     {
       "id": 2567757,
@@ -5245,7 +5739,8 @@
       "lat": 51.4312083,
       "lon": -2.1876938,
       "personnel": 94,
-      "small": false
+      "small": false,
+      "region": "South West"
     },
     {
       "id": 2650604,
@@ -5256,7 +5751,8 @@
       "lat": 53.28828763196834,
       "lon": -3.7103439019962305,
       "personnel": 15,
-      "small": true
+      "small": true,
+      "region": "Wales"
     },
     {
       "id": 2622184,
@@ -5267,18 +5763,20 @@
       "lat": 53.842315876137604,
       "lon": -0.42276720620513036,
       "personnel": 0,
-      "small": false
+      "small": false,
+      "region": "North"
     },
     {
       "id": 1984410,
       "name": "(RNLI-001) Westminster LFBS N/E L/S",
-      "type": "Type 27",
+      "type": "Lifeboat Station",
       "typeId": 27,
       "level": 5,
       "lat": 51.507233614675144,
       "lon": -0.12123448737449749,
       "personnel": 199,
-      "small": false
+      "small": false,
+      "region": "South East"
     },
     {
       "id": 2648323,
@@ -5289,7 +5787,8 @@
       "lat": 51.4138294,
       "lon": -3.2850269,
       "personnel": 17,
-      "small": true
+      "small": true,
+      "region": "Wales"
     },
     {
       "id": 2319655,
@@ -5300,7 +5799,8 @@
       "lat": 51.262286951573614,
       "lon": -1.0890399872677607,
       "personnel": 0,
-      "small": false
+      "small": false,
+      "region": "London & South"
     },
     {
       "id": 2582593,
@@ -5311,7 +5811,8 @@
       "lat": 51.86231296833556,
       "lon": -2.2486301175423504,
       "personnel": 0,
-      "small": false
+      "small": false,
+      "region": "South West"
     },
     {
       "id": 2631322,
@@ -5322,7 +5823,8 @@
       "lat": 53.68553363727742,
       "lon": -1.5020676629319831,
       "personnel": 29,
-      "small": true
+      "small": true,
+      "region": "North"
     },
     {
       "id": 2621054,
@@ -5333,7 +5835,8 @@
       "lat": 52.62720174725001,
       "lon": -1.1352211796563945,
       "personnel": 0,
-      "small": false
+      "small": false,
+      "region": "Midlands"
     },
     {
       "id": 1988744,
@@ -5344,7 +5847,8 @@
       "lat": 53.98857861880335,
       "lon": -1.5384455740283822,
       "personnel": 0,
-      "small": false
+      "small": false,
+      "region": "North"
     },
     {
       "id": 2364325,
@@ -5355,7 +5859,8 @@
       "lat": 52.946822813173625,
       "lon": -1.13869749462108,
       "personnel": 0,
-      "small": false
+      "small": false,
+      "region": "Midlands"
     },
     {
       "id": 2621011,
@@ -5366,7 +5871,8 @@
       "lat": 52.913880954626656,
       "lon": -1.4705872694789495,
       "personnel": 0,
-      "small": false
+      "small": false,
+      "region": "Midlands"
     },
     {
       "id": 2325711,
@@ -5377,7 +5883,8 @@
       "lat": 54.27694747056573,
       "lon": -0.41821213497615445,
       "personnel": 0,
-      "small": false
+      "small": false,
+      "region": "North"
     },
     {
       "id": 2648342,
@@ -5388,7 +5895,8 @@
       "lat": 51.6715301,
       "lon": -4.7091015,
       "personnel": 17,
-      "small": true
+      "small": true,
+      "region": "Wales"
     },
     {
       "id": 2633098,
@@ -5399,18 +5907,20 @@
       "lat": 53.23044465540728,
       "lon": -1.429146157639583,
       "personnel": 36,
-      "small": true
+      "small": true,
+      "region": "Midlands"
     },
     {
       "id": 2633082,
       "name": "RNLI CRH Humberside",
-      "type": "Type 30",
+      "type": "Coastguard CRH",
       "typeId": 30,
       "level": 0,
       "lat": 53.581843586794335,
       "lon": -0.35499023898236515,
       "personnel": 32,
-      "small": false
+      "small": false,
+      "region": "North"
     },
     {
       "id": 2621085,
@@ -5421,7 +5931,8 @@
       "lat": 52.40067920386779,
       "lon": -1.998907892024531,
       "personnel": 38,
-      "small": true
+      "small": true,
+      "region": "Midlands"
     },
     {
       "id": 2620974,
@@ -5432,7 +5943,8 @@
       "lat": 53.37851880513755,
       "lon": -1.4931442304581821,
       "personnel": 0,
-      "small": false
+      "small": false,
+      "region": "Midlands"
     },
     {
       "id": 2621080,
@@ -5443,7 +5955,8 @@
       "lat": 52.47347948103825,
       "lon": -1.912657241009031,
       "personnel": 0,
-      "small": false
+      "small": false,
+      "region": "Midlands"
     },
     {
       "id": 2621062,
@@ -5454,7 +5967,8 @@
       "lat": 52.809699180135574,
       "lon": -2.108214877646262,
       "personnel": 0,
-      "small": false
+      "small": false,
+      "region": "Midlands"
     },
     {
       "id": 2339242,
@@ -5465,7 +5979,8 @@
       "lat": 51.471793716660486,
       "lon": -0.46553505969875775,
       "personnel": 0,
-      "small": false
+      "small": false,
+      "region": "South East"
     },
     {
       "id": 2465954,
@@ -5476,7 +5991,8 @@
       "lat": 51.4152639,
       "lon": -2.5016294,
       "personnel": 168,
-      "small": false
+      "small": false,
+      "region": "South West"
     },
     {
       "id": 2648936,
@@ -5487,7 +6003,8 @@
       "lat": 52.411049532803695,
       "lon": -4.065782876648873,
       "personnel": 16,
-      "small": true
+      "small": true,
+      "region": "Wales"
     },
     {
       "id": 2656577,
@@ -5498,7 +6015,8 @@
       "lat": 51.4100008,
       "lon": -0.1931677,
       "personnel": 10,
-      "small": true
+      "small": true,
+      "region": "South East"
     },
     {
       "id": 2621070,
@@ -5509,7 +6027,8 @@
       "lat": 52.18170264244431,
       "lon": -2.191222980004024,
       "personnel": 38,
-      "small": true
+      "small": true,
+      "region": "South West"
     },
     {
       "id": 2390843,
@@ -5520,7 +6039,8 @@
       "lat": 51.3888864379704,
       "lon": -2.3547692051119964,
       "personnel": 227,
-      "small": false
+      "small": false,
+      "region": "South West"
     },
     {
       "id": 2639117,
@@ -5531,18 +6051,20 @@
       "lat": 50.33929202759314,
       "lon": -4.783462865451735,
       "personnel": 23,
-      "small": true
+      "small": true,
+      "region": "South West"
     },
     {
       "id": 2620870,
       "name": "Upper wharfdale fell association",
-      "type": "Type 31",
+      "type": "Search & Rescue HQ",
       "typeId": 31,
       "level": 5,
       "lat": 54.07054890956068,
       "lon": -1.9978296489247747,
       "personnel": 45,
-      "small": false
+      "small": false,
+      "region": "North"
     },
     {
       "id": 2633100,
@@ -5553,7 +6075,8 @@
       "lat": 53.19617333374617,
       "lon": -1.3258881403335987,
       "personnel": 29,
-      "small": true
+      "small": true,
+      "region": "Midlands"
     },
     {
       "id": 2620244,
@@ -5564,7 +6087,8 @@
       "lat": 53.803281262801555,
       "lon": -1.551981394859632,
       "personnel": 39,
-      "small": true
+      "small": true,
+      "region": "North"
     },
     {
       "id": 2572619,
@@ -5575,18 +6099,20 @@
       "lat": 51.38578818066822,
       "lon": -2.716475249695491,
       "personnel": 95,
-      "small": false
+      "small": false,
+      "region": "South West"
     },
     {
       "id": 2429826,
       "name": "Paulton Hospital  (MIU) (1-3617575955)",
-      "type": "Type 21",
+      "type": "Health Centre",
       "typeId": 21,
       "level": 5,
       "lat": 51.29874962661729,
       "lon": -2.4933505365978057,
       "personnel": 197,
-      "small": false
+      "small": false,
+      "region": "South West"
     },
     {
       "id": 2620948,
@@ -5597,7 +6123,8 @@
       "lat": 53.9279819,
       "lon": -1.3810328,
       "personnel": 37,
-      "small": true
+      "small": true,
+      "region": "North"
     },
     {
       "id": 2567206,
@@ -5608,7 +6135,8 @@
       "lat": 51.45303237025197,
       "lon": -2.5866705789044167,
       "personnel": 95,
-      "small": false
+      "small": false,
+      "region": "South West"
     },
     {
       "id": 2652157,
@@ -5619,7 +6147,8 @@
       "lat": 52.90840548511547,
       "lon": -2.4868739445124035,
       "personnel": 14,
-      "small": true
+      "small": true,
+      "region": "Midlands"
     },
     {
       "id": 2621681,
@@ -5630,7 +6159,8 @@
       "lat": 53.71960503013452,
       "lon": -1.3583310709940095,
       "personnel": 37,
-      "small": true
+      "small": true,
+      "region": "North"
     },
     {
       "id": 2638159,
@@ -5641,7 +6171,8 @@
       "lat": 50.7200729,
       "lon": -3.9901327,
       "personnel": 24,
-      "small": true
+      "small": true,
+      "region": "South West"
     },
     {
       "id": 2364565,
@@ -5652,7 +6183,8 @@
       "lat": 52.9178716,
       "lon": -1.1369139,
       "personnel": 126,
-      "small": true
+      "small": true,
+      "region": "Midlands"
     },
     {
       "id": 2652272,
@@ -5663,7 +6195,8 @@
       "lat": 52.79746949846148,
       "lon": -6.154932257825366,
       "personnel": 14,
-      "small": true
+      "small": true,
+      "region": "Wales"
     },
     {
       "id": 2652208,
@@ -5674,7 +6207,8 @@
       "lat": 54.17252431374711,
       "lon": -4.512472338899224,
       "personnel": 14,
-      "small": true
+      "small": true,
+      "region": "North"
     },
     {
       "id": 2652187,
@@ -5685,7 +6219,8 @@
       "lat": 52.203658991826735,
       "lon": -3.034321817630258,
       "personnel": 14,
-      "small": true
+      "small": true,
+      "region": "Wales"
     },
     {
       "id": 2636823,
@@ -5696,7 +6231,8 @@
       "lat": 50.8675752,
       "lon": -2.1564143,
       "personnel": 26,
-      "small": true
+      "small": true,
+      "region": "South West"
     },
     {
       "id": 2635484,
@@ -5707,7 +6243,8 @@
       "lat": 51.09041743336493,
       "lon": -2.267742084061592,
       "personnel": 27,
-      "small": true
+      "small": true,
+      "region": "South West"
     },
     {
       "id": 2635489,
@@ -5718,7 +6255,8 @@
       "lat": 51.443583115127076,
       "lon": -1.6063853021179715,
       "personnel": 27,
-      "small": true
+      "small": true,
+      "region": "South West"
     },
     {
       "id": 2635515,
@@ -5729,7 +6267,8 @@
       "lat": 50.7339426,
       "lon": -2.9356135,
       "personnel": 27,
-      "small": true
+      "small": true,
+      "region": "South West"
     },
     {
       "id": 2590010,
@@ -5740,7 +6279,8 @@
       "lat": 51.8662022,
       "lon": -2.2515876,
       "personnel": 71,
-      "small": false
+      "small": false,
+      "region": "South West"
     },
     {
       "id": 2647806,
@@ -5751,7 +6291,8 @@
       "lat": 51.5018487581716,
       "lon": -3.367842795250535,
       "personnel": 18,
-      "small": true
+      "small": true,
+      "region": "Wales"
     },
     {
       "id": 2642431,
@@ -5762,7 +6303,8 @@
       "lat": 50.445795255131785,
       "lon": -4.119448911799589,
       "personnel": 21,
-      "small": true
+      "small": true,
+      "region": "South West"
     },
     {
       "id": 2624710,
@@ -5773,7 +6315,8 @@
       "lat": 51.4208155,
       "lon": -1.7199561,
       "personnel": 33,
-      "small": true
+      "small": true,
+      "region": "South West"
     },
     {
       "id": 2620838,
@@ -5784,7 +6327,8 @@
       "lat": 53.9587074,
       "lon": -2.0297929,
       "personnel": 38,
-      "small": true
+      "small": true,
+      "region": "North"
     },
     {
       "id": 2622177,
@@ -5795,7 +6339,8 @@
       "lat": 53.929560349932714,
       "lon": -0.7740105655019428,
       "personnel": 37,
-      "small": true
+      "small": true,
+      "region": "North"
     },
     {
       "id": 2634259,
@@ -5806,7 +6351,8 @@
       "lat": 53.32923344538835,
       "lon": -0.9595714000254363,
       "personnel": 28,
-      "small": true
+      "small": true,
+      "region": "Midlands"
     },
     {
       "id": 2646534,
@@ -5817,7 +6363,8 @@
       "lat": 49.9161408,
       "lon": -6.3079298,
       "personnel": 19,
-      "small": true
+      "small": true,
+      "region": "Other / Overseas"
     },
     {
       "id": 2656578,
@@ -5828,7 +6375,8 @@
       "lat": 51.37796650193354,
       "lon": -0.06013011929070028,
       "personnel": 10,
-      "small": true
+      "small": true,
+      "region": "South East"
     },
     {
       "id": 2656576,
@@ -5839,7 +6387,8 @@
       "lat": 51.4844398,
       "lon": -0.1940303,
       "personnel": 10,
-      "small": true
+      "small": true,
+      "region": "South East"
     },
     {
       "id": 2656581,
@@ -5850,7 +6399,8 @@
       "lat": 51.4929168,
       "lon": -0.1212483,
       "personnel": 17,
-      "small": true
+      "small": true,
+      "region": "South East"
     },
     {
       "id": 2656573,
@@ -5861,7 +6411,8 @@
       "lat": 51.53095521260887,
       "lon": -0.2691518897957037,
       "personnel": 10,
-      "small": true
+      "small": true,
+      "region": "South East"
     },
     {
       "id": 2649541,
@@ -5872,7 +6423,8 @@
       "lat": 52.5826406,
       "lon": -4.0808656,
       "personnel": 16,
-      "small": true
+      "small": true,
+      "region": "Wales"
     },
     {
       "id": 2652883,
@@ -5883,7 +6435,8 @@
       "lat": 51.105862520377244,
       "lon": 2.6493489895372813,
       "personnel": 14,
-      "small": true
+      "small": true,
+      "region": "Other / Overseas"
     },
     {
       "id": 2652891,
@@ -5894,7 +6447,8 @@
       "lat": 51.39352,
       "lon": 3.55867,
       "personnel": 14,
-      "small": true
+      "small": true,
+      "region": "South East"
     },
     {
       "id": 2652159,
@@ -5905,7 +6459,8 @@
       "lat": 52.71508941895851,
       "lon": -2.437365256525007,
       "personnel": 14,
-      "small": true
+      "small": true,
+      "region": "Midlands"
     },
     {
       "id": 2649692,
@@ -5916,7 +6471,8 @@
       "lat": 53.20921130446036,
       "lon": -4.1599624202183945,
       "personnel": 16,
-      "small": true
+      "small": true,
+      "region": "Wales"
     },
     {
       "id": 2621063,
@@ -5927,7 +6483,8 @@
       "lat": 52.8242958,
       "lon": -2.1091786,
       "personnel": 38,
-      "small": true
+      "small": true,
+      "region": "Midlands"
     },
     {
       "id": 2325713,
@@ -5938,7 +6495,8 @@
       "lat": 54.28179980467448,
       "lon": -0.4370821595078071,
       "personnel": 0,
-      "small": false
+      "small": false,
+      "region": "North"
     },
     {
       "id": 2638167,
@@ -5949,7 +6507,8 @@
       "lat": 51.00988255585712,
       "lon": -4.223847738874316,
       "personnel": 24,
-      "small": true
+      "small": true,
+      "region": "South West"
     },
     {
       "id": 2620970,
@@ -5960,7 +6519,8 @@
       "lat": 53.681487638698044,
       "lon": -1.4868034542363004,
       "personnel": 37,
-      "small": true
+      "small": true,
+      "region": "North"
     },
     {
       "id": 2636818,
@@ -5971,7 +6531,8 @@
       "lat": 50.7326422,
       "lon": -2.7596078,
       "personnel": 26,
-      "small": true
+      "small": true,
+      "region": "South West"
     },
     {
       "id": 2621059,
@@ -5982,7 +6543,8 @@
       "lat": 52.632155936913556,
       "lon": -1.0821938021084405,
       "personnel": 38,
-      "small": true
+      "small": true,
+      "region": "Midlands"
     },
     {
       "id": 2620249,
@@ -5993,7 +6555,8 @@
       "lat": 53.77337939296604,
       "lon": -1.5473890470867506,
       "personnel": 46,
-      "small": true
+      "small": true,
+      "region": "North"
     },
     {
       "id": 2488628,
@@ -6004,7 +6567,8 @@
       "lat": 51.18991375614429,
       "lon": -2.5504767649084843,
       "personnel": 137,
-      "small": true
+      "small": true,
+      "region": "South West"
     },
     {
       "id": 2621031,
@@ -6015,7 +6579,8 @@
       "lat": 53.0490631,
       "lon": -1.2149117,
       "personnel": 38,
-      "small": true
+      "small": true,
+      "region": "Midlands"
     },
     {
       "id": 2635212,
@@ -6026,7 +6591,8 @@
       "lat": 51.0385026,
       "lon": -3.5448407,
       "personnel": 27,
-      "small": true
+      "small": true,
+      "region": "South West"
     },
     {
       "id": 2650501,
@@ -6037,18 +6603,20 @@
       "lat": 53.31335581606016,
       "lon": -3.8307387740412966,
       "personnel": 15,
-      "small": true
+      "small": true,
+      "region": "Wales"
     },
     {
       "id": 2471255,
       "name": "NPAS Almondsbury ",
-      "type": "Police Station",
+      "type": "Police Aviation",
       "typeId": 13,
       "level": 1,
       "lat": 51.5517246,
       "lon": -2.5576298,
       "personnel": 163,
-      "small": false
+      "small": false,
+      "region": "South West"
     },
     {
       "id": 2635503,
@@ -6059,7 +6627,8 @@
       "lat": 50.783882,
       "lon": -2.9962753,
       "personnel": 27,
-      "small": true
+      "small": true,
+      "region": "South West"
     },
     {
       "id": 2636838,
@@ -6070,7 +6639,8 @@
       "lat": 50.75188248198351,
       "lon": -3.28262662186587,
       "personnel": 24,
-      "small": true
+      "small": true,
+      "region": "South West"
     },
     {
       "id": 2639114,
@@ -6081,7 +6651,8 @@
       "lat": 50.8735513,
       "lon": -4.4873226,
       "personnel": 23,
-      "small": true
+      "small": true,
+      "region": "South West"
     },
     {
       "id": 2652886,
@@ -6092,7 +6663,8 @@
       "lat": 51.2352141,
       "lon": 2.9339938,
       "personnel": 14,
-      "small": true
+      "small": true,
+      "region": "South East"
     },
     {
       "id": 2652887,
@@ -6103,7 +6675,8 @@
       "lat": 51.3104065,
       "lon": 3.1225203,
       "personnel": 14,
-      "small": true
+      "small": true,
+      "region": "South East"
     },
     {
       "id": 2469519,
@@ -6114,7 +6687,8 @@
       "lat": 51.62444700946044,
       "lon": -3.9418341685379845,
       "personnel": 0,
-      "small": false
+      "small": false,
+      "region": "Wales"
     },
     {
       "id": 1984392,
@@ -6125,7 +6699,8 @@
       "lat": 51.51711454186931,
       "lon": -0.17422326377227623,
       "personnel": 0,
-      "small": false
+      "small": false,
+      "region": "South East"
     },
     {
       "id": 2635487,
@@ -6136,18 +6711,20 @@
       "lat": 51.2431416,
       "lon": -1.665403,
       "personnel": 27,
-      "small": true
+      "small": true,
+      "region": "South West"
     },
     {
       "id": 2601180,
       "name": "FO ( RDV) Calais",
-      "type": "Type 22",
+      "type": "Home Response / HRL",
       "typeId": 22,
       "level": 0,
       "lat": 50.94938084960407,
       "lon": 1.8579613948887528,
       "personnel": 1,
-      "small": false
+      "small": false,
+      "region": "Other / Overseas"
     },
     {
       "id": 2600988,
@@ -6158,7 +6735,8 @@
       "lat": 50.9573744768261,
       "lon": 1.8550827337770985,
       "personnel": 56,
-      "small": true
+      "small": true,
+      "region": "Other / Overseas"
     },
     {
       "id": 2620876,
@@ -6169,7 +6747,8 @@
       "lat": 53.79165476251375,
       "lon": -1.7849750659542662,
       "personnel": 38,
-      "small": true
+      "small": true,
+      "region": "North"
     },
     {
       "id": 2649006,
@@ -6180,7 +6759,8 @@
       "lat": 48.8381094548902,
       "lon": 2.361964152226319,
       "personnel": 0,
-      "small": false
+      "small": false,
+      "region": "Other / Overseas"
     },
     {
       "id": 1984638,
@@ -6191,7 +6771,8 @@
       "lat": 51.50162261450828,
       "lon": -0.12683875345071638,
       "personnel": 200,
-      "small": false
+      "small": false,
+      "region": "South East"
     },
     {
       "id": 2635204,
@@ -6202,7 +6783,8 @@
       "lat": 51.1551068,
       "lon": -2.9859351,
       "personnel": 27,
-      "small": true
+      "small": true,
+      "region": "South West"
     },
     {
       "id": 2483497,
@@ -6213,7 +6795,8 @@
       "lat": 51.19046716179557,
       "lon": -2.5626692312751667,
       "personnel": 154,
-      "small": true
+      "small": true,
+      "region": "South West"
     },
     {
       "id": 2354627,
@@ -6224,7 +6807,8 @@
       "lat": 51.289412,
       "lon": -2.4566864,
       "personnel": 275,
-      "small": false
+      "small": false,
+      "region": "South West"
     },
     {
       "id": 2360734,
@@ -6235,7 +6819,8 @@
       "lat": 51.391555007497075,
       "lon": -2.391265142966487,
       "personnel": 227,
-      "small": false
+      "small": false,
+      "region": "South West"
     },
     {
       "id": 2621050,
@@ -6246,7 +6831,8 @@
       "lat": 53.13609083424673,
       "lon": -1.5476708152294496,
       "personnel": 38,
-      "small": true
+      "small": true,
+      "region": "Midlands"
     },
     {
       "id": 2621012,
@@ -6257,29 +6843,32 @@
       "lat": 53.2362328,
       "lon": -1.4000486,
       "personnel": 38,
-      "small": true
+      "small": true,
+      "region": "Midlands"
     },
     {
       "id": 2583388,
       "name": "Streamside GP surgery",
-      "type": "Type 32",
+      "type": "GP Surgery",
       "typeId": 32,
       "level": 3,
       "lat": 51.61229602753461,
       "lon": -2.517918090196061,
       "personnel": 76,
-      "small": false
+      "small": false,
+      "region": "South West"
     },
     {
       "id": 2567212,
       "name": "Cheddar Gorge ASSAR",
-      "type": "Type 33",
+      "type": "Mountain Rescue",
       "typeId": 33,
       "level": 9,
       "lat": 51.28179543578878,
       "lon": -2.767669185575443,
       "personnel": 98,
-      "small": false
+      "small": false,
+      "region": "South West"
     },
     {
       "id": 2647798,
@@ -6290,7 +6879,8 @@
       "lat": 51.64865563891083,
       "lon": -2.5730852121621863,
       "personnel": 25,
-      "small": true
+      "small": true,
+      "region": "South West"
     }
   ],
   "unitsSample": [
@@ -6853,15 +7443,295 @@
       "type": 0,
       "buildingId": 2312349,
       "status": 2
+    },
+    {
+      "id": 6272808,
+      "name": "CoLP | MET-001/IRV-002",
+      "type": 8,
+      "buildingId": 2033679,
+      "status": 2
+    },
+    {
+      "id": 6272828,
+      "name": "STMRYFS | HFS-003/WL-001",
+      "type": 0,
+      "buildingId": 2312409,
+      "status": 2
+    },
+    {
+      "id": 6272831,
+      "name": "STMRYFS | HFS-003/RSU-001",
+      "type": 4,
+      "buildingId": 2312409,
+      "status": 2
+    },
+    {
+      "id": 6272842,
+      "name": "BTGN | LFB-001/WL-001",
+      "type": 0,
+      "buildingId": 2312415,
+      "status": 2
+    },
+    {
+      "id": 6272844,
+      "name": "BTGN | LFB-001/WC-001",
+      "type": 6,
+      "buildingId": 2312415,
+      "status": 2
+    },
+    {
+      "id": 6272923,
+      "name": "PW | HPS-002/IRV-001",
+      "type": 8,
+      "buildingId": 2312445,
+      "status": 2
+    },
+    {
+      "id": 6272949,
+      "name": "RRV",
+      "type": 10,
+      "buildingId": 2312455,
+      "status": 2
+    },
+    {
+      "id": 6272952,
+      "name": "Fire Officer",
+      "type": 3,
+      "buildingId": 2312456,
+      "status": 2
+    },
+    {
+      "id": 6272993,
+      "name": "RPN | NYF-003/WL-001",
+      "type": 0,
+      "buildingId": 2312467,
+      "status": 2
+    },
+    {
+      "id": 6273033,
+      "name": "RPN | NYF-003/RP-001",
+      "type": 16,
+      "buildingId": 2312467,
+      "status": 2
+    },
+    {
+      "id": 6283750,
+      "name": "HC292A1",
+      "type": 5,
+      "buildingId": 2316087,
+      "status": 2
+    },
+    {
+      "id": 6283751,
+      "name": "HCL1",
+      "type": 20,
+      "buildingId": 2316087,
+      "status": 2
+    },
+    {
+      "id": 6289372,
+      "name": "HTR | HEMS-001/HELI-001",
+      "type": 9,
+      "buildingId": 2317874,
+      "status": 2
+    },
+    {
+      "id": 6290327,
+      "name": "GWCH | CRS-001/CRV-002",
+      "type": 57,
+      "buildingId": 2041379,
+      "status": 2
+    },
+    {
+      "id": 6290331,
+      "name": "ING | MET-002/IRV-002",
+      "type": 8,
+      "buildingId": 2033689,
+      "status": 2
+    },
+    {
+      "id": 6290338,
+      "name": "MBA | MET-003/IRV-002",
+      "type": 8,
+      "buildingId": 1987519,
+      "status": 2
+    },
+    {
+      "id": 6290340,
+      "name": "PW | HPS-002/IRV-002",
+      "type": 8,
+      "buildingId": 2312445,
+      "status": 2
+    },
+    {
+      "id": 6290368,
+      "name": "EUS | LFB-004/BASU-001",
+      "type": 14,
+      "buildingId": 1984004,
+      "status": 2
+    },
+    {
+      "id": 6290390,
+      "name": "CHLSE | RCC-001/FBRC-001",
+      "type": 105,
+      "buildingId": 2318596,
+      "status": 2
+    },
+    {
+      "id": 6290392,
+      "name": "AA-SC/FRC-001",
+      "type": 105,
+      "buildingId": 2318599,
+      "status": 2
+    },
+    {
+      "id": 6290485,
+      "name": "EUS | LAS-002/CBRN-001",
+      "type": 32,
+      "buildingId": 1984068,
+      "status": 2
+    },
+    {
+      "id": 6290532,
+      "name": "DEPT | LFB-003/RP-001",
+      "type": 16,
+      "buildingId": 2318646,
+      "status": 2
+    },
+    {
+      "id": 6290534,
+      "name": "DEPT| LFB-003/CARP-001",
+      "type": 17,
+      "buildingId": 2318646,
+      "status": 2
+    },
+    {
+      "id": 6290763,
+      "name": "CRV",
+      "type": 57,
+      "buildingId": 2318732,
+      "status": 2
+    },
+    {
+      "id": 6290766,
+      "name": "STHP | SARHQ-001/4x4-001",
+      "type": 93,
+      "buildingId": 2318734,
+      "status": 2
+    },
+    {
+      "id": 6290768,
+      "name": "STHP | SARHQ-001/CC-001",
+      "type": 103,
+      "buildingId": 2318734,
+      "status": 2
+    },
+    {
+      "id": 6290770,
+      "name": "STHP | SARHQ-001/OST-001",
+      "type": 87,
+      "buildingId": 2318734,
+      "status": 2
+    },
+    {
+      "id": 6290782,
+      "name": "TTNPS | HPS-004/IRV-001",
+      "type": 8,
+      "buildingId": 2318739,
+      "status": 2
+    },
+    {
+      "id": 6290887,
+      "name": "WFS | LFB-009/CARP-001",
+      "type": 17,
+      "buildingId": 2318768,
+      "status": 2
+    },
+    {
+      "id": 6290890,
+      "name": "WFS | LFB-009/BASU-001",
+      "type": 14,
+      "buildingId": 2318768,
+      "status": 2
+    },
+    {
+      "id": 6290916,
+      "name": "SHLYPS | HPS-005/IRV-001",
+      "type": 8,
+      "buildingId": 2318780,
+      "status": 2
+    },
+    {
+      "id": 6290918,
+      "name": "RBR | HFS-002/CARP-001",
+      "type": 17,
+      "buildingId": 2318782,
+      "status": 2
+    },
+    {
+      "id": 6290919,
+      "name": "RBR | HFS-002/BASU-001",
+      "type": 14,
+      "buildingId": 2318782,
+      "status": 2
+    },
+    {
+      "id": 6290921,
+      "name": "SWYG | HPS-006/IRV-001",
+      "type": 8,
+      "buildingId": 2318783,
+      "status": 2
+    },
+    {
+      "id": 6290923,
+      "name": "Fire Officer",
+      "type": 3,
+      "buildingId": 2318784,
+      "status": 2
+    },
+    {
+      "id": 6292256,
+      "name": "GH | LAS-006/AMB-001",
+      "type": 5,
+      "buildingId": 2319201,
+      "status": 2
+    },
+    {
+      "id": 6292258,
+      "name": "GH | LAS-006/RRV-001",
+      "type": 10,
+      "buildingId": 2319201,
+      "status": 2
+    },
+    {
+      "id": 6292720,
+      "name": "HYPS | HPS-003/IRV-001",
+      "type": 8,
+      "buildingId": 2319380,
+      "status": 2
+    },
+    {
+      "id": 6293105,
+      "name": "WSTM’R | SAR-001/OST-001",
+      "type": 87,
+      "buildingId": 2041378,
+      "status": 2
+    },
+    {
+      "id": 6293908,
+      "name": "ELGH | HFS-004/CARP-001",
+      "type": 17,
+      "buildingId": 2319651,
+      "status": 2
     }
   ],
   "credits": {
-    "credits_user_current": 24523,
-    "credits_user_total": 148196954
+    "credits_user_current": 33112,
+    "credits_user_total": 148205543
   },
   "alliance": {
     "users": 431,
-    "online": 21,
+    "online": 23,
     "rank": 2,
     "financeActive": false
   }
