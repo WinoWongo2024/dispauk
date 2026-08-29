@@ -1,8 +1,8 @@
 {
-  "updatedAt": "2026-08-29T13:30:36.516093+00:00",
+  "updatedAt": "2026-08-29T14:09:22.411216+00:00",
   "source": "missionchief.co.uk",
   "sync": {
-    "durationSeconds": 21,
+    "durationSeconds": 23,
     "schedule": "hourly"
   },
   "endpoints": {
@@ -59,11 +59,10 @@
     "London & South": 17
   },
   "vehicleStatus": {
-    "2": 1346,
-    "1": 39,
-    "4": 64,
-    "7": 1,
-    "3": 24
+    "4": 69,
+    "2": 1368,
+    "3": 14,
+    "1": 23
   },
   "vehiclesByType": {
     "5": 505,
@@ -5191,21 +5190,6 @@
       "dcAssign": "api"
     },
     {
-      "id": 2662883,
-      "name": "Isle of Man Police HQ - Douglas",
-      "type": "Police Station",
-      "typeId": 6,
-      "level": 0,
-      "lat": 54.1647155,
-      "lon": -4.4753006,
-      "personnel": 2,
-      "small": true,
-      "region": "North",
-      "dcId": 2650412,
-      "dcName": "Isle Of Man 🇮🇲 ",
-      "dcAssign": "api"
-    },
-    {
       "id": 2662880,
       "name": "Portishead Police Station",
       "type": "Police Station",
@@ -7741,6 +7725,21 @@
       "dcAssign": "api"
     },
     {
+      "id": 2662883,
+      "name": "Isle of Man Police HQ - Douglas",
+      "type": "Police Station",
+      "typeId": 6,
+      "level": 0,
+      "lat": 54.1647155,
+      "lon": -4.4753006,
+      "personnel": 2,
+      "small": true,
+      "region": "North",
+      "dcId": 2650412,
+      "dcName": "Isle Of Man 🇮🇲 ",
+      "dcAssign": "api"
+    },
+    {
       "id": 2352918,
       "name": "Malton YAS Station",
       "type": "Ambulance Station",
@@ -9862,14 +9861,14 @@
       "name": "WCP | LFB-008/WL-001",
       "type": 0,
       "buildingId": 1987510,
-      "status": 2
+      "status": 4
     },
     {
       "id": 4926743,
       "name": "WCP | LFB-008/L4x4-001 (P)",
       "type": 1,
       "buildingId": 1844367,
-      "status": 1
+      "status": 4
     },
     {
       "id": 4926750,
@@ -9904,14 +9903,14 @@
       "name": "NWCP | LFB-006/WL-001",
       "type": 0,
       "buildingId": 1844412,
-      "status": 2
+      "status": 4
     },
     {
       "id": 4927854,
       "name": "NWCP | LFB-006/WL-002",
       "type": 0,
       "buildingId": 1844412,
-      "status": 1
+      "status": 4
     },
     {
       "id": 4929073,
@@ -9925,7 +9924,7 @@
       "name": "HLBRN | HRL-004/FO-001",
       "type": 3,
       "buildingId": 1845393,
-      "status": 1
+      "status": 2
     },
     {
       "id": 4929766,
@@ -9939,21 +9938,21 @@
       "name": "KGXSP | BTP-002/IRV-001",
       "type": 8,
       "buildingId": 1983967,
-      "status": 1
+      "status": 2
     },
     {
       "id": 5330403,
       "name": "KGXSP | BTP-002/IRV-002",
       "type": 8,
       "buildingId": 1983967,
-      "status": 1
+      "status": 2
     },
     {
       "id": 5330499,
       "name": "EUS | LFB-004/WL-001",
       "type": 0,
       "buildingId": 1984004,
-      "status": 2
+      "status": 4
     },
     {
       "id": 5330618,
@@ -9981,7 +9980,7 @@
       "name": "QW | LFB-007/WL-001",
       "type": 0,
       "buildingId": 1984339,
-      "status": 2
+      "status": 4
     },
     {
       "id": 5331507,
@@ -9995,7 +9994,7 @@
       "name": "QW | LFB-007/WL-002",
       "type": 0,
       "buildingId": 1984339,
-      "status": 2
+      "status": 4
     },
     {
       "id": 5331632,
@@ -10086,7 +10085,7 @@
       "name": "MA | LFB-005/WL-001",
       "type": 0,
       "buildingId": 1987510,
-      "status": 2
+      "status": 4
     },
     {
       "id": 5340155,
@@ -10100,14 +10099,14 @@
       "name": "MA | LAS-004/AMB-001",
       "type": 5,
       "buildingId": 1987515,
-      "status": 1
+      "status": 2
     },
     {
       "id": 5340166,
       "name": "MA | LAS-004/AMB-002",
       "type": 5,
       "buildingId": 1987515,
-      "status": 1
+      "status": 2
     },
     {
       "id": 5340169,
@@ -10212,7 +10211,7 @@
       "name": "CoL | HRL-001/FO-001",
       "type": 3,
       "buildingId": 2033681,
-      "status": 1
+      "status": 2
     },
     {
       "id": 5467039,
@@ -10240,7 +10239,7 @@
       "name": "GWCH | CRS-001/CRV-001",
       "type": 57,
       "buildingId": 2041379,
-      "status": 2
+      "status": 3
     },
     {
       "id": 5489715,
@@ -10268,7 +10267,7 @@
       "name": "CoL | LFB-002/RSU-001",
       "type": 4,
       "buildingId": 2033678,
-      "status": 2
+      "status": 4
     },
     {
       "id": 5496781,
@@ -10387,7 +10386,7 @@
       "name": "LMBTH | HRL-003/FO-001",
       "type": 3,
       "buildingId": 2312031,
-      "status": 1
+      "status": 4
     },
     {
       "id": 6272134,
@@ -10443,14 +10442,14 @@
       "name": "BTGN | LFB-001/WL-001",
       "type": 0,
       "buildingId": 2312415,
-      "status": 1
+      "status": 3
     },
     {
       "id": 6272844,
       "name": "BTGN | LFB-001/WC-001",
       "type": 6,
       "buildingId": 2312415,
-      "status": 1
+      "status": 2
     },
     {
       "id": 6272923,
@@ -10492,7 +10491,7 @@
       "name": "HC292A1",
       "type": 5,
       "buildingId": 2316087,
-      "status": 1
+      "status": 2
     },
     {
       "id": 6283751,
@@ -10513,7 +10512,7 @@
       "name": "GWCH | CRS-001/CRV-002",
       "type": 57,
       "buildingId": 2041379,
-      "status": 2
+      "status": 3
     },
     {
       "id": 6290331,
@@ -10569,14 +10568,14 @@
       "name": "DEPT | LFB-003/RP-001",
       "type": 16,
       "buildingId": 2318646,
-      "status": 2
+      "status": 3
     },
     {
       "id": 6290534,
       "name": "DEPT| LFB-003/CARP-001",
       "type": 17,
       "buildingId": 2318646,
-      "status": 2
+      "status": 3
     },
     {
       "id": 6290763,
@@ -10618,7 +10617,7 @@
       "name": "WFS | LFB-009/CARP-001",
       "type": 17,
       "buildingId": 2318768,
-      "status": 2
+      "status": 3
     },
     {
       "id": 6290890,
@@ -10699,15 +10698,15 @@
     }
   ],
   "credits": {
-    "credits_user_current": 78859,
-    "credits_user_total": 148363790,
-    "credits_alliance_current": 11057669246,
-    "coins_user_current": 238,
-    "credits_alliance_total": 241553562566
+    "credits_user_current": 219240,
+    "credits_user_total": 148504171,
+    "credits_alliance_current": 11057670286,
+    "coins_user_current": 226,
+    "credits_alliance_total": 241555469018
   },
   "alliance": {
-    "users": 431,
-    "online": 24,
+    "users": 432,
+    "online": 27,
     "rank": 2,
     "financeActive": false
   }
