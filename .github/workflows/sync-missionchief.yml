@@ -35,7 +35,6 @@ jobs:
           echo "Cookie length: ${#COOKIE} chars"
           mkdir -p /tmp/mc data
 
-          # required=1 fails the job; required=0 is best-effort
           fetch_api() {
             local name="$1" path="$2" out="$3" required="${4:-1}"
             local code
@@ -73,19 +72,14 @@ jobs:
             python3 -c "import json,sys; d=json.load(open(sys.argv[1])); print(sys.argv[2]+':', len(d) if isinstance(d,list) else type(d).__name__)" "$out" "$name"
           }
 
-          # Required
           fetch_api buildings "/api/buildings" /tmp/mc/buildings.json 1
           fetch_api vehicles "/api/vehicles" /tmp/mc/vehicles.json 1
-
-          # Optional authenticated
           fetch_api vehicle_states "/api/vehicle_states" /tmp/mc/vehicle_states.json 0
           fetch_api credits "/api/credits" /tmp/mc/credits.json 0
           fetch_api allianceinfo "/api/allianceinfo" /tmp/mc/allianceinfo.json 0
           fetch_api alliance_buildings "/api/alliance_buildings" /tmp/mc/alliance_buildings.json 0
           fetch_api equipments "/api/equipments" /tmp/mc/equipments.json 0
           fetch_api vehicle_distances "/api/v1/vehicle_distances" /tmp/mc/vehicle_distances.json 0
-
-          # Public (no auth strictly required, but send cookie anyway)
           fetch_api einsaetze "/einsaetze.json" /tmp/mc/einsaetze.json 0
           fetch_api alliance_event_types "/alliance_event_types.json" /tmp/mc/alliance_event_types.json 0
 
@@ -109,15 +103,18 @@ jobs:
           allianceinfo = load("/tmp/mc/allianceinfo.json")
           alliance_buildings = load("/tmp/mc/alliance_buildings.json")
           equipments = load("/tmp/mc/equipments.json")
-          vehicle_distances = load("/tmp/mc/vehicle_distances.json")
           einsaetze = load("/tmp/mc/einsaetze.json")
-          alliance_event_types = load("/tmp/mc/alliance_event_types.json")
 
           BUILDING_LABELS = {
-              0: "Fire Station", 1: "Fire Station", 2: "Ambulance Station",
+              0: "Fire Station", 1: "Fire Station (Large)", 2: "Ambulance Station",
               3: "Police Station", 4: "Hospital", 5: "Helicopter Station",
-              6: "Police Station", 7: "Dispatch Centre", 13: "Police Station",
-              14: "Ambulance Station", 15: "Fire Station",
+              6: "Police Station", 7: "Dispatch Centre", 8: "Police Academy",
+              13: "Police Aviation", 14: "Ambulance Station", 15: "Fire Station",
+              21: "Health Centre", 22: "Home Response / HRL",
+              25: "HART Base", 27: "Lifeboat Station", 28: "Coastguard Station",
+              29: "SAR Resource Centre", 30: "Coastguard CRH", 31: "Search & Rescue HQ",
+              32: "GP Surgery", 33: "Mountain Rescue", 34: "Workshop / RCC",
+              35: "Bomb Disposal", 36: "Custody Suite",
           }
 
           stations = []
@@ -148,7 +145,7 @@ jobs:
               type_vehicle_counts[str(vt)] += 1
 
           units_sample = []
-          for v in vehicles[:80]:
+          for v in vehicles[:120]:
               units_sample.append({
                   "id": v.get("id"),
                   "name": v.get("caption") or "Unnamed",
@@ -157,13 +154,9 @@ jobs:
                   "status": v.get("fms_show"),
               })
 
-          # Public-safe credits summary only
           credits_public = None
           if isinstance(credits, dict):
               credits_public = {k: credits[k] for k in ("credits_user_current", "credits_user_total", "alliance_funds") if k in credits}
-              if not credits_public:
-                  # keep only numeric top-level keys, cap size
-                  credits_public = {k: v for k, v in list(credits.items())[:12] if isinstance(v, (int, float, bool, str))}
 
           alliance_public = None
           if isinstance(allianceinfo, dict):
@@ -191,9 +184,7 @@ jobs:
                   "allianceinfo": allianceinfo is not None,
                   "alliance_buildings": alliance_buildings is not None,
                   "equipments": equipments is not None,
-                  "vehicle_distances": vehicle_distances is not None,
                   "einsaetze": einsaetze is not None,
-                  "alliance_event_types": alliance_event_types is not None,
               },
               "totals": {
                   "stations": len(buildings),
@@ -205,7 +196,7 @@ jobs:
               },
               "stationsByType": dict(type_counts),
               "vehicleStatus": dict(status_counts) if status_counts else (vehicle_states if isinstance(vehicle_states, dict) else {}),
-              "vehiclesByType": dict(type_vehicle_counts.most_common(25)),
+              "vehiclesByType": dict(type_vehicle_counts.most_common(30)),
               "stations": stations,
               "unitsSample": units_sample,
               "credits": credits_public,
@@ -216,9 +207,7 @@ jobs:
               json.dump(stats, f, indent=2, ensure_ascii=False)
               f.write("\n")
 
-          print("Wrote data/stats.json")
-          print("stations", stats["totals"]["stations"], "units", stats["totals"]["units"])
-          print("endpoints", stats["endpoints"])
+          print("Wrote data/stats.json", len(stations), "stations", len(vehicles), "units")
           PY
 
       - name: Commit if changed
