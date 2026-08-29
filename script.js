@@ -1,4 +1,4 @@
-// DispaUK v1 — public frontend only. No credentials.
+// DispaUK public frontend only. No credentials.
 
 const PAGE_SIZE = 25;
 let allStations = [];
@@ -10,10 +10,10 @@ let sortMode = 'name-asc';
 
 function escapeHtml(str) {
   return String(str)
-    .replace(/&/g, '&amp;')
-    .replace(/</g, '&lt;')
-    .replace(/>/g, '&gt;')
-    .replace(/"/g, '&quot;');
+    .replace(/&/g, '&')
+    .replace(/</g, '<')
+    .replace(/>/g, '>')
+    .replace(/"/g, '"');
 }
 
 function fmt(n) {
@@ -58,8 +58,8 @@ function freshnessFromAge(mins) {
 function serviceBucket(type) {
   const t = (type || '').toLowerCase();
   if (t.includes('fire')) return 'fire';
-  if (t.includes('ambulance') || t.includes('hospital')) return 'ambulance';
-  if (t.includes('police')) return 'police';
+  if (t.includes('ambulance') || t.includes('hospital') || t.includes('hart')) return 'ambulance';
+  if (t.includes('police') || t.includes('custody')) return 'police';
   return 'other';
 }
 
@@ -73,7 +73,7 @@ function applyFilters() {
     const bucket = serviceBucket(s.type);
     if (activeFilter !== 'all' && bucket !== activeFilter) return false;
     if (!q) return true;
-    const hay = `${s.name || ''} ${s.type || ''}`.toLowerCase();
+    const hay = `${s.name || ''} ${s.type || ''} ${s.dcName || ''}`.toLowerCase();
     return hay.includes(q);
   });
 
@@ -99,12 +99,13 @@ function renderStations() {
 
   if (body) {
     if (!slice.length) {
-      body.innerHTML = '<tr><td colspan="4" class="empty">No stations match your filters.</td></tr>';
+      body.innerHTML = '<tr><td colspan="5" class="empty">No stations match your filters.</td></tr>';
     } else {
       body.innerHTML = slice.map((s) => `
         <tr>
           <td><a href="${stationHref(s)}">${escapeHtml(s.name || 'Unnamed')}</a></td>
           <td>${escapeHtml(s.type || '—')}</td>
+          <td>${s.dcId ? `<a href="/dispatch/?id=${encodeURIComponent(s.dcId)}">${escapeHtml(s.dcName || 'DC')}</a>` : '—'}</td>
           <td class="mono">${fmt(s.personnel)}</td>
           <td><span class="status-pill">Active</span></td>
         </tr>`).join('');
@@ -118,7 +119,7 @@ function renderStations() {
       cards.innerHTML = slice.map((s) => `
         <a class="station-card" href="${stationHref(s)}">
           <h3>${escapeHtml(s.name || 'Unnamed')}</h3>
-          <p>${escapeHtml(s.type || '—')}</p>
+          <p>${escapeHtml(s.type || '—')}${s.dcName ? ' · ' + escapeHtml(s.dcName) : ''}</p>
           <div class="station-card-meta">
             <span class="status-pill">Active</span>
             <span class="mono">${fmt(s.personnel)} personnel</span>
@@ -176,6 +177,7 @@ async function loadStats() {
     setText('[data-m-stations]', fmt(t.stations));
     setText('[data-m-units]', fmt(t.units));
     setText('[data-m-personnel]', fmt(t.personnel));
+    setText('[data-dc-total]', fmt(t.dispatchCentres));
 
     applyFreshness(data.updatedAt);
 
@@ -184,6 +186,16 @@ async function loadStats() {
       setText('[data-alliance-online]', fmt(data.alliance.online));
       setText('[data-alliance-online-2]', fmt(data.alliance.online));
       setText('[data-alliance-rank]', fmt(data.alliance.rank));
+      setText('[data-alliance-rank-card]', fmt(data.alliance.rank));
+    }
+
+    if (data.credits) {
+      const cur = data.credits.credits_user_current;
+      const tot = data.credits.credits_user_total;
+      setText('[data-credits-current]', fmt(cur));
+      setText('[data-credits-current-2]', fmt(cur));
+      setText('[data-credits-total]', fmt(tot));
+      setText('[data-credits-total-2]', fmt(tot));
     }
 
     const statusBox = document.querySelector('[data-vehicle-status]');
