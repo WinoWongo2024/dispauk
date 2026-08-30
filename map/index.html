@@ -27,9 +27,11 @@
       <nav class="nav" aria-label="Primary">
         <a href="/">Dashboard</a>
         <a href="/dispatch/">Dispatch</a>
+        <a href="/stations/">Stations</a>
+        <a href="/fleet/">Fleet</a>
         <a href="/locate/">Locate</a>
         <a href="/map/">Map</a>
-        <a href="/fleet/">Fleet</a>
+        <a href="/regions/">Regions</a>
         <a href="/statistics/">Statistics</a>
         <a href="/status/">Status</a>
       </nav>
@@ -41,7 +43,7 @@
       <div class="section-header-left" style="margin-bottom:12px">
         <span class="section-kicker">GEOGRAPHY</span>
         <h1 style="font-size:1.6rem">Operations map</h1>
-        <p class="text-muted">Borders are Voronoi cells around each dispatch centre — they meet at edges and do not overlap.</p>
+        <p class="text-muted">Borders are Voronoi cells around each dispatch centre — approximate coverage only, not official emergency-service boundaries.</p>
       </div>
 
       <div class="map-toolbar">
@@ -62,12 +64,12 @@
       </div>
 
       <div id="map" role="application" aria-label="Station map"></div>
-      <p class="text-muted" style="margin-top:10px">
-        <span data-map-count>0</span> stations · <span data-dc-count>0</span> centres · approximate coverage only
+      <p class="text-muted" style="margin-top:10px" aria-live="polite">
+        <span data-map-count>Loading…</span> stations · <span data-dc-count>…</span> centres · approximate coverage only
       </p>
     </div>
   </main>
-  <footer class="footer-slim"><div class="container footer-bottom"><p class="footer-copy">© <span data-current-year>2026</span> DispaUK</p></div></footer>
+  <footer class="footer-slim"><div class="container footer-bottom"><p class="footer-copy">© <span data-current-year>2026</span> DispaUK · <a href="/status/">Status</a></p></div></footer>
   <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" crossorigin=""></script>
   <script src="https://cdn.jsdelivr.net/npm/d3-delaunay@6"></script>
   <script src="/script.js" defer></script>
@@ -78,8 +80,17 @@
         attribution: '&copy; OpenStreetMap &copy; CARTO', maxZoom: 18,
       }).addTo(map);
 
-      const res = await fetch('/data/stats.json', { cache: 'no-cache' });
-      const data = await res.json();
+      let data;
+      try {
+        const res = await fetch('/data/stats.json', { cache: 'no-cache' });
+        if (!res.ok) throw new Error('fetch failed');
+        data = await res.json();
+      } catch (e) {
+        document.querySelector('[data-map-count]').textContent = 'Failed to load';
+        document.querySelector('[data-dc-count]').textContent = '—';
+        return;
+      }
+
       const stations = (data.stations || []).filter(s => s.lat != null && s.lon != null);
       const dcs = (data.dispatchCentres || []).filter(d => d.lat != null && d.lon != null);
 
@@ -101,7 +112,6 @@
       };
       const colours = { fire: '#e63946', ambulance: '#3b82f6', police: '#a78bfa', other: '#9aadc2' };
 
-      // Bounding box from stations + pad
       let minLat = 90, maxLat = -90, minLon = 180, maxLon = -180;
       stations.forEach(s => {
         minLat = Math.min(minLat, s.lat); maxLat = Math.max(maxLat, s.lat);
@@ -110,7 +120,6 @@
       const pad = 0.35;
       minLat -= pad; maxLat += pad; minLon -= pad; maxLon += pad;
 
-      // Voronoi cells: points as [lon, lat] for d3, output as [lat, lon] for Leaflet
       const voronoiPolys = {};
       if (dcs.length >= 2 && window.d3 && d3.Delaunay) {
         try {
@@ -120,7 +129,6 @@
           dcs.forEach((d, i) => {
             const cell = vor.cellPolygon(i);
             if (cell && cell.length >= 4) {
-              // cell is [lon, lat] rings; convert to [lat, lon]
               voronoiPolys[d.id] = cell.map(p => [p[1], p[0]]);
             }
           });
@@ -134,7 +142,7 @@
         o.textContent = `${d.name} (${d.stationCount || 0})`;
         sel.appendChild(o);
       });
-      document.querySelector('[data-dc-count]').textContent = dcs.length;
+      document.querySelector('[data-dc-count]').textContent = String(dcs.length);
 
       function redraw() {
         stationLayer.clearLayers();
@@ -165,7 +173,7 @@
             L.polygon(poly, {
               color: col, weight: 2, opacity: 0.95,
               fillColor: col, fillOpacity: 0.1,
-            }).bindPopup(`<strong>${d.name}</strong><br>${d.stationCount || 0} stations<br>Non-overlapping coverage cell`).addTo(coverageLayer);
+            }).bindPopup(`<strong>${d.name}</strong><br>${d.stationCount || 0} stations<br>Approximate coverage cell`).addTo(coverageLayer);
           });
         }
 
@@ -176,7 +184,7 @@
           }).bindPopup(`<strong>${d.name}</strong><br>Dispatch Centre<br><a href="/dispatch/?id=${d.id}">Open dashboard</a>`).addTo(dcLayer);
         });
 
-        document.querySelector('[data-map-count]').textContent = list.length;
+        document.querySelector('[data-map-count]').textContent = String(list.length);
       }
 
       redraw();
