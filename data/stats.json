@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-08-30T11:35:00.621477+00:00",
+  "updatedAt": "2026-08-30T16:22:02.181854+00:00",
   "source": "missionchief.co.uk",
   "sync": {
     "durationSeconds": 22,
@@ -26,9 +26,9 @@
   },
   "stationsByType": {
     "Ambulance Station": 287,
+    "Hospital": 20,
     "Police Station": 66,
     "Bomb Disposal": 3,
-    "Hospital": 20,
     "HART Base": 5,
     "Home Response / HRL": 48,
     "Dispatch Centre": 38,
@@ -50,20 +50,17 @@
   },
   "stationsByRegion": {
     "Midlands": 63,
+    "North": 95,
     "South West": 222,
     "Wales": 52,
-    "North": 95,
     "South East": 74,
     "Other / Overseas": 48,
     "London & South": 23,
     "Scotland": 4
   },
   "vehicleStatus": {
-    "2": 1455,
-    "5": 1,
-    "4": 10,
-    "7": 3,
-    "1": 14,
+    "2": 1469,
+    "4": 14,
     "3": 1
   },
   "vehiclesByType": {
@@ -1330,6 +1327,21 @@
       "region": "Midlands",
       "dcId": 2633103,
       "dcName": "Lincolnshire DC",
+      "dcAssign": "api"
+    },
+    {
+      "id": 2620355,
+      "name": "Leeds General Infirmary ",
+      "type": "Hospital",
+      "typeId": 4,
+      "level": 10,
+      "lat": 53.8023946581611,
+      "lon": -1.554507023226996,
+      "personnel": 0,
+      "small": false,
+      "region": "North",
+      "dcId": 2620223,
+      "dcName": "⁠[WY-ECC] West Yorks Emergency Control⁠",
       "dcAssign": "api"
     },
     {
@@ -3253,21 +3265,6 @@
       "dcAssign": "api"
     },
     {
-      "id": 2330766,
-      "name": "Alliance Hospital - St Thomas Hospital",
-      "type": "Hospital",
-      "typeId": 4,
-      "level": 30,
-      "lat": 51.49882104927478,
-      "lon": -0.11859392142196024,
-      "personnel": 0,
-      "small": false,
-      "region": "South East",
-      "dcId": 1844373,
-      "dcName": "Central,South/North East London Dispatch",
-      "dcAssign": "api"
-    },
-    {
       "id": 1845393,
       "name": "(HRL-004) Holborn HRL Station",
       "type": "Home Response / HRL",
@@ -3340,21 +3337,6 @@
       "region": "South West",
       "dcId": 2635513,
       "dcName": "Wiltshire DC",
-      "dcAssign": "api"
-    },
-    {
-      "id": 2390847,
-      "name": "Royal United Hospital (RUH)",
-      "type": "Hospital",
-      "typeId": 4,
-      "level": 30,
-      "lat": 51.39141658271086,
-      "lon": -2.3916416733188,
-      "personnel": 0,
-      "small": false,
-      "region": "South West",
-      "dcId": 2353684,
-      "dcName": "Somerset FCR ",
       "dcAssign": "api"
     },
     {
@@ -5998,21 +5980,6 @@
       "dcAssign": "api"
     },
     {
-      "id": 2620355,
-      "name": "Leeds General Infirmary ",
-      "type": "Hospital",
-      "typeId": 4,
-      "level": 10,
-      "lat": 53.8023946581611,
-      "lon": -1.554507023226996,
-      "personnel": 0,
-      "small": false,
-      "region": "North",
-      "dcId": 2620223,
-      "dcName": "⁠[WY-ECC] West Yorks Emergency Control⁠",
-      "dcAssign": "api"
-    },
-    {
       "id": 1844367,
       "name": "(LFB-008) Whitechapel  station ",
       "type": "Fire Station",
@@ -6040,6 +6007,21 @@
       "region": "South West",
       "dcId": 2635219,
       "dcName": "Devon DC",
+      "dcAssign": "api"
+    },
+    {
+      "id": 2390847,
+      "name": "Royal United Hospital (RUH)",
+      "type": "Hospital",
+      "typeId": 4,
+      "level": 30,
+      "lat": 51.39141658271086,
+      "lon": -2.3916416733188,
+      "personnel": 0,
+      "small": false,
+      "region": "South West",
+      "dcId": 2353684,
+      "dcName": "Somerset FCR ",
       "dcAssign": "api"
     },
     {
@@ -6461,6 +6443,21 @@
       "dcId": 2621062,
       "dcName": "Staffordshire DC",
       "dcAssign": "self"
+    },
+    {
+      "id": 2330766,
+      "name": "Alliance Hospital - St Thomas Hospital",
+      "type": "Hospital",
+      "typeId": 4,
+      "level": 30,
+      "lat": 51.49882104927478,
+      "lon": -0.11859392142196024,
+      "personnel": 0,
+      "small": false,
+      "region": "South East",
+      "dcId": 1844373,
+      "dcName": "Central,South/North East London Dispatch",
+      "dcAssign": "api"
     },
     {
       "id": 2465954,
@@ -10116,14 +10113,14 @@
       "name": "KGXSP | BTP-002/IRV-001",
       "type": 8,
       "buildingId": 1983967,
-      "status": 5
+      "status": 2
     },
     {
       "id": 5330403,
       "name": "KGXSP | BTP-002/IRV-002",
       "type": 8,
       "buildingId": 1983967,
-      "status": 4
+      "status": 2
     },
     {
       "id": 5330499,
@@ -10697,7 +10694,7 @@
       "name": "ING | MET-002/IRV-002",
       "type": 8,
       "buildingId": 2033689,
-      "status": 4
+      "status": 2
     },
     {
       "id": 6290338,
@@ -10876,15 +10873,15 @@
     }
   ],
   "credits": {
-    "credits_user_current": 129810,
-    "credits_user_total": 149332810,
-    "credits_alliance_current": 388234913,
+    "credits_user_current": 189260,
+    "credits_user_total": 149398870,
+    "credits_alliance_current": 388440021,
     "coins_user_current": 209,
-    "credits_alliance_total": 29792969324
+    "credits_alliance_total": 29797117324
   },
   "alliance": {
     "users": 1820,
-    "online": 8,
+    "online": 11,
     "rank": 9,
     "financeActive": true
   }
