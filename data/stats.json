@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-08-30T05:12:23.536095+00:00",
+  "updatedAt": "2026-08-30T09:38:54.159469+00:00",
   "source": "missionchief.co.uk",
   "sync": {
     "durationSeconds": 22,
@@ -16,23 +16,24 @@
     "einsaetze": true
   },
   "totals": {
-    "stations": 572,
-    "units": 1474,
-    "personnel": 39560,
-    "dispatchCentres": 36,
+    "stations": 577,
+    "units": 1477,
+    "personnel": 39571,
+    "dispatchCentres": 37,
     "allianceBuildings": 1195,
     "equipments": 11,
     "missionTypes": 1067
   },
   "stationsByType": {
-    "Ambulance Station": 281,
+    "Ambulance Station": 284,
     "Police Station": 66,
     "Bomb Disposal": 3,
     "Hospital": 20,
     "HART Base": 5,
     "Home Response / HRL": 48,
-    "Dispatch Centre": 36,
+    "Dispatch Centre": 37,
     "Fire Station": 50,
+    "GP Surgery": 3,
     "Helicopter Station": 3,
     "Fire Station (Large)": 1,
     "Workshop / RCC": 7,
@@ -44,27 +45,27 @@
     "SAR Resource Centre": 1,
     "Health Centre": 2,
     "Mountain Rescue": 5,
-    "GP Surgery": 2,
     "Lifeboat Station": 10,
     "Coastguard CRH": 3
   },
   "stationsByRegion": {
     "Midlands": 62,
-    "South West": 220,
+    "South West": 222,
     "Wales": 52,
     "North": 95,
     "South East": 74,
     "Other / Overseas": 48,
-    "London & South": 17,
+    "London & South": 20,
     "Scotland": 4
   },
   "vehicleStatus": {
-    "2": 1466,
-    "4": 7,
-    "6": 1
+    "2": 1464,
+    "4": 6,
+    "3": 3,
+    "1": 4
   },
   "vehiclesByType": {
-    "5": 505,
+    "5": 508,
     "8": 142,
     "17": 60,
     "10": 47,
@@ -99,9 +100,9 @@
     "stationsMissingName": 0,
     "stationsMissingCoords": 0,
     "duplicateStationIds": 0,
-    "dcAssignedFromApi": 532,
+    "dcAssignedFromApi": 536,
     "dcAssignedNearest": 4,
-    "dispatchCentres": 36,
+    "dispatchCentres": 37,
     "ok": true
   },
   "dispatchCentres": [
@@ -111,8 +112,8 @@
       "lat": 51.5484492,
       "lon": -2.5562629,
       "level": 0,
-      "stationCount": 99,
-      "personnel": 8078,
+      "stationCount": 100,
+      "personnel": 8080,
       "coverageRadiusM": 93562,
       "coveragePolygon": [
         [
@@ -1173,6 +1174,35 @@
       "region": "Midlands"
     },
     {
+      "id": 2663954,
+      "name": "Oxfordshire FCR",
+      "lat": 51.75058640081601,
+      "lon": -1.2144621905441928,
+      "level": 0,
+      "stationCount": 3,
+      "personnel": 9,
+      "coverageRadiusM": 28579,
+      "coveragePolygon": [
+        [
+          51.6551855,
+          -1.578204
+        ],
+        [
+          51.67297290266064,
+          -1.2705242698977064
+        ],
+        [
+          51.750892192257105,
+          -1.21239779777539
+        ],
+        [
+          51.75058640081601,
+          -1.2144621905441928
+        ]
+      ],
+      "region": "London & South"
+    },
+    {
       "id": 2621062,
       "name": "Staffordshire DC",
       "lat": 52.809699180135574,
@@ -1647,6 +1677,81 @@
       "dcId": 2649006,
       "dcName": "France 🇫🇷 FCR ",
       "dcAssign": "api"
+    },
+    {
+      "id": 2663953,
+      "name": "St Augustine’s Medical Practice ",
+      "type": "GP Surgery",
+      "typeId": 32,
+      "level": 0,
+      "lat": 51.401985372559714,
+      "lon": -2.456599039389783,
+      "personnel": 2,
+      "small": false,
+      "region": "South West",
+      "dcId": 2353684,
+      "dcName": "Somerset FCR ",
+      "dcAssign": "api"
+    },
+    {
+      "id": 2663957,
+      "name": "Oxford City Ambulance Station ",
+      "type": "Ambulance Station",
+      "typeId": 2,
+      "level": 0,
+      "lat": 51.750892192257105,
+      "lon": -1.21239779777539,
+      "personnel": 3,
+      "small": true,
+      "region": "London & South",
+      "dcId": 2663954,
+      "dcName": "Oxfordshire FCR",
+      "dcAssign": "api"
+    },
+    {
+      "id": 2663955,
+      "name": "Faringdon Ambulance Station",
+      "type": "Ambulance Station",
+      "typeId": 2,
+      "level": 0,
+      "lat": 51.6551855,
+      "lon": -1.578204,
+      "personnel": 3,
+      "small": true,
+      "region": "South West",
+      "dcId": 2663954,
+      "dcName": "Oxfordshire FCR",
+      "dcAssign": "api"
+    },
+    {
+      "id": 2663956,
+      "name": "Abingdon Ambulance Station",
+      "type": "Ambulance Station",
+      "typeId": 2,
+      "level": 0,
+      "lat": 51.67297290266064,
+      "lon": -1.2705242698977064,
+      "personnel": 3,
+      "small": true,
+      "region": "London & South",
+      "dcId": 2663954,
+      "dcName": "Oxfordshire FCR",
+      "dcAssign": "api"
+    },
+    {
+      "id": 2663954,
+      "name": "Oxfordshire FCR",
+      "type": "Dispatch Centre",
+      "typeId": 7,
+      "level": 0,
+      "lat": 51.75058640081601,
+      "lon": -1.2144621905441928,
+      "personnel": 0,
+      "small": false,
+      "region": "London & South",
+      "dcId": 2663954,
+      "dcName": "Oxfordshire FCR",
+      "dcAssign": "self"
     },
     {
       "id": 2357963,
@@ -10217,7 +10322,7 @@
       "name": "ING | MET-002/IRV-001",
       "type": 8,
       "buildingId": 2033689,
-      "status": 2
+      "status": 4
     },
     {
       "id": 5488513,
@@ -10350,14 +10455,14 @@
       "name": "KBR | NYF-002/WL-001",
       "type": 0,
       "buildingId": 2311542,
-      "status": 4
+      "status": 2
     },
     {
       "id": 6269521,
       "name": "KBR | NYF-002/FO-001",
       "type": 3,
       "buildingId": 2311542,
-      "status": 4
+      "status": 2
     },
     {
       "id": 6270702,
@@ -10697,15 +10802,15 @@
     }
   ],
   "credits": {
-    "credits_user_current": 413269,
-    "credits_user_total": 148698200,
-    "credits_alliance_current": 387837126,
-    "coins_user_current": 220,
-    "credits_alliance_total": 29786209863
+    "credits_user_current": 96634,
+    "credits_user_total": 148895943,
+    "credits_alliance_current": 388105759,
+    "coins_user_current": 214,
+    "credits_alliance_total": 29790884331
   },
   "alliance": {
     "users": 1820,
-    "online": 5,
+    "online": 7,
     "rank": 9,
     "financeActive": true
   }
