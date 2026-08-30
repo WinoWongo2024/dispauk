@@ -37,7 +37,7 @@
   <main>
     <noscript>
       <div class="container" style="padding:16px">
-        <p><strong>JavaScript is required</strong> for live operational figures. Static data is available at <a href="/data/stats.json">/data/stats.json</a>.</p>
+        <p><strong>JavaScript is required</strong> for live operational figures. Static data: <a href="/data/stats.json">/data/stats.json</a>.</p>
       </div>
     </noscript>
 
@@ -66,14 +66,14 @@
     <section id="dashboard" class="dash">
       <div class="container">
         <div class="dash-grid" aria-live="polite">
-          <article class="stat-card"><span class="stat-label">Stations</span><strong class="stat-value" id="station-count">—</strong></article>
-          <article class="stat-card"><span class="stat-label">Units</span><strong class="stat-value" id="unit-count">—</strong></article>
-          <article class="stat-card"><span class="stat-label">Personnel</span><strong class="stat-value" id="personnel-count">—</strong></article>
-          <article class="stat-card"><span class="stat-label">Dispatch centres</span><strong class="stat-value" data-dc-total>—</strong></article>
-          <article class="stat-card"><span class="stat-label">Credits (current)</span><strong class="stat-value" data-credits-current>—</strong></article>
-          <article class="stat-card"><span class="stat-label">Credits (lifetime)</span><strong class="stat-value" data-credits-total>—</strong></article>
-          <article class="stat-card"><span class="stat-label">Alliance online</span><strong class="stat-value" data-alliance-online>—</strong></article>
-          <article class="stat-card"><span class="stat-label">Alliance rank</span><strong class="stat-value" data-alliance-rank-card>—</strong></article>
+          <article class="stat-card"><span class="stat-label">Stations</span><strong class="stat-value" id="station-count">…</strong></article>
+          <article class="stat-card"><span class="stat-label">Units</span><strong class="stat-value" id="unit-count">…</strong></article>
+          <article class="stat-card"><span class="stat-label">Personnel</span><strong class="stat-value" id="personnel-count">…</strong></article>
+          <article class="stat-card"><span class="stat-label">Dispatch centres</span><strong class="stat-value" data-dc-total>…</strong></article>
+          <article class="stat-card"><span class="stat-label">Credits (current)</span><strong class="stat-value" data-credits-current>…</strong></article>
+          <article class="stat-card"><span class="stat-label">Credits (lifetime)</span><strong class="stat-value" data-credits-total>…</strong></article>
+          <article class="stat-card"><span class="stat-label">Alliance online</span><strong class="stat-value" data-alliance-online>…</strong></article>
+          <article class="stat-card"><span class="stat-label">Alliance rank</span><strong class="stat-value" data-alliance-rank-card>…</strong></article>
         </div>
 
         <div class="dash-panels">
@@ -130,7 +130,7 @@
           </label>
         </div>
 
-        <p class="result-meta" aria-live="polite"><span data-result-count>0</span> stations · showing <span data-showing-count>0</span></p>
+        <p class="result-meta" aria-live="polite"><span data-result-count>…</span> stations · showing <span data-showing-count>…</span></p>
 
         <div class="table-wrap desktop-only">
           <table>
@@ -144,11 +144,15 @@
                 <th scope="col">Status</th>
               </tr>
             </thead>
-            <tbody data-stations-body></tbody>
+            <tbody data-stations-body>
+              <tr><td colspan="5" class="empty">Loading stations…</td></tr>
+            </tbody>
           </table>
         </div>
 
-        <div class="station-cards mobile-only" data-stations-cards></div>
+        <div class="station-cards mobile-only" data-stations-cards>
+          <p class="empty-card">Loading stations…</p>
+        </div>
 
         <div class="load-more-wrap">
           <button type="button" class="btn btn-outline" id="load-more" hidden>Load more</button>
