@@ -1,8 +1,8 @@
 {
-  "updatedAt": "2026-08-30T10:09:44.051227+00:00",
+  "updatedAt": "2026-08-30T11:35:00.621477+00:00",
   "source": "missionchief.co.uk",
   "sync": {
-    "durationSeconds": 20,
+    "durationSeconds": 22,
     "schedule": "hourly"
   },
   "endpoints": {
@@ -16,10 +16,10 @@
     "einsaetze": true
   },
   "totals": {
-    "stations": 580,
+    "stations": 581,
     "units": 1484,
     "personnel": 39580,
-    "dispatchCentres": 37,
+    "dispatchCentres": 38,
     "allianceBuildings": 1195,
     "equipments": 11,
     "missionTypes": 1067
@@ -31,7 +31,7 @@
     "Hospital": 20,
     "HART Base": 5,
     "Home Response / HRL": 48,
-    "Dispatch Centre": 37,
+    "Dispatch Centre": 38,
     "Fire Station": 50,
     "Helicopter Station": 3,
     "GP Surgery": 3,
@@ -40,16 +40,16 @@
     "Search & Rescue HQ": 7,
     "Police Aviation": 3,
     "Police Academy": 1,
+    "Health Centre": 2,
     "Coastguard Station": 17,
     "Custody Suite": 1,
     "SAR Resource Centre": 1,
-    "Health Centre": 2,
     "Mountain Rescue": 5,
     "Lifeboat Station": 10,
     "Coastguard CRH": 3
   },
   "stationsByRegion": {
-    "Midlands": 62,
+    "Midlands": 63,
     "South West": 222,
     "Wales": 52,
     "North": 95,
@@ -59,10 +59,11 @@
     "Scotland": 4
   },
   "vehicleStatus": {
-    "2": 1461,
-    "4": 3,
-    "1": 18,
+    "2": 1455,
     "5": 1,
+    "4": 10,
+    "7": 3,
+    "1": 14,
     "3": 1
   },
   "vehiclesByType": {
@@ -103,7 +104,7 @@
     "duplicateStationIds": 0,
     "dcAssignedFromApi": 539,
     "dcAssignedNearest": 4,
-    "dispatchCentres": 37,
+    "dispatchCentres": 38,
     "ok": true
   },
   "dispatchCentres": [
@@ -1301,6 +1302,18 @@
       "coverageRadiusM": 37521,
       "coveragePolygon": null,
       "region": "London & South"
+    },
+    {
+      "id": 2663988,
+      "name": "Warwickshire FCR",
+      "lat": 52.29052718759558,
+      "lon": -1.584665865956649,
+      "level": 0,
+      "stationCount": 0,
+      "personnel": 0,
+      "coverageRadiusM": 2500,
+      "coveragePolygon": null,
+      "region": "Midlands"
     }
   ],
   "stations": [
@@ -1830,21 +1843,6 @@
       "dcAssign": "api"
     },
     {
-      "id": 2390847,
-      "name": "Royal United Hospital (RUH)",
-      "type": "Hospital",
-      "typeId": 4,
-      "level": 30,
-      "lat": 51.39141658271086,
-      "lon": -2.3916416733188,
-      "personnel": 0,
-      "small": false,
-      "region": "South West",
-      "dcId": 2353684,
-      "dcName": "Somerset FCR ",
-      "dcAssign": "api"
-    },
-    {
       "id": 2663957,
       "name": "Oxford City Ambulance Station ",
       "type": "Ambulance Station",
@@ -2160,21 +2158,6 @@
       "dcAssign": "api"
     },
     {
-      "id": 1987519,
-      "name": "(MET-003) MarbleArch",
-      "type": "Police Station",
-      "typeId": 6,
-      "level": 2,
-      "lat": 51.51473303698452,
-      "lon": -0.15935976855465364,
-      "personnel": 200,
-      "small": true,
-      "region": "South East",
-      "dcId": 1984642,
-      "dcName": "West, South, SW,NW North London Dispatch",
-      "dcAssign": "api"
-    },
-    {
       "id": 2622173,
       "name": "Goole Ambulance Station",
       "type": "Ambulance Station",
@@ -2203,6 +2186,21 @@
       "dcId": 2311778,
       "dcName": "Hampshire DC",
       "dcAssign": "api"
+    },
+    {
+      "id": 2663988,
+      "name": "Warwickshire FCR",
+      "type": "Dispatch Centre",
+      "typeId": 7,
+      "level": 0,
+      "lat": 52.29052718759558,
+      "lon": -1.584665865956649,
+      "personnel": 0,
+      "small": false,
+      "region": "Midlands",
+      "dcId": 2663988,
+      "dcName": "Warwickshire FCR",
+      "dcAssign": "self"
     },
     {
       "id": 2622180,
@@ -2640,6 +2638,21 @@
       "dcAssign": "api"
     },
     {
+      "id": 1987519,
+      "name": "(MET-003) MarbleArch",
+      "type": "Police Station",
+      "typeId": 6,
+      "level": 2,
+      "lat": 51.51473303698452,
+      "lon": -0.15935976855465364,
+      "personnel": 200,
+      "small": true,
+      "region": "South East",
+      "dcId": 1984642,
+      "dcName": "West, South, SW,NW North London Dispatch",
+      "dcAssign": "api"
+    },
+    {
       "id": 2312409,
       "name": "(HFS-003) St Mary’s Fire station",
       "type": "Fire Station",
@@ -2802,6 +2815,21 @@
       "region": "North",
       "dcId": 1988744,
       "dcName": "(M2XN) North Yorkshire DC",
+      "dcAssign": "api"
+    },
+    {
+      "id": 2429826,
+      "name": "Paulton Hospital  (MIU) (1-3617575955)",
+      "type": "Health Centre",
+      "typeId": 21,
+      "level": 5,
+      "lat": 51.29874962661729,
+      "lon": -2.4933505365978057,
+      "personnel": 198,
+      "small": false,
+      "region": "South West",
+      "dcId": 2353684,
+      "dcName": "Somerset FCR ",
       "dcAssign": "api"
     },
     {
@@ -3225,6 +3253,21 @@
       "dcAssign": "api"
     },
     {
+      "id": 2330766,
+      "name": "Alliance Hospital - St Thomas Hospital",
+      "type": "Hospital",
+      "typeId": 4,
+      "level": 30,
+      "lat": 51.49882104927478,
+      "lon": -0.11859392142196024,
+      "personnel": 0,
+      "small": false,
+      "region": "South East",
+      "dcId": 1844373,
+      "dcName": "Central,South/North East London Dispatch",
+      "dcAssign": "api"
+    },
+    {
       "id": 1845393,
       "name": "(HRL-004) Holborn HRL Station",
       "type": "Home Response / HRL",
@@ -3297,6 +3340,21 @@
       "region": "South West",
       "dcId": 2635513,
       "dcName": "Wiltshire DC",
+      "dcAssign": "api"
+    },
+    {
+      "id": 2390847,
+      "name": "Royal United Hospital (RUH)",
+      "type": "Hospital",
+      "typeId": 4,
+      "level": 30,
+      "lat": 51.39141658271086,
+      "lon": -2.3916416733188,
+      "personnel": 0,
+      "small": false,
+      "region": "South West",
+      "dcId": 2353684,
+      "dcName": "Somerset FCR ",
       "dcAssign": "api"
     },
     {
@@ -4208,21 +4266,6 @@
       "lat": 51.492910816331,
       "lon": -0.12123953489482854,
       "personnel": 30,
-      "small": false,
-      "region": "South East",
-      "dcId": 1844373,
-      "dcName": "Central,South/North East London Dispatch",
-      "dcAssign": "api"
-    },
-    {
-      "id": 2330766,
-      "name": "Alliance Hospital - St Thomas Hospital",
-      "type": "Hospital",
-      "typeId": 4,
-      "level": 30,
-      "lat": 51.49882104927478,
-      "lon": -0.11859392142196024,
-      "personnel": 0,
       "small": false,
       "region": "South East",
       "dcId": 1844373,
@@ -9405,21 +9448,6 @@
       "dcAssign": "api"
     },
     {
-      "id": 2429826,
-      "name": "Paulton Hospital  (MIU) (1-3617575955)",
-      "type": "Health Centre",
-      "typeId": 21,
-      "level": 5,
-      "lat": 51.29874962661729,
-      "lon": -2.4933505365978057,
-      "personnel": 198,
-      "small": false,
-      "region": "South West",
-      "dcId": 2353684,
-      "dcName": "Somerset FCR ",
-      "dcAssign": "api"
-    },
-    {
       "id": 2620948,
       "name": "Wetherby Ambulance Station",
       "type": "Ambulance Station",
@@ -10088,14 +10116,14 @@
       "name": "KGXSP | BTP-002/IRV-001",
       "type": 8,
       "buildingId": 1983967,
-      "status": 2
+      "status": 5
     },
     {
       "id": 5330403,
       "name": "KGXSP | BTP-002/IRV-002",
       "type": 8,
       "buildingId": 1983967,
-      "status": 2
+      "status": 4
     },
     {
       "id": 5330499,
@@ -10459,7 +10487,7 @@
       "name": "H’GTE | YAS-001/RRV-001",
       "type": 10,
       "buildingId": 2188370,
-      "status": 2
+      "status": 4
     },
     {
       "id": 6269467,
@@ -10669,7 +10697,7 @@
       "name": "ING | MET-002/IRV-002",
       "type": 8,
       "buildingId": 2033689,
-      "status": 2
+      "status": 4
     },
     {
       "id": 6290338,
@@ -10848,15 +10876,15 @@
     }
   ],
   "credits": {
-    "credits_user_current": 6333,
-    "credits_user_total": 149195610,
-    "credits_alliance_current": 388138649,
-    "coins_user_current": 211,
-    "credits_alliance_total": 29791303440
+    "credits_user_current": 129810,
+    "credits_user_total": 149332810,
+    "credits_alliance_current": 388234913,
+    "coins_user_current": 209,
+    "credits_alliance_total": 29792969324
   },
   "alliance": {
     "users": 1820,
-    "online": 5,
+    "online": 8,
     "rank": 9,
     "financeActive": true
   }
