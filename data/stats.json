@@ -1,8 +1,8 @@
 {
-  "updatedAt": "2026-08-30T16:22:02.181854+00:00",
+  "updatedAt": "2026-08-30T19:40:33.627670+00:00",
   "source": "missionchief.co.uk",
   "sync": {
-    "durationSeconds": 22,
+    "durationSeconds": 29,
     "schedule": "hourly"
   },
   "endpoints": {
@@ -20,7 +20,7 @@
     "units": 1484,
     "personnel": 39580,
     "dispatchCentres": 38,
-    "allianceBuildings": 1195,
+    "allianceBuildings": 1196,
     "equipments": 11,
     "missionTypes": 1067
   },
@@ -32,6 +32,7 @@
     "HART Base": 5,
     "Home Response / HRL": 48,
     "Dispatch Centre": 38,
+    "Custody Suite": 1,
     "Fire Station": 50,
     "Helicopter Station": 3,
     "GP Surgery": 3,
@@ -42,7 +43,6 @@
     "Police Academy": 1,
     "Health Centre": 2,
     "Coastguard Station": 17,
-    "Custody Suite": 1,
     "SAR Resource Centre": 1,
     "Mountain Rescue": 5,
     "Lifeboat Station": 10,
@@ -50,8 +50,8 @@
   },
   "stationsByRegion": {
     "Midlands": 63,
-    "North": 95,
     "South West": 222,
+    "North": 95,
     "Wales": 52,
     "South East": 74,
     "Other / Overseas": 48,
@@ -59,9 +59,10 @@
     "Scotland": 4
   },
   "vehicleStatus": {
-    "2": 1469,
-    "4": 14,
-    "3": 1
+    "2": 1477,
+    "4": 5,
+    "6": 1,
+    "5": 1
   },
   "vehiclesByType": {
     "5": 513,
@@ -1330,21 +1331,6 @@
       "dcAssign": "api"
     },
     {
-      "id": 2620355,
-      "name": "Leeds General Infirmary ",
-      "type": "Hospital",
-      "typeId": 4,
-      "level": 10,
-      "lat": 53.8023946581611,
-      "lon": -1.554507023226996,
-      "personnel": 0,
-      "small": false,
-      "region": "North",
-      "dcId": 2620223,
-      "dcName": "⁠[WY-ECC] West Yorks Emergency Control⁠",
-      "dcAssign": "api"
-    },
-    {
       "id": 2642420,
       "name": "Callington Ambulance Station ",
       "type": "Ambulance Station",
@@ -1357,6 +1343,21 @@
       "region": "South West",
       "dcId": 2638184,
       "dcName": "Cornwall FCR",
+      "dcAssign": "api"
+    },
+    {
+      "id": 2620355,
+      "name": "Leeds General Infirmary ",
+      "type": "Hospital",
+      "typeId": 4,
+      "level": 10,
+      "lat": 53.8023946581611,
+      "lon": -1.554507023226996,
+      "personnel": 0,
+      "small": false,
+      "region": "North",
+      "dcId": 2620223,
+      "dcName": "⁠[WY-ECC] West Yorks Emergency Control⁠",
       "dcAssign": "api"
     },
     {
@@ -1538,6 +1539,21 @@
       "dcId": 2650384,
       "dcName": "Republic of Ireland (ROI) 🇮🇪",
       "dcAssign": "self"
+    },
+    {
+      "id": 2590776,
+      "name": "Keynsham Custody suite",
+      "type": "Custody Suite",
+      "typeId": 36,
+      "level": 0,
+      "lat": 51.4125873641809,
+      "lon": -2.4793914172447127,
+      "personnel": 0,
+      "small": false,
+      "region": "South West",
+      "dcId": 2353684,
+      "dcName": "Somerset FCR ",
+      "dcAssign": "api"
     },
     {
       "id": 2041409,
@@ -1777,6 +1793,21 @@
       "region": "North",
       "dcId": 2620223,
       "dcName": "⁠[WY-ECC] West Yorks Emergency Control⁠",
+      "dcAssign": "api"
+    },
+    {
+      "id": 2330766,
+      "name": "Alliance Hospital - St Thomas Hospital",
+      "type": "Hospital",
+      "typeId": 4,
+      "level": 30,
+      "lat": 51.49882104927478,
+      "lon": -0.11859392142196024,
+      "personnel": 0,
+      "small": false,
+      "region": "South East",
+      "dcId": 1844373,
+      "dcName": "Central,South/North East London Dispatch",
       "dcAssign": "api"
     },
     {
@@ -2242,6 +2273,21 @@
       "region": "South West",
       "dcId": 2353684,
       "dcName": "Somerset FCR ",
+      "dcAssign": "api"
+    },
+    {
+      "id": 2318739,
+      "name": "(HPS-004) Totton Police Station ",
+      "type": "Police Station",
+      "typeId": 6,
+      "level": 2,
+      "lat": 50.91999445733035,
+      "lon": -1.48804159034456,
+      "personnel": 200,
+      "small": false,
+      "region": "Other / Overseas",
+      "dcId": 2311778,
+      "dcName": "Hampshire DC",
       "dcAssign": "api"
     },
     {
@@ -3415,21 +3461,6 @@
       "dcAssign": "self"
     },
     {
-      "id": 2590776,
-      "name": "Keynsham Custody suite",
-      "type": "Custody Suite",
-      "typeId": 36,
-      "level": 0,
-      "lat": 51.4125873641809,
-      "lon": -2.4793914172447127,
-      "personnel": 0,
-      "small": false,
-      "region": "South West",
-      "dcId": 2353684,
-      "dcName": "Somerset FCR ",
-      "dcAssign": "api"
-    },
-    {
       "id": 1984642,
       "name": "West, South, SW,NW North London Dispatch",
       "type": "Dispatch Centre",
@@ -3622,21 +3653,6 @@
       "region": "Midlands",
       "dcId": 2621080,
       "dcName": "West Midlands",
-      "dcAssign": "api"
-    },
-    {
-      "id": 2318739,
-      "name": "(HPS-004) Totton Police Station ",
-      "type": "Police Station",
-      "typeId": 6,
-      "level": 2,
-      "lat": 50.91999445733035,
-      "lon": -1.48804159034456,
-      "personnel": 200,
-      "small": false,
-      "region": "Other / Overseas",
-      "dcId": 2311778,
-      "dcName": "Hampshire DC",
       "dcAssign": "api"
     },
     {
@@ -6443,21 +6459,6 @@
       "dcId": 2621062,
       "dcName": "Staffordshire DC",
       "dcAssign": "self"
-    },
-    {
-      "id": 2330766,
-      "name": "Alliance Hospital - St Thomas Hospital",
-      "type": "Hospital",
-      "typeId": 4,
-      "level": 30,
-      "lat": 51.49882104927478,
-      "lon": -0.11859392142196024,
-      "personnel": 0,
-      "small": false,
-      "region": "South East",
-      "dcId": 1844373,
-      "dcName": "Central,South/North East London Dispatch",
-      "dcAssign": "api"
     },
     {
       "id": 2465954,
@@ -10484,7 +10485,7 @@
       "name": "H’GTE | YAS-001/RRV-001",
       "type": 10,
       "buildingId": 2188370,
-      "status": 4
+      "status": 2
     },
     {
       "id": 6269467,
@@ -10873,15 +10874,15 @@
     }
   ],
   "credits": {
-    "credits_user_current": 189260,
-    "credits_user_total": 149398870,
-    "credits_alliance_current": 388440021,
-    "coins_user_current": 209,
-    "credits_alliance_total": 29797117324
+    "credits_user_current": 299699,
+    "credits_user_total": 149521586,
+    "credits_alliance_current": 388486227,
+    "coins_user_current": 205,
+    "credits_alliance_total": 29799367018
   },
   "alliance": {
     "users": 1820,
-    "online": 11,
+    "online": 17,
     "rank": 9,
     "financeActive": true
   }
