@@ -1,8 +1,8 @@
 {
-  "updatedAt": "2026-08-30T19:40:33.627670+00:00",
+  "updatedAt": "2026-08-30T22:32:52.005410+00:00",
   "source": "missionchief.co.uk",
   "sync": {
-    "durationSeconds": 29,
+    "durationSeconds": 25,
     "schedule": "hourly"
   },
   "endpoints": {
@@ -59,8 +59,8 @@
     "Scotland": 4
   },
   "vehicleStatus": {
-    "2": 1477,
-    "4": 5,
+    "2": 1478,
+    "4": 4,
     "6": 1,
     "5": 1
   },
@@ -2276,21 +2276,6 @@
       "dcAssign": "api"
     },
     {
-      "id": 2318739,
-      "name": "(HPS-004) Totton Police Station ",
-      "type": "Police Station",
-      "typeId": 6,
-      "level": 2,
-      "lat": 50.91999445733035,
-      "lon": -1.48804159034456,
-      "personnel": 200,
-      "small": false,
-      "region": "Other / Overseas",
-      "dcId": 2311778,
-      "dcName": "Hampshire DC",
-      "dcAssign": "api"
-    },
-    {
       "id": 2620979,
       "name": "Barnsley Ambulance Station",
       "type": "Ambulance Station",
@@ -3293,6 +3278,21 @@
       "region": "South East",
       "dcId": 1984642,
       "dcName": "West, South, SW,NW North London Dispatch",
+      "dcAssign": "api"
+    },
+    {
+      "id": 2318739,
+      "name": "(HPS-004) Totton Police Station ",
+      "type": "Police Station",
+      "typeId": 6,
+      "level": 2,
+      "lat": 50.91999445733035,
+      "lon": -1.48804159034456,
+      "personnel": 200,
+      "small": false,
+      "region": "Other / Overseas",
+      "dcId": 2311778,
+      "dcName": "Hampshire DC",
       "dcAssign": "api"
     },
     {
@@ -10874,15 +10874,15 @@
     }
   ],
   "credits": {
-    "credits_user_current": 299699,
-    "credits_user_total": 149521586,
-    "credits_alliance_current": 388486227,
+    "credits_user_current": 327239,
+    "credits_user_total": 149552186,
+    "credits_alliance_current": 388552924,
     "coins_user_current": 205,
-    "credits_alliance_total": 29799367018
+    "credits_alliance_total": 29801537988
   },
   "alliance": {
     "users": 1820,
-    "online": 17,
+    "online": 10,
     "rank": 9,
     "financeActive": true
   }
