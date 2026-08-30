@@ -1,8 +1,8 @@
 {
-  "updatedAt": "2026-08-30T09:38:54.159469+00:00",
+  "updatedAt": "2026-08-30T10:09:44.051227+00:00",
   "source": "missionchief.co.uk",
   "sync": {
-    "durationSeconds": 22,
+    "durationSeconds": 20,
     "schedule": "hourly"
   },
   "endpoints": {
@@ -16,16 +16,16 @@
     "einsaetze": true
   },
   "totals": {
-    "stations": 577,
-    "units": 1477,
-    "personnel": 39571,
+    "stations": 580,
+    "units": 1484,
+    "personnel": 39580,
     "dispatchCentres": 37,
     "allianceBuildings": 1195,
     "equipments": 11,
     "missionTypes": 1067
   },
   "stationsByType": {
-    "Ambulance Station": 284,
+    "Ambulance Station": 287,
     "Police Station": 66,
     "Bomb Disposal": 3,
     "Hospital": 20,
@@ -33,8 +33,8 @@
     "Home Response / HRL": 48,
     "Dispatch Centre": 37,
     "Fire Station": 50,
-    "GP Surgery": 3,
     "Helicopter Station": 3,
+    "GP Surgery": 3,
     "Fire Station (Large)": 1,
     "Workshop / RCC": 7,
     "Search & Rescue HQ": 7,
@@ -55,17 +55,18 @@
     "North": 95,
     "South East": 74,
     "Other / Overseas": 48,
-    "London & South": 20,
+    "London & South": 23,
     "Scotland": 4
   },
   "vehicleStatus": {
-    "2": 1464,
-    "4": 6,
-    "3": 3,
-    "1": 4
+    "2": 1461,
+    "4": 3,
+    "1": 18,
+    "5": 1,
+    "3": 1
   },
   "vehiclesByType": {
-    "5": 508,
+    "5": 513,
     "8": 142,
     "17": 60,
     "10": 47,
@@ -80,10 +81,10 @@
     "34": 18,
     "24": 17,
     "54": 17,
+    "95": 16,
     "99": 16,
     "105": 15,
     "33": 15,
-    "95": 14,
     "106": 12,
     "108": 12,
     "19": 11,
@@ -100,7 +101,7 @@
     "stationsMissingName": 0,
     "stationsMissingCoords": 0,
     "duplicateStationIds": 0,
-    "dcAssignedFromApi": 536,
+    "dcAssignedFromApi": 539,
     "dcAssignedNearest": 4,
     "dispatchCentres": 37,
     "ok": true
@@ -872,6 +873,35 @@
       "region": "Other / Overseas"
     },
     {
+      "id": 2663954,
+      "name": "Oxfordshire FCR",
+      "lat": 51.75058640081601,
+      "lon": -1.2144621905441928,
+      "level": 0,
+      "stationCount": 6,
+      "personnel": 18,
+      "coverageRadiusM": 36458,
+      "coveragePolygon": [
+        [
+          51.60660547445411,
+          -1.2463406924328657
+        ],
+        [
+          51.750892192257105,
+          -1.21239779777539
+        ],
+        [
+          52.0536827075779,
+          -1.3361864190914126
+        ],
+        [
+          51.6551855,
+          -1.578204
+        ]
+      ],
+      "region": "London & South"
+    },
+    {
       "id": 2621080,
       "name": "West Midlands",
       "lat": 52.47347948103825,
@@ -1172,35 +1202,6 @@
         ]
       ],
       "region": "Midlands"
-    },
-    {
-      "id": 2663954,
-      "name": "Oxfordshire FCR",
-      "lat": 51.75058640081601,
-      "lon": -1.2144621905441928,
-      "level": 0,
-      "stationCount": 3,
-      "personnel": 9,
-      "coverageRadiusM": 28579,
-      "coveragePolygon": [
-        [
-          51.6551855,
-          -1.578204
-        ],
-        [
-          51.67297290266064,
-          -1.2705242698977064
-        ],
-        [
-          51.750892192257105,
-          -1.21239779777539
-        ],
-        [
-          51.75058640081601,
-          -1.2144621905441928
-        ]
-      ],
-      "region": "London & South"
     },
     {
       "id": 2621062,
@@ -1679,36 +1680,6 @@
       "dcAssign": "api"
     },
     {
-      "id": 2663953,
-      "name": "St Augustine’s Medical Practice ",
-      "type": "GP Surgery",
-      "typeId": 32,
-      "level": 0,
-      "lat": 51.401985372559714,
-      "lon": -2.456599039389783,
-      "personnel": 2,
-      "small": false,
-      "region": "South West",
-      "dcId": 2353684,
-      "dcName": "Somerset FCR ",
-      "dcAssign": "api"
-    },
-    {
-      "id": 2663957,
-      "name": "Oxford City Ambulance Station ",
-      "type": "Ambulance Station",
-      "typeId": 2,
-      "level": 0,
-      "lat": 51.750892192257105,
-      "lon": -1.21239779777539,
-      "personnel": 3,
-      "small": true,
-      "region": "London & South",
-      "dcId": 2663954,
-      "dcName": "Oxfordshire FCR",
-      "dcAssign": "api"
-    },
-    {
       "id": 2663955,
       "name": "Faringdon Ambulance Station",
       "type": "Ambulance Station",
@@ -1859,6 +1830,51 @@
       "dcAssign": "api"
     },
     {
+      "id": 2390847,
+      "name": "Royal United Hospital (RUH)",
+      "type": "Hospital",
+      "typeId": 4,
+      "level": 30,
+      "lat": 51.39141658271086,
+      "lon": -2.3916416733188,
+      "personnel": 0,
+      "small": false,
+      "region": "South West",
+      "dcId": 2353684,
+      "dcName": "Somerset FCR ",
+      "dcAssign": "api"
+    },
+    {
+      "id": 2663957,
+      "name": "Oxford City Ambulance Station ",
+      "type": "Ambulance Station",
+      "typeId": 2,
+      "level": 1,
+      "lat": 51.750892192257105,
+      "lon": -1.21239779777539,
+      "personnel": 3,
+      "small": true,
+      "region": "London & South",
+      "dcId": 2663954,
+      "dcName": "Oxfordshire FCR",
+      "dcAssign": "api"
+    },
+    {
+      "id": 2663974,
+      "name": "Kidlington Ambulance Station",
+      "type": "Ambulance Station",
+      "typeId": 2,
+      "level": 0,
+      "lat": 51.82952435158547,
+      "lon": -1.3131829335599545,
+      "personnel": 3,
+      "small": true,
+      "region": "London & South",
+      "dcId": 2663954,
+      "dcName": "Oxfordshire FCR",
+      "dcAssign": "api"
+    },
+    {
       "id": 2525696,
       "name": "RUH - AO1",
       "type": "Home Response / HRL",
@@ -1886,6 +1902,21 @@
       "region": "Other / Overseas",
       "dcId": 2311778,
       "dcName": "Hampshire DC",
+      "dcAssign": "api"
+    },
+    {
+      "id": 2663973,
+      "name": "Banbury Ambulance Station",
+      "type": "Ambulance Station",
+      "typeId": 2,
+      "level": 1,
+      "lat": 52.0536827075779,
+      "lon": -1.3361864190914126,
+      "personnel": 3,
+      "small": true,
+      "region": "London & South",
+      "dcId": 2663954,
+      "dcName": "Oxfordshire FCR",
       "dcAssign": "api"
     },
     {
@@ -1917,6 +1948,36 @@
       "dcId": 2311778,
       "dcName": "Hampshire DC",
       "dcAssign": "nearest"
+    },
+    {
+      "id": 2663953,
+      "name": "St Augustine’s Medical Practice ",
+      "type": "GP Surgery",
+      "typeId": 32,
+      "level": 1,
+      "lat": 51.401985372559714,
+      "lon": -2.456599039389783,
+      "personnel": 2,
+      "small": false,
+      "region": "South West",
+      "dcId": 2353684,
+      "dcName": "Somerset FCR ",
+      "dcAssign": "api"
+    },
+    {
+      "id": 2663976,
+      "name": "Didcot Ambulance Station",
+      "type": "Ambulance Station",
+      "typeId": 2,
+      "level": 0,
+      "lat": 51.60660547445411,
+      "lon": -1.2463406924328657,
+      "personnel": 3,
+      "small": true,
+      "region": "London & South",
+      "dcId": 2663954,
+      "dcName": "Oxfordshire FCR",
+      "dcAssign": "api"
     },
     {
       "id": 2638162,
@@ -5936,21 +5997,6 @@
       "region": "South West",
       "dcId": 2635219,
       "dcName": "Devon DC",
-      "dcAssign": "api"
-    },
-    {
-      "id": 2390847,
-      "name": "Royal United Hospital (RUH)",
-      "type": "Hospital",
-      "typeId": 4,
-      "level": 30,
-      "lat": 51.39141658271086,
-      "lon": -2.3916416733188,
-      "personnel": 0,
-      "small": false,
-      "region": "South West",
-      "dcId": 2353684,
-      "dcName": "Somerset FCR ",
       "dcAssign": "api"
     },
     {
@@ -10322,7 +10368,7 @@
       "name": "ING | MET-002/IRV-001",
       "type": 8,
       "buildingId": 2033689,
-      "status": 4
+      "status": 2
     },
     {
       "id": 5488513,
@@ -10802,15 +10848,15 @@
     }
   ],
   "credits": {
-    "credits_user_current": 96634,
-    "credits_user_total": 148895943,
-    "credits_alliance_current": 388105759,
-    "coins_user_current": 214,
-    "credits_alliance_total": 29790884331
+    "credits_user_current": 6333,
+    "credits_user_total": 149195610,
+    "credits_alliance_current": 388138649,
+    "coins_user_current": 211,
+    "credits_alliance_total": 29791303440
   },
   "alliance": {
     "users": 1820,
-    "online": 7,
+    "online": 5,
     "rank": 9,
     "financeActive": true
   }
