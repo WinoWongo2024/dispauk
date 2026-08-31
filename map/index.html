@@ -4,13 +4,13 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Map | DispaUK</title>
-  <meta name="description" content="DispaUK operations map with non-overlapping dispatch coverage borders.">
+  <meta name="description" content="DispaUK operations map with dispatch coverage borders, counties and station names.">
   <meta name="theme-color" content="#0b1220">
   <link rel="stylesheet" href="/styles.css">
   <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" crossorigin="">
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Roboto+Mono:wght@400;500&display=swap" rel="stylesheet">
   <style>
-    #map { height: min(72vh, 680px); width: 100%; border-radius: 10px; border: 1px solid var(--border); z-index: 1; }
+    #map { height: min(78vh, 720px); width: 100%; border-radius: 10px; border: 1px solid var(--border); z-index: 1; }
     .map-toolbar { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 12px; align-items: center; }
     .map-toolbar label { font-size: 0.85rem; color: var(--text-muted); }
     .map-toolbar select {
@@ -18,6 +18,31 @@
       background: var(--surface); color: var(--text); font: inherit;
     }
     .leaflet-container { background: #0b1220; font-family: var(--font); }
+    .station-label {
+      background: rgba(11, 18, 32, 0.88);
+      border: 1px solid rgba(148, 163, 184, 0.35);
+      border-radius: 4px;
+      color: #e8eef7;
+      font-size: 10px;
+      font-weight: 600;
+      padding: 2px 5px;
+      white-space: nowrap;
+      box-shadow: 0 1px 4px rgba(0,0,0,0.4);
+      pointer-events: none;
+    }
+    .station-label::before { display: none; }
+    .dc-label {
+      background: rgba(59, 130, 246, 0.9);
+      border: 1px solid rgba(255,255,255,0.35);
+      border-radius: 4px;
+      color: #fff;
+      font-size: 11px;
+      font-weight: 700;
+      padding: 3px 6px;
+      white-space: nowrap;
+      box-shadow: 0 1px 4px rgba(0,0,0,0.45);
+    }
+    .dc-label::before { display: none; }
   </style>
 </head>
 <body>
@@ -43,7 +68,7 @@
       <div class="section-header-left" style="margin-bottom:12px">
         <span class="section-kicker">GEOGRAPHY</span>
         <h1 style="font-size:1.6rem">Operations map</h1>
-        <p class="text-muted">Borders are Voronoi cells around each dispatch centre — approximate coverage only, not official emergency-service boundaries.</p>
+        <p class="text-muted">Coverage borders are the convex hull of stations assigned to each dispatch centre — every linked building sits inside its DC border. Approximate only; not official emergency-service boundaries.</p>
       </div>
 
       <div class="map-toolbar">
@@ -59,26 +84,41 @@
           <select id="dc-select"><option value="">All centres</option></select>
         </label>
         <label style="display:inline-flex;align-items:center;gap:6px">
-          <input type="checkbox" id="show-coverage" checked> Show borders
+          <input type="checkbox" id="show-coverage" checked> Borders
+        </label>
+        <label style="display:inline-flex;align-items:center;gap:6px">
+          <input type="checkbox" id="show-labels" checked> Names
+        </label>
+        <label style="display:inline-flex;align-items:center;gap:6px">
+          <input type="checkbox" id="show-counties"> Counties
         </label>
       </div>
 
       <div id="map" role="application" aria-label="Station map"></div>
       <p class="text-muted" style="margin-top:10px" aria-live="polite">
-        <span data-map-count>Loading…</span> stations · <span data-dc-count>…</span> centres · approximate coverage only
+        <span data-map-count>Loading…</span> stations · <span data-dc-count>…</span> centres ·
+        borders = station hulls · counties optional
       </p>
     </div>
   </main>
   <footer class="footer-slim"><div class="container footer-bottom"><p class="footer-copy">© <span data-current-year>2026</span> DispaUK · <a href="/status/">Status</a></p></div></footer>
   <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" crossorigin=""></script>
-  <script src="https://cdn.jsdelivr.net/npm/d3-delaunay@6"></script>
   <script src="/script.js" defer></script>
   <script>
     document.addEventListener('DOMContentLoaded', async () => {
-      const map = L.map('map').setView([54.5, -2.5], 6);
-      L.tileLayer('https://{s}.basemaps.cartocdn.com/dark_all/{z}/{x}/{y}{r}.png', {
-        attribution: '&copy; OpenStreetMap &copy; CARTO', maxZoom: 18,
+      const map = L.map('map', { zoomControl: true }).setView([52.5, -1.5], 7);
+
+      // Free tiles — no API key (CARTO dark_all now requires a key)
+      L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+        attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a>',
+        maxZoom: 19,
+        className: 'map-tiles-light',
       }).addTo(map);
+
+      // Soft dark overlay so markers still read well on OSM
+      const style = document.createElement('style');
+      style.textContent = '.map-tiles-light { filter: invert(1) hue-rotate(180deg) brightness(0.9) contrast(0.95); }';
+      document.head.appendChild(style);
 
       let data;
       try {
@@ -97,9 +137,13 @@
       const stationLayer = L.layerGroup().addTo(map);
       const coverageLayer = L.layerGroup().addTo(map);
       const dcLayer = L.layerGroup().addTo(map);
+      const labelLayer = L.layerGroup().addTo(map);
+      const countyLayer = L.layerGroup();
 
-      let filter = 'all', dcFilter = '', showCoverage = true;
-      const palette = ['#ef4444','#3b82f6','#a78bfa','#22c55e','#f59e0b','#06b6d4','#f472b6','#eab308','#94a3b8','#fb7185'];
+      let filter = 'all', dcFilter = '';
+      let showCoverage = true, showLabels = true, showCounties = false;
+
+      const palette = ['#ef4444','#3b82f6','#a78bfa','#22c55e','#f59e0b','#06b6d4','#f472b6','#eab308','#94a3b8','#fb7185','#14b8a6','#f97316'];
       const dcColour = {};
       dcs.forEach((d, i) => { dcColour[d.id] = palette[i % palette.length]; });
 
@@ -112,28 +156,74 @@
       };
       const colours = { fire: '#e63946', ambulance: '#3b82f6', police: '#a78bfa', other: '#9aadc2' };
 
-      let minLat = 90, maxLat = -90, minLon = 180, maxLon = -180;
-      stations.forEach(s => {
-        minLat = Math.min(minLat, s.lat); maxLat = Math.max(maxLat, s.lat);
-        minLon = Math.min(minLon, s.lon); maxLon = Math.max(maxLon, s.lon);
-      });
-      const pad = 0.35;
-      minLat -= pad; maxLat += pad; minLon -= pad; maxLon += pad;
-
-      const voronoiPolys = {};
-      if (dcs.length >= 2 && window.d3 && d3.Delaunay) {
-        try {
-          const pts = dcs.map(d => [d.lon, d.lat]);
-          const delaunay = d3.Delaunay.from(pts);
-          const vor = delaunay.voronoi([minLon, minLat, maxLon, maxLat]);
-          dcs.forEach((d, i) => {
-            const cell = vor.cellPolygon(i);
-            if (cell && cell.length >= 4) {
-              voronoiPolys[d.id] = cell.map(p => [p[1], p[0]]);
-            }
-          });
-        } catch (e) { console.warn('Voronoi failed', e); }
+      /** Build convex hull of [lat,lon] points (Andrew's monotone chain) */
+      function convexHull(points) {
+        const pts = points
+          .filter(p => p && p[0] != null && p[1] != null)
+          .map(p => [Number(p[0]), Number(p[1])]);
+        const uniq = [];
+        const seen = new Set();
+        pts.forEach(p => {
+          const k = p[0].toFixed(6) + ',' + p[1].toFixed(6);
+          if (!seen.has(k)) { seen.add(k); uniq.push(p); }
+        });
+        if (uniq.length < 3) return uniq.length ? uniq : null;
+        // sort by lon then lat
+        uniq.sort((a, b) => a[1] - b[1] || a[0] - b[0]);
+        const cross = (o, a, b) => (a[1] - o[1]) * (b[0] - o[0]) - (a[0] - o[0]) * (b[1] - o[1]);
+        const lower = [];
+        for (const p of uniq) {
+          while (lower.length >= 2 && cross(lower[lower.length - 2], lower[lower.length - 1], p) <= 0) lower.pop();
+          lower.push(p);
+        }
+        const upper = [];
+        for (let i = uniq.length - 1; i >= 0; i--) {
+          const p = uniq[i];
+          while (upper.length >= 2 && cross(upper[upper.length - 2], upper[upper.length - 1], p) <= 0) upper.pop();
+          upper.push(p);
+        }
+        upper.pop(); lower.pop();
+        const hull = lower.concat(upper);
+        return hull.length >= 3 ? hull : null;
       }
+
+      /** Expand hull slightly so edge stations sit comfortably inside */
+      function padHull(hull, padDeg) {
+        if (!hull || hull.length < 3) return hull;
+        let cLat = 0, cLon = 0;
+        hull.forEach(p => { cLat += p[0]; cLon += p[1]; });
+        cLat /= hull.length; cLon /= hull.length;
+        return hull.map(([lat, lon]) => {
+          const dLat = lat - cLat, dLon = lon - cLon;
+          const len = Math.sqrt(dLat * dLat + dLon * dLon) || 1;
+          const scale = 1 + padDeg / len;
+          return [cLat + dLat * scale, cLon + dLon * scale];
+        });
+      }
+
+      // Precompute coverage polygon per DC from assigned stations (prefer live hull over stored)
+      const coverageByDc = {};
+      dcs.forEach(d => {
+        const members = stations.filter(s => String(s.dcId) === String(d.id) && s.typeId !== 7);
+        const pts = members.map(s => [s.lat, s.lon]);
+        if (d.lat != null && d.lon != null) pts.push([d.lat, d.lon]);
+        let hull = convexHull(pts);
+        if (!hull && d.coveragePolygon && d.coveragePolygon.length >= 3) {
+          hull = d.coveragePolygon.map(p => [p[0], p[1]]);
+        }
+        if (hull && hull.length >= 3) {
+          coverageByDc[d.id] = padHull(hull, 0.02);
+        } else if (d.lat != null && d.lon != null) {
+          // Single-point / empty DC: small circle approximated as diamond
+          const r = 0.05;
+          coverageByDc[d.id] = [
+            [d.lat + r, d.lon],
+            [d.lat, d.lon + r],
+            [d.lat - r, d.lon],
+            [d.lat, d.lon - r],
+          ];
+        }
+      });
 
       const sel = document.getElementById('dc-select');
       dcs.forEach(d => {
@@ -144,10 +234,43 @@
       });
       document.querySelector('[data-dc-count]').textContent = String(dcs.length);
 
+      // Optional UK ceremonial counties (simplified GeoJSON)
+      let countiesLoaded = false;
+      async function loadCounties() {
+        if (countiesLoaded) return;
+        try {
+          // Public simplified UK counties / unitary authorities
+          const url = 'https://raw.githubusercontent.com/martinjc/UK-GeoJSON/master/json/administrative/gb/counties_unitary_region.json';
+          const res = await fetch(url);
+          if (!res.ok) throw new Error('county fetch failed');
+          const geo = await res.json();
+          L.geoJSON(geo, {
+            style: {
+              color: '#64748b',
+              weight: 1,
+              opacity: 0.7,
+              fillColor: '#64748b',
+              fillOpacity: 0.04,
+            },
+            onEachFeature: (f, layer) => {
+              const name = f.properties && (f.properties.NAME || f.properties.name || f.properties.NAME_2);
+              if (name) layer.bindTooltip(name, { sticky: true, className: 'station-label' });
+            },
+          }).addTo(countyLayer);
+          countiesLoaded = true;
+        } catch (e) {
+          console.warn('Counties unavailable', e);
+          alert('County boundaries could not be loaded (network). Borders and stations still work.');
+          document.getElementById('show-counties').checked = false;
+          showCounties = false;
+        }
+      }
+
       function redraw() {
         stationLayer.clearLayers();
         coverageLayer.clearLayers();
         dcLayer.clearLayers();
+        labelLayer.clearLayers();
 
         const list = stations.filter(s => {
           if (filter !== 'all' && bucket(s.type) !== filter) return false;
@@ -155,33 +278,88 @@
           return true;
         });
 
+        const zoom = map.getZoom();
+        const labelsOk = showLabels && zoom >= 9;
+
         list.forEach(s => {
           const c = colours[bucket(s.type)] || colours.other;
+          const isDc = s.typeId === 7;
           const m = L.circleMarker([s.lat, s.lon], {
-            radius: s.typeId === 7 ? 7 : 5, color: c, fillColor: c, fillOpacity: 0.85, weight: 1,
+            radius: isDc ? 8 : 5,
+            color: isDc ? '#fff' : c,
+            weight: isDc ? 2 : 1,
+            fillColor: isDc ? (dcColour[s.id] || c) : c,
+            fillOpacity: 0.9,
           });
-          m.bindPopup(`<strong>${s.name}</strong><br>${s.type}${s.dcName ? '<br>DC: ' + s.dcName : ''}<br><a href="/stations/?id=${s.id}">Details</a>`);
+          const popup =
+            '<strong>' + (s.name || 'Unnamed') + '</strong><br>' +
+            (s.type || '') +
+            (s.dcName ? '<br>DC: ' + s.dcName : '') +
+            '<br><a href="/stations/?id=' + s.id + '">Details</a>' +
+            (s.dcId ? ' · <a href="/dispatch/?id=' + s.dcId + '">Dispatch</a>' : '');
+          m.bindPopup(popup);
           m.addTo(stationLayer);
+
+          if (labelsOk && !isDc) {
+            const t = L.tooltip({
+              permanent: true,
+              direction: 'top',
+              offset: [0, -6],
+              className: 'station-label',
+              opacity: 0.95,
+            });
+            t.setContent(s.name || '');
+            m.bindTooltip(t);
+            // Leaflet attaches permanent tooltips to map when marker added
+          }
         });
 
         const dcsToShow = dcs.filter(d => !dcFilter || String(d.id) === dcFilter);
+
         if (showCoverage) {
           dcsToShow.forEach(d => {
-            const poly = voronoiPolys[d.id];
-            if (!poly) return;
+            const poly = coverageByDc[d.id];
+            if (!poly || poly.length < 3) return;
             const col = dcColour[d.id] || '#ef4444';
             L.polygon(poly, {
-              color: col, weight: 2, opacity: 0.95,
-              fillColor: col, fillOpacity: 0.1,
-            }).bindPopup(`<strong>${d.name}</strong><br>${d.stationCount || 0} stations<br>Approximate coverage cell`).addTo(coverageLayer);
+              color: col,
+              weight: 2.5,
+              opacity: 0.95,
+              fillColor: col,
+              fillOpacity: 0.12,
+            }).bindPopup(
+              '<strong>' + (d.name || 'DC') + '</strong><br>' +
+              (d.stationCount || 0) + ' stations<br>Coverage = hull of assigned stations<br>' +
+              '<a href="/dispatch/?id=' + d.id + '">Open dashboard</a>'
+            ).addTo(coverageLayer);
           });
         }
 
         dcsToShow.forEach(d => {
           const col = dcColour[d.id] || '#3b82f6';
-          L.circleMarker([d.lat, d.lon], {
-            radius: 8, color: '#fff', weight: 2, fillColor: col, fillOpacity: 1,
-          }).bindPopup(`<strong>${d.name}</strong><br>Dispatch Centre<br><a href="/dispatch/?id=${d.id}">Open dashboard</a>`).addTo(dcLayer);
+          const m = L.circleMarker([d.lat, d.lon], {
+            radius: 9,
+            color: '#fff',
+            weight: 2,
+            fillColor: col,
+            fillOpacity: 1,
+          });
+          m.bindPopup(
+            '<strong>' + (d.name || 'DC') + '</strong><br>Dispatch Centre<br>' +
+            (d.stationCount || 0) + ' stations · ' + (d.personnel || 0) + ' personnel<br>' +
+            '<a href="/dispatch/?id=' + d.id + '">Open dashboard</a> · ' +
+            '<a href="/map/?dc=' + d.id + '">Focus map</a>'
+          );
+          m.addTo(dcLayer);
+          if (showLabels && zoom >= 8) {
+            m.bindTooltip(d.name || 'DC', {
+              permanent: true,
+              direction: 'right',
+              offset: [10, 0],
+              className: 'dc-label',
+              opacity: 0.95,
+            });
+          }
         });
 
         document.querySelector('[data-map-count]').textContent = String(list.length);
@@ -189,10 +367,12 @@
 
       redraw();
 
+      map.on('zoomend', () => redraw());
+
       const focus = new URLSearchParams(location.search).get('focus');
       if (focus) {
         const s = stations.find(x => String(x.id) === String(focus));
-        if (s) map.setView([s.lat, s.lon], 11);
+        if (s) map.setView([s.lat, s.lon], 12);
       }
       const focusDc = new URLSearchParams(location.search).get('dc');
       if (focusDc) {
@@ -200,7 +380,7 @@
         dcFilter = focusDc;
         redraw();
         const d = dcs.find(x => String(x.id) === String(focusDc));
-        if (d) map.setView([d.lat, d.lon], 9);
+        if (d) map.setView([d.lat, d.lon], 10);
       }
 
       document.querySelectorAll('[data-map-filter]').forEach(btn => {
@@ -214,6 +394,18 @@
       sel.addEventListener('change', () => { dcFilter = sel.value; redraw(); });
       document.getElementById('show-coverage').addEventListener('change', e => {
         showCoverage = e.target.checked; redraw();
+      });
+      document.getElementById('show-labels').addEventListener('change', e => {
+        showLabels = e.target.checked; redraw();
+      });
+      document.getElementById('show-counties').addEventListener('change', async e => {
+        showCounties = e.target.checked;
+        if (showCounties) {
+          await loadCounties();
+          if (!map.hasLayer(countyLayer)) countyLayer.addTo(map);
+        } else {
+          map.removeLayer(countyLayer);
+        }
       });
     });
   </script>
