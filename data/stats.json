@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-08-31T08:23:36.817943+00:00",
+  "updatedAt": "2026-08-31T16:54:15.064241+00:00",
   "source": "missionchief.co.uk",
   "sync": {
     "durationSeconds": 22,
@@ -16,18 +16,18 @@
     "einsaetze": true
   },
   "totals": {
-    "stations": 589,
-    "units": 1493,
-    "personnel": 39964,
+    "stations": 591,
+    "units": 1494,
+    "personnel": 39967,
     "dispatchCentres": 38,
     "allianceBuildings": 1196,
     "equipments": 11,
-    "missionTypes": 1067
+    "missionTypes": 1068
   },
   "stationsByType": {
-    "Ambulance Station": 295,
+    "Ambulance Station": 296,
     "Police Station": 66,
-    "Hospital": 20,
+    "Hospital": 21,
     "Bomb Disposal": 3,
     "HART Base": 5,
     "Home Response / HRL": 48,
@@ -51,20 +51,20 @@
   "stationsByRegion": {
     "Midlands": 63,
     "North": 95,
+    "London & South": 28,
     "South West": 227,
     "Wales": 52,
     "South East": 74,
     "Other / Overseas": 48,
-    "London & South": 26,
     "Scotland": 4
   },
   "vehicleStatus": {
-    "2": 1487,
-    "5": 2,
-    "4": 4
+    "4": 6,
+    "2": 1481,
+    "5": 7
   },
   "vehiclesByType": {
-    "5": 521,
+    "5": 522,
     "8": 143,
     "17": 60,
     "10": 47,
@@ -99,7 +99,7 @@
     "stationsMissingName": 0,
     "stationsMissingCoords": 0,
     "duplicateStationIds": 0,
-    "dcAssignedFromApi": 547,
+    "dcAssignedFromApi": 549,
     "dcAssignedNearest": 4,
     "dispatchCentres": 38,
     "ok": true
@@ -1164,6 +1164,31 @@
       "region": "South West"
     },
     {
+      "id": 2659464,
+      "name": "Berkshire",
+      "lat": 51.450610971372114,
+      "lon": -0.9862098792154756,
+      "level": 0,
+      "stationCount": 3,
+      "personnel": 8,
+      "coverageRadiusM": 24703,
+      "coveragePolygon": [
+        [
+          51.369508358442914,
+          -0.7783894315549303
+        ],
+        [
+          51.450610971372114,
+          -0.9862098792154756
+        ],
+        [
+          51.40762161176569,
+          -1.318489188386671
+        ]
+      ],
+      "region": "London & South"
+    },
+    {
       "id": 2339242,
       "name": "Heathrow Airport",
       "lat": 51.471793716660486,
@@ -1293,18 +1318,6 @@
       "region": "South East"
     },
     {
-      "id": 2659464,
-      "name": "Berkshire",
-      "lat": 51.450610971372114,
-      "lon": -0.9862098792154756,
-      "level": 0,
-      "stationCount": 1,
-      "personnel": 5,
-      "coverageRadiusM": 24703,
-      "coveragePolygon": null,
-      "region": "London & South"
-    },
-    {
       "id": 2656579,
       "name": "Surrey FCR",
       "lat": 51.23566501757763,
@@ -1361,18 +1374,33 @@
       "dcAssign": "api"
     },
     {
-      "id": 2567229,
-      "name": "Weston General Hospital",
+      "id": 2664801,
+      "name": "Broadmoor MH Ambulance Station",
+      "type": "Ambulance Station",
+      "typeId": 2,
+      "level": 0,
+      "lat": 51.36952712903624,
+      "lon": -0.7785018313533357,
+      "personnel": 3,
+      "small": true,
+      "region": "London & South",
+      "dcId": 2659464,
+      "dcName": "Berkshire",
+      "dcAssign": "api"
+    },
+    {
+      "id": 2664799,
+      "name": "Broadmoor Psychiatric Hospital ",
       "type": "Hospital",
       "typeId": 4,
-      "level": 6,
-      "lat": 51.321611143618476,
-      "lon": -2.971186856353536,
+      "level": 0,
+      "lat": 51.369508358442914,
+      "lon": -0.7783894315549303,
       "personnel": 0,
       "small": false,
-      "region": "South West",
-      "dcId": 2353684,
-      "dcName": "Somerset FCR ",
+      "region": "London & South",
+      "dcId": 2659464,
+      "dcName": "Berkshire",
       "dcAssign": "api"
     },
     {
@@ -1748,6 +1776,21 @@
       "region": "Other / Overseas",
       "dcId": 2649006,
       "dcName": "France 🇫🇷 FCR ",
+      "dcAssign": "api"
+    },
+    {
+      "id": 2567229,
+      "name": "Weston General Hospital",
+      "type": "Hospital",
+      "typeId": 4,
+      "level": 6,
+      "lat": 51.321611143618476,
+      "lon": -2.971186856353536,
+      "personnel": 0,
+      "small": false,
+      "region": "South West",
+      "dcId": 2353684,
+      "dcName": "Somerset FCR ",
       "dcAssign": "api"
     },
     {
@@ -7601,21 +7644,6 @@
       "dcAssign": "api"
     },
     {
-      "id": 2390847,
-      "name": "Royal United Hospital (RUH)",
-      "type": "Hospital",
-      "typeId": 4,
-      "level": 30,
-      "lat": 51.39141658271086,
-      "lon": -2.3916416733188,
-      "personnel": 0,
-      "small": false,
-      "region": "South West",
-      "dcId": 2353684,
-      "dcName": "Somerset FCR ",
-      "dcAssign": "api"
-    },
-    {
       "id": 2339238,
       "name": "(HANG-003) Heathrow Airport ",
       "type": "Police Station",
@@ -7658,6 +7686,21 @@
       "region": "South West",
       "dcId": 2635513,
       "dcName": "Wiltshire DC",
+      "dcAssign": "api"
+    },
+    {
+      "id": 2390847,
+      "name": "Royal United Hospital (RUH)",
+      "type": "Hospital",
+      "typeId": 4,
+      "level": 30,
+      "lat": 51.39141658271086,
+      "lon": -2.3916416733188,
+      "personnel": 0,
+      "small": false,
+      "region": "South West",
+      "dcId": 2353684,
+      "dcName": "Somerset FCR ",
       "dcAssign": "api"
     },
     {
@@ -10172,7 +10215,7 @@
       "name": "WCP | LFB-008/WL-001",
       "type": 0,
       "buildingId": 1987510,
-      "status": 2
+      "status": 4
     },
     {
       "id": 4926743,
@@ -10277,7 +10320,7 @@
       "name": "EUS | LAS-002/AMB-001",
       "type": 5,
       "buildingId": 1984068,
-      "status": 2
+      "status": 5
     },
     {
       "id": 5330657,
@@ -10291,7 +10334,7 @@
       "name": "QW | LFB-007/WL-001",
       "type": 0,
       "buildingId": 1984339,
-      "status": 2
+      "status": 4
     },
     {
       "id": 5331507,
@@ -10305,7 +10348,7 @@
       "name": "QW | LFB-007/WL-002",
       "type": 0,
       "buildingId": 1984339,
-      "status": 2
+      "status": 4
     },
     {
       "id": 5331632,
@@ -10333,7 +10376,7 @@
       "name": "WSTM’R | RNLI-001/4×4-001",
       "type": 66,
       "buildingId": 1984410,
-      "status": 2
+      "status": 4
     },
     {
       "id": 5331712,
@@ -10410,14 +10453,14 @@
       "name": "MA | LAS-004/AMB-001",
       "type": 5,
       "buildingId": 1987515,
-      "status": 2
+      "status": 5
     },
     {
       "id": 5340166,
       "name": "MA | LAS-004/AMB-002",
       "type": 5,
       "buildingId": 1987515,
-      "status": 2
+      "status": 5
     },
     {
       "id": 5340169,
@@ -11009,15 +11052,15 @@
     }
   ],
   "credits": {
-    "credits_user_current": 600035,
-    "credits_user_total": 150758535,
-    "credits_alliance_current": 388846887,
-    "coins_user_current": 189,
-    "credits_alliance_total": 29807072544
+    "credits_user_current": 667522,
+    "credits_user_total": 151166861,
+    "credits_alliance_current": 389814004,
+    "coins_user_current": 177,
+    "credits_alliance_total": 29833269948
   },
   "alliance": {
     "users": 1822,
-    "online": 8,
+    "online": 19,
     "rank": 9,
     "financeActive": true
   }
