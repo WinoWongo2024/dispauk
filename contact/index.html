@@ -4,8 +4,9 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Contact | DispaUK</title>
-  <meta name="description" content="Contact DispaUK.">
+  <meta name="description" content="Contact DispaUK — enquiries, data, security, and collaboration.">
   <meta name="theme-color" content="#0b1220">
+  <meta name="referrer" content="strict-origin-when-cross-origin">
   <link rel="stylesheet" href="/styles.css">
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Roboto+Mono:wght@400;500&display=swap" rel="stylesheet">
 </head>
@@ -20,9 +21,8 @@
         <a href="/fleet/">Fleet</a>
         <a href="/locate/">Locate</a>
         <a href="/map/">Map</a>
-        <a href="/regions/">Regions</a>
-        <a href="/statistics/">Statistics</a>
         <a href="/status/">Status</a>
+        <a href="/contact/">Contact</a>
       </nav>
       <button class="nav-toggle" type="button" aria-label="Menu" aria-expanded="false"><span></span><span></span><span></span></button>
     </div>
@@ -30,14 +30,65 @@
   <main class="legal-page">
     <div class="container legal-content">
       <h1>Contact</h1>
-      <p class="legal-updated">DispaUK</p>
-      <p>For collaboration, data, or operational enquiries:</p>
-      <p><a class="btn btn-primary" href="mailto:administrator@dispauk.co.uk">administrator@dispauk.co.uk</a></p>
-      <p class="text-muted" style="margin-top:16px">This is not an emergency service. For real emergencies call <strong>999</strong> or <strong>112</strong>.</p>
-      <p style="margin-top:20px"><a href="/about/">About</a> · <a href="/status/">Status</a> · <a href="/privacy/">Privacy</a></p>
+      <p class="legal-updated">DispaUK · independent dispatch information project</p>
+
+      <div class="dash-grid" style="margin:18px 0">
+        <article class="stat-card">
+          <span class="stat-label">General</span>
+          <strong class="stat-value" style="font-size:1rem">
+            <a href="mailto:administrator@dispauk.co.uk">administrator@dispauk.co.uk</a>
+          </strong>
+          <p class="text-muted">Collaboration, data questions, press</p>
+        </article>
+        <article class="stat-card">
+          <span class="stat-label">Security</span>
+          <strong class="stat-value" style="font-size:1rem">
+            <a href="mailto:administrator@dispauk.co.uk?subject=Security%20report%20%E2%80%94%20DispaUK">Report a vulnerability</a>
+          </strong>
+          <p class="text-muted">Responsible disclosure preferred</p>
+        </article>
+      </div>
+
+      <h2>Before you write</h2>
+      <ul>
+        <li><strong>Emergencies:</strong> Call <strong>999</strong> or <strong>112</strong>. DispaUK is not an emergency service.</li>
+        <li><strong>Data freshness:</strong> Check <a href="/status/">Status</a> — figures refresh via scheduled sync from MissionChief.</li>
+        <li><strong>API / developers:</strong> See <a href="/developers/">Developers</a> for the public JSON endpoints.</li>
+        <li><strong>Privacy:</strong> See <a href="/privacy/">Privacy</a> and <a href="/cookies/">Cookies</a>.</li>
+      </ul>
+
+      <h2>What we can help with</h2>
+      <ul>
+        <li>Questions about how DispaUK presents MissionChief-derived data</li>
+        <li>Suggestions for the dashboard, map, or locate tools</li>
+        <li>Alliance or operational collaboration (non-emergency)</li>
+        <li>Security or accessibility concerns</li>
+      </ul>
+
+      <h2>What we cannot do</h2>
+      <ul>
+        <li>Dispatch real-world emergency resources</li>
+        <li>Provide guaranteed live mission feeds (MissionChief does not expose a public missions API for this use)</li>
+        <li>Share account credentials or private session data</li>
+      </ul>
+
+      <h2>Response</h2>
+      <p>Email is monitored when capacity allows. There is no SLA. For urgent safety issues affecting the live website, include <strong>URGENT</strong> in the subject line.</p>
+
+      <p style="margin-top:24px;display:flex;flex-wrap:wrap;gap:8px">
+        <a class="btn btn-primary" href="mailto:administrator@dispauk.co.uk">Email administrator</a>
+        <a class="btn btn-outline" href="/about/">About</a>
+        <a class="btn btn-outline" href="/status/">Status</a>
+        <a class="btn btn-outline" href="/.well-known/security.txt">security.txt</a>
+      </p>
     </div>
   </main>
-  <footer class="footer-slim"><div class="container footer-bottom"><p class="footer-copy">© <span data-current-year>2026</span> DispaUK · <a href="/privacy/">Privacy</a> · <a href="/terms/">Terms</a></p></div></footer>
+  <footer class="footer-slim">
+    <div class="container footer-bottom">
+      <p class="footer-copy">© <span data-current-year>2026</span> DispaUK · <a href="/privacy/">Privacy</a> · <a href="/terms/">Terms</a> · <a href="/legal/">Legal</a></p>
+      <p class="footer-disclaimer">Not affiliated with SHPlay GmbH or MissionChief. Not for real-world emergency use.</p>
+    </div>
+  </footer>
   <script src="/script.js" defer></script>
 </body>
 </html>

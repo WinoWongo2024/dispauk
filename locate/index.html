@@ -4,8 +4,9 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Locate | DispaUK</title>
-  <meta name="description" content="Find which DispaUK dispatch centre and nearest station cover your location.">
+  <meta name="description" content="Find which DispaUK dispatch centre and nearest station cover your location, with estimated response times.">
   <meta name="theme-color" content="#0b1220">
+  <meta name="referrer" content="strict-origin-when-cross-origin">
   <link rel="stylesheet" href="/styles.css">
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Roboto+Mono:wght@400;500&display=swap" rel="stylesheet">
 </head>
@@ -16,6 +17,8 @@
       <nav class="nav" aria-label="Primary">
         <a href="/">Dashboard</a>
         <a href="/dispatch/">Dispatch</a>
+        <a href="/stations/">Stations</a>
+        <a href="/fleet/">Fleet</a>
         <a href="/locate/">Locate</a>
         <a href="/map/">Map</a>
         <a href="/status/">Status</a>
@@ -28,7 +31,7 @@
       <div class="section-header-left" style="margin-bottom:16px">
         <span class="section-kicker">COVERAGE</span>
         <h1 style="font-size:1.6rem">Find your coverage</h1>
-        <p class="text-muted">Uses your device location (with permission) or a postcode/place search via OpenStreetMap Nominatim.</p>
+        <p class="text-muted">Device location or place search. Estimates use straight-line distance and typical emergency road speeds — not live routing.</p>
       </div>
 
       <div class="panel" style="margin-bottom:14px">
@@ -36,11 +39,11 @@
           <button type="button" class="btn btn-primary" id="btn-geo">Use my location</button>
           <label style="flex:1;min-width:200px">
             <span class="sr-only">Search place</span>
-            <input type="search" id="place-search" placeholder="Town, postcode, or address…" style="width:100%;padding:10px;border-radius:8px;border:1px solid var(--border);background:var(--surface);color:var(--text);font:inherit">
+            <input type="search" id="place-search" placeholder="Town, postcode, or address…" autocomplete="off" style="width:100%;padding:10px;border-radius:8px;border:1px solid var(--border);background:var(--surface);color:var(--text);font:inherit">
           </label>
           <button type="button" class="btn btn-outline" id="btn-search">Search</button>
         </div>
-        <p class="text-muted" style="margin-top:10px" id="locate-status">Location stays in your browser — not sent to DispaUK servers.</p>
+        <p class="text-muted" style="margin-top:10px" id="locate-status">Location stays in your browser — not stored by DispaUK.</p>
       </div>
 
       <div class="dash-grid" id="locate-results" hidden>
@@ -58,18 +61,34 @@
           <strong class="stat-value" style="font-size:1rem" data-loc-dc>—</strong>
           <p class="text-muted" data-loc-dc-how></p>
         </article>
+        <article class="stat-card">
+          <span class="stat-label">Est. travel time</span>
+          <strong class="stat-value" style="font-size:1rem" data-loc-eta>—</strong>
+          <p class="text-muted" data-loc-eta-note></p>
+        </article>
       </div>
 
-      <p style="margin-top:14px" id="locate-links" hidden>
+      <div class="panel" id="locate-units" hidden style="margin-top:14px">
+        <h2 style="font-size:0.75rem;text-transform:uppercase;letter-spacing:0.06em;color:var(--text-muted);margin-bottom:10px">Units at nearest station (sample)</h2>
+        <div class="chip-row" data-loc-units></div>
+        <p class="text-muted" style="margin-top:10px" data-loc-units-note></p>
+      </div>
+
+      <div class="panel" id="locate-nearest-types" hidden style="margin-top:14px">
+        <h2 style="font-size:0.75rem;text-transform:uppercase;letter-spacing:0.06em;color:var(--text-muted);margin-bottom:10px">Closest by service</h2>
+        <div data-loc-by-service></div>
+      </div>
+
+      <p style="margin-top:14px;display:flex;flex-wrap:wrap;gap:8px" id="locate-links" hidden>
         <a class="btn btn-outline" data-link-station href="#">Station details</a>
         <a class="btn btn-outline" data-link-dc href="#">DC dashboard</a>
         <a class="btn btn-outline" data-link-map href="#">Map</a>
       </p>
 
-      <p class="disclaimer-bar" style="margin-top:20px">Not for real emergencies. Call <strong>999 / 112</strong>.</p>
+      <p class="disclaimer-bar" style="margin-top:20px">Not for real emergencies. Call <strong>999 / 112</strong>. ETAs are illustrative game-data estimates only.</p>
     </div>
   </main>
-  <footer class="footer-slim"><div class="container footer-bottom"><p class="footer-copy">© <span data-current-year>2026</span> DispaUK</p></div></footer>
+  <footer class="footer-slim"><div class="container footer-bottom"><p class="footer-copy">© <span data-current-year>2026</span> DispaUK · <a href="/contact/">Contact</a></p></div></footer>
   <script src="/script.js" defer></script>
   <script>
     function haversineKm(lat1, lon1, lat2, lon2) {
@@ -80,60 +99,155 @@
       return 2 * R * Math.asin(Math.sqrt(a));
     }
 
-    async function resolveCoverage(lat, lon, stations, dcs) {
-      let best = null, bestD = Infinity;
-      stations.filter(s => s.lat != null && s.typeId !== 7).forEach(s => {
-        const d = haversineKm(lat, lon, s.lat, s.lon);
-        if (d < bestD) { bestD = d; best = s; }
-      });
+    function serviceBucket(type) {
+      const t = (type || '').toLowerCase();
+      if (t.includes('fire')) return 'fire';
+      if (t.includes('ambulance') || t.includes('hospital') || t.includes('hart')) return 'ambulance';
+      if (t.includes('police') || t.includes('custody')) return 'police';
+      return 'other';
+    }
 
-      // Prefer station's assigned DC; else nearest DC by distance
-      let dc = null, how = '';
-      if (best && best.dcId) {
-        dc = dcs.find(d => String(d.id) === String(best.dcId));
-        how = 'From nearest station assignment';
-      }
-      if (!dc) {
-        let bd = Infinity;
-        dcs.forEach(d => {
-          if (d.lat == null) return;
-          const dist = haversineKm(lat, lon, d.lat, d.lon);
-          if (dist < bd) { bd = dist; dc = d; }
-        });
-        how = 'Nearest dispatch centre by distance';
-      }
-      return { station: best, stationKm: bestD, dc, how };
+    /** Typical emergency response speeds (km/h) for rough ETA — not real routing */
+    function speedForBucket(b) {
+      if (b === 'fire') return 55;
+      if (b === 'ambulance') return 50;
+      if (b === 'police') return 60;
+      return 45;
+    }
+
+    function etaMinutes(km, bucket) {
+      const speed = speedForBucket(bucket);
+      const mins = Math.round((km / speed) * 60);
+      return Math.max(1, mins);
+    }
+
+    function formatEta(mins) {
+      if (mins < 60) return '~' + mins + ' min';
+      const h = Math.floor(mins / 60);
+      const m = mins % 60;
+      return '~' + h + ' h' + (m ? ' ' + m + ' min' : '');
+    }
+
+    function escapeHtml(s) {
+      return String(s || '').replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;');
     }
 
     document.addEventListener('DOMContentLoaded', async () => {
       const status = document.getElementById('locate-status');
       const results = document.getElementById('locate-results');
       const links = document.getElementById('locate-links');
+      const unitsPanel = document.getElementById('locate-units');
+      const typesPanel = document.getElementById('locate-nearest-types');
       const set = (sel, v) => { const el = document.querySelector(sel); if (el) el.textContent = v; };
 
-      const res = await fetch('/data/stats.json', { cache: 'no-cache' });
-      const data = await res.json();
-      const stations = data.stations || [];
-      const dcs = data.dispatchCentres || [];
+      let data;
+      try {
+        const res = await fetch('/data/stats.json', { cache: 'no-cache' });
+        if (!res.ok) throw new Error('unavailable');
+        data = await res.json();
+      } catch (e) {
+        status.textContent = 'Dataset unavailable. Try again after the next sync.';
+        return;
+      }
 
-      async function show(lat, lon, label) {
+      const stations = (data.stations || []).filter(s => s.lat != null && s.lon != null);
+      const dcs = data.dispatchCentres || [];
+      const unitsSample = data.unitsSample || [];
+
+      function nearestStation(lat, lon, predicate) {
+        let best = null, bestD = Infinity;
+        stations.filter(s => s.typeId !== 7 && (!predicate || predicate(s))).forEach(s => {
+          const d = haversineKm(lat, lon, s.lat, s.lon);
+          if (d < bestD) { bestD = d; best = s; }
+        });
+        return { station: best, km: bestD };
+      }
+
+      function show(lat, lon, label) {
         status.textContent = label || 'Resolved.';
-        const r = await resolveCoverage(lat, lon, stations, dcs);
+        const overall = nearestStation(lat, lon);
+        const best = overall.station;
+        const bestD = overall.km;
+
+        let dc = null, how = '';
+        if (best && best.dcId) {
+          dc = dcs.find(d => String(d.id) === String(best.dcId));
+          how = 'From nearest station assignment';
+        }
+        if (!dc) {
+          let bd = Infinity;
+          dcs.forEach(d => {
+            if (d.lat == null) return;
+            const dist = haversineKm(lat, lon, d.lat, d.lon);
+            if (dist < bd) { bd = dist; dc = d; }
+          });
+          how = 'Nearest dispatch centre by distance';
+        }
+
         results.hidden = false;
         links.hidden = false;
+
         set('[data-loc-coords]', lat.toFixed(4) + ', ' + lon.toFixed(4));
-        set('[data-loc-station]', r.station ? r.station.name : 'None nearby');
-        set('[data-loc-station-dist]', r.station ? r.stationKm.toFixed(1) + ' km away · ' + (r.station.type || '') : '');
-        set('[data-loc-dc]', r.dc ? r.dc.name : 'Unknown');
-        set('[data-loc-dc-how]', r.how || '');
+        set('[data-loc-station]', best ? best.name : 'None nearby');
+        set('[data-loc-station-dist]', best ? bestD.toFixed(1) + ' km · ' + (best.type || '') : '');
+        set('[data-loc-dc]', dc ? dc.name : 'Unknown');
+        set('[data-loc-dc-how]', how || '');
+
+        if (best) {
+          const b = serviceBucket(best.type);
+          const mins = etaMinutes(bestD, b);
+          set('[data-loc-eta]', formatEta(mins));
+          set('[data-loc-eta-note]', 'From ' + (best.type || 'station') + ' at ~' + speedForBucket(b) + ' km/h avg');
+        } else {
+          set('[data-loc-eta]', '—');
+          set('[data-loc-eta-note]', '');
+        }
+
+        // Units sample at nearest station
+        const atStation = unitsSample.filter(u => best && String(u.buildingId) === String(best.id));
+        if (atStation.length) {
+          unitsPanel.hidden = false;
+          const byType = {};
+          atStation.forEach(u => {
+            const t = String(u.type != null ? u.type : '?');
+            byType[t] = (byType[t] || 0) + 1;
+          });
+          const chips = document.querySelector('[data-loc-units]');
+          chips.innerHTML = Object.entries(byType).map(([t, n]) =>
+            '<span class="chip"><span class="chip-k">Type ' + escapeHtml(t) + '</span><span class="chip-v">' + n + '</span></span>'
+          ).join('');
+          set('[data-loc-units-note]', atStation.length + ' unit(s) in public sample at this station. Full fleet may be larger.');
+        } else {
+          unitsPanel.hidden = false;
+          document.querySelector('[data-loc-units]').innerHTML = '<span class="text-muted">No units in public sample for this station.</span>';
+          set('[data-loc-units-note]', 'MissionChief does not publish live vehicle GPS — types are from the last station sample.');
+        }
+
+        // Closest fire / ambulance / police stations + ETA
+        const services = [
+          { key: 'fire', label: 'Fire' },
+          { key: 'ambulance', label: 'Ambulance / health' },
+          { key: 'police', label: 'Police' },
+        ];
+        const rows = services.map(svc => {
+          const r = nearestStation(lat, lon, s => serviceBucket(s.type) === svc.key);
+          if (!r.station) return null;
+          const mins = etaMinutes(r.km, svc.key);
+          return '<div class="metric-row"><span>' + svc.label + '</span><strong>' +
+            escapeHtml(r.station.name) + ' · ' + r.km.toFixed(1) + ' km · ' + formatEta(mins) +
+            '</strong></div>';
+        }).filter(Boolean);
+        typesPanel.hidden = false;
+        document.querySelector('[data-loc-by-service]').innerHTML =
+          rows.join('') || '<p class="text-muted">No service-specific stations found.</p>';
 
         const ls = document.querySelector('[data-link-station]');
         const ld = document.querySelector('[data-link-dc]');
         const lm = document.querySelector('[data-link-map]');
-        if (ls && r.station) ls.href = '/stations/?id=' + encodeURIComponent(r.station.id);
-        if (ld && r.dc) ld.href = '/dispatch/?id=' + encodeURIComponent(r.dc.id);
-        if (lm && r.station) lm.href = '/map/?focus=' + encodeURIComponent(r.station.id);
-        else if (lm && r.dc) lm.href = '/map/?dc=' + encodeURIComponent(r.dc.id);
+        if (ls && best) ls.href = '/stations/?id=' + encodeURIComponent(best.id);
+        if (ld && dc) ld.href = '/dispatch/?id=' + encodeURIComponent(dc.id);
+        if (lm && best) lm.href = '/map/?focus=' + encodeURIComponent(best.id);
+        else if (lm && dc) lm.href = '/map/?dc=' + encodeURIComponent(dc.id);
       }
 
       document.getElementById('btn-geo').addEventListener('click', () => {
@@ -144,7 +258,7 @@
         status.textContent = 'Requesting location…';
         navigator.geolocation.getCurrentPosition(
           pos => show(pos.coords.latitude, pos.coords.longitude, 'Using device location.'),
-          err => { status.textContent = 'Location denied or unavailable. Try a place search.'; },
+          () => { status.textContent = 'Location denied or unavailable. Try a place search.'; },
           { enableHighAccuracy: true, timeout: 12000 }
         );
       });
@@ -154,14 +268,24 @@
         if (!q) return;
         status.textContent = 'Searching…';
         try {
-          const url = 'https://nominatim.openstreetmap.org/search?format=json&limit=1&q=' + encodeURIComponent(q);
-          const r = await fetch(url, { headers: { 'Accept-Language': 'en-GB' } });
+          const url = 'https://nominatim.openstreetmap.org/search?format=json&limit=1&countrycodes=gb,ie,fr,be,nl&q=' +
+            encodeURIComponent(q);
+          const r = await fetch(url, {
+            headers: {
+              'Accept-Language': 'en-GB',
+              // Nominatim usage policy: identify application
+            },
+          });
           const rows = await r.json();
           if (!rows.length) { status.textContent = 'No place found.'; return; }
-          await show(parseFloat(rows[0].lat), parseFloat(rows[0].lon), 'Matched: ' + (rows[0].display_name || q));
+          show(parseFloat(rows[0].lat), parseFloat(rows[0].lon), 'Matched: ' + (rows[0].display_name || q));
         } catch (e) {
           status.textContent = 'Search failed. Try again later.';
         }
+      });
+
+      document.getElementById('place-search').addEventListener('keydown', e => {
+        if (e.key === 'Enter') document.getElementById('btn-search').click();
       });
     });
   </script>
