@@ -1,8 +1,8 @@
 {
-  "updatedAt": "2026-08-31T16:54:15.064241+00:00",
+  "updatedAt": "2026-08-31T21:49:20.112402+00:00",
   "source": "missionchief.co.uk",
   "sync": {
-    "durationSeconds": 22,
+    "durationSeconds": 25,
     "schedule": "hourly"
   },
   "endpoints": {
@@ -59,9 +59,10 @@
     "Scotland": 4
   },
   "vehicleStatus": {
-    "4": 6,
-    "2": 1481,
-    "5": 7
+    "2": 1487,
+    "4": 5,
+    "6": 1,
+    "5": 1
   },
   "vehiclesByType": {
     "5": 522,
@@ -1866,21 +1867,6 @@
       "region": "North",
       "dcId": 2620223,
       "dcName": "⁠[WY-ECC] West Yorks Emergency Control⁠",
-      "dcAssign": "api"
-    },
-    {
-      "id": 2330766,
-      "name": "Alliance Hospital - St Thomas Hospital",
-      "type": "Hospital",
-      "typeId": 4,
-      "level": 30,
-      "lat": 51.49882104927478,
-      "lon": -0.11859392142196024,
-      "personnel": 0,
-      "small": false,
-      "region": "South East",
-      "dcId": 1844373,
-      "dcName": "Central,South/North East London Dispatch",
       "dcAssign": "api"
     },
     {
@@ -6579,6 +6565,21 @@
       "dcAssign": "api"
     },
     {
+      "id": 1984392,
+      "name": "Alliance Hospital - St Mary’s Hospital",
+      "type": "Hospital",
+      "typeId": 4,
+      "level": 30,
+      "lat": 51.51711454186931,
+      "lon": -0.17422326377227623,
+      "personnel": 0,
+      "small": false,
+      "region": "South East",
+      "dcId": 1844373,
+      "dcName": "Central,South/North East London Dispatch",
+      "dcAssign": "api"
+    },
+    {
       "id": 2328384,
       "name": "(NHE-002) Ashford Common",
       "type": "Police Station",
@@ -6696,6 +6697,21 @@
       "region": "London & South",
       "dcId": 2328160,
       "dcName": "National Highways (South England)",
+      "dcAssign": "api"
+    },
+    {
+      "id": 2330766,
+      "name": "Alliance Hospital - St Thomas Hospital",
+      "type": "Hospital",
+      "typeId": 4,
+      "level": 30,
+      "lat": 51.49882104927478,
+      "lon": -0.11859392142196024,
+      "personnel": 0,
+      "small": false,
+      "region": "South East",
+      "dcId": 1844373,
+      "dcName": "Central,South/North East London Dispatch",
       "dcAssign": "api"
     },
     {
@@ -9744,21 +9760,6 @@
       "dcAssign": "self"
     },
     {
-      "id": 1984392,
-      "name": "Alliance Hospital - St Mary’s Hospital",
-      "type": "Hospital",
-      "typeId": 4,
-      "level": 30,
-      "lat": 51.51711454186931,
-      "lon": -0.17422326377227623,
-      "personnel": 0,
-      "small": false,
-      "region": "South East",
-      "dcId": 1844373,
-      "dcName": "Central,South/North East London Dispatch",
-      "dcAssign": "api"
-    },
-    {
       "id": 2635487,
       "name": "Tidworth Ambulance Station",
       "type": "Ambulance Station",
@@ -10215,7 +10216,7 @@
       "name": "WCP | LFB-008/WL-001",
       "type": 0,
       "buildingId": 1987510,
-      "status": 4
+      "status": 2
     },
     {
       "id": 4926743,
@@ -10320,7 +10321,7 @@
       "name": "EUS | LAS-002/AMB-001",
       "type": 5,
       "buildingId": 1984068,
-      "status": 5
+      "status": 2
     },
     {
       "id": 5330657,
@@ -10334,7 +10335,7 @@
       "name": "QW | LFB-007/WL-001",
       "type": 0,
       "buildingId": 1984339,
-      "status": 4
+      "status": 2
     },
     {
       "id": 5331507,
@@ -10348,7 +10349,7 @@
       "name": "QW | LFB-007/WL-002",
       "type": 0,
       "buildingId": 1984339,
-      "status": 4
+      "status": 2
     },
     {
       "id": 5331632,
@@ -10376,7 +10377,7 @@
       "name": "WSTM’R | RNLI-001/4×4-001",
       "type": 66,
       "buildingId": 1984410,
-      "status": 4
+      "status": 2
     },
     {
       "id": 5331712,
@@ -10453,14 +10454,14 @@
       "name": "MA | LAS-004/AMB-001",
       "type": 5,
       "buildingId": 1987515,
-      "status": 5
+      "status": 2
     },
     {
       "id": 5340166,
       "name": "MA | LAS-004/AMB-002",
       "type": 5,
       "buildingId": 1987515,
-      "status": 5
+      "status": 2
     },
     {
       "id": 5340169,
@@ -11052,15 +11053,15 @@
     }
   ],
   "credits": {
-    "credits_user_current": 667522,
-    "credits_user_total": 151166861,
-    "credits_alliance_current": 389814004,
+    "credits_user_current": 1144715,
+    "credits_user_total": 151697082,
+    "credits_alliance_current": 390644961,
     "coins_user_current": 177,
-    "credits_alliance_total": 29833269948
+    "credits_alliance_total": 29854933656
   },
   "alliance": {
     "users": 1822,
-    "online": 19,
+    "online": 14,
     "rank": 9,
     "financeActive": true
   }
