@@ -1,8 +1,8 @@
 {
-  "updatedAt": "2026-08-31T05:37:07.801991+00:00",
+  "updatedAt": "2026-08-31T08:23:36.817943+00:00",
   "source": "missionchief.co.uk",
   "sync": {
-    "durationSeconds": 20,
+    "durationSeconds": 22,
     "schedule": "hourly"
   },
   "endpoints": {
@@ -59,13 +59,9 @@
     "Scotland": 4
   },
   "vehicleStatus": {
-    "2": 1422,
-    "4": 13,
-    "3": 8,
-    "1": 45,
-    "6": 1,
-    "7": 3,
-    "5": 1
+    "2": 1487,
+    "5": 2,
+    "4": 4
   },
   "vehiclesByType": {
     "5": 521,
@@ -4815,21 +4811,6 @@
       "dcAssign": "api"
     },
     {
-      "id": 2572699,
-      "name": "St Martins Hospital",
-      "type": "Hospital",
-      "typeId": 4,
-      "level": 0,
-      "lat": 51.357944655837294,
-      "lon": -2.371638192902137,
-      "personnel": 0,
-      "small": false,
-      "region": "South West",
-      "dcId": 2353684,
-      "dcName": "Somerset FCR ",
-      "dcAssign": "api"
-    },
-    {
       "id": 2639116,
       "name": "Bodmin Ambulance Station",
       "type": "Ambulance Station",
@@ -5248,21 +5229,6 @@
       "dcId": 2652889,
       "dcName": "Netherlands 🇳🇱 FCR",
       "dcAssign": "self"
-    },
-    {
-      "id": 2033677,
-      "name": "(NHS-HD-001) Harrogate District ",
-      "type": "Hospital",
-      "typeId": 4,
-      "level": 30,
-      "lat": 53.99371725146289,
-      "lon": -1.5175985755205312,
-      "personnel": 0,
-      "small": false,
-      "region": "North",
-      "dcId": 1988744,
-      "dcName": "(M2XN) North Yorkshire DC",
-      "dcAssign": "api"
     },
     {
       "id": 2652200,
@@ -5880,21 +5846,6 @@
       "dcAssign": "api"
     },
     {
-      "id": 2333227,
-      "name": "The health centre Starbeck",
-      "type": "Health Centre",
-      "typeId": 21,
-      "level": 2,
-      "lat": 53.99651665380682,
-      "lon": -1.5082697214037528,
-      "personnel": 200,
-      "small": false,
-      "region": "North",
-      "dcId": 1988744,
-      "dcName": "(M2XN) North Yorkshire DC",
-      "dcAssign": "api"
-    },
-    {
       "id": 2659456,
       "name": "Dursley Fire Station",
       "type": "Fire Station",
@@ -6413,21 +6364,6 @@
       "lat": 51.365176557885164,
       "lon": -2.9646772686502736,
       "personnel": 1,
-      "small": false,
-      "region": "South West",
-      "dcId": 2353684,
-      "dcName": "Somerset FCR ",
-      "dcAssign": "api"
-    },
-    {
-      "id": 2390847,
-      "name": "Royal United Hospital (RUH)",
-      "type": "Hospital",
-      "typeId": 4,
-      "level": 30,
-      "lat": 51.39141658271086,
-      "lon": -2.3916416733188,
-      "personnel": 0,
       "small": false,
       "region": "South West",
       "dcId": 2353684,
@@ -7140,6 +7076,21 @@
       "dcAssign": "api"
     },
     {
+      "id": 2333227,
+      "name": "The health centre Starbeck",
+      "type": "Health Centre",
+      "typeId": 21,
+      "level": 2,
+      "lat": 53.99651665380682,
+      "lon": -1.5082697214037528,
+      "personnel": 200,
+      "small": false,
+      "region": "North",
+      "dcId": 1988744,
+      "dcName": "(M2XN) North Yorkshire DC",
+      "dcAssign": "api"
+    },
+    {
       "id": 2319380,
       "name": "(HPS-003) Hythe Police Station ",
       "type": "Police Station",
@@ -7425,6 +7376,21 @@
       "dcAssign": "api"
     },
     {
+      "id": 2033677,
+      "name": "(NHS-HD-001) Harrogate District ",
+      "type": "Hospital",
+      "typeId": 4,
+      "level": 30,
+      "lat": 53.99371725146289,
+      "lon": -1.5175985755205312,
+      "personnel": 0,
+      "small": false,
+      "region": "North",
+      "dcId": 1988744,
+      "dcName": "(M2XN) North Yorkshire DC",
+      "dcAssign": "api"
+    },
+    {
       "id": 2325716,
       "name": "Scarborough RCC",
       "type": "Workshop / RCC",
@@ -7512,6 +7478,21 @@
       "region": "North",
       "dcId": 1988744,
       "dcName": "(M2XN) North Yorkshire DC",
+      "dcAssign": "api"
+    },
+    {
+      "id": 2572699,
+      "name": "St Martins Hospital",
+      "type": "Hospital",
+      "typeId": 4,
+      "level": 0,
+      "lat": 51.357944655837294,
+      "lon": -2.371638192902137,
+      "personnel": 0,
+      "small": false,
+      "region": "South West",
+      "dcId": 2353684,
+      "dcName": "Somerset FCR ",
       "dcAssign": "api"
     },
     {
@@ -7617,6 +7598,21 @@
       "region": "North",
       "dcId": 2325711,
       "dcName": "(M2XN) E-Yorks FCR",
+      "dcAssign": "api"
+    },
+    {
+      "id": 2390847,
+      "name": "Royal United Hospital (RUH)",
+      "type": "Hospital",
+      "typeId": 4,
+      "level": 30,
+      "lat": 51.39141658271086,
+      "lon": -2.3916416733188,
+      "personnel": 0,
+      "small": false,
+      "region": "South West",
+      "dcId": 2353684,
+      "dcName": "Somerset FCR ",
       "dcAssign": "api"
     },
     {
@@ -10295,7 +10291,7 @@
       "name": "QW | LFB-007/WL-001",
       "type": 0,
       "buildingId": 1984339,
-      "status": 4
+      "status": 2
     },
     {
       "id": 5331507,
@@ -10309,7 +10305,7 @@
       "name": "QW | LFB-007/WL-002",
       "type": 0,
       "buildingId": 1984339,
-      "status": 4
+      "status": 2
     },
     {
       "id": 5331632,
@@ -10582,7 +10578,7 @@
       "name": "CoL | LFB-002/RSU-001",
       "type": 4,
       "buildingId": 2033678,
-      "status": 3
+      "status": 2
     },
     {
       "id": 5496781,
@@ -11013,15 +11009,15 @@
     }
   ],
   "credits": {
-    "credits_user_current": 115458,
-    "credits_user_total": 150220117,
-    "credits_alliance_current": 388691399,
-    "coins_user_current": 190,
-    "credits_alliance_total": 29804615929
+    "credits_user_current": 600035,
+    "credits_user_total": 150758535,
+    "credits_alliance_current": 388846887,
+    "coins_user_current": 189,
+    "credits_alliance_total": 29807072544
   },
   "alliance": {
     "users": 1822,
-    "online": 6,
+    "online": 8,
     "rank": 9,
     "financeActive": true
   }
