@@ -1,8 +1,8 @@
 {
-  "updatedAt": "2026-08-30T22:32:52.005410+00:00",
+  "updatedAt": "2026-08-31T01:13:49.585734+00:00",
   "source": "missionchief.co.uk",
   "sync": {
-    "durationSeconds": 25,
+    "durationSeconds": 24,
     "schedule": "hourly"
   },
   "endpoints": {
@@ -26,8 +26,9 @@
   },
   "stationsByType": {
     "Ambulance Station": 287,
-    "Hospital": 20,
     "Police Station": 66,
+    "Hospital": 20,
+    "Health Centre": 2,
     "Bomb Disposal": 3,
     "HART Base": 5,
     "Home Response / HRL": 48,
@@ -41,7 +42,6 @@
     "Search & Rescue HQ": 7,
     "Police Aviation": 3,
     "Police Academy": 1,
-    "Health Centre": 2,
     "Coastguard Station": 17,
     "SAR Resource Centre": 1,
     "Mountain Rescue": 5,
@@ -50,8 +50,8 @@
   },
   "stationsByRegion": {
     "Midlands": 63,
-    "South West": 222,
     "North": 95,
+    "South West": 222,
     "Wales": 52,
     "South East": 74,
     "Other / Overseas": 48,
@@ -59,10 +59,12 @@
     "Scotland": 4
   },
   "vehicleStatus": {
-    "2": 1478,
-    "4": 4,
+    "2": 1449,
+    "4": 26,
     "6": 1,
-    "5": 1
+    "1": 3,
+    "5": 3,
+    "7": 2
   },
   "vehiclesByType": {
     "5": 513,
@@ -1331,6 +1333,66 @@
       "dcAssign": "api"
     },
     {
+      "id": 1988767,
+      "name": "(P01) Pateley Bridge ",
+      "type": "Police Station",
+      "typeId": 6,
+      "level": 5,
+      "lat": 54.087752920802856,
+      "lon": -1.759263660225907,
+      "personnel": 200,
+      "small": false,
+      "region": "North",
+      "dcId": 1988744,
+      "dcName": "(M2XN) North Yorkshire DC",
+      "dcAssign": "api"
+    },
+    {
+      "id": 2567229,
+      "name": "Weston General Hospital",
+      "type": "Hospital",
+      "typeId": 4,
+      "level": 6,
+      "lat": 51.321611143618476,
+      "lon": -2.971186856353536,
+      "personnel": 0,
+      "small": false,
+      "region": "South West",
+      "dcId": 2353684,
+      "dcName": "Somerset FCR ",
+      "dcAssign": "api"
+    },
+    {
+      "id": 2429826,
+      "name": "Paulton Hospital  (MIU) (1-3617575955)",
+      "type": "Health Centre",
+      "typeId": 21,
+      "level": 5,
+      "lat": 51.29874962661729,
+      "lon": -2.4933505365978057,
+      "personnel": 198,
+      "small": false,
+      "region": "South West",
+      "dcId": 2353684,
+      "dcName": "Somerset FCR ",
+      "dcAssign": "api"
+    },
+    {
+      "id": 2333227,
+      "name": "The health centre Starbeck",
+      "type": "Health Centre",
+      "typeId": 21,
+      "level": 2,
+      "lat": 53.99651665380682,
+      "lon": -1.5082697214037528,
+      "personnel": 200,
+      "small": false,
+      "region": "North",
+      "dcId": 1988744,
+      "dcName": "(M2XN) North Yorkshire DC",
+      "dcAssign": "api"
+    },
+    {
       "id": 2642420,
       "name": "Callington Ambulance Station ",
       "type": "Ambulance Station",
@@ -1418,6 +1480,36 @@
       "region": "South West",
       "dcId": 2635513,
       "dcName": "Wiltshire DC",
+      "dcAssign": "api"
+    },
+    {
+      "id": 2390847,
+      "name": "Royal United Hospital (RUH)",
+      "type": "Hospital",
+      "typeId": 4,
+      "level": 30,
+      "lat": 51.39141658271086,
+      "lon": -2.3916416733188,
+      "personnel": 0,
+      "small": false,
+      "region": "South West",
+      "dcId": 2353684,
+      "dcName": "Somerset FCR ",
+      "dcAssign": "api"
+    },
+    {
+      "id": 2506985,
+      "name": "Frome Community Hospital",
+      "type": "Hospital",
+      "typeId": 4,
+      "level": 0,
+      "lat": 51.23805840499514,
+      "lon": -2.311358561144637,
+      "personnel": 0,
+      "small": false,
+      "region": "South West",
+      "dcId": 2353684,
+      "dcName": "Somerset FCR ",
       "dcAssign": "api"
     },
     {
@@ -2321,21 +2413,6 @@
       "dcAssign": "api"
     },
     {
-      "id": 1988767,
-      "name": "(P01) Pateley Bridge ",
-      "type": "Police Station",
-      "typeId": 6,
-      "level": 5,
-      "lat": 54.087752920802856,
-      "lon": -1.759263660225907,
-      "personnel": 200,
-      "small": false,
-      "region": "North",
-      "dcId": 1988744,
-      "dcName": "(M2XN) North Yorkshire DC",
-      "dcAssign": "api"
-    },
-    {
       "id": 2328378,
       "name": "(NHE-001) Camberley NH",
       "type": "Police Station",
@@ -2858,21 +2935,6 @@
       "region": "North",
       "dcId": 1988744,
       "dcName": "(M2XN) North Yorkshire DC",
-      "dcAssign": "api"
-    },
-    {
-      "id": 2429826,
-      "name": "Paulton Hospital  (MIU) (1-3617575955)",
-      "type": "Health Centre",
-      "typeId": 21,
-      "level": 5,
-      "lat": 51.29874962661729,
-      "lon": -2.4933505365978057,
-      "personnel": 198,
-      "small": false,
-      "region": "South West",
-      "dcId": 2353684,
-      "dcName": "Somerset FCR ",
       "dcAssign": "api"
     },
     {
@@ -3983,21 +4045,6 @@
       "region": "South East",
       "dcId": 1844373,
       "dcName": "Central,South/North East London Dispatch",
-      "dcAssign": "api"
-    },
-    {
-      "id": 2333227,
-      "name": "The health centre Starbeck",
-      "type": "Health Centre",
-      "typeId": 21,
-      "level": 2,
-      "lat": 53.99651665380682,
-      "lon": -1.5082697214037528,
-      "personnel": 200,
-      "small": false,
-      "region": "North",
-      "dcId": 1988744,
-      "dcName": "(M2XN) North Yorkshire DC",
       "dcAssign": "api"
     },
     {
@@ -5186,21 +5233,6 @@
       "dcAssign": "api"
     },
     {
-      "id": 2567229,
-      "name": "Weston General Hospital",
-      "type": "Hospital",
-      "typeId": 4,
-      "level": 6,
-      "lat": 51.321611143618476,
-      "lon": -2.971186856353536,
-      "personnel": 0,
-      "small": false,
-      "region": "South West",
-      "dcId": 2353684,
-      "dcName": "Somerset FCR ",
-      "dcAssign": "api"
-    },
-    {
       "id": 2620662,
       "name": "AMT Auto Leeds",
       "type": "Workshop / RCC",
@@ -5756,21 +5788,6 @@
       "dcAssign": "api"
     },
     {
-      "id": 2506985,
-      "name": "Frome Community Hospital",
-      "type": "Hospital",
-      "typeId": 4,
-      "level": 0,
-      "lat": 51.23805840499514,
-      "lon": -2.311358561144637,
-      "personnel": 0,
-      "small": false,
-      "region": "South West",
-      "dcId": 2353684,
-      "dcName": "Somerset FCR ",
-      "dcAssign": "api"
-    },
-    {
       "id": 2349731,
       "name": "(Y01) York HQ",
       "type": "Police Station",
@@ -6023,21 +6040,6 @@
       "region": "South West",
       "dcId": 2635219,
       "dcName": "Devon DC",
-      "dcAssign": "api"
-    },
-    {
-      "id": 2390847,
-      "name": "Royal United Hospital (RUH)",
-      "type": "Hospital",
-      "typeId": 4,
-      "level": 30,
-      "lat": 51.39141658271086,
-      "lon": -2.3916416733188,
-      "personnel": 0,
-      "small": false,
-      "region": "South West",
-      "dcId": 2353684,
-      "dcName": "Somerset FCR ",
       "dcAssign": "api"
     },
     {
@@ -10520,14 +10522,14 @@
       "name": "HDH | HRLNY-OTL-001",
       "type": 20,
       "buildingId": 2311534,
-      "status": 2
+      "status": 4
     },
     {
       "id": 6269519,
       "name": "KBR | NYF-002/WL-001",
       "type": 0,
       "buildingId": 2311542,
-      "status": 2
+      "status": 4
     },
     {
       "id": 6269521,
@@ -10874,15 +10876,15 @@
     }
   ],
   "credits": {
-    "credits_user_current": 327239,
-    "credits_user_total": 149552186,
-    "credits_alliance_current": 388552924,
-    "coins_user_current": 205,
-    "credits_alliance_total": 29801537988
+    "credits_user_current": 658813,
+    "credits_user_total": 149918281,
+    "credits_alliance_current": 388601833,
+    "coins_user_current": 198,
+    "credits_alliance_total": 29803101195
   },
   "alliance": {
     "users": 1820,
-    "online": 10,
+    "online": 6,
     "rank": 9,
     "financeActive": true
   }
