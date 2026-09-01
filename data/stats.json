@@ -1,8 +1,8 @@
 {
-  "updatedAt": "2026-08-31T21:49:20.112402+00:00",
+  "updatedAt": "2026-09-01T01:06:52.424529+00:00",
   "source": "missionchief.co.uk",
   "sync": {
-    "durationSeconds": 25,
+    "durationSeconds": 22,
     "schedule": "hourly"
   },
   "endpoints": {
@@ -17,17 +17,17 @@
   },
   "totals": {
     "stations": 591,
-    "units": 1494,
-    "personnel": 39967,
+    "units": 1496,
+    "personnel": 39972,
     "dispatchCentres": 38,
-    "allianceBuildings": 1196,
+    "allianceBuildings": 1195,
     "equipments": 11,
     "missionTypes": 1068
   },
   "stationsByType": {
     "Ambulance Station": 296,
-    "Police Station": 66,
     "Hospital": 21,
+    "Police Station": 66,
     "Bomb Disposal": 3,
     "HART Base": 5,
     "Home Response / HRL": 48,
@@ -59,19 +59,22 @@
     "Scotland": 4
   },
   "vehicleStatus": {
-    "2": 1487,
-    "4": 5,
+    "2": 1460,
+    "1": 14,
     "6": 1,
-    "5": 1
+    "4": 14,
+    "5": 2,
+    "7": 4,
+    "3": 1
   },
   "vehiclesByType": {
     "5": 522,
-    "8": 143,
+    "8": 144,
     "17": 60,
     "10": 47,
     "3": 31,
     "0": 28,
-    "12": 25,
+    "12": 26,
     "20": 24,
     "57": 24,
     "13": 23,
@@ -1014,7 +1017,7 @@
       "lon": -4.5360852423322005,
       "level": 0,
       "stationCount": 5,
-      "personnel": 66,
+      "personnel": 71,
       "coverageRadiusM": 22214,
       "coveragePolygon": [
         [
@@ -1360,6 +1363,21 @@
       "dcAssign": "api"
     },
     {
+      "id": 2033677,
+      "name": "(NHS-HD-001) Harrogate District ",
+      "type": "Hospital",
+      "typeId": 4,
+      "level": 30,
+      "lat": 53.99371725146289,
+      "lon": -1.5175985755205312,
+      "personnel": 0,
+      "small": false,
+      "region": "North",
+      "dcId": 1988744,
+      "dcName": "(M2XN) North Yorkshire DC",
+      "dcAssign": "api"
+    },
+    {
       "id": 1988767,
       "name": "(P01) Pateley Bridge ",
       "type": "Police Station",
@@ -1642,21 +1660,6 @@
       "region": "South West",
       "dcId": 2638184,
       "dcName": "Cornwall FCR",
-      "dcAssign": "self"
-    },
-    {
-      "id": 2635219,
-      "name": "Devon DC",
-      "type": "Dispatch Centre",
-      "typeId": 7,
-      "level": 0,
-      "lat": 50.72380884185867,
-      "lon": -3.5212701015617465,
-      "personnel": 0,
-      "small": false,
-      "region": "South West",
-      "dcId": 2635219,
-      "dcName": "Devon DC",
       "dcAssign": "self"
     },
     {
@@ -7004,7 +7007,7 @@
       "name": "Truro Police Station",
       "type": "Police Station",
       "typeId": 6,
-      "level": 0,
+      "level": 1,
       "lat": 50.2659861,
       "lon": -5.0556792,
       "personnel": 4,
@@ -7435,21 +7438,6 @@
       "dcAssign": "api"
     },
     {
-      "id": 2033677,
-      "name": "(NHS-HD-001) Harrogate District ",
-      "type": "Hospital",
-      "typeId": 4,
-      "level": 30,
-      "lat": 53.99371725146289,
-      "lon": -1.5175985755205312,
-      "personnel": 0,
-      "small": false,
-      "region": "North",
-      "dcId": 1988744,
-      "dcName": "(M2XN) North Yorkshire DC",
-      "dcAssign": "api"
-    },
-    {
       "id": 2325716,
       "name": "Scarborough RCC",
       "type": "Workshop / RCC",
@@ -7627,21 +7615,6 @@
       "region": "South East",
       "dcId": 1844373,
       "dcName": "Central,South/North East London Dispatch",
-      "dcAssign": "api"
-    },
-    {
-      "id": 2662883,
-      "name": "Isle of Man Police HQ - Douglas",
-      "type": "Police Station",
-      "typeId": 6,
-      "level": 0,
-      "lat": 54.1647155,
-      "lon": -4.4753006,
-      "personnel": 2,
-      "small": true,
-      "region": "North",
-      "dcId": 2650412,
-      "dcName": "Isle Of Man 🇮🇲 ",
       "dcAssign": "api"
     },
     {
@@ -7958,6 +7931,36 @@
       "dcId": 2311778,
       "dcName": "Hampshire DC",
       "dcAssign": "api"
+    },
+    {
+      "id": 2662883,
+      "name": "Isle of Man Police HQ - Douglas",
+      "type": "Police Station",
+      "typeId": 6,
+      "level": 1,
+      "lat": 54.1647155,
+      "lon": -4.4753006,
+      "personnel": 7,
+      "small": true,
+      "region": "North",
+      "dcId": 2650412,
+      "dcName": "Isle Of Man 🇮🇲 ",
+      "dcAssign": "api"
+    },
+    {
+      "id": 2635219,
+      "name": "Devon DC",
+      "type": "Dispatch Centre",
+      "typeId": 7,
+      "level": 0,
+      "lat": 50.72380884185867,
+      "lon": -3.5212701015617465,
+      "personnel": 0,
+      "small": false,
+      "region": "South West",
+      "dcId": 2635219,
+      "dcName": "Devon DC",
+      "dcAssign": "self"
     },
     {
       "id": 2622184,
@@ -10594,7 +10597,7 @@
       "name": "GWCH | CRS-001/CRV-001",
       "type": 57,
       "buildingId": 2041379,
-      "status": 2
+      "status": 1
     },
     {
       "id": 5489715,
@@ -10867,7 +10870,7 @@
       "name": "GWCH | CRS-001/CRV-002",
       "type": 57,
       "buildingId": 2041379,
-      "status": 2
+      "status": 1
     },
     {
       "id": 6290331,
@@ -11053,15 +11056,15 @@
     }
   ],
   "credits": {
-    "credits_user_current": 1144715,
-    "credits_user_total": 151697082,
-    "credits_alliance_current": 390644961,
-    "coins_user_current": 177,
-    "credits_alliance_total": 29854933656
+    "credits_user_current": 1980216,
+    "credits_user_total": 152658768,
+    "credits_alliance_current": 391013264,
+    "coins_user_current": 136,
+    "credits_alliance_total": 29862843034
   },
   "alliance": {
     "users": 1822,
-    "online": 14,
+    "online": 5,
     "rank": 9,
     "financeActive": true
   }
