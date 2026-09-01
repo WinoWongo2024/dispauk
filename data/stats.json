@@ -1,8 +1,8 @@
 {
-  "updatedAt": "2026-09-01T01:06:52.424529+00:00",
+  "updatedAt": "2026-09-01T01:31:32.502135+00:00",
   "source": "missionchief.co.uk",
   "sync": {
-    "durationSeconds": 22,
+    "durationSeconds": 21,
     "schedule": "hourly"
   },
   "endpoints": {
@@ -16,18 +16,18 @@
     "einsaetze": true
   },
   "totals": {
-    "stations": 591,
-    "units": 1496,
-    "personnel": 39972,
+    "stations": 600,
+    "units": 1505,
+    "personnel": 39999,
     "dispatchCentres": 38,
     "allianceBuildings": 1195,
     "equipments": 11,
     "missionTypes": 1068
   },
   "stationsByType": {
-    "Ambulance Station": 296,
-    "Hospital": 21,
+    "Ambulance Station": 305,
     "Police Station": 66,
+    "Hospital": 21,
     "Bomb Disposal": 3,
     "HART Base": 5,
     "Home Response / HRL": 48,
@@ -49,26 +49,24 @@
     "SAR Resource Centre": 1
   },
   "stationsByRegion": {
-    "Midlands": 63,
+    "Midlands": 66,
     "North": 95,
-    "London & South": 28,
-    "South West": 227,
+    "South West": 230,
+    "London & South": 31,
     "Wales": 52,
     "South East": 74,
     "Other / Overseas": 48,
     "Scotland": 4
   },
   "vehicleStatus": {
-    "2": 1460,
-    "1": 14,
+    "2": 1485,
+    "4": 5,
     "6": 1,
-    "4": 14,
-    "5": 2,
-    "7": 4,
-    "3": 1
+    "1": 6,
+    "3": 8
   },
   "vehiclesByType": {
-    "5": 522,
+    "5": 531,
     "8": 144,
     "17": 60,
     "10": 47,
@@ -103,7 +101,7 @@
     "stationsMissingName": 0,
     "stationsMissingCoords": 0,
     "duplicateStationIds": 0,
-    "dcAssignedFromApi": 549,
+    "dcAssignedFromApi": 558,
     "dcAssignedNearest": 4,
     "dispatchCentres": 38,
     "ok": true
@@ -920,6 +918,31 @@
       "region": "Other / Overseas"
     },
     {
+      "id": 2659464,
+      "name": "Berkshire",
+      "lat": 51.450610971372114,
+      "lon": -0.9862098792154756,
+      "level": 0,
+      "stationCount": 6,
+      "personnel": 17,
+      "coverageRadiusM": 30638,
+      "coveragePolygon": [
+        [
+          51.369508358442914,
+          -0.7783894315549303
+        ],
+        [
+          51.51748150026516,
+          -0.578726613403166
+        ],
+        [
+          51.40762161176569,
+          -1.318489188386671
+        ]
+      ],
+      "region": "London & South"
+    },
+    {
       "id": 2621080,
       "name": "West Midlands",
       "lat": 52.47347948103825,
@@ -951,6 +974,43 @@
         ]
       ],
       "region": "Midlands"
+    },
+    {
+      "id": 2621069,
+      "name": "Worcestershire DC",
+      "lat": 52.189117993569845,
+      "lon": -2.2222760915892956,
+      "level": 0,
+      "stationCount": 6,
+      "personnel": 118,
+      "coverageRadiusM": 24707,
+      "coveragePolygon": [
+        [
+          52.0883452,
+          -1.9641153
+        ],
+        [
+          52.28140520494308,
+          -1.9113266141013305
+        ],
+        [
+          52.3538175,
+          -2.0485183
+        ],
+        [
+          52.3633634,
+          -2.2596412
+        ],
+        [
+          52.339193984142945,
+          -2.2701814212680707
+        ],
+        [
+          52.189117993569845,
+          -2.2222760915892956
+        ]
+      ],
+      "region": "South West"
     },
     {
       "id": 2319655,
@@ -1135,62 +1195,33 @@
       "region": "Wales"
     },
     {
-      "id": 2621069,
-      "name": "Worcestershire DC",
-      "lat": 52.189117993569845,
-      "lon": -2.2222760915892956,
+      "id": 2663988,
+      "name": "Warwickshire FCR",
+      "lat": 52.29052718759558,
+      "lon": -1.584665865956649,
       "level": 0,
       "stationCount": 4,
-      "personnel": 112,
-      "coverageRadiusM": 22888,
+      "personnel": 12,
+      "coverageRadiusM": 26543,
       "coveragePolygon": [
         [
-          52.18170264244431,
-          -2.191222980004024
+          52.06484119835857,
+          -1.6294011387462775
         ],
         [
-          52.3538175,
-          -2.0485183
+          52.29208781498257,
+          -1.3456552567662436
         ],
         [
-          52.3633634,
-          -2.2596412
+          52.29052718759558,
+          -1.584665865956649
         ],
         [
-          52.339193984142945,
-          -2.2701814212680707
-        ],
-        [
-          52.189117993569845,
-          -2.2222760915892956
+          52.1826547,
+          -1.7802092
         ]
       ],
-      "region": "South West"
-    },
-    {
-      "id": 2659464,
-      "name": "Berkshire",
-      "lat": 51.450610971372114,
-      "lon": -0.9862098792154756,
-      "level": 0,
-      "stationCount": 3,
-      "personnel": 8,
-      "coverageRadiusM": 24703,
-      "coveragePolygon": [
-        [
-          51.369508358442914,
-          -0.7783894315549303
-        ],
-        [
-          51.450610971372114,
-          -0.9862098792154756
-        ],
-        [
-          51.40762161176569,
-          -1.318489188386671
-        ]
-      ],
-      "region": "London & South"
+      "region": "Midlands"
     },
     {
       "id": 2339242,
@@ -1332,18 +1363,6 @@
       "coverageRadiusM": 37521,
       "coveragePolygon": null,
       "region": "London & South"
-    },
-    {
-      "id": 2663988,
-      "name": "Warwickshire FCR",
-      "lat": 52.29052718759558,
-      "lon": -1.584665865956649,
-      "level": 0,
-      "stationCount": 0,
-      "personnel": 0,
-      "coverageRadiusM": 2500,
-      "coveragePolygon": null,
-      "region": "Midlands"
     }
   ],
   "stations": [
@@ -1363,6 +1382,21 @@
       "dcAssign": "api"
     },
     {
+      "id": 1988767,
+      "name": "(P01) Pateley Bridge ",
+      "type": "Police Station",
+      "typeId": 6,
+      "level": 5,
+      "lat": 54.087752920802856,
+      "lon": -1.759263660225907,
+      "personnel": 200,
+      "small": false,
+      "region": "North",
+      "dcId": 1988744,
+      "dcName": "(M2XN) North Yorkshire DC",
+      "dcAssign": "api"
+    },
+    {
       "id": 2033677,
       "name": "(NHS-HD-001) Harrogate District ",
       "type": "Hospital",
@@ -1378,18 +1412,123 @@
       "dcAssign": "api"
     },
     {
-      "id": 1988767,
-      "name": "(P01) Pateley Bridge ",
-      "type": "Police Station",
-      "typeId": 6,
-      "level": 5,
-      "lat": 54.087752920802856,
-      "lon": -1.759263660225907,
-      "personnel": 200,
+      "id": 2572699,
+      "name": "St Martins Hospital",
+      "type": "Hospital",
+      "typeId": 4,
+      "level": 0,
+      "lat": 51.357944655837294,
+      "lon": -2.371638192902137,
+      "personnel": 0,
       "small": false,
-      "region": "North",
-      "dcId": 1988744,
-      "dcName": "(M2XN) North Yorkshire DC",
+      "region": "South West",
+      "dcId": 2353684,
+      "dcName": "Somerset FCR ",
+      "dcAssign": "api"
+    },
+    {
+      "id": 2666314,
+      "name": "Stratford-on-Avon Ambulance Station (W)",
+      "type": "Ambulance Station",
+      "typeId": 2,
+      "level": 0,
+      "lat": 52.1826547,
+      "lon": -1.7802092,
+      "personnel": 3,
+      "small": true,
+      "region": "South West",
+      "dcId": 2663988,
+      "dcName": "Warwickshire FCR",
+      "dcAssign": "api"
+    },
+    {
+      "id": 2666316,
+      "name": "Shipston-on-Stour Ambulance Station ",
+      "type": "Ambulance Station",
+      "typeId": 2,
+      "level": 0,
+      "lat": 52.06484119835857,
+      "lon": -1.6294011387462775,
+      "personnel": 3,
+      "small": true,
+      "region": "South West",
+      "dcId": 2663988,
+      "dcName": "Warwickshire FCR",
+      "dcAssign": "api"
+    },
+    {
+      "id": 2666325,
+      "name": "Redditch Ambulance Station ",
+      "type": "Ambulance Station",
+      "typeId": 2,
+      "level": 0,
+      "lat": 52.28140520494308,
+      "lon": -1.9113266141013305,
+      "personnel": 3,
+      "small": true,
+      "region": "Midlands",
+      "dcId": 2621069,
+      "dcName": "Worcestershire DC",
+      "dcAssign": "api"
+    },
+    {
+      "id": 2666324,
+      "name": "Evesham Ambulance Station",
+      "type": "Ambulance Station",
+      "typeId": 2,
+      "level": 0,
+      "lat": 52.0883452,
+      "lon": -1.9641153,
+      "personnel": 3,
+      "small": true,
+      "region": "South West",
+      "dcId": 2621069,
+      "dcName": "Worcestershire DC",
+      "dcAssign": "api"
+    },
+    {
+      "id": 2666328,
+      "name": "Leamington Spa Ambulance Station ",
+      "type": "Ambulance Station",
+      "typeId": 2,
+      "level": 0,
+      "lat": 52.2777735,
+      "lon": -1.5401641,
+      "personnel": 3,
+      "small": true,
+      "region": "Midlands",
+      "dcId": 2663988,
+      "dcName": "Warwickshire FCR",
+      "dcAssign": "api"
+    },
+    {
+      "id": 2666329,
+      "name": "Rugby Ambulance Station (SW)",
+      "type": "Ambulance Station",
+      "typeId": 2,
+      "level": 0,
+      "lat": 52.29208781498257,
+      "lon": -1.3456552567662436,
+      "personnel": 3,
+      "small": true,
+      "region": "Midlands",
+      "dcId": 2663988,
+      "dcName": "Warwickshire FCR",
+      "dcAssign": "api"
+    },
+    {
+      "id": 2666335,
+      "name": "Slough Ambulance Station",
+      "type": "Ambulance Station",
+      "typeId": 2,
+      "level": 0,
+      "lat": 51.51748150026516,
+      "lon": -0.578726613403166,
+      "personnel": 3,
+      "small": true,
+      "region": "London & South",
+      "dcId": 2659464,
+      "dcName": "Berkshire",
       "dcAssign": "api"
     },
     {
@@ -1417,6 +1556,36 @@
       "lon": -0.7783894315549303,
       "personnel": 0,
       "small": false,
+      "region": "London & South",
+      "dcId": 2659464,
+      "dcName": "Berkshire",
+      "dcAssign": "api"
+    },
+    {
+      "id": 2666333,
+      "name": "Wokingham Ambulance Station ",
+      "type": "Ambulance Station",
+      "typeId": 2,
+      "level": 0,
+      "lat": 51.410154520965655,
+      "lon": -0.8455695432391056,
+      "personnel": 3,
+      "small": true,
+      "region": "London & South",
+      "dcId": 2659464,
+      "dcName": "Berkshire",
+      "dcAssign": "api"
+    },
+    {
+      "id": 2666334,
+      "name": "Bracknell Ambulance Station",
+      "type": "Ambulance Station",
+      "typeId": 2,
+      "level": 0,
+      "lat": 51.401600457077535,
+      "lon": -0.7419884691467553,
+      "personnel": 3,
+      "small": true,
       "region": "London & South",
       "dcId": 2659464,
       "dcName": "Berkshire",
@@ -7528,21 +7697,6 @@
       "dcAssign": "api"
     },
     {
-      "id": 2572699,
-      "name": "St Martins Hospital",
-      "type": "Hospital",
-      "typeId": 4,
-      "level": 0,
-      "lat": 51.357944655837294,
-      "lon": -2.371638192902137,
-      "personnel": 0,
-      "small": false,
-      "region": "South West",
-      "dcId": 2353684,
-      "dcName": "Somerset FCR ",
-      "dcAssign": "api"
-    },
-    {
       "id": 2353684,
       "name": "Somerset FCR ",
       "type": "Dispatch Centre",
@@ -10240,7 +10394,7 @@
       "name": "BTPV&P | BTP-001/IRV-001",
       "type": 8,
       "buildingId": 1844377,
-      "status": 2
+      "status": 4
     },
     {
       "id": 4926757,
@@ -10254,7 +10408,7 @@
       "name": "WX-001 | 103 (S)",
       "type": 8,
       "buildingId": 1844377,
-      "status": 2
+      "status": 4
     },
     {
       "id": 4926884,
@@ -10352,7 +10506,7 @@
       "name": "QW | LFB-007/WL-002",
       "type": 0,
       "buildingId": 1984339,
-      "status": 2
+      "status": 4
     },
     {
       "id": 5331632,
@@ -10597,7 +10751,7 @@
       "name": "GWCH | CRS-001/CRV-001",
       "type": 57,
       "buildingId": 2041379,
-      "status": 1
+      "status": 2
     },
     {
       "id": 5489715,
@@ -10870,7 +11024,7 @@
       "name": "GWCH | CRS-001/CRV-002",
       "type": 57,
       "buildingId": 2041379,
-      "status": 1
+      "status": 2
     },
     {
       "id": 6290331,
@@ -11056,15 +11210,15 @@
     }
   ],
   "credits": {
-    "credits_user_current": 1980216,
-    "credits_user_total": 152658768,
-    "credits_alliance_current": 391013264,
+    "credits_user_current": 1305170,
+    "credits_user_total": 152908718,
+    "credits_alliance_current": 391134559,
     "coins_user_current": 136,
-    "credits_alliance_total": 29862843034
+    "credits_alliance_total": 29865334132
   },
   "alliance": {
     "users": 1822,
-    "online": 5,
+    "online": 7,
     "rank": 9,
     "financeActive": true
   }
