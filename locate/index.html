@@ -4,11 +4,45 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Locate | DispaUK</title>
-  <meta name="description" content="Find which DispaUK dispatch centre and nearest station cover your location, with estimated response times.">
+  <meta name="description" content="Find which DispaUK dispatch centre and nearest station cover your location, with a live map and estimated response times.">
   <meta name="theme-color" content="#0b1220">
   <meta name="referrer" content="strict-origin-when-cross-origin">
   <link rel="stylesheet" href="/styles.css">
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" crossorigin="">
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Roboto+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <style>
+    #locate-map {
+      height: min(52vh, 420px);
+      width: 100%;
+      border-radius: 10px;
+      border: 1px solid var(--border);
+      margin-top: 14px;
+      z-index: 1;
+    }
+    .leaflet-container { background: #0b1220; font-family: var(--font); }
+    .locate-toolbar {
+      display: flex; flex-wrap: wrap; gap: 8px; align-items: center; margin-top: 10px;
+    }
+    .locate-toolbar .btn { min-height: 40px; }
+    .tracking-dot {
+      display: inline-block; width: 8px; height: 8px; border-radius: 50%;
+      background: #22c55e; margin-right: 6px; vertical-align: middle;
+      box-shadow: 0 0 0 3px rgba(34, 197, 94, 0.25);
+      animation: pulse 1.6s ease-in-out infinite;
+    }
+    .tracking-dot.off { background: #64748b; box-shadow: none; animation: none; }
+    @keyframes pulse {
+      0%, 100% { opacity: 1; }
+      50% { opacity: 0.45; }
+    }
+    .user-marker-icon {
+      background: #3b82f6;
+      border: 3px solid #fff;
+      border-radius: 50%;
+      width: 16px; height: 16px;
+      box-shadow: 0 0 0 6px rgba(59, 130, 246, 0.25);
+    }
+  </style>
 </head>
 <body>
   <header class="header">
@@ -31,25 +65,32 @@
       <div class="section-header-left" style="margin-bottom:16px">
         <span class="section-kicker">COVERAGE</span>
         <h1 style="font-size:1.6rem">Find your coverage</h1>
-        <p class="text-muted">Device location or place search. Estimates use straight-line distance and typical emergency road speeds — not live routing.</p>
+        <p class="text-muted">Live map of nearby stations. Distances in kilometres and miles. Tracking updates as you move — no need to keep pressing the button.</p>
       </div>
 
       <div class="panel" style="margin-bottom:14px">
         <div style="display:flex;flex-wrap:wrap;gap:10px;align-items:center">
-          <button type="button" class="btn btn-primary" id="btn-geo">Use my location</button>
+          <button type="button" class="btn btn-primary" id="btn-geo">Start live tracking</button>
+          <button type="button" class="btn btn-outline" id="btn-stop" hidden>Stop tracking</button>
           <label style="flex:1;min-width:200px">
             <span class="sr-only">Search place</span>
             <input type="search" id="place-search" placeholder="Town, postcode, or address…" autocomplete="off" style="width:100%;padding:10px;border-radius:8px;border:1px solid var(--border);background:var(--surface);color:var(--text);font:inherit">
           </label>
           <button type="button" class="btn btn-outline" id="btn-search">Search</button>
         </div>
-        <p class="text-muted" style="margin-top:10px" id="locate-status">Location stays in your browser — not stored by DispaUK.</p>
+        <p class="text-muted" style="margin-top:10px" id="locate-status">
+          <span class="tracking-dot off" id="tracking-indicator" aria-hidden="true"></span>
+          Location stays in your browser — not stored by DispaUK.
+        </p>
       </div>
 
-      <div class="dash-grid" id="locate-results" hidden>
+      <div id="locate-map" role="application" aria-label="Local stations map" hidden></div>
+
+      <div class="dash-grid" id="locate-results" hidden style="margin-top:14px">
         <article class="stat-card">
           <span class="stat-label">Your position</span>
           <strong class="stat-value" style="font-size:1rem" data-loc-coords>—</strong>
+          <p class="text-muted" data-loc-accuracy></p>
         </article>
         <article class="stat-card">
           <span class="stat-label">Nearest station</span>
@@ -82,21 +123,28 @@
       <p style="margin-top:14px;display:flex;flex-wrap:wrap;gap:8px" id="locate-links" hidden>
         <a class="btn btn-outline" data-link-station href="#">Station details</a>
         <a class="btn btn-outline" data-link-dc href="#">DC dashboard</a>
-        <a class="btn btn-outline" data-link-map href="#">Map</a>
+        <a class="btn btn-outline" data-link-map href="#">Full map</a>
       </p>
 
-      <p class="disclaimer-bar" style="margin-top:20px">Not for real emergencies. Call <strong>999 / 112</strong>. ETAs are illustrative game-data estimates only.</p>
+      <p class="disclaimer-bar" style="margin-top:20px">Not for real emergencies. Call <strong>999 / 112</strong>. ETAs are illustrative game-data estimates only. Straight-line distances — not road routing.</p>
     </div>
   </main>
   <footer class="footer-slim"><div class="container footer-bottom"><p class="footer-copy">© <span data-current-year>2026</span> DispaUK · <a href="/contact/">Contact</a></p></div></footer>
+  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" crossorigin=""></script>
   <script src="/script.js" defer></script>
   <script>
     function haversineKm(lat1, lon1, lat2, lon2) {
       const R = 6371;
       const toR = d => d * Math.PI / 180;
       const dLat = toR(lat2 - lat1), dLon = toR(lon2 - lon1);
-      const a = Math.sin(dLat/2)**2 + Math.cos(toR(lat1))*Math.cos(toR(lat2))*Math.sin(dLon/2)**2;
+      const a = Math.sin(dLat / 2) ** 2 + Math.cos(toR(lat1)) * Math.cos(toR(lat2)) * Math.sin(dLon / 2) ** 2;
       return 2 * R * Math.asin(Math.sqrt(a));
+    }
+
+    function formatDistance(km) {
+      if (km == null || !isFinite(km)) return '—';
+      const mi = km * 0.621371;
+      return km.toFixed(1) + ' km (' + mi.toFixed(1) + ' mi)';
     }
 
     function serviceBucket(type) {
@@ -107,7 +155,6 @@
       return 'other';
     }
 
-    /** Typical emergency response speeds (km/h) for rough ETA — not real routing */
     function speedForBucket(b) {
       if (b === 'fire') return 55;
       if (b === 'ambulance') return 50;
@@ -117,8 +164,7 @@
 
     function etaMinutes(km, bucket) {
       const speed = speedForBucket(bucket);
-      const mins = Math.round((km / speed) * 60);
-      return Math.max(1, mins);
+      return Math.max(1, Math.round((km / speed) * 60));
     }
 
     function formatEta(mins) {
@@ -129,7 +175,7 @@
     }
 
     function escapeHtml(s) {
-      return String(s || '').replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;');
+      return String(s || '').replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;');
     }
 
     document.addEventListener('DOMContentLoaded', async () => {
@@ -138,6 +184,10 @@
       const links = document.getElementById('locate-links');
       const unitsPanel = document.getElementById('locate-units');
       const typesPanel = document.getElementById('locate-nearest-types');
+      const mapEl = document.getElementById('locate-map');
+      const btnGeo = document.getElementById('btn-geo');
+      const btnStop = document.getElementById('btn-stop');
+      const indicator = document.getElementById('tracking-indicator');
       const set = (sel, v) => { const el = document.querySelector(sel); if (el) el.textContent = v; };
 
       let data;
@@ -154,6 +204,38 @@
       const dcs = data.dispatchCentres || [];
       const unitsSample = data.unitsSample || [];
 
+      const colours = { fire: '#e63946', ambulance: '#3b82f6', police: '#a78bfa', other: '#9aadc2' };
+
+      let map = null;
+      let stationLayer = null;
+      let userMarker = null;
+      let accuracyCircle = null;
+      let watchId = null;
+      let lastLat = null;
+      let lastLon = null;
+      let followUser = true;
+
+      function ensureMap() {
+        if (map) return;
+        mapEl.hidden = false;
+        map = L.map(mapEl, { zoomControl: true }).setView([52.5, -1.5], 7);
+        L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+          attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a>',
+          maxZoom: 19,
+          className: 'map-tiles-light',
+        }).addTo(map);
+        if (!document.getElementById('locate-map-filter-style')) {
+          const style = document.createElement('style');
+          style.id = 'locate-map-filter-style';
+          style.textContent = '.map-tiles-light { filter: invert(1) hue-rotate(180deg) brightness(0.9) contrast(0.95); }';
+          document.head.appendChild(style);
+        }
+        stationLayer = L.layerGroup().addTo(map);
+        map.on('dragstart', () => { followUser = false; });
+        // Fix layout after becoming visible
+        setTimeout(() => map.invalidateSize(), 50);
+      }
+
       function nearestStation(lat, lon, predicate) {
         let best = null, bestD = Infinity;
         stations.filter(s => s.typeId !== 7 && (!predicate || predicate(s))).forEach(s => {
@@ -163,8 +245,79 @@
         return { station: best, km: bestD };
       }
 
-      function show(lat, lon, label) {
-        status.textContent = label || 'Resolved.';
+      function nearbyStations(lat, lon, radiusKm) {
+        return stations
+          .filter(s => s.typeId !== 7)
+          .map(s => ({ s, km: haversineKm(lat, lon, s.lat, s.lon) }))
+          .filter(x => x.km <= radiusKm)
+          .sort((a, b) => a.km - b.km);
+      }
+
+      function updateMap(lat, lon, accuracyM) {
+        ensureMap();
+        stationLayer.clearLayers();
+
+        const nearby = nearbyStations(lat, lon, 40); // 40 km / ~25 mi window
+        nearby.forEach(({ s, km }) => {
+          const c = colours[serviceBucket(s.type)] || colours.other;
+          const m = L.circleMarker([s.lat, s.lon], {
+            radius: 6,
+            color: '#0b1220',
+            weight: 1,
+            fillColor: c,
+            fillOpacity: 0.95,
+          });
+          m.bindPopup(
+            '<strong>' + escapeHtml(s.name || 'Station') + '</strong><br>' +
+            escapeHtml(s.type || '') + '<br>' +
+            formatDistance(km) +
+            (s.dcName ? '<br>DC: ' + escapeHtml(s.dcName) : '') +
+            '<br><a href="/stations/?id=' + encodeURIComponent(s.id) + '">Details</a>'
+          );
+          m.addTo(stationLayer);
+        });
+
+        if (userMarker) {
+          userMarker.setLatLng([lat, lon]);
+        } else {
+          userMarker = L.circleMarker([lat, lon], {
+            radius: 8,
+            color: '#fff',
+            weight: 2,
+            fillColor: '#3b82f6',
+            fillOpacity: 1,
+          }).bindTooltip('You', { permanent: false }).addTo(map);
+        }
+
+        if (accuracyM != null && isFinite(accuracyM)) {
+          const r = Math.max(accuracyM, 25);
+          if (accuracyCircle) {
+            accuracyCircle.setLatLng([lat, lon]).setRadius(r);
+          } else {
+            accuracyCircle = L.circle([lat, lon], {
+              radius: r,
+              color: '#3b82f6',
+              weight: 1,
+              fillColor: '#3b82f6',
+              fillOpacity: 0.12,
+            }).addTo(map);
+          }
+        }
+
+        if (followUser) {
+          const zoom = map.getZoom() < 11 ? 12 : map.getZoom();
+          map.setView([lat, lon], zoom, { animate: true });
+        }
+        setTimeout(() => map.invalidateSize(), 30);
+      }
+
+      function show(lat, lon, label, accuracyM) {
+        lastLat = lat;
+        lastLon = lon;
+        status.innerHTML =
+          '<span class="tracking-dot' + (watchId != null ? '' : ' off') + '" id="tracking-indicator" aria-hidden="true"></span>' +
+          (label || 'Resolved.');
+
         const overall = nearestStation(lat, lon);
         const best = overall.station;
         const bestD = overall.km;
@@ -187,9 +340,15 @@
         results.hidden = false;
         links.hidden = false;
 
-        set('[data-loc-coords]', lat.toFixed(4) + ', ' + lon.toFixed(4));
+        set('[data-loc-coords]', lat.toFixed(5) + ', ' + lon.toFixed(5));
+        if (accuracyM != null && isFinite(accuracyM)) {
+          set('[data-loc-accuracy]', '±' + Math.round(accuracyM) + ' m accuracy');
+        } else {
+          set('[data-loc-accuracy]', '');
+        }
+
         set('[data-loc-station]', best ? best.name : 'None nearby');
-        set('[data-loc-station-dist]', best ? bestD.toFixed(1) + ' km · ' + (best.type || '') : '');
+        set('[data-loc-station-dist]', best ? formatDistance(bestD) + ' · ' + (best.type || '') : '');
         set('[data-loc-dc]', dc ? dc.name : 'Unknown');
         set('[data-loc-dc-how]', how || '');
 
@@ -197,33 +356,29 @@
           const b = serviceBucket(best.type);
           const mins = etaMinutes(bestD, b);
           set('[data-loc-eta]', formatEta(mins));
-          set('[data-loc-eta-note]', 'From ' + (best.type || 'station') + ' at ~' + speedForBucket(b) + ' km/h avg');
+          set('[data-loc-eta-note]', 'Straight-line · ~' + speedForBucket(b) + ' km/h (' + Math.round(speedForBucket(b) * 0.621371) + ' mph) avg');
         } else {
           set('[data-loc-eta]', '—');
           set('[data-loc-eta-note]', '');
         }
 
-        // Units sample at nearest station
         const atStation = unitsSample.filter(u => best && String(u.buildingId) === String(best.id));
+        unitsPanel.hidden = false;
         if (atStation.length) {
-          unitsPanel.hidden = false;
           const byType = {};
           atStation.forEach(u => {
             const t = String(u.type != null ? u.type : '?');
             byType[t] = (byType[t] || 0) + 1;
           });
-          const chips = document.querySelector('[data-loc-units]');
-          chips.innerHTML = Object.entries(byType).map(([t, n]) =>
+          document.querySelector('[data-loc-units]').innerHTML = Object.entries(byType).map(([t, n]) =>
             '<span class="chip"><span class="chip-k">Type ' + escapeHtml(t) + '</span><span class="chip-v">' + n + '</span></span>'
           ).join('');
-          set('[data-loc-units-note]', atStation.length + ' unit(s) in public sample at this station. Full fleet may be larger.');
+          set('[data-loc-units-note]', atStation.length + ' unit(s) in public sample. Full fleet may be larger.');
         } else {
-          unitsPanel.hidden = false;
           document.querySelector('[data-loc-units]').innerHTML = '<span class="text-muted">No units in public sample for this station.</span>';
-          set('[data-loc-units-note]', 'MissionChief does not publish live vehicle GPS — types are from the last station sample.');
+          set('[data-loc-units-note]', 'MissionChief does not publish live vehicle GPS.');
         }
 
-        // Closest fire / ambulance / police stations + ETA
         const services = [
           { key: 'fire', label: 'Fire' },
           { key: 'ambulance', label: 'Ambulance / health' },
@@ -234,7 +389,7 @@
           if (!r.station) return null;
           const mins = etaMinutes(r.km, svc.key);
           return '<div class="metric-row"><span>' + svc.label + '</span><strong>' +
-            escapeHtml(r.station.name) + ' · ' + r.km.toFixed(1) + ' km · ' + formatEta(mins) +
+            escapeHtml(r.station.name) + ' · ' + formatDistance(r.km) + ' · ' + formatEta(mins) +
             '</strong></div>';
         }).filter(Boolean);
         typesPanel.hidden = false;
@@ -248,45 +403,105 @@
         if (ld && dc) ld.href = '/dispatch/?id=' + encodeURIComponent(dc.id);
         if (lm && best) lm.href = '/map/?focus=' + encodeURIComponent(best.id);
         else if (lm && dc) lm.href = '/map/?dc=' + encodeURIComponent(dc.id);
+
+        updateMap(lat, lon, accuracyM);
       }
 
-      document.getElementById('btn-geo').addEventListener('click', () => {
+      function stopTracking() {
+        if (watchId != null) {
+          navigator.geolocation.clearWatch(watchId);
+          watchId = null;
+        }
+        btnStop.hidden = true;
+        btnGeo.textContent = 'Start live tracking';
+        btnGeo.disabled = false;
+        const ind = document.getElementById('tracking-indicator');
+        if (ind) ind.classList.add('off');
+        if (lastLat != null) {
+          status.innerHTML =
+            '<span class="tracking-dot off" id="tracking-indicator" aria-hidden="true"></span>' +
+            'Tracking stopped. Last position kept on the map.';
+        }
+      }
+
+      function startTracking() {
         if (!navigator.geolocation) {
           status.textContent = 'Geolocation not supported on this device.';
           return;
         }
-        status.textContent = 'Requesting location…';
-        navigator.geolocation.getCurrentPosition(
-          pos => show(pos.coords.latitude, pos.coords.longitude, 'Using device location.'),
-          () => { status.textContent = 'Location denied or unavailable. Try a place search.'; },
-          { enableHighAccuracy: true, timeout: 12000 }
+        stopTracking();
+        followUser = true;
+        btnGeo.textContent = 'Tracking…';
+        btnGeo.disabled = true;
+        btnStop.hidden = false;
+        status.innerHTML =
+          '<span class="tracking-dot" id="tracking-indicator" aria-hidden="true"></span>' +
+          'Requesting location permission…';
+
+        watchId = navigator.geolocation.watchPosition(
+          pos => {
+            btnGeo.disabled = false;
+            btnGeo.textContent = 'Start live tracking';
+            show(
+              pos.coords.latitude,
+              pos.coords.longitude,
+              'Live tracking on — updates as you move.',
+              pos.coords.accuracy
+            );
+          },
+          err => {
+            stopTracking();
+            const msg = err && err.code === 1
+              ? 'Location permission denied. Enable it in browser settings or use place search.'
+              : 'Location unavailable. Try place search.';
+            status.innerHTML =
+              '<span class="tracking-dot off" id="tracking-indicator" aria-hidden="true"></span>' + msg;
+          },
+          {
+            enableHighAccuracy: true,
+            maximumAge: 5000,
+            timeout: 20000,
+          }
         );
-      });
+      }
+
+      btnGeo.addEventListener('click', startTracking);
+      btnStop.addEventListener('click', stopTracking);
 
       document.getElementById('btn-search').addEventListener('click', async () => {
         const q = document.getElementById('place-search').value.trim();
         if (!q) return;
-        status.textContent = 'Searching…';
+        stopTracking();
+        followUser = true;
+        status.innerHTML =
+          '<span class="tracking-dot off" id="tracking-indicator" aria-hidden="true"></span>Searching…';
         try {
           const url = 'https://nominatim.openstreetmap.org/search?format=json&limit=1&countrycodes=gb,ie,fr,be,nl&q=' +
             encodeURIComponent(q);
-          const r = await fetch(url, {
-            headers: {
-              'Accept-Language': 'en-GB',
-              // Nominatim usage policy: identify application
-            },
-          });
+          const r = await fetch(url, { headers: { 'Accept-Language': 'en-GB' } });
           const rows = await r.json();
-          if (!rows.length) { status.textContent = 'No place found.'; return; }
-          show(parseFloat(rows[0].lat), parseFloat(rows[0].lon), 'Matched: ' + (rows[0].display_name || q));
+          if (!rows.length) {
+            status.innerHTML =
+              '<span class="tracking-dot off" id="tracking-indicator" aria-hidden="true"></span>No place found.';
+            return;
+          }
+          show(
+            parseFloat(rows[0].lat),
+            parseFloat(rows[0].lon),
+            'Matched: ' + (rows[0].display_name || q)
+          );
         } catch (e) {
-          status.textContent = 'Search failed. Try again later.';
+          status.innerHTML =
+            '<span class="tracking-dot off" id="tracking-indicator" aria-hidden="true"></span>Search failed. Try again later.';
         }
       });
 
       document.getElementById('place-search').addEventListener('keydown', e => {
         if (e.key === 'Enter') document.getElementById('btn-search').click();
       });
+
+      // Clean up watch when leaving page
+      window.addEventListener('pagehide', stopTracking);
     });
   </script>
 </body>
