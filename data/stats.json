@@ -1,8 +1,8 @@
 {
-  "updatedAt": "2026-09-02T08:37:16.251224+00:00",
+  "updatedAt": "2026-09-02T13:26:10.096274+00:00",
   "source": "missionchief.co.uk",
   "sync": {
-    "durationSeconds": 29,
+    "durationSeconds": 21,
     "schedule": "hourly"
   },
   "endpoints": {
@@ -17,7 +17,7 @@
   },
   "totals": {
     "stations": 611,
-    "units": 1523,
+    "units": 1526,
     "personnel": 40776,
     "dispatchCentres": 36,
     "allianceBuildings": 1196,
@@ -26,8 +26,8 @@
   },
   "stationsByType": {
     "Ambulance Station": 318,
-    "Police Station": 66,
     "Hospital": 21,
+    "Police Station": 66,
     "Bomb Disposal": 3,
     "HART Base": 5,
     "Home Response / HRL": 48,
@@ -59,9 +59,9 @@
     "Scotland": 4
   },
   "vehicleStatus": {
-    "2": 1499,
-    "5": 6,
-    "4": 18
+    "2": 1523,
+    "4": 2,
+    "5": 1
   },
   "vehiclesByType": {
     "5": 544,
@@ -93,7 +93,7 @@
     "28": 10,
     "101": 10,
     "104": 10,
-    "2": 9
+    "93": 9
   },
   "quality": {
     "stationsMissingName": 0,
@@ -1359,21 +1359,6 @@
       "dcAssign": "api"
     },
     {
-      "id": 1988767,
-      "name": "(P01) Pateley Bridge ",
-      "type": "Police Station",
-      "typeId": 6,
-      "level": 5,
-      "lat": 54.087752920802856,
-      "lon": -1.759263660225907,
-      "personnel": 200,
-      "small": false,
-      "region": "North",
-      "dcId": 1988744,
-      "dcName": "(M2XN) North Yorkshire FCR",
-      "dcAssign": "api"
-    },
-    {
       "id": 2033677,
       "name": "(NHS-HD-001) Harrogate District ",
       "type": "Hospital",
@@ -1747,6 +1732,21 @@
       "dcId": 2638184,
       "dcName": "Cornwall FCR",
       "dcAssign": "self"
+    },
+    {
+      "id": 1988767,
+      "name": "(P01) Pateley Bridge ",
+      "type": "Police Station",
+      "typeId": 6,
+      "level": 5,
+      "lat": 54.087752920802856,
+      "lon": -1.759263660225907,
+      "personnel": 200,
+      "small": false,
+      "region": "North",
+      "dcId": 1988744,
+      "dcName": "(M2XN) North Yorkshire FCR",
+      "dcAssign": "api"
     },
     {
       "id": 2635482,
@@ -11352,15 +11352,15 @@
     }
   ],
   "credits": {
-    "credits_user_current": 215863,
-    "credits_user_total": 153270052,
-    "credits_alliance_current": 390781490,
-    "coins_user_current": 118,
-    "credits_alliance_total": 29892387633
+    "credits_user_current": 180734,
+    "credits_user_total": 153433247,
+    "credits_alliance_current": 390845435,
+    "coins_user_current": 95,
+    "credits_alliance_total": 29894122231
   },
   "alliance": {
     "users": 1823,
-    "online": 6,
+    "online": 8,
     "rank": 9,
     "financeActive": true
   }
