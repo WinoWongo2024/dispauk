@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Admin | DispaUK</title>
+  <meta name="robots" content="noindex, nofollow">
+  <meta name="theme-color" content="#0b1220">
+  <link rel="stylesheet" href="/styles.css">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Roboto+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <style>
+    .admin-wrap { max-width: 720px; margin: 0 auto; }
+    .admin-panel { background: var(--surface); border: 1px solid var(--border); border-radius: 12px; padding: 18px; margin-bottom: 16px; }
+    .admin-panel h2 { font-size: 1rem; margin: 0 0 12px; }
+    .admin-panel label { display: block; font-size: 0.85rem; color: var(--text-muted); margin: 10px 0 4px; }
+    .admin-panel input, .admin-panel select, .admin-panel textarea {
+      width: 100%; padding: 10px; border-radius: 8px; border: 1px solid var(--border);
+      background: var(--bg, #0b1220); color: var(--text); font: inherit; box-sizing: border-box;
+    }
+    .admin-panel textarea { min-height: 120px; resize: vertical; }
+    .admin-actions { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 14px; }
+    .story-row {
+      display: flex; justify-content: space-between; align-items: flex-start; gap: 12px;
+      padding: 12px 0; border-bottom: 1px solid var(--border);
+    }
+    .story-row:last-child { border-bottom: none; }
+    .login-box { max-width: 360px; margin: 40px auto; }
+    .preview-img { max-width: 100%; max-height: 200px; border-radius: 8px; margin-top: 8px; display: none; }
+    .admin-hint { font-size: 0.8rem; color: var(--text-muted); margin-top: 8px; }
+  </style>
+</head>
+<body>
+  <header class="header">
+    <div class="container header-inner">
+      <a href="/" class="logo"><span class="logo-mark">DU</span><span class="logo-text">DispaUK</span></a>
+      <nav class="nav" aria-label="Primary">
+        <a href="/">Dashboard</a>
+        <a href="/news/">News</a>
+        <a href="/admin/">Admin</a>
+      </nav>
+      <button class="nav-toggle" type="button" aria-label="Menu" aria-expanded="false"><span></span><span></span><span></span></button>
+    </div>
+  </header>
+  <main class="legal-page">
+    <div class="container admin-wrap">
+      <div id="login-view" class="login-box">
+        <div class="admin-panel">
+          <h2>Control room login</h2>
+          <p class="text-muted">Admin access for filing news stories.</p>
+          <label for="password">Password</label>
+          <input type="password" id="password" autocomplete="current-password">
+          <div class="admin-actions">
+            <button type="button" class="btn btn-primary" id="btn-login">Sign in</button>
+          </div>
+          <p class="admin-hint" id="login-error" hidden>Incorrect password.</p>
+        </div>
+      </div>
+
+      <div id="admin-view" hidden>
+        <div class="section-header-left" style="margin-bottom:16px">
+          <span class="section-kicker">ADMIN</span>
+          <h1 style="font-size:1.5rem">News desk</h1>
+          <p class="text-muted">Add or edit stories. Saved in this browser; export JSON to publish site-wide via GitHub.</p>
+        </div>
+
+        <div class="admin-panel">
+          <h2>New / edit story</h2>
+          <input type="hidden" id="f-id">
+          <label for="f-title">Title</label>
+          <input id="f-title" placeholder="e.g. Multi-agency response — …">
+          <label for="f-type">Type of emergency</label>
+          <select id="f-type">
+            <option>Fire</option>
+            <option>Road traffic collision</option>
+            <option>Medical</option>
+            <option>Specialist rescue / structural</option>
+            <option>Water rescue</option>
+            <option>Hazmat</option>
+            <option>Police incident</option>
+            <option>Flooding</option>
+            <option>Other</option>
+          </select>
+          <label for="f-severity">Severity</label>
+          <select id="f-severity">
+            <option value="high">High</option>
+            <option value="medium" selected>Medium</option>
+            <option value="low">Low</option>
+          </select>
+          <label for="f-date">Date</label>
+          <input type="date" id="f-date">
+          <label for="f-location">Location</label>
+          <input id="f-location" placeholder="Town, county">
+          <label for="f-summary">Summary (short)</label>
+          <input id="f-summary" placeholder="One-line intro">
+          <label for="f-body">Full caption / body</label>
+          <textarea id="f-body" placeholder="Full story text…"></textarea>
+          <label for="f-units">Units (comma-separated)</label>
+          <input id="f-units" placeholder="Pump, Aerial, Ambulance">
+          <label for="f-author">Author</label>
+          <input id="f-author" value="DispaUK Control">
+          <label for="f-image">Photo (optional)</label>
+          <input type="file" id="f-image" accept="image/*">
+          <img id="f-preview" class="preview-img" alt="Preview">
+          <input type="hidden" id="f-image-data">
+          <div class="admin-actions">
+            <button type="button" class="btn btn-primary" id="btn-save">Save story</button>
+            <button type="button" class="btn btn-outline" id="btn-clear">Clear form</button>
+            <button type="button" class="btn btn-outline" id="btn-export">Export news.json</button>
+            <button type="button" class="btn btn-ghost" id="btn-logout">Log out</button>
+          </div>
+          <p class="admin-hint">Export downloads news.json — commit it to <code>data/news.json</code> on GitHub so everyone sees it. Local saves only show on this device until you export &amp; push.</p>
+        </div>
+
+        <div class="admin-panel">
+          <h2>Stories on this device</h2>
+          <div id="story-list"></div>
+        </div>
+      </div>
+    </div>
+  </main>
+  <footer class="footer-slim"><div class="container footer-bottom"><p class="footer-copy">© <span data-current-year>2026</span> DispaUK</p></div></footer>
+  <script src="/script.js" defer></script>
+  <script>
+    const PASS_HASH = 'e254e8dd836b604a479a33496734f55e9507dc30939784566772e4c82f0bab7e';
+    const SESSION_KEY = 'dispauk_admin_session';
+    const LOCAL_KEY = 'dispauk_news_local';
+
+    async function sha256(text) {
+      const data = new TextEncoder().encode(text);
+      const buf = await crypto.subtle.digest('SHA-256', data);
+      return Array.from(new Uint8Array(buf)).map(b => b.toString(16).padStart(2, '0')).join('');
+    }
+
+    function loadLocal() {
+      try { return JSON.parse(localStorage.getItem(LOCAL_KEY) || '[]'); }
+      catch (e) { return []; }
+    }
+    function saveLocal(items) {
+      localStorage.setItem(LOCAL_KEY, JSON.stringify(items));
+    }
+
+    function showAdmin(ok) {
+      document.getElementById('login-view').hidden = ok;
+      document.getElementById('admin-view').hidden = !ok;
+      if (ok) renderList();
+    }
+
+    function renderList() {
+      const items = loadLocal().filter(i => !i._deleted);
+      const el = document.getElementById('story-list');
+      if (!items.length) {
+        el.innerHTML = '<p class="text-muted">No local stories yet. File one above.</p>';
+        return;
+      }
+      el.innerHTML = items.map(i =>
+        '<div class="story-row">' +
+          '<div><strong>' + (i.title || 'Untitled') + '</strong><br><span class="text-muted">' + (i.date || '') + ' · ' + (i.type || '') + '</span></div>' +
+          '<div style="display:flex;gap:6px">' +
+            '<button type="button" class="btn btn-outline" data-edit="' + i.id + '">Edit</button>' +
+            '<button type="button" class="btn btn-ghost" data-del="' + i.id + '">Delete</button>' +
+          '</div></div>'
+      ).join('');
+    }
+
+    function clearForm() {
+      document.getElementById('f-id').value = '';
+      document.getElementById('f-title').value = '';
+      document.getElementById('f-type').selectedIndex = 0;
+      document.getElementById('f-severity').value = 'medium';
+      document.getElementById('f-date').value = new Date().toISOString().slice(0, 10);
+      document.getElementById('f-location').value = '';
+      document.getElementById('f-summary').value = '';
+      document.getElementById('f-body').value = '';
+      document.getElementById('f-units').value = '';
+      document.getElementById('f-author').value = 'DispaUK Control';
+      document.getElementById('f-image-data').value = '';
+      document.getElementById('f-image').value = '';
+      const prev = document.getElementById('f-preview');
+      prev.src = '';
+      prev.style.display = 'none';
+    }
+
+    function fillForm(item) {
+      document.getElementById('f-id').value = item.id || '';
+      document.getElementById('f-title').value = item.title || '';
+      document.getElementById('f-type').value = item.type || 'Other';
+      document.getElementById('f-severity').value = item.severity || 'medium';
+      document.getElementById('f-date').value = item.date || '';
+      document.getElementById('f-location').value = item.location || '';
+      document.getElementById('f-summary').value = item.summary || '';
+      document.getElementById('f-body').value = item.body || '';
+      document.getElementById('f-units').value = (item.units || []).join(', ');
+      document.getElementById('f-author').value = item.author || 'DispaUK Control';
+      document.getElementById('f-image-data').value = item.image || '';
+      const prev = document.getElementById('f-preview');
+      if (item.image) { prev.src = item.image; prev.style.display = 'block'; }
+      else { prev.src = ''; prev.style.display = 'none'; }
+    }
+
+    document.addEventListener('DOMContentLoaded', () => {
+      if (sessionStorage.getItem(SESSION_KEY) === '1') showAdmin(true);
+      else showAdmin(false);
+      clearForm();
+
+      document.getElementById('btn-login').addEventListener('click', async () => {
+        const hash = await sha256(document.getElementById('password').value);
+        if (hash === PASS_HASH) {
+          sessionStorage.setItem(SESSION_KEY, '1');
+          document.getElementById('login-error').hidden = true;
+          showAdmin(true);
+        } else {
+          document.getElementById('login-error').hidden = false;
+        }
+      });
+      document.getElementById('password').addEventListener('keydown', e => {
+        if (e.key === 'Enter') document.getElementById('btn-login').click();
+      });
+
+      document.getElementById('btn-logout').addEventListener('click', () => {
+        sessionStorage.removeItem(SESSION_KEY);
+        showAdmin(false);
+      });
+
+      document.getElementById('btn-clear').addEventListener('click', clearForm);
+
+      document.getElementById('f-image').addEventListener('change', e => {
+        const file = e.target.files && e.target.files[0];
+        if (!file) return;
+        if (file.size > 900000) {
+          alert('Image too large (max ~900 KB). Compress it first.');
+          return;
+        }
+        const reader = new FileReader();
+        reader.onload = () => {
+          document.getElementById('f-image-data').value = reader.result;
+          const prev = document.getElementById('f-preview');
+          prev.src = reader.result;
+          prev.style.display = 'block';
+        };
+        reader.readAsDataURL(file);
+      });
+
+      document.getElementById('btn-save').addEventListener('click', () => {
+        const title = document.getElementById('f-title').value.trim();
+        if (!title) { alert('Title is required.'); return; }
+        let id = document.getElementById('f-id').value.trim();
+        if (!id) id = 'local-' + Date.now();
+        const units = document.getElementById('f-units').value.split(',').map(s => s.trim()).filter(Boolean);
+        const item = {
+          id,
+          date: document.getElementById('f-date').value || new Date().toISOString().slice(0, 10),
+          title,
+          type: document.getElementById('f-type').value,
+          severity: document.getElementById('f-severity').value,
+          location: document.getElementById('f-location').value.trim(),
+          summary: document.getElementById('f-summary').value.trim(),
+          body: document.getElementById('f-body').value.trim(),
+          units,
+          author: document.getElementById('f-author').value.trim() || 'DispaUK Control',
+          image: document.getElementById('f-image-data').value || '',
+          imageAlt: title,
+        };
+        const items = loadLocal().filter(i => i.id !== id);
+        items.push(item);
+        saveLocal(items);
+        renderList();
+        alert('Saved on this device. Open /news/ to preview. Use Export to publish site-wide.');
+        clearForm();
+      });
+
+      document.getElementById('story-list').addEventListener('click', e => {
+        const edit = e.target.getAttribute('data-edit');
+        const del = e.target.getAttribute('data-del');
+        if (edit) {
+          const item = loadLocal().find(i => i.id === edit);
+          if (item) fillForm(item);
+        }
+        if (del) {
+          if (!confirm('Delete this story from local storage?')) return;
+          saveLocal(loadLocal().filter(i => i.id !== del));
+          renderList();
+        }
+      });
+
+      document.getElementById('btn-export').addEventListener('click', async () => {
+        let fileItems = [];
+        try {
+          const res = await fetch('/data/news.json', { cache: 'no-cache' });
+          if (res.ok) {
+            const data = await res.json();
+            fileItems = data.items || [];
+          }
+        } catch (e) { /* */ }
+        const local = loadLocal();
+        const map = new Map();
+        fileItems.forEach(i => map.set(i.id, i));
+        local.forEach(i => {
+          if (i._deleted) map.delete(i.id);
+          else map.set(i.id, i);
+        });
+        const items = Array.from(map.values()).sort((a, b) => String(b.date).localeCompare(String(a.date)));
+        const payload = { updatedAt: new Date().toISOString(), items };
+        const blob = new Blob([JSON.stringify(payload, null, 2)], { type: 'application/json' });
+        const a = document.createElement('a');
+        a.href = URL.createObjectURL(blob);
+        a.download = 'news.json';
+        a.click();
+        URL.revokeObjectURL(a.href);
+      });
+    });
+  </script>
+</body>
+</html>
