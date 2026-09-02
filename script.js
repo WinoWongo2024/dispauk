@@ -139,7 +139,6 @@ function updateFreshnessBanner(f, rt, failed) {
       msg.textContent = f.banner + (rt.absolute ? ' · ' + rt.absolute : '');
     }
   }
-  // Hide green banner on fully live pages after a moment? Keep visible but subtle via CSS for live.
 }
 
 function applyFreshness(updatedAt) {
@@ -422,7 +421,6 @@ async function loadStats() {
         .join('');
     }
 
-    // Quality score on status if present
     if (data.quality) {
       const q = data.quality;
       const total = (t.stations || 0) || 1;
@@ -520,6 +518,16 @@ function initToolbar() {
   }
 }
 
+/** Google AdSense publisher — injected site-wide (ca-pub-1802148026096192). */
+function ensureAdSenseTag() {
+  if (document.querySelector('script[src*="pagead2.googlesyndication.com"]')) return;
+  const s = document.createElement('script');
+  s.async = true;
+  s.src = 'https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1802148026096192';
+  s.crossOrigin = 'anonymous';
+  document.head.appendChild(s);
+}
+
 function initCookies() {
   const KEY = 'dispauk_cookie_consent';
   let existing = null;
@@ -536,9 +544,9 @@ function initCookies() {
   banner.setAttribute('aria-label', 'Cookie consent');
   banner.innerHTML =
     '<div class="container cookie-banner-inner">' +
-    '<p class="cookie-banner-text">Essential storage only. <a href="/cookies/">Cookies</a> · <a href="/privacy/">Privacy</a></p>' +
+    '<p class="cookie-banner-text">We use cookies for essential site features and Google AdSense advertising. <a href="/cookies/">Cookies</a> · <a href="/privacy/">Privacy</a></p>' +
     '<div class="cookie-banner-actions">' +
-    '<button type="button" class="btn btn-ghost" data-c="reject">Reject</button>' +
+    '<button type="button" class="btn btn-ghost" data-c="reject">Reject non-essential</button>' +
     '<button type="button" class="btn btn-primary" data-c="accept">Accept</button>' +
     '</div></div>';
   document.body.appendChild(banner);
@@ -561,13 +569,13 @@ function initCookies() {
 }
 
 document.addEventListener('DOMContentLoaded', function () {
+  ensureAdSenseTag();
   document.querySelectorAll('[data-current-year]').forEach(function (el) {
     el.textContent = String(new Date().getFullYear());
   });
   initNav();
   initToolbar();
   initCookies();
-  // Show loading station table immediately if present
   renderStations();
   loadStats();
 });
