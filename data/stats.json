@@ -1,8 +1,8 @@
 {
-  "updatedAt": "2026-09-01T23:09:24.364716+00:00",
+  "updatedAt": "2026-09-02T02:54:48.220258+00:00",
   "source": "missionchief.co.uk",
   "sync": {
-    "durationSeconds": 23,
+    "durationSeconds": 21,
     "schedule": "hourly"
   },
   "endpoints": {
@@ -16,22 +16,22 @@
     "einsaetze": true
   },
   "totals": {
-    "stations": 600,
-    "units": 1505,
-    "personnel": 40367,
-    "dispatchCentres": 38,
+    "stations": 615,
+    "units": 1518,
+    "personnel": 40406,
+    "dispatchCentres": 40,
     "allianceBuildings": 1196,
     "equipments": 11,
     "missionTypes": 1068
   },
   "stationsByType": {
-    "Ambulance Station": 305,
+    "Ambulance Station": 318,
     "Police Station": 66,
     "Hospital": 21,
     "Bomb Disposal": 3,
     "HART Base": 5,
     "Home Response / HRL": 48,
-    "Dispatch Centre": 38,
+    "Dispatch Centre": 40,
     "Custody Suite": 1,
     "Fire Station": 50,
     "Health Centre": 2,
@@ -49,23 +49,24 @@
     "SAR Resource Centre": 1
   },
   "stationsByRegion": {
-    "Midlands": 66,
+    "Midlands": 73,
     "North": 95,
     "South West": 230,
-    "London & South": 31,
+    "London & South": 39,
     "Wales": 52,
     "South East": 74,
     "Other / Overseas": 48,
     "Scotland": 4
   },
   "vehicleStatus": {
-    "2": 1495,
+    "2": 1508,
+    "4": 6,
     "6": 1,
-    "4": 7,
-    "5": 2
+    "1": 2,
+    "5": 1
   },
   "vehiclesByType": {
-    "5": 531,
+    "5": 544,
     "8": 144,
     "17": 60,
     "10": 47,
@@ -100,9 +101,9 @@
     "stationsMissingName": 0,
     "stationsMissingCoords": 0,
     "duplicateStationIds": 0,
-    "dcAssignedFromApi": 558,
+    "dcAssignedFromApi": 571,
     "dcAssignedNearest": 4,
-    "dispatchCentres": 38,
+    "dispatchCentres": 40,
     "ok": true
   },
   "dispatchCentres": [
@@ -612,6 +613,39 @@
       "region": "Midlands"
     },
     {
+      "id": 2364325,
+      "name": "Nottinghamshire Dispatch Centre",
+      "lat": 52.946822813173625,
+      "lon": -1.13869749462108,
+      "level": 0,
+      "stationCount": 11,
+      "personnel": 1179,
+      "coverageRadiusM": 96078,
+      "coveragePolygon": [
+        [
+          52.1284215,
+          -0.9972076
+        ],
+        [
+          53.32923344538835,
+          -0.9595714000254363
+        ],
+        [
+          53.320229116794195,
+          -1.1327364566303637
+        ],
+        [
+          53.1323617,
+          -1.2114973
+        ],
+        [
+          52.93523097734856,
+          -1.2598028402246915
+        ]
+      ],
+      "region": "Midlands"
+    },
+    {
       "id": 2635644,
       "name": "Dorset DC",
       "lat": 50.712641750704655,
@@ -647,39 +681,6 @@
         ]
       ],
       "region": "South West"
-    },
-    {
-      "id": 2364325,
-      "name": "Nottinghamshire Dispatch Centre",
-      "lat": 52.946822813173625,
-      "lon": -1.13869749462108,
-      "level": 0,
-      "stationCount": 10,
-      "personnel": 1176,
-      "coverageRadiusM": 46377,
-      "coveragePolygon": [
-        [
-          52.9178716,
-          -1.1369139
-        ],
-        [
-          53.32923344538835,
-          -0.9595714000254363
-        ],
-        [
-          53.320229116794195,
-          -1.1327364566303637
-        ],
-        [
-          53.1323617,
-          -1.2114973
-        ],
-        [
-          52.93523097734856,
-          -1.2598028402246915
-        ]
-      ],
-      "region": "Midlands"
     },
     {
       "id": 2663954,
@@ -1041,6 +1042,39 @@
       "region": "London & South"
     },
     {
+      "id": 2667692,
+      "name": "Buckinghamshire FCR",
+      "lat": 52.00018486915197,
+      "lon": -0.9872044967911688,
+      "level": 0,
+      "stationCount": 5,
+      "personnel": 15,
+      "coverageRadiusM": 46039,
+      "coveragePolygon": [
+        [
+          51.63124520011328,
+          -0.762043535514232
+        ],
+        [
+          52.041426863823645,
+          -0.7805549469358641
+        ],
+        [
+          52.002249477650956,
+          -0.9858249238768033
+        ],
+        [
+          52.00018486915197,
+          -0.9872044967911688
+        ],
+        [
+          51.7220027,
+          -0.8345048
+        ]
+      ],
+      "region": "London & South"
+    },
+    {
       "id": 2652166,
       "name": "Herefordshire FCR ",
       "lat": 52.05716888865516,
@@ -1101,6 +1135,72 @@
         ]
       ],
       "region": "North"
+    },
+    {
+      "id": 2621054,
+      "name": "Leicestershire DC",
+      "lat": 52.62720174725001,
+      "lon": -1.1352211796563945,
+      "level": 0,
+      "stationCount": 5,
+      "personnel": 129,
+      "coverageRadiusM": 23884,
+      "coveragePolygon": [
+        [
+          52.494349566585576,
+          -0.9394269322046626
+        ],
+        [
+          52.76823410612103,
+          -0.8907056177346686
+        ],
+        [
+          52.7683615,
+          -1.2224403
+        ],
+        [
+          52.6621817,
+          -1.1745279
+        ],
+        [
+          52.62720174725001,
+          -1.1352211796563945
+        ]
+      ],
+      "region": "Midlands"
+    },
+    {
+      "id": 2667691,
+      "name": "Northamptonshire FCR",
+      "lat": 52.23683015869168,
+      "lon": -0.8973625968979512,
+      "level": 0,
+      "stationCount": 5,
+      "personnel": 15,
+      "coverageRadiusM": 32974,
+      "coveragePolygon": [
+        [
+          52.0284581343261,
+          -1.1503625262231658
+        ],
+        [
+          52.23683015869168,
+          -0.8973625968979512
+        ],
+        [
+          52.4027974,
+          -0.7412786
+        ],
+        [
+          52.49171523965292,
+          -0.6981443685977364
+        ],
+        [
+          52.267803927719655,
+          -1.18562532489611
+        ]
+      ],
+      "region": "Midlands"
     },
     {
       "id": 2621314,
@@ -1246,35 +1346,6 @@
         ]
       ],
       "region": "South East"
-    },
-    {
-      "id": 2621054,
-      "name": "Leicestershire DC",
-      "lat": 52.62720174725001,
-      "lon": -1.1352211796563945,
-      "level": 0,
-      "stationCount": 3,
-      "personnel": 123,
-      "coverageRadiusM": 17598,
-      "coveragePolygon": [
-        [
-          52.62720174725001,
-          -1.1352211796563945
-        ],
-        [
-          52.632155936913556,
-          -1.0821938021084405
-        ],
-        [
-          52.7683615,
-          -1.2224403
-        ],
-        [
-          52.6621817,
-          -1.1745279
-        ]
-      ],
-      "region": "Midlands"
     },
     {
       "id": 2621062,
@@ -4696,21 +4767,6 @@
       "dcAssign": "api"
     },
     {
-      "id": 1987519,
-      "name": "(MET-003) MarbleArch",
-      "type": "Police Station",
-      "typeId": 6,
-      "level": 2,
-      "lat": 51.51473303698452,
-      "lon": -0.15935976855465364,
-      "personnel": 200,
-      "small": true,
-      "region": "South East",
-      "dcId": 1984642,
-      "dcName": "West, South, SW,NW North London Dispatch",
-      "dcAssign": "api"
-    },
-    {
       "id": 2654951,
       "name": "Clevedon Coastguard Rescue Station",
       "type": "Coastguard Station",
@@ -4936,6 +4992,21 @@
       "dcAssign": "api"
     },
     {
+      "id": 2667695,
+      "name": "Corby Ambulance Station ",
+      "type": "Ambulance Station",
+      "typeId": 2,
+      "level": 0,
+      "lat": 52.49171523965292,
+      "lon": -0.6981443685977364,
+      "personnel": 3,
+      "small": true,
+      "region": "Midlands",
+      "dcId": 2667691,
+      "dcName": "Northamptonshire FCR",
+      "dcAssign": "api"
+    },
+    {
       "id": 1845638,
       "name": "(HRL-008)  Rotherhithe SAR HRL",
       "type": "Home Response / HRL",
@@ -4948,6 +5019,36 @@
       "region": "South East",
       "dcId": 1844373,
       "dcName": "Central,South/North East London Dispatch",
+      "dcAssign": "api"
+    },
+    {
+      "id": 2667694,
+      "name": "Northampton Ambulance HQ",
+      "type": "Ambulance Station",
+      "typeId": 2,
+      "level": 0,
+      "lat": 52.26892856448275,
+      "lon": -0.9007223077717432,
+      "personnel": 3,
+      "small": true,
+      "region": "Midlands",
+      "dcId": 2667691,
+      "dcName": "Northamptonshire FCR",
+      "dcAssign": "api"
+    },
+    {
+      "id": 2667698,
+      "name": "High Wycombe Ambulance Station",
+      "type": "Ambulance Station",
+      "typeId": 2,
+      "level": 0,
+      "lat": 51.63124520011328,
+      "lon": -0.762043535514232,
+      "personnel": 3,
+      "small": true,
+      "region": "London & South",
+      "dcId": 2667692,
+      "dcName": "Buckinghamshire FCR",
       "dcAssign": "api"
     },
     {
@@ -4981,6 +5082,36 @@
       "dcAssign": "api"
     },
     {
+      "id": 2667699,
+      "name": "Market Harborough Ambulance Station",
+      "type": "Ambulance Station",
+      "typeId": 2,
+      "level": 0,
+      "lat": 52.494349566585576,
+      "lon": -0.9394269322046626,
+      "personnel": 3,
+      "small": true,
+      "region": "Midlands",
+      "dcId": 2621054,
+      "dcName": "Leicestershire DC",
+      "dcAssign": "api"
+    },
+    {
+      "id": 2667691,
+      "name": "Northamptonshire FCR",
+      "type": "Dispatch Centre",
+      "typeId": 7,
+      "level": 0,
+      "lat": 52.23683015869168,
+      "lon": -0.8973625968979512,
+      "personnel": 0,
+      "small": false,
+      "region": "Midlands",
+      "dcId": 2667691,
+      "dcName": "Northamptonshire FCR",
+      "dcAssign": "self"
+    },
+    {
       "id": 2657467,
       "name": "HM Coastguard Watchet Lookout",
       "type": "Coastguard Station",
@@ -4996,6 +5127,21 @@
       "dcAssign": "api"
     },
     {
+      "id": 2667705,
+      "name": "Princes Risborough Ambulance Station ",
+      "type": "Ambulance Station",
+      "typeId": 2,
+      "level": 0,
+      "lat": 51.7220027,
+      "lon": -0.8345048,
+      "personnel": 3,
+      "small": true,
+      "region": "London & South",
+      "dcId": 2667692,
+      "dcName": "Buckinghamshire FCR",
+      "dcAssign": "api"
+    },
+    {
       "id": 2471255,
       "name": "NPAS Almondsbury ",
       "type": "Police Aviation",
@@ -5008,6 +5154,156 @@
       "region": "South West",
       "dcId": 2353684,
       "dcName": "Somerset FCR ",
+      "dcAssign": "api"
+    },
+    {
+      "id": 2667704,
+      "name": "Buckingham Ambulance Station ",
+      "type": "Ambulance Station",
+      "typeId": 2,
+      "level": 0,
+      "lat": 52.002249477650956,
+      "lon": -0.9858249238768033,
+      "personnel": 3,
+      "small": true,
+      "region": "London & South",
+      "dcId": 2667692,
+      "dcName": "Buckinghamshire FCR",
+      "dcAssign": "api"
+    },
+    {
+      "id": 2667700,
+      "name": "Melton Mowbray Ambulance Station ",
+      "type": "Ambulance Station",
+      "typeId": 2,
+      "level": 0,
+      "lat": 52.76823410612103,
+      "lon": -0.8907056177346686,
+      "personnel": 3,
+      "small": true,
+      "region": "Midlands",
+      "dcId": 2621054,
+      "dcName": "Leicestershire DC",
+      "dcAssign": "api"
+    },
+    {
+      "id": 2667696,
+      "name": "Milton Keynes Ambulance HQ",
+      "type": "Ambulance Station",
+      "typeId": 2,
+      "level": 0,
+      "lat": 52.041426863823645,
+      "lon": -0.7805549469358641,
+      "personnel": 3,
+      "small": true,
+      "region": "London & South",
+      "dcId": 2667692,
+      "dcName": "Buckinghamshire FCR",
+      "dcAssign": "api"
+    },
+    {
+      "id": 2667697,
+      "name": "Aylesbury Ambulance Station",
+      "type": "Ambulance Station",
+      "typeId": 2,
+      "level": 0,
+      "lat": 51.82181697223479,
+      "lon": -0.846048807475096,
+      "personnel": 3,
+      "small": true,
+      "region": "London & South",
+      "dcId": 2667692,
+      "dcName": "Buckinghamshire FCR",
+      "dcAssign": "api"
+    },
+    {
+      "id": 2667701,
+      "name": "Daventry Ambulance Station ",
+      "type": "Ambulance Station",
+      "typeId": 2,
+      "level": 0,
+      "lat": 52.267803927719655,
+      "lon": -1.18562532489611,
+      "personnel": 3,
+      "small": true,
+      "region": "Midlands",
+      "dcId": 2667691,
+      "dcName": "Northamptonshire FCR",
+      "dcAssign": "api"
+    },
+    {
+      "id": 2667692,
+      "name": "Buckinghamshire FCR",
+      "type": "Dispatch Centre",
+      "typeId": 7,
+      "level": 0,
+      "lat": 52.00018486915197,
+      "lon": -0.9872044967911688,
+      "personnel": 0,
+      "small": false,
+      "region": "London & South",
+      "dcId": 2667692,
+      "dcName": "Buckinghamshire FCR",
+      "dcAssign": "self"
+    },
+    {
+      "id": 1987519,
+      "name": "(MET-003) MarbleArch",
+      "type": "Police Station",
+      "typeId": 6,
+      "level": 2,
+      "lat": 51.51473303698452,
+      "lon": -0.15935976855465364,
+      "personnel": 200,
+      "small": true,
+      "region": "South East",
+      "dcId": 1984642,
+      "dcName": "West, South, SW,NW North London Dispatch",
+      "dcAssign": "api"
+    },
+    {
+      "id": 2667702,
+      "name": "Kettering Ambulance Station",
+      "type": "Ambulance Station",
+      "typeId": 2,
+      "level": 0,
+      "lat": 52.4027974,
+      "lon": -0.7412786,
+      "personnel": 3,
+      "small": true,
+      "region": "Midlands",
+      "dcId": 2667691,
+      "dcName": "Northamptonshire FCR",
+      "dcAssign": "api"
+    },
+    {
+      "id": 2667703,
+      "name": "Towcester Ambulance Station",
+      "type": "Ambulance Station",
+      "typeId": 2,
+      "level": 0,
+      "lat": 52.1284215,
+      "lon": -0.9972076,
+      "personnel": 3,
+      "small": true,
+      "region": "London & South",
+      "dcId": 2364325,
+      "dcName": "Nottinghamshire Dispatch Centre",
+      "dcAssign": "api"
+    },
+    {
+      "id": 2667693,
+      "name": "Brackley Ambulance Station",
+      "type": "Ambulance Station",
+      "typeId": 2,
+      "level": 0,
+      "lat": 52.0284581343261,
+      "lon": -1.1503625262231658,
+      "personnel": 3,
+      "small": true,
+      "region": "London & South",
+      "dcId": 2667691,
+      "dcName": "Northamptonshire FCR",
       "dcAssign": "api"
     },
     {
@@ -10449,14 +10745,14 @@
       "name": "KGXSP | BTP-002/IRV-001",
       "type": 8,
       "buildingId": 1983967,
-      "status": 2
+      "status": 4
     },
     {
       "id": 5330403,
       "name": "KGXSP | BTP-002/IRV-002",
       "type": 8,
       "buildingId": 1983967,
-      "status": 2
+      "status": 4
     },
     {
       "id": 5330499,
@@ -11030,7 +11326,7 @@
       "name": "ING | MET-002/IRV-002",
       "type": 8,
       "buildingId": 2033689,
-      "status": 2
+      "status": 4
     },
     {
       "id": 6290338,
@@ -11209,15 +11505,15 @@
     }
   ],
   "credits": {
-    "credits_user_current": 1340686,
-    "credits_user_total": 152948181,
-    "credits_alliance_current": 390649351,
-    "coins_user_current": 134,
-    "credits_alliance_total": 29889375766
+    "credits_user_current": 62953,
+    "credits_user_total": 152972368,
+    "credits_alliance_current": 390673208,
+    "coins_user_current": 132,
+    "credits_alliance_total": 29890103982
   },
   "alliance": {
     "users": 1823,
-    "online": 8,
+    "online": 3,
     "rank": 9,
     "financeActive": true
   }
