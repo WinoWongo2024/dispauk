@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-09-03T03:42:59.032043+00:00",
+  "updatedAt": "2026-09-03T08:45:12.267808+00:00",
   "source": "missionchief.co.uk",
   "sync": {
     "durationSeconds": 21,
@@ -59,10 +59,8 @@
     "Scotland": 4
   },
   "vehicleStatus": {
-    "2": 1510,
-    "6": 1,
-    "4": 14,
-    "5": 1
+    "2": 1504,
+    "4": 22
   },
   "vehiclesByType": {
     "5": 544,
@@ -10824,7 +10822,7 @@
       "name": "HGFS | HRLNY-001/FO-001",
       "type": 3,
       "buildingId": 1988490,
-      "status": 2
+      "status": 4
     },
     {
       "id": 5343001,
@@ -11013,7 +11011,7 @@
       "name": "KBR | NYF-002/FO-001",
       "type": 3,
       "buildingId": 2311542,
-      "status": 2
+      "status": 4
     },
     {
       "id": 6270702,
@@ -11132,14 +11130,14 @@
       "name": "RPN | NYF-003/WL-001",
       "type": 0,
       "buildingId": 2312467,
-      "status": 2
+      "status": 4
     },
     {
       "id": 6273033,
       "name": "RPN | NYF-003/RP-001",
       "type": 16,
       "buildingId": 2312467,
-      "status": 2
+      "status": 4
     },
     {
       "id": 6283750,
@@ -11353,11 +11351,11 @@
     }
   ],
   "credits": {
-    "credits_user_current": 181679,
-    "credits_user_total": 153434297,
-    "credits_alliance_current": 390931748,
-    "coins_user_current": 95,
-    "credits_alliance_total": 29898954240
+    "credits_user_current": 257389,
+    "credits_user_total": 153517532,
+    "credits_alliance_current": 390971377,
+    "coins_user_current": 93,
+    "credits_alliance_total": 29900319967
   },
   "alliance": {
     "users": 1822,
