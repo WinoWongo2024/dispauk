@@ -1,8 +1,8 @@
 {
-  "updatedAt": "2026-09-03T13:24:33.122754+00:00",
+  "updatedAt": "2026-09-03T17:40:58.945899+00:00",
   "source": "missionchief.co.uk",
   "sync": {
-    "durationSeconds": 26,
+    "durationSeconds": 25,
     "schedule": "hourly"
   },
   "endpoints": {
@@ -16,16 +16,16 @@
     "einsaetze": true
   },
   "totals": {
-    "stations": 611,
-    "units": 1526,
-    "personnel": 41146,
+    "stations": 612,
+    "units": 1528,
+    "personnel": 41149,
     "dispatchCentres": 36,
     "allianceBuildings": 1196,
     "equipments": 11,
     "missionTypes": 1068
   },
   "stationsByType": {
-    "Ambulance Station": 318,
+    "Ambulance Station": 319,
     "Hospital": 21,
     "Police Station": 66,
     "Bomb Disposal": 3,
@@ -50,7 +50,7 @@
   },
   "stationsByRegion": {
     "Midlands": 73,
-    "North": 94,
+    "North": 95,
     "South West": 230,
     "London & South": 38,
     "Wales": 52,
@@ -59,12 +59,14 @@
     "Scotland": 4
   },
   "vehicleStatus": {
-    "2": 1497,
-    "4": 28,
-    "3": 1
+    "2": 1457,
+    "5": 7,
+    "4": 48,
+    "1": 14,
+    "3": 2
   },
   "vehiclesByType": {
-    "5": 544,
+    "5": 546,
     "8": 149,
     "17": 60,
     "10": 47,
@@ -99,7 +101,7 @@
     "stationsMissingName": 0,
     "stationsMissingCoords": 0,
     "duplicateStationIds": 0,
-    "dcAssignedFromApi": 571,
+    "dcAssignedFromApi": 572,
     "dcAssignedNearest": 4,
     "dispatchCentres": 36,
     "ok": true
@@ -279,8 +281,8 @@
       "lat": 53.98857861880335,
       "lon": -1.5384455740283822,
       "level": 0,
-      "stationCount": 42,
-      "personnel": 5261,
+      "stationCount": 43,
+      "personnel": 5264,
       "coverageRadiusM": 89674,
       "coveragePolygon": [
         [
@@ -1401,6 +1403,21 @@
       "region": "South West",
       "dcId": 2663988,
       "dcName": "Warwickshire FCR",
+      "dcAssign": "api"
+    },
+    {
+      "id": 2669447,
+      "name": "Harrogate Bus Station",
+      "type": "Ambulance Station",
+      "typeId": 2,
+      "level": 1,
+      "lat": 53.99402942009787,
+      "lon": -1.5383156725335143,
+      "personnel": 3,
+      "small": false,
+      "region": "North",
+      "dcId": 1988744,
+      "dcName": "(M2XN) North Yorkshire FCR",
       "dcAssign": "api"
     },
     {
@@ -10529,7 +10546,7 @@
       "name": "CoW | LAS-001/AMB-001",
       "type": 5,
       "buildingId": 1844375,
-      "status": 2
+      "status": 5
     },
     {
       "id": 4926753,
@@ -10571,7 +10588,7 @@
       "name": "CoW | LAS-001/AMB-002",
       "type": 5,
       "buildingId": 1844375,
-      "status": 2
+      "status": 5
     },
     {
       "id": 4929313,
@@ -10627,7 +10644,7 @@
       "name": "EUS | LAS-002/OTL-001",
       "type": 20,
       "buildingId": 1984068,
-      "status": 2
+      "status": 4
     },
     {
       "id": 5331506,
@@ -10662,7 +10679,7 @@
       "name": "K4A1",
       "type": 13,
       "buildingId": 1984387,
-      "status": 2
+      "status": 4
     },
     {
       "id": 5331678,
@@ -10704,7 +10721,7 @@
       "name": "WM10 | MET-004/IRV-001",
       "type": 8,
       "buildingId": 1984638,
-      "status": 2
+      "status": 4
     },
     {
       "id": 5332371,
@@ -10718,7 +10735,7 @@
       "name": "SJP | BTP-003/IRV-001",
       "type": 8,
       "buildingId": 1984841,
-      "status": 2
+      "status": 4
     },
     {
       "id": 5333055,
@@ -10781,7 +10798,7 @@
       "name": "WBR | LAS-005/AMB-001",
       "type": 5,
       "buildingId": 1987703,
-      "status": 2
+      "status": 5
     },
     {
       "id": 5340621,
@@ -10823,7 +10840,7 @@
       "name": "HGFS | HRLNY-001/FO-001",
       "type": 3,
       "buildingId": 1988490,
-      "status": 4
+      "status": 2
     },
     {
       "id": 5343001,
@@ -10858,7 +10875,7 @@
       "name": "CoLP | MET-001/IRV-001",
       "type": 8,
       "buildingId": 2033679,
-      "status": 2
+      "status": 4
     },
     {
       "id": 5467027,
@@ -10928,7 +10945,7 @@
       "name": "STR | MET-006/MRAV-001",
       "type": 56,
       "buildingId": 2041380,
-      "status": 2
+      "status": 4
     },
     {
       "id": 5496791,
@@ -11012,7 +11029,7 @@
       "name": "KBR | NYF-002/FO-001",
       "type": 3,
       "buildingId": 2311542,
-      "status": 4
+      "status": 2
     },
     {
       "id": 6270702,
@@ -11047,14 +11064,14 @@
       "name": "SMPC | HPS-001/IRV-001",
       "type": 8,
       "buildingId": 2312174,
-      "status": 2
+      "status": 1
     },
     {
       "id": 6272172,
       "name": "SMPC | HPS-001/IRV-002",
       "type": 8,
       "buildingId": 2312174,
-      "status": 2
+      "status": 1
     },
     {
       "id": 6272673,
@@ -11075,7 +11092,7 @@
       "name": "CoLP | MET-001/IRV-002",
       "type": 8,
       "buildingId": 2033679,
-      "status": 2
+      "status": 4
     },
     {
       "id": 6272828,
@@ -11110,7 +11127,7 @@
       "name": "PW | HPS-002/IRV-001",
       "type": 8,
       "buildingId": 2312445,
-      "status": 2
+      "status": 1
     },
     {
       "id": 6272949,
@@ -11131,14 +11148,14 @@
       "name": "RPN | NYF-003/WL-001",
       "type": 0,
       "buildingId": 2312467,
-      "status": 4
+      "status": 2
     },
     {
       "id": 6273033,
       "name": "RPN | NYF-003/RP-001",
       "type": 16,
       "buildingId": 2312467,
-      "status": 4
+      "status": 2
     },
     {
       "id": 6283750,
@@ -11187,7 +11204,7 @@
       "name": "PW | HPS-002/IRV-002",
       "type": 8,
       "buildingId": 2312445,
-      "status": 2
+      "status": 1
     },
     {
       "id": 6290368,
@@ -11264,7 +11281,7 @@
       "name": "TTNPS | HPS-004/IRV-001",
       "type": 8,
       "buildingId": 2318739,
-      "status": 2
+      "status": 1
     },
     {
       "id": 6290887,
@@ -11285,7 +11302,7 @@
       "name": "SHLYPS | HPS-005/IRV-001",
       "type": 8,
       "buildingId": 2318780,
-      "status": 2
+      "status": 1
     },
     {
       "id": 6290918,
@@ -11306,7 +11323,7 @@
       "name": "SWYG | HPS-006/IRV-001",
       "type": 8,
       "buildingId": 2318783,
-      "status": 2
+      "status": 1
     },
     {
       "id": 6290923,
@@ -11320,7 +11337,7 @@
       "name": "GH | LAS-006/AMB-001",
       "type": 5,
       "buildingId": 2319201,
-      "status": 2
+      "status": 5
     },
     {
       "id": 6292258,
@@ -11334,7 +11351,7 @@
       "name": "HYPS | HPS-003/IRV-001",
       "type": 8,
       "buildingId": 2319380,
-      "status": 2
+      "status": 1
     },
     {
       "id": 6293105,
@@ -11352,15 +11369,15 @@
     }
   ],
   "credits": {
-    "credits_user_current": 263387,
-    "credits_user_total": 153524197,
-    "credits_alliance_current": 391009802,
+    "credits_user_current": 70317,
+    "credits_user_total": 153559675,
+    "credits_alliance_current": 391054749,
     "coins_user_current": 93,
-    "credits_alliance_total": 29901238805
+    "credits_alliance_total": 29902861040
   },
   "alliance": {
     "users": 1822,
-    "online": 5,
+    "online": 7,
     "rank": 9,
     "financeActive": true
   }
