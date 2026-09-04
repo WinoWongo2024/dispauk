@@ -1,8 +1,8 @@
 {
-  "updatedAt": "2026-09-04T17:28:51.562059+00:00",
+  "updatedAt": "2026-09-04T20:32:11.236133+00:00",
   "source": "missionchief.co.uk",
   "sync": {
-    "durationSeconds": 27,
+    "durationSeconds": 25,
     "schedule": "hourly"
   },
   "endpoints": {
@@ -59,9 +59,10 @@
     "South East": 73
   },
   "vehicleStatus": {
-    "2": 1506,
-    "4": 21,
-    "1": 1
+    "2": 1509,
+    "6": 1,
+    "4": 17,
+    "5": 1
   },
   "vehiclesByType": {
     "5": 546,
@@ -10642,7 +10643,7 @@
       "name": "EUS | LAS-002/OTL-001",
       "type": 20,
       "buildingId": 1984068,
-      "status": 4
+      "status": 2
     },
     {
       "id": 5331506,
@@ -10887,7 +10888,7 @@
       "name": "ING | MET-002/IRV-001",
       "type": 8,
       "buildingId": 2033689,
-      "status": 4
+      "status": 2
     },
     {
       "id": 5488513,
@@ -11188,7 +11189,7 @@
       "name": "ING | MET-002/IRV-002",
       "type": 8,
       "buildingId": 2033689,
-      "status": 4
+      "status": 2
     },
     {
       "id": 6290338,
@@ -11251,28 +11252,28 @@
       "name": "CRV",
       "type": 57,
       "buildingId": 2318732,
-      "status": 4
+      "status": 2
     },
     {
       "id": 6290766,
       "name": "STHP | SARHQ-001/4x4-001",
       "type": 93,
       "buildingId": 2318734,
-      "status": 4
+      "status": 2
     },
     {
       "id": 6290768,
       "name": "STHP | SARHQ-001/CC-001",
       "type": 103,
       "buildingId": 2318734,
-      "status": 4
+      "status": 2
     },
     {
       "id": 6290770,
       "name": "STHP | SARHQ-001/OST-001",
       "type": 87,
       "buildingId": 2318734,
-      "status": 4
+      "status": 2
     },
     {
       "id": 6290782,
@@ -11349,7 +11350,7 @@
       "name": "HYPS | HPS-003/IRV-001",
       "type": 8,
       "buildingId": 2319380,
-      "status": 4
+      "status": 2
     },
     {
       "id": 6293105,
@@ -11367,15 +11368,15 @@
     }
   ],
   "credits": {
-    "credits_user_current": 221577,
-    "credits_user_total": 153726524,
-    "credits_alliance_current": 391333612,
+    "credits_user_current": 245509,
+    "credits_user_total": 153753116,
+    "credits_alliance_current": 391393565,
     "coins_user_current": 83,
-    "credits_alliance_total": 29911573839
+    "credits_alliance_total": 29912866363
   },
   "alliance": {
-    "users": 1822,
-    "online": 9,
+    "users": 1823,
+    "online": 10,
     "rank": 9,
     "financeActive": true
   }
