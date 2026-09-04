@@ -1,8 +1,8 @@
 {
-  "updatedAt": "2026-09-04T03:44:58.227900+00:00",
+  "updatedAt": "2026-09-04T08:41:04.036755+00:00",
   "source": "missionchief.co.uk",
   "sync": {
-    "durationSeconds": 22,
+    "durationSeconds": 25,
     "schedule": "hourly"
   },
   "endpoints": {
@@ -59,10 +59,9 @@
     "South East": 73
   },
   "vehicleStatus": {
-    "2": 1524,
-    "6": 1,
-    "5": 2,
-    "4": 1
+    "4": 17,
+    "2": 1509,
+    "5": 2
   },
   "vehiclesByType": {
     "5": 546,
@@ -10531,7 +10530,7 @@
       "name": "WCP | LFB-008/WL-001",
       "type": 0,
       "buildingId": 1987510,
-      "status": 2
+      "status": 4
     },
     {
       "id": 4926743,
@@ -10594,7 +10593,7 @@
       "name": "HLBRN | HRL-004/FO-001",
       "type": 3,
       "buildingId": 1845393,
-      "status": 2
+      "status": 4
     },
     {
       "id": 4929766,
@@ -10650,7 +10649,7 @@
       "name": "QW | LFB-007/WL-001",
       "type": 0,
       "buildingId": 1984339,
-      "status": 2
+      "status": 4
     },
     {
       "id": 5331507,
@@ -10664,7 +10663,7 @@
       "name": "QW | LFB-007/WL-002",
       "type": 0,
       "buildingId": 1984339,
-      "status": 2
+      "status": 4
     },
     {
       "id": 5331632,
@@ -10755,7 +10754,7 @@
       "name": "MA | LFB-005/WL-001",
       "type": 0,
       "buildingId": 1987510,
-      "status": 2
+      "status": 4
     },
     {
       "id": 5340155,
@@ -11056,7 +11055,7 @@
       "name": "LMBTH | HRL-003/FO-001",
       "type": 3,
       "buildingId": 2312031,
-      "status": 2
+      "status": 4
     },
     {
       "id": 6272134,
@@ -11368,15 +11367,15 @@
     }
   ],
   "credits": {
-    "credits_user_current": 143891,
-    "credits_user_total": 153641424,
-    "credits_alliance_current": 391153727,
-    "coins_user_current": 87,
-    "credits_alliance_total": 29906323753
+    "credits_user_current": 185036,
+    "credits_user_total": 153685918,
+    "credits_alliance_current": 391241838,
+    "coins_user_current": 83,
+    "credits_alliance_total": 29908911701
   },
   "alliance": {
     "users": 1822,
-    "online": 3,
+    "online": 5,
     "rank": 9,
     "financeActive": true
   }
