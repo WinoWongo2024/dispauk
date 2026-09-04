@@ -1,8 +1,8 @@
 {
-  "updatedAt": "2026-09-04T13:18:50.615921+00:00",
+  "updatedAt": "2026-09-04T17:28:51.562059+00:00",
   "source": "missionchief.co.uk",
   "sync": {
-    "durationSeconds": 22,
+    "durationSeconds": 27,
     "schedule": "hourly"
   },
   "endpoints": {
@@ -50,8 +50,8 @@
   },
   "stationsByRegion": {
     "Midlands": 73,
-    "North": 95,
     "South West": 230,
+    "North": 95,
     "London & South": 38,
     "Wales": 52,
     "Other / Overseas": 47,
@@ -59,10 +59,9 @@
     "South East": 73
   },
   "vehicleStatus": {
-    "2": 1478,
-    "4": 33,
-    "1": 15,
-    "5": 2
+    "2": 1506,
+    "4": 21,
+    "1": 1
   },
   "vehiclesByType": {
     "5": 546,
@@ -1357,21 +1356,6 @@
       "region": "Midlands",
       "dcId": 2633103,
       "dcName": "Lincolnshire DC",
-      "dcAssign": "api"
-    },
-    {
-      "id": 2033677,
-      "name": "(NHS-HD-001) Harrogate District ",
-      "type": "Hospital",
-      "typeId": 4,
-      "level": 30,
-      "lat": 53.99371725146289,
-      "lon": -1.5175985755205312,
-      "personnel": 0,
-      "small": false,
-      "region": "North",
-      "dcId": 1988744,
-      "dcName": "(M2XN) North Yorkshire FCR",
       "dcAssign": "api"
     },
     {
@@ -3595,6 +3579,21 @@
       "dcAssign": "api"
     },
     {
+      "id": 2033677,
+      "name": "(NHS-HD-001) Harrogate District ",
+      "type": "Hospital",
+      "typeId": 4,
+      "level": 30,
+      "lat": 53.99371725146289,
+      "lon": -1.5175985755205312,
+      "personnel": 0,
+      "small": false,
+      "region": "North",
+      "dcId": 1988744,
+      "dcName": "(M2XN) North Yorkshire FCR",
+      "dcAssign": "api"
+    },
+    {
       "id": 2622180,
       "name": "Filey Ambulance Station",
       "type": "Ambulance Station",
@@ -3727,6 +3726,21 @@
       "region": "South West",
       "dcId": 2635219,
       "dcName": "Devon DC",
+      "dcAssign": "api"
+    },
+    {
+      "id": 2330766,
+      "name": "Alliance Hospital - St Thomas Hospital",
+      "type": "Hospital",
+      "typeId": 4,
+      "level": 30,
+      "lat": 51.49882104927478,
+      "lon": -0.11859392142196024,
+      "personnel": 0,
+      "small": false,
+      "region": "South East",
+      "dcId": 1844373,
+      "dcName": "London FCR",
       "dcAssign": "api"
     },
     {
@@ -6622,21 +6636,6 @@
       "region": "Wales",
       "dcId": 2469519,
       "dcName": "𝙒𝙖𝙡𝙚𝙨 🏴󠁧󠁢󠁷󠁬󠁳󠁿 𝘾𝙮𝙢𝙧𝙪",
-      "dcAssign": "api"
-    },
-    {
-      "id": 2330766,
-      "name": "Alliance Hospital - St Thomas Hospital",
-      "type": "Hospital",
-      "typeId": 4,
-      "level": 30,
-      "lat": 51.49882104927478,
-      "lon": -0.11859392142196024,
-      "personnel": 0,
-      "small": false,
-      "region": "South East",
-      "dcId": 1844373,
-      "dcName": "London FCR",
       "dcAssign": "api"
     },
     {
@@ -10538,7 +10537,7 @@
       "name": "WCP | LFB-008/L4x4-001 (P)",
       "type": 1,
       "buildingId": 1844367,
-      "status": 4
+      "status": 2
     },
     {
       "id": 4926750,
@@ -10573,14 +10572,14 @@
       "name": "NWCP | LFB-006/WL-001",
       "type": 0,
       "buildingId": 1844412,
-      "status": 4
+      "status": 2
     },
     {
       "id": 4927854,
       "name": "NWCP | LFB-006/WL-002",
       "type": 0,
       "buildingId": 1844412,
-      "status": 4
+      "status": 2
     },
     {
       "id": 4929073,
@@ -10608,28 +10607,28 @@
       "name": "KGXSP | BTP-002/IRV-001",
       "type": 8,
       "buildingId": 1983967,
-      "status": 4
+      "status": 2
     },
     {
       "id": 5330403,
       "name": "KGXSP | BTP-002/IRV-002",
       "type": 8,
       "buildingId": 1983967,
-      "status": 4
+      "status": 2
     },
     {
       "id": 5330499,
       "name": "EUS | LFB-004/WL-001",
       "type": 0,
       "buildingId": 1984004,
-      "status": 4
+      "status": 2
     },
     {
       "id": 5330618,
       "name": "EUS | LFB-004/ARAP-001",
       "type": 2,
       "buildingId": 1984004,
-      "status": 4
+      "status": 2
     },
     {
       "id": 5330650,
@@ -10720,7 +10719,7 @@
       "name": "WM10 | MET-004/IRV-001",
       "type": 8,
       "buildingId": 1984638,
-      "status": 4
+      "status": 2
     },
     {
       "id": 5332371,
@@ -10881,14 +10880,14 @@
       "name": "CoL | HRL-001/FO-001",
       "type": 3,
       "buildingId": 2033681,
-      "status": 4
+      "status": 2
     },
     {
       "id": 5467039,
       "name": "ING | MET-002/IRV-001",
       "type": 8,
       "buildingId": 2033689,
-      "status": 2
+      "status": 4
     },
     {
       "id": 5488513,
@@ -10916,7 +10915,7 @@
       "name": "STR | MET-006/IRV-001",
       "type": 8,
       "buildingId": 2041380,
-      "status": 4
+      "status": 2
     },
     {
       "id": 5489761,
@@ -10937,7 +10936,7 @@
       "name": "CoL | LFB-002/RSU-001",
       "type": 4,
       "buildingId": 2033678,
-      "status": 4
+      "status": 2
     },
     {
       "id": 5496781,
@@ -11063,14 +11062,14 @@
       "name": "SMPC | HPS-001/IRV-001",
       "type": 8,
       "buildingId": 2312174,
-      "status": 1
+      "status": 2
     },
     {
       "id": 6272172,
       "name": "SMPC | HPS-001/IRV-002",
       "type": 8,
       "buildingId": 2312174,
-      "status": 1
+      "status": 2
     },
     {
       "id": 6272673,
@@ -11091,7 +11090,7 @@
       "name": "CoLP | MET-001/IRV-002",
       "type": 8,
       "buildingId": 2033679,
-      "status": 4
+      "status": 2
     },
     {
       "id": 6272828,
@@ -11112,7 +11111,7 @@
       "name": "BTGN | LFB-001/WL-001",
       "type": 0,
       "buildingId": 2312415,
-      "status": 4
+      "status": 2
     },
     {
       "id": 6272844,
@@ -11126,7 +11125,7 @@
       "name": "PW | HPS-002/IRV-001",
       "type": 8,
       "buildingId": 2312445,
-      "status": 1
+      "status": 2
     },
     {
       "id": 6272949,
@@ -11189,7 +11188,7 @@
       "name": "ING | MET-002/IRV-002",
       "type": 8,
       "buildingId": 2033689,
-      "status": 2
+      "status": 4
     },
     {
       "id": 6290338,
@@ -11203,14 +11202,14 @@
       "name": "PW | HPS-002/IRV-002",
       "type": 8,
       "buildingId": 2312445,
-      "status": 1
+      "status": 2
     },
     {
       "id": 6290368,
       "name": "EUS | LFB-004/BASU-001",
       "type": 14,
       "buildingId": 1984004,
-      "status": 4
+      "status": 2
     },
     {
       "id": 6290390,
@@ -11238,56 +11237,56 @@
       "name": "DEPT | LFB-003/RP-001",
       "type": 16,
       "buildingId": 2318646,
-      "status": 4
+      "status": 2
     },
     {
       "id": 6290534,
       "name": "DEPT| LFB-003/CARP-001",
       "type": 17,
       "buildingId": 2318646,
-      "status": 4
+      "status": 2
     },
     {
       "id": 6290763,
       "name": "CRV",
       "type": 57,
       "buildingId": 2318732,
-      "status": 2
+      "status": 4
     },
     {
       "id": 6290766,
       "name": "STHP | SARHQ-001/4x4-001",
       "type": 93,
       "buildingId": 2318734,
-      "status": 2
+      "status": 4
     },
     {
       "id": 6290768,
       "name": "STHP | SARHQ-001/CC-001",
       "type": 103,
       "buildingId": 2318734,
-      "status": 2
+      "status": 4
     },
     {
       "id": 6290770,
       "name": "STHP | SARHQ-001/OST-001",
       "type": 87,
       "buildingId": 2318734,
-      "status": 2
+      "status": 4
     },
     {
       "id": 6290782,
       "name": "TTNPS | HPS-004/IRV-001",
       "type": 8,
       "buildingId": 2318739,
-      "status": 1
+      "status": 2
     },
     {
       "id": 6290887,
       "name": "WFS | LFB-009/CARP-001",
       "type": 17,
       "buildingId": 2318768,
-      "status": 4
+      "status": 2
     },
     {
       "id": 6290890,
@@ -11301,7 +11300,7 @@
       "name": "SHLYPS | HPS-005/IRV-001",
       "type": 8,
       "buildingId": 2318780,
-      "status": 1
+      "status": 2
     },
     {
       "id": 6290918,
@@ -11322,7 +11321,7 @@
       "name": "SWYG | HPS-006/IRV-001",
       "type": 8,
       "buildingId": 2318783,
-      "status": 1
+      "status": 2
     },
     {
       "id": 6290923,
@@ -11350,7 +11349,7 @@
       "name": "HYPS | HPS-003/IRV-001",
       "type": 8,
       "buildingId": 2319380,
-      "status": 1
+      "status": 4
     },
     {
       "id": 6293105,
@@ -11368,15 +11367,15 @@
     }
   ],
   "credits": {
-    "credits_user_current": 203519,
-    "credits_user_total": 153706457,
-    "credits_alliance_current": 391285010,
+    "credits_user_current": 221577,
+    "credits_user_total": 153726524,
+    "credits_alliance_current": 391333612,
     "coins_user_current": 83,
-    "credits_alliance_total": 29910212280
+    "credits_alliance_total": 29911573839
   },
   "alliance": {
-    "users": 1823,
-    "online": 4,
+    "users": 1822,
+    "online": 9,
     "rank": 9,
     "financeActive": true
   }
