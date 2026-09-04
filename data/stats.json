@@ -1,8 +1,8 @@
 {
-  "updatedAt": "2026-09-04T08:41:04.036755+00:00",
+  "updatedAt": "2026-09-04T13:18:50.615921+00:00",
   "source": "missionchief.co.uk",
   "sync": {
-    "durationSeconds": 25,
+    "durationSeconds": 22,
     "schedule": "hourly"
   },
   "endpoints": {
@@ -59,8 +59,9 @@
     "South East": 73
   },
   "vehicleStatus": {
-    "4": 17,
-    "2": 1509,
+    "2": 1478,
+    "4": 33,
+    "1": 15,
     "5": 2
   },
   "vehiclesByType": {
@@ -10530,14 +10531,14 @@
       "name": "WCP | LFB-008/WL-001",
       "type": 0,
       "buildingId": 1987510,
-      "status": 4
+      "status": 2
     },
     {
       "id": 4926743,
       "name": "WCP | LFB-008/L4x4-001 (P)",
       "type": 1,
       "buildingId": 1844367,
-      "status": 2
+      "status": 4
     },
     {
       "id": 4926750,
@@ -10572,14 +10573,14 @@
       "name": "NWCP | LFB-006/WL-001",
       "type": 0,
       "buildingId": 1844412,
-      "status": 2
+      "status": 4
     },
     {
       "id": 4927854,
       "name": "NWCP | LFB-006/WL-002",
       "type": 0,
       "buildingId": 1844412,
-      "status": 2
+      "status": 4
     },
     {
       "id": 4929073,
@@ -10593,7 +10594,7 @@
       "name": "HLBRN | HRL-004/FO-001",
       "type": 3,
       "buildingId": 1845393,
-      "status": 4
+      "status": 2
     },
     {
       "id": 4929766,
@@ -10607,28 +10608,28 @@
       "name": "KGXSP | BTP-002/IRV-001",
       "type": 8,
       "buildingId": 1983967,
-      "status": 2
+      "status": 4
     },
     {
       "id": 5330403,
       "name": "KGXSP | BTP-002/IRV-002",
       "type": 8,
       "buildingId": 1983967,
-      "status": 2
+      "status": 4
     },
     {
       "id": 5330499,
       "name": "EUS | LFB-004/WL-001",
       "type": 0,
       "buildingId": 1984004,
-      "status": 2
+      "status": 4
     },
     {
       "id": 5330618,
       "name": "EUS | LFB-004/ARAP-001",
       "type": 2,
       "buildingId": 1984004,
-      "status": 2
+      "status": 4
     },
     {
       "id": 5330650,
@@ -10642,14 +10643,14 @@
       "name": "EUS | LAS-002/OTL-001",
       "type": 20,
       "buildingId": 1984068,
-      "status": 2
+      "status": 4
     },
     {
       "id": 5331506,
       "name": "QW | LFB-007/WL-001",
       "type": 0,
       "buildingId": 1984339,
-      "status": 4
+      "status": 2
     },
     {
       "id": 5331507,
@@ -10663,7 +10664,7 @@
       "name": "QW | LFB-007/WL-002",
       "type": 0,
       "buildingId": 1984339,
-      "status": 4
+      "status": 2
     },
     {
       "id": 5331632,
@@ -10719,7 +10720,7 @@
       "name": "WM10 | MET-004/IRV-001",
       "type": 8,
       "buildingId": 1984638,
-      "status": 2
+      "status": 4
     },
     {
       "id": 5332371,
@@ -10754,7 +10755,7 @@
       "name": "MA | LFB-005/WL-001",
       "type": 0,
       "buildingId": 1987510,
-      "status": 4
+      "status": 2
     },
     {
       "id": 5340155,
@@ -10880,7 +10881,7 @@
       "name": "CoL | HRL-001/FO-001",
       "type": 3,
       "buildingId": 2033681,
-      "status": 2
+      "status": 4
     },
     {
       "id": 5467039,
@@ -10915,7 +10916,7 @@
       "name": "STR | MET-006/IRV-001",
       "type": 8,
       "buildingId": 2041380,
-      "status": 2
+      "status": 4
     },
     {
       "id": 5489761,
@@ -10936,7 +10937,7 @@
       "name": "CoL | LFB-002/RSU-001",
       "type": 4,
       "buildingId": 2033678,
-      "status": 2
+      "status": 4
     },
     {
       "id": 5496781,
@@ -11055,21 +11056,21 @@
       "name": "LMBTH | HRL-003/FO-001",
       "type": 3,
       "buildingId": 2312031,
-      "status": 4
+      "status": 2
     },
     {
       "id": 6272134,
       "name": "SMPC | HPS-001/IRV-001",
       "type": 8,
       "buildingId": 2312174,
-      "status": 2
+      "status": 1
     },
     {
       "id": 6272172,
       "name": "SMPC | HPS-001/IRV-002",
       "type": 8,
       "buildingId": 2312174,
-      "status": 2
+      "status": 1
     },
     {
       "id": 6272673,
@@ -11090,7 +11091,7 @@
       "name": "CoLP | MET-001/IRV-002",
       "type": 8,
       "buildingId": 2033679,
-      "status": 2
+      "status": 4
     },
     {
       "id": 6272828,
@@ -11111,7 +11112,7 @@
       "name": "BTGN | LFB-001/WL-001",
       "type": 0,
       "buildingId": 2312415,
-      "status": 2
+      "status": 4
     },
     {
       "id": 6272844,
@@ -11125,7 +11126,7 @@
       "name": "PW | HPS-002/IRV-001",
       "type": 8,
       "buildingId": 2312445,
-      "status": 2
+      "status": 1
     },
     {
       "id": 6272949,
@@ -11202,14 +11203,14 @@
       "name": "PW | HPS-002/IRV-002",
       "type": 8,
       "buildingId": 2312445,
-      "status": 2
+      "status": 1
     },
     {
       "id": 6290368,
       "name": "EUS | LFB-004/BASU-001",
       "type": 14,
       "buildingId": 1984004,
-      "status": 2
+      "status": 4
     },
     {
       "id": 6290390,
@@ -11237,14 +11238,14 @@
       "name": "DEPT | LFB-003/RP-001",
       "type": 16,
       "buildingId": 2318646,
-      "status": 2
+      "status": 4
     },
     {
       "id": 6290534,
       "name": "DEPT| LFB-003/CARP-001",
       "type": 17,
       "buildingId": 2318646,
-      "status": 2
+      "status": 4
     },
     {
       "id": 6290763,
@@ -11279,14 +11280,14 @@
       "name": "TTNPS | HPS-004/IRV-001",
       "type": 8,
       "buildingId": 2318739,
-      "status": 2
+      "status": 1
     },
     {
       "id": 6290887,
       "name": "WFS | LFB-009/CARP-001",
       "type": 17,
       "buildingId": 2318768,
-      "status": 2
+      "status": 4
     },
     {
       "id": 6290890,
@@ -11300,7 +11301,7 @@
       "name": "SHLYPS | HPS-005/IRV-001",
       "type": 8,
       "buildingId": 2318780,
-      "status": 2
+      "status": 1
     },
     {
       "id": 6290918,
@@ -11321,7 +11322,7 @@
       "name": "SWYG | HPS-006/IRV-001",
       "type": 8,
       "buildingId": 2318783,
-      "status": 2
+      "status": 1
     },
     {
       "id": 6290923,
@@ -11349,7 +11350,7 @@
       "name": "HYPS | HPS-003/IRV-001",
       "type": 8,
       "buildingId": 2319380,
-      "status": 2
+      "status": 1
     },
     {
       "id": 6293105,
@@ -11367,15 +11368,15 @@
     }
   ],
   "credits": {
-    "credits_user_current": 185036,
-    "credits_user_total": 153685918,
-    "credits_alliance_current": 391241838,
+    "credits_user_current": 203519,
+    "credits_user_total": 153706457,
+    "credits_alliance_current": 391285010,
     "coins_user_current": 83,
-    "credits_alliance_total": 29908911701
+    "credits_alliance_total": 29910212280
   },
   "alliance": {
-    "users": 1822,
-    "online": 5,
+    "users": 1823,
+    "online": 4,
     "rank": 9,
     "financeActive": true
   }
