@@ -1,8 +1,8 @@
 {
-  "updatedAt": "2026-09-05T16:39:49.008067+00:00",
+  "updatedAt": "2026-09-05T18:54:14.750563+00:00",
   "source": "missionchief.co.uk",
   "sync": {
-    "durationSeconds": 23,
+    "durationSeconds": 27,
     "schedule": "hourly"
   },
   "endpoints": {
@@ -59,9 +59,10 @@
     "Scotland": 4
   },
   "vehicleStatus": {
-    "2": 1485,
-    "3": 40,
-    "4": 3
+    "2": 1505,
+    "4": 19,
+    "6": 1,
+    "5": 3
   },
   "vehiclesByType": {
     "5": 546,
@@ -3144,21 +3145,6 @@
       "dcAssign": "api"
     },
     {
-      "id": 1988767,
-      "name": "(P01) Pateley Bridge ",
-      "type": "Police Station",
-      "typeId": 6,
-      "level": 5,
-      "lat": 54.087752920802856,
-      "lon": -1.759263660225907,
-      "personnel": 200,
-      "small": false,
-      "region": "North",
-      "dcId": 1988744,
-      "dcName": "(M2XN) North Yorkshire FCR",
-      "dcAssign": "api"
-    },
-    {
       "id": 2429826,
       "name": "Paulton Hospital  (MIU) (1-3617575955)",
       "type": "Health Centre",
@@ -3936,6 +3922,21 @@
       "region": "Wales",
       "dcId": 2469519,
       "dcName": "𝙒𝙖𝙡𝙚𝙨 🏴󠁧󠁢󠁷󠁬󠁳󠁿 𝘾𝙮𝙢𝙧𝙪",
+      "dcAssign": "api"
+    },
+    {
+      "id": 1988767,
+      "name": "(P01) Pateley Bridge ",
+      "type": "Police Station",
+      "typeId": 6,
+      "level": 5,
+      "lat": 54.087752920802856,
+      "lon": -1.759263660225907,
+      "personnel": 200,
+      "small": false,
+      "region": "North",
+      "dcId": 1988744,
+      "dcName": "(M2XN) North Yorkshire FCR",
       "dcAssign": "api"
     },
     {
@@ -10691,7 +10692,7 @@
       "name": "WSTM’R | RNLI-001/4×4-001",
       "type": 66,
       "buildingId": 1984410,
-      "status": 3
+      "status": 2
     },
     {
       "id": 5331712,
@@ -10831,7 +10832,7 @@
       "name": "HMC | M2XN/IRV-001",
       "type": 8,
       "buildingId": 1988488,
-      "status": 3
+      "status": 2
     },
     {
       "id": 5342848,
@@ -10845,7 +10846,7 @@
       "name": "SMBR | NYF-004/WL-001",
       "type": 0,
       "buildingId": 1988549,
-      "status": 3
+      "status": 2
     },
     {
       "id": 5343568,
@@ -10859,7 +10860,7 @@
       "name": "H3T1",
       "type": 8,
       "buildingId": 1988767,
-      "status": 3
+      "status": 2
     },
     {
       "id": 5467024,
@@ -10908,7 +10909,7 @@
       "name": "GWCH | CRS-001/CRV-001",
       "type": 57,
       "buildingId": 2041379,
-      "status": 3
+      "status": 2
     },
     {
       "id": 5489715,
@@ -10957,14 +10958,14 @@
       "name": "H3T2",
       "type": 8,
       "buildingId": 1988767,
-      "status": 3
+      "status": 2
     },
     {
       "id": 5496872,
       "name": "HMC | M2XN/IRV-002",
       "type": 8,
       "buildingId": 1988488,
-      "status": 3
+      "status": 2
     },
     {
       "id": 5921429,
@@ -10999,7 +11000,7 @@
       "name": "HPS | M2XN/IRV-001",
       "type": 8,
       "buildingId": 2311530,
-      "status": 3
+      "status": 2
     },
     {
       "id": 6269475,
@@ -11069,14 +11070,14 @@
       "name": "SMPC | HPS-001/IRV-002",
       "type": 8,
       "buildingId": 2312174,
-      "status": 2
+      "status": 4
     },
     {
       "id": 6272673,
       "name": "SHPTCFS | HFS-001/WL-001",
       "type": 0,
       "buildingId": 2312349,
-      "status": 2
+      "status": 4
     },
     {
       "id": 6272676,
@@ -11097,21 +11098,21 @@
       "name": "STMRYFS | HFS-003/WL-001",
       "type": 0,
       "buildingId": 2312409,
-      "status": 2
+      "status": 4
     },
     {
       "id": 6272831,
       "name": "STMRYFS | HFS-003/RSU-001",
       "type": 4,
       "buildingId": 2312409,
-      "status": 2
+      "status": 4
     },
     {
       "id": 6272842,
       "name": "BTGN | LFB-001/WL-001",
       "type": 0,
       "buildingId": 2312415,
-      "status": 4
+      "status": 2
     },
     {
       "id": 6272844,
@@ -11328,7 +11329,7 @@
       "name": "Fire Officer",
       "type": 3,
       "buildingId": 2318784,
-      "status": 2
+      "status": 4
     },
     {
       "id": 6292256,
@@ -11367,11 +11368,11 @@
     }
   ],
   "credits": {
-    "credits_user_current": 335779,
-    "credits_user_total": 153851867,
-    "credits_alliance_current": 391788587,
+    "credits_user_current": 350098,
+    "credits_user_total": 153867780,
+    "credits_alliance_current": 391799397,
     "coins_user_current": 81,
-    "credits_alliance_total": 29920884688
+    "credits_alliance_total": 29921347148
   },
   "alliance": {
     "users": 1823,
