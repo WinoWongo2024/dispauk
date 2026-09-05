@@ -1,8 +1,8 @@
 {
-  "updatedAt": "2026-09-05T13:46:10.890837+00:00",
+  "updatedAt": "2026-09-05T16:39:49.008067+00:00",
   "source": "missionchief.co.uk",
   "sync": {
-    "durationSeconds": 21,
+    "durationSeconds": 23,
     "schedule": "hourly"
   },
   "endpoints": {
@@ -59,7 +59,9 @@
     "Scotland": 4
   },
   "vehicleStatus": {
-    "2": 1528
+    "2": 1485,
+    "3": 40,
+    "4": 3
   },
   "vehiclesByType": {
     "5": 546,
@@ -10689,7 +10691,7 @@
       "name": "WSTM’R | RNLI-001/4×4-001",
       "type": 66,
       "buildingId": 1984410,
-      "status": 2
+      "status": 3
     },
     {
       "id": 5331712,
@@ -10829,7 +10831,7 @@
       "name": "HMC | M2XN/IRV-001",
       "type": 8,
       "buildingId": 1988488,
-      "status": 2
+      "status": 3
     },
     {
       "id": 5342848,
@@ -10843,7 +10845,7 @@
       "name": "SMBR | NYF-004/WL-001",
       "type": 0,
       "buildingId": 1988549,
-      "status": 2
+      "status": 3
     },
     {
       "id": 5343568,
@@ -10857,7 +10859,7 @@
       "name": "H3T1",
       "type": 8,
       "buildingId": 1988767,
-      "status": 2
+      "status": 3
     },
     {
       "id": 5467024,
@@ -10906,7 +10908,7 @@
       "name": "GWCH | CRS-001/CRV-001",
       "type": 57,
       "buildingId": 2041379,
-      "status": 2
+      "status": 3
     },
     {
       "id": 5489715,
@@ -10955,14 +10957,14 @@
       "name": "H3T2",
       "type": 8,
       "buildingId": 1988767,
-      "status": 2
+      "status": 3
     },
     {
       "id": 5496872,
       "name": "HMC | M2XN/IRV-002",
       "type": 8,
       "buildingId": 1988488,
-      "status": 2
+      "status": 3
     },
     {
       "id": 5921429,
@@ -10997,7 +10999,7 @@
       "name": "HPS | M2XN/IRV-001",
       "type": 8,
       "buildingId": 2311530,
-      "status": 2
+      "status": 3
     },
     {
       "id": 6269475,
@@ -11109,7 +11111,7 @@
       "name": "BTGN | LFB-001/WL-001",
       "type": 0,
       "buildingId": 2312415,
-      "status": 2
+      "status": 4
     },
     {
       "id": 6272844,
@@ -11365,15 +11367,15 @@
     }
   ],
   "credits": {
-    "credits_user_current": 329514,
-    "credits_user_total": 153844905,
-    "credits_alliance_current": 391751132,
+    "credits_user_current": 335779,
+    "credits_user_total": 153851867,
+    "credits_alliance_current": 391788587,
     "coins_user_current": 81,
-    "credits_alliance_total": 29920136577
+    "credits_alliance_total": 29920884688
   },
   "alliance": {
     "users": 1823,
-    "online": 5,
+    "online": 10,
     "rank": 9,
     "financeActive": true
   }
