@@ -1,8 +1,8 @@
 {
-  "updatedAt": "2026-09-05T05:25:35.923370+00:00",
+  "updatedAt": "2026-09-05T10:15:46.729849+00:00",
   "source": "missionchief.co.uk",
   "sync": {
-    "durationSeconds": 25,
+    "durationSeconds": 23,
     "schedule": "hourly"
   },
   "endpoints": {
@@ -59,10 +59,7 @@
     "Scotland": 4
   },
   "vehicleStatus": {
-    "2": 1509,
-    "6": 1,
-    "4": 17,
-    "5": 1
+    "2": 1528
   },
   "vehiclesByType": {
     "5": 546,
@@ -4870,6 +4867,21 @@
       "dcAssign": "self"
     },
     {
+      "id": 2333227,
+      "name": "The health centre Starbeck",
+      "type": "Health Centre",
+      "typeId": 21,
+      "level": 2,
+      "lat": 53.99651665380682,
+      "lon": -1.5082697214037528,
+      "personnel": 200,
+      "small": false,
+      "region": "North",
+      "dcId": 1988744,
+      "dcName": "(M2XN) North Yorkshire FCR",
+      "dcAssign": "api"
+    },
+    {
       "id": 2333200,
       "name": "Stockwell LFB station",
       "type": "Fire Station",
@@ -6872,21 +6884,6 @@
       "level": 4,
       "lat": 53.99036156770937,
       "lon": -1.539725223926126,
-      "personnel": 200,
-      "small": false,
-      "region": "North",
-      "dcId": 1988744,
-      "dcName": "(M2XN) North Yorkshire FCR",
-      "dcAssign": "api"
-    },
-    {
-      "id": 2333227,
-      "name": "The health centre Starbeck",
-      "type": "Health Centre",
-      "typeId": 21,
-      "level": 2,
-      "lat": 53.99651665380682,
-      "lon": -1.5082697214037528,
       "personnel": 200,
       "small": false,
       "region": "North",
@@ -11368,15 +11365,15 @@
     }
   ],
   "credits": {
-    "credits_user_current": 245509,
-    "credits_user_total": 153753116,
-    "credits_alliance_current": 391593537,
-    "coins_user_current": 83,
-    "credits_alliance_total": 29916575273
+    "credits_user_current": 329514,
+    "credits_user_total": 153844905,
+    "credits_alliance_current": 391718643,
+    "coins_user_current": 81,
+    "credits_alliance_total": 29919198186
   },
   "alliance": {
     "users": 1823,
-    "online": 2,
+    "online": 8,
     "rank": 9,
     "financeActive": true
   }
