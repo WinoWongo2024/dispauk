@@ -1,8 +1,8 @@
 {
-  "updatedAt": "2026-09-05T18:54:14.750563+00:00",
+  "updatedAt": "2026-09-05T21:01:09.178297+00:00",
   "source": "missionchief.co.uk",
   "sync": {
-    "durationSeconds": 27,
+    "durationSeconds": 24,
     "schedule": "hourly"
   },
   "endpoints": {
@@ -59,8 +59,9 @@
     "Scotland": 4
   },
   "vehicleStatus": {
-    "2": 1505,
-    "4": 19,
+    "2": 1482,
+    "4": 40,
+    "3": 2,
     "6": 1,
     "5": 3
   },
@@ -11049,7 +11050,7 @@
       "name": "Coastguard Commander",
       "type": 60,
       "buildingId": 2311793,
-      "status": 2
+      "status": 4
     },
     {
       "id": 6271712,
@@ -11063,7 +11064,7 @@
       "name": "SMPC | HPS-001/IRV-001",
       "type": 8,
       "buildingId": 2312174,
-      "status": 2
+      "status": 4
     },
     {
       "id": 6272172,
@@ -11252,28 +11253,28 @@
       "name": "CRV",
       "type": 57,
       "buildingId": 2318732,
-      "status": 2
+      "status": 4
     },
     {
       "id": 6290766,
       "name": "STHP | SARHQ-001/4x4-001",
       "type": 93,
       "buildingId": 2318734,
-      "status": 2
+      "status": 4
     },
     {
       "id": 6290768,
       "name": "STHP | SARHQ-001/CC-001",
       "type": 103,
       "buildingId": 2318734,
-      "status": 2
+      "status": 4
     },
     {
       "id": 6290770,
       "name": "STHP | SARHQ-001/OST-001",
       "type": 87,
       "buildingId": 2318734,
-      "status": 2
+      "status": 4
     },
     {
       "id": 6290782,
@@ -11350,7 +11351,7 @@
       "name": "HYPS | HPS-003/IRV-001",
       "type": 8,
       "buildingId": 2319380,
-      "status": 2
+      "status": 4
     },
     {
       "id": 6293105,
@@ -11370,13 +11371,13 @@
   "credits": {
     "credits_user_current": 350098,
     "credits_user_total": 153867780,
-    "credits_alliance_current": 391799397,
+    "credits_alliance_current": 391806322,
     "coins_user_current": 81,
-    "credits_alliance_total": 29921347148
+    "credits_alliance_total": 29921725454
   },
   "alliance": {
     "users": 1823,
-    "online": 10,
+    "online": 6,
     "rank": 9,
     "financeActive": true
   }
