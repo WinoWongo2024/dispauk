@@ -1,8 +1,8 @@
 {
-  "updatedAt": "2026-09-06T18:56:52.531137+00:00",
+  "updatedAt": "2026-09-06T21:12:01.705640+00:00",
   "source": "missionchief.co.uk",
   "sync": {
-    "durationSeconds": 21,
+    "durationSeconds": 23,
     "schedule": "hourly"
   },
   "endpoints": {
@@ -20,7 +20,7 @@
     "units": 1528,
     "personnel": 42262,
     "dispatchCentres": 36,
-    "allianceBuildings": 1196,
+    "allianceBuildings": 1197,
     "equipments": 11,
     "missionTypes": 1068
   },
@@ -11369,13 +11369,13 @@
   "credits": {
     "credits_user_current": 572628,
     "credits_user_total": 154112896,
-    "credits_alliance_current": 392360942,
+    "credits_alliance_current": 391479576,
     "coins_user_current": 75,
-    "credits_alliance_total": 29935622577
+    "credits_alliance_total": 29938024437
   },
   "alliance": {
     "users": 1823,
-    "online": 8,
+    "online": 9,
     "rank": 9,
     "financeActive": true
   }
