@@ -1,8 +1,8 @@
 {
-  "updatedAt": "2026-09-06T12:43:23.799837+00:00",
+  "updatedAt": "2026-09-06T16:03:42.018305+00:00",
   "source": "missionchief.co.uk",
   "sync": {
-    "durationSeconds": 24,
+    "durationSeconds": 23,
     "schedule": "hourly"
   },
   "endpoints": {
@@ -59,8 +59,9 @@
     "Scotland": 4
   },
   "vehicleStatus": {
-    "2": 1525,
-    "4": 3
+    "2": 1522,
+    "1": 5,
+    "4": 1
   },
   "vehiclesByType": {
     "5": 546,
@@ -1625,6 +1626,21 @@
       "region": "North",
       "dcId": 1988744,
       "dcName": "(M2XN) North Yorkshire FCR",
+      "dcAssign": "api"
+    },
+    {
+      "id": 2390847,
+      "name": "Royal United Hospital (RUH)",
+      "type": "Hospital",
+      "typeId": 4,
+      "level": 30,
+      "lat": 51.39141658271086,
+      "lon": -2.3916416733188,
+      "personnel": 0,
+      "small": false,
+      "region": "South West",
+      "dcId": 2353684,
+      "dcName": "Somerset FCR ",
       "dcAssign": "api"
     },
     {
@@ -7523,21 +7539,6 @@
       "dcAssign": "api"
     },
     {
-      "id": 2390847,
-      "name": "Royal United Hospital (RUH)",
-      "type": "Hospital",
-      "typeId": 4,
-      "level": 30,
-      "lat": 51.39141658271086,
-      "lon": -2.3916416733188,
-      "personnel": 0,
-      "small": false,
-      "region": "South West",
-      "dcId": 2353684,
-      "dcName": "Somerset FCR ",
-      "dcAssign": "api"
-    },
-    {
       "id": 2621056,
       "name": "Loughborough Ambulance Station",
       "type": "Ambulance Station",
@@ -10977,7 +10978,7 @@
       "name": "H’GTE | YAS-001/RRV-001",
       "type": 10,
       "buildingId": 2188370,
-      "status": 2
+      "status": 1
     },
     {
       "id": 6269467,
@@ -11366,15 +11367,15 @@
     }
   ],
   "credits": {
-    "credits_user_current": 470614,
-    "credits_user_total": 153999540,
-    "credits_alliance_current": 392320090,
-    "coins_user_current": 79,
-    "credits_alliance_total": 29932649334
+    "credits_user_current": 572628,
+    "credits_user_total": 154112896,
+    "credits_alliance_current": 392338869,
+    "coins_user_current": 75,
+    "credits_alliance_total": 29933711272
   },
   "alliance": {
     "users": 1823,
-    "online": 3,
+    "online": 6,
     "rank": 9,
     "financeActive": true
   }
