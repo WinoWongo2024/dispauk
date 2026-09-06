@@ -1,8 +1,8 @@
 {
-  "updatedAt": "2026-09-06T16:03:42.018305+00:00",
+  "updatedAt": "2026-09-06T18:56:52.531137+00:00",
   "source": "missionchief.co.uk",
   "sync": {
-    "durationSeconds": 23,
+    "durationSeconds": 21,
     "schedule": "hourly"
   },
   "endpoints": {
@@ -59,8 +59,8 @@
     "Scotland": 4
   },
   "vehicleStatus": {
-    "2": 1522,
-    "1": 5,
+    "2": 1526,
+    "6": 1,
     "4": 1
   },
   "vehiclesByType": {
@@ -10978,7 +10978,7 @@
       "name": "H’GTE | YAS-001/RRV-001",
       "type": 10,
       "buildingId": 2188370,
-      "status": 1
+      "status": 2
     },
     {
       "id": 6269467,
@@ -11369,13 +11369,13 @@
   "credits": {
     "credits_user_current": 572628,
     "credits_user_total": 154112896,
-    "credits_alliance_current": 392338869,
+    "credits_alliance_current": 392360942,
     "coins_user_current": 75,
-    "credits_alliance_total": 29933711272
+    "credits_alliance_total": 29935622577
   },
   "alliance": {
     "users": 1823,
-    "online": 6,
+    "online": 8,
     "rank": 9,
     "financeActive": true
   }
