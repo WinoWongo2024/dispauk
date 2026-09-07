@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Story | DispaUK News</title>
+  <meta name="description" content="DispaUK operational incident report.">
+  <meta name="theme-color" content="#0b1220">
+  <meta name="referrer" content="strict-origin-when-cross-origin">
+  <link rel="stylesheet" href="/styles.css">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Roboto+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1802148026096192" crossorigin="anonymous"></script>
+</head>
+<body>
+  <header class="header">
+    <div class="container header-inner">
+      <a href="/" class="logo"><span class="logo-mark">DU</span><span class="logo-text">DispaUK</span></a>
+      <nav class="nav" aria-label="Primary">
+        <a href="/">Dashboard</a>
+        <a href="/dispatch/">Dispatch</a>
+        <a href="/stations/">Stations</a>
+        <a href="/locate/">Locate</a>
+        <a href="/map/">Map</a>
+        <a href="/news/">News</a>
+        <a href="/status/">Status</a>
+      </nav>
+      <button class="nav-toggle" type="button" aria-label="Menu" aria-expanded="false"><span></span><span></span><span></span></button>
+    </div>
+  </header>
+
+  <main class="legal-page">
+    <div class="container" id="story-root">
+      <p class="text-muted">Loading story…</p>
+    </div>
+  </main>
+
+  <footer class="footer-slim">
+    <div class="container footer-bottom">
+      <p class="footer-copy">© <span data-current-year>2026</span> DispaUK · <a href="/news/">All news</a> · <a href="/contact/">Contact</a></p>
+    </div>
+  </footer>
+
+  <script src="/script.js" defer></script>
+  <script>
+    function esc(s) {
+      return String(s || '').replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;');
+    }
+
+    function mergeNews(fileItems, localItems) {
+      const map = new Map();
+      (fileItems || []).forEach(i => map.set(i.id, i));
+      (localItems || []).forEach(i => {
+        if (i._deleted) map.delete(i.id);
+        else map.set(i.id, i);
+      });
+      return Array.from(map.values());
+    }
+
+    function normalise(item) {
+      const status = (item.status || '').toLowerCase() ||
+        (item.severity === 'high' ? 'developing' : 'resolved');
+      let county = item.county || '';
+      if (!county && item.location) {
+        const parts = String(item.location).split(',').map(s => s.trim());
+        if (parts.length > 1) county = parts[parts.length - 1];
+      }
+      const agencies = item.agency
+        ? (Array.isArray(item.agency) ? item.agency : [item.agency])
+        : inferAgencies(item.type);
+      return {
+        ...item,
+        status,
+        county,
+        agency: agencies,
+        incidentNumber: item.incidentNumber || generateIncidentNumber(item),
+        publishedAt: item.publishedAt || (item.date ? item.date + 'T12:00:00Z' : ''),
+        updatedAt: item.updatedAt || item.publishedAt || item.date || '',
+        timeline: item.timeline || [],
+        relatedIds: item.relatedIds || [],
+        versions: item.versions || [],
+        lat: item.lat,
+        lng: item.lng,
+      };
+    }
+
+    function inferAgencies(type) {
+      const t = (type || '').toLowerCase();
+      const out = [];
+      if (/fire|structural|hazmat|flood|rescue/.test(t)) out.push('Fire');
+      if (/medical|ambulance|casualty/.test(t)) out.push('Ambulance');
+      if (/police|crime|rtc|collision|traffic/.test(t)) out.push('Police');
+      if (!out.length) out.push('Other');
+      return out;
+    }
+
+    function generateIncidentNumber(item) {
+      const d = (item.date || '').replace(/-/g, '') || '00000000';
+      const hash = String(item.id || '').replace(/\W/g, '').slice(-4).toUpperCase() || 'XXXX';
+      return 'DU-' + d + '-' + hash;
+    }
+
+    function formatWhen(isoOrDate) {
+      if (!isoOrDate) return '—';
+      try {
+        const d = new Date(isoOrDate);
+        if (isNaN(d)) return String(isoOrDate);
+        return d.toLocaleString('en-GB', {
+          day: 'numeric', month: 'short', year: 'numeric',
+          hour: '2-digit', minute: '2-digit'
+        });
+      } catch (e) { return String(isoOrDate); }
+    }
+
+    function renderStory(item, allItems) {
+      const root = document.getElementById('story-root');
+      document.title = (item.title || 'Story') + ' | DispaUK News';
+
+      const related = (item.relatedIds || [])
+        .map(id => allItems.find(x => x.id === id))
+        .filter(Boolean);
+      let relatedHtml = '';
+      const pool = related.length
+        ? related
+        : allItems.filter(x => x.id !== item.id && (
+            (item.county && x.county === item.county) ||
+            (item.type && x.type === item.type)
+          )).slice(0, 4);
+      if (pool.length) {
+        relatedHtml =
+          '<div class="side-panel">' +
+            '<h3>📰 Related incidents</h3>' +
+            '<div class="related-list">' +
+            pool.map(r =>
+              '<a class="related-item" href="/news/story.html?id=' + encodeURIComponent(r.id) + '">' +
+                '<strong>' + esc(r.title) + '</strong>' +
+                '<span class="text-muted">' + esc(r.location || r.date || '') + '</span>' +
+              '</a>'
+            ).join('') +
+            '</div></div>';
+      }
+
+      let mapHtml = '';
+      if (item.lat != null && item.lng != null) {
+        const lat = Number(item.lat);
+        const lng = Number(item.lng);
+        const bbox = (lng - 0.03) + '%2C' + (lat - 0.02) + '%2C' + (lng + 0.03) + '%2C' + (lat + 0.02);
+        const marker = lat + '%2C' + lng;
+        mapHtml =
+          '<div class="map-panel">' +
+            '<iframe title="Map" loading="lazy" src="https://www.openstreetmap.org/export/embed.html?bbox=' + bbox + '&amp;layer=mapnik&amp;marker=' + marker + '"></iframe>' +
+          '</div>' +
+          '<p class="text-muted" style="font-size:0.78rem;margin-top:6px">' + esc(item.location || '') +
+          ' · <a href="https://www.openstreetmap.org/?mlat=' + lat + '&amp;mlon=' + lng + '#map=14/' + lat + '/' + lng + '" target="_blank" rel="noopener">Open map</a></p>';
+      } else if (item.location) {
+        const q = encodeURIComponent(item.location + ', UK');
+        mapHtml =
+          '<div class="map-panel">' +
+            '<div class="map-fallback">📍 ' + esc(item.location) +
+            '<br><a href="https://www.openstreetmap.org/search?query=' + q + '" target="_blank" rel="noopener">Search on OpenStreetMap</a></div>' +
+          '</div>';
+      } else {
+        mapHtml = '<div class="map-panel"><div class="map-fallback">No location data</div></div>';
+      }
+
+      const timeline = item.timeline || [];
+      let timelineHtml = '';
+      if (timeline.length) {
+        timelineHtml =
+          '<div class="side-panel">' +
+            '<h3>Operational timeline</h3>' +
+            '<ol class="timeline">' +
+            timeline.map(t =>
+              '<li><time>' + esc(t.time || '') + '</time>' + esc(t.event || '') + '</li>'
+            ).join('') +
+            '</ol></div>';
+      }
+
+      const units = item.units || [];
+      const unitsHtml = units.length
+        ? '<div class="side-panel"><h3>🚒 Units deployed</h3><div class="units-list">' +
+          units.map(u => '<span class="unit-chip">' + esc(u) + '</span>').join('') +
+          '</div></div>'
+        : '';
+
+      const versions = item.versions || [];
+      let versionsHtml = '';
+      if (versions.length) {
+        versionsHtml =
+          '<section class="version-history">' +
+            '<h3>Update history</h3>' +
+            versions.slice().reverse().map((v) =>
+              '<article class="version-item">' +
+                '<header>' +
+                  '<span>Update · ' + esc(formatWhen(v.at)) + '</span>' +
+                  (v.note ? '<span>' + esc(v.note) + '</span>' : '') +
+                  (v.author ? '<span>' + esc(v.author) + '</span>' : '') +
+                '</header>' +
+                (v.summary ? '<p style="margin-bottom:6px"><strong>' + esc(v.summary) + '</strong></p>' : '') +
+                (v.body ? '<div class="v-body">' + esc(v.body) + '</div>' : '') +
+              '</article>'
+            ).join('') +
+          '</section>';
+      }
+
+      const heroImg = item.image
+        ? '<img class="story-hero-img" src="' + esc(item.image) + '" alt="' + esc(item.imageAlt || item.title) + '">' 
+        : '';
+
+      root.innerHTML =
+        '<a class="back-link" href="/news/">← All news</a>' +
+        '<div class="story-layout">' +
+          '<article class="story-main">' +
+            heroImg +
+            '<div class="story-kicker">' +
+              '<span class="status-badge ' + esc(item.status) + '">' + esc(item.status) + '</span>' +
+              '<span class="sev-pill ' + esc(item.severity || 'low') + '">' + esc(item.severity || '') + '</span>' +
+              (item.type ? '<span class="text-muted">' + esc(item.type) + '</span>' : '') +
+              (item.agency && item.agency.length ? '<span class="text-muted">' + esc(item.agency.join(' · ')) + '</span>' : '') +
+            '</div>' +
+            '<h1 class="story-title">' + esc(item.title) + '</h1>' +
+            (item.summary ? '<p class="story-dek">' + esc(item.summary) + '</p>' : '') +
+            '<div class="story-byline">' +
+              '<span><strong>Incident</strong> ' + esc(item.incidentNumber) + '</span>' +
+              '<span><strong>Published</strong> ' + esc(formatWhen(item.publishedAt)) + '</span>' +
+              '<span><strong>Updated</strong> ' + esc(formatWhen(item.updatedAt)) + '</span>' +
+              (item.author ? '<span><strong>By</strong> ' + esc(item.author) + '</span>' : '') +
+              (item.location ? '<span>📍 ' + esc(item.location) + '</span>' : '') +
+            '</div>' +
+            (item.body ? '<div class="story-body">' + esc(item.body) + '</div>' : '') +
+            (item.creditsNote ? '<p class="text-muted" style="margin-top:18px;font-size:0.88rem">' + esc(item.creditsNote) + '</p>' : '') +
+            versionsHtml +
+            '<p class="disclaimer-bar" style="margin-top:28px">Fiction / game context for MissionChief. Not real emergency service communications. Call <strong>999 / 112</strong> in a real emergency.</p>' +
+          '</article>' +
+          '<aside class="story-side">' +
+            '<div class="side-panel">' +
+              '<h3>Incident number</h3>' +
+              '<div class="incident-number">' + esc(item.incidentNumber) + '</div>' +
+            '</div>' +
+            '<div class="side-panel">' +
+              '<h3>📍 Location</h3>' +
+              mapHtml +
+            '</div>' +
+            unitsHtml +
+            timelineHtml +
+            relatedHtml +
+          '</aside>' +
+        '</div>';
+    }
+
+    document.addEventListener('DOMContentLoaded', async () => {
+      const params = new URLSearchParams(location.search);
+      const id = params.get('id');
+      const root = document.getElementById('story-root');
+      if (!id) {
+        root.innerHTML = '<p class="text-muted">No story selected. <a href="/news/">Browse news</a></p>';
+        return;
+      }
+
+      let fileItems = [];
+      try {
+        const res = await fetch('/data/news.json', { cache: 'no-cache' });
+        if (res.ok) {
+          const data = await res.json();
+          fileItems = data.items || [];
+        }
+      } catch (e) { /* */ }
+      let localItems = [];
+      try {
+        localItems = JSON.parse(localStorage.getItem('dispauk_news_local') || '[]');
+      } catch (e) { /* */ }
+
+      const all = mergeNews(fileItems, localItems).map(normalise);
+      const item = all.find(i => i.id === id);
+      if (!item) {
+        root.innerHTML = '<p class="text-muted">Story not found. <a href="/news/">Browse news</a></p>';
+        return;
+      }
+      renderStory(item, all);
+    });
+  </script>
+</body>
+</html>
