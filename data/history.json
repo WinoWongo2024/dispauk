@@ -655,5 +655,15 @@
     "durationSeconds": 25,
     "ok": true,
     "creditsCurrent": 13047
+  },
+  {
+    "at": "2026-09-07T09:08:03.520276+00:00",
+    "stations": 618,
+    "units": 1534,
+    "personnel": 42651,
+    "dispatchCentres": 36,
+    "durationSeconds": 25,
+    "ok": true,
+    "creditsCurrent": 21146
   }
 ]
