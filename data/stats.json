@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-09-07T19:42:57.374402+00:00",
+  "updatedAt": "2026-09-07T22:39:09.727556+00:00",
   "source": "missionchief.co.uk",
   "sync": {
     "durationSeconds": 22,
@@ -59,9 +59,9 @@
     "Scotland": 4
   },
   "vehicleStatus": {
-    "2": 1528,
+    "2": 1421,
+    "4": 110,
     "6": 1,
-    "4": 3,
     "5": 3
   },
   "vehiclesByType": {
@@ -10640,7 +10640,7 @@
       "name": "WCP | LFB-008/L4x4-001 (P)",
       "type": 1,
       "buildingId": 1844367,
-      "status": 2
+      "status": 4
     },
     {
       "id": 4926750,
@@ -10675,14 +10675,14 @@
       "name": "NWCP | LFB-006/WL-001",
       "type": 0,
       "buildingId": 1844412,
-      "status": 2
+      "status": 4
     },
     {
       "id": 4927854,
       "name": "NWCP | LFB-006/WL-002",
       "type": 0,
       "buildingId": 1844412,
-      "status": 2
+      "status": 4
     },
     {
       "id": 4929073,
@@ -10696,7 +10696,7 @@
       "name": "HLBRN | HRL-004/FO-001",
       "type": 3,
       "buildingId": 1845393,
-      "status": 2
+      "status": 4
     },
     {
       "id": 4929766,
@@ -10808,14 +10808,14 @@
       "name": "THML | MET-007/IRV-001",
       "type": 8,
       "buildingId": 1984600,
-      "status": 2
+      "status": 4
     },
     {
       "id": 5332267,
       "name": "THML | MET-007/IRV-002",
       "type": 8,
       "buildingId": 1984600,
-      "status": 2
+      "status": 4
     },
     {
       "id": 5332349,
@@ -10976,14 +10976,14 @@
       "name": "CoLP | MET-001/IRV-001",
       "type": 8,
       "buildingId": 2033679,
-      "status": 2
+      "status": 4
     },
     {
       "id": 5467027,
       "name": "CoL | HRL-001/FO-001",
       "type": 3,
       "buildingId": 2033681,
-      "status": 2
+      "status": 4
     },
     {
       "id": 5467039,
@@ -11039,7 +11039,7 @@
       "name": "CoL | LFB-002/RSU-001",
       "type": 4,
       "buildingId": 2033678,
-      "status": 2
+      "status": 4
     },
     {
       "id": 5496781,
@@ -11053,7 +11053,7 @@
       "name": "SJP | BTP-003/RTPC-001",
       "type": 24,
       "buildingId": 1984841,
-      "status": 2
+      "status": 4
     },
     {
       "id": 5496793,
@@ -11158,7 +11158,7 @@
       "name": "LMBTH | HRL-003/FO-001",
       "type": 3,
       "buildingId": 2312031,
-      "status": 2
+      "status": 4
     },
     {
       "id": 6272134,
@@ -11193,7 +11193,7 @@
       "name": "CoLP | MET-001/IRV-002",
       "type": 8,
       "buildingId": 2033679,
-      "status": 2
+      "status": 4
     },
     {
       "id": 6272828,
@@ -11214,7 +11214,7 @@
       "name": "BTGN | LFB-001/WL-001",
       "type": 0,
       "buildingId": 2312415,
-      "status": 2
+      "status": 4
     },
     {
       "id": 6272844,
@@ -11242,7 +11242,7 @@
       "name": "Fire Officer",
       "type": 3,
       "buildingId": 2312456,
-      "status": 2
+      "status": 4
     },
     {
       "id": 6272993,
@@ -11431,7 +11431,7 @@
       "name": "Fire Officer",
       "type": 3,
       "buildingId": 2318784,
-      "status": 2
+      "status": 4
     },
     {
       "id": 6292256,
@@ -11470,15 +11470,15 @@
     }
   ],
   "credits": {
-    "credits_user_current": 221663,
-    "credits_user_total": 154415081,
-    "credits_alliance_current": 391672085,
+    "credits_user_current": 229934,
+    "credits_user_total": 154424271,
+    "credits_alliance_current": 391698733,
     "coins_user_current": 63,
-    "credits_alliance_total": 29943780645
+    "credits_alliance_total": 29944803950
   },
   "alliance": {
     "users": 1823,
-    "online": 5,
+    "online": 7,
     "rank": 9,
     "financeActive": true
   }
