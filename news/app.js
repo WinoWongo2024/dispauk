@@ -85,13 +85,13 @@ function statusBadge(status) {
 }
 
 function listThumb(item) {
-  const img = item.image || '';
-  const isHugeData = img.indexOf('data:') === 0 && img.length > 80000;
-  if (img && !isHugeData) {
-    return '<div class="thumb"><img src="' + esc(img) + '" alt="' + esc(item.imageAlt || item.title) + '" loading="lazy"></div>';
-  }
-  if (img && isHugeData) {
-    return '<div class="thumb"><div class="thumb-placeholder">📷</div></div>';
+  const thumb = item.imageThumb || '';
+  const full = item.image || '';
+  let src = '';
+  if (thumb && !(thumb.indexOf('data:') === 0 && thumb.length > 60000)) src = thumb;
+  else if (full && !(full.indexOf('data:') === 0 && full.length > 80000)) src = full;
+  if (src) {
+    return '<div class="thumb"><img src="' + esc(src) + '" alt="' + esc(item.imageAlt || item.title) + '" loading="lazy"></div>';
   }
   return '<div class="thumb"><div class="thumb-placeholder">📰</div></div>';
 }
@@ -197,10 +197,15 @@ function showLoadError(msg) {
 function stripHeavyImages(item) {
   if (!item || typeof item !== 'object') return item;
   const img = item.image || '';
-  if (typeof img === 'string' && img.indexOf('data:') === 0 && img.length > 40000) {
-    return { ...item, image: '', imageNote: item.imageNote || 'Photo omitted (too large for mobile).' };
+  const thumb = item.imageThumb || '';
+  let out = item;
+  if (typeof img === 'string' && img.indexOf('data:') === 0 && img.length > 180000) {
+    out = { ...out, image: '', imageNote: out.imageNote || 'Photo omitted (too large).' };
   }
-  return item;
+  if (typeof thumb === 'string' && thumb.indexOf('data:') === 0 && thumb.length > 60000) {
+    out = { ...out, imageThumb: '' };
+  }
+  return out;
 }
 
 function cleanLocalStorageImages() {
@@ -212,11 +217,17 @@ function cleanLocalStorageImages() {
     let changed = false;
     const cleaned = items.map(it => {
       const img = (it && it.image) || '';
-      if (typeof img === 'string' && img.indexOf('data:') === 0 && img.length > 40000) {
+      const thumb = (it && it.imageThumb) || '';
+      let next = it;
+      if (typeof img === 'string' && img.indexOf('data:') === 0 && img.length > 180000) {
         changed = true;
-        return { ...it, image: '' };
+        next = { ...next, image: '' };
       }
-      return it;
+      if (typeof thumb === 'string' && thumb.indexOf('data:') === 0 && thumb.length > 60000) {
+        changed = true;
+        next = { ...next, imageThumb: '' };
+      }
+      return next;
     });
     if (changed) localStorage.setItem('dispauk_news_local', JSON.stringify(cleaned));
   } catch (e) { /* ignore */ }
