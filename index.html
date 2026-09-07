@@ -50,141 +50,37 @@
   <main>
     <noscript>
       <div class="container" style="padding:16px">
-        <p><strong>JavaScript is required</strong> for live operational figures. Static data: <a href="/data/stats.json">/data/stats.json</a>.</p>
+        <p><strong>JavaScript is required</strong> for live operational figures.</p>
       </div>
     </noscript>
 
-    <section class="hero hero-compact" aria-labelledby="hero-title">
-      <div class="container">
-        <div class="hero-top">
-          <div>
-            <div class="hero-badge" data-freshness-badge>
-              <span class="status-dot online" data-freshness-dot></span>
-              <span data-freshness-text>Checking…</span>
-            </div>
-            <h1 id="hero-title">DispaUK <span>Dispatch HQ</span></h1>
-            <p class="hero-lead">Independent UK multi-agency coordination dashboard.</p>
+    <section class="hero">
+      <div class="container hero-grid">
+        <div class="hero-copy">
+          <p class="eyebrow">UK dispatch · MissionChief synchronised</p>
+          <h1>Operational picture for the whole of the UK</h1>
+          <p class="lead">Stations, fleet and response metrics in one control-room view — built for DispaUK players and coordinators.</p>
+          <div class="hero-actions">
+            <a class="btn btn-primary" href="/stations/">Browse stations</a>
+            <a class="btn btn-outline" href="/news/">News &amp; incidents</a>
           </div>
-          <p class="sync-meta">Last sync: <strong data-sync-relative>—</strong><br><span class="text-muted" data-sync-absolute></span></p>
         </div>
-
-        <div class="status-stack compact" data-system-status aria-label="System status" aria-live="polite">
-          <div class="status-row"><span class="status-dot online"></span><span>Website</span><strong>Online</strong></div>
-          <div class="status-row"><span class="status-dot" data-dot="sync"></span><span>Data sync</span><strong data-sync-label>Checking…</strong></div>
-          <div class="status-row"><span class="status-dot" data-dot="api"></span><span>MissionChief</span><strong data-api-label>Checking…</strong></div>
+        <div class="hero-stats" id="hero-stats">
+          <div class="stat-card"><span class="stat-label">Stations</span><span class="stat-value" data-stat="stations">—</span></div>
+          <div class="stat-card"><span class="stat-label">Vehicles</span><span class="stat-value" data-stat="vehicles">—</span></div>
+          <div class="stat-card"><span class="stat-label">Regions</span><span class="stat-value" data-stat="regions">—</span></div>
         </div>
       </div>
     </section>
 
-    <section id="dashboard" class="dash">
+    <section class="section">
       <div class="container">
-        <div class="dash-grid" aria-live="polite">
-          <article class="stat-card"><span class="stat-label">Stations</span><strong class="stat-value" id="station-count">…</strong></article>
-          <article class="stat-card"><span class="stat-label">Units</span><strong class="stat-value" id="unit-count">…</strong></article>
-          <article class="stat-card"><span class="stat-label">Personnel</span><strong class="stat-value" id="personnel-count">…</strong></article>
-          <article class="stat-card"><span class="stat-label">Dispatch centres</span><strong class="stat-value" data-dc-total>…</strong></article>
-          <article class="stat-card"><span class="stat-label">Credits (current)</span><strong class="stat-value" data-credits-current>…</strong></article>
-          <article class="stat-card"><span class="stat-label">Credits (lifetime)</span><strong class="stat-value" data-credits-total>…</strong></article>
-          <article class="stat-card"><span class="stat-label">Alliance online</span><strong class="stat-value" data-alliance-online>…</strong></article>
-          <article class="stat-card"><span class="stat-label">Alliance rank</span><strong class="stat-value" data-alliance-rank-card>…</strong></article>
+        <div class="section-header">
+          <span class="section-kicker">LIVE BOARD</span>
+          <h2>Dashboard</h2>
         </div>
-
-        <div class="dash-panels">
-          <div class="panel">
-            <h2>Unit status codes</h2>
-            <div class="chip-row" data-vehicle-status><span class="text-muted">Loading…</span></div>
-          </div>
-          <div class="panel">
-            <h2>Stations by type</h2>
-            <div data-station-types><span class="text-muted">Loading…</span></div>
-          </div>
-          <div class="panel">
-            <h2>Alliance &amp; credits</h2>
-            <div class="metric-row"><span>Members</span><strong data-alliance-users>—</strong></div>
-            <div class="metric-row"><span>Online</span><strong data-alliance-online-2>—</strong></div>
-            <div class="metric-row"><span>Rank</span><strong data-alliance-rank>—</strong></div>
-            <div class="metric-row"><span>Credits now</span><strong data-credits-current-2>—</strong></div>
-            <div class="metric-row"><span>Credits total</span><strong data-credits-total-2>—</strong></div>
-            <p style="margin-top:10px"><a href="/dispatch/">Dispatch →</a> · <a href="/map/">Map →</a> · <a href="/locate/">Locate →</a> · <a href="/regions/">Regions →</a></p>
-          </div>
-        </div>
-
-        <p class="disclaimer-bar">Not an emergency service. Do not rely on this data for real-world response. Call <strong>999 / 112</strong>.</p>
-      </div>
-    </section>
-
-    <section id="stations" class="section section-tight section-alt">
-      <div class="container">
-        <div class="section-header-left">
-          <span class="section-kicker">OPERATIONS</span>
-          <h2>Stations</h2>
-        </div>
-
-        <div class="toolbar">
-          <label class="search-wrap">
-            <span class="sr-only">Search stations</span>
-            <input type="search" id="station-search" placeholder="Search stations…" autocomplete="off">
-          </label>
-          <div class="filter-row" role="group" aria-label="Service filter">
-            <button type="button" class="filter-btn active" data-filter="all">All</button>
-            <button type="button" class="filter-btn" data-filter="fire">Fire</button>
-            <button type="button" class="filter-btn" data-filter="ambulance">Ambulance</button>
-            <button type="button" class="filter-btn" data-filter="police">Police</button>
-            <button type="button" class="filter-btn" data-filter="other">Other</button>
-          </div>
-          <label class="sort-wrap">
-            <span class="sr-only">Sort</span>
-            <select id="station-sort">
-              <option value="name-asc">Name A–Z</option>
-              <option value="name-desc">Name Z–A</option>
-              <option value="type">Service</option>
-              <option value="personnel-desc">Personnel ↓</option>
-            </select>
-          </label>
-        </div>
-
-        <p class="result-meta" aria-live="polite"><span data-result-count>…</span> stations · showing <span data-showing-count>…</span></p>
-
-        <div class="table-wrap desktop-only">
-          <table>
-            <caption class="sr-only">Stations</caption>
-            <thead>
-              <tr>
-                <th scope="col">Station</th>
-                <th scope="col">Service</th>
-                <th scope="col">Dispatch</th>
-                <th scope="col">Personnel</th>
-                <th scope="col">Status</th>
-              </tr>
-            </thead>
-            <tbody data-stations-body>
-              <tr><td colspan="5" class="empty">Loading stations…</td></tr>
-            </tbody>
-          </table>
-        </div>
-
-        <div class="station-cards mobile-only" data-stations-cards>
-          <p class="empty-card">Loading stations…</p>
-        </div>
-
-        <div class="load-more-wrap">
-          <button type="button" class="btn btn-outline" id="load-more" hidden>Load more</button>
-        </div>
-      </div>
-    </section>
-
-    <section id="contact" class="section section-tight">
-      <div class="container contact-slim">
-        <div>
-          <span class="section-kicker">CONTACT</span>
-          <h2>DispaUK</h2>
-          <p class="text-muted">Collaboration and operational enquiries.</p>
-        </div>
-        <div class="contact-actions">
-          <a class="btn btn-primary" href="mailto:administrator@dispauk.co.uk">Email</a>
-          <a class="btn btn-outline" href="/contact/">Contact page</a>
-          <a class="btn btn-outline" href="/dispatch/">Dispatch</a>
-          <a class="btn btn-outline" href="/status/">Status</a>
+        <div id="dashboard-root" class="dashboard-grid">
+          <p class="text-muted">Loading operational data…</p>
         </div>
       </div>
     </section>
@@ -193,7 +89,7 @@
   <footer class="footer-slim">
     <div class="container footer-bottom">
       <p class="footer-copy">© <span data-current-year>2026</span> DispaUK · <a href="/news/">News</a> · <a href="/developers/">API</a> · <a href="/about/">About</a> · <a href="/contact/">Contact</a> · <a href="/privacy/">Privacy</a> · <a href="/cookies/">Cookies</a> · <a href="/terms/">Terms</a> · <a href="/legal/">Legal</a> · <a href="/accessibility/">Accessibility</a> · <a href="/changelog/">Changelog</a></p>
-      <p class="footer-disclaimer">Independent project — not affiliated with SHPlay GmbH or MissionChief. Operational data may be delayed. Not for real-world emergency use. Map coverage is an analytical approximation, not official emergency-service boundaries.</p>
+      <p class="footer-disclaimer">Independent project — not affiliated with SHPlay GmbH or MissionChief. Operational data may be delayed. Not for real-world emergency use.</p>
     </div>
   </footer>
   <script src="/script.js" defer></script>
@@ -203,42 +99,29 @@
       function esc(s) {
         return String(s || '').replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;');
       }
-      function mergeNews(fileItems, localItems) {
-        const map = new Map();
-        (fileItems || []).forEach(i => map.set(i.id, i));
-        (localItems || []).forEach(i => {
-          if (i._deleted) map.delete(i.id);
-          else map.set(i.id, i);
-        });
-        return Array.from(map.values());
-      }
       document.addEventListener('DOMContentLoaded', async () => {
         const wrap = document.getElementById('news-ticker');
         const track = document.getElementById('ticker-content');
         if (!wrap || !track) return;
-        let fileItems = [];
+        let items = [];
         try {
           const res = await fetch('/data/news.json', { cache: 'no-cache' });
-          if (res.ok) {
-            const data = await res.json();
-            fileItems = data.items || [];
-          }
-        } catch (e) {}
-        let localItems = [];
-        try { localItems = JSON.parse(localStorage.getItem('dispauk_news_local') || '[]'); } catch (e) {}
-        const items = mergeNews(fileItems, localItems)
-          .filter(i => {
-            const st = (i.status || '').toLowerCase();
-            return st === 'breaking' || st === 'developing' || i.severity === 'high';
-          })
-          .sort((a, b) => String(b.updatedAt || b.date).localeCompare(String(a.updatedAt || a.date)))
-          .slice(0, 8);
+          if (!res.ok) return;
+          const data = await res.json();
+          items = (data.items || [])
+            .filter(i => {
+              const st = (i.status || '').toLowerCase();
+              return st === 'breaking' || st === 'developing' || i.severity === 'high';
+            })
+            .sort((a, b) => String(b.updatedAt || b.date || '').localeCompare(String(a.updatedAt || a.date || '')))
+            .slice(0, 8);
+        } catch (e) { return; }
         if (!items.length) return;
         const html = items.map(i => {
           const st = (i.status || (i.severity === 'high' ? 'developing' : 'resolved')).toLowerCase();
           return '<a class="news-ticker-item" href="/news/story.html?id=' + encodeURIComponent(i.id) + '">' +
             '<span class="t-status ' + esc(st) + '">' + esc(st) + '</span>' +
-            '<strong>' + esc(i.title) + '</strong>' +
+            '<strong>' + esc(i.title || '') + '</strong>' +
             (i.location ? ' — ' + esc(i.location) : '') +
           '</a>';
         }).join('');
