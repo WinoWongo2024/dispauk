@@ -95,8 +95,20 @@
             <div class="chip-row" data-vehicle-status><span class="text-muted">Loading…</span></div>
           </div>
           <div class="panel">
-            <h2>Service mix</h2>
-            <div class="chip-row" data-service-mix><span class="text-muted">Loading…</span></div>
+            <h2>Alliance</h2>
+            <div class="chip-row">
+              <span>Online <strong data-alliance-online-2>…</strong></span>
+              <span>Users <strong data-alliance-users>…</strong></span>
+              <span>Rank <strong data-alliance-rank>…</strong></span>
+            </div>
+            <div class="chip-row" style="margin-top:8px">
+              <span>Credits <strong data-credits-current-2>…</strong></span>
+              <span>Lifetime <strong data-credits-total-2>…</strong></span>
+            </div>
+          </div>
+          <div class="panel">
+            <h2>Station types</h2>
+            <div class="chip-row" data-station-types><span class="text-muted">Loading…</span></div>
           </div>
         </div>
       </div>
@@ -107,14 +119,32 @@
         <div class="section-header-left">
           <span class="section-kicker">OPERATIONS</span>
           <h2>Stations</h2>
-          <p class="text-muted">Live station list from the DispaUK dataset.</p>
         </div>
 
         <div class="toolbar">
-          <input type="search" id="station-search" placeholder="Search stations…" autocomplete="off">
-          <select id="station-service" aria-label="Service filter"><option value="">All services</option></select>
-          <select id="station-status" aria-label="Status filter"><option value="">All statuses</option></select>
+          <label class="search-wrap">
+            <span class="sr-only">Search stations</span>
+            <input type="search" id="station-search" placeholder="Search stations…" autocomplete="off">
+          </label>
+          <div class="filter-row" role="group" aria-label="Service filter">
+            <button type="button" class="filter-btn active" data-filter="all">All</button>
+            <button type="button" class="filter-btn" data-filter="fire">Fire</button>
+            <button type="button" class="filter-btn" data-filter="ambulance">Ambulance</button>
+            <button type="button" class="filter-btn" data-filter="police">Police</button>
+            <button type="button" class="filter-btn" data-filter="other">Other</button>
+          </div>
+          <label class="sort-wrap">
+            <span class="sr-only">Sort</span>
+            <select id="station-sort">
+              <option value="name-asc">Name A–Z</option>
+              <option value="name-desc">Name Z–A</option>
+              <option value="type">Service</option>
+              <option value="personnel-desc">Personnel ↓</option>
+            </select>
+          </label>
         </div>
+
+        <p class="result-meta" aria-live="polite"><span data-showing-count>0</span> shown · <span data-result-count>0</span> total</p>
 
         <div class="table-wrap desktop-only">
           <table>
