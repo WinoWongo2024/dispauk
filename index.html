@@ -30,11 +30,22 @@
         <a href="/map/">Map</a>
         <a href="/regions/">Regions</a>
         <a href="/statistics/">Statistics</a>
+        <a href="/news/">News</a>
         <a href="/status/">Status</a>
       </nav>
       <button class="nav-toggle" type="button" aria-label="Open menu" aria-expanded="false"><span></span><span></span><span></span></button>
     </div>
   </header>
+
+  <!-- Major incidents ticker -->
+  <div class="news-ticker" id="news-ticker" hidden>
+    <div class="container news-ticker-inner">
+      <span class="news-ticker-label">Live</span>
+      <div class="news-ticker-track">
+        <div class="news-ticker-content" id="ticker-content"></div>
+      </div>
+    </div>
+  </div>
 
   <main>
     <noscript>
@@ -186,5 +197,56 @@
     </div>
   </footer>
   <script src="/script.js" defer></script>
+
+  <script>
+    (function () {
+      function esc(s) {
+        return String(s || '').replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;');
+      }
+      function mergeNews(fileItems, localItems) {
+        const map = new Map();
+        (fileItems || []).forEach(i => map.set(i.id, i));
+        (localItems || []).forEach(i => {
+          if (i._deleted) map.delete(i.id);
+          else map.set(i.id, i);
+        });
+        return Array.from(map.values());
+      }
+      document.addEventListener('DOMContentLoaded', async () => {
+        const wrap = document.getElementById('news-ticker');
+        const track = document.getElementById('ticker-content');
+        if (!wrap || !track) return;
+        let fileItems = [];
+        try {
+          const res = await fetch('/data/news.json', { cache: 'no-cache' });
+          if (res.ok) {
+            const data = await res.json();
+            fileItems = data.items || [];
+          }
+        } catch (e) {}
+        let localItems = [];
+        try { localItems = JSON.parse(localStorage.getItem('dispauk_news_local') || '[]'); } catch (e) {}
+        const items = mergeNews(fileItems, localItems)
+          .filter(i => {
+            const st = (i.status || '').toLowerCase();
+            return st === 'breaking' || st === 'developing' || i.severity === 'high';
+          })
+          .sort((a, b) => String(b.updatedAt || b.date).localeCompare(String(a.updatedAt || a.date)))
+          .slice(0, 8);
+        if (!items.length) return;
+        const html = items.map(i => {
+          const st = (i.status || (i.severity === 'high' ? 'developing' : 'resolved')).toLowerCase();
+          return '<a class="news-ticker-item" href="/news/story.html?id=' + encodeURIComponent(i.id) + '">' +
+            '<span class="t-status ' + esc(st) + '">' + esc(st) + '</span>' +
+            '<strong>' + esc(i.title) + '</strong>' +
+            (i.location ? ' — ' + esc(i.location) : '') +
+          '</a>';
+        }).join('');
+        track.innerHTML = html + html;
+        wrap.hidden = false;
+      });
+    })();
+  </script>
+
 </body>
 </html>
