@@ -1,12 +1,12 @@
 {
-  "updatedAt": "2026-09-07T19:36:50.171Z",
+  "updatedAt": "2026-09-07T19:37:58.555Z",
   "items": [
     {
       "id": "local-1788809703252",
       "incidentNumber": "DU-20260907-3252",
       "date": "2026-09-07",
       "publishedAt": "2026-09-07T19:35:03.252Z",
-      "updatedAt": "2026-09-07T19:36:49.846Z",
+      "updatedAt": "2026-09-07T19:37:24.989Z",
       "status": "breaking",
       "title": "Inshore Lifeboat Dispatched to Dis-Masted Boat Near Cardiff Bay Barrage",
       "type": "Water rescue",
@@ -34,7 +34,7 @@
           "event": "Call issued too RNLI"
         },
         {
-          "time": "20:16",
+          "time": "20:36",
           "event": "RNLI Weston-super-Mare sends out 1× ILB"
         }
       ],
@@ -43,6 +43,14 @@
         {
           "at": "2026-09-07T19:35:03.252Z",
           "note": "Developing",
+          "summary": "An Inshore Lifeboat (ILB) was launched to assist a dis-masted sailing boat caught in difficulty near the Cardiff Bay Barrage at Penarth Marina.",
+          "body": "Emergency volunteer crews were called into action at 19:17 following reports of a dis-masted sailing boat in distress near the Cardiff Bay Barrage (CF64 1FP). The vessel lost its rigging and mast, leaving it immobilized and drifting close to the barrage perimeter near Penarth Marina as dusk approached.\nAn Inshore Lifeboat (ILB) was deployed to assess the situation and render aid to the stranded vessel:\n 1 Inshore Lifeboat (ILB): Dispatched to navigate the shallow coastal waters, establish a towline, stabilize the vessel, and safeguard the crew on board.\nVolunteer lifeboat crew members arrived on scene to secure the vessel's tangled rigging, prevent further damage from the submerged mast, and ensure the vessel was brought safely into calmer waters. No major injuries were reported, and normal transit through the barrage locks remains clear.",
+          "status": "breaking",
+          "author": "DispaUK Control"
+        },
+        {
+          "at": "2026-09-07T19:36:49.846Z",
+          "note": "Updated report",
           "summary": "An Inshore Lifeboat (ILB) was launched to assist a dis-masted sailing boat caught in difficulty near the Cardiff Bay Barrage at Penarth Marina.",
           "body": "Emergency volunteer crews were called into action at 19:17 following reports of a dis-masted sailing boat in distress near the Cardiff Bay Barrage (CF64 1FP). The vessel lost its rigging and mast, leaving it immobilized and drifting close to the barrage perimeter near Penarth Marina as dusk approached.\nAn Inshore Lifeboat (ILB) was deployed to assess the situation and render aid to the stranded vessel:\n 1 Inshore Lifeboat (ILB): Dispatched to navigate the shallow coastal waters, establish a towline, stabilize the vessel, and safeguard the crew on board.\nVolunteer lifeboat crew members arrived on scene to secure the vessel's tangled rigging, prevent further damage from the submerged mast, and ensure the vessel was brought safely into calmer waters. No major injuries were reported, and normal transit through the barrage locks remains clear.",
           "status": "breaking",
