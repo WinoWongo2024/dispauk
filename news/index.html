@@ -3,13 +3,76 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>News | DispaUK</title>
-  <meta name="description" content="DispaUK operational news — multi-agency incidents, developing stories and control-room updates.">
+  <title>News &amp; incidents | DispaUK</title>
+  <meta name="description" content="Control-room reports from DispaUK — breaking, developing and resolved incidents across the UK.">
   <meta name="theme-color" content="#0b1220">
-  <meta name="referrer" content="strict-origin-when-cross-origin">
   <link rel="stylesheet" href="/styles.css">
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Roboto+Mono:wght@400;500&display=swap" rel="stylesheet">
-  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1802148026096192" crossorigin="anonymous"></script>
+  <style>
+    .news-page-header { margin-bottom: 1.25rem; }
+    .news-filters {
+      display: grid; grid-template-columns: 1fr 1fr; gap: 8px; margin-bottom: 12px;
+    }
+    @media (min-width: 700px) {
+      .news-filters { grid-template-columns: 2fr 1fr 1fr 1fr; }
+    }
+    .news-filters input, .news-filters select {
+      width: 100%; padding: 10px 12px; border-radius: 10px;
+      border: 1px solid var(--border); background: var(--surface); color: var(--text);
+      font: inherit; box-sizing: border-box;
+    }
+    .news-status-tabs { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 14px; }
+    .news-filter-btn {
+      appearance: none; border: 1px solid var(--border); background: var(--surface);
+      color: var(--text-muted); border-radius: 999px; padding: 6px 14px; font: inherit;
+      font-size: 0.85rem; cursor: pointer;
+    }
+    .news-filter-btn.active {
+      border-color: var(--accent, #3b82f6); color: #fff;
+      background: rgba(59,130,246,0.25);
+    }
+    .news-result-count { font-size: 0.85rem; color: var(--text-muted); margin-bottom: 10px; }
+    .news-grid {
+      display: grid; grid-template-columns: 1fr; gap: 12px;
+    }
+    @media (min-width: 640px) {
+      .news-grid { grid-template-columns: 1fr 1fr; }
+    }
+    @media (min-width: 960px) {
+      .news-grid { grid-template-columns: 1fr 1fr 1fr; }
+    }
+    .news-story-card {
+      display: flex; flex-direction: column; text-decoration: none; color: inherit;
+      background: var(--surface); border: 1px solid var(--border); border-radius: 12px;
+      overflow: hidden; transition: border-color .15s ease, transform .15s ease;
+    }
+    .news-story-card:hover { border-color: rgba(59,130,246,0.45); transform: translateY(-1px); }
+    .news-story-card .thumb {
+      aspect-ratio: 16/9; background: #0a0f1a; overflow: hidden;
+    }
+    .news-story-card .thumb img {
+      width: 100%; height: 100%; object-fit: cover; display: block;
+    }
+    .thumb-placeholder {
+      width: 100%; height: 100%; display: flex; align-items: center; justify-content: center;
+      font-size: 2rem; opacity: 0.5; background: linear-gradient(135deg,#0f172a,#1e293b);
+    }
+    .news-story-card .card-body { padding: 12px 14px 14px; }
+    .news-meta-row { display: flex; flex-wrap: wrap; gap: 8px; align-items: center; margin-bottom: 6px; }
+    .status-badge {
+      font-size: 0.7rem; font-weight: 600; letter-spacing: 0.04em; text-transform: uppercase;
+      padding: 3px 8px; border-radius: 999px;
+    }
+    .status-breaking { background: rgba(239,68,68,0.2); color: #fca5a5; }
+    .status-developing { background: rgba(245,158,11,0.2); color: #fcd34d; }
+    .status-resolved { background: rgba(34,197,94,0.15); color: #86efac; }
+    .news-inc { font-size: 0.72rem; color: var(--text-muted); }
+    .news-card-title {
+      font-size: 1.05rem; line-height: 1.35; margin: 0 0 6px; font-weight: 600;
+    }
+    .news-card-meta { margin: 0; font-size: 0.82rem; color: var(--text-muted); }
+    .news-empty { color: var(--text-muted); padding: 24px 0; text-align: center; }
+  </style>
 </head>
 <body>
   <header class="header">
@@ -17,93 +80,87 @@
       <a href="/" class="logo"><span class="logo-mark">DU</span><span class="logo-text">DispaUK</span></a>
       <nav class="nav" aria-label="Primary">
         <a href="/">Dashboard</a>
-        <a href="/dispatch/">Dispatch</a>
-        <a href="/stations/">Stations</a>
-        <a href="/locate/">Locate</a>
-        <a href="/map/">Map</a>
-        <a href="/news/" aria-current="page">News</a>
-        <a href="/status/">Status</a>
+        <a href="/news/" class="active">News</a>
+        <a href="/admin/">Admin</a>
       </nav>
       <button class="nav-toggle" type="button" aria-label="Menu" aria-expanded="false"><span></span><span></span><span></span></button>
     </div>
   </header>
-
   <main class="legal-page">
     <div class="container">
-      <div class="section-header-left" style="margin-bottom:18px">
+      <div class="news-page-header section-header-left">
         <span class="section-kicker">OPERATIONS</span>
-        <h1 style="font-size:1.6rem;margin:0 0 6px">News &amp; incidents</h1>
+        <h1>News &amp; incidents</h1>
         <p class="text-muted">Control-room reports from DispaUK. Click a story for the full operational brief.</p>
       </div>
 
-      <div class="news-toolbar">
-        <label class="search-wrap">
-          <span class="sr-only">Search news</span>
-          <input type="search" id="news-search" placeholder="Search title, location, incident…" autocomplete="off">
-        </label>
-        <div style="min-width:140px">
-          <label class="sr-only" for="filter-county">County</label>
-          <select id="filter-county">
-            <option value="">All counties</option>
-          </select>
-        </div>
-        <div style="min-width:140px">
-          <label class="sr-only" for="filter-type">Incident type</label>
-          <select id="filter-type">
-            <option value="">All types</option>
-          </select>
-        </div>
-        <div style="min-width:130px">
-          <label class="sr-only" for="filter-agency">Agency</label>
-          <select id="filter-agency">
-            <option value="">All agencies</option>
-            <option value="Fire">Fire</option>
-            <option value="Ambulance">Ambulance</option>
-            <option value="Police">Police</option>
-            <option value="Other">Other</option>
-          </select>
-        </div>
-        <div class="news-filters" role="group" aria-label="Status filter">
-          <button type="button" class="news-filter-btn active" data-status="">All</button>
-          <button type="button" class="news-filter-btn" data-status="breaking">Breaking</button>
-          <button type="button" class="news-filter-btn" data-status="developing">Developing</button>
-          <button type="button" class="news-filter-btn" data-status="resolved">Resolved</button>
-        </div>
+      <div class="news-filters">
+        <input type="search" id="news-search" placeholder="Search title, location, incident…" autocomplete="off">
+        <select id="filter-county" aria-label="County"><option value="">All counties</option></select>
+        <select id="filter-type" aria-label="Type"><option value="">All types</option></select>
+        <select id="filter-agency" aria-label="Agency"><option value="">All agencies</option></select>
       </div>
 
-      <p class="result-meta" aria-live="polite"><span id="result-count">…</span> stories</p>
+      <div class="news-status-tabs" role="tablist" aria-label="Status filter">
+        <button type="button" class="news-filter-btn active" data-status="">All</button>
+        <button type="button" class="news-filter-btn" data-status="breaking">Breaking</button>
+        <button type="button" class="news-filter-btn" data-status="developing">Developing</button>
+        <button type="button" class="news-filter-btn" data-status="resolved">Resolved</button>
+      </div>
 
+      <p class="news-result-count" aria-live="polite"><span id="result-count">…</span> stories</p>
       <div class="news-grid" id="news-list" aria-live="polite">
         <p class="news-empty">Loading news…</p>
       </div>
 
-      <p class="disclaimer-bar" style="margin-top:24px">Fiction / game context for MissionChief. Not real emergency service communications. Call <strong>999 / 112</strong> in a real emergency.</p>
+      <p class="disclaimer-box" style="margin-top:24px">
+        Fiction / game context for MissionChief. Not real emergency service communications. Call <strong>999 / 112</strong> in a real emergency.
+      </p>
     </div>
   </main>
-
   <footer class="footer-slim">
     <div class="container footer-bottom">
-      <p class="footer-copy">© <span data-current-year>2026</span> DispaUK · <a href="/contact/">Contact</a> · <a href="/admin/">Admin</a></p>
+      <p class="footer-copy">© <span data-current-year>2026</span> DispaUK · <a href="/contact.html">Contact</a> · <a href="/admin/">Admin</a></p>
     </div>
   </footer>
-
   <script src="/script.js" defer></script>
   <script>
     function esc(s) {
-      return String(s || '').replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;');
+      return String(s == null ? '' : s)
+        .replace(/&/g,'&amp;').replace(/</g,'&lt;')
+        .replace(/>/g,'&gt;').replace(/"/g,'&quot;');
     }
 
     function mergeNews(fileItems, localItems) {
       const map = new Map();
-      (fileItems || []).forEach(i => map.set(i.id, i));
+      (fileItems || []).forEach(i => { if (i && i.id) map.set(i.id, i); });
       (localItems || []).forEach(i => {
+        if (!i || !i.id) return;
         if (i._deleted) map.delete(i.id);
         else map.set(i.id, i);
       });
       return Array.from(map.values());
     }
 
+    function inferAgencies(type) {
+      const t = (type || '').toLowerCase();
+      if (t.includes('fire') || t.includes('hazmat')) return ['Fire'];
+      if (t.includes('medical')) return ['Ambulance'];
+      if (t.includes('police')) return ['Police'];
+      if (t.includes('water') || t.includes('rescue') || t.includes('structural')) return ['Fire'];
+      if (t.includes('flood')) return ['Fire', 'Police'];
+      if (t.includes('road') || t.includes('collision') || t.includes('rtc')) return ['Fire', 'Ambulance', 'Police'];
+      return [];
+    }
+
+    function generateIncidentNumber(item) {
+      const d = String(item.date || '').replace(/-/g, '') || '00000000';
+      const hash = String(item.id || 'xxxx').replace(/\W/g, '').slice(-4).toUpperCase() || 'XXXX';
+      return 'DU-' + d + '-' + hash;
+    }
+
     function normalise(item) {
+      if (!item) return null;
       const status = (item.status || '').toLowerCase() ||
         (item.severity === 'high' ? 'developing' : 'resolved');
       let county = item.county || '';
@@ -111,9 +168,13 @@
         const parts = String(item.location).split(',').map(s => s.trim());
         if (parts.length > 1) county = parts[parts.length - 1];
       }
-      const agencies = item.agency
-        ? (Array.isArray(item.agency) ? item.agency : [item.agency])
-        : inferAgencies(item.type);
+      let agencies = [];
+      if (item.agency) {
+        agencies = Array.isArray(item.agency) ? item.agency : [item.agency];
+      } else {
+        agencies = inferAgencies(item.type);
+      }
+      agencies = agencies.filter(Boolean).map(String);
       return {
         ...item,
         status,
@@ -122,150 +183,172 @@
         incidentNumber: item.incidentNumber || generateIncidentNumber(item),
         publishedAt: item.publishedAt || (item.date ? item.date + 'T12:00:00Z' : ''),
         updatedAt: item.updatedAt || item.publishedAt || item.date || '',
-        timeline: item.timeline || [],
-        relatedIds: item.relatedIds || [],
-        versions: item.versions || [],
-        lat: item.lat,
-        lng: item.lng,
+        timeline: Array.isArray(item.timeline) ? item.timeline : [],
+        relatedIds: Array.isArray(item.relatedIds) ? item.relatedIds : [],
+        units: Array.isArray(item.units) ? item.units : [],
+        title: item.title || 'Untitled',
+        type: item.type || 'Other',
       };
-    }
-
-    function inferAgencies(type) {
-      const t = (type || '').toLowerCase();
-      const out = [];
-      if (/fire|structural|hazmat|flood|rescue/.test(t)) out.push('Fire');
-      if (/medical|ambulance|casualty/.test(t)) out.push('Ambulance');
-      if (/police|crime|rtc|collision|traffic/.test(t)) out.push('Police');
-      if (!out.length) out.push('Other');
-      return out;
-    }
-
-    function generateIncidentNumber(item) {
-      const d = (item.date || '').replace(/-/g, '') || '00000000';
-      const hash = String(item.id || '').replace(/\W/g, '').slice(-4).toUpperCase() || 'XXXX';
-      return 'DU-' + d + '-' + hash;
     }
 
     function formatWhen(isoOrDate) {
       if (!isoOrDate) return '';
       try {
         const d = new Date(isoOrDate);
-        if (isNaN(d)) return String(isoOrDate);
+        if (isNaN(d.getTime())) return String(isoOrDate);
         return d.toLocaleString('en-GB', {
           day: 'numeric', month: 'short', year: 'numeric',
           hour: '2-digit', minute: '2-digit'
         });
-      } catch (e) { return String(isoOrDate); }
+      } catch (e) {
+        return String(isoOrDate);
+      }
+    }
+
+    function statusBadge(status) {
+      const s = (status || 'developing').toLowerCase();
+      const label = s.charAt(0).toUpperCase() + s.slice(1);
+      return '<span class="status-badge status-' + esc(s) + '">' + esc(label) + '</span>';
+    }
+
+    /** List cards must not embed multi-hundred-KB data-URLs — they freeze mobile. */
+    function listThumb(item) {
+      const img = item.image || '';
+      const isHugeData = img.indexOf('data:') === 0 && img.length > 80000;
+      if (img && !isHugeData) {
+        return '<div class="thumb"><img src="' + esc(img) + '" alt="' + esc(item.imageAlt || item.title) + '" loading="lazy"></div>';
+      }
+      if (img && isHugeData) {
+        return '<div class="thumb"><div class="thumb-placeholder">📷</div></div>';
+      }
+      return '<div class="thumb"><div class="thumb-placeholder">📰</div></div>';
     }
 
     let allItems = [];
     let statusFilter = '';
 
     function applyFilters() {
-      const q = (document.getElementById('news-search').value || '').toLowerCase().trim();
-      const county = document.getElementById('filter-county').value;
-      const type = document.getElementById('filter-type').value;
-      const agency = document.getElementById('filter-agency').value;
+      try {
+        const q = (document.getElementById('news-search').value || '').toLowerCase().trim();
+        const county = document.getElementById('filter-county').value;
+        const type = document.getElementById('filter-type').value;
+        const agency = document.getElementById('filter-agency').value;
 
-      let list = allItems.slice();
-      if (statusFilter) list = list.filter(i => i.status === statusFilter);
-      if (county) list = list.filter(i => (i.county || '').toLowerCase() === county.toLowerCase());
-      if (type) list = list.filter(i => (i.type || '') === type);
-      if (agency) list = list.filter(i => (i.agency || []).some(a => a === agency));
-      if (q) {
-        list = list.filter(i => {
-          const blob = [
-            i.title, i.summary, i.location, i.county, i.type,
-            i.incidentNumber, (i.units || []).join(' '), i.body
-          ].join(' ').toLowerCase();
-          return blob.includes(q);
-        });
+        let list = allItems.slice();
+        if (statusFilter) list = list.filter(i => i.status === statusFilter);
+        if (county) list = list.filter(i => (i.county || '').toLowerCase() === county.toLowerCase());
+        if (type) list = list.filter(i => (i.type || '') === type);
+        if (agency) list = list.filter(i => (i.agency || []).some(a => a === agency));
+        if (q) {
+          list = list.filter(i => {
+            const blob = [
+              i.title, i.summary, i.location, i.county, i.type,
+              i.incidentNumber, (i.units || []).join(' '), (i.body || '').slice(0, 500)
+            ].join(' ').toLowerCase();
+            return blob.indexOf(q) !== -1;
+          });
+        }
+        list.sort((a, b) => String(b.updatedAt || b.publishedAt || b.date)
+          .localeCompare(String(a.updatedAt || a.publishedAt || a.date)));
+        renderList(list);
+      } catch (err) {
+        console.error(err);
+        const el = document.getElementById('news-list');
+        if (el) el.innerHTML = '<p class="news-empty">Could not filter stories. Try a hard refresh.</p>';
       }
-
-      const rank = { breaking: 0, developing: 1, resolved: 2 };
-      list.sort((a, b) => {
-        const ra = rank[a.status] ?? 3;
-        const rb = rank[b.status] ?? 3;
-        if (ra !== rb) return ra - rb;
-        return String(b.updatedAt || b.publishedAt || b.date)
-          .localeCompare(String(a.updatedAt || a.publishedAt || a.date));
-      });
-
-      renderList(list);
     }
 
     function renderList(items) {
       const el = document.getElementById('news-list');
-      document.getElementById('result-count').textContent = items.length;
+      const countEl = document.getElementById('result-count');
+      if (countEl) countEl.textContent = String(items.length);
       if (!items.length) {
         el.innerHTML = '<p class="news-empty">No stories match your filters.</p>';
         return;
       }
       el.innerHTML = items.map(item => {
-        const thumb = item.image
-          ? '<div class="thumb"><img src="' + esc(item.image) + '" alt="' + esc(item.imageAlt || item.title) + '" loading="lazy"></div>'
-          : '<div class="thumb"><div class="thumb-placeholder">📰</div></div>';
-        const when = formatWhen(item.publishedAt || item.date);
-        return (
-          '<a class="news-story-card" href="/news/story.html?id=' + encodeURIComponent(item.id) + '">' +
-            thumb +
-            '<div class="card-body">' +
-              '<div class="news-meta-row">' +
-                '<span class="status-badge ' + esc(item.status) + '">' + esc(item.status) + '</span>' +
-                '<span class="sev-pill ' + esc(item.severity || 'low') + '">' + esc(item.severity || '') + '</span>' +
-                (item.type ? '<span>' + esc(item.type) + '</span>' : '') +
+        try {
+          const when = formatWhen(item.publishedAt || item.date);
+          return (
+            '<a class="news-story-card" href="/news/story.html?id=' + encodeURIComponent(item.id) + '">' +
+              listThumb(item) +
+              '<div class="card-body">' +
+                '<div class="news-meta-row">' +
+                  statusBadge(item.status) +
+                  (item.incidentNumber ? '<span class="mono news-inc">' + esc(item.incidentNumber) + '</span>' : '') +
+                '</div>' +
+                '<h2 class="news-card-title">' + esc(item.title) + '</h2>' +
+                '<p class="news-card-meta">' +
+                  esc(item.type || '') +
+                  (item.location ? ' · ' + esc(item.location) : '') +
+                  (when ? ' · ' + esc(when) : '') +
+                '</p>' +
               '</div>' +
-              '<h2>' + esc(item.title) + '</h2>' +
-              (item.summary ? '<p class="card-summary">' + esc(item.summary) + '</p>' : '') +
-              '<div class="news-meta-row">' +
-                (item.location ? '<span>📍 ' + esc(item.location) + '</span>' : '') +
-                (when ? '<span>⏱️ ' + esc(when) + '</span>' : '') +
-                (item.incidentNumber ? '<span class="mono">' + esc(item.incidentNumber) + '</span>' : '') +
-              '</div>' +
-            '</div>' +
-          '</a>'
-        );
+            '</a>'
+          );
+        } catch (err) {
+          console.error('card error', item && item.id, err);
+          return '';
+        }
       }).join('');
     }
 
     function populateFilterOptions(items) {
       const counties = new Set();
       const types = new Set();
+      const agencies = new Set();
       items.forEach(i => {
         if (i.county) counties.add(i.county);
         if (i.type) types.add(i.type);
+        (i.agency || []).forEach(a => agencies.add(a));
       });
-      const countySel = document.getElementById('filter-county');
-      [...counties].sort().forEach(c => {
-        const o = document.createElement('option');
-        o.value = c; o.textContent = c;
-        countySel.appendChild(o);
-      });
-      const typeSel = document.getElementById('filter-type');
-      [...types].sort().forEach(t => {
-        const o = document.createElement('option');
-        o.value = t; o.textContent = t;
-        typeSel.appendChild(o);
-      });
+      const fill = (id, values, allLabel) => {
+        const sel = document.getElementById(id);
+        if (!sel) return;
+        const current = sel.value;
+        sel.innerHTML = '<option value="">' + allLabel + '</option>' +
+          [...values].sort().map(v => '<option value="' + esc(v) + '">' + esc(v) + '</option>').join('');
+        sel.value = current;
+      };
+      fill('filter-county', counties, 'All counties');
+      fill('filter-type', types, 'All types');
+      fill('filter-agency', agencies, 'All agencies');
+    }
+
+    function showLoadError(msg) {
+      const el = document.getElementById('news-list');
+      if (el) el.innerHTML = '<p class="news-empty">' + esc(msg) + '</p>';
+      const countEl = document.getElementById('result-count');
+      if (countEl) countEl.textContent = '0';
     }
 
     document.addEventListener('DOMContentLoaded', async () => {
       let fileItems = [];
       try {
         const res = await fetch('/data/news.json', { cache: 'no-cache' });
-        if (res.ok) {
-          const data = await res.json();
-          fileItems = data.items || [];
-        }
-      } catch (e) { /* */ }
+        if (!res.ok) throw new Error('HTTP ' + res.status);
+        const data = await res.json();
+        fileItems = data.items || [];
+      } catch (e) {
+        console.error('news.json', e);
+        showLoadError('Could not load news feed. Check your connection and try again.');
+        return;
+      }
+
       let localItems = [];
       try {
         localItems = JSON.parse(localStorage.getItem('dispauk_news_local') || '[]');
-      } catch (e) { /* */ }
+      } catch (e) { localItems = []; }
 
-      allItems = mergeNews(fileItems, localItems).map(normalise);
-      populateFilterOptions(allItems);
-      applyFilters();
+      try {
+        allItems = mergeNews(fileItems, localItems).map(normalise).filter(Boolean);
+        populateFilterOptions(allItems);
+        applyFilters();
+      } catch (e) {
+        console.error(e);
+        showLoadError('News feed loaded but could not be displayed. Try a hard refresh.');
+        return;
+      }
 
       document.getElementById('news-search').addEventListener('input', applyFilters);
       document.getElementById('filter-county').addEventListener('change', applyFilters);
