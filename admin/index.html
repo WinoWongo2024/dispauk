@@ -9,7 +9,7 @@
   <link rel="stylesheet" href="/styles.css">
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Roboto+Mono:wght@400;500&display=swap" rel="stylesheet">
   <style>
-    .admin-wrap { max-width: 720px; margin: 0 auto; }
+    .admin-wrap { max-width: 780px; margin: 0 auto; }
     .admin-panel { background: var(--surface); border: 1px solid var(--border); border-radius: 12px; padding: 18px; margin-bottom: 16px; }
     .admin-panel h2 { font-size: 1rem; margin: 0 0 12px; }
     .admin-panel label { display: block; font-size: 0.85rem; color: var(--text-muted); margin: 10px 0 4px; }
@@ -18,6 +18,8 @@
       background: var(--bg, #0b1220); color: var(--text); font: inherit; box-sizing: border-box;
     }
     .admin-panel textarea { min-height: 120px; resize: vertical; }
+    .admin-grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 0 12px; }
+    @media (max-width: 600px) { .admin-grid-2 { grid-template-columns: 1fr; } }
     .admin-actions { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 14px; }
     .story-row {
       display: flex; justify-content: space-between; align-items: flex-start; gap: 12px;
@@ -27,6 +29,8 @@
     .login-box { max-width: 360px; margin: 40px auto; }
     .preview-img { max-width: 100%; max-height: 200px; border-radius: 8px; margin-top: 8px; display: none; }
     .admin-hint { font-size: 0.8rem; color: var(--text-muted); margin-top: 8px; }
+    .timeline-editor .tl-row { display: grid; grid-template-columns: 90px 1fr auto; gap: 8px; margin-bottom: 6px; align-items: center; }
+    .version-note { background: rgba(59,130,246,0.08); border: 1px solid rgba(59,130,246,0.25); border-radius: 8px; padding: 10px 12px; margin-top: 10px; font-size: 0.85rem; color: var(--text-muted); }
   </style>
 </head>
 <body>
@@ -60,48 +64,114 @@
         <div class="section-header-left" style="margin-bottom:16px">
           <span class="section-kicker">ADMIN</span>
           <h1 style="font-size:1.5rem">News desk</h1>
-          <p class="text-muted">Add or edit stories. Saved in this browser; export JSON to publish site-wide via GitHub.</p>
+          <p class="text-muted">Add or update stories. Edits create a new version entry on the previous report. Export JSON to publish site-wide via GitHub.</p>
         </div>
 
         <div class="admin-panel">
           <h2>New / edit story</h2>
           <input type="hidden" id="f-id">
+          <input type="hidden" id="f-published-at">
+          <input type="hidden" id="f-versions">
+
           <label for="f-title">Title</label>
           <input id="f-title" placeholder="e.g. Multi-agency response — …">
-          <label for="f-type">Type of emergency</label>
-          <select id="f-type">
-            <option>Fire</option>
-            <option>Road traffic collision</option>
-            <option>Medical</option>
-            <option>Specialist rescue / structural</option>
-            <option>Water rescue</option>
-            <option>Hazmat</option>
-            <option>Police incident</option>
-            <option>Flooding</option>
-            <option>Other</option>
-          </select>
-          <label for="f-severity">Severity</label>
-          <select id="f-severity">
-            <option value="high">High</option>
-            <option value="medium" selected>Medium</option>
-            <option value="low">Low</option>
-          </select>
-          <label for="f-date">Date</label>
-          <input type="date" id="f-date">
-          <label for="f-location">Location</label>
-          <input id="f-location" placeholder="Town, county">
+
+          <div class="admin-grid-2">
+            <div>
+              <label for="f-type">Type of emergency</label>
+              <select id="f-type">
+                <option>Fire</option>
+                <option>Road traffic collision</option>
+                <option>Medical</option>
+                <option>Specialist rescue / structural</option>
+                <option>Water rescue</option>
+                <option>Hazmat</option>
+                <option>Police incident</option>
+                <option>Flooding</option>
+                <option>Other</option>
+              </select>
+            </div>
+            <div>
+              <label for="f-status">Status</label>
+              <select id="f-status">
+                <option value="breaking">Breaking</option>
+                <option value="developing" selected>Developing</option>
+                <option value="resolved">Resolved</option>
+              </select>
+            </div>
+            <div>
+              <label for="f-severity">Severity</label>
+              <select id="f-severity">
+                <option value="high">High</option>
+                <option value="medium" selected>Medium</option>
+                <option value="low">Low</option>
+              </select>
+            </div>
+            <div>
+              <label for="f-date">Date</label>
+              <input type="date" id="f-date">
+            </div>
+            <div>
+              <label for="f-county">County</label>
+              <input id="f-county" placeholder="e.g. Leicestershire">
+            </div>
+            <div>
+              <label for="f-location">Location</label>
+              <input id="f-location" placeholder="Town, county">
+            </div>
+            <div>
+              <label for="f-lat">Latitude (optional)</label>
+              <input id="f-lat" type="number" step="any" placeholder="52.77">
+            </div>
+            <div>
+              <label for="f-lng">Longitude (optional)</label>
+              <input id="f-lng" type="number" step="any" placeholder="-1.20">
+            </div>
+          </div>
+
+          <label for="f-agency">Agencies (comma-separated)</label>
+          <input id="f-agency" placeholder="Fire, Ambulance, Police">
+
+          <label for="f-incident">Incident number (auto if blank)</label>
+          <input id="f-incident" placeholder="DU-YYYYMMDD-XXXX" class="mono">
+
           <label for="f-summary">Summary (short)</label>
           <input id="f-summary" placeholder="One-line intro">
-          <label for="f-body">Full caption / body</label>
+
+          <label for="f-body">Full story</label>
           <textarea id="f-body" placeholder="Full story text…"></textarea>
-          <label for="f-units">Units (comma-separated)</label>
+
+          <label for="f-units">Units deployed (comma-separated)</label>
           <input id="f-units" placeholder="Pump, Aerial, Ambulance">
+
+          <label>Operational timeline</label>
+          <div class="timeline-editor" id="timeline-editor">
+            <div class="tl-row">
+              <input class="tl-time" placeholder="14:02">
+              <input class="tl-event" placeholder="Call received">
+              <button type="button" class="btn btn-ghost tl-remove" title="Remove">✕</button>
+            </div>
+          </div>
+          <button type="button" class="btn btn-outline" id="btn-add-tl" style="margin-top:6px">+ Add timeline entry</button>
+
+          <label for="f-related">Related incident IDs (comma-separated)</label>
+          <input id="f-related" placeholder="id-1, id-2">
+
           <label for="f-author">Author</label>
           <input id="f-author" value="DispaUK Control">
+
           <label for="f-image">Photo (optional)</label>
           <input type="file" id="f-image" accept="image/*">
           <img id="f-preview" class="preview-img" alt="Preview">
           <input type="hidden" id="f-image-data">
+
+          <div class="version-note" id="edit-version-note" hidden>
+            You are editing an existing story. Saving will keep the current text as a <strong>version entry</strong> and publish your changes as the latest report (with a new “Updated” timestamp).
+          </div>
+
+          <label for="f-version-note" id="label-version-note" hidden>Version note (what changed?)</label>
+          <input id="f-version-note" placeholder="e.g. Casualties confirmed; status → developing" hidden>
+
           <div class="admin-actions">
             <button type="button" class="btn btn-primary" id="btn-save">Save story</button>
             <button type="button" class="btn btn-outline" id="btn-clear">Clear form</button>
@@ -154,7 +224,9 @@
       }
       el.innerHTML = items.map(i =>
         '<div class="story-row">' +
-          '<div><strong>' + (i.title || 'Untitled') + '</strong><br><span class="text-muted">' + (i.date || '') + ' · ' + (i.type || '') + '</span></div>' +
+          '<div><strong>' + (i.title || 'Untitled') + '</strong><br>' +
+          '<span class="text-muted">' + (i.date || '') + ' · ' + (i.status || '') + ' · ' + (i.type || '') +
+          (i.incidentNumber ? ' · ' + i.incidentNumber : '') + '</span></div>' +
           '<div style="display:flex;gap:6px">' +
             '<button type="button" class="btn btn-outline" data-edit="' + i.id + '">Edit</button>' +
             '<button type="button" class="btn btn-ghost" data-del="' + i.id + '">Delete</button>' +
@@ -162,39 +234,111 @@
       ).join('');
     }
 
+    function clearTimeline() {
+      const ed = document.getElementById('timeline-editor');
+      ed.innerHTML = '';
+      addTimelineRow();
+    }
+
+    function addTimelineRow(time, event) {
+      const ed = document.getElementById('timeline-editor');
+      const row = document.createElement('div');
+      row.className = 'tl-row';
+      row.innerHTML =
+        '<input class="tl-time" placeholder="14:02" value="' + (time || '').replace(/"/g, '&quot;') + '">' +
+        '<input class="tl-event" placeholder="Call received" value="' + (event || '').replace(/"/g, '&quot;') + '">' +
+        '<button type="button" class="btn btn-ghost tl-remove" title="Remove">✕</button>';
+      ed.appendChild(row);
+      row.querySelector('.tl-remove').addEventListener('click', () => {
+        if (ed.children.length > 1) row.remove();
+        else {
+          row.querySelector('.tl-time').value = '';
+          row.querySelector('.tl-event').value = '';
+        }
+      });
+    }
+
+    function readTimeline() {
+      return [...document.querySelectorAll('#timeline-editor .tl-row')].map(row => ({
+        time: row.querySelector('.tl-time').value.trim(),
+        event: row.querySelector('.tl-event').value.trim(),
+      })).filter(t => t.time || t.event);
+    }
+
     function clearForm() {
       document.getElementById('f-id').value = '';
+      document.getElementById('f-published-at').value = '';
+      document.getElementById('f-versions').value = '[]';
       document.getElementById('f-title').value = '';
       document.getElementById('f-type').selectedIndex = 0;
+      document.getElementById('f-status').value = 'developing';
       document.getElementById('f-severity').value = 'medium';
       document.getElementById('f-date').value = new Date().toISOString().slice(0, 10);
+      document.getElementById('f-county').value = '';
       document.getElementById('f-location').value = '';
+      document.getElementById('f-lat').value = '';
+      document.getElementById('f-lng').value = '';
+      document.getElementById('f-agency').value = '';
+      document.getElementById('f-incident').value = '';
       document.getElementById('f-summary').value = '';
       document.getElementById('f-body').value = '';
       document.getElementById('f-units').value = '';
+      document.getElementById('f-related').value = '';
       document.getElementById('f-author').value = 'DispaUK Control';
       document.getElementById('f-image-data').value = '';
       document.getElementById('f-image').value = '';
+      document.getElementById('f-version-note').value = '';
       const prev = document.getElementById('f-preview');
       prev.src = '';
       prev.style.display = 'none';
+      clearTimeline();
+      document.getElementById('edit-version-note').hidden = true;
+      document.getElementById('label-version-note').hidden = true;
+      document.getElementById('f-version-note').hidden = true;
     }
 
     function fillForm(item) {
       document.getElementById('f-id').value = item.id || '';
+      document.getElementById('f-published-at').value = item.publishedAt || '';
+      document.getElementById('f-versions').value = JSON.stringify(item.versions || []);
       document.getElementById('f-title').value = item.title || '';
       document.getElementById('f-type').value = item.type || 'Other';
+      document.getElementById('f-status').value = item.status || 'developing';
       document.getElementById('f-severity').value = item.severity || 'medium';
       document.getElementById('f-date').value = item.date || '';
+      document.getElementById('f-county').value = item.county || '';
       document.getElementById('f-location').value = item.location || '';
+      document.getElementById('f-lat').value = item.lat != null ? item.lat : '';
+      document.getElementById('f-lng').value = item.lng != null ? item.lng : '';
+      document.getElementById('f-agency').value = Array.isArray(item.agency) ? item.agency.join(', ') : (item.agency || '');
+      document.getElementById('f-incident').value = item.incidentNumber || '';
       document.getElementById('f-summary').value = item.summary || '';
       document.getElementById('f-body').value = item.body || '';
       document.getElementById('f-units').value = (item.units || []).join(', ');
+      document.getElementById('f-related').value = (item.relatedIds || []).join(', ');
       document.getElementById('f-author').value = item.author || 'DispaUK Control';
       document.getElementById('f-image-data').value = item.image || '';
       const prev = document.getElementById('f-preview');
       if (item.image) { prev.src = item.image; prev.style.display = 'block'; }
       else { prev.src = ''; prev.style.display = 'none'; }
+
+      const ed = document.getElementById('timeline-editor');
+      ed.innerHTML = '';
+      const tl = item.timeline || [];
+      if (tl.length) tl.forEach(t => addTimelineRow(t.time, t.event));
+      else addTimelineRow();
+
+      const isEdit = !!item.id;
+      document.getElementById('edit-version-note').hidden = !isEdit;
+      document.getElementById('label-version-note').hidden = !isEdit;
+      document.getElementById('f-version-note').hidden = !isEdit;
+      document.getElementById('f-version-note').value = '';
+    }
+
+    function generateIncidentNumber(dateStr, id) {
+      const d = (dateStr || '').replace(/-/g, '') || new Date().toISOString().slice(0, 10).replace(/-/g, '');
+      const hash = String(id || Date.now()).replace(/\W/g, '').slice(-4).toUpperCase();
+      return 'DU-' + d + '-' + hash;
     }
 
     document.addEventListener('DOMContentLoaded', () => {
@@ -222,6 +366,7 @@
       });
 
       document.getElementById('btn-clear').addEventListener('click', clearForm);
+      document.getElementById('btn-add-tl').addEventListener('click', () => addTimelineRow());
 
       document.getElementById('f-image').addEventListener('change', e => {
         const file = e.target.files && e.target.files[0];
@@ -243,28 +388,76 @@
       document.getElementById('btn-save').addEventListener('click', () => {
         const title = document.getElementById('f-title').value.trim();
         if (!title) { alert('Title is required.'); return; }
+
         let id = document.getElementById('f-id').value.trim();
+        const isEdit = !!id;
         if (!id) id = 'local-' + Date.now();
+
+        const nowIso = new Date().toISOString();
+        const date = document.getElementById('f-date').value || nowIso.slice(0, 10);
         const units = document.getElementById('f-units').value.split(',').map(s => s.trim()).filter(Boolean);
+        const agency = document.getElementById('f-agency').value.split(',').map(s => s.trim()).filter(Boolean);
+        const relatedIds = document.getElementById('f-related').value.split(',').map(s => s.trim()).filter(Boolean);
+        const latRaw = document.getElementById('f-lat').value.trim();
+        const lngRaw = document.getElementById('f-lng').value.trim();
+
+        let versions = [];
+        try { versions = JSON.parse(document.getElementById('f-versions').value || '[]'); }
+        catch (e) { versions = []; }
+
+        if (isEdit) {
+          const prevLocal = loadLocal().find(i => i.id === id);
+          if (prevLocal) {
+            versions.push({
+              at: prevLocal.updatedAt || prevLocal.publishedAt || nowIso,
+              note: document.getElementById('f-version-note').value.trim() || 'Updated report',
+              summary: prevLocal.summary || '',
+              body: prevLocal.body || '',
+              status: prevLocal.status || '',
+              author: prevLocal.author || '',
+            });
+          }
+        }
+
+        let publishedAt = document.getElementById('f-published-at').value;
+        if (!publishedAt) publishedAt = nowIso;
+
+        let incidentNumber = document.getElementById('f-incident').value.trim();
+        if (!incidentNumber) incidentNumber = generateIncidentNumber(date, id);
+
         const item = {
           id,
-          date: document.getElementById('f-date').value || new Date().toISOString().slice(0, 10),
+          incidentNumber,
+          date,
+          publishedAt,
+          updatedAt: nowIso,
+          status: document.getElementById('f-status').value,
           title,
           type: document.getElementById('f-type').value,
           severity: document.getElementById('f-severity').value,
+          county: document.getElementById('f-county').value.trim(),
           location: document.getElementById('f-location').value.trim(),
+          lat: latRaw === '' ? undefined : Number(latRaw),
+          lng: lngRaw === '' ? undefined : Number(lngRaw),
+          agency,
           summary: document.getElementById('f-summary').value.trim(),
           body: document.getElementById('f-body').value.trim(),
           units,
+          timeline: readTimeline(),
+          relatedIds,
+          versions,
           author: document.getElementById('f-author').value.trim() || 'DispaUK Control',
           image: document.getElementById('f-image-data').value || '',
           imageAlt: title,
         };
+
         const items = loadLocal().filter(i => i.id !== id);
         items.push(item);
         saveLocal(items);
         renderList();
-        alert('Saved on this device. Open /news/ to preview. Use Export to publish site-wide.');
+        alert(isEdit
+          ? 'Updated — previous text stored as a version. Preview on /news/. Export to publish.'
+          : 'Saved on this device. Open /news/ to preview. Use Export to publish site-wide.');
         clearForm();
       });
 
@@ -298,7 +491,9 @@
           if (i._deleted) map.delete(i.id);
           else map.set(i.id, i);
         });
-        const items = Array.from(map.values()).sort((a, b) => String(b.date).localeCompare(String(a.date)));
+        const items = Array.from(map.values()).sort((a, b) =>
+          String(b.updatedAt || b.date).localeCompare(String(a.updatedAt || a.date))
+        );
         const payload = { updatedAt: new Date().toISOString(), items };
         const blob = new Blob([JSON.stringify(payload, null, 2)], { type: 'application/json' });
         const a = document.createElement('a');
