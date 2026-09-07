@@ -1,13 +1,13 @@
 {
-  "updatedAt": "2026-09-07T17:45:01.587Z",
+  "updatedAt": "2026-09-07T18:11:35.895Z",
   "items": [
     {
       "id": "local-1788357564186",
       "incidentNumber": "DU-20260902-4186",
       "date": "2026-09-02",
       "publishedAt": "2026-09-07T17:44:33.218Z",
-      "updatedAt": "2026-09-07T17:44:33.218Z",
-      "status": "developing",
+      "updatedAt": "2026-09-07T18:11:35.737Z",
+      "status": "resolved",
       "title": "Major Fire Breakout Prompts Large Emergency Response in Falsgrave",
       "type": "Fire",
       "severity": "medium",
@@ -43,6 +43,14 @@
           "summary": "Emergency services are currently at the scene of a serious building fire in Falsgrave, Scarborough, with eight fire engines and specialist support units deployed to tackle the blaze.",
           "body": "Fire crews operate aerial platforms, water carriers, and command units as they work to contain a major structure fire in Falsgrave.\n\nA major incident response is underway in Falsgrave, Scarborough, following a severe fire at a residential property earlier today. High plumes of smoke were visible across the area as flames quickly engulfed the structure, prompting a swift, large-scale deployment from local fire and rescue services.\n\nCrews remain on scene actively battling the flames, securing the surrounding perimeter, and damping down hotspots. Local residents are advised to keep windows and doors closed due to heavy smoke in the immediate vicinity, while drivers are encouraged to avoid the area to allow emergency vehicles clear access.",
           "status": "",
+          "author": "DispaUK Control"
+        },
+        {
+          "at": "2026-09-07T17:44:33.218Z",
+          "note": "Resolved fully",
+          "summary": "Emergency services are currently at the scene of a serious building fire in Falsgrave, Scarborough, with eight fire engines and specialist support units deployed to tackle the blaze.",
+          "body": "Fire crews operate aerial platforms, water carriers, and command units as they work to contain a major structure fire in Falsgrave.\n\nA major incident response is underway in Falsgrave, Scarborough, following a severe fire at a residential property earlier today. High plumes of smoke were visible across the area as flames quickly engulfed the structure, prompting a swift, large-scale deployment from local fire and rescue services.\n\nCrews remain on scene actively battling the flames, securing the surrounding perimeter, and damping down hotspots. Local residents are advised to keep windows and doors closed due to heavy smoke in the immediate vicinity, while drivers are encouraged to avoid the area to allow emergency vehicles clear access.",
+          "status": "developing",
           "author": "DispaUK Control"
         }
       ],
