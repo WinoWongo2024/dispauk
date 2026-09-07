@@ -1,8 +1,8 @@
 {
-  "updatedAt": "2026-09-07T03:46:13.198961+00:00",
+  "updatedAt": "2026-09-07T07:31:51.634157+00:00",
   "source": "missionchief.co.uk",
   "sync": {
-    "durationSeconds": 24,
+    "durationSeconds": 25,
     "schedule": "hourly"
   },
   "endpoints": {
@@ -16,16 +16,16 @@
     "einsaetze": true
   },
   "totals": {
-    "stations": 612,
-    "units": 1528,
-    "personnel": 42633,
+    "stations": 618,
+    "units": 1534,
+    "personnel": 42651,
     "dispatchCentres": 36,
     "allianceBuildings": 1197,
     "equipments": 11,
     "missionTypes": 1068
   },
   "stationsByType": {
-    "Ambulance Station": 319,
+    "Ambulance Station": 325,
     "Hospital": 21,
     "Workshop / RCC": 7,
     "Police Station": 66,
@@ -49,7 +49,7 @@
     "Fire Station (Large)": 1
   },
   "stationsByRegion": {
-    "Midlands": 73,
+    "Midlands": 79,
     "South West": 230,
     "London & South": 38,
     "Wales": 52,
@@ -59,15 +59,14 @@
     "Scotland": 4
   },
   "vehicleStatus": {
-    "2": 1519,
-    "6": 1,
+    "2": 1503,
     "4": 2,
-    "3": 1,
-    "1": 4,
-    "5": 1
+    "3": 26,
+    "7": 1,
+    "1": 2
   },
   "vehiclesByType": {
-    "5": 546,
+    "5": 552,
     "8": 149,
     "17": 60,
     "10": 47,
@@ -102,7 +101,7 @@
     "stationsMissingName": 0,
     "stationsMissingCoords": 0,
     "duplicateStationIds": 0,
-    "dcAssignedFromApi": 572,
+    "dcAssignedFromApi": 578,
     "dcAssignedNearest": 4,
     "dispatchCentres": 36,
     "ok": true
@@ -565,13 +564,17 @@
       "lat": 52.946822813173625,
       "lon": -1.13869749462108,
       "level": 0,
-      "stationCount": 11,
-      "personnel": 1221,
+      "stationCount": 12,
+      "personnel": 1224,
       "coverageRadiusM": 96078,
       "coveragePolygon": [
         [
           52.1284215,
           -0.9972076
+        ],
+        [
+          53.070507136955804,
+          -0.8172855439930939
         ],
         [
           53.32923344538835,
@@ -723,6 +726,39 @@
         ]
       ],
       "region": "Other / Overseas"
+    },
+    {
+      "id": 2633103,
+      "name": "Lincolnshire DC",
+      "lat": 53.2303709642346,
+      "lon": -0.5402394078574588,
+      "level": 0,
+      "stationCount": 7,
+      "personnel": 59,
+      "coverageRadiusM": 58487,
+      "coveragePolygon": [
+        [
+          52.78900860027992,
+          -0.14642698562988318
+        ],
+        [
+          52.96980902648109,
+          0.001213971927422438
+        ],
+        [
+          53.581843586794335,
+          -0.35499023898236515
+        ],
+        [
+          53.404164,
+          -0.7431816
+        ],
+        [
+          52.9119377,
+          -0.6314546
+        ]
+      ],
+      "region": "Midlands"
     },
     {
       "id": 2650937,
@@ -1290,31 +1326,6 @@
         [
           52.809699180135574,
           -2.108214877646262
-        ]
-      ],
-      "region": "Midlands"
-    },
-    {
-      "id": 2633103,
-      "name": "Lincolnshire DC",
-      "lat": 53.2303709642346,
-      "lon": -0.5402394078574588,
-      "level": 0,
-      "stationCount": 2,
-      "personnel": 44,
-      "coverageRadiusM": 43013,
-      "coveragePolygon": [
-        [
-          53.2303709642346,
-          -0.5402394078574588
-        ],
-        [
-          53.581843586794335,
-          -0.35499023898236515
-        ],
-        [
-          53.404164,
-          -0.7431816
         ]
       ],
       "region": "Midlands"
@@ -4002,21 +4013,6 @@
       "dcAssign": "api"
     },
     {
-      "id": 2033677,
-      "name": "(NHS-HD-001) Harrogate District ",
-      "type": "Hospital",
-      "typeId": 4,
-      "level": 30,
-      "lat": 53.99371725146289,
-      "lon": -1.5175985755205312,
-      "personnel": 0,
-      "small": false,
-      "region": "North",
-      "dcId": 1988744,
-      "dcName": "(M2XN) North Yorkshire FCR",
-      "dcAssign": "api"
-    },
-    {
       "id": 2662770,
       "name": "Penzance Police Station",
       "type": "Police Station",
@@ -5982,21 +5978,6 @@
       "dcAssign": "api"
     },
     {
-      "id": 2357987,
-      "name": "Sulis hospital",
-      "type": "Hospital",
-      "typeId": 4,
-      "level": 30,
-      "lat": 51.311304694976165,
-      "lon": -2.4165690272642224,
-      "personnel": 0,
-      "small": false,
-      "region": "South West",
-      "dcId": 2353684,
-      "dcName": "Somerset FCR ",
-      "dcAssign": "api"
-    },
-    {
       "id": 2639114,
       "name": "Kilkhampton Ambulance Station",
       "type": "Ambulance Station",
@@ -6009,6 +5990,21 @@
       "region": "South West",
       "dcId": 2638184,
       "dcName": "Cornwall FCR",
+      "dcAssign": "api"
+    },
+    {
+      "id": 2357987,
+      "name": "Sulis hospital",
+      "type": "Hospital",
+      "typeId": 4,
+      "level": 30,
+      "lat": 51.311304694976165,
+      "lon": -2.4165690272642224,
+      "personnel": 0,
+      "small": false,
+      "region": "South West",
+      "dcId": 2353684,
+      "dcName": "Somerset FCR ",
       "dcAssign": "api"
     },
     {
@@ -6579,6 +6575,21 @@
       "region": "South West",
       "dcId": 2311778,
       "dcName": "Hampshire DC",
+      "dcAssign": "api"
+    },
+    {
+      "id": 2033677,
+      "name": "(NHS-HD-001) Harrogate District ",
+      "type": "Hospital",
+      "typeId": 4,
+      "level": 30,
+      "lat": 53.99371725146289,
+      "lon": -1.5175985755205312,
+      "personnel": 0,
+      "small": false,
+      "region": "North",
+      "dcId": 1988744,
+      "dcName": "(M2XN) North Yorkshire FCR",
       "dcAssign": "api"
     },
     {
@@ -7572,6 +7583,21 @@
       "dcAssign": "api"
     },
     {
+      "id": 2672792,
+      "name": "Newark Ambulance Station",
+      "type": "Ambulance Station",
+      "typeId": 2,
+      "level": 0,
+      "lat": 53.070507136955804,
+      "lon": -0.8172855439930939,
+      "personnel": 3,
+      "small": true,
+      "region": "Midlands",
+      "dcId": 2364325,
+      "dcName": "Nottinghamshire Dispatch Centre",
+      "dcAssign": "api"
+    },
+    {
       "id": 2620846,
       "name": "Skipton Police Station",
       "type": "Police Station",
@@ -7659,6 +7685,21 @@
       "region": "South East",
       "dcId": 1844373,
       "dcName": "London FCR",
+      "dcAssign": "api"
+    },
+    {
+      "id": 2672788,
+      "name": "Sleaford Ambulance Station ",
+      "type": "Ambulance Station",
+      "typeId": 2,
+      "level": 0,
+      "lat": 52.99988743699399,
+      "lon": -0.4066519976400986,
+      "personnel": 3,
+      "small": true,
+      "region": "Midlands",
+      "dcId": 2633103,
+      "dcName": "Lincolnshire DC",
       "dcAssign": "api"
     },
     {
@@ -7767,6 +7808,21 @@
       "dcAssign": "api"
     },
     {
+      "id": 2672789,
+      "name": "Boston Ambulance Station",
+      "type": "Ambulance Station",
+      "typeId": 2,
+      "level": 0,
+      "lat": 52.96980902648109,
+      "lon": 0.001213971927422438,
+      "personnel": 3,
+      "small": true,
+      "region": "Midlands",
+      "dcId": 2633103,
+      "dcName": "Lincolnshire DC",
+      "dcAssign": "api"
+    },
+    {
       "id": 2669447,
       "name": "Harrogate Bus Station",
       "type": "Ambulance Station",
@@ -7842,6 +7898,36 @@
       "dcAssign": "self"
     },
     {
+      "id": 2672786,
+      "name": "Lincoln Ambulance Station (S)",
+      "type": "Ambulance Station",
+      "typeId": 2,
+      "level": 0,
+      "lat": 53.217365,
+      "lon": -0.538811,
+      "personnel": 3,
+      "small": true,
+      "region": "Midlands",
+      "dcId": 2633103,
+      "dcName": "Lincolnshire DC",
+      "dcAssign": "api"
+    },
+    {
+      "id": 2672787,
+      "name": "Grantham Ambulance Station",
+      "type": "Ambulance Station",
+      "typeId": 2,
+      "level": 0,
+      "lat": 52.9119377,
+      "lon": -0.6314546,
+      "personnel": 3,
+      "small": true,
+      "region": "Midlands",
+      "dcId": 2633103,
+      "dcName": "Lincolnshire DC",
+      "dcAssign": "api"
+    },
+    {
       "id": 2624709,
       "name": "Malmesbury Ambulance Station",
       "type": "Ambulance Station",
@@ -7869,6 +7955,21 @@
       "region": "South West",
       "dcId": 2353684,
       "dcName": "Somerset FCR ",
+      "dcAssign": "api"
+    },
+    {
+      "id": 2672790,
+      "name": "Spalding Ambulance Station",
+      "type": "Ambulance Station",
+      "typeId": 2,
+      "level": 0,
+      "lat": 52.78900860027992,
+      "lon": -0.14642698562988318,
+      "personnel": 3,
+      "small": true,
+      "region": "Midlands",
+      "dcId": 2633103,
+      "dcName": "Lincolnshire DC",
       "dcAssign": "api"
     },
     {
@@ -11370,15 +11471,15 @@
     }
   ],
   "credits": {
-    "credits_user_current": 609867,
-    "credits_user_total": 154151944,
-    "credits_alliance_current": 391531224,
+    "credits_user_current": 13047,
+    "credits_user_total": 154155478,
+    "credits_alliance_current": 391581775,
     "coins_user_current": 75,
-    "credits_alliance_total": 29939774591
+    "credits_alliance_total": 29941411567
   },
   "alliance": {
     "users": 1823,
-    "online": 3,
+    "online": 5,
     "rank": 9,
     "financeActive": true
   }
