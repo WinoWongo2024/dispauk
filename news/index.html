@@ -4,52 +4,12 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>News | DispaUK</title>
-  <meta name="description" content="DispaUK operational news — multi-agency incidents and control-room updates.">
+  <meta name="description" content="DispaUK operational news — multi-agency incidents, developing stories and control-room updates.">
   <meta name="theme-color" content="#0b1220">
   <meta name="referrer" content="strict-origin-when-cross-origin">
   <link rel="stylesheet" href="/styles.css">
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Roboto+Mono:wght@400;500&display=swap" rel="stylesheet">
-  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1802148026096192"
-     crossorigin="anonymous"></script>
-  <style>
-    .news-list { display: flex; flex-direction: column; gap: 20px; }
-    .news-card {
-      background: var(--surface);
-      border: 1px solid var(--border);
-      border-radius: 12px;
-      overflow: hidden;
-    }
-    .news-card img {
-      width: 100%;
-      max-height: 420px;
-      object-fit: cover;
-      display: block;
-      background: #0b1220;
-    }
-    .news-card-body { padding: 16px 18px 20px; }
-    .news-meta {
-      display: flex; flex-wrap: wrap; gap: 8px 12px;
-      font-size: 0.8rem; color: var(--text-muted); margin-bottom: 8px;
-    }
-    .news-type {
-      display: inline-block;
-      padding: 2px 8px;
-      border-radius: 999px;
-      background: rgba(239, 68, 68, 0.15);
-      color: #fca5a5;
-      font-weight: 600;
-      font-size: 0.75rem;
-      text-transform: uppercase;
-      letter-spacing: 0.04em;
-    }
-    .news-type.medium { background: rgba(245, 158, 11, 0.15); color: #fcd34d; }
-    .news-type.low { background: rgba(59, 130, 246, 0.15); color: #93c5fd; }
-    .news-card h2 { font-size: 1.25rem; margin: 0 0 8px; line-height: 1.3; }
-    .news-card .summary { color: var(--text-muted); margin-bottom: 12px; }
-    .news-card .body { white-space: pre-wrap; line-height: 1.55; margin: 0 0 14px; }
-    .news-units { display: flex; flex-wrap: wrap; gap: 6px; margin-top: 8px; }
-    .news-empty { padding: 24px; text-align: center; color: var(--text-muted); }
-  </style>
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1802148026096192" crossorigin="anonymous"></script>
 </head>
 <body>
   <header class="header">
@@ -61,39 +21,78 @@
         <a href="/stations/">Stations</a>
         <a href="/locate/">Locate</a>
         <a href="/map/">Map</a>
-        <a href="/news/">News</a>
+        <a href="/news/" aria-current="page">News</a>
         <a href="/status/">Status</a>
       </nav>
       <button class="nav-toggle" type="button" aria-label="Menu" aria-expanded="false"><span></span><span></span><span></span></button>
     </div>
   </header>
+
   <main class="legal-page">
     <div class="container">
-      <div class="section-header-left" style="margin-bottom:16px">
+      <div class="section-header-left" style="margin-bottom:18px">
         <span class="section-kicker">OPERATIONS</span>
-        <h1 style="font-size:1.6rem">News &amp; incidents</h1>
-        <p class="text-muted">Manual operational reports from DispaUK control. MissionChief has no public live missions API — stories are filed by admins.</p>
+        <h1 style="font-size:1.6rem;margin:0 0 6px">News &amp; incidents</h1>
+        <p class="text-muted">Control-room reports from DispaUK. Click a story for the full operational brief.</p>
       </div>
 
-      <div class="news-list" id="news-list" aria-live="polite">
+      <div class="news-toolbar">
+        <label class="search-wrap">
+          <span class="sr-only">Search news</span>
+          <input type="search" id="news-search" placeholder="Search title, location, incident…" autocomplete="off">
+        </label>
+        <div style="min-width:140px">
+          <label class="sr-only" for="filter-county">County</label>
+          <select id="filter-county">
+            <option value="">All counties</option>
+          </select>
+        </div>
+        <div style="min-width:140px">
+          <label class="sr-only" for="filter-type">Incident type</label>
+          <select id="filter-type">
+            <option value="">All types</option>
+          </select>
+        </div>
+        <div style="min-width:130px">
+          <label class="sr-only" for="filter-agency">Agency</label>
+          <select id="filter-agency">
+            <option value="">All agencies</option>
+            <option value="Fire">Fire</option>
+            <option value="Ambulance">Ambulance</option>
+            <option value="Police">Police</option>
+            <option value="Other">Other</option>
+          </select>
+        </div>
+        <div class="news-filters" role="group" aria-label="Status filter">
+          <button type="button" class="news-filter-btn active" data-status="">All</button>
+          <button type="button" class="news-filter-btn" data-status="breaking">Breaking</button>
+          <button type="button" class="news-filter-btn" data-status="developing">Developing</button>
+          <button type="button" class="news-filter-btn" data-status="resolved">Resolved</button>
+        </div>
+      </div>
+
+      <p class="result-meta" aria-live="polite"><span id="result-count">…</span> stories</p>
+
+      <div class="news-grid" id="news-list" aria-live="polite">
         <p class="news-empty">Loading news…</p>
       </div>
 
-      <p class="disclaimer-bar" style="margin-top:20px">Fiction / game context for MissionChief. Not real emergency service communications. Call <strong>999 / 112</strong> in a real emergency.</p>
+      <p class="disclaimer-bar" style="margin-top:24px">Fiction / game context for MissionChief. Not real emergency service communications. Call <strong>999 / 112</strong> in a real emergency.</p>
     </div>
   </main>
-  <footer class="footer-slim"><div class="container footer-bottom"><p class="footer-copy">© <span data-current-year>2026</span> DispaUK · <a href="/contact/">Contact</a></p></div></footer>
+
+  <footer class="footer-slim">
+    <div class="container footer-bottom">
+      <p class="footer-copy">© <span data-current-year>2026</span> DispaUK · <a href="/contact/">Contact</a> · <a href="/admin/">Admin</a></p>
+    </div>
+  </footer>
+
   <script src="/script.js" defer></script>
   <script>
     function esc(s) {
       return String(s || '').replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;');
     }
-    function severityClass(s) {
-      const v = (s || '').toLowerCase();
-      if (v === 'high') return '';
-      if (v === 'medium') return 'medium';
-      return 'low';
-    }
+
     function mergeNews(fileItems, localItems) {
       const map = new Map();
       (fileItems || []).forEach(i => map.set(i.id, i));
@@ -101,10 +100,156 @@
         if (i._deleted) map.delete(i.id);
         else map.set(i.id, i);
       });
-      return Array.from(map.values()).sort((a, b) => String(b.date).localeCompare(String(a.date)));
+      return Array.from(map.values());
     }
+
+    function normalise(item) {
+      const status = (item.status || '').toLowerCase() ||
+        (item.severity === 'high' ? 'developing' : 'resolved');
+      let county = item.county || '';
+      if (!county && item.location) {
+        const parts = String(item.location).split(',').map(s => s.trim());
+        if (parts.length > 1) county = parts[parts.length - 1];
+      }
+      const agencies = item.agency
+        ? (Array.isArray(item.agency) ? item.agency : [item.agency])
+        : inferAgencies(item.type);
+      return {
+        ...item,
+        status,
+        county,
+        agency: agencies,
+        incidentNumber: item.incidentNumber || generateIncidentNumber(item),
+        publishedAt: item.publishedAt || (item.date ? item.date + 'T12:00:00Z' : ''),
+        updatedAt: item.updatedAt || item.publishedAt || item.date || '',
+        timeline: item.timeline || [],
+        relatedIds: item.relatedIds || [],
+        versions: item.versions || [],
+        lat: item.lat,
+        lng: item.lng,
+      };
+    }
+
+    function inferAgencies(type) {
+      const t = (type || '').toLowerCase();
+      const out = [];
+      if (/fire|structural|hazmat|flood|rescue/.test(t)) out.push('Fire');
+      if (/medical|ambulance|casualty/.test(t)) out.push('Ambulance');
+      if (/police|crime|rtc|collision|traffic/.test(t)) out.push('Police');
+      if (!out.length) out.push('Other');
+      return out;
+    }
+
+    function generateIncidentNumber(item) {
+      const d = (item.date || '').replace(/-/g, '') || '00000000';
+      const hash = String(item.id || '').replace(/\W/g, '').slice(-4).toUpperCase() || 'XXXX';
+      return 'DU-' + d + '-' + hash;
+    }
+
+    function formatWhen(isoOrDate) {
+      if (!isoOrDate) return '';
+      try {
+        const d = new Date(isoOrDate);
+        if (isNaN(d)) return String(isoOrDate);
+        return d.toLocaleString('en-GB', {
+          day: 'numeric', month: 'short', year: 'numeric',
+          hour: '2-digit', minute: '2-digit'
+        });
+      } catch (e) { return String(isoOrDate); }
+    }
+
+    let allItems = [];
+    let statusFilter = '';
+
+    function applyFilters() {
+      const q = (document.getElementById('news-search').value || '').toLowerCase().trim();
+      const county = document.getElementById('filter-county').value;
+      const type = document.getElementById('filter-type').value;
+      const agency = document.getElementById('filter-agency').value;
+
+      let list = allItems.slice();
+      if (statusFilter) list = list.filter(i => i.status === statusFilter);
+      if (county) list = list.filter(i => (i.county || '').toLowerCase() === county.toLowerCase());
+      if (type) list = list.filter(i => (i.type || '') === type);
+      if (agency) list = list.filter(i => (i.agency || []).some(a => a === agency));
+      if (q) {
+        list = list.filter(i => {
+          const blob = [
+            i.title, i.summary, i.location, i.county, i.type,
+            i.incidentNumber, (i.units || []).join(' '), i.body
+          ].join(' ').toLowerCase();
+          return blob.includes(q);
+        });
+      }
+
+      const rank = { breaking: 0, developing: 1, resolved: 2 };
+      list.sort((a, b) => {
+        const ra = rank[a.status] ?? 3;
+        const rb = rank[b.status] ?? 3;
+        if (ra !== rb) return ra - rb;
+        return String(b.updatedAt || b.publishedAt || b.date)
+          .localeCompare(String(a.updatedAt || a.publishedAt || a.date));
+      });
+
+      renderList(list);
+    }
+
+    function renderList(items) {
+      const el = document.getElementById('news-list');
+      document.getElementById('result-count').textContent = items.length;
+      if (!items.length) {
+        el.innerHTML = '<p class="news-empty">No stories match your filters.</p>';
+        return;
+      }
+      el.innerHTML = items.map(item => {
+        const thumb = item.image
+          ? '<div class="thumb"><img src="' + esc(item.image) + '" alt="' + esc(item.imageAlt || item.title) + '" loading="lazy"></div>'
+          : '<div class="thumb"><div class="thumb-placeholder">📰</div></div>';
+        const when = formatWhen(item.publishedAt || item.date);
+        return (
+          '<a class="news-story-card" href="/news/story.html?id=' + encodeURIComponent(item.id) + '">' +
+            thumb +
+            '<div class="card-body">' +
+              '<div class="news-meta-row">' +
+                '<span class="status-badge ' + esc(item.status) + '">' + esc(item.status) + '</span>' +
+                '<span class="sev-pill ' + esc(item.severity || 'low') + '">' + esc(item.severity || '') + '</span>' +
+                (item.type ? '<span>' + esc(item.type) + '</span>' : '') +
+              '</div>' +
+              '<h2>' + esc(item.title) + '</h2>' +
+              (item.summary ? '<p class="card-summary">' + esc(item.summary) + '</p>' : '') +
+              '<div class="news-meta-row">' +
+                (item.location ? '<span>📍 ' + esc(item.location) + '</span>' : '') +
+                (when ? '<span>⏱️ ' + esc(when) + '</span>' : '') +
+                (item.incidentNumber ? '<span class="mono">' + esc(item.incidentNumber) + '</span>' : '') +
+              '</div>' +
+            '</div>' +
+          '</a>'
+        );
+      }).join('');
+    }
+
+    function populateFilterOptions(items) {
+      const counties = new Set();
+      const types = new Set();
+      items.forEach(i => {
+        if (i.county) counties.add(i.county);
+        if (i.type) types.add(i.type);
+      });
+      const countySel = document.getElementById('filter-county');
+      [...counties].sort().forEach(c => {
+        const o = document.createElement('option');
+        o.value = c; o.textContent = c;
+        countySel.appendChild(o);
+      });
+      const typeSel = document.getElementById('filter-type');
+      [...types].sort().forEach(t => {
+        const o = document.createElement('option');
+        o.value = t; o.textContent = t;
+        typeSel.appendChild(o);
+      });
+    }
+
     document.addEventListener('DOMContentLoaded', async () => {
-      const list = document.getElementById('news-list');
       let fileItems = [];
       try {
         const res = await fetch('/data/news.json', { cache: 'no-cache' });
@@ -117,35 +262,24 @@
       try {
         localItems = JSON.parse(localStorage.getItem('dispauk_news_local') || '[]');
       } catch (e) { /* */ }
-      const items = mergeNews(fileItems, localItems);
-      if (!items.length) {
-        list.innerHTML = '<p class="news-empty">No stories yet. Check back after the next control-room update.</p>';
-        return;
-      }
-      list.innerHTML = items.map(item => {
-        const img = item.image
-          ? '<img src="' + esc(item.image) + '" alt="' + esc(item.imageAlt || item.title) + '" loading="lazy">'
-          : '';
-        const units = (item.units || []).map(u => '<span class="chip"><span class="chip-k">' + esc(u) + '</span></span>').join('');
-        return (
-          '<article class="news-card">' +
-            img +
-            '<div class="news-card-body">' +
-              '<div class="news-meta">' +
-                '<span class="news-type ' + severityClass(item.severity) + '">' + esc(item.type || 'Update') + '</span>' +
-                '<span>' + esc(item.date || '') + '</span>' +
-                (item.location ? '<span>' + esc(item.location) + '</span>' : '') +
-                (item.author ? '<span>' + esc(item.author) + '</span>' : '') +
-              '</div>' +
-              '<h2>' + esc(item.title) + '</h2>' +
-              (item.summary ? '<p class="summary">' + esc(item.summary) + '</p>' : '') +
-              (item.body ? '<div class="body">' + esc(item.body) + '</div>' : '') +
-              (units ? '<div class="news-units">' + units + '</div>' : '') +
-              (item.creditsNote ? '<p class="text-muted" style="margin-top:12px;font-size:0.85rem">' + esc(item.creditsNote) + '</p>' : '') +
-            '</div>' +
-          '</article>'
-        );
-      }).join('');
+
+      allItems = mergeNews(fileItems, localItems).map(normalise);
+      populateFilterOptions(allItems);
+      applyFilters();
+
+      document.getElementById('news-search').addEventListener('input', applyFilters);
+      document.getElementById('filter-county').addEventListener('change', applyFilters);
+      document.getElementById('filter-type').addEventListener('change', applyFilters);
+      document.getElementById('filter-agency').addEventListener('change', applyFilters);
+
+      document.querySelectorAll('.news-filter-btn').forEach(btn => {
+        btn.addEventListener('click', () => {
+          document.querySelectorAll('.news-filter-btn').forEach(b => b.classList.remove('active'));
+          btn.classList.add('active');
+          statusFilter = btn.getAttribute('data-status') || '';
+          applyFilters();
+        });
+      });
     });
   </script>
 </body>
