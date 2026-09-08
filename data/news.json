@@ -1,13 +1,13 @@
 {
-  "updatedAt": "2026-09-08T07:58:48.626Z",
+  "updatedAt": "2026-09-08T07:59:51.072Z",
   "items": [
     {
       "id": "local-1788811040143",
       "incidentNumber": "DU-20260907-0143",
       "date": "2026-09-07",
       "publishedAt": "2026-09-07T19:57:20.143Z",
-      "updatedAt": "2026-09-08T07:58:27.034Z",
-      "status": "breaking",
+      "updatedAt": "2026-09-08T07:59:50.809Z",
+      "status": "resolved",
       "title": "MAJOR INCIDENT: Major Off-Airport Aircraft Crash Mobilizes Massive Emergency Response",
       "type": "Other",
       "severity": "high",
@@ -74,11 +74,11 @@
           "author": "DispaUK Control"
         },
         {
-          "at": "2026-09-07T20:06:28.587Z",
+          "at": "2026-09-08T07:59:18.905Z",
           "note": "Resolved",
           "summary": "A Major Incident has been declared following a large off-airport aircraft crash on Shepperdine Road in Oldbury on Severn, with emergency services treating 103 potential patients.",
           "body": "A MAJOR INCIDENT has been declared in South Gloucestershire following a catastrophic off-airport aircraft crash on Shepperdine Road, Oldbury on Severn (BS35 1RJ). First responders arrived on scene to find widespread debris and active fuel fires, initiating an urgent, large-scale multi-agency rescue and medical response to assist 103 patients.\nA massive taskforce composed of regional fire, police, health, and specialist response teams has been deployed to secure the incident ground, combat extensive fires, and carry out complex extrication and triage operations:\n 15 Fire Engines & 5 Foam Units: Supplying continuous high-volume fire suppression and specialist foam bladders to extinguish aviation fuel blazes.\n 4 Water Carriers: Ensuring an uninterrupted water supply to rural ground units.\n 5 Rescue Support Vehicles: Equipped with heavy hydraulic cutting, lifting, and stabilization gear for immediate airframe extrications.\n 1 Breathing Apparatus Support Unit: Supplying fresh air cylinders and specialized breathing apparatus to support sustained crew operations in heavy smoke.\n 4 HazMat Units / CBRN Vehicles: Monitoring air safety, hazardous materials, and containment of leaked aviation fluids.\n 12 Fire Officers & 2 ICCU / Ambulance Control Units: Establishing multi-agency tactical command posts to coordinate scene operations and radio logistics.\n 1 Mass Casualty Equipment Unit: Setting up field triage centers, medical shelters, and emergency supplies to support 103 casualties.\n 1 Ambulance Officer & 3 Operational Team Leaders: Directing ground paramedics, prioritizing critical patients, and organizing rapid air/ground evacuations.\n 2 PRVs (Patient Response Vehicles) & 2 SRVs (Specialist Response Vehicles): Supplying advanced life support, trauma response, and rapid paramedic intervention.\n 1 ATV Carrier: Deploying all-terrain vehicles to transport medical crews and rescue equipment across difficult rural terrain.\n 2 Welfare Vehicles: Providing essential hydration, nutrition, and rest facilities for emergency personnel on scene.\n 12 Police Cars & 1 Police Helicopter: Enforcing extensive road closures around Shepperdine Road, securing the outer crash perimeter, and providing aerial reconnaissance for search operations.\nEmergency services remain on site in full operation. Residents in Oldbury on Severn and the surrounding areas are strongly advised to keep clear of all main access roads to allow blue-light vehicles uninterrupted access to the casualty area.",
-          "status": "breaking",
+          "status": "resolved",
           "author": "DispaUK Control"
         }
       ],
