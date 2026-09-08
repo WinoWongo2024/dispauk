@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-09-08T07:04:01.071831+00:00",
+  "updatedAt": "2026-09-08T12:43:42.616656+00:00",
   "source": "missionchief.co.uk",
   "sync": {
     "durationSeconds": 22,
@@ -34,7 +34,6 @@
     "Dispatch Centre": 36,
     "Custody Suite": 1,
     "Mountain Rescue": 5,
-    "Health Centre": 2,
     "Helicopter Station": 3,
     "Fire Station": 50,
     "Search & Rescue HQ": 7,
@@ -43,6 +42,7 @@
     "Bomb Disposal": 3,
     "Police Aviation": 3,
     "Police Academy": 1,
+    "Health Centre": 2,
     "SAR Resource Centre": 1,
     "Coastguard Station": 17,
     "GP Surgery": 3,
@@ -59,9 +59,9 @@
     "Scotland": 4
   },
   "vehicleStatus": {
-    "2": 1423,
-    "4": 109,
-    "5": 3
+    "2": 1516,
+    "5": 5,
+    "4": 14
   },
   "vehiclesByType": {
     "5": 552,
@@ -1713,21 +1713,6 @@
       "region": "Midlands",
       "dcId": 2633103,
       "dcName": "Lincolnshire DC",
-      "dcAssign": "api"
-    },
-    {
-      "id": 2429826,
-      "name": "Paulton Hospital  (MIU) (1-3617575955)",
-      "type": "Health Centre",
-      "typeId": 21,
-      "level": 5,
-      "lat": 51.29874962661729,
-      "lon": -2.4933505365978057,
-      "personnel": 200,
-      "small": false,
-      "region": "South West",
-      "dcId": 2353684,
-      "dcName": "Somerset FCR ",
       "dcAssign": "api"
     },
     {
@@ -10491,6 +10476,21 @@
       "dcAssign": "api"
     },
     {
+      "id": 2429826,
+      "name": "Paulton Hospital  (MIU) (1-3617575955)",
+      "type": "Health Centre",
+      "typeId": 21,
+      "level": 5,
+      "lat": 51.29874962661729,
+      "lon": -2.4933505365978057,
+      "personnel": 200,
+      "small": false,
+      "region": "South West",
+      "dcId": 2353684,
+      "dcName": "Somerset FCR ",
+      "dcAssign": "api"
+    },
+    {
       "id": 2635204,
       "name": "Bridgewater Ambulance Station",
       "type": "Ambulance Station",
@@ -10639,7 +10639,7 @@
       "name": "WCP | LFB-008/L4x4-001 (P)",
       "type": 1,
       "buildingId": 1844367,
-      "status": 4
+      "status": 2
     },
     {
       "id": 4926750,
@@ -10674,14 +10674,14 @@
       "name": "NWCP | LFB-006/WL-001",
       "type": 0,
       "buildingId": 1844412,
-      "status": 4
+      "status": 2
     },
     {
       "id": 4927854,
       "name": "NWCP | LFB-006/WL-002",
       "type": 0,
       "buildingId": 1844412,
-      "status": 4
+      "status": 2
     },
     {
       "id": 4929073,
@@ -10695,7 +10695,7 @@
       "name": "HLBRN | HRL-004/FO-001",
       "type": 3,
       "buildingId": 1845393,
-      "status": 4
+      "status": 2
     },
     {
       "id": 4929766,
@@ -10807,14 +10807,14 @@
       "name": "THML | MET-007/IRV-001",
       "type": 8,
       "buildingId": 1984600,
-      "status": 4
+      "status": 2
     },
     {
       "id": 5332267,
       "name": "THML | MET-007/IRV-002",
       "type": 8,
       "buildingId": 1984600,
-      "status": 4
+      "status": 2
     },
     {
       "id": 5332349,
@@ -10975,14 +10975,14 @@
       "name": "CoLP | MET-001/IRV-001",
       "type": 8,
       "buildingId": 2033679,
-      "status": 4
+      "status": 2
     },
     {
       "id": 5467027,
       "name": "CoL | HRL-001/FO-001",
       "type": 3,
       "buildingId": 2033681,
-      "status": 4
+      "status": 2
     },
     {
       "id": 5467039,
@@ -11038,7 +11038,7 @@
       "name": "CoL | LFB-002/RSU-001",
       "type": 4,
       "buildingId": 2033678,
-      "status": 4
+      "status": 2
     },
     {
       "id": 5496781,
@@ -11052,7 +11052,7 @@
       "name": "SJP | BTP-003/RTPC-001",
       "type": 24,
       "buildingId": 1984841,
-      "status": 4
+      "status": 2
     },
     {
       "id": 5496793,
@@ -11157,7 +11157,7 @@
       "name": "LMBTH | HRL-003/FO-001",
       "type": 3,
       "buildingId": 2312031,
-      "status": 4
+      "status": 2
     },
     {
       "id": 6272134,
@@ -11192,7 +11192,7 @@
       "name": "CoLP | MET-001/IRV-002",
       "type": 8,
       "buildingId": 2033679,
-      "status": 4
+      "status": 2
     },
     {
       "id": 6272828,
@@ -11213,7 +11213,7 @@
       "name": "BTGN | LFB-001/WL-001",
       "type": 0,
       "buildingId": 2312415,
-      "status": 4
+      "status": 2
     },
     {
       "id": 6272844,
@@ -11241,7 +11241,7 @@
       "name": "Fire Officer",
       "type": 3,
       "buildingId": 2312456,
-      "status": 4
+      "status": 2
     },
     {
       "id": 6272993,
@@ -11430,7 +11430,7 @@
       "name": "Fire Officer",
       "type": 3,
       "buildingId": 2318784,
-      "status": 4
+      "status": 2
     },
     {
       "id": 6292256,
@@ -11469,15 +11469,15 @@
     }
   ],
   "credits": {
-    "credits_user_current": 249374,
-    "credits_user_total": 154445871,
-    "credits_alliance_current": 391756208,
-    "coins_user_current": 63,
-    "credits_alliance_total": 29946458276
+    "credits_user_current": 450318,
+    "credits_user_total": 154669146,
+    "credits_alliance_current": 391791531,
+    "coins_user_current": 59,
+    "credits_alliance_total": 29947243908
   },
   "alliance": {
     "users": 1823,
-    "online": 4,
+    "online": 6,
     "rank": 9,
     "financeActive": true
   }
