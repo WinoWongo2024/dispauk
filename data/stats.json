@@ -1,8 +1,8 @@
 {
-  "updatedAt": "2026-09-12T16:06:21.200661+00:00",
+  "updatedAt": "2026-09-12T19:03:29.584401+00:00",
   "source": "missionchief.co.uk",
   "sync": {
-    "durationSeconds": 24,
+    "durationSeconds": 22,
     "schedule": "hourly"
   },
   "endpoints": {
@@ -59,7 +59,10 @@
     "Scotland": 4
   },
   "vehicleStatus": {
-    "2": 1535
+    "2": 1528,
+    "6": 1,
+    "4": 4,
+    "5": 2
   },
   "vehiclesByType": {
     "5": 552,
@@ -11467,11 +11470,11 @@
     }
   ],
   "credits": {
-    "credits_user_current": 511768,
-    "credits_user_total": 154736760,
-    "credits_alliance_current": 393664982,
+    "credits_user_current": 512583,
+    "credits_user_total": 154737666,
+    "credits_alliance_current": 393721274,
     "coins_user_current": 53,
-    "credits_alliance_total": 29993578152
+    "credits_alliance_total": 29994929642
   },
   "alliance": {
     "users": 1828,
