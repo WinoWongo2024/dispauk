@@ -1,8 +1,8 @@
 {
-  "updatedAt": "2026-09-13T21:17:42.437917+00:00",
+  "updatedAt": "2026-09-13T23:58:16.338990+00:00",
   "source": "missionchief.co.uk",
   "sync": {
-    "durationSeconds": 22,
+    "durationSeconds": 26,
     "schedule": "hourly"
   },
   "endpoints": {
@@ -11472,13 +11472,13 @@
   "credits": {
     "credits_user_current": 518304,
     "credits_user_total": 154743789,
-    "credits_alliance_current": 393067910,
+    "credits_alliance_current": 393121261,
     "coins_user_current": 53,
-    "credits_alliance_total": 30008318807
+    "credits_alliance_total": 30009936878
   },
   "alliance": {
     "users": 1829,
-    "online": 12,
+    "online": 3,
     "rank": 9,
     "financeActive": true
   }
