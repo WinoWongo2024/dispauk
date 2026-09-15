@@ -1,8 +1,8 @@
 {
-  "updatedAt": "2026-09-15T09:51:32.947247+00:00",
+  "updatedAt": "2026-09-15T14:44:18.329272+00:00",
   "source": "missionchief.co.uk",
   "sync": {
-    "durationSeconds": 25,
+    "durationSeconds": 22,
     "schedule": "hourly"
   },
   "endpoints": {
@@ -59,7 +59,11 @@
     "Scotland": 4
   },
   "vehicleStatus": {
-    "2": 1535
+    "2": 1508,
+    "4": 12,
+    "3": 2,
+    "1": 12,
+    "7": 1
   },
   "vehiclesByType": {
     "5": 552,
@@ -10651,7 +10655,7 @@
       "name": "BTPV&P | BTP-001/IRV-001",
       "type": 8,
       "buildingId": 1844377,
-      "status": 2
+      "status": 4
     },
     {
       "id": 4926757,
@@ -10665,7 +10669,7 @@
       "name": "WX-001 | 103 (S)",
       "type": 8,
       "buildingId": 1844377,
-      "status": 2
+      "status": 4
     },
     {
       "id": 4926884,
@@ -10693,7 +10697,7 @@
       "name": "HLBRN | HRL-004/FO-001",
       "type": 3,
       "buildingId": 1845393,
-      "status": 2
+      "status": 4
     },
     {
       "id": 4929766,
@@ -11337,7 +11341,7 @@
       "name": "DEPT | LFB-003/RP-001",
       "type": 16,
       "buildingId": 2318646,
-      "status": 2
+      "status": 4
     },
     {
       "id": 6290534,
@@ -11467,11 +11471,11 @@
     }
   ],
   "credits": {
-    "credits_user_current": 523305,
-    "credits_user_total": 154748958,
-    "credits_alliance_current": 393470050,
-    "coins_user_current": 53,
-    "credits_alliance_total": 30020048743
+    "credits_user_current": 697042,
+    "credits_user_total": 154941504,
+    "credits_alliance_current": 393595408,
+    "coins_user_current": 51,
+    "credits_alliance_total": 30022705603
   },
   "alliance": {
     "users": 1828,
