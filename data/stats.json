@@ -1,8 +1,8 @@
 {
-  "updatedAt": "2026-09-15T14:44:18.329272+00:00",
+  "updatedAt": "2026-09-15T18:47:26.794281+00:00",
   "source": "missionchief.co.uk",
   "sync": {
-    "durationSeconds": 22,
+    "durationSeconds": 27,
     "schedule": "hourly"
   },
   "endpoints": {
@@ -17,7 +17,7 @@
   },
   "totals": {
     "stations": 618,
-    "units": 1535,
+    "units": 1536,
     "personnel": 45815,
     "dispatchCentres": 36,
     "allianceBuildings": 1198,
@@ -59,11 +59,11 @@
     "Scotland": 4
   },
   "vehicleStatus": {
-    "2": 1508,
-    "4": 12,
-    "3": 2,
-    "1": 12,
-    "7": 1
+    "2": 1517,
+    "6": 1,
+    "1": 11,
+    "4": 5,
+    "5": 2
   },
   "vehiclesByType": {
     "5": 552,
@@ -73,8 +73,8 @@
     "3": 31,
     "0": 28,
     "12": 26,
+    "57": 25,
     "20": 24,
-    "57": 24,
     "13": 23,
     "4": 23,
     "81": 19,
@@ -1643,21 +1643,6 @@
       "dcAssign": "api"
     },
     {
-      "id": 2620355,
-      "name": "Leeds General Infirmary ",
-      "type": "Hospital",
-      "typeId": 4,
-      "level": 10,
-      "lat": 53.8023946581611,
-      "lon": -1.554507023226996,
-      "personnel": 0,
-      "small": false,
-      "region": "North",
-      "dcId": 2620223,
-      "dcName": "⁠[WY-ECC] West Yorks Emergency Control⁠",
-      "dcAssign": "api"
-    },
-    {
       "id": 2465943,
       "name": "Avon&Somerset Fire Bath #2",
       "type": "Fire Station",
@@ -2183,6 +2168,21 @@
       "dcAssign": "api"
     },
     {
+      "id": 2620355,
+      "name": "Leeds General Infirmary ",
+      "type": "Hospital",
+      "typeId": 4,
+      "level": 10,
+      "lat": 53.8023946581611,
+      "lon": -1.554507023226996,
+      "personnel": 0,
+      "small": false,
+      "region": "North",
+      "dcId": 2620223,
+      "dcName": "⁠[WY-ECC] West Yorks Emergency Control⁠",
+      "dcAssign": "api"
+    },
+    {
       "id": 2642433,
       "name": "Camelford Ambulance Station ",
       "type": "Ambulance Station",
@@ -2313,6 +2313,21 @@
       "personnel": 32,
       "small": true,
       "region": "Wales",
+      "dcId": 2469519,
+      "dcName": "𝙒𝙖𝙡𝙚𝙨 🏴󠁧󠁢󠁷󠁬󠁳󠁿 𝘾𝙮𝙢𝙧𝙪",
+      "dcAssign": "api"
+    },
+    {
+      "id": 2657378,
+      "name": "HM Coastguard Newport",
+      "type": "Coastguard Station",
+      "typeId": 28,
+      "level": 1,
+      "lat": 51.61396539166121,
+      "lon": -2.648202433158423,
+      "personnel": 27,
+      "small": false,
+      "region": "South West",
       "dcId": 2469519,
       "dcName": "𝙒𝙖𝙡𝙚𝙨 🏴󠁧󠁢󠁷󠁬󠁳󠁿 𝘾𝙮𝙢𝙧𝙪",
       "dcAssign": "api"
@@ -2886,6 +2901,21 @@
       "dcId": 2663988,
       "dcName": "Warwickshire FCR",
       "dcAssign": "self"
+    },
+    {
+      "id": 2319695,
+      "name": "(HPS-008) Basingstoke Station",
+      "type": "Police Station",
+      "typeId": 6,
+      "level": 1,
+      "lat": 51.24520327400317,
+      "lon": -1.0952816585198275,
+      "personnel": 200,
+      "small": false,
+      "region": "London & South",
+      "dcId": 2311778,
+      "dcName": "Hampshire DC",
+      "dcAssign": "api"
     },
     {
       "id": 2572699,
@@ -8078,21 +8108,6 @@
       "dcAssign": "api"
     },
     {
-      "id": 2657378,
-      "name": "HM Coastguard Newport",
-      "type": "Coastguard Station",
-      "typeId": 28,
-      "level": 0,
-      "lat": 51.61396539166121,
-      "lon": -2.648202433158423,
-      "personnel": 27,
-      "small": false,
-      "region": "South West",
-      "dcId": 2469519,
-      "dcName": "𝙒𝙖𝙡𝙚𝙨 🏴󠁧󠁢󠁷󠁬󠁳󠁿 𝘾𝙮𝙢𝙧𝙪",
-      "dcAssign": "api"
-    },
-    {
       "id": 2465954,
       "name": "Keynsham Ambulance Station",
       "type": "Ambulance Station",
@@ -9108,21 +9123,6 @@
       "personnel": 200,
       "small": false,
       "region": "South East",
-      "dcId": 2311778,
-      "dcName": "Hampshire DC",
-      "dcAssign": "api"
-    },
-    {
-      "id": 2319695,
-      "name": "(HPS-008) Basingstoke Station",
-      "type": "Police Station",
-      "typeId": 6,
-      "level": 1,
-      "lat": 51.24520327400317,
-      "lon": -1.0952816585198275,
-      "personnel": 200,
-      "small": false,
-      "region": "London & South",
       "dcId": 2311778,
       "dcName": "Hampshire DC",
       "dcAssign": "api"
@@ -10655,7 +10655,7 @@
       "name": "BTPV&P | BTP-001/IRV-001",
       "type": 8,
       "buildingId": 1844377,
-      "status": 4
+      "status": 2
     },
     {
       "id": 4926757,
@@ -10669,7 +10669,7 @@
       "name": "WX-001 | 103 (S)",
       "type": 8,
       "buildingId": 1844377,
-      "status": 4
+      "status": 2
     },
     {
       "id": 4926884,
@@ -10697,7 +10697,7 @@
       "name": "HLBRN | HRL-004/FO-001",
       "type": 3,
       "buildingId": 1845393,
-      "status": 4
+      "status": 2
     },
     {
       "id": 4929766,
@@ -11341,7 +11341,7 @@
       "name": "DEPT | LFB-003/RP-001",
       "type": 16,
       "buildingId": 2318646,
-      "status": 4
+      "status": 2
     },
     {
       "id": 6290534,
@@ -11471,15 +11471,15 @@
     }
   ],
   "credits": {
-    "credits_user_current": 697042,
-    "credits_user_total": 154941504,
-    "credits_alliance_current": 393595408,
-    "coins_user_current": 51,
-    "credits_alliance_total": 30022705603
+    "credits_user_current": 1116133,
+    "credits_user_total": 155440522,
+    "credits_alliance_current": 393732895,
+    "coins_user_current": 45,
+    "credits_alliance_total": 30025408465
   },
   "alliance": {
     "users": 1828,
-    "online": 6,
+    "online": 5,
     "rank": 9,
     "financeActive": true
   }
