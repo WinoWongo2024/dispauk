@@ -1,8 +1,8 @@
 {
-  "updatedAt": "2026-09-15T18:47:26.794281+00:00",
+  "updatedAt": "2026-09-15T21:59:55.862957+00:00",
   "source": "missionchief.co.uk",
   "sync": {
-    "durationSeconds": 27,
+    "durationSeconds": 21,
     "schedule": "hourly"
   },
   "endpoints": {
@@ -59,11 +59,12 @@
     "Scotland": 4
   },
   "vehicleStatus": {
-    "2": 1517,
+    "2": 1495,
+    "1": 18,
     "6": 1,
-    "1": 11,
-    "4": 5,
-    "5": 2
+    "4": 14,
+    "3": 7,
+    "7": 1
   },
   "vehiclesByType": {
     "5": 552,
@@ -2165,21 +2166,6 @@
       "region": "Wales",
       "dcId": 2469519,
       "dcName": "𝙒𝙖𝙡𝙚𝙨 🏴󠁧󠁢󠁷󠁬󠁳󠁿 𝘾𝙮𝙢𝙧𝙪",
-      "dcAssign": "api"
-    },
-    {
-      "id": 2620355,
-      "name": "Leeds General Infirmary ",
-      "type": "Hospital",
-      "typeId": 4,
-      "level": 10,
-      "lat": 53.8023946581611,
-      "lon": -1.554507023226996,
-      "personnel": 0,
-      "small": false,
-      "region": "North",
-      "dcId": 2620223,
-      "dcName": "⁠[WY-ECC] West Yorks Emergency Control⁠",
       "dcAssign": "api"
     },
     {
@@ -6035,6 +6021,21 @@
       "region": "Midlands",
       "dcId": 2621054,
       "dcName": "Leicestershire DC",
+      "dcAssign": "api"
+    },
+    {
+      "id": 2620355,
+      "name": "Leeds General Infirmary ",
+      "type": "Hospital",
+      "typeId": 4,
+      "level": 10,
+      "lat": 53.8023946581611,
+      "lon": -1.554507023226996,
+      "personnel": 0,
+      "small": false,
+      "region": "North",
+      "dcId": 2620223,
+      "dcName": "⁠[WY-ECC] West Yorks Emergency Control⁠",
       "dcAssign": "api"
     },
     {
@@ -11471,15 +11472,15 @@
     }
   ],
   "credits": {
-    "credits_user_current": 1116133,
-    "credits_user_total": 155440522,
-    "credits_alliance_current": 393732895,
+    "credits_user_current": 1528697,
+    "credits_user_total": 155898949,
+    "credits_alliance_current": 393844865,
     "coins_user_current": 45,
-    "credits_alliance_total": 30025408465
+    "credits_alliance_total": 30028417908
   },
   "alliance": {
     "users": 1828,
-    "online": 5,
+    "online": 4,
     "rank": 9,
     "financeActive": true
   }
