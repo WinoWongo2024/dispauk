@@ -1,8 +1,8 @@
 {
-  "updatedAt": "2026-09-16T05:47:15.061267+00:00",
+  "updatedAt": "2026-09-16T11:09:34.475283+00:00",
   "source": "missionchief.co.uk",
   "sync": {
-    "durationSeconds": 21,
+    "durationSeconds": 23,
     "schedule": "hourly"
   },
   "endpoints": {
@@ -59,9 +59,9 @@
     "Scotland": 4
   },
   "vehicleStatus": {
-    "2": 1525,
-    "6": 1,
-    "4": 10
+    "2": 1529,
+    "4": 5,
+    "5": 2
   },
   "vehiclesByType": {
     "5": 552,
@@ -10744,7 +10744,7 @@
       "name": "EUS | LAS-002/OTL-001",
       "type": 20,
       "buildingId": 1984068,
-      "status": 2
+      "status": 4
     },
     {
       "id": 5331506,
@@ -11290,7 +11290,7 @@
       "name": "ING | MET-002/IRV-002",
       "type": 8,
       "buildingId": 2033689,
-      "status": 2
+      "status": 4
     },
     {
       "id": 6290338,
@@ -11339,7 +11339,7 @@
       "name": "DEPT | LFB-003/RP-001",
       "type": 16,
       "buildingId": 2318646,
-      "status": 2
+      "status": 4
     },
     {
       "id": 6290534,
@@ -11469,15 +11469,15 @@
     }
   ],
   "credits": {
-    "credits_user_current": 1534696,
-    "credits_user_total": 155905615,
-    "credits_alliance_current": 393866704,
-    "coins_user_current": 45,
-    "credits_alliance_total": 30029722064
+    "credits_user_current": 1697401,
+    "credits_user_total": 156084179,
+    "credits_alliance_current": 393924097,
+    "coins_user_current": 46,
+    "credits_alliance_total": 30030622094
   },
   "alliance": {
     "users": 1828,
-    "online": 4,
+    "online": 5,
     "rank": 9,
     "financeActive": true
   }
