@@ -1,8 +1,8 @@
 {
-  "updatedAt": "2026-09-16T11:09:34.475283+00:00",
+  "updatedAt": "2026-09-16T16:29:39.399460+00:00",
   "source": "missionchief.co.uk",
   "sync": {
-    "durationSeconds": 23,
+    "durationSeconds": 21,
     "schedule": "hourly"
   },
   "endpoints": {
@@ -59,9 +59,8 @@
     "Scotland": 4
   },
   "vehicleStatus": {
-    "2": 1529,
-    "4": 5,
-    "5": 2
+    "2": 1534,
+    "4": 2
   },
   "vehiclesByType": {
     "5": 552,
@@ -2493,6 +2492,21 @@
       "region": "South East",
       "dcId": 1844373,
       "dcName": "London FCR",
+      "dcAssign": "api"
+    },
+    {
+      "id": 2033677,
+      "name": "(NHS-HD-001) Harrogate District ",
+      "type": "Hospital",
+      "typeId": 4,
+      "level": 30,
+      "lat": 53.99371725146289,
+      "lon": -1.5175985755205312,
+      "personnel": 0,
+      "small": false,
+      "region": "North",
+      "dcId": 1988744,
+      "dcName": "(M2XN) North Yorkshire FCR",
       "dcAssign": "api"
     },
     {
@@ -5133,21 +5147,6 @@
       "region": "Midlands",
       "dcId": 2621080,
       "dcName": "West Midlands",
-      "dcAssign": "api"
-    },
-    {
-      "id": 2033677,
-      "name": "(NHS-HD-001) Harrogate District ",
-      "type": "Hospital",
-      "typeId": 4,
-      "level": 30,
-      "lat": 53.99371725146289,
-      "lon": -1.5175985755205312,
-      "personnel": 0,
-      "small": false,
-      "region": "North",
-      "dcId": 1988744,
-      "dcName": "(M2XN) North Yorkshire FCR",
       "dcAssign": "api"
     },
     {
@@ -10744,7 +10743,7 @@
       "name": "EUS | LAS-002/OTL-001",
       "type": 20,
       "buildingId": 1984068,
-      "status": 4
+      "status": 2
     },
     {
       "id": 5331506,
@@ -11339,7 +11338,7 @@
       "name": "DEPT | LFB-003/RP-001",
       "type": 16,
       "buildingId": 2318646,
-      "status": 4
+      "status": 2
     },
     {
       "id": 6290534,
@@ -11469,15 +11468,15 @@
     }
   ],
   "credits": {
-    "credits_user_current": 1697401,
-    "credits_user_total": 156084179,
-    "credits_alliance_current": 393924097,
+    "credits_user_current": 1720584,
+    "credits_user_total": 156109939,
+    "credits_alliance_current": 393972269,
     "coins_user_current": 46,
-    "credits_alliance_total": 30030622094
+    "credits_alliance_total": 30032553089
   },
   "alliance": {
     "users": 1828,
-    "online": 5,
+    "online": 7,
     "rank": 9,
     "financeActive": true
   }
