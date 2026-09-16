@@ -1,8 +1,8 @@
 {
-  "updatedAt": "2026-09-16T16:29:39.399460+00:00",
+  "updatedAt": "2026-09-16T19:54:32.895509+00:00",
   "source": "missionchief.co.uk",
   "sync": {
-    "durationSeconds": 21,
+    "durationSeconds": 23,
     "schedule": "hourly"
   },
   "endpoints": {
@@ -59,8 +59,10 @@
     "Scotland": 4
   },
   "vehicleStatus": {
-    "2": 1534,
-    "4": 2
+    "2": 1506,
+    "4": 28,
+    "6": 1,
+    "7": 1
   },
   "vehiclesByType": {
     "5": 552,
@@ -10694,7 +10696,7 @@
       "name": "HLBRN | HRL-004/FO-001",
       "type": 3,
       "buildingId": 1845393,
-      "status": 2
+      "status": 4
     },
     {
       "id": 4929766,
@@ -10708,7 +10710,7 @@
       "name": "KGXSP | BTP-002/IRV-001",
       "type": 8,
       "buildingId": 1983967,
-      "status": 2
+      "status": 4
     },
     {
       "id": 5330403,
@@ -10981,14 +10983,14 @@
       "name": "CoL | HRL-001/FO-001",
       "type": 3,
       "buildingId": 2033681,
-      "status": 2
+      "status": 4
     },
     {
       "id": 5467039,
       "name": "ING | MET-002/IRV-001",
       "type": 8,
       "buildingId": 2033689,
-      "status": 2
+      "status": 4
     },
     {
       "id": 5488513,
@@ -11156,7 +11158,7 @@
       "name": "LMBTH | HRL-003/FO-001",
       "type": 3,
       "buildingId": 2312031,
-      "status": 2
+      "status": 4
     },
     {
       "id": 6272134,
@@ -11212,7 +11214,7 @@
       "name": "BTGN | LFB-001/WL-001",
       "type": 0,
       "buildingId": 2312415,
-      "status": 2
+      "status": 4
     },
     {
       "id": 6272844,
@@ -11468,15 +11470,15 @@
     }
   ],
   "credits": {
-    "credits_user_current": 1720584,
-    "credits_user_total": 156109939,
-    "credits_alliance_current": 393972269,
+    "credits_user_current": 1722854,
+    "credits_user_total": 156112461,
+    "credits_alliance_current": 393975914,
     "coins_user_current": 46,
-    "credits_alliance_total": 30032553089
+    "credits_alliance_total": 30033147239
   },
   "alliance": {
     "users": 1828,
-    "online": 7,
+    "online": 5,
     "rank": 9,
     "financeActive": true
   }
