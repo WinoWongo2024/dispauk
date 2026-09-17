@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-09-17T18:02:43.183808+00:00",
+  "updatedAt": "2026-09-17T21:59:05.113928+00:00",
   "source": "missionchief.co.uk",
   "sync": {
     "durationSeconds": 23,
@@ -59,7 +59,9 @@
     "Scotland": 4
   },
   "vehicleStatus": {
-    "2": 1535,
+    "2": 1531,
+    "4": 2,
+    "1": 2,
     "6": 1
   },
   "vehiclesByType": {
@@ -11387,7 +11389,7 @@
       "name": "WFS | LFB-009/CARP-001",
       "type": 17,
       "buildingId": 2318768,
-      "status": 2
+      "status": 4
     },
     {
       "id": 6290890,
@@ -11468,15 +11470,15 @@
     }
   ],
   "credits": {
-    "credits_user_current": 1813984,
-    "credits_user_total": 156213720,
-    "credits_alliance_current": 394206268,
+    "credits_user_current": 2060173,
+    "credits_user_total": 156484931,
+    "credits_alliance_current": 394259483,
     "coins_user_current": 46,
-    "credits_alliance_total": 30039470279
+    "credits_alliance_total": 30040889382
   },
   "alliance": {
     "users": 1829,
-    "online": 4,
+    "online": 5,
     "rank": 9,
     "financeActive": true
   }
