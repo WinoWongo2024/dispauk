@@ -1,8 +1,8 @@
 {
-  "updatedAt": "2026-09-18T10:52:19.943530+00:00",
+  "updatedAt": "2026-09-18T14:51:24.744121+00:00",
   "source": "missionchief.co.uk",
   "sync": {
-    "durationSeconds": 26,
+    "durationSeconds": 25,
     "schedule": "hourly"
   },
   "endpoints": {
@@ -59,7 +59,11 @@
     "Scotland": 4
   },
   "vehicleStatus": {
-    "2": 1536
+    "4": 127,
+    "2": 1391,
+    "5": 8,
+    "3": 9,
+    "1": 1
   },
   "vehiclesByType": {
     "5": 552,
@@ -1471,21 +1475,6 @@
       "region": "North",
       "dcId": 1988744,
       "dcName": "(M2XN) North Yorkshire FCR",
-      "dcAssign": "api"
-    },
-    {
-      "id": 2390847,
-      "name": "Royal United Hospital (RUH)",
-      "type": "Hospital",
-      "typeId": 4,
-      "level": 30,
-      "lat": 51.39141658271086,
-      "lon": -2.3916416733188,
-      "personnel": 0,
-      "small": false,
-      "region": "South West",
-      "dcId": 2353684,
-      "dcName": "Somerset FCR ",
       "dcAssign": "api"
     },
     {
@@ -7264,21 +7253,6 @@
       "dcAssign": "api"
     },
     {
-      "id": 2429046,
-      "name": "Bristol Royal Infirmary ",
-      "type": "Hospital",
-      "typeId": 4,
-      "level": 6,
-      "lat": 51.459167869232125,
-      "lon": -2.596142441448984,
-      "personnel": 0,
-      "small": false,
-      "region": "South West",
-      "dcId": 2353684,
-      "dcName": "Somerset FCR ",
-      "dcAssign": "api"
-    },
-    {
       "id": 2662771,
       "name": "Camborne Police Station",
       "type": "Police Station",
@@ -7396,6 +7370,21 @@
       "region": "Midlands",
       "dcId": 2621080,
       "dcName": "West Midlands",
+      "dcAssign": "api"
+    },
+    {
+      "id": 2429046,
+      "name": "Bristol Royal Infirmary ",
+      "type": "Hospital",
+      "typeId": 4,
+      "level": 6,
+      "lat": 51.459167869232125,
+      "lon": -2.596142441448984,
+      "personnel": 0,
+      "small": false,
+      "region": "South West",
+      "dcId": 2353684,
+      "dcName": "Somerset FCR ",
       "dcAssign": "api"
     },
     {
@@ -8551,6 +8540,21 @@
       "region": "North",
       "dcId": 1988744,
       "dcName": "(M2XN) North Yorkshire FCR",
+      "dcAssign": "api"
+    },
+    {
+      "id": 2390847,
+      "name": "Royal United Hospital (RUH)",
+      "type": "Hospital",
+      "typeId": 4,
+      "level": 30,
+      "lat": 51.39141658271086,
+      "lon": -2.3916416733188,
+      "personnel": 0,
+      "small": false,
+      "region": "South West",
+      "dcId": 2353684,
+      "dcName": "Somerset FCR ",
       "dcAssign": "api"
     },
     {
@@ -10630,14 +10634,14 @@
       "name": "WCP | LFB-008/WL-001",
       "type": 0,
       "buildingId": 1987510,
-      "status": 2
+      "status": 4
     },
     {
       "id": 4926743,
       "name": "WCP | LFB-008/L4x4-001 (P)",
       "type": 1,
       "buildingId": 1844367,
-      "status": 2
+      "status": 4
     },
     {
       "id": 4926750,
@@ -10672,14 +10676,14 @@
       "name": "NWCP | LFB-006/WL-001",
       "type": 0,
       "buildingId": 1844412,
-      "status": 2
+      "status": 4
     },
     {
       "id": 4927854,
       "name": "NWCP | LFB-006/WL-002",
       "type": 0,
       "buildingId": 1844412,
-      "status": 2
+      "status": 4
     },
     {
       "id": 4929073,
@@ -10693,7 +10697,7 @@
       "name": "HLBRN | HRL-004/FO-001",
       "type": 3,
       "buildingId": 1845393,
-      "status": 2
+      "status": 4
     },
     {
       "id": 4929766,
@@ -10721,7 +10725,7 @@
       "name": "EUS | LFB-004/WL-001",
       "type": 0,
       "buildingId": 1984004,
-      "status": 2
+      "status": 4
     },
     {
       "id": 5330618,
@@ -10819,7 +10823,7 @@
       "name": "WM10 | MET-004/IRV-001",
       "type": 8,
       "buildingId": 1984638,
-      "status": 2
+      "status": 4
     },
     {
       "id": 5332371,
@@ -10854,7 +10858,7 @@
       "name": "MA | LFB-005/WL-001",
       "type": 0,
       "buildingId": 1987510,
-      "status": 2
+      "status": 4
     },
     {
       "id": 5340155,
@@ -10973,14 +10977,14 @@
       "name": "CoLP | MET-001/IRV-001",
       "type": 8,
       "buildingId": 2033679,
-      "status": 2
+      "status": 4
     },
     {
       "id": 5467027,
       "name": "CoL | HRL-001/FO-001",
       "type": 3,
       "buildingId": 2033681,
-      "status": 2
+      "status": 4
     },
     {
       "id": 5467039,
@@ -11015,7 +11019,7 @@
       "name": "STR | MET-006/IRV-001",
       "type": 8,
       "buildingId": 2041380,
-      "status": 2
+      "status": 4
     },
     {
       "id": 5489761,
@@ -11036,7 +11040,7 @@
       "name": "CoL | LFB-002/RSU-001",
       "type": 4,
       "buildingId": 2033678,
-      "status": 2
+      "status": 4
     },
     {
       "id": 5496781,
@@ -11050,7 +11054,7 @@
       "name": "SJP | BTP-003/RTPC-001",
       "type": 24,
       "buildingId": 1984841,
-      "status": 2
+      "status": 4
     },
     {
       "id": 5496793,
@@ -11155,7 +11159,7 @@
       "name": "LMBTH | HRL-003/FO-001",
       "type": 3,
       "buildingId": 2312031,
-      "status": 2
+      "status": 4
     },
     {
       "id": 6272134,
@@ -11190,7 +11194,7 @@
       "name": "CoLP | MET-001/IRV-002",
       "type": 8,
       "buildingId": 2033679,
-      "status": 2
+      "status": 4
     },
     {
       "id": 6272828,
@@ -11467,15 +11471,15 @@
     }
   ],
   "credits": {
-    "credits_user_current": 2116700,
-    "credits_user_total": 156545517,
-    "credits_alliance_current": 394352051,
-    "coins_user_current": 51,
-    "credits_alliance_total": 30043128879
+    "credits_user_current": 2428919,
+    "credits_user_total": 156892444,
+    "credits_alliance_current": 394450259,
+    "coins_user_current": 47,
+    "credits_alliance_total": 30045236633
   },
   "alliance": {
     "users": 1831,
-    "online": 3,
+    "online": 7,
     "rank": 9,
     "financeActive": true
   }
