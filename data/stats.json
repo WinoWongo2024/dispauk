@@ -1,8 +1,8 @@
 {
-  "updatedAt": "2026-09-19T09:17:53.325496+00:00",
+  "updatedAt": "2026-09-19T13:47:21.247194+00:00",
   "source": "missionchief.co.uk",
   "sync": {
-    "durationSeconds": 25,
+    "durationSeconds": 24,
     "schedule": "hourly"
   },
   "endpoints": {
@@ -59,9 +59,9 @@
     "Scotland": 4
   },
   "vehicleStatus": {
-    "4": 44,
-    "2": 1490,
-    "5": 2
+    "2": 1522,
+    "4": 13,
+    "5": 1
   },
   "vehiclesByType": {
     "5": 552,
@@ -2031,6 +2031,21 @@
       "dcAssign": "api"
     },
     {
+      "id": 2330766,
+      "name": "Alliance Hospital - St Thomas Hospital",
+      "type": "Hospital",
+      "typeId": 4,
+      "level": 30,
+      "lat": 51.49882104927478,
+      "lon": -0.11859392142196024,
+      "personnel": 0,
+      "small": false,
+      "region": "South East",
+      "dcId": 1844373,
+      "dcName": "London FCR",
+      "dcAssign": "api"
+    },
+    {
       "id": 2360736,
       "name": "Bath (Centre) Ambulance Station",
       "type": "Ambulance Station",
@@ -2418,21 +2433,6 @@
       "region": "South West",
       "dcId": 2353684,
       "dcName": "Somerset FCR ",
-      "dcAssign": "api"
-    },
-    {
-      "id": 2330766,
-      "name": "Alliance Hospital - St Thomas Hospital",
-      "type": "Hospital",
-      "typeId": 4,
-      "level": 30,
-      "lat": 51.49882104927478,
-      "lon": -0.11859392142196024,
-      "personnel": 0,
-      "small": false,
-      "region": "South East",
-      "dcId": 1844373,
-      "dcName": "London FCR",
       "dcAssign": "api"
     },
     {
@@ -10632,14 +10632,14 @@
       "name": "WCP | LFB-008/WL-001",
       "type": 0,
       "buildingId": 1987510,
-      "status": 4
+      "status": 2
     },
     {
       "id": 4926743,
       "name": "WCP | LFB-008/L4x4-001 (P)",
       "type": 1,
       "buildingId": 1844367,
-      "status": 4
+      "status": 2
     },
     {
       "id": 4926750,
@@ -10695,7 +10695,7 @@
       "name": "HLBRN | HRL-004/FO-001",
       "type": 3,
       "buildingId": 1845393,
-      "status": 4
+      "status": 2
     },
     {
       "id": 4929766,
@@ -10723,28 +10723,28 @@
       "name": "EUS | LFB-004/WL-001",
       "type": 0,
       "buildingId": 1984004,
-      "status": 4
+      "status": 2
     },
     {
       "id": 5330618,
       "name": "EUS | LFB-004/ARAP-001",
       "type": 2,
       "buildingId": 1984004,
-      "status": 4
+      "status": 2
     },
     {
       "id": 5330650,
       "name": "EUS | LAS-002/AMB-001",
       "type": 5,
       "buildingId": 1984068,
-      "status": 5
+      "status": 2
     },
     {
       "id": 5330657,
       "name": "EUS | LAS-002/OTL-001",
       "type": 20,
       "buildingId": 1984068,
-      "status": 4
+      "status": 2
     },
     {
       "id": 5331506,
@@ -10765,7 +10765,7 @@
       "name": "QW | LFB-007/WL-002",
       "type": 0,
       "buildingId": 1984339,
-      "status": 4
+      "status": 2
     },
     {
       "id": 5331632,
@@ -10856,7 +10856,7 @@
       "name": "MA | LFB-005/WL-001",
       "type": 0,
       "buildingId": 1987510,
-      "status": 4
+      "status": 2
     },
     {
       "id": 5340155,
@@ -10905,7 +10905,7 @@
       "name": "WBR | LAS-005/AMB-002",
       "type": 5,
       "buildingId": 1987703,
-      "status": 5
+      "status": 2
     },
     {
       "id": 5340835,
@@ -10982,7 +10982,7 @@
       "name": "CoL | HRL-001/FO-001",
       "type": 3,
       "buildingId": 2033681,
-      "status": 4
+      "status": 2
     },
     {
       "id": 5467039,
@@ -11038,7 +11038,7 @@
       "name": "CoL | LFB-002/RSU-001",
       "type": 4,
       "buildingId": 2033678,
-      "status": 4
+      "status": 2
     },
     {
       "id": 5496781,
@@ -11157,7 +11157,7 @@
       "name": "LMBTH | HRL-003/FO-001",
       "type": 3,
       "buildingId": 2312031,
-      "status": 4
+      "status": 2
     },
     {
       "id": 6272134,
@@ -11311,7 +11311,7 @@
       "name": "EUS | LFB-004/BASU-001",
       "type": 14,
       "buildingId": 1984004,
-      "status": 4
+      "status": 2
     },
     {
       "id": 6290390,
@@ -11469,15 +11469,15 @@
     }
   ],
   "credits": {
-    "credits_user_current": 2675887,
-    "credits_user_total": 157166859,
-    "credits_alliance_current": 394865238,
+    "credits_user_current": 2694058,
+    "credits_user_total": 157186494,
+    "credits_alliance_current": 394940740,
     "coins_user_current": 45,
-    "credits_alliance_total": 30054777610
+    "credits_alliance_total": 30056437245
   },
   "alliance": {
     "users": 1833,
-    "online": 4,
+    "online": 5,
     "rank": 9,
     "financeActive": true
   }
