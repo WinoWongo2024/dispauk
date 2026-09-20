@@ -1,8 +1,8 @@
 {
-  "updatedAt": "2026-09-20T05:53:46.098565+00:00",
+  "updatedAt": "2026-09-20T10:58:10.367519+00:00",
   "source": "missionchief.co.uk",
   "sync": {
-    "durationSeconds": 25,
+    "durationSeconds": 21,
     "schedule": "hourly"
   },
   "endpoints": {
@@ -59,13 +59,10 @@
     "Scotland": 4
   },
   "vehicleStatus": {
-    "4": 145,
-    "2": 1327,
-    "3": 36,
-    "5": 4,
-    "1": 17,
-    "6": 1,
-    "7": 6
+    "2": 1512,
+    "4": 16,
+    "5": 5,
+    "1": 3
   },
   "vehiclesByType": {
     "5": 552,
@@ -1540,6 +1537,21 @@
       "dcAssign": "api"
     },
     {
+      "id": 2572699,
+      "name": "St Martins Hospital",
+      "type": "Hospital",
+      "typeId": 4,
+      "level": 0,
+      "lat": 51.357944655837294,
+      "lon": -2.371638192902137,
+      "personnel": 0,
+      "small": false,
+      "region": "South West",
+      "dcId": 2353684,
+      "dcName": "Somerset FCR ",
+      "dcAssign": "api"
+    },
+    {
       "id": 2626288,
       "name": "Halifax Ambulance Station",
       "type": "Ambulance Station",
@@ -1927,21 +1939,6 @@
       "region": "Wales",
       "dcId": 2469519,
       "dcName": "𝙒𝙖𝙡𝙚𝙨 🏴󠁧󠁢󠁷󠁬󠁳󠁿 𝘾𝙮𝙢𝙧𝙪",
-      "dcAssign": "api"
-    },
-    {
-      "id": 2033677,
-      "name": "(NHS-HD-001) Harrogate District ",
-      "type": "Hospital",
-      "typeId": 4,
-      "level": 30,
-      "lat": 53.99371725146289,
-      "lon": -1.5175985755205312,
-      "personnel": 0,
-      "small": false,
-      "region": "North",
-      "dcId": 1988744,
-      "dcName": "(M2XN) North Yorkshire FCR",
       "dcAssign": "api"
     },
     {
@@ -2392,21 +2389,6 @@
       "region": "London & South",
       "dcId": 2311778,
       "dcName": "Hampshire DC",
-      "dcAssign": "api"
-    },
-    {
-      "id": 2572699,
-      "name": "St Martins Hospital",
-      "type": "Hospital",
-      "typeId": 4,
-      "level": 0,
-      "lat": 51.357944655837294,
-      "lon": -2.371638192902137,
-      "personnel": 0,
-      "small": false,
-      "region": "South West",
-      "dcId": 2353684,
-      "dcName": "Somerset FCR ",
       "dcAssign": "api"
     },
     {
@@ -7480,6 +7462,21 @@
       "dcAssign": "api"
     },
     {
+      "id": 2033677,
+      "name": "(NHS-HD-001) Harrogate District ",
+      "type": "Hospital",
+      "typeId": 4,
+      "level": 30,
+      "lat": 53.99371725146289,
+      "lon": -1.5175985755205312,
+      "personnel": 0,
+      "small": false,
+      "region": "North",
+      "dcId": 1988744,
+      "dcName": "(M2XN) North Yorkshire FCR",
+      "dcAssign": "api"
+    },
+    {
       "id": 2390840,
       "name": "Bath Police Station",
       "type": "Police Station",
@@ -7642,6 +7639,21 @@
       "region": "South West",
       "dcId": 2353684,
       "dcName": "Somerset FCR ",
+      "dcAssign": "api"
+    },
+    {
+      "id": 2325713,
+      "name": "Scarborough General Hospital",
+      "type": "Hospital",
+      "typeId": 4,
+      "level": 4,
+      "lat": 54.28179980467448,
+      "lon": -0.4370821595078071,
+      "personnel": 0,
+      "small": false,
+      "region": "North",
+      "dcId": 1988744,
+      "dcName": "(M2XN) North Yorkshire FCR",
       "dcAssign": "api"
     },
     {
@@ -8962,21 +8974,6 @@
       "region": "South West",
       "dcId": 2652166,
       "dcName": "Herefordshire FCR ",
-      "dcAssign": "api"
-    },
-    {
-      "id": 2325713,
-      "name": "Scarborough General Hospital",
-      "type": "Hospital",
-      "typeId": 4,
-      "level": 4,
-      "lat": 54.28179980467448,
-      "lon": -0.4370821595078071,
-      "personnel": 0,
-      "small": false,
-      "region": "North",
-      "dcId": 1988744,
-      "dcName": "(M2XN) North Yorkshire FCR",
       "dcAssign": "api"
     },
     {
@@ -10636,14 +10633,14 @@
       "name": "WCP | LFB-008/WL-001",
       "type": 0,
       "buildingId": 1987510,
-      "status": 4
+      "status": 2
     },
     {
       "id": 4926743,
       "name": "WCP | LFB-008/L4x4-001 (P)",
       "type": 1,
       "buildingId": 1844367,
-      "status": 4
+      "status": 2
     },
     {
       "id": 4926750,
@@ -10678,14 +10675,14 @@
       "name": "NWCP | LFB-006/WL-001",
       "type": 0,
       "buildingId": 1844412,
-      "status": 4
+      "status": 2
     },
     {
       "id": 4927854,
       "name": "NWCP | LFB-006/WL-002",
       "type": 0,
       "buildingId": 1844412,
-      "status": 4
+      "status": 2
     },
     {
       "id": 4929073,
@@ -10699,7 +10696,7 @@
       "name": "HLBRN | HRL-004/FO-001",
       "type": 3,
       "buildingId": 1845393,
-      "status": 4
+      "status": 2
     },
     {
       "id": 4929766,
@@ -10720,14 +10717,14 @@
       "name": "KGXSP | BTP-002/IRV-002",
       "type": 8,
       "buildingId": 1983967,
-      "status": 4
+      "status": 2
     },
     {
       "id": 5330499,
       "name": "EUS | LFB-004/WL-001",
       "type": 0,
       "buildingId": 1984004,
-      "status": 4
+      "status": 2
     },
     {
       "id": 5330618,
@@ -10748,14 +10745,14 @@
       "name": "EUS | LAS-002/OTL-001",
       "type": 20,
       "buildingId": 1984068,
-      "status": 4
+      "status": 2
     },
     {
       "id": 5331506,
       "name": "QW | LFB-007/WL-001",
       "type": 0,
       "buildingId": 1984339,
-      "status": 4
+      "status": 2
     },
     {
       "id": 5331507,
@@ -10825,7 +10822,7 @@
       "name": "WM10 | MET-004/IRV-001",
       "type": 8,
       "buildingId": 1984638,
-      "status": 4
+      "status": 2
     },
     {
       "id": 5332371,
@@ -10860,7 +10857,7 @@
       "name": "MA | LFB-005/WL-001",
       "type": 0,
       "buildingId": 1987510,
-      "status": 4
+      "status": 2
     },
     {
       "id": 5340155,
@@ -10923,21 +10920,21 @@
       "name": "HFS | NYF-001/WL-001",
       "type": 0,
       "buildingId": 1988057,
-      "status": 4
+      "status": 2
     },
     {
       "id": 5341847,
       "name": "HFS | NYF-001/WL-002",
       "type": 0,
       "buildingId": 1988057,
-      "status": 4
+      "status": 2
     },
     {
       "id": 5342846,
       "name": "HMC | M2XN/IRV-001",
       "type": 8,
       "buildingId": 1988488,
-      "status": 3
+      "status": 2
     },
     {
       "id": 5342848,
@@ -10979,21 +10976,21 @@
       "name": "CoLP | MET-001/IRV-001",
       "type": 8,
       "buildingId": 2033679,
-      "status": 4
+      "status": 2
     },
     {
       "id": 5467027,
       "name": "CoL | HRL-001/FO-001",
       "type": 3,
       "buildingId": 2033681,
-      "status": 4
+      "status": 2
     },
     {
       "id": 5467039,
       "name": "ING | MET-002/IRV-001",
       "type": 8,
       "buildingId": 2033689,
-      "status": 4
+      "status": 2
     },
     {
       "id": 5488513,
@@ -11021,7 +11018,7 @@
       "name": "STR | MET-006/IRV-001",
       "type": 8,
       "buildingId": 2041380,
-      "status": 4
+      "status": 2
     },
     {
       "id": 5489761,
@@ -11042,7 +11039,7 @@
       "name": "CoL | LFB-002/RSU-001",
       "type": 4,
       "buildingId": 2033678,
-      "status": 4
+      "status": 2
     },
     {
       "id": 5496781,
@@ -11070,14 +11067,14 @@
       "name": "HMC | M2XN/IRV-002",
       "type": 8,
       "buildingId": 1988488,
-      "status": 3
+      "status": 2
     },
     {
       "id": 5921429,
       "name": "H’GTE | YAS-001/AMB-001",
       "type": 5,
       "buildingId": 2188370,
-      "status": 5
+      "status": 2
     },
     {
       "id": 5921430,
@@ -11105,14 +11102,14 @@
       "name": "HPS | M2XN/IRV-001",
       "type": 8,
       "buildingId": 2311530,
-      "status": 3
+      "status": 2
     },
     {
       "id": 6269475,
       "name": "HPS | M2XN/DSU-001",
       "type": 12,
       "buildingId": 2311530,
-      "status": 1
+      "status": 2
     },
     {
       "id": 6269495,
@@ -11126,14 +11123,14 @@
       "name": "KBR | NYF-002/WL-001",
       "type": 0,
       "buildingId": 2311542,
-      "status": 3
+      "status": 2
     },
     {
       "id": 6269521,
       "name": "KBR | NYF-002/FO-001",
       "type": 3,
       "buildingId": 2311542,
-      "status": 4
+      "status": 2
     },
     {
       "id": 6270702,
@@ -11161,7 +11158,7 @@
       "name": "LMBTH | HRL-003/FO-001",
       "type": 3,
       "buildingId": 2312031,
-      "status": 4
+      "status": 2
     },
     {
       "id": 6272134,
@@ -11182,42 +11179,42 @@
       "name": "SHPTCFS | HFS-001/WL-001",
       "type": 0,
       "buildingId": 2312349,
-      "status": 4
+      "status": 2
     },
     {
       "id": 6272676,
       "name": "SHPTCFS | HFS-001/WL-002",
       "type": 0,
       "buildingId": 2312349,
-      "status": 4
+      "status": 2
     },
     {
       "id": 6272808,
       "name": "CoLP | MET-001/IRV-002",
       "type": 8,
       "buildingId": 2033679,
-      "status": 4
+      "status": 2
     },
     {
       "id": 6272828,
       "name": "STMRYFS | HFS-003/WL-001",
       "type": 0,
       "buildingId": 2312409,
-      "status": 4
+      "status": 2
     },
     {
       "id": 6272831,
       "name": "STMRYFS | HFS-003/RSU-001",
       "type": 4,
       "buildingId": 2312409,
-      "status": 4
+      "status": 2
     },
     {
       "id": 6272842,
       "name": "BTGN | LFB-001/WL-001",
       "type": 0,
       "buildingId": 2312415,
-      "status": 4
+      "status": 2
     },
     {
       "id": 6272844,
@@ -11245,7 +11242,7 @@
       "name": "Fire Officer",
       "type": 3,
       "buildingId": 2312456,
-      "status": 3
+      "status": 2
     },
     {
       "id": 6272993,
@@ -11294,7 +11291,7 @@
       "name": "ING | MET-002/IRV-002",
       "type": 8,
       "buildingId": 2033689,
-      "status": 4
+      "status": 2
     },
     {
       "id": 6290338,
@@ -11315,7 +11312,7 @@
       "name": "EUS | LFB-004/BASU-001",
       "type": 14,
       "buildingId": 1984004,
-      "status": 4
+      "status": 2
     },
     {
       "id": 6290390,
@@ -11434,7 +11431,7 @@
       "name": "Fire Officer",
       "type": 3,
       "buildingId": 2318784,
-      "status": 4
+      "status": 2
     },
     {
       "id": 6292256,
@@ -11469,19 +11466,19 @@
       "name": "ELGH | HFS-004/CARP-001",
       "type": 17,
       "buildingId": 2319651,
-      "status": 4
+      "status": 2
     }
   ],
   "credits": {
-    "credits_user_current": 3153652,
-    "credits_user_total": 157696407,
-    "credits_alliance_current": 395281824,
-    "coins_user_current": 15,
-    "credits_alliance_total": 30062906638
+    "credits_user_current": 3438165,
+    "credits_user_total": 158012547,
+    "credits_alliance_current": 395525400,
+    "coins_user_current": 11,
+    "credits_alliance_total": 30067089617
   },
   "alliance": {
     "users": 1833,
-    "online": 4,
+    "online": 10,
     "rank": 9,
     "financeActive": true
   }
