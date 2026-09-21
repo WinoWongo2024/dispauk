@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-09-21T13:06:51.531954+00:00",
+  "updatedAt": "2026-09-21T16:53:28.645645+00:00",
   "source": "missionchief.co.uk",
   "sync": {
     "durationSeconds": 25,
@@ -16,9 +16,9 @@
     "einsaetze": true
   },
   "totals": {
-    "stations": 656,
-    "units": 1569,
-    "personnel": 48263,
+    "stations": 657,
+    "units": 1570,
+    "personnel": 48265,
     "dispatchCentres": 42,
     "allianceBuildings": 1198,
     "equipments": 11,
@@ -28,7 +28,7 @@
     "Hospital": 21,
     "Ambulance Station": 356,
     "HART Base": 5,
-    "Police Station": 67,
+    "Police Station": 68,
     "Home Response / HRL": 48,
     "Dispatch Centre": 42,
     "Custody Suite": 1,
@@ -52,23 +52,21 @@
     "London & South": 38,
     "South West": 230,
     "Other / Overseas": 47,
-    "North": 120,
+    "North": 121,
     "Wales": 52,
     "South East": 73,
     "Midlands": 92,
     "Scotland": 4
   },
   "vehicleStatus": {
-    "2": 1516,
-    "5": 2,
-    "4": 14,
-    "7": 2,
-    "1": 6,
-    "3": 29
+    "2": 1564,
+    "4": 3,
+    "1": 1,
+    "5": 2
   },
   "vehiclesByType": {
     "5": 583,
-    "8": 151,
+    "8": 152,
     "17": 60,
     "10": 47,
     "3": 31,
@@ -102,7 +100,7 @@
     "stationsMissingName": 0,
     "stationsMissingCoords": 0,
     "duplicateStationIds": 0,
-    "dcAssignedFromApi": 610,
+    "dcAssignedFromApi": 611,
     "dcAssignedNearest": 4,
     "dispatchCentres": 42,
     "ok": true
@@ -671,6 +669,43 @@
       "region": "London & South"
     },
     {
+      "id": 2692392,
+      "name": "Lancashire FCR",
+      "lat": 54.04725419392725,
+      "lon": -2.797496881464626,
+      "level": 0,
+      "stationCount": 9,
+      "personnel": 26,
+      "coverageRadiusM": 56178,
+      "coveragePolygon": [
+        [
+          53.5687669,
+          -2.8834457
+        ],
+        [
+          53.6314536694652,
+          -2.684820410344135
+        ],
+        [
+          53.76800475742995,
+          -2.413857523261256
+        ],
+        [
+          53.867627753226685,
+          -2.396069112512002
+        ],
+        [
+          54.33246483679737,
+          -2.7474921835614023
+        ],
+        [
+          53.798691520463784,
+          -3.0455160056425017
+        ]
+      ],
+      "region": "North"
+    },
+    {
       "id": 2620974,
       "name": "South Yorkshire DC",
       "lat": 53.37851880513755,
@@ -702,51 +737,6 @@
         ]
       ],
       "region": "Midlands"
-    },
-    {
-      "id": 2692392,
-      "name": "Lancashire FCR",
-      "lat": 54.04725419392725,
-      "lon": -2.797496881464626,
-      "level": 0,
-      "stationCount": 8,
-      "personnel": 24,
-      "coverageRadiusM": 56178,
-      "coveragePolygon": [
-        [
-          53.5687669,
-          -2.8834457
-        ],
-        [
-          53.6314536694652,
-          -2.684820410344135
-        ],
-        [
-          53.76800475742995,
-          -2.413857523261256
-        ],
-        [
-          53.867627753226685,
-          -2.396069112512002
-        ],
-        [
-          54.04725419392725,
-          -2.797496881464626
-        ],
-        [
-          54.0509163,
-          -2.8137437
-        ],
-        [
-          54.06053616421652,
-          -2.859013472404445
-        ],
-        [
-          53.798691520463784,
-          -3.0455160056425017
-        ]
-      ],
-      "region": "North"
     },
     {
       "id": 2649006,
@@ -3300,21 +3290,6 @@
       "dcAssign": "api"
     },
     {
-      "id": 2692392,
-      "name": "Lancashire FCR",
-      "type": "Dispatch Centre",
-      "typeId": 7,
-      "level": 0,
-      "lat": 54.04725419392725,
-      "lon": -2.797496881464626,
-      "personnel": 0,
-      "small": false,
-      "region": "North",
-      "dcId": 2692392,
-      "dcName": "Lancashire FCR",
-      "dcAssign": "self"
-    },
-    {
       "id": 2692423,
       "name": "Ormskirk Ambulance Station",
       "type": "Ambulance Station",
@@ -4740,21 +4715,6 @@
       "dcAssign": "api"
     },
     {
-      "id": 2033677,
-      "name": "(NHS-HD-001) Harrogate District ",
-      "type": "Hospital",
-      "typeId": 4,
-      "level": 30,
-      "lat": 53.99371725146289,
-      "lon": -1.5175985755205312,
-      "personnel": 0,
-      "small": false,
-      "region": "North",
-      "dcId": 1988744,
-      "dcName": "(M2XN) North Yorkshire FCR",
-      "dcAssign": "api"
-    },
-    {
       "id": 2633098,
       "name": "Chesterfield CFS",
       "type": "Fire Station",
@@ -4947,6 +4907,21 @@
       "region": "South West",
       "dcId": 2582593,
       "dcName": "Gloucestershire Dispatch",
+      "dcAssign": "api"
+    },
+    {
+      "id": 2033677,
+      "name": "(NHS-HD-001) Harrogate District ",
+      "type": "Hospital",
+      "typeId": 4,
+      "level": 30,
+      "lat": 53.99371725146289,
+      "lon": -1.5175985755205312,
+      "personnel": 0,
+      "small": false,
+      "region": "North",
+      "dcId": 1988744,
+      "dcName": "(M2XN) North Yorkshire FCR",
       "dcAssign": "api"
     },
     {
@@ -5922,6 +5897,36 @@
       "region": "Midlands",
       "dcId": 2621069,
       "dcName": "Worcestershire DC",
+      "dcAssign": "api"
+    },
+    {
+      "id": 2692392,
+      "name": "Lancashire FCR",
+      "type": "Dispatch Centre",
+      "typeId": 7,
+      "level": 0,
+      "lat": 54.04725419392725,
+      "lon": -2.797496881464626,
+      "personnel": 0,
+      "small": false,
+      "region": "North",
+      "dcId": 2692392,
+      "dcName": "Lancashire FCR",
+      "dcAssign": "self"
+    },
+    {
+      "id": 2692598,
+      "name": "Kendal Police Station",
+      "type": "Police Station",
+      "typeId": 6,
+      "level": 0,
+      "lat": 54.33246483679737,
+      "lon": -2.7474921835614023,
+      "personnel": 2,
+      "small": true,
+      "region": "North",
+      "dcId": 2692392,
+      "dcName": "Lancashire FCR",
       "dcAssign": "api"
     },
     {
@@ -12228,15 +12233,15 @@
     }
   ],
   "credits": {
-    "credits_user_current": 650421,
-    "credits_user_total": 159033456,
-    "credits_alliance_current": 395833937,
+    "credits_user_current": 86927,
+    "credits_user_total": 159069513,
+    "credits_alliance_current": 395881961,
     "coins_user_current": 1,
-    "credits_alliance_total": 30074997384
+    "credits_alliance_total": 30076188779
   },
   "alliance": {
-    "users": 1834,
-    "online": 2,
+    "users": 1833,
+    "online": 5,
     "rank": 9,
     "financeActive": true
   }
