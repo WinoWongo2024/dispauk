@@ -1,8 +1,8 @@
 {
-  "updatedAt": "2026-09-21T04:44:10.409496+00:00",
+  "updatedAt": "2026-09-21T10:31:04.066824+00:00",
   "source": "missionchief.co.uk",
   "sync": {
-    "durationSeconds": 22,
+    "durationSeconds": 24,
     "schedule": "hourly"
   },
   "endpoints": {
@@ -22,7 +22,7 @@
     "dispatchCentres": 36,
     "allianceBuildings": 1198,
     "equipments": 11,
-    "missionTypes": 1069
+    "missionTypes": 1070
   },
   "stationsByType": {
     "Hospital": 21,
@@ -59,10 +59,10 @@
     "Scotland": 4
   },
   "vehicleStatus": {
-    "2": 1517,
-    "4": 16,
-    "5": 2,
-    "6": 1
+    "2": 1500,
+    "4": 29,
+    "5": 3,
+    "1": 4
   },
   "vehiclesByType": {
     "5": 552,
@@ -1534,21 +1534,6 @@
       "region": "North",
       "dcId": 1988744,
       "dcName": "(M2XN) North Yorkshire FCR",
-      "dcAssign": "api"
-    },
-    {
-      "id": 2572699,
-      "name": "St Martins Hospital",
-      "type": "Hospital",
-      "typeId": 4,
-      "level": 0,
-      "lat": 51.357944655837294,
-      "lon": -2.371638192902137,
-      "personnel": 0,
-      "small": false,
-      "region": "South West",
-      "dcId": 2353684,
-      "dcName": "Somerset FCR ",
       "dcAssign": "api"
     },
     {
@@ -3997,21 +3982,6 @@
       "dcAssign": "api"
     },
     {
-      "id": 2567229,
-      "name": "Weston General Hospital",
-      "type": "Hospital",
-      "typeId": 4,
-      "level": 6,
-      "lat": 51.321611143618476,
-      "lon": -2.971186856353536,
-      "personnel": 0,
-      "small": false,
-      "region": "South West",
-      "dcId": 2353684,
-      "dcName": "Somerset FCR ",
-      "dcAssign": "api"
-    },
-    {
       "id": 2340692,
       "name": "Bermondsey (North)",
       "type": "Home Response / HRL",
@@ -5317,6 +5287,21 @@
       "dcAssign": "api"
     },
     {
+      "id": 2330766,
+      "name": "Alliance Hospital - St Thomas Hospital",
+      "type": "Hospital",
+      "typeId": 4,
+      "level": 30,
+      "lat": 51.49882104927478,
+      "lon": -0.11859392142196024,
+      "personnel": 0,
+      "small": false,
+      "region": "South East",
+      "dcId": 1844373,
+      "dcName": "London FCR",
+      "dcAssign": "api"
+    },
+    {
       "id": 1984004,
       "name": "(LFB-004) Euston LFB Station",
       "type": "Fire Station",
@@ -6382,6 +6367,21 @@
       "dcAssign": "api"
     },
     {
+      "id": 2429046,
+      "name": "Bristol Royal Infirmary ",
+      "type": "Hospital",
+      "typeId": 4,
+      "level": 6,
+      "lat": 51.459167869232125,
+      "lon": -2.596142441448984,
+      "personnel": 0,
+      "small": false,
+      "region": "South West",
+      "dcId": 2353684,
+      "dcName": "Somerset FCR ",
+      "dcAssign": "api"
+    },
+    {
       "id": 2600986,
       "name": "Calais SAMU",
       "type": "Ambulance Station",
@@ -6622,6 +6622,21 @@
       "dcAssign": "api"
     },
     {
+      "id": 2325713,
+      "name": "Scarborough General Hospital",
+      "type": "Hospital",
+      "typeId": 4,
+      "level": 4,
+      "lat": 54.28179980467448,
+      "lon": -0.4370821595078071,
+      "personnel": 0,
+      "small": false,
+      "region": "North",
+      "dcId": 1988744,
+      "dcName": "(M2XN) North Yorkshire FCR",
+      "dcAssign": "api"
+    },
+    {
       "id": 2662781,
       "name": "Plymouth Police HUB",
       "type": "Police Station",
@@ -6727,6 +6742,21 @@
       "dcAssign": "api"
     },
     {
+      "id": 2390847,
+      "name": "Royal United Hospital (RUH)",
+      "type": "Hospital",
+      "typeId": 4,
+      "level": 30,
+      "lat": 51.39141658271086,
+      "lon": -2.3916416733188,
+      "personnel": 0,
+      "small": false,
+      "region": "South West",
+      "dcId": 2353684,
+      "dcName": "Somerset FCR ",
+      "dcAssign": "api"
+    },
+    {
       "id": 2352918,
       "name": "Malton YAS Station",
       "type": "Ambulance Station",
@@ -6784,6 +6814,21 @@
       "region": "Midlands",
       "dcId": 2621069,
       "dcName": "Worcestershire DC",
+      "dcAssign": "api"
+    },
+    {
+      "id": 2572699,
+      "name": "St Martins Hospital",
+      "type": "Hospital",
+      "typeId": 4,
+      "level": 0,
+      "lat": 51.357944655837294,
+      "lon": -2.371638192902137,
+      "personnel": 0,
+      "small": false,
+      "region": "South West",
+      "dcId": 2353684,
+      "dcName": "Somerset FCR ",
       "dcAssign": "api"
     },
     {
@@ -6934,6 +6979,21 @@
       "region": "London & South",
       "dcId": 2663954,
       "dcName": "Oxfordshire FCR",
+      "dcAssign": "api"
+    },
+    {
+      "id": 2567229,
+      "name": "Weston General Hospital",
+      "type": "Hospital",
+      "typeId": 4,
+      "level": 6,
+      "lat": 51.321611143618476,
+      "lon": -2.971186856353536,
+      "personnel": 0,
+      "small": false,
+      "region": "South West",
+      "dcId": 2353684,
+      "dcName": "Somerset FCR ",
       "dcAssign": "api"
     },
     {
@@ -7207,21 +7267,6 @@
       "dcAssign": "api"
     },
     {
-      "id": 2330766,
-      "name": "Alliance Hospital - St Thomas Hospital",
-      "type": "Hospital",
-      "typeId": 4,
-      "level": 30,
-      "lat": 51.49882104927478,
-      "lon": -0.11859392142196024,
-      "personnel": 0,
-      "small": false,
-      "region": "South East",
-      "dcId": 1844373,
-      "dcName": "London FCR",
-      "dcAssign": "api"
-    },
-    {
       "id": 2652208,
       "name": "Isle of Man Ambulance HQ",
       "type": "Ambulance Station",
@@ -7275,21 +7320,6 @@
       "lat": 51.45322114986661,
       "lon": -2.5925974649951167,
       "personnel": 161,
-      "small": false,
-      "region": "South West",
-      "dcId": 2353684,
-      "dcName": "Somerset FCR ",
-      "dcAssign": "api"
-    },
-    {
-      "id": 2390847,
-      "name": "Royal United Hospital (RUH)",
-      "type": "Hospital",
-      "typeId": 4,
-      "level": 30,
-      "lat": 51.39141658271086,
-      "lon": -2.3916416733188,
-      "personnel": 0,
       "small": false,
       "region": "South West",
       "dcId": 2353684,
@@ -7612,21 +7642,6 @@
       "dcAssign": "api"
     },
     {
-      "id": 2429046,
-      "name": "Bristol Royal Infirmary ",
-      "type": "Hospital",
-      "typeId": 4,
-      "level": 6,
-      "lat": 51.459167869232125,
-      "lon": -2.596142441448984,
-      "personnel": 0,
-      "small": false,
-      "region": "South West",
-      "dcId": 2353684,
-      "dcName": "Somerset FCR ",
-      "dcAssign": "api"
-    },
-    {
       "id": 2624708,
       "name": "Swindon Ambulance Station",
       "type": "Ambulance Station",
@@ -7729,21 +7744,6 @@
       "region": "South West",
       "dcId": 2353684,
       "dcName": "Somerset FCR ",
-      "dcAssign": "api"
-    },
-    {
-      "id": 2325713,
-      "name": "Scarborough General Hospital",
-      "type": "Hospital",
-      "typeId": 4,
-      "level": 4,
-      "lat": 54.28179980467448,
-      "lon": -0.4370821595078071,
-      "personnel": 0,
-      "small": false,
-      "region": "North",
-      "dcId": 1988744,
-      "dcName": "(M2XN) North Yorkshire FCR",
       "dcAssign": "api"
     },
     {
@@ -11470,15 +11470,15 @@
     }
   ],
   "credits": {
-    "credits_user_current": 3438165,
-    "credits_user_total": 158012547,
-    "credits_alliance_current": 395675392,
-    "coins_user_current": 11,
-    "credits_alliance_total": 30072544602
+    "credits_user_current": 4097093,
+    "credits_user_total": 158743491,
+    "credits_alliance_current": 395778211,
+    "coins_user_current": 1,
+    "credits_alliance_total": 30074225743
   },
   "alliance": {
     "users": 1834,
-    "online": 2,
+    "online": 6,
     "rank": 9,
     "financeActive": true
   }
