@@ -1,8 +1,8 @@
 {
-  "updatedAt": "2026-09-23T20:02:23.995734+00:00",
+  "updatedAt": "2026-09-23T23:29:06.264551+00:00",
   "source": "missionchief.co.uk",
   "sync": {
-    "durationSeconds": 25,
+    "durationSeconds": 24,
     "schedule": "hourly"
   },
   "endpoints": {
@@ -59,13 +59,10 @@
     "Scotland": 4
   },
   "vehicleStatus": {
-    "4": 142,
-    "2": 1390,
-    "1": 6,
-    "3": 25,
+    "2": 1507,
+    "4": 63,
     "6": 1,
-    "5": 1,
-    "7": 7
+    "5": 1
   },
   "vehiclesByType": {
     "5": 583,
@@ -11399,14 +11396,14 @@
       "name": "WCP | LFB-008/WL-001",
       "type": 0,
       "buildingId": 1987510,
-      "status": 4
+      "status": 2
     },
     {
       "id": 4926743,
       "name": "WCP | LFB-008/L4x4-001 (P)",
       "type": 1,
       "buildingId": 1844367,
-      "status": 4
+      "status": 2
     },
     {
       "id": 4926750,
@@ -11462,7 +11459,7 @@
       "name": "HLBRN | HRL-004/FO-001",
       "type": 3,
       "buildingId": 1845393,
-      "status": 4
+      "status": 2
     },
     {
       "id": 4929766,
@@ -11588,7 +11585,7 @@
       "name": "WM10 | MET-004/IRV-001",
       "type": 8,
       "buildingId": 1984638,
-      "status": 4
+      "status": 2
     },
     {
       "id": 5332371,
@@ -11623,7 +11620,7 @@
       "name": "MA | LFB-005/WL-001",
       "type": 0,
       "buildingId": 1987510,
-      "status": 4
+      "status": 2
     },
     {
       "id": 5340155,
@@ -11749,7 +11746,7 @@
       "name": "CoL | HRL-001/FO-001",
       "type": 3,
       "buildingId": 2033681,
-      "status": 4
+      "status": 2
     },
     {
       "id": 5467039,
@@ -11805,7 +11802,7 @@
       "name": "CoL | LFB-002/RSU-001",
       "type": 4,
       "buildingId": 2033678,
-      "status": 4
+      "status": 2
     },
     {
       "id": 5496781,
@@ -11924,7 +11921,7 @@
       "name": "LMBTH | HRL-003/FO-001",
       "type": 3,
       "buildingId": 2312031,
-      "status": 4
+      "status": 2
     },
     {
       "id": 6272134,
@@ -11987,7 +11984,7 @@
       "name": "BTGN | LFB-001/WC-001",
       "type": 6,
       "buildingId": 2312415,
-      "status": 1
+      "status": 2
     },
     {
       "id": 6272923,
@@ -12236,15 +12233,15 @@
     }
   ],
   "credits": {
-    "credits_user_current": 631471,
-    "credits_user_total": 159746441,
-    "credits_alliance_current": 396470160,
+    "credits_user_current": 769738,
+    "credits_user_total": 159900099,
+    "credits_alliance_current": 396642529,
     "coins_user_current": 1,
-    "credits_alliance_total": 30091411269
+    "credits_alliance_total": 30095092020
   },
   "alliance": {
     "users": 1833,
-    "online": 0,
+    "online": 2,
     "rank": 9,
     "financeActive": true
   }
