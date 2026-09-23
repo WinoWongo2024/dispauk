@@ -1,8 +1,8 @@
 {
-  "updatedAt": "2026-09-23T16:28:25.910044+00:00",
+  "updatedAt": "2026-09-23T20:02:23.995734+00:00",
   "source": "missionchief.co.uk",
   "sync": {
-    "durationSeconds": 22,
+    "durationSeconds": 25,
     "schedule": "hourly"
   },
   "endpoints": {
@@ -17,7 +17,7 @@
   },
   "totals": {
     "stations": 657,
-    "units": 1570,
+    "units": 1572,
     "personnel": 49119,
     "dispatchCentres": 42,
     "allianceBuildings": 1198,
@@ -51,19 +51,21 @@
   "stationsByRegion": {
     "London & South": 38,
     "South West": 230,
-    "North": 121,
     "Other / Overseas": 47,
+    "North": 121,
     "South East": 73,
     "Wales": 52,
     "Midlands": 92,
     "Scotland": 4
   },
   "vehicleStatus": {
-    "2": 1500,
-    "4": 54,
-    "3": 4,
-    "5": 4,
-    "1": 8
+    "4": 142,
+    "2": 1390,
+    "1": 6,
+    "3": 25,
+    "6": 1,
+    "5": 1,
+    "7": 7
   },
   "vehiclesByType": {
     "5": 583,
@@ -85,8 +87,8 @@
     "99": 16,
     "105": 15,
     "33": 15,
+    "108": 13,
     "106": 12,
-    "108": 12,
     "19": 11,
     "79": 11,
     "75": 11,
@@ -1581,21 +1583,6 @@
       "dcAssign": "api"
     },
     {
-      "id": 2620355,
-      "name": "Leeds General Infirmary ",
-      "type": "Hospital",
-      "typeId": 4,
-      "level": 10,
-      "lat": 53.8023946581611,
-      "lon": -1.554507023226996,
-      "personnel": 0,
-      "small": false,
-      "region": "North",
-      "dcId": 2620223,
-      "dcName": "⁠[WY-ECC] West Yorks Emergency Control⁠",
-      "dcAssign": "api"
-    },
-    {
       "id": 2642421,
       "name": "Liskeard Ambulance Station ",
       "type": "Ambulance Station",
@@ -1638,21 +1625,6 @@
       "region": "Other / Overseas",
       "dcId": 2311778,
       "dcName": "Hampshire DC",
-      "dcAssign": "api"
-    },
-    {
-      "id": 2357987,
-      "name": "Sulis hospital",
-      "type": "Hospital",
-      "typeId": 4,
-      "level": 30,
-      "lat": 51.311304694976165,
-      "lon": -2.4165690272642224,
-      "personnel": 0,
-      "small": false,
-      "region": "South West",
-      "dcId": 2353684,
-      "dcName": "Somerset FCR ",
       "dcAssign": "api"
     },
     {
@@ -1969,6 +1941,21 @@
       "dcId": 2663954,
       "dcName": "Oxfordshire FCR",
       "dcAssign": "self"
+    },
+    {
+      "id": 2357987,
+      "name": "Sulis hospital",
+      "type": "Hospital",
+      "typeId": 4,
+      "level": 30,
+      "lat": 51.311304694976165,
+      "lon": -2.4165690272642224,
+      "personnel": 0,
+      "small": false,
+      "region": "South West",
+      "dcId": 2353684,
+      "dcName": "Somerset FCR ",
+      "dcAssign": "api"
     },
     {
       "id": 2506985,
@@ -4146,6 +4133,21 @@
       "dcAssign": "api"
     },
     {
+      "id": 2620355,
+      "name": "Leeds General Infirmary ",
+      "type": "Hospital",
+      "typeId": 4,
+      "level": 10,
+      "lat": 53.8023946581611,
+      "lon": -1.554507023226996,
+      "personnel": 0,
+      "small": false,
+      "region": "North",
+      "dcId": 2620223,
+      "dcName": "⁠[WY-ECC] West Yorks Emergency Control⁠",
+      "dcAssign": "api"
+    },
+    {
       "id": 2633103,
       "name": "Lincolnshire DC",
       "type": "Dispatch Centre",
@@ -5028,6 +5030,21 @@
       "region": "South East",
       "dcId": 1844373,
       "dcName": "London FCR",
+      "dcAssign": "api"
+    },
+    {
+      "id": 2325713,
+      "name": "Scarborough General Hospital",
+      "type": "Hospital",
+      "typeId": 4,
+      "level": 4,
+      "lat": 54.28179980467448,
+      "lon": -0.4370821595078071,
+      "personnel": 0,
+      "small": false,
+      "region": "North",
+      "dcId": 1988744,
+      "dcName": "(M2XN) North Yorkshire FCR",
       "dcAssign": "api"
     },
     {
@@ -6734,21 +6751,6 @@
       "lat": 54.07054890956068,
       "lon": -1.9978296489247747,
       "personnel": 70,
-      "small": false,
-      "region": "North",
-      "dcId": 1988744,
-      "dcName": "(M2XN) North Yorkshire FCR",
-      "dcAssign": "api"
-    },
-    {
-      "id": 2325713,
-      "name": "Scarborough General Hospital",
-      "type": "Hospital",
-      "typeId": 4,
-      "level": 4,
-      "lat": 54.28179980467448,
-      "lon": -0.4370821595078071,
-      "personnel": 0,
       "small": false,
       "region": "North",
       "dcId": 1988744,
@@ -11397,14 +11399,14 @@
       "name": "WCP | LFB-008/WL-001",
       "type": 0,
       "buildingId": 1987510,
-      "status": 2
+      "status": 4
     },
     {
       "id": 4926743,
       "name": "WCP | LFB-008/L4x4-001 (P)",
       "type": 1,
       "buildingId": 1844367,
-      "status": 2
+      "status": 4
     },
     {
       "id": 4926750,
@@ -11439,14 +11441,14 @@
       "name": "NWCP | LFB-006/WL-001",
       "type": 0,
       "buildingId": 1844412,
-      "status": 2
+      "status": 4
     },
     {
       "id": 4927854,
       "name": "NWCP | LFB-006/WL-002",
       "type": 0,
       "buildingId": 1844412,
-      "status": 2
+      "status": 4
     },
     {
       "id": 4929073,
@@ -11460,7 +11462,7 @@
       "name": "HLBRN | HRL-004/FO-001",
       "type": 3,
       "buildingId": 1845393,
-      "status": 2
+      "status": 4
     },
     {
       "id": 4929766,
@@ -11488,7 +11490,7 @@
       "name": "EUS | LFB-004/WL-001",
       "type": 0,
       "buildingId": 1984004,
-      "status": 2
+      "status": 4
     },
     {
       "id": 5330618,
@@ -11516,7 +11518,7 @@
       "name": "QW | LFB-007/WL-001",
       "type": 0,
       "buildingId": 1984339,
-      "status": 2
+      "status": 4
     },
     {
       "id": 5331507,
@@ -11530,14 +11532,14 @@
       "name": "QW | LFB-007/WL-002",
       "type": 0,
       "buildingId": 1984339,
-      "status": 2
+      "status": 4
     },
     {
       "id": 5331632,
       "name": "K4T2",
       "type": 8,
       "buildingId": 1984387,
-      "status": 2
+      "status": 4
     },
     {
       "id": 5331635,
@@ -11586,7 +11588,7 @@
       "name": "WM10 | MET-004/IRV-001",
       "type": 8,
       "buildingId": 1984638,
-      "status": 2
+      "status": 4
     },
     {
       "id": 5332371,
@@ -11621,7 +11623,7 @@
       "name": "MA | LFB-005/WL-001",
       "type": 0,
       "buildingId": 1987510,
-      "status": 2
+      "status": 4
     },
     {
       "id": 5340155,
@@ -11656,7 +11658,7 @@
       "name": "MBA | MET-003/IRV-001",
       "type": 8,
       "buildingId": 1987519,
-      "status": 2
+      "status": 4
     },
     {
       "id": 5340598,
@@ -11677,21 +11679,21 @@
       "name": "K4T1",
       "type": 8,
       "buildingId": 1984387,
-      "status": 2
+      "status": 4
     },
     {
       "id": 5341628,
       "name": "HFS | NYF-001/WL-001",
       "type": 0,
       "buildingId": 1988057,
-      "status": 4
+      "status": 2
     },
     {
       "id": 5341847,
       "name": "HFS | NYF-001/WL-002",
       "type": 0,
       "buildingId": 1988057,
-      "status": 4
+      "status": 2
     },
     {
       "id": 5342846,
@@ -11705,14 +11707,14 @@
       "name": "HGFS | HRLNY-001/FO-001",
       "type": 3,
       "buildingId": 1988490,
-      "status": 4
+      "status": 2
     },
     {
       "id": 5343001,
       "name": "SMBR | NYF-004/WL-001",
       "type": 0,
       "buildingId": 1988549,
-      "status": 4
+      "status": 2
     },
     {
       "id": 5343568,
@@ -11747,7 +11749,7 @@
       "name": "CoL | HRL-001/FO-001",
       "type": 3,
       "buildingId": 2033681,
-      "status": 2
+      "status": 4
     },
     {
       "id": 5467039,
@@ -11803,7 +11805,7 @@
       "name": "CoL | LFB-002/RSU-001",
       "type": 4,
       "buildingId": 2033678,
-      "status": 2
+      "status": 4
     },
     {
       "id": 5496781,
@@ -11817,7 +11819,7 @@
       "name": "SJP | BTP-003/RTPC-001",
       "type": 24,
       "buildingId": 1984841,
-      "status": 2
+      "status": 4
     },
     {
       "id": 5496793,
@@ -11887,14 +11889,14 @@
       "name": "KBR | NYF-002/WL-001",
       "type": 0,
       "buildingId": 2311542,
-      "status": 4
+      "status": 2
     },
     {
       "id": 6269521,
       "name": "KBR | NYF-002/FO-001",
       "type": 3,
       "buildingId": 2311542,
-      "status": 4
+      "status": 2
     },
     {
       "id": 6270702,
@@ -11922,7 +11924,7 @@
       "name": "LMBTH | HRL-003/FO-001",
       "type": 3,
       "buildingId": 2312031,
-      "status": 2
+      "status": 4
     },
     {
       "id": 6272134,
@@ -11985,7 +11987,7 @@
       "name": "BTGN | LFB-001/WC-001",
       "type": 6,
       "buildingId": 2312415,
-      "status": 3
+      "status": 1
     },
     {
       "id": 6272923,
@@ -12013,14 +12015,14 @@
       "name": "RPN | NYF-003/WL-001",
       "type": 0,
       "buildingId": 2312467,
-      "status": 4
+      "status": 2
     },
     {
       "id": 6273033,
       "name": "RPN | NYF-003/RP-001",
       "type": 16,
       "buildingId": 2312467,
-      "status": 4
+      "status": 2
     },
     {
       "id": 6283750,
@@ -12062,7 +12064,7 @@
       "name": "MBA | MET-003/IRV-002",
       "type": 8,
       "buildingId": 1987519,
-      "status": 2
+      "status": 4
     },
     {
       "id": 6290340,
@@ -12104,7 +12106,7 @@
       "name": "DEPT | LFB-003/RP-001",
       "type": 16,
       "buildingId": 2318646,
-      "status": 2
+      "status": 4
     },
     {
       "id": 6290534,
@@ -12153,7 +12155,7 @@
       "name": "WFS | LFB-009/CARP-001",
       "type": 17,
       "buildingId": 2318768,
-      "status": 2
+      "status": 4
     },
     {
       "id": 6290890,
@@ -12234,15 +12236,15 @@
     }
   ],
   "credits": {
-    "credits_user_current": 362590,
-    "credits_user_total": 159372065,
-    "credits_alliance_current": 396274243,
+    "credits_user_current": 631471,
+    "credits_user_total": 159746441,
+    "credits_alliance_current": 396470160,
     "coins_user_current": 1,
-    "credits_alliance_total": 30088218818
+    "credits_alliance_total": 30091411269
   },
   "alliance": {
     "users": 1833,
-    "online": 6,
+    "online": 0,
     "rank": 9,
     "financeActive": true
   }
