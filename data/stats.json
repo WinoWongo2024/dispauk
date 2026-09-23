@@ -1,8 +1,8 @@
 {
-  "updatedAt": "2026-09-23T11:06:54.753141+00:00",
+  "updatedAt": "2026-09-23T16:28:25.910044+00:00",
   "source": "missionchief.co.uk",
   "sync": {
-    "durationSeconds": 23,
+    "durationSeconds": 22,
     "schedule": "hourly"
   },
   "endpoints": {
@@ -51,15 +51,19 @@
   "stationsByRegion": {
     "London & South": 38,
     "South West": 230,
-    "Other / Overseas": 47,
     "North": 121,
+    "Other / Overseas": 47,
     "South East": 73,
     "Wales": 52,
     "Midlands": 92,
     "Scotland": 4
   },
   "vehicleStatus": {
-    "2": 1570
+    "2": 1500,
+    "4": 54,
+    "3": 4,
+    "5": 4,
+    "1": 8
   },
   "vehiclesByType": {
     "5": 583,
@@ -1577,6 +1581,21 @@
       "dcAssign": "api"
     },
     {
+      "id": 2620355,
+      "name": "Leeds General Infirmary ",
+      "type": "Hospital",
+      "typeId": 4,
+      "level": 10,
+      "lat": 53.8023946581611,
+      "lon": -1.554507023226996,
+      "personnel": 0,
+      "small": false,
+      "region": "North",
+      "dcId": 2620223,
+      "dcName": "⁠[WY-ECC] West Yorks Emergency Control⁠",
+      "dcAssign": "api"
+    },
+    {
       "id": 2642421,
       "name": "Liskeard Ambulance Station ",
       "type": "Ambulance Station",
@@ -1622,6 +1641,21 @@
       "dcAssign": "api"
     },
     {
+      "id": 2357987,
+      "name": "Sulis hospital",
+      "type": "Hospital",
+      "typeId": 4,
+      "level": 30,
+      "lat": 51.311304694976165,
+      "lon": -2.4165690272642224,
+      "personnel": 0,
+      "small": false,
+      "region": "South West",
+      "dcId": 2353684,
+      "dcName": "Somerset FCR ",
+      "dcAssign": "api"
+    },
+    {
       "id": 2635209,
       "name": "Williton Ambulance Station",
       "type": "Ambulance Station",
@@ -1634,6 +1668,21 @@
       "region": "South West",
       "dcId": 2353684,
       "dcName": "Somerset FCR ",
+      "dcAssign": "api"
+    },
+    {
+      "id": 2318649,
+      "name": "(NHS-SHP-001) Priory Hospital",
+      "type": "Hospital",
+      "typeId": 4,
+      "level": 30,
+      "lat": 50.88109730173385,
+      "lon": -1.445294369445018,
+      "personnel": 0,
+      "small": false,
+      "region": "Other / Overseas",
+      "dcId": 2311778,
+      "dcName": "Hampshire DC",
       "dcAssign": "api"
     },
     {
@@ -2039,21 +2088,6 @@
       "region": "South West",
       "dcId": 2635219,
       "dcName": "Devon DC",
-      "dcAssign": "api"
-    },
-    {
-      "id": 2357987,
-      "name": "Sulis hospital",
-      "type": "Hospital",
-      "typeId": 4,
-      "level": 30,
-      "lat": 51.311304694976165,
-      "lon": -2.4165690272642224,
-      "personnel": 0,
-      "small": false,
-      "region": "South West",
-      "dcId": 2353684,
-      "dcName": "Somerset FCR ",
       "dcAssign": "api"
     },
     {
@@ -4210,21 +4244,6 @@
       "lat": 50.93082983649866,
       "lon": -1.4317997415756638,
       "personnel": 200,
-      "small": false,
-      "region": "Other / Overseas",
-      "dcId": 2311778,
-      "dcName": "Hampshire DC",
-      "dcAssign": "api"
-    },
-    {
-      "id": 2318649,
-      "name": "(NHS-SHP-001) Priory Hospital",
-      "type": "Hospital",
-      "typeId": 4,
-      "level": 30,
-      "lat": 50.88109730173385,
-      "lon": -1.445294369445018,
-      "personnel": 0,
       "small": false,
       "region": "Other / Overseas",
       "dcId": 2311778,
@@ -6494,21 +6513,6 @@
       "region": "Other / Overseas",
       "dcId": 2311778,
       "dcName": "Hampshire DC",
-      "dcAssign": "api"
-    },
-    {
-      "id": 2620355,
-      "name": "Leeds General Infirmary ",
-      "type": "Hospital",
-      "typeId": 4,
-      "level": 10,
-      "lat": 53.8023946581611,
-      "lon": -1.554507023226996,
-      "personnel": 0,
-      "small": false,
-      "region": "North",
-      "dcId": 2620223,
-      "dcName": "⁠[WY-ECC] West Yorks Emergency Control⁠",
       "dcAssign": "api"
     },
     {
@@ -11680,14 +11684,14 @@
       "name": "HFS | NYF-001/WL-001",
       "type": 0,
       "buildingId": 1988057,
-      "status": 2
+      "status": 4
     },
     {
       "id": 5341847,
       "name": "HFS | NYF-001/WL-002",
       "type": 0,
       "buildingId": 1988057,
-      "status": 2
+      "status": 4
     },
     {
       "id": 5342846,
@@ -11701,14 +11705,14 @@
       "name": "HGFS | HRLNY-001/FO-001",
       "type": 3,
       "buildingId": 1988490,
-      "status": 2
+      "status": 4
     },
     {
       "id": 5343001,
       "name": "SMBR | NYF-004/WL-001",
       "type": 0,
       "buildingId": 1988549,
-      "status": 2
+      "status": 4
     },
     {
       "id": 5343568,
@@ -11883,14 +11887,14 @@
       "name": "KBR | NYF-002/WL-001",
       "type": 0,
       "buildingId": 2311542,
-      "status": 2
+      "status": 4
     },
     {
       "id": 6269521,
       "name": "KBR | NYF-002/FO-001",
       "type": 3,
       "buildingId": 2311542,
-      "status": 2
+      "status": 4
     },
     {
       "id": 6270702,
@@ -11981,7 +11985,7 @@
       "name": "BTGN | LFB-001/WC-001",
       "type": 6,
       "buildingId": 2312415,
-      "status": 2
+      "status": 3
     },
     {
       "id": 6272923,
@@ -12009,14 +12013,14 @@
       "name": "RPN | NYF-003/WL-001",
       "type": 0,
       "buildingId": 2312467,
-      "status": 2
+      "status": 4
     },
     {
       "id": 6273033,
       "name": "RPN | NYF-003/RP-001",
       "type": 16,
       "buildingId": 2312467,
-      "status": 2
+      "status": 4
     },
     {
       "id": 6283750,
@@ -12230,15 +12234,15 @@
     }
   ],
   "credits": {
-    "credits_user_current": 214718,
-    "credits_user_total": 159209970,
-    "credits_alliance_current": 396181533,
+    "credits_user_current": 362590,
+    "credits_user_total": 159372065,
+    "credits_alliance_current": 396274243,
     "coins_user_current": 1,
-    "credits_alliance_total": 30086004587
+    "credits_alliance_total": 30088218818
   },
   "alliance": {
     "users": 1833,
-    "online": 5,
+    "online": 6,
     "rank": 9,
     "financeActive": true
   }
