@@ -1,8 +1,8 @@
 {
-  "updatedAt": "2026-09-24T14:44:39.134580+00:00",
+  "updatedAt": "2026-09-24T18:54:11.400212+00:00",
   "source": "missionchief.co.uk",
   "sync": {
-    "durationSeconds": 23,
+    "durationSeconds": 24,
     "schedule": "hourly"
   },
   "endpoints": {
@@ -59,11 +59,12 @@
     "Scotland": 4
   },
   "vehicleStatus": {
-    "2": 1544,
-    "4": 18,
-    "1": 10,
-    "5": 1,
-    "3": 5
+    "2": 1558,
+    "6": 1,
+    "5": 3,
+    "1": 8,
+    "4": 6,
+    "3": 2
   },
   "vehiclesByType": {
     "5": 584,
@@ -73,8 +74,8 @@
     "3": 31,
     "0": 28,
     "12": 26,
-    "57": 25,
     "20": 24,
+    "57": 24,
     "13": 23,
     "4": 23,
     "81": 19,
@@ -1960,6 +1961,21 @@
       "dcAssign": "api"
     },
     {
+      "id": 2692598,
+      "name": "Kendal Police Station",
+      "type": "Police Station",
+      "typeId": 6,
+      "level": 0,
+      "lat": 54.33246483679737,
+      "lon": -2.7474921835614023,
+      "personnel": 2,
+      "small": true,
+      "region": "North",
+      "dcId": 2692392,
+      "dcName": "Lancashire FCR",
+      "dcAssign": "api"
+    },
+    {
       "id": 2657378,
       "name": "HM Coastguard Newport",
       "type": "Coastguard Station",
@@ -2377,6 +2393,21 @@
       "region": "Wales",
       "dcId": 2650384,
       "dcName": "Republic of Ireland (ROI) 🇮🇪",
+      "dcAssign": "api"
+    },
+    {
+      "id": 2572679,
+      "name": "Southmead Hospital",
+      "type": "Hospital",
+      "typeId": 4,
+      "level": 0,
+      "lat": 51.49474349492543,
+      "lon": -2.5914042228812084,
+      "personnel": 0,
+      "small": false,
+      "region": "South West",
+      "dcId": 2353684,
+      "dcName": "Somerset FCR ",
       "dcAssign": "api"
     },
     {
@@ -3835,6 +3866,21 @@
       "dcAssign": "api"
     },
     {
+      "id": 2330766,
+      "name": "Alliance Hospital - St Thomas Hospital",
+      "type": "Hospital",
+      "typeId": 4,
+      "level": 30,
+      "lat": 51.49882104927478,
+      "lon": -0.11859392142196024,
+      "personnel": 0,
+      "small": false,
+      "region": "South East",
+      "dcId": 1844373,
+      "dcName": "London FCR",
+      "dcAssign": "api"
+    },
+    {
       "id": 2318739,
       "name": "(HPS-004) Totton Police Station ",
       "type": "Police Station",
@@ -3862,6 +3908,21 @@
       "region": "South West",
       "dcId": 2353684,
       "dcName": "Somerset FCR ",
+      "dcAssign": "api"
+    },
+    {
+      "id": 2349731,
+      "name": "(Y01) York HQ",
+      "type": "Police Station",
+      "typeId": 6,
+      "level": 4,
+      "lat": 53.9463895546954,
+      "lon": -1.072185743925276,
+      "personnel": 200,
+      "small": false,
+      "region": "North",
+      "dcId": 2349753,
+      "dcName": "(M2XN) York city",
       "dcAssign": "api"
     },
     {
@@ -5035,21 +5096,6 @@
       "dcAssign": "self"
     },
     {
-      "id": 2692598,
-      "name": "Kendal Police Station",
-      "type": "Police Station",
-      "typeId": 6,
-      "level": 0,
-      "lat": 54.33246483679737,
-      "lon": -2.7474921835614023,
-      "personnel": 2,
-      "small": true,
-      "region": "North",
-      "dcId": 2692392,
-      "dcName": "Lancashire FCR",
-      "dcAssign": "api"
-    },
-    {
       "id": 2600988,
       "name": "Police National (Calais)",
       "type": "Police Station",
@@ -5613,21 +5659,6 @@
       "lat": 51.524939320963426,
       "lon": -0.1360894345703035,
       "personnel": 200,
-      "small": false,
-      "region": "South East",
-      "dcId": 1844373,
-      "dcName": "London FCR",
-      "dcAssign": "api"
-    },
-    {
-      "id": 2330766,
-      "name": "Alliance Hospital - St Thomas Hospital",
-      "type": "Hospital",
-      "typeId": 4,
-      "level": 30,
-      "lat": 51.49882104927478,
-      "lon": -0.11859392142196024,
-      "personnel": 0,
       "small": false,
       "region": "South East",
       "dcId": 1844373,
@@ -7030,21 +7061,6 @@
       "dcAssign": "api"
     },
     {
-      "id": 2349731,
-      "name": "(Y01) York HQ",
-      "type": "Police Station",
-      "typeId": 6,
-      "level": 4,
-      "lat": 53.9463895546954,
-      "lon": -1.072185743925276,
-      "personnel": 200,
-      "small": false,
-      "region": "North",
-      "dcId": 2349753,
-      "dcName": "(M2XN) York city",
-      "dcAssign": "api"
-    },
-    {
       "id": 2620223,
       "name": "⁠[WY-ECC] West Yorks Emergency Control⁠",
       "type": "Dispatch Centre",
@@ -8140,21 +8156,6 @@
       "dcAssign": "api"
     },
     {
-      "id": 2572679,
-      "name": "Southmead Hospital",
-      "type": "Hospital",
-      "typeId": 4,
-      "level": 0,
-      "lat": 51.49474349492543,
-      "lon": -2.5914042228812084,
-      "personnel": 0,
-      "small": false,
-      "region": "South West",
-      "dcId": 2353684,
-      "dcName": "Somerset FCR ",
-      "dcAssign": "api"
-    },
-    {
       "id": 2639114,
       "name": "Kilkhampton Ambulance Station",
       "type": "Ambulance Station",
@@ -8605,13 +8606,13 @@
       "dcAssign": "api"
     },
     {
-      "id": 2357987,
-      "name": "Sulis hospital",
+      "id": 2390847,
+      "name": "Royal United Hospital (RUH)",
       "type": "Hospital",
       "typeId": 4,
       "level": 30,
-      "lat": 51.311304694976165,
-      "lon": -2.4165690272642224,
+      "lat": 51.39141658271086,
+      "lon": -2.3916416733188,
       "personnel": 0,
       "small": false,
       "region": "South West",
@@ -8620,13 +8621,13 @@
       "dcAssign": "api"
     },
     {
-      "id": 2390847,
-      "name": "Royal United Hospital (RUH)",
+      "id": 2357987,
+      "name": "Sulis hospital",
       "type": "Hospital",
       "typeId": 4,
       "level": 30,
-      "lat": 51.39141658271086,
-      "lon": -2.3916416733188,
+      "lat": 51.311304694976165,
+      "lon": -2.4165690272642224,
       "personnel": 0,
       "small": false,
       "region": "South West",
@@ -12283,15 +12284,15 @@
     }
   ],
   "credits": {
-    "credits_user_current": 1080868,
-    "credits_user_total": 163037982,
-    "credits_alliance_current": 397487983,
+    "credits_user_current": 1629958,
+    "credits_user_total": 163764776,
+    "credits_alliance_current": 397682696,
     "coins_user_current": 1,
-    "credits_alliance_total": 30111250711
+    "credits_alliance_total": 30115326055
   },
   "alliance": {
     "users": 1833,
-    "online": 8,
+    "online": 0,
     "rank": 9,
     "financeActive": true
   }
