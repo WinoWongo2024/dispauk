@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-09-25T07:22:51.241734+00:00",
+  "updatedAt": "2026-09-25T13:26:15.932402+00:00",
   "source": "missionchief.co.uk",
   "sync": {
     "durationSeconds": 24,
@@ -42,11 +42,11 @@
     "Search & Rescue HQ": 7,
     "Police Aviation": 3,
     "Police Academy": 1,
+    "Health Centre": 2,
     "Coastguard CRH": 3,
     "Bomb Disposal": 3,
     "SAR Resource Centre": 1,
     "Type 37": 5,
-    "Health Centre": 2,
     "Fire Station (Large)": 1
   },
   "stationsByRegion": {
@@ -60,10 +60,12 @@
     "Scotland": 4
   },
   "vehicleStatus": {
-    "2": 1536,
-    "4": 41,
-    "5": 5,
-    "1": 2
+    "2": 1530,
+    "1": 26,
+    "3": 4,
+    "4": 20,
+    "7": 3,
+    "5": 1
   },
   "vehiclesByType": {
     "5": 584,
@@ -2950,6 +2952,21 @@
       "dcAssign": "api"
     },
     {
+      "id": 2390847,
+      "name": "Royal United Hospital (RUH)",
+      "type": "Hospital",
+      "typeId": 4,
+      "level": 30,
+      "lat": 51.39141658271086,
+      "lon": -2.3916416733188,
+      "personnel": 0,
+      "small": false,
+      "region": "South West",
+      "dcId": 2353684,
+      "dcName": "Somerset FCR ",
+      "dcAssign": "api"
+    },
+    {
       "id": 2662989,
       "name": "RNLI Appledore",
       "type": "Lifeboat Station",
@@ -4495,6 +4512,21 @@
       "dcAssign": "api"
     },
     {
+      "id": 2330766,
+      "name": "Alliance Hospital - St Thomas Hospital",
+      "type": "Hospital",
+      "typeId": 4,
+      "level": 30,
+      "lat": 51.49882104927478,
+      "lon": -0.11859392142196024,
+      "personnel": 0,
+      "small": false,
+      "region": "South East",
+      "dcId": 1844373,
+      "dcName": "London FCR",
+      "dcAssign": "api"
+    },
+    {
       "id": 2590010,
       "name": "Gloucestershire fire & rescue ",
       "type": "Fire Station",
@@ -4555,6 +4587,21 @@
       "dcAssign": "self"
     },
     {
+      "id": 1984392,
+      "name": "Alliance Hospital - St Mary’s Hospital",
+      "type": "Hospital",
+      "typeId": 4,
+      "level": 30,
+      "lat": 51.51711454186931,
+      "lon": -0.17422326377227623,
+      "personnel": 0,
+      "small": false,
+      "region": "South East",
+      "dcId": 1844373,
+      "dcName": "London FCR",
+      "dcAssign": "api"
+    },
+    {
       "id": 2646529,
       "name": "Taunton Fire Station",
       "type": "Fire Station",
@@ -4570,13 +4617,13 @@
       "dcAssign": "api"
     },
     {
-      "id": 2325710,
-      "name": "(S01) Scarborough Police Station",
-      "type": "Police Station",
-      "typeId": 6,
-      "level": 7,
-      "lat": 54.281178237148936,
-      "lon": -0.40698258763913125,
+      "id": 2333227,
+      "name": "The health centre Starbeck",
+      "type": "Health Centre",
+      "typeId": 21,
+      "level": 2,
+      "lat": 53.99651665380682,
+      "lon": -1.5082697214037528,
       "personnel": 200,
       "small": false,
       "region": "North",
@@ -4807,6 +4854,21 @@
       "region": "Wales",
       "dcId": 2469519,
       "dcName": "𝙒𝙖𝙡𝙚𝙨 🏴󠁧󠁢󠁷󠁬󠁳󠁿 𝘾𝙮𝙢𝙧𝙪",
+      "dcAssign": "api"
+    },
+    {
+      "id": 2429046,
+      "name": "Bristol Royal Infirmary ",
+      "type": "Hospital",
+      "typeId": 4,
+      "level": 6,
+      "lat": 51.459167869232125,
+      "lon": -2.596142441448984,
+      "personnel": 0,
+      "small": false,
+      "region": "South West",
+      "dcId": 2353684,
+      "dcName": "Somerset FCR ",
       "dcAssign": "api"
     },
     {
@@ -5483,6 +5545,21 @@
       "dcId": 2659464,
       "dcName": "Berkshire",
       "dcAssign": "self"
+    },
+    {
+      "id": 2325710,
+      "name": "(S01) Scarborough Police Station",
+      "type": "Police Station",
+      "typeId": 6,
+      "level": 7,
+      "lat": 54.281178237148936,
+      "lon": -0.40698258763913125,
+      "personnel": 200,
+      "small": false,
+      "region": "North",
+      "dcId": 1988744,
+      "dcName": "(M2XN) North Yorkshire FCR",
+      "dcAssign": "api"
     },
     {
       "id": 2471869,
@@ -6325,21 +6402,6 @@
       "dcAssign": "api"
     },
     {
-      "id": 2429046,
-      "name": "Bristol Royal Infirmary ",
-      "type": "Hospital",
-      "typeId": 4,
-      "level": 6,
-      "lat": 51.459167869232125,
-      "lon": -2.596142441448984,
-      "personnel": 0,
-      "small": false,
-      "region": "South West",
-      "dcId": 2353684,
-      "dcName": "Somerset FCR ",
-      "dcAssign": "api"
-    },
-    {
       "id": 2698118,
       "name": "Burnham-on-Sea Lifeguard Station",
       "type": "Type 37",
@@ -6955,21 +7017,6 @@
       "dcAssign": "api"
     },
     {
-      "id": 1984392,
-      "name": "Alliance Hospital - St Mary’s Hospital",
-      "type": "Hospital",
-      "typeId": 4,
-      "level": 30,
-      "lat": 51.51711454186931,
-      "lon": -0.17422326377227623,
-      "personnel": 0,
-      "small": false,
-      "region": "South East",
-      "dcId": 1844373,
-      "dcName": "London FCR",
-      "dcAssign": "api"
-    },
-    {
       "id": 2621094,
       "name": "Stoke ambulance Hub",
       "type": "Ambulance Station",
@@ -7402,21 +7449,6 @@
       "region": "South East",
       "dcId": 1844373,
       "dcName": "London FCR",
-      "dcAssign": "api"
-    },
-    {
-      "id": 2333227,
-      "name": "The health centre Starbeck",
-      "type": "Health Centre",
-      "typeId": 21,
-      "level": 2,
-      "lat": 53.99651665380682,
-      "lon": -1.5082697214037528,
-      "personnel": 200,
-      "small": false,
-      "region": "North",
-      "dcId": 1988744,
-      "dcName": "(M2XN) North Yorkshire FCR",
       "dcAssign": "api"
     },
     {
@@ -8815,21 +8847,6 @@
       "dcAssign": "api"
     },
     {
-      "id": 2390847,
-      "name": "Royal United Hospital (RUH)",
-      "type": "Hospital",
-      "typeId": 4,
-      "level": 30,
-      "lat": 51.39141658271086,
-      "lon": -2.3916416733188,
-      "personnel": 0,
-      "small": false,
-      "region": "South West",
-      "dcId": 2353684,
-      "dcName": "Somerset FCR ",
-      "dcAssign": "api"
-    },
-    {
       "id": 2357987,
       "name": "Sulis hospital",
       "type": "Hospital",
@@ -8842,21 +8859,6 @@
       "region": "South West",
       "dcId": 2353684,
       "dcName": "Somerset FCR ",
-      "dcAssign": "api"
-    },
-    {
-      "id": 2330766,
-      "name": "Alliance Hospital - St Thomas Hospital",
-      "type": "Hospital",
-      "typeId": 4,
-      "level": 30,
-      "lat": 51.49882104927478,
-      "lon": -0.11859392142196024,
-      "personnel": 0,
-      "small": false,
-      "region": "South East",
-      "dcId": 1844373,
-      "dcName": "London FCR",
       "dcAssign": "api"
     },
     {
@@ -11648,7 +11650,7 @@
       "name": "EUS | LAS-002/OTL-001",
       "type": 20,
       "buildingId": 1984068,
-      "status": 4
+      "status": 2
     },
     {
       "id": 5331506,
@@ -11704,7 +11706,7 @@
       "name": "WSTM’R | RNLI-001/ILB-001",
       "type": 68,
       "buildingId": 1984410,
-      "status": 4
+      "status": 2
     },
     {
       "id": 5332265,
@@ -11837,7 +11839,7 @@
       "name": "HMC | M2XN/IRV-001",
       "type": 8,
       "buildingId": 1988488,
-      "status": 4
+      "status": 2
     },
     {
       "id": 5342848,
@@ -11865,7 +11867,7 @@
       "name": "H3T1",
       "type": 8,
       "buildingId": 1988767,
-      "status": 4
+      "status": 2
     },
     {
       "id": 5467024,
@@ -11963,14 +11965,14 @@
       "name": "H3T2",
       "type": 8,
       "buildingId": 1988767,
-      "status": 4
+      "status": 2
     },
     {
       "id": 5496872,
       "name": "HMC | M2XN/IRV-002",
       "type": 8,
       "buildingId": 1988488,
-      "status": 4
+      "status": 2
     },
     {
       "id": 5921429,
@@ -12005,7 +12007,7 @@
       "name": "HPS | M2XN/IRV-001",
       "type": 8,
       "buildingId": 2311530,
-      "status": 4
+      "status": 2
     },
     {
       "id": 6269475,
@@ -12131,7 +12133,7 @@
       "name": "PW | HPS-002/IRV-001",
       "type": 8,
       "buildingId": 2312445,
-      "status": 2
+      "status": 1
     },
     {
       "id": 6272949,
@@ -12327,7 +12329,7 @@
       "name": "SWYG | HPS-006/IRV-001",
       "type": 8,
       "buildingId": 2318783,
-      "status": 2
+      "status": 1
     },
     {
       "id": 6290923,
@@ -12369,15 +12371,15 @@
       "name": "ELGH | HFS-004/CARP-001",
       "type": 17,
       "buildingId": 2319651,
-      "status": 2
+      "status": 1
     }
   ],
   "credits": {
-    "credits_user_current": 1772502,
-    "credits_user_total": 165223625,
-    "credits_alliance_current": 398238304,
-    "coins_user_current": 1,
-    "credits_alliance_total": 30125335524
+    "credits_user_current": 2656540,
+    "credits_user_total": 166205916,
+    "credits_alliance_current": 398779143,
+    "coins_user_current": 0,
+    "credits_alliance_total": 30135178943
   },
   "alliance": {
     "users": 1833,
