@@ -1,8 +1,8 @@
 {
-  "updatedAt": "2026-09-24T22:08:28.653797+00:00",
+  "updatedAt": "2026-09-25T01:16:24.502099+00:00",
   "source": "missionchief.co.uk",
   "sync": {
-    "durationSeconds": 23,
+    "durationSeconds": 24,
     "schedule": "hourly"
   },
   "endpoints": {
@@ -16,9 +16,9 @@
     "einsaetze": true
   },
   "totals": {
-    "stations": 661,
-    "units": 1579,
-    "personnel": 49559,
+    "stations": 666,
+    "units": 1584,
+    "personnel": 49579,
     "dispatchCentres": 42,
     "allianceBuildings": 1198,
     "equipments": 11,
@@ -46,11 +46,12 @@
     "Coastguard CRH": 3,
     "Bomb Disposal": 3,
     "SAR Resource Centre": 1,
+    "Type 37": 5,
     "Fire Station (Large)": 1
   },
   "stationsByRegion": {
     "London & South": 38,
-    "South West": 231,
+    "South West": 236,
     "Other / Overseas": 47,
     "North": 121,
     "South East": 73,
@@ -59,12 +60,13 @@
     "Scotland": 4
   },
   "vehicleStatus": {
-    "2": 1569,
+    "2": 1449,
+    "5": 19,
+    "4": 31,
+    "1": 37,
+    "3": 41,
     "6": 1,
-    "1": 2,
-    "4": 4,
-    "5": 1,
-    "3": 2
+    "7": 6
   },
   "vehiclesByType": {
     "5": 584,
@@ -102,7 +104,7 @@
     "stationsMissingName": 0,
     "stationsMissingCoords": 0,
     "duplicateStationIds": 0,
-    "dcAssignedFromApi": 615,
+    "dcAssignedFromApi": 620,
     "dcAssignedNearest": 4,
     "dispatchCentres": 42,
     "ok": true
@@ -114,8 +116,8 @@
       "lat": 51.5484492,
       "lon": -2.5562629,
       "level": 0,
-      "stationCount": 100,
-      "personnel": 9738,
+      "stationCount": 105,
+      "personnel": 9758,
       "coverageRadiusM": 93562,
       "coveragePolygon": [
         [
@@ -3356,6 +3358,21 @@
       "dcAssign": "api"
     },
     {
+      "id": 2349731,
+      "name": "(Y01) York HQ",
+      "type": "Police Station",
+      "typeId": 6,
+      "level": 4,
+      "lat": 53.9463895546954,
+      "lon": -1.072185743925276,
+      "personnel": 200,
+      "small": false,
+      "region": "North",
+      "dcId": 2349753,
+      "dcName": "(M2XN) York city",
+      "dcAssign": "api"
+    },
+    {
       "id": 2692435,
       "name": "Buxton Ambulance Station",
       "type": "Ambulance Station",
@@ -3851,21 +3868,6 @@
       "dcAssign": "api"
     },
     {
-      "id": 2330766,
-      "name": "Alliance Hospital - St Thomas Hospital",
-      "type": "Hospital",
-      "typeId": 4,
-      "level": 30,
-      "lat": 51.49882104927478,
-      "lon": -0.11859392142196024,
-      "personnel": 0,
-      "small": false,
-      "region": "South East",
-      "dcId": 1844373,
-      "dcName": "London FCR",
-      "dcAssign": "api"
-    },
-    {
       "id": 2318739,
       "name": "(HPS-004) Totton Police Station ",
       "type": "Police Station",
@@ -3893,21 +3895,6 @@
       "region": "South West",
       "dcId": 2353684,
       "dcName": "Somerset FCR ",
-      "dcAssign": "api"
-    },
-    {
-      "id": 2349731,
-      "name": "(Y01) York HQ",
-      "type": "Police Station",
-      "typeId": 6,
-      "level": 4,
-      "lat": 53.9463895546954,
-      "lon": -1.072185743925276,
-      "personnel": 200,
-      "small": false,
-      "region": "North",
-      "dcId": 2349753,
-      "dcName": "(M2XN) York city",
       "dcAssign": "api"
     },
     {
@@ -6086,6 +6073,21 @@
       "dcAssign": "api"
     },
     {
+      "id": 2698122,
+      "name": "Portishead Lifeguard Station ",
+      "type": "Type 37",
+      "typeId": 37,
+      "level": 0,
+      "lat": 51.485912096765624,
+      "lon": -2.7922941376600474,
+      "personnel": 4,
+      "small": false,
+      "region": "South West",
+      "dcId": 2353684,
+      "dcName": "Somerset FCR ",
+      "dcAssign": "api"
+    },
+    {
       "id": 2621321,
       "name": "Glasgow South Ambulance Station",
       "type": "Ambulance Station",
@@ -6098,6 +6100,36 @@
       "region": "Scotland",
       "dcId": 2621314,
       "dcName": "Southern Scotland DC",
+      "dcAssign": "api"
+    },
+    {
+      "id": 2698120,
+      "name": "Clevedon Lifeguard Station",
+      "type": "Type 37",
+      "typeId": 37,
+      "level": 0,
+      "lat": 51.439272364905065,
+      "lon": -2.8644292059466734,
+      "personnel": 4,
+      "small": false,
+      "region": "South West",
+      "dcId": 2353684,
+      "dcName": "Somerset FCR ",
+      "dcAssign": "api"
+    },
+    {
+      "id": 2698118,
+      "name": "Burnham-on-Sea Lifeguard Station",
+      "type": "Type 37",
+      "typeId": 37,
+      "level": 0,
+      "lat": 51.23619056271681,
+      "lon": -2.9991856466162585,
+      "personnel": 4,
+      "small": false,
+      "region": "South West",
+      "dcId": 2353684,
+      "dcName": "Somerset FCR ",
       "dcAssign": "api"
     },
     {
@@ -6116,6 +6148,21 @@
       "dcAssign": "api"
     },
     {
+      "id": 2698119,
+      "name": "Sandbay Lifeguard Station",
+      "type": "Type 37",
+      "typeId": 37,
+      "level": 0,
+      "lat": 51.37532731511397,
+      "lon": -2.9622453792202488,
+      "personnel": 4,
+      "small": false,
+      "region": "South West",
+      "dcId": 2353684,
+      "dcName": "Somerset FCR ",
+      "dcAssign": "api"
+    },
+    {
       "id": 2471875,
       "name": "Hope House Surgery (NHS)",
       "type": "GP Surgery",
@@ -6124,6 +6171,21 @@
       "lat": 51.29264592569361,
       "lon": -2.4453439028427693,
       "personnel": 191,
+      "small": false,
+      "region": "South West",
+      "dcId": 2353684,
+      "dcName": "Somerset FCR ",
+      "dcAssign": "api"
+    },
+    {
+      "id": 2698113,
+      "name": "Weston lifeguard Station",
+      "type": "Type 37",
+      "typeId": 37,
+      "level": 0,
+      "lat": 51.33907943497027,
+      "lon": -2.982676556596575,
+      "personnel": 4,
       "small": false,
       "region": "South West",
       "dcId": 2353684,
@@ -6144,6 +6206,21 @@
       "dcId": 2635513,
       "dcName": "Wiltshire DC",
       "dcAssign": "self"
+    },
+    {
+      "id": 2330766,
+      "name": "Alliance Hospital - St Thomas Hospital",
+      "type": "Hospital",
+      "typeId": 4,
+      "level": 30,
+      "lat": 51.49882104927478,
+      "lon": -0.11859392142196024,
+      "personnel": 0,
+      "small": false,
+      "region": "South East",
+      "dcId": 1844373,
+      "dcName": "London FCR",
+      "dcAssign": "api"
     },
     {
       "id": 2633101,
@@ -6203,6 +6280,21 @@
       "region": "Wales",
       "dcId": 2469519,
       "dcName": "𝙒𝙖𝙡𝙚𝙨 🏴󠁧󠁢󠁷󠁬󠁳󠁿 𝘾𝙮𝙢𝙧𝙪",
+      "dcAssign": "api"
+    },
+    {
+      "id": 2429046,
+      "name": "Bristol Royal Infirmary ",
+      "type": "Hospital",
+      "typeId": 4,
+      "level": 6,
+      "lat": 51.459167869232125,
+      "lon": -2.596142441448984,
+      "personnel": 0,
+      "small": false,
+      "region": "South West",
+      "dcId": 2353684,
+      "dcName": "Somerset FCR ",
       "dcAssign": "api"
     },
     {
@@ -6649,6 +6741,21 @@
       "lat": 51.51350678894119,
       "lon": -0.12275986079634861,
       "personnel": 200,
+      "small": false,
+      "region": "South East",
+      "dcId": 1844373,
+      "dcName": "London FCR",
+      "dcAssign": "api"
+    },
+    {
+      "id": 1984392,
+      "name": "Alliance Hospital - St Mary’s Hospital",
+      "type": "Hospital",
+      "typeId": 4,
+      "level": 30,
+      "lat": 51.51711454186931,
+      "lon": -0.17422326377227623,
+      "personnel": 0,
       "small": false,
       "region": "South East",
       "dcId": 1844373,
@@ -7781,21 +7888,6 @@
       "dcAssign": "api"
     },
     {
-      "id": 2429046,
-      "name": "Bristol Royal Infirmary ",
-      "type": "Hospital",
-      "typeId": 4,
-      "level": 6,
-      "lat": 51.459167869232125,
-      "lon": -2.596142441448984,
-      "personnel": 0,
-      "small": false,
-      "region": "South West",
-      "dcId": 2353684,
-      "dcName": "Somerset FCR ",
-      "dcAssign": "api"
-    },
-    {
       "id": 2633104,
       "name": "Maltby Ambulance Station",
       "type": "Ambulance Station",
@@ -8591,13 +8683,13 @@
       "dcAssign": "api"
     },
     {
-      "id": 2357987,
-      "name": "Sulis hospital",
+      "id": 2390847,
+      "name": "Royal United Hospital (RUH)",
       "type": "Hospital",
       "typeId": 4,
       "level": 30,
-      "lat": 51.311304694976165,
-      "lon": -2.4165690272642224,
+      "lat": 51.39141658271086,
+      "lon": -2.3916416733188,
       "personnel": 0,
       "small": false,
       "region": "South West",
@@ -8606,13 +8698,13 @@
       "dcAssign": "api"
     },
     {
-      "id": 2390847,
-      "name": "Royal United Hospital (RUH)",
+      "id": 2357987,
+      "name": "Sulis hospital",
       "type": "Hospital",
       "typeId": 4,
       "level": 30,
-      "lat": 51.39141658271086,
-      "lon": -2.3916416733188,
+      "lat": 51.311304694976165,
+      "lon": -2.4165690272642224,
       "personnel": 0,
       "small": false,
       "region": "South West",
@@ -9788,21 +9880,6 @@
       "region": "London & South",
       "dcId": 2663954,
       "dcName": "Oxfordshire FCR",
-      "dcAssign": "api"
-    },
-    {
-      "id": 1984392,
-      "name": "Alliance Hospital - St Mary’s Hospital",
-      "type": "Hospital",
-      "typeId": 4,
-      "level": 30,
-      "lat": 51.51711454186931,
-      "lon": -0.17422326377227623,
-      "personnel": 0,
-      "small": false,
-      "region": "South East",
-      "dcId": 1844373,
-      "dcName": "London FCR",
       "dcAssign": "api"
     },
     {
@@ -11476,7 +11553,7 @@
       "name": "CoW | LAS-001/AMB-001",
       "type": 5,
       "buildingId": 1844375,
-      "status": 2
+      "status": 5
     },
     {
       "id": 4926753,
@@ -11518,7 +11595,7 @@
       "name": "CoW | LAS-001/AMB-002",
       "type": 5,
       "buildingId": 1844375,
-      "status": 2
+      "status": 5
     },
     {
       "id": 4929313,
@@ -11574,7 +11651,7 @@
       "name": "EUS | LAS-002/OTL-001",
       "type": 20,
       "buildingId": 1984068,
-      "status": 2
+      "status": 4
     },
     {
       "id": 5331506,
@@ -11602,7 +11679,7 @@
       "name": "K4T2",
       "type": 8,
       "buildingId": 1984387,
-      "status": 2
+      "status": 1
     },
     {
       "id": 5331635,
@@ -11630,7 +11707,7 @@
       "name": "WSTM’R | RNLI-001/ILB-001",
       "type": 68,
       "buildingId": 1984410,
-      "status": 2
+      "status": 4
     },
     {
       "id": 5332265,
@@ -11721,7 +11798,7 @@
       "name": "MBA | MET-003/IRV-001",
       "type": 8,
       "buildingId": 1987519,
-      "status": 2
+      "status": 4
     },
     {
       "id": 5340598,
@@ -11742,7 +11819,7 @@
       "name": "K4T1",
       "type": 8,
       "buildingId": 1984387,
-      "status": 2
+      "status": 4
     },
     {
       "id": 5341628,
@@ -11847,7 +11924,7 @@
       "name": "STR | MET-006/IRV-001",
       "type": 8,
       "buildingId": 2041380,
-      "status": 2
+      "status": 4
     },
     {
       "id": 5489761,
@@ -11875,7 +11952,7 @@
       "name": "STR | MET-006/MRAV-001",
       "type": 56,
       "buildingId": 2041380,
-      "status": 2
+      "status": 1
     },
     {
       "id": 5496791,
@@ -11924,14 +12001,14 @@
       "name": "HGTAS | YAS-002/AMB-001",
       "type": 5,
       "buildingId": 2311527,
-      "status": 2
+      "status": 5
     },
     {
       "id": 6269473,
       "name": "HPS | M2XN/IRV-001",
       "type": 8,
       "buildingId": 2311530,
-      "status": 2
+      "status": 1
     },
     {
       "id": 6269475,
@@ -12127,7 +12204,7 @@
       "name": "MBA | MET-003/IRV-002",
       "type": 8,
       "buildingId": 1987519,
-      "status": 2
+      "status": 4
     },
     {
       "id": 6290340,
@@ -12267,7 +12344,7 @@
       "name": "GH | LAS-006/AMB-001",
       "type": 5,
       "buildingId": 2319201,
-      "status": 2
+      "status": 5
     },
     {
       "id": 6292258,
@@ -12299,15 +12376,15 @@
     }
   ],
   "credits": {
-    "credits_user_current": 1041803,
-    "credits_user_total": 163780556,
-    "credits_alliance_current": 397916202,
+    "credits_user_current": 1549241,
+    "credits_user_total": 164975541,
+    "credits_alliance_current": 398172998,
     "coins_user_current": 1,
-    "credits_alliance_total": 30119805250
+    "credits_alliance_total": 30123880246
   },
   "alliance": {
     "users": 1833,
-    "online": 0,
+    "online": 2,
     "rank": 9,
     "financeActive": true
   }
