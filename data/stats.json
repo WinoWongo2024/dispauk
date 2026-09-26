@@ -1,8 +1,8 @@
 {
-  "updatedAt": "2026-09-26T19:41:55.859714+00:00",
+  "updatedAt": "2026-09-26T22:32:57.410356+00:00",
   "source": "missionchief.co.uk",
   "sync": {
-    "durationSeconds": 29,
+    "durationSeconds": 23,
     "schedule": "hourly"
   },
   "endpoints": {
@@ -60,12 +60,11 @@
     "Scotland": 4
   },
   "vehicleStatus": {
-    "2": 1550,
-    "4": 53,
+    "2": 1563,
+    "4": 44,
     "6": 1,
-    "3": 2,
-    "1": 2,
-    "5": 6
+    "1": 3,
+    "3": 3
   },
   "vehiclesByType": {
     "5": 611,
@@ -168,17 +167,25 @@
       "lat": 51.51909877616312,
       "lon": -0.05814690200677775,
       "level": 0,
-      "stationCount": 59,
-      "personnel": 8410,
-      "coverageRadiusM": 183933,
+      "stationCount": 58,
+      "personnel": 8380,
+      "coverageRadiusM": 23517,
       "coveragePolygon": [
         [
           51.37796650193354,
           -0.06013011929070028
         ],
         [
-          52.65165675351029,
-          1.724145656800696
+          51.48748944713841,
+          -0.022279564732651615
+        ],
+        [
+          51.52782453421807,
+          -0.053416867613505434
+        ],
+        [
+          51.54642007721322,
+          -0.10331891087059228
         ],
         [
           51.57733979121902,
@@ -635,6 +642,39 @@
       "region": "South West"
     },
     {
+      "id": 2701662,
+      "name": "Norfolk FCR",
+      "lat": 52.6324706431306,
+      "lon": 1.2626406754073036,
+      "level": 0,
+      "stationCount": 10,
+      "personnel": 57,
+      "coverageRadiusM": 62304,
+      "coveragePolygon": [
+        [
+          52.37935823306299,
+          1.1067403902820652
+        ],
+        [
+          52.576900149222205,
+          1.7144703135237735
+        ],
+        [
+          52.65165675351029,
+          1.724145656800696
+        ],
+        [
+          52.92376349809276,
+          1.3101653311902788
+        ],
+        [
+          52.745288242956484,
+          0.40215135612874964
+        ]
+      ],
+      "region": "Midlands"
+    },
+    {
       "id": 2663954,
       "name": "Oxfordshire FCR",
       "lat": 51.75058640081601,
@@ -740,39 +780,6 @@
         ]
       ],
       "region": "North"
-    },
-    {
-      "id": 2701662,
-      "name": "Norfolk FCR",
-      "lat": 52.6324706431306,
-      "lon": 1.2626406754073036,
-      "level": 0,
-      "stationCount": 9,
-      "personnel": 27,
-      "coverageRadiusM": 62304,
-      "coveragePolygon": [
-        [
-          52.37935823306299,
-          1.1067403902820652
-        ],
-        [
-          52.576900149222205,
-          1.7144703135237735
-        ],
-        [
-          52.655495253149915,
-          1.713507473581431
-        ],
-        [
-          52.92376349809276,
-          1.3101653311902788
-        ],
-        [
-          52.745288242956484,
-          0.40215135612874964
-        ]
-      ],
-      "region": "Midlands"
     },
     {
       "id": 2620974,
@@ -2377,8 +2384,8 @@
       "personnel": 30,
       "small": false,
       "region": "Midlands",
-      "dcId": 1844373,
-      "dcName": "London FCR",
+      "dcId": 2701662,
+      "dcName": "Norfolk FCR",
       "dcAssign": "api"
     },
     {
@@ -2679,21 +2686,6 @@
       "region": "Wales",
       "dcId": 2469519,
       "dcName": "𝙒𝙖𝙡𝙚𝙨 🏴󠁧󠁢󠁷󠁬󠁳󠁿 𝘾𝙮𝙢𝙧𝙪",
-      "dcAssign": "api"
-    },
-    {
-      "id": 2701855,
-      "name": "Long Sutton Ambulance Station",
-      "type": "Ambulance Station",
-      "typeId": 2,
-      "level": 0,
-      "lat": 52.79092244946355,
-      "lon": 0.11775195341719774,
-      "personnel": 3,
-      "small": true,
-      "region": "Midlands",
-      "dcId": 2633103,
-      "dcName": "Lincolnshire DC",
       "dcAssign": "api"
     },
     {
@@ -3009,21 +3001,6 @@
       "region": "Other / Overseas",
       "dcId": 2311778,
       "dcName": "Hampshire DC",
-      "dcAssign": "api"
-    },
-    {
-      "id": 2701809,
-      "name": "Attleborough Ambulance Station",
-      "type": "Ambulance Station",
-      "typeId": 2,
-      "level": 0,
-      "lat": 52.51123943038373,
-      "lon": 1.0171444692559248,
-      "personnel": 3,
-      "small": true,
-      "region": "Midlands",
-      "dcId": 2701662,
-      "dcName": "Norfolk FCR",
       "dcAssign": "api"
     },
     {
@@ -7047,6 +7024,21 @@
       "dcAssign": "api"
     },
     {
+      "id": 2701855,
+      "name": "Long Sutton Ambulance Station",
+      "type": "Ambulance Station",
+      "typeId": 2,
+      "level": 0,
+      "lat": 52.79092244946355,
+      "lon": 0.11775195341719774,
+      "personnel": 3,
+      "small": true,
+      "region": "Midlands",
+      "dcId": 2633103,
+      "dcName": "Lincolnshire DC",
+      "dcAssign": "api"
+    },
+    {
       "id": 2698122,
       "name": "Portishead Lifeguard Station ",
       "type": "Type 37",
@@ -9669,6 +9661,21 @@
       "region": "Other / Overseas",
       "dcId": 2311778,
       "dcName": "Hampshire DC",
+      "dcAssign": "api"
+    },
+    {
+      "id": 2701809,
+      "name": "Attleborough Ambulance Station",
+      "type": "Ambulance Station",
+      "typeId": 2,
+      "level": 0,
+      "lat": 52.51123943038373,
+      "lon": 1.0171444692559248,
+      "personnel": 3,
+      "small": true,
+      "region": "Midlands",
+      "dcId": 2701662,
+      "dcName": "Norfolk FCR",
       "dcAssign": "api"
     },
     {
@@ -12714,7 +12721,7 @@
       "name": "SHPTCFS | HFS-001/WL-001",
       "type": 0,
       "buildingId": 2312349,
-      "status": 4
+      "status": 2
     },
     {
       "id": 6272676,
@@ -12742,7 +12749,7 @@
       "name": "STMRYFS | HFS-003/RSU-001",
       "type": 4,
       "buildingId": 2312409,
-      "status": 4
+      "status": 2
     },
     {
       "id": 6272842,
@@ -12966,7 +12973,7 @@
       "name": "Fire Officer",
       "type": 3,
       "buildingId": 2318784,
-      "status": 4
+      "status": 2
     },
     {
       "id": 6292256,
@@ -13005,11 +13012,11 @@
     }
   ],
   "credits": {
-    "credits_user_current": 166985,
-    "credits_user_total": 167856209,
-    "credits_alliance_current": 400176643,
+    "credits_user_current": 259104,
+    "credits_user_total": 167958571,
+    "credits_alliance_current": 400216265,
     "coins_user_current": 0,
-    "credits_alliance_total": 30166197310
+    "credits_alliance_total": 30167562902
   },
   "alliance": {
     "users": 1832,
