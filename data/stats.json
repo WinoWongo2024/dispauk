@@ -1,8 +1,8 @@
 {
-  "updatedAt": "2026-09-26T12:49:22.494200+00:00",
+  "updatedAt": "2026-09-26T15:10:27.282928+00:00",
   "source": "missionchief.co.uk",
   "sync": {
-    "durationSeconds": 24,
+    "durationSeconds": 25,
     "schedule": "hourly"
   },
   "endpoints": {
@@ -16,29 +16,29 @@
     "einsaetze": true
   },
   "totals": {
-    "stations": 666,
-    "units": 1584,
-    "personnel": 50433,
-    "dispatchCentres": 42,
+    "stations": 694,
+    "units": 1608,
+    "personnel": 50512,
+    "dispatchCentres": 46,
     "allianceBuildings": 1198,
     "equipments": 11,
     "missionTypes": 1080
   },
   "stationsByType": {
-    "Ambulance Station": 356,
+    "Ambulance Station": 377,
     "Hospital": 22,
-    "Police Station": 70,
-    "Fire Station": 51,
+    "Police Station": 71,
+    "Dispatch Centre": 46,
+    "Fire Station": 52,
+    "Coastguard Station": 18,
     "HART Base": 5,
     "Home Response / HRL": 48,
     "GP Surgery": 3,
     "Custody Suite": 1,
-    "Dispatch Centre": 42,
     "Helicopter Station": 3,
     "Lifeboat Station": 10,
     "Mountain Rescue": 5,
     "Workshop / RCC": 7,
-    "Coastguard Station": 17,
     "Search & Rescue HQ": 7,
     "Police Aviation": 3,
     "Police Academy": 1,
@@ -50,31 +50,32 @@
     "Fire Station (Large)": 1
   },
   "stationsByRegion": {
-    "Midlands": 92,
+    "Midlands": 97,
     "North": 121,
+    "Other / Overseas": 69,
     "London & South": 38,
     "South West": 236,
-    "Other / Overseas": 47,
+    "South East": 74,
     "Wales": 55,
-    "South East": 73,
     "Scotland": 4
   },
   "vehicleStatus": {
-    "2": 1574,
-    "4": 3,
-    "1": 6,
-    "5": 1
+    "2": 1493,
+    "4": 53,
+    "3": 29,
+    "1": 31,
+    "7": 2
   },
   "vehiclesByType": {
-    "5": 584,
-    "8": 154,
-    "17": 62,
+    "5": 605,
+    "8": 155,
+    "17": 63,
     "10": 47,
     "3": 31,
     "0": 28,
     "12": 26,
+    "57": 25,
     "20": 24,
-    "57": 24,
     "13": 23,
     "4": 23,
     "81": 19,
@@ -101,9 +102,9 @@
     "stationsMissingName": 0,
     "stationsMissingCoords": 0,
     "duplicateStationIds": 0,
-    "dcAssignedFromApi": 620,
+    "dcAssignedFromApi": 644,
     "dcAssignedNearest": 4,
-    "dispatchCentres": 42,
+    "dispatchCentres": 46,
     "ok": true
   },
   "dispatchCentres": [
@@ -294,16 +295,12 @@
       "lon": -1.395061439554288,
       "level": 0,
       "stationCount": 47,
-      "personnel": 6768,
+      "personnel": 6771,
       "coverageRadiusM": 91855,
       "coveragePolygon": [
         [
           50.521131403075444,
           -1.0461933576585867
-        ],
-        [
-          50.623368801508626,
-          -0.9138820867798075
         ],
         [
           51.4190103351562,
@@ -668,6 +665,43 @@
         ]
       ],
       "region": "London & South"
+    },
+    {
+      "id": 2701616,
+      "name": "East Sussex FCR",
+      "lat": 50.83060619841603,
+      "lon": -0.1149739694863362,
+      "level": 0,
+      "stationCount": 9,
+      "personnel": 33,
+      "coverageRadiusM": 63676,
+      "coveragePolygon": [
+        [
+          50.79373899446097,
+          0.05451982016391298
+        ],
+        [
+          50.800100928975375,
+          0.31005753429657373
+        ],
+        [
+          50.858501122477605,
+          0.5660205456829855
+        ],
+        [
+          50.948996138429834,
+          0.7289925904169897
+        ],
+        [
+          50.85736174851231,
+          -0.09889677707953755
+        ],
+        [
+          50.83060619841603,
+          -0.1149739694863362
+        ]
+      ],
+      "region": "Other / Overseas"
     },
     {
       "id": 2692392,
@@ -1037,6 +1071,35 @@
       "region": "Midlands"
     },
     {
+      "id": 2701617,
+      "name": "West Sussex FCR",
+      "lat": 50.84292259563216,
+      "lon": -0.412084578577218,
+      "level": 0,
+      "stationCount": 6,
+      "personnel": 15,
+      "coverageRadiusM": 45079,
+      "coveragePolygon": [
+        [
+          50.623368801508626,
+          -0.9138820867798075
+        ],
+        [
+          50.833025875577206,
+          -0.27327717986035727
+        ],
+        [
+          50.84292259563216,
+          -0.412084578577218
+        ],
+        [
+          50.83146105485093,
+          -0.7882250617121057
+        ]
+      ],
+      "region": "Other / Overseas"
+    },
+    {
       "id": 2621069,
       "name": "Worcestershire DC",
       "lat": 52.189117993569845,
@@ -1167,6 +1230,31 @@
         ]
       ],
       "region": "North"
+    },
+    {
+      "id": 2701608,
+      "name": "Kent FCR",
+      "lat": 51.27237730298946,
+      "lon": 1.0662864769631097,
+      "level": 0,
+      "stationCount": 5,
+      "personnel": 16,
+      "coverageRadiusM": 39319,
+      "coveragePolygon": [
+        [
+          50.9510634,
+          0.9056293
+        ],
+        [
+          51.13318687634467,
+          1.3435225392026922
+        ],
+        [
+          51.27237730298946,
+          1.0662864769631097
+        ]
+      ],
+      "region": "South East"
     },
     {
       "id": 2621054,
@@ -1328,6 +1416,35 @@
         ]
       ],
       "region": "North"
+    },
+    {
+      "id": 2701662,
+      "name": "Norfolk FCR",
+      "lat": 52.6324706431306,
+      "lon": 1.2626406754073036,
+      "level": 0,
+      "stationCount": 4,
+      "personnel": 12,
+      "coverageRadiusM": 62304,
+      "coveragePolygon": [
+        [
+          52.37935823306299,
+          1.1067403902820652
+        ],
+        [
+          52.655495253149915,
+          1.713507473581431
+        ],
+        [
+          52.92376349809276,
+          1.3101653311902788
+        ],
+        [
+          52.745288242956484,
+          0.40215135612874964
+        ]
+      ],
+      "region": "Midlands"
     },
     {
       "id": 2621062,
@@ -1570,6 +1687,36 @@
       "dcAssign": "api"
     },
     {
+      "id": 2701640,
+      "name": "Brighton Ambulance Station",
+      "type": "Ambulance Station",
+      "typeId": 2,
+      "level": 0,
+      "lat": 50.85736174851231,
+      "lon": -0.09889677707953755,
+      "personnel": 3,
+      "small": true,
+      "region": "Other / Overseas",
+      "dcId": 2701616,
+      "dcName": "East Sussex FCR",
+      "dcAssign": "api"
+    },
+    {
+      "id": 2701610,
+      "name": "Dover Ambulance Station",
+      "type": "Ambulance Station",
+      "typeId": 2,
+      "level": 0,
+      "lat": 51.124181690910895,
+      "lon": 1.2993055222583707,
+      "personnel": 3,
+      "small": true,
+      "region": "Other / Overseas",
+      "dcId": 2701608,
+      "dcName": "Kent FCR",
+      "dcAssign": "api"
+    },
+    {
       "id": 2664799,
       "name": "Broadmoor Psychiatric Hospital ",
       "type": "Hospital",
@@ -1600,6 +1747,21 @@
       "dcAssign": "api"
     },
     {
+      "id": 2701608,
+      "name": "Kent FCR",
+      "type": "Dispatch Centre",
+      "typeId": 7,
+      "level": 0,
+      "lat": 51.27237730298946,
+      "lon": 1.0662864769631097,
+      "personnel": 0,
+      "small": false,
+      "region": "South East",
+      "dcId": 2701608,
+      "dcName": "Kent FCR",
+      "dcAssign": "self"
+    },
+    {
       "id": 2620843,
       "name": "Skipton Fire station",
       "type": "Fire Station",
@@ -1628,6 +1790,21 @@
       "dcId": 2620223,
       "dcName": "⁠[WY-ECC] West Yorks Emergency Control⁠",
       "dcAssign": "api"
+    },
+    {
+      "id": 2701616,
+      "name": "East Sussex FCR",
+      "type": "Dispatch Centre",
+      "typeId": 7,
+      "level": 0,
+      "lat": 50.83060619841603,
+      "lon": -0.1149739694863362,
+      "personnel": 0,
+      "small": false,
+      "region": "Other / Overseas",
+      "dcId": 2701616,
+      "dcName": "East Sussex FCR",
+      "dcAssign": "self"
     },
     {
       "id": 2622177,
@@ -1720,6 +1897,21 @@
       "dcAssign": "api"
     },
     {
+      "id": 2701642,
+      "name": "Shoreham-by-sea Ambulance Station ",
+      "type": "Ambulance Station",
+      "typeId": 2,
+      "level": 0,
+      "lat": 50.833025875577206,
+      "lon": -0.27327717986035727,
+      "personnel": 3,
+      "small": true,
+      "region": "Other / Overseas",
+      "dcId": 2701617,
+      "dcName": "West Sussex FCR",
+      "dcAssign": "api"
+    },
+    {
       "id": 2648323,
       "name": "Barry Ambulance Station",
       "type": "Ambulance Station",
@@ -1732,6 +1924,366 @@
       "region": "Wales",
       "dcId": 2469519,
       "dcName": "𝙒𝙖𝙡𝙚𝙨 🏴󠁧󠁢󠁷󠁬󠁳󠁿 𝘾𝙮𝙢𝙧𝙪",
+      "dcAssign": "api"
+    },
+    {
+      "id": 2701644,
+      "name": "Worthing Ambulance Station",
+      "type": "Ambulance Station",
+      "typeId": 2,
+      "level": 0,
+      "lat": 50.825212628423884,
+      "lon": -0.42715371019947834,
+      "personnel": 3,
+      "small": true,
+      "region": "Other / Overseas",
+      "dcId": 2701617,
+      "dcName": "West Sussex FCR",
+      "dcAssign": "api"
+    },
+    {
+      "id": 2701617,
+      "name": "West Sussex FCR",
+      "type": "Dispatch Centre",
+      "typeId": 7,
+      "level": 0,
+      "lat": 50.84292259563216,
+      "lon": -0.412084578577218,
+      "personnel": 0,
+      "small": false,
+      "region": "Other / Overseas",
+      "dcId": 2701617,
+      "dcName": "West Sussex FCR",
+      "dcAssign": "self"
+    },
+    {
+      "id": 2701651,
+      "name": "Havant Ambulance Station",
+      "type": "Ambulance Station",
+      "typeId": 2,
+      "level": 0,
+      "lat": 50.856838161024264,
+      "lon": -0.9850186785213028,
+      "personnel": 3,
+      "small": true,
+      "region": "Other / Overseas",
+      "dcId": 2311778,
+      "dcName": "Hampshire DC",
+      "dcAssign": "api"
+    },
+    {
+      "id": 2701621,
+      "name": "Rye Ambulance Station",
+      "type": "Ambulance Station",
+      "typeId": 2,
+      "level": 0,
+      "lat": 50.948996138429834,
+      "lon": 0.7289925904169897,
+      "personnel": 3,
+      "small": true,
+      "region": "Other / Overseas",
+      "dcId": 2701616,
+      "dcName": "East Sussex FCR",
+      "dcAssign": "api"
+    },
+    {
+      "id": 2701656,
+      "name": "Hastings Police Station ",
+      "type": "Police Station",
+      "typeId": 6,
+      "level": 0,
+      "lat": 50.85895053150016,
+      "lon": 0.5660499404553538,
+      "personnel": 2,
+      "small": true,
+      "region": "Other / Overseas",
+      "dcId": 2701616,
+      "dcName": "East Sussex FCR",
+      "dcAssign": "api"
+    },
+    {
+      "id": 2701678,
+      "name": "Diss Ambulance Station ",
+      "type": "Ambulance Station",
+      "typeId": 2,
+      "level": 0,
+      "lat": 52.37935823306299,
+      "lon": 1.1067403902820652,
+      "personnel": 3,
+      "small": true,
+      "region": "Midlands",
+      "dcId": 2701662,
+      "dcName": "Norfolk FCR",
+      "dcAssign": "api"
+    },
+    {
+      "id": 2701638,
+      "name": "Polegate Ambulance Station",
+      "type": "Ambulance Station",
+      "typeId": 2,
+      "level": 0,
+      "lat": 50.83265040906838,
+      "lon": 0.27597544913897115,
+      "personnel": 3,
+      "small": true,
+      "region": "Other / Overseas",
+      "dcId": 2701616,
+      "dcName": "East Sussex FCR",
+      "dcAssign": "api"
+    },
+    {
+      "id": 2701639,
+      "name": "Newhaven Ambulance Station",
+      "type": "Ambulance Station",
+      "typeId": 2,
+      "level": 0,
+      "lat": 50.79373899446097,
+      "lon": 0.05451982016391298,
+      "personnel": 3,
+      "small": true,
+      "region": "Other / Overseas",
+      "dcId": 2701616,
+      "dcName": "East Sussex FCR",
+      "dcAssign": "api"
+    },
+    {
+      "id": 2701628,
+      "name": "Bexhill-on-sea Ambulance Station ",
+      "type": "Ambulance Station",
+      "typeId": 2,
+      "level": 0,
+      "lat": 50.84486386559397,
+      "lon": 0.4674166359795227,
+      "personnel": 3,
+      "small": true,
+      "region": "Other / Overseas",
+      "dcId": 2701616,
+      "dcName": "East Sussex FCR",
+      "dcAssign": "api"
+    },
+    {
+      "id": 2701655,
+      "name": "Hastings Fire Station",
+      "type": "Fire Station",
+      "typeId": 0,
+      "level": 0,
+      "lat": 50.85953672774678,
+      "lon": 0.564436221991011,
+      "personnel": 10,
+      "small": true,
+      "region": "Other / Overseas",
+      "dcId": 2701616,
+      "dcName": "East Sussex FCR",
+      "dcAssign": "api"
+    },
+    {
+      "id": 2701632,
+      "name": "Eastbourne Ambulance Station",
+      "type": "Ambulance Station",
+      "typeId": 2,
+      "level": 0,
+      "lat": 50.800100928975375,
+      "lon": 0.31005753429657373,
+      "personnel": 3,
+      "small": true,
+      "region": "Other / Overseas",
+      "dcId": 2701616,
+      "dcName": "East Sussex FCR",
+      "dcAssign": "api"
+    },
+    {
+      "id": 2701625,
+      "name": "Hastings Ambulance Station ",
+      "type": "Ambulance Station",
+      "typeId": 2,
+      "level": 0,
+      "lat": 50.858501122477605,
+      "lon": 0.5660205456829855,
+      "personnel": 3,
+      "small": true,
+      "region": "Other / Overseas",
+      "dcId": 2701616,
+      "dcName": "East Sussex FCR",
+      "dcAssign": "api"
+    },
+    {
+      "id": 2701611,
+      "name": "Folkestone Ambulance Station ",
+      "type": "Ambulance Station",
+      "typeId": 2,
+      "level": 0,
+      "lat": 51.08463521395498,
+      "lon": 1.1628462583061632,
+      "personnel": 3,
+      "small": true,
+      "region": "Other / Overseas",
+      "dcId": 2701608,
+      "dcName": "Kent FCR",
+      "dcAssign": "api"
+    },
+    {
+      "id": 2701614,
+      "name": "Lydd Ambulance Station ",
+      "type": "Ambulance Station",
+      "typeId": 2,
+      "level": 0,
+      "lat": 50.9510634,
+      "lon": 0.9056293,
+      "personnel": 3,
+      "small": true,
+      "region": "Other / Overseas",
+      "dcId": 2701608,
+      "dcName": "Kent FCR",
+      "dcAssign": "api"
+    },
+    {
+      "id": 2701645,
+      "name": "Littlehampton Ambulance Station ",
+      "type": "Ambulance Station",
+      "typeId": 2,
+      "level": 0,
+      "lat": 50.80873202200536,
+      "lon": -0.5378598090915603,
+      "personnel": 3,
+      "small": true,
+      "region": "Other / Overseas",
+      "dcId": 2701617,
+      "dcName": "West Sussex FCR",
+      "dcAssign": "api"
+    },
+    {
+      "id": 2701612,
+      "name": "Hythe Ambulance Station ",
+      "type": "Ambulance Station",
+      "typeId": 2,
+      "level": 0,
+      "lat": 51.067906306673706,
+      "lon": 1.0828884013446312,
+      "personnel": 3,
+      "small": true,
+      "region": "Other / Overseas",
+      "dcId": 2701608,
+      "dcName": "Kent FCR",
+      "dcAssign": "api"
+    },
+    {
+      "id": 2701648,
+      "name": "Bognor Regis Ambulance Station",
+      "type": "Ambulance Station",
+      "typeId": 2,
+      "level": 0,
+      "lat": 50.7926874,
+      "lon": -0.6759556,
+      "personnel": 3,
+      "small": true,
+      "region": "Other / Overseas",
+      "dcId": 2701617,
+      "dcName": "West Sussex FCR",
+      "dcAssign": "api"
+    },
+    {
+      "id": 2701650,
+      "name": "Chichester Ambulance Station ",
+      "type": "Ambulance Station",
+      "typeId": 2,
+      "level": 0,
+      "lat": 50.83146105485093,
+      "lon": -0.7882250617121057,
+      "personnel": 3,
+      "small": true,
+      "region": "Other / Overseas",
+      "dcId": 2701617,
+      "dcName": "West Sussex FCR",
+      "dcAssign": "api"
+    },
+    {
+      "id": 2701662,
+      "name": "Norfolk FCR",
+      "type": "Dispatch Centre",
+      "typeId": 7,
+      "level": 0,
+      "lat": 52.6324706431306,
+      "lon": 1.2626406754073036,
+      "personnel": 0,
+      "small": false,
+      "region": "Midlands",
+      "dcId": 2701662,
+      "dcName": "Norfolk FCR",
+      "dcAssign": "self"
+    },
+    {
+      "id": 2701659,
+      "name": "HM Coastguard - Dover ",
+      "type": "Coastguard Station",
+      "typeId": 28,
+      "level": 0,
+      "lat": 51.13318687634467,
+      "lon": 1.3435225392026922,
+      "personnel": 4,
+      "small": false,
+      "region": "Other / Overseas",
+      "dcId": 2701608,
+      "dcName": "Kent FCR",
+      "dcAssign": "api"
+    },
+    {
+      "id": 2701672,
+      "name": "Caister-on-sea Ambulance Station ",
+      "type": "Ambulance Station",
+      "typeId": 2,
+      "level": 0,
+      "lat": 52.655495253149915,
+      "lon": 1.713507473581431,
+      "personnel": 3,
+      "small": true,
+      "region": "Midlands",
+      "dcId": 2701662,
+      "dcName": "Norfolk FCR",
+      "dcAssign": "api"
+    },
+    {
+      "id": 2701676,
+      "name": "Cromer Ambulance Station ",
+      "type": "Ambulance Station",
+      "typeId": 2,
+      "level": 0,
+      "lat": 52.92376349809276,
+      "lon": 1.3101653311902788,
+      "personnel": 3,
+      "small": true,
+      "region": "Midlands",
+      "dcId": 2701662,
+      "dcName": "Norfolk FCR",
+      "dcAssign": "api"
+    },
+    {
+      "id": 2701674,
+      "name": "Kings Lynn Ambulance Station ",
+      "type": "Ambulance Station",
+      "typeId": 2,
+      "level": 0,
+      "lat": 52.745288242956484,
+      "lon": 0.40215135612874964,
+      "personnel": 3,
+      "small": true,
+      "region": "Midlands",
+      "dcId": 2701662,
+      "dcName": "Norfolk FCR",
+      "dcAssign": "api"
+    },
+    {
+      "id": 2390847,
+      "name": "Royal United Hospital (RUH)",
+      "type": "Hospital",
+      "typeId": 4,
+      "level": 30,
+      "lat": 51.39141658271086,
+      "lon": -2.3916416733188,
+      "personnel": 0,
+      "small": false,
+      "region": "South West",
+      "dcId": 2353684,
+      "dcName": "Somerset FCR ",
       "dcAssign": "api"
     },
     {
@@ -5060,8 +5612,8 @@
       "personnel": 0,
       "small": false,
       "region": "Other / Overseas",
-      "dcId": 2311778,
-      "dcName": "Hampshire DC",
+      "dcId": 2701617,
+      "dcName": "West Sussex FCR",
       "dcAssign": "nearest"
     },
     {
@@ -7732,21 +8284,6 @@
       "region": "South West",
       "dcId": 2635219,
       "dcName": "Devon DC",
-      "dcAssign": "api"
-    },
-    {
-      "id": 2390847,
-      "name": "Royal United Hospital (RUH)",
-      "type": "Hospital",
-      "typeId": 4,
-      "level": 30,
-      "lat": 51.39141658271086,
-      "lon": -2.3916416733188,
-      "personnel": 0,
-      "small": false,
-      "region": "South West",
-      "dcId": 2353684,
-      "dcName": "Somerset FCR ",
       "dcAssign": "api"
     },
     {
@@ -11571,7 +12108,7 @@
       "name": "WX-001 | 103 (S)",
       "type": 8,
       "buildingId": 1844377,
-      "status": 2
+      "status": 4
     },
     {
       "id": 4926884,
@@ -11739,7 +12276,7 @@
       "name": "SJP | BTP-003/IRV-001",
       "type": 8,
       "buildingId": 1984841,
-      "status": 2
+      "status": 4
     },
     {
       "id": 5333055,
@@ -11865,7 +12402,7 @@
       "name": "H3T1",
       "type": 8,
       "buildingId": 1988767,
-      "status": 2
+      "status": 3
     },
     {
       "id": 5467024,
@@ -11963,7 +12500,7 @@
       "name": "H3T2",
       "type": 8,
       "buildingId": 1988767,
-      "status": 2
+      "status": 3
     },
     {
       "id": 5496872,
@@ -12068,28 +12605,28 @@
       "name": "SMPC | HPS-001/IRV-001",
       "type": 8,
       "buildingId": 2312174,
-      "status": 2
+      "status": 4
     },
     {
       "id": 6272172,
       "name": "SMPC | HPS-001/IRV-002",
       "type": 8,
       "buildingId": 2312174,
-      "status": 2
+      "status": 4
     },
     {
       "id": 6272673,
       "name": "SHPTCFS | HFS-001/WL-001",
       "type": 0,
       "buildingId": 2312349,
-      "status": 2
+      "status": 4
     },
     {
       "id": 6272676,
       "name": "SHPTCFS | HFS-001/WL-002",
       "type": 0,
       "buildingId": 2312349,
-      "status": 2
+      "status": 4
     },
     {
       "id": 6272808,
@@ -12103,14 +12640,14 @@
       "name": "STMRYFS | HFS-003/WL-001",
       "type": 0,
       "buildingId": 2312409,
-      "status": 2
+      "status": 4
     },
     {
       "id": 6272831,
       "name": "STMRYFS | HFS-003/RSU-001",
       "type": 4,
       "buildingId": 2312409,
-      "status": 2
+      "status": 4
     },
     {
       "id": 6272842,
@@ -12131,7 +12668,7 @@
       "name": "PW | HPS-002/IRV-001",
       "type": 8,
       "buildingId": 2312445,
-      "status": 2
+      "status": 4
     },
     {
       "id": 6272949,
@@ -12145,7 +12682,7 @@
       "name": "Fire Officer",
       "type": 3,
       "buildingId": 2312456,
-      "status": 2
+      "status": 4
     },
     {
       "id": 6272993,
@@ -12306,7 +12843,7 @@
       "name": "SHLYPS | HPS-005/IRV-001",
       "type": 8,
       "buildingId": 2318780,
-      "status": 2
+      "status": 4
     },
     {
       "id": 6290918,
@@ -12320,21 +12857,21 @@
       "name": "RBR | HFS-002/BASU-001",
       "type": 14,
       "buildingId": 2318782,
-      "status": 2
+      "status": 4
     },
     {
       "id": 6290921,
       "name": "SWYG | HPS-006/IRV-001",
       "type": 8,
       "buildingId": 2318783,
-      "status": 2
+      "status": 4
     },
     {
       "id": 6290923,
       "name": "Fire Officer",
       "type": 3,
       "buildingId": 2318784,
-      "status": 2
+      "status": 4
     },
     {
       "id": 6292256,
@@ -12369,15 +12906,15 @@
       "name": "ELGH | HFS-004/CARP-001",
       "type": 17,
       "buildingId": 2319651,
-      "status": 2
+      "status": 4
     }
   ],
   "credits": {
-    "credits_user_current": 3367429,
-    "credits_user_total": 166995280,
-    "credits_alliance_current": 399724794,
+    "credits_user_current": 138535,
+    "credits_user_total": 167157914,
+    "credits_alliance_current": 399856249,
     "coins_user_current": 0,
-    "credits_alliance_total": 30155685755
+    "credits_alliance_total": 30158815583
   },
   "alliance": {
     "users": 1832,
