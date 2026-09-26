@@ -1,8 +1,8 @@
 {
-  "updatedAt": "2026-09-25T22:06:18.795534+00:00",
+  "updatedAt": "2026-09-26T01:18:41.591368+00:00",
   "source": "missionchief.co.uk",
   "sync": {
-    "durationSeconds": 25,
+    "durationSeconds": 22,
     "schedule": "hourly"
   },
   "endpoints": {
@@ -60,11 +60,11 @@
     "Scotland": 4
   },
   "vehicleStatus": {
-    "2": 1571,
+    "2": 1549,
+    "4": 25,
     "6": 1,
-    "5": 2,
-    "4": 8,
-    "1": 2
+    "1": 7,
+    "5": 2
   },
   "vehiclesByType": {
     "5": 584,
@@ -2636,6 +2636,21 @@
       "dcAssign": "api"
     },
     {
+      "id": 2620355,
+      "name": "Leeds General Infirmary ",
+      "type": "Hospital",
+      "typeId": 4,
+      "level": 10,
+      "lat": 53.8023946581611,
+      "lon": -1.554507023226996,
+      "personnel": 0,
+      "small": false,
+      "region": "North",
+      "dcId": 2620223,
+      "dcName": "⁠[WY-ECC] West Yorks Emergency Control⁠",
+      "dcAssign": "api"
+    },
+    {
       "id": 2636872,
       "name": "Bridport hospital HRL",
       "type": "Home Response / HRL",
@@ -2756,6 +2771,21 @@
       "dcAssign": "self"
     },
     {
+      "id": 2506985,
+      "name": "Frome Community Hospital",
+      "type": "Hospital",
+      "typeId": 4,
+      "level": 0,
+      "lat": 51.23805840499514,
+      "lon": -2.311358561144637,
+      "personnel": 0,
+      "small": false,
+      "region": "South West",
+      "dcId": 2353684,
+      "dcName": "Somerset FCR ",
+      "dcAssign": "api"
+    },
+    {
       "id": 2620851,
       "name": "NYP - Crosshills Police Station",
       "type": "Police Station",
@@ -2829,21 +2859,6 @@
       "dcId": 2663954,
       "dcName": "Oxfordshire FCR",
       "dcAssign": "self"
-    },
-    {
-      "id": 2506985,
-      "name": "Frome Community Hospital",
-      "type": "Hospital",
-      "typeId": 4,
-      "level": 0,
-      "lat": 51.23805840499514,
-      "lon": -2.311358561144637,
-      "personnel": 0,
-      "small": false,
-      "region": "South West",
-      "dcId": 2353684,
-      "dcName": "Somerset FCR ",
-      "dcAssign": "api"
     },
     {
       "id": 2357963,
@@ -3638,21 +3653,6 @@
       "region": "Midlands",
       "dcId": 2621062,
       "dcName": "Staffordshire DC",
-      "dcAssign": "api"
-    },
-    {
-      "id": 2620355,
-      "name": "Leeds General Infirmary ",
-      "type": "Hospital",
-      "typeId": 4,
-      "level": 10,
-      "lat": 53.8023946581611,
-      "lon": -1.554507023226996,
-      "personnel": 0,
-      "small": false,
-      "region": "North",
-      "dcId": 2620223,
-      "dcName": "⁠[WY-ECC] West Yorks Emergency Control⁠",
       "dcAssign": "api"
     },
     {
@@ -12374,15 +12374,15 @@
     }
   ],
   "credits": {
-    "credits_user_current": 2734691,
-    "credits_user_total": 166292753,
-    "credits_alliance_current": 399121958,
+    "credits_user_current": 3220661,
+    "credits_user_total": 166832191,
+    "credits_alliance_current": 399256450,
     "coins_user_current": 0,
-    "credits_alliance_total": 30143359809
+    "credits_alliance_total": 30145864997
   },
   "alliance": {
     "users": 1833,
-    "online": 0,
+    "online": 4,
     "rank": 9,
     "financeActive": true
   }
