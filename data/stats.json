@@ -1,8 +1,8 @@
 {
-  "updatedAt": "2026-09-26T15:10:27.282928+00:00",
+  "updatedAt": "2026-09-26T16:57:48.662640+00:00",
   "source": "missionchief.co.uk",
   "sync": {
-    "durationSeconds": 25,
+    "durationSeconds": 28,
     "schedule": "hourly"
   },
   "endpoints": {
@@ -60,11 +60,11 @@
     "Scotland": 4
   },
   "vehicleStatus": {
-    "2": 1493,
-    "4": 53,
-    "3": 29,
-    "1": 31,
-    "7": 2
+    "2": 1520,
+    "4": 36,
+    "1": 38,
+    "3": 13,
+    "5": 1
   },
   "vehiclesByType": {
     "5": 605,
@@ -2272,21 +2272,6 @@
       "dcAssign": "api"
     },
     {
-      "id": 2390847,
-      "name": "Royal United Hospital (RUH)",
-      "type": "Hospital",
-      "typeId": 4,
-      "level": 30,
-      "lat": 51.39141658271086,
-      "lon": -2.3916416733188,
-      "personnel": 0,
-      "small": false,
-      "region": "South West",
-      "dcId": 2353684,
-      "dcName": "Somerset FCR ",
-      "dcAssign": "api"
-    },
-    {
       "id": 2626288,
       "name": "Halifax Ambulance Station",
       "type": "Ambulance Station",
@@ -2659,6 +2644,21 @@
       "region": "South West",
       "dcId": 2635219,
       "dcName": "Devon DC",
+      "dcAssign": "api"
+    },
+    {
+      "id": 2390847,
+      "name": "Royal United Hospital (RUH)",
+      "type": "Hospital",
+      "typeId": 4,
+      "level": 30,
+      "lat": 51.39141658271086,
+      "lon": -2.3916416733188,
+      "personnel": 0,
+      "small": false,
+      "region": "South West",
+      "dcId": 2353684,
+      "dcName": "Somerset FCR ",
       "dcAssign": "api"
     },
     {
@@ -12402,7 +12402,7 @@
       "name": "H3T1",
       "type": 8,
       "buildingId": 1988767,
-      "status": 3
+      "status": 2
     },
     {
       "id": 5467024,
@@ -12500,7 +12500,7 @@
       "name": "H3T2",
       "type": 8,
       "buildingId": 1988767,
-      "status": 3
+      "status": 2
     },
     {
       "id": 5496872,
@@ -12605,28 +12605,28 @@
       "name": "SMPC | HPS-001/IRV-001",
       "type": 8,
       "buildingId": 2312174,
-      "status": 4
+      "status": 2
     },
     {
       "id": 6272172,
       "name": "SMPC | HPS-001/IRV-002",
       "type": 8,
       "buildingId": 2312174,
-      "status": 4
+      "status": 2
     },
     {
       "id": 6272673,
       "name": "SHPTCFS | HFS-001/WL-001",
       "type": 0,
       "buildingId": 2312349,
-      "status": 4
+      "status": 1
     },
     {
       "id": 6272676,
       "name": "SHPTCFS | HFS-001/WL-002",
       "type": 0,
       "buildingId": 2312349,
-      "status": 4
+      "status": 1
     },
     {
       "id": 6272808,
@@ -12640,14 +12640,14 @@
       "name": "STMRYFS | HFS-003/WL-001",
       "type": 0,
       "buildingId": 2312409,
-      "status": 4
+      "status": 2
     },
     {
       "id": 6272831,
       "name": "STMRYFS | HFS-003/RSU-001",
       "type": 4,
       "buildingId": 2312409,
-      "status": 4
+      "status": 2
     },
     {
       "id": 6272842,
@@ -12668,7 +12668,7 @@
       "name": "PW | HPS-002/IRV-001",
       "type": 8,
       "buildingId": 2312445,
-      "status": 4
+      "status": 2
     },
     {
       "id": 6272949,
@@ -12682,7 +12682,7 @@
       "name": "Fire Officer",
       "type": 3,
       "buildingId": 2312456,
-      "status": 4
+      "status": 1
     },
     {
       "id": 6272993,
@@ -12843,7 +12843,7 @@
       "name": "SHLYPS | HPS-005/IRV-001",
       "type": 8,
       "buildingId": 2318780,
-      "status": 4
+      "status": 2
     },
     {
       "id": 6290918,
@@ -12857,21 +12857,21 @@
       "name": "RBR | HFS-002/BASU-001",
       "type": 14,
       "buildingId": 2318782,
-      "status": 4
+      "status": 2
     },
     {
       "id": 6290921,
       "name": "SWYG | HPS-006/IRV-001",
       "type": 8,
       "buildingId": 2318783,
-      "status": 4
+      "status": 2
     },
     {
       "id": 6290923,
       "name": "Fire Officer",
       "type": 3,
       "buildingId": 2318784,
-      "status": 4
+      "status": 2
     },
     {
       "id": 6292256,
@@ -12906,15 +12906,15 @@
       "name": "ELGH | HFS-004/CARP-001",
       "type": 17,
       "buildingId": 2319651,
-      "status": 4
+      "status": 2
     }
   ],
   "credits": {
-    "credits_user_current": 138535,
-    "credits_user_total": 167157914,
-    "credits_alliance_current": 399856249,
+    "credits_user_current": 604373,
+    "credits_user_total": 167675518,
+    "credits_alliance_current": 400097201,
     "coins_user_current": 0,
-    "credits_alliance_total": 30158815583
+    "credits_alliance_total": 30163381980
   },
   "alliance": {
     "users": 1832,
