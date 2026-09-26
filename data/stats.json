@@ -1,8 +1,8 @@
 {
-  "updatedAt": "2026-09-26T07:18:33.585185+00:00",
+  "updatedAt": "2026-09-26T12:49:22.494200+00:00",
   "source": "missionchief.co.uk",
   "sync": {
-    "durationSeconds": 26,
+    "durationSeconds": 24,
     "schedule": "hourly"
   },
   "endpoints": {
@@ -60,9 +60,10 @@
     "Scotland": 4
   },
   "vehicleStatus": {
-    "2": 1558,
-    "4": 24,
-    "5": 2
+    "2": 1574,
+    "4": 3,
+    "1": 6,
+    "5": 1
   },
   "vehiclesByType": {
     "5": 584,
@@ -2094,21 +2095,6 @@
       "dcAssign": "api"
     },
     {
-      "id": 2390847,
-      "name": "Royal United Hospital (RUH)",
-      "type": "Hospital",
-      "typeId": 4,
-      "level": 30,
-      "lat": 51.39141658271086,
-      "lon": -2.3916416733188,
-      "personnel": 0,
-      "small": false,
-      "region": "South West",
-      "dcId": 2353684,
-      "dcName": "Somerset FCR ",
-      "dcAssign": "api"
-    },
-    {
       "id": 2662989,
       "name": "RNLI Appledore",
       "type": "Lifeboat Station",
@@ -2197,21 +2183,6 @@
       "dcId": 2650384,
       "dcName": "Republic of Ireland (ROI) 🇮🇪",
       "dcAssign": "self"
-    },
-    {
-      "id": 2692394,
-      "name": "Lancaster Ambulance Station",
-      "type": "Ambulance Station",
-      "typeId": 2,
-      "level": 0,
-      "lat": 54.0509163,
-      "lon": -2.8137437,
-      "personnel": 8,
-      "small": true,
-      "region": "North",
-      "dcId": 2692392,
-      "dcName": "Lancashire FCR",
-      "dcAssign": "api"
     },
     {
       "id": 2692398,
@@ -2544,21 +2515,6 @@
       "dcAssign": "api"
     },
     {
-      "id": 2692406,
-      "name": "Merseyside FCR",
-      "type": "Dispatch Centre",
-      "typeId": 7,
-      "level": 0,
-      "lat": 53.40846623817861,
-      "lon": -2.9907868791284904,
-      "personnel": 0,
-      "small": false,
-      "region": "Midlands",
-      "dcId": 2692406,
-      "dcName": "Merseyside FCR",
-      "dcAssign": "self"
-    },
-    {
       "id": 2692402,
       "name": "Greater Manchester FCR",
       "type": "Dispatch Centre",
@@ -2602,21 +2558,6 @@
       "dcId": 2692392,
       "dcName": "Lancashire FCR",
       "dcAssign": "api"
-    },
-    {
-      "id": 2692410,
-      "name": "Cheshire FCR",
-      "type": "Dispatch Centre",
-      "typeId": 7,
-      "level": 0,
-      "lat": 53.19320200843383,
-      "lon": -2.88209518207163,
-      "personnel": 0,
-      "small": false,
-      "region": "Midlands",
-      "dcId": 2692410,
-      "dcName": "Cheshire FCR",
-      "dcAssign": "self"
     },
     {
       "id": 2696503,
@@ -3129,21 +3070,6 @@
       "dcAssign": "api"
     },
     {
-      "id": 2692472,
-      "name": "Kendal Ambulance Station",
-      "type": "Ambulance Station",
-      "typeId": 2,
-      "level": 1,
-      "lat": 54.332197313212646,
-      "lon": -2.7481871735545376,
-      "personnel": 8,
-      "small": true,
-      "region": "North",
-      "dcId": 2692471,
-      "dcName": "Cumbria FCR",
-      "dcAssign": "api"
-    },
-    {
       "id": 2567739,
       "name": "Lansdown FO HRL",
       "type": "Home Response / HRL",
@@ -3637,21 +3563,6 @@
       "dcId": 1988744,
       "dcName": "(M2XN) North Yorkshire FCR",
       "dcAssign": "api"
-    },
-    {
-      "id": 2692471,
-      "name": "Cumbria FCR",
-      "type": "Dispatch Centre",
-      "typeId": 7,
-      "level": 0,
-      "lat": 54.89281741323811,
-      "lon": -2.9401052569909596,
-      "personnel": 0,
-      "small": false,
-      "region": "North",
-      "dcId": 2692471,
-      "dcName": "Cumbria FCR",
-      "dcAssign": "self"
     },
     {
       "id": 2318780,
@@ -4899,21 +4810,6 @@
       "dcAssign": "api"
     },
     {
-      "id": 2318739,
-      "name": "(HPS-004) Totton Police Station ",
-      "type": "Police Station",
-      "typeId": 6,
-      "level": 2,
-      "lat": 50.91999445733035,
-      "lon": -1.48804159034456,
-      "personnel": 200,
-      "small": false,
-      "region": "Other / Overseas",
-      "dcId": 2311778,
-      "dcName": "Hampshire DC",
-      "dcAssign": "api"
-    },
-    {
       "id": 2506064,
       "name": "Saltford Bomb Disposal HQ",
       "type": "Bomb Disposal",
@@ -5046,21 +4942,6 @@
       "region": "Wales",
       "dcId": 2469519,
       "dcName": "𝙒𝙖𝙡𝙚𝙨 🏴󠁧󠁢󠁷󠁬󠁳󠁿 𝘾𝙮𝙢𝙧𝙪",
-      "dcAssign": "api"
-    },
-    {
-      "id": 2429046,
-      "name": "Bristol Royal Infirmary ",
-      "type": "Hospital",
-      "typeId": 4,
-      "level": 6,
-      "lat": 51.459167869232125,
-      "lon": -2.596142441448984,
-      "personnel": 0,
-      "small": false,
-      "region": "South West",
-      "dcId": 2353684,
-      "dcName": "Somerset FCR ",
       "dcAssign": "api"
     },
     {
@@ -5932,21 +5813,6 @@
       "dcId": 2667692,
       "dcName": "Buckinghamshire FCR",
       "dcAssign": "api"
-    },
-    {
-      "id": 2692392,
-      "name": "Lancashire FCR",
-      "type": "Dispatch Centre",
-      "typeId": 7,
-      "level": 0,
-      "lat": 54.04725419392725,
-      "lon": -2.797496881464626,
-      "personnel": 0,
-      "small": false,
-      "region": "North",
-      "dcId": 2692392,
-      "dcName": "Lancashire FCR",
-      "dcAssign": "self"
     },
     {
       "id": 2656576,
@@ -7434,6 +7300,21 @@
       "dcAssign": "api"
     },
     {
+      "id": 2692471,
+      "name": "Cumbria FCR",
+      "type": "Dispatch Centre",
+      "typeId": 7,
+      "level": 0,
+      "lat": 54.89281741323811,
+      "lon": -2.9401052569909596,
+      "personnel": 0,
+      "small": false,
+      "region": "North",
+      "dcId": 2692471,
+      "dcName": "Cumbria FCR",
+      "dcAssign": "self"
+    },
+    {
       "id": 2600986,
       "name": "Calais SAMU",
       "type": "Ambulance Station",
@@ -7479,6 +7360,36 @@
       "dcAssign": "api"
     },
     {
+      "id": 2692410,
+      "name": "Cheshire FCR",
+      "type": "Dispatch Centre",
+      "typeId": 7,
+      "level": 0,
+      "lat": 53.19320200843383,
+      "lon": -2.88209518207163,
+      "personnel": 0,
+      "small": false,
+      "region": "Midlands",
+      "dcId": 2692410,
+      "dcName": "Cheshire FCR",
+      "dcAssign": "self"
+    },
+    {
+      "id": 2429046,
+      "name": "Bristol Royal Infirmary ",
+      "type": "Hospital",
+      "typeId": 4,
+      "level": 6,
+      "lat": 51.459167869232125,
+      "lon": -2.596142441448984,
+      "personnel": 0,
+      "small": false,
+      "region": "South West",
+      "dcId": 2353684,
+      "dcName": "Somerset FCR ",
+      "dcAssign": "api"
+    },
+    {
       "id": 2620223,
       "name": "⁠[WY-ECC] West Yorks Emergency Control⁠",
       "type": "Dispatch Centre",
@@ -7491,6 +7402,21 @@
       "region": "North",
       "dcId": 2620223,
       "dcName": "⁠[WY-ECC] West Yorks Emergency Control⁠",
+      "dcAssign": "self"
+    },
+    {
+      "id": 2692392,
+      "name": "Lancashire FCR",
+      "type": "Dispatch Centre",
+      "typeId": 7,
+      "level": 0,
+      "lat": 54.04725419392725,
+      "lon": -2.797496881464626,
+      "personnel": 0,
+      "small": false,
+      "region": "North",
+      "dcId": 2692392,
+      "dcName": "Lancashire FCR",
       "dcAssign": "self"
     },
     {
@@ -7537,6 +7463,21 @@
       "dcId": 2582593,
       "dcName": "Gloucestershire Dispatch",
       "dcAssign": "api"
+    },
+    {
+      "id": 2692406,
+      "name": "Merseyside FCR",
+      "type": "Dispatch Centre",
+      "typeId": 7,
+      "level": 0,
+      "lat": 53.40846623817861,
+      "lon": -2.9907868791284904,
+      "personnel": 0,
+      "small": false,
+      "region": "Midlands",
+      "dcId": 2692406,
+      "dcName": "Merseyside FCR",
+      "dcAssign": "self"
     },
     {
       "id": 2353684,
@@ -7659,6 +7600,21 @@
       "dcAssign": "api"
     },
     {
+      "id": 2692394,
+      "name": "Lancaster Ambulance Station",
+      "type": "Ambulance Station",
+      "typeId": 2,
+      "level": 0,
+      "lat": 54.0509163,
+      "lon": -2.8137437,
+      "personnel": 8,
+      "small": true,
+      "region": "North",
+      "dcId": 2692392,
+      "dcName": "Lancashire FCR",
+      "dcAssign": "api"
+    },
+    {
       "id": 2352918,
       "name": "Malton YAS Station",
       "type": "Ambulance Station",
@@ -7719,6 +7675,21 @@
       "dcAssign": "api"
     },
     {
+      "id": 2692472,
+      "name": "Kendal Ambulance Station",
+      "type": "Ambulance Station",
+      "typeId": 2,
+      "level": 1,
+      "lat": 54.332197313212646,
+      "lon": -2.7481871735545376,
+      "personnel": 8,
+      "small": true,
+      "region": "North",
+      "dcId": 2692471,
+      "dcName": "Cumbria FCR",
+      "dcAssign": "api"
+    },
+    {
       "id": 2572699,
       "name": "St Martins Hospital",
       "type": "Hospital",
@@ -7761,6 +7732,36 @@
       "region": "South West",
       "dcId": 2635219,
       "dcName": "Devon DC",
+      "dcAssign": "api"
+    },
+    {
+      "id": 2390847,
+      "name": "Royal United Hospital (RUH)",
+      "type": "Hospital",
+      "typeId": 4,
+      "level": 30,
+      "lat": 51.39141658271086,
+      "lon": -2.3916416733188,
+      "personnel": 0,
+      "small": false,
+      "region": "South West",
+      "dcId": 2353684,
+      "dcName": "Somerset FCR ",
+      "dcAssign": "api"
+    },
+    {
+      "id": 2318739,
+      "name": "(HPS-004) Totton Police Station ",
+      "type": "Police Station",
+      "typeId": 6,
+      "level": 2,
+      "lat": 50.91999445733035,
+      "lon": -1.48804159034456,
+      "personnel": 200,
+      "small": false,
+      "region": "Other / Overseas",
+      "dcId": 2311778,
+      "dcName": "Hampshire DC",
       "dcAssign": "api"
     },
     {
@@ -12372,15 +12373,15 @@
     }
   ],
   "credits": {
-    "credits_user_current": 3220661,
-    "credits_user_total": 166832191,
-    "credits_alliance_current": 399444026,
+    "credits_user_current": 3367429,
+    "credits_user_total": 166995280,
+    "credits_alliance_current": 399724794,
     "coins_user_current": 0,
-    "credits_alliance_total": 30149502152
+    "credits_alliance_total": 30155685755
   },
   "alliance": {
-    "users": 1833,
-    "online": 2,
+    "users": 1832,
+    "online": 0,
     "rank": 9,
     "financeActive": true
   }
