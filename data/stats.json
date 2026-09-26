@@ -1,8 +1,8 @@
 {
-  "updatedAt": "2026-09-26T16:57:48.662640+00:00",
+  "updatedAt": "2026-09-26T19:41:55.859714+00:00",
   "source": "missionchief.co.uk",
   "sync": {
-    "durationSeconds": 28,
+    "durationSeconds": 29,
     "schedule": "hourly"
   },
   "endpoints": {
@@ -16,16 +16,16 @@
     "einsaetze": true
   },
   "totals": {
-    "stations": 694,
-    "units": 1608,
-    "personnel": 50512,
+    "stations": 700,
+    "units": 1614,
+    "personnel": 50530,
     "dispatchCentres": 46,
     "allianceBuildings": 1198,
     "equipments": 11,
     "missionTypes": 1080
   },
   "stationsByType": {
-    "Ambulance Station": 377,
+    "Ambulance Station": 383,
     "Hospital": 22,
     "Police Station": 71,
     "Dispatch Centre": 46,
@@ -50,7 +50,7 @@
     "Fire Station (Large)": 1
   },
   "stationsByRegion": {
-    "Midlands": 97,
+    "Midlands": 103,
     "North": 121,
     "Other / Overseas": 69,
     "London & South": 38,
@@ -60,14 +60,15 @@
     "Scotland": 4
   },
   "vehicleStatus": {
-    "2": 1520,
-    "4": 36,
-    "1": 38,
-    "3": 13,
-    "5": 1
+    "2": 1550,
+    "4": 53,
+    "6": 1,
+    "3": 2,
+    "1": 2,
+    "5": 6
   },
   "vehiclesByType": {
-    "5": 605,
+    "5": 611,
     "8": 155,
     "17": 63,
     "10": 47,
@@ -102,7 +103,7 @@
     "stationsMissingName": 0,
     "stationsMissingCoords": 0,
     "duplicateStationIds": 0,
-    "dcAssignedFromApi": 644,
+    "dcAssignedFromApi": 650,
     "dcAssignedNearest": 4,
     "dispatchCentres": 46,
     "ok": true
@@ -741,6 +742,39 @@
       "region": "North"
     },
     {
+      "id": 2701662,
+      "name": "Norfolk FCR",
+      "lat": 52.6324706431306,
+      "lon": 1.2626406754073036,
+      "level": 0,
+      "stationCount": 9,
+      "personnel": 27,
+      "coverageRadiusM": 62304,
+      "coveragePolygon": [
+        [
+          52.37935823306299,
+          1.1067403902820652
+        ],
+        [
+          52.576900149222205,
+          1.7144703135237735
+        ],
+        [
+          52.655495253149915,
+          1.713507473581431
+        ],
+        [
+          52.92376349809276,
+          1.3101653311902788
+        ],
+        [
+          52.745288242956484,
+          0.40215135612874964
+        ]
+      ],
+      "region": "Midlands"
+    },
+    {
       "id": 2620974,
       "name": "South Yorkshire DC",
       "lat": 53.37851880513755,
@@ -774,6 +808,39 @@
       "region": "Midlands"
     },
     {
+      "id": 2633103,
+      "name": "Lincolnshire DC",
+      "lat": 53.2303709642346,
+      "lon": -0.5402394078574588,
+      "level": 0,
+      "stationCount": 8,
+      "personnel": 195,
+      "coverageRadiusM": 69057,
+      "coveragePolygon": [
+        [
+          52.78900860027992,
+          -0.14642698562988318
+        ],
+        [
+          52.79092244946355,
+          0.11775195341719774
+        ],
+        [
+          53.581843586794335,
+          -0.35499023898236515
+        ],
+        [
+          53.404164,
+          -0.7431816
+        ],
+        [
+          52.9119377,
+          -0.6314546
+        ]
+      ],
+      "region": "Midlands"
+    },
+    {
       "id": 2649006,
       "name": "France 🇫🇷 FCR ",
       "lat": 48.8381094548902,
@@ -801,39 +868,6 @@
         ]
       ],
       "region": "Other / Overseas"
-    },
-    {
-      "id": 2633103,
-      "name": "Lincolnshire DC",
-      "lat": 53.2303709642346,
-      "lon": -0.5402394078574588,
-      "level": 0,
-      "stationCount": 7,
-      "personnel": 192,
-      "coverageRadiusM": 58487,
-      "coveragePolygon": [
-        [
-          52.78900860027992,
-          -0.14642698562988318
-        ],
-        [
-          52.96980902648109,
-          0.001213971927422438
-        ],
-        [
-          53.581843586794335,
-          -0.35499023898236515
-        ],
-        [
-          53.404164,
-          -0.7431816
-        ],
-        [
-          52.9119377,
-          -0.6314546
-        ]
-      ],
-      "region": "Midlands"
     },
     {
       "id": 2650384,
@@ -1416,35 +1450,6 @@
         ]
       ],
       "region": "North"
-    },
-    {
-      "id": 2701662,
-      "name": "Norfolk FCR",
-      "lat": 52.6324706431306,
-      "lon": 1.2626406754073036,
-      "level": 0,
-      "stationCount": 4,
-      "personnel": 12,
-      "coverageRadiusM": 62304,
-      "coveragePolygon": [
-        [
-          52.37935823306299,
-          1.1067403902820652
-        ],
-        [
-          52.655495253149915,
-          1.713507473581431
-        ],
-        [
-          52.92376349809276,
-          1.3101653311902788
-        ],
-        [
-          52.745288242956484,
-          0.40215135612874964
-        ]
-      ],
-      "region": "Midlands"
     },
     {
       "id": 2621062,
@@ -2437,21 +2442,6 @@
       "dcAssign": "self"
     },
     {
-      "id": 2506985,
-      "name": "Frome Community Hospital",
-      "type": "Hospital",
-      "typeId": 4,
-      "level": 0,
-      "lat": 51.23805840499514,
-      "lon": -2.311358561144637,
-      "personnel": 0,
-      "small": false,
-      "region": "South West",
-      "dcId": 2353684,
-      "dcName": "Somerset FCR ",
-      "dcAssign": "api"
-    },
-    {
       "id": 2620851,
       "name": "NYP - Crosshills Police Station",
       "type": "Police Station",
@@ -2647,21 +2637,6 @@
       "dcAssign": "api"
     },
     {
-      "id": 2390847,
-      "name": "Royal United Hospital (RUH)",
-      "type": "Hospital",
-      "typeId": 4,
-      "level": 30,
-      "lat": 51.39141658271086,
-      "lon": -2.3916416733188,
-      "personnel": 0,
-      "small": false,
-      "region": "South West",
-      "dcId": 2353684,
-      "dcName": "Somerset FCR ",
-      "dcAssign": "api"
-    },
-    {
       "id": 2664748,
       "name": "Stow-on-Wold Ambulance Station",
       "type": "Ambulance Station",
@@ -2704,6 +2679,21 @@
       "region": "Wales",
       "dcId": 2469519,
       "dcName": "𝙒𝙖𝙡𝙚𝙨 🏴󠁧󠁢󠁷󠁬󠁳󠁿 𝘾𝙮𝙢𝙧𝙪",
+      "dcAssign": "api"
+    },
+    {
+      "id": 2701855,
+      "name": "Long Sutton Ambulance Station",
+      "type": "Ambulance Station",
+      "typeId": 2,
+      "level": 0,
+      "lat": 52.79092244946355,
+      "lon": 0.11775195341719774,
+      "personnel": 3,
+      "small": true,
+      "region": "Midlands",
+      "dcId": 2633103,
+      "dcName": "Lincolnshire DC",
       "dcAssign": "api"
     },
     {
@@ -2779,6 +2769,21 @@
       "region": "South West",
       "dcId": 2635644,
       "dcName": "Dorset DC",
+      "dcAssign": "api"
+    },
+    {
+      "id": 2701813,
+      "name": "Long water Ambulance Station ",
+      "type": "Ambulance Station",
+      "typeId": 2,
+      "level": 0,
+      "lat": 52.655369911380326,
+      "lon": 1.180336863765201,
+      "personnel": 3,
+      "small": true,
+      "region": "Midlands",
+      "dcId": 2701662,
+      "dcName": "Norfolk FCR",
       "dcAssign": "api"
     },
     {
@@ -3007,6 +3012,36 @@
       "dcAssign": "api"
     },
     {
+      "id": 2701809,
+      "name": "Attleborough Ambulance Station",
+      "type": "Ambulance Station",
+      "typeId": 2,
+      "level": 0,
+      "lat": 52.51123943038373,
+      "lon": 1.0171444692559248,
+      "personnel": 3,
+      "small": true,
+      "region": "Midlands",
+      "dcId": 2701662,
+      "dcName": "Norfolk FCR",
+      "dcAssign": "api"
+    },
+    {
+      "id": 2701816,
+      "name": "Gorleston-on-Sea Ambulance Station ",
+      "type": "Ambulance Station",
+      "typeId": 2,
+      "level": 0,
+      "lat": 52.576900149222205,
+      "lon": 1.7144703135237735,
+      "personnel": 3,
+      "small": true,
+      "region": "Midlands",
+      "dcId": 2701662,
+      "dcName": "Norfolk FCR",
+      "dcAssign": "api"
+    },
+    {
       "id": 2692419,
       "name": "Blackburn Ambulance Station ",
       "type": "Ambulance Station",
@@ -3067,6 +3102,21 @@
       "dcAssign": "api"
     },
     {
+      "id": 2701866,
+      "name": "Fakenham Ambulance Station ",
+      "type": "Ambulance Station",
+      "typeId": 2,
+      "level": 0,
+      "lat": 52.826740095200805,
+      "lon": 0.8476683176697688,
+      "personnel": 3,
+      "small": true,
+      "region": "Midlands",
+      "dcId": 2701662,
+      "dcName": "Norfolk FCR",
+      "dcAssign": "api"
+    },
+    {
       "id": 2692402,
       "name": "Greater Manchester FCR",
       "type": "Dispatch Centre",
@@ -3080,6 +3130,21 @@
       "dcId": 2692402,
       "dcName": "Greater Manchester FCR",
       "dcAssign": "self"
+    },
+    {
+      "id": 2701859,
+      "name": "North Walsham Ambulance Station ",
+      "type": "Ambulance Station",
+      "typeId": 2,
+      "level": 0,
+      "lat": 52.8226064,
+      "lon": 1.4083016,
+      "personnel": 3,
+      "small": true,
+      "region": "Midlands",
+      "dcId": 2701662,
+      "dcName": "Norfolk FCR",
+      "dcAssign": "api"
     },
     {
       "id": 2692426,
@@ -3244,6 +3309,21 @@
       "region": "South West",
       "dcId": 2635219,
       "dcName": "Devon DC",
+      "dcAssign": "api"
+    },
+    {
+      "id": 2364327,
+      "name": "Nottingham EMAS (North)",
+      "type": "Ambulance Station",
+      "typeId": 2,
+      "level": 2,
+      "lat": 52.98947154696455,
+      "lon": -1.156077594185795,
+      "personnel": 200,
+      "small": true,
+      "region": "Midlands",
+      "dcId": 2364325,
+      "dcName": "Nottinghamshire Dispatch Centre",
       "dcAssign": "api"
     },
     {
@@ -3944,21 +4024,6 @@
       "level": 2,
       "lat": 52.95864527745207,
       "lon": -1.167976805880616,
-      "personnel": 200,
-      "small": true,
-      "region": "Midlands",
-      "dcId": 2364325,
-      "dcName": "Nottinghamshire Dispatch Centre",
-      "dcAssign": "api"
-    },
-    {
-      "id": 2364327,
-      "name": "Nottingham EMAS (North)",
-      "type": "Ambulance Station",
-      "typeId": 2,
-      "level": 2,
-      "lat": 52.98947154696455,
-      "lon": -1.156077594185795,
       "personnel": 200,
       "small": true,
       "region": "Midlands",
@@ -4897,21 +4962,6 @@
       "dcAssign": "api"
     },
     {
-      "id": 2330766,
-      "name": "Alliance Hospital - St Thomas Hospital",
-      "type": "Hospital",
-      "typeId": 4,
-      "level": 30,
-      "lat": 51.49882104927478,
-      "lon": -0.11859392142196024,
-      "personnel": 0,
-      "small": false,
-      "region": "South East",
-      "dcId": 1844373,
-      "dcName": "London FCR",
-      "dcAssign": "api"
-    },
-    {
       "id": 2590010,
       "name": "Gloucestershire fire & rescue ",
       "type": "Fire Station",
@@ -5587,6 +5637,21 @@
       "dcAssign": "self"
     },
     {
+      "id": 2506985,
+      "name": "Frome Community Hospital",
+      "type": "Hospital",
+      "typeId": 4,
+      "level": 0,
+      "lat": 51.23805840499514,
+      "lon": -2.311358561144637,
+      "personnel": 0,
+      "small": false,
+      "region": "South West",
+      "dcId": 2353684,
+      "dcName": "Somerset FCR ",
+      "dcAssign": "api"
+    },
+    {
       "id": 2311793,
       "name": "SGH/HRL",
       "type": "Home Response / HRL",
@@ -6022,6 +6087,21 @@
       "dcAssign": "self"
     },
     {
+      "id": 2325713,
+      "name": "Scarborough General Hospital",
+      "type": "Hospital",
+      "typeId": 4,
+      "level": 4,
+      "lat": 54.28179980467448,
+      "lon": -0.4370821595078071,
+      "personnel": 0,
+      "small": false,
+      "region": "North",
+      "dcId": 1988744,
+      "dcName": "(M2XN) North Yorkshire FCR",
+      "dcAssign": "api"
+    },
+    {
       "id": 2622181,
       "name": "Driffield Ambulance Station",
       "type": "Ambulance Station",
@@ -6052,6 +6132,21 @@
       "dcAssign": "api"
     },
     {
+      "id": 2390847,
+      "name": "Royal United Hospital (RUH)",
+      "type": "Hospital",
+      "typeId": 4,
+      "level": 30,
+      "lat": 51.39141658271086,
+      "lon": -2.3916416733188,
+      "personnel": 0,
+      "small": false,
+      "region": "South West",
+      "dcId": 2353684,
+      "dcName": "Somerset FCR ",
+      "dcAssign": "api"
+    },
+    {
       "id": 2312031,
       "name": "(HRL-003) Lambeth HRL/SB",
       "type": "Home Response / HRL",
@@ -6060,6 +6155,21 @@
       "lat": 51.492910816331,
       "lon": -0.12123953489482854,
       "personnel": 30,
+      "small": false,
+      "region": "South East",
+      "dcId": 1844373,
+      "dcName": "London FCR",
+      "dcAssign": "api"
+    },
+    {
+      "id": 2330766,
+      "name": "Alliance Hospital - St Thomas Hospital",
+      "type": "Hospital",
+      "typeId": 4,
+      "level": 30,
+      "lat": 51.49882104927478,
+      "lon": -0.11859392142196024,
+      "personnel": 0,
       "small": false,
       "region": "South East",
       "dcId": 1844373,
@@ -6289,21 +6399,6 @@
       "region": "South West",
       "dcId": 2353684,
       "dcName": "Somerset FCR ",
-      "dcAssign": "api"
-    },
-    {
-      "id": 2325713,
-      "name": "Scarborough General Hospital",
-      "type": "Hospital",
-      "typeId": 4,
-      "level": 4,
-      "lat": 54.28179980467448,
-      "lon": -0.4370821595078071,
-      "personnel": 0,
-      "small": false,
-      "region": "North",
-      "dcId": 1988744,
-      "dcName": "(M2XN) North Yorkshire FCR",
       "dcAssign": "api"
     },
     {
@@ -12619,14 +12714,14 @@
       "name": "SHPTCFS | HFS-001/WL-001",
       "type": 0,
       "buildingId": 2312349,
-      "status": 1
+      "status": 4
     },
     {
       "id": 6272676,
       "name": "SHPTCFS | HFS-001/WL-002",
       "type": 0,
       "buildingId": 2312349,
-      "status": 1
+      "status": 2
     },
     {
       "id": 6272808,
@@ -12647,7 +12742,7 @@
       "name": "STMRYFS | HFS-003/RSU-001",
       "type": 4,
       "buildingId": 2312409,
-      "status": 2
+      "status": 4
     },
     {
       "id": 6272842,
@@ -12682,7 +12777,7 @@
       "name": "Fire Officer",
       "type": 3,
       "buildingId": 2312456,
-      "status": 1
+      "status": 2
     },
     {
       "id": 6272993,
@@ -12871,7 +12966,7 @@
       "name": "Fire Officer",
       "type": 3,
       "buildingId": 2318784,
-      "status": 2
+      "status": 4
     },
     {
       "id": 6292256,
@@ -12910,11 +13005,11 @@
     }
   ],
   "credits": {
-    "credits_user_current": 604373,
-    "credits_user_total": 167675518,
-    "credits_alliance_current": 400097201,
+    "credits_user_current": 166985,
+    "credits_user_total": 167856209,
+    "credits_alliance_current": 400176643,
     "coins_user_current": 0,
-    "credits_alliance_total": 30163381980
+    "credits_alliance_total": 30166197310
   },
   "alliance": {
     "users": 1832,
