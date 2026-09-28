@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-09-28T15:08:25.579416+00:00",
+  "updatedAt": "2026-09-28T21:42:17.300807+00:00",
   "source": "missionchief.co.uk",
   "sync": {
     "durationSeconds": 26,
@@ -60,9 +60,13 @@
     "Scotland": 4
   },
   "vehicleStatus": {
-    "2": 1603,
-    "5": 6,
-    "4": 7
+    "2": 1564,
+    "3": 21,
+    "4": 18,
+    "6": 1,
+    "5": 4,
+    "1": 7,
+    "7": 1
   },
   "vehiclesByType": {
     "5": 611,
@@ -12418,7 +12422,7 @@
       "name": "K4A1",
       "type": 13,
       "buildingId": 1984387,
-      "status": 2
+      "status": 3
     },
     {
       "id": 5331678,
@@ -12684,7 +12688,7 @@
       "name": "STR | MET-006/MRAV-001",
       "type": 56,
       "buildingId": 2041380,
-      "status": 2
+      "status": 3
     },
     {
       "id": 5496791,
@@ -13108,15 +13112,15 @@
     }
   ],
   "credits": {
-    "credits_user_current": 833156,
-    "credits_user_total": 169793977,
-    "credits_alliance_current": 401027098,
+    "credits_user_current": 846390,
+    "credits_user_total": 169808684,
+    "credits_alliance_current": 401095634,
     "coins_user_current": 1,
-    "credits_alliance_total": 30186843667
+    "credits_alliance_total": 30189243413
   },
   "alliance": {
     "users": 1833,
-    "online": 2,
+    "online": 3,
     "rank": 9,
     "financeActive": true
   }
