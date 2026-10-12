@@ -1,8 +1,8 @@
 {
-  "updatedAt": "2026-10-12T07:06:17.528072+00:00",
+  "updatedAt": "2026-10-12T17:34:48.301670+00:00",
   "source": "missionchief.co.uk",
   "sync": {
-    "durationSeconds": 26,
+    "durationSeconds": 27,
     "schedule": "hourly"
   },
   "endpoints": {
@@ -27,8 +27,8 @@
   "stationsByType": {
     "Ambulance Station": 414,
     "Police Station": 71,
-    "Hospital": 22,
     "Dispatch Centre": 49,
+    "Hospital": 22,
     "Fire Station": 53,
     "HART Base": 6,
     "Custody Suite": 1,
@@ -36,7 +36,6 @@
     "Home Response / HRL": 48,
     "Lifeboat Station": 10,
     "Helicopter Station": 3,
-    "Health Centre": 2,
     "Workshop / RCC": 7,
     "Search & Rescue HQ": 7,
     "Police Aviation": 3,
@@ -44,6 +43,7 @@
     "Coastguard CRH": 3,
     "SAR Resource Centre": 1,
     "Type 37": 6,
+    "Health Centre": 2,
     "GP Surgery": 3,
     "Mountain Rescue": 5,
     "Fire Station (Large)": 1,
@@ -52,18 +52,17 @@
   "stationsByRegion": {
     "Midlands": 117,
     "Other / Overseas": 75,
-    "North": 121,
     "South East": 95,
     "London & South": 38,
     "South West": 236,
+    "North": 121,
     "Wales": 55,
     "Scotland": 4
   },
   "vehicleStatus": {
-    "2": 1574,
-    "4": 74,
-    "1": 1,
-    "5": 4
+    "2": 1634,
+    "4": 18,
+    "5": 1
   },
   "vehiclesByType": {
     "5": 642,
@@ -1859,21 +1858,6 @@
       "dcAssign": "api"
     },
     {
-      "id": 2325713,
-      "name": "Scarborough General Hospital",
-      "type": "Hospital",
-      "typeId": 4,
-      "level": 4,
-      "lat": 54.28179980467448,
-      "lon": -0.4370821595078071,
-      "personnel": 0,
-      "small": false,
-      "region": "North",
-      "dcId": 1988744,
-      "dcName": "(M2XN) North Yorkshire FCR",
-      "dcAssign": "api"
-    },
-    {
       "id": 2649006,
       "name": "France 🇫🇷 FCR ",
       "type": "Dispatch Centre",
@@ -2699,21 +2683,6 @@
       "dcAssign": "api"
     },
     {
-      "id": 2333227,
-      "name": "The health centre Starbeck",
-      "type": "Health Centre",
-      "typeId": 21,
-      "level": 2,
-      "lat": 53.99651665380682,
-      "lon": -1.5082697214037528,
-      "personnel": 200,
-      "small": false,
-      "region": "North",
-      "dcId": 1988744,
-      "dcName": "(M2XN) North Yorkshire FCR",
-      "dcAssign": "api"
-    },
-    {
       "id": 2620833,
       "name": "[WYFRS-HQ] Border FO⁠",
       "type": "Home Response / HRL",
@@ -3432,21 +3401,6 @@
       "dcId": 2311778,
       "dcName": "Hampshire DC",
       "dcAssign": "nearest"
-    },
-    {
-      "id": 2327749,
-      "name": "Chilworth OLD HPS",
-      "type": "Fire Station",
-      "typeId": 0,
-      "level": 3,
-      "lat": 50.96675668434428,
-      "lon": -1.4215468240612301,
-      "personnel": 200,
-      "small": false,
-      "region": "Other / Overseas",
-      "dcId": 2311778,
-      "dcName": "Hampshire DC",
-      "dcAssign": "api"
     },
     {
       "id": 2329882,
@@ -4574,6 +4528,21 @@
       "dcAssign": "self"
     },
     {
+      "id": 2325713,
+      "name": "Scarborough General Hospital",
+      "type": "Hospital",
+      "typeId": 4,
+      "level": 4,
+      "lat": 54.28179980467448,
+      "lon": -0.4370821595078071,
+      "personnel": 0,
+      "small": false,
+      "region": "North",
+      "dcId": 1988744,
+      "dcName": "(M2XN) North Yorkshire FCR",
+      "dcAssign": "api"
+    },
+    {
       "id": 2312031,
       "name": "(HRL-003) Lambeth HRL/SB",
       "type": "Home Response / HRL",
@@ -5144,6 +5113,21 @@
       "dcAssign": "api"
     },
     {
+      "id": 2567229,
+      "name": "Weston General Hospital",
+      "type": "Hospital",
+      "typeId": 4,
+      "level": 6,
+      "lat": 51.321611143618476,
+      "lon": -2.971186856353536,
+      "personnel": 0,
+      "small": false,
+      "region": "South West",
+      "dcId": 2353684,
+      "dcName": "Somerset FCR ",
+      "dcAssign": "api"
+    },
+    {
       "id": 2648933,
       "name": "Cardigan Ambulance Station",
       "type": "Ambulance Station",
@@ -5171,6 +5155,21 @@
       "region": "Wales",
       "dcId": 2469519,
       "dcName": "𝙒𝙖𝙡𝙚𝙨 🏴󠁧󠁢󠁷󠁬󠁳󠁿 𝘾𝙮𝙢𝙧𝙪",
+      "dcAssign": "api"
+    },
+    {
+      "id": 2333227,
+      "name": "The health centre Starbeck",
+      "type": "Health Centre",
+      "typeId": 21,
+      "level": 2,
+      "lat": 53.99651665380682,
+      "lon": -1.5082697214037528,
+      "personnel": 200,
+      "small": false,
+      "region": "North",
+      "dcId": 1988744,
+      "dcName": "(M2XN) North Yorkshire FCR",
       "dcAssign": "api"
     },
     {
@@ -5771,21 +5770,6 @@
       "region": "South West",
       "dcId": 2635219,
       "dcName": "Devon DC",
-      "dcAssign": "api"
-    },
-    {
-      "id": 2319692,
-      "name": "(SCAS-002) Chandlers ford Station",
-      "type": "Ambulance Station",
-      "typeId": 2,
-      "level": 2,
-      "lat": 50.99680535159174,
-      "lon": -1.3596020528143282,
-      "personnel": 200,
-      "small": false,
-      "region": "Other / Overseas",
-      "dcId": 2311778,
-      "dcName": "Hampshire DC",
       "dcAssign": "api"
     },
     {
@@ -6749,6 +6733,21 @@
       "dcAssign": "api"
     },
     {
+      "id": 2319692,
+      "name": "(SCAS-002) Chandlers ford Station",
+      "type": "Ambulance Station",
+      "typeId": 2,
+      "level": 2,
+      "lat": 50.99680535159174,
+      "lon": -1.3596020528143282,
+      "personnel": 200,
+      "small": false,
+      "region": "Other / Overseas",
+      "dcId": 2311778,
+      "dcName": "Hampshire DC",
+      "dcAssign": "api"
+    },
+    {
       "id": 2633100,
       "name": "Heath Ambulance Station",
       "type": "Ambulance Station",
@@ -6821,6 +6820,21 @@
       "region": "North",
       "dcId": 2650412,
       "dcName": "Isle Of Man 🇮🇲 ",
+      "dcAssign": "api"
+    },
+    {
+      "id": 2327749,
+      "name": "Chilworth OLD HPS",
+      "type": "Fire Station",
+      "typeId": 0,
+      "level": 3,
+      "lat": 50.96675668434428,
+      "lon": -1.4215468240612301,
+      "personnel": 200,
+      "small": false,
+      "region": "Other / Overseas",
+      "dcId": 2311778,
+      "dcName": "Hampshire DC",
       "dcAssign": "api"
     },
     {
@@ -6971,6 +6985,21 @@
       "region": "North",
       "dcId": 2650412,
       "dcName": "Isle Of Man 🇮🇲 ",
+      "dcAssign": "api"
+    },
+    {
+      "id": 2330766,
+      "name": "Alliance Hospital - St Thomas Hospital",
+      "type": "Hospital",
+      "typeId": 4,
+      "level": 30,
+      "lat": 51.49882104927478,
+      "lon": -0.11859392142196024,
+      "personnel": 0,
+      "small": false,
+      "region": "South East",
+      "dcId": 1844373,
+      "dcName": "London FCR",
       "dcAssign": "api"
     },
     {
@@ -7181,6 +7210,21 @@
       "region": "South West",
       "dcId": 2353684,
       "dcName": "Somerset FCR ",
+      "dcAssign": "api"
+    },
+    {
+      "id": 1987519,
+      "name": "(MET-003) MarbleArch",
+      "type": "Police Station",
+      "typeId": 6,
+      "level": 2,
+      "lat": 51.51473303698452,
+      "lon": -0.15935976855465364,
+      "personnel": 200,
+      "small": true,
+      "region": "South East",
+      "dcId": 1844373,
+      "dcName": "London FCR",
       "dcAssign": "api"
     },
     {
@@ -7421,21 +7465,6 @@
       "region": "South West",
       "dcId": 2353684,
       "dcName": "Somerset FCR ",
-      "dcAssign": "api"
-    },
-    {
-      "id": 2330766,
-      "name": "Alliance Hospital - St Thomas Hospital",
-      "type": "Hospital",
-      "typeId": 4,
-      "level": 30,
-      "lat": 51.49882104927478,
-      "lon": -0.11859392142196024,
-      "personnel": 0,
-      "small": false,
-      "region": "South East",
-      "dcId": 1844373,
-      "dcName": "London FCR",
       "dcAssign": "api"
     },
     {
@@ -11534,21 +11563,6 @@
       "dcAssign": "api"
     },
     {
-      "id": 1987519,
-      "name": "(MET-003) MarbleArch",
-      "type": "Police Station",
-      "typeId": 6,
-      "level": 2,
-      "lat": 51.51473303698452,
-      "lon": -0.15935976855465364,
-      "personnel": 200,
-      "small": true,
-      "region": "South East",
-      "dcId": 1844373,
-      "dcName": "London FCR",
-      "dcAssign": "api"
-    },
-    {
       "id": 2621667,
       "name": "Churchill Ambulance Station",
       "type": "Ambulance Station",
@@ -12659,21 +12673,6 @@
       "dcAssign": "api"
     },
     {
-      "id": 2567229,
-      "name": "Weston General Hospital",
-      "type": "Hospital",
-      "typeId": 4,
-      "level": 6,
-      "lat": 51.321611143618476,
-      "lon": -2.971186856353536,
-      "personnel": 0,
-      "small": false,
-      "region": "South West",
-      "dcId": 2353684,
-      "dcName": "Somerset FCR ",
-      "dcAssign": "api"
-    },
-    {
       "id": 2667693,
       "name": "Brackley Ambulance Station",
       "type": "Ambulance Station",
@@ -12962,14 +12961,14 @@
       "name": "NWCP | LFB-006/WL-001",
       "type": 0,
       "buildingId": 1844412,
-      "status": 2
+      "status": 4
     },
     {
       "id": 4927854,
       "name": "NWCP | LFB-006/WL-002",
       "type": 0,
       "buildingId": 1844412,
-      "status": 2
+      "status": 4
     },
     {
       "id": 4929073,
@@ -12983,7 +12982,7 @@
       "name": "HLBRN | HRL-004/FO-001",
       "type": 3,
       "buildingId": 1845393,
-      "status": 2
+      "status": 4
     },
     {
       "id": 4929766,
@@ -13207,14 +13206,14 @@
       "name": "HFS | NYF-001/WL-001",
       "type": 0,
       "buildingId": 1988057,
-      "status": 4
+      "status": 2
     },
     {
       "id": 5341847,
       "name": "HFS | NYF-001/WL-002",
       "type": 0,
       "buildingId": 1988057,
-      "status": 4
+      "status": 2
     },
     {
       "id": 5342846,
@@ -13228,7 +13227,7 @@
       "name": "HGFS | HRLNY-001/FO-001",
       "type": 3,
       "buildingId": 1988490,
-      "status": 4
+      "status": 2
     },
     {
       "id": 5343001,
@@ -13270,7 +13269,7 @@
       "name": "CoL | HRL-001/FO-001",
       "type": 3,
       "buildingId": 2033681,
-      "status": 2
+      "status": 4
     },
     {
       "id": 5467039,
@@ -13410,14 +13409,14 @@
       "name": "KBR | NYF-002/WL-001",
       "type": 0,
       "buildingId": 2311542,
-      "status": 4
+      "status": 2
     },
     {
       "id": 6269521,
       "name": "KBR | NYF-002/FO-001",
       "type": 3,
       "buildingId": 2311542,
-      "status": 4
+      "status": 2
     },
     {
       "id": 6270702,
@@ -13445,7 +13444,7 @@
       "name": "LMBTH | HRL-003/FO-001",
       "type": 3,
       "buildingId": 2312031,
-      "status": 2
+      "status": 4
     },
     {
       "id": 6272134,
@@ -13501,7 +13500,7 @@
       "name": "BTGN | LFB-001/WL-001",
       "type": 0,
       "buildingId": 2312415,
-      "status": 2
+      "status": 4
     },
     {
       "id": 6272844,
@@ -13757,15 +13756,15 @@
     }
   ],
   "credits": {
-    "credits_user_current": 320022,
-    "credits_user_total": 173234257,
-    "credits_alliance_current": 403351578,
+    "credits_user_current": 535740,
+    "credits_user_total": 173473952,
+    "credits_alliance_current": 403502211,
     "coins_user_current": 1,
-    "credits_alliance_total": 30276351494
+    "credits_alliance_total": 30280029911
   },
   "alliance": {
     "users": 1840,
-    "online": 7,
+    "online": 10,
     "rank": 9,
     "financeActive": true
   }
