@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-10-12T17:34:48.301670+00:00",
+  "updatedAt": "2026-10-13T00:22:14.156284+00:00",
   "source": "missionchief.co.uk",
   "sync": {
     "durationSeconds": 27,
@@ -60,9 +60,8 @@
     "Scotland": 4
   },
   "vehicleStatus": {
-    "2": 1634,
-    "4": 18,
-    "5": 1
+    "2": 1652,
+    "6": 1
   },
   "vehiclesByType": {
     "5": 642,
@@ -12961,14 +12960,14 @@
       "name": "NWCP | LFB-006/WL-001",
       "type": 0,
       "buildingId": 1844412,
-      "status": 4
+      "status": 2
     },
     {
       "id": 4927854,
       "name": "NWCP | LFB-006/WL-002",
       "type": 0,
       "buildingId": 1844412,
-      "status": 4
+      "status": 2
     },
     {
       "id": 4929073,
@@ -12982,7 +12981,7 @@
       "name": "HLBRN | HRL-004/FO-001",
       "type": 3,
       "buildingId": 1845393,
-      "status": 4
+      "status": 2
     },
     {
       "id": 4929766,
@@ -13269,7 +13268,7 @@
       "name": "CoL | HRL-001/FO-001",
       "type": 3,
       "buildingId": 2033681,
-      "status": 4
+      "status": 2
     },
     {
       "id": 5467039,
@@ -13444,7 +13443,7 @@
       "name": "LMBTH | HRL-003/FO-001",
       "type": 3,
       "buildingId": 2312031,
-      "status": 4
+      "status": 2
     },
     {
       "id": 6272134,
@@ -13500,7 +13499,7 @@
       "name": "BTGN | LFB-001/WL-001",
       "type": 0,
       "buildingId": 2312415,
-      "status": 4
+      "status": 2
     },
     {
       "id": 6272844,
@@ -13756,15 +13755,15 @@
     }
   ],
   "credits": {
-    "credits_user_current": 535740,
-    "credits_user_total": 173473952,
-    "credits_alliance_current": 403502211,
+    "credits_user_current": 573686,
+    "credits_user_total": 173516115,
+    "credits_alliance_current": 403660022,
     "coins_user_current": 1,
-    "credits_alliance_total": 30280029911
+    "credits_alliance_total": 30283645720
   },
   "alliance": {
     "users": 1840,
-    "online": 10,
+    "online": 3,
     "rank": 9,
     "financeActive": true
   }
