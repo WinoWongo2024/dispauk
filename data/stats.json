@@ -1,8 +1,8 @@
 {
-  "updatedAt": "2026-10-13T15:44:00.330334+00:00",
+  "updatedAt": "2026-10-13T21:04:32.707113+00:00",
   "source": "missionchief.co.uk",
   "sync": {
-    "durationSeconds": 26,
+    "durationSeconds": 25,
     "schedule": "hourly"
   },
   "endpoints": {
@@ -60,9 +60,10 @@
     "Scotland": 4
   },
   "vehicleStatus": {
-    "2": 1651,
-    "1": 1,
-    "4": 1
+    "2": 1634,
+    "4": 16,
+    "6": 1,
+    "5": 2
   },
   "vehiclesByType": {
     "5": 642,
@@ -13395,7 +13396,7 @@
       "name": "HPS | M2XN/DSU-001",
       "type": 12,
       "buildingId": 2311530,
-      "status": 2
+      "status": 4
     },
     {
       "id": 6269495,
@@ -13756,15 +13757,15 @@
     }
   ],
   "credits": {
-    "credits_user_current": 581439,
-    "credits_user_total": 173524730,
-    "credits_alliance_current": 403854388,
+    "credits_user_current": 594496,
+    "credits_user_total": 173539238,
+    "credits_alliance_current": 403945233,
     "coins_user_current": 1,
-    "credits_alliance_total": 30288053503
+    "credits_alliance_total": 30290676140
   },
   "alliance": {
-    "users": 1840,
-    "online": 8,
+    "users": 1841,
+    "online": 5,
     "rank": 9,
     "financeActive": true
   }
