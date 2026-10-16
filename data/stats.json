@@ -1,8 +1,8 @@
 {
-  "updatedAt": "2026-10-16T08:53:00.274667+00:00",
+  "updatedAt": "2026-10-16T13:50:26.336155+00:00",
   "source": "missionchief.co.uk",
   "sync": {
-    "durationSeconds": 26,
+    "durationSeconds": 29,
     "schedule": "hourly"
   },
   "endpoints": {
@@ -22,13 +22,13 @@
     "dispatchCentres": 49,
     "allianceBuildings": 1199,
     "equipments": 11,
-    "missionTypes": 1071
+    "missionTypes": 1083
   },
   "stationsByType": {
     "Ambulance Station": 414,
+    "Hospital": 22,
     "Police Station": 71,
     "Dispatch Centre": 49,
-    "Hospital": 22,
     "Fire Station": 53,
     "HART Base": 6,
     "Custody Suite": 1,
@@ -51,18 +51,18 @@
   },
   "stationsByRegion": {
     "Midlands": 117,
+    "South West": 236,
     "Other / Overseas": 75,
     "South East": 95,
     "London & South": 38,
-    "South West": 236,
     "North": 121,
     "Wales": 55,
     "Scotland": 4
   },
   "vehicleStatus": {
-    "2": 1607,
-    "4": 43,
-    "5": 3
+    "2": 1604,
+    "4": 47,
+    "3": 2
   },
   "vehiclesByType": {
     "5": 642,
@@ -1810,6 +1810,21 @@
       "region": "Midlands",
       "dcId": 2714310,
       "dcName": "Cambridgeshire FCR",
+      "dcAssign": "api"
+    },
+    {
+      "id": 2567229,
+      "name": "Weston General Hospital",
+      "type": "Hospital",
+      "typeId": 4,
+      "level": 6,
+      "lat": 51.321611143618476,
+      "lon": -2.971186856353536,
+      "personnel": 0,
+      "small": false,
+      "region": "South West",
+      "dcId": 2353684,
+      "dcName": "Somerset FCR ",
       "dcAssign": "api"
     },
     {
@@ -5155,21 +5170,6 @@
       "region": "Midlands",
       "dcId": 2650937,
       "dcName": "Shropshire FCR ",
-      "dcAssign": "api"
-    },
-    {
-      "id": 2567229,
-      "name": "Weston General Hospital",
-      "type": "Hospital",
-      "typeId": 4,
-      "level": 6,
-      "lat": 51.321611143618476,
-      "lon": -2.971186856353536,
-      "personnel": 0,
-      "small": false,
-      "region": "South West",
-      "dcId": 2353684,
-      "dcName": "Somerset FCR ",
       "dcAssign": "api"
     },
     {
@@ -13451,28 +13451,28 @@
       "name": "SMPC | HPS-001/IRV-001",
       "type": 8,
       "buildingId": 2312174,
-      "status": 2
+      "status": 4
     },
     {
       "id": 6272172,
       "name": "SMPC | HPS-001/IRV-002",
       "type": 8,
       "buildingId": 2312174,
-      "status": 2
+      "status": 4
     },
     {
       "id": 6272673,
       "name": "SHPTCFS | HFS-001/WL-001",
       "type": 0,
       "buildingId": 2312349,
-      "status": 2
+      "status": 4
     },
     {
       "id": 6272676,
       "name": "SHPTCFS | HFS-001/WL-002",
       "type": 0,
       "buildingId": 2312349,
-      "status": 2
+      "status": 4
     },
     {
       "id": 6272808,
@@ -13486,14 +13486,14 @@
       "name": "STMRYFS | HFS-003/WL-001",
       "type": 0,
       "buildingId": 2312409,
-      "status": 2
+      "status": 4
     },
     {
       "id": 6272831,
       "name": "STMRYFS | HFS-003/RSU-001",
       "type": 4,
       "buildingId": 2312409,
-      "status": 2
+      "status": 4
     },
     {
       "id": 6272842,
@@ -13514,7 +13514,7 @@
       "name": "PW | HPS-002/IRV-001",
       "type": 8,
       "buildingId": 2312445,
-      "status": 2
+      "status": 4
     },
     {
       "id": 6272949,
@@ -13528,7 +13528,7 @@
       "name": "Fire Officer",
       "type": 3,
       "buildingId": 2312456,
-      "status": 2
+      "status": 4
     },
     {
       "id": 6272993,
@@ -13717,7 +13717,7 @@
       "name": "Fire Officer",
       "type": 3,
       "buildingId": 2318784,
-      "status": 2
+      "status": 4
     },
     {
       "id": 6292256,
@@ -13756,15 +13756,15 @@
     }
   ],
   "credits": {
-    "credits_user_current": 735779,
-    "credits_user_total": 173695832,
-    "credits_alliance_current": 404648770,
+    "credits_user_current": 778968,
+    "credits_user_total": 173743820,
+    "credits_alliance_current": 404667700,
     "coins_user_current": 1,
-    "credits_alliance_total": 30309425172
+    "credits_alliance_total": 30310533192
   },
   "alliance": {
     "users": 1841,
-    "online": 4,
+    "online": 6,
     "rank": 9,
     "financeActive": true
   }

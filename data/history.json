@@ -1,15 +1,5 @@
 [
   {
-    "at": "2026-09-05T13:46:10.890837+00:00",
-    "stations": 612,
-    "units": 1528,
-    "personnel": 41891,
-    "dispatchCentres": 36,
-    "durationSeconds": 21,
-    "ok": true,
-    "creditsCurrent": 329514
-  },
-  {
     "at": "2026-09-05T16:39:49.008067+00:00",
     "stations": 612,
     "units": 1528,
@@ -1678,5 +1668,15 @@
     "durationSeconds": 26,
     "ok": true,
     "creditsCurrent": 735779
+  },
+  {
+    "at": "2026-10-16T13:50:26.336155+00:00",
+    "stations": 741,
+    "units": 1653,
+    "personnel": 59975,
+    "dispatchCentres": 49,
+    "durationSeconds": 29,
+    "ok": true,
+    "creditsCurrent": 778968
   }
 ]
