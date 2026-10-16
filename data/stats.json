@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-10-16T03:52:09.343123+00:00",
+  "updatedAt": "2026-10-16T08:53:00.274667+00:00",
   "source": "missionchief.co.uk",
   "sync": {
     "durationSeconds": 26,
@@ -60,8 +60,9 @@
     "Scotland": 4
   },
   "vehicleStatus": {
-    "2": 1652,
-    "6": 1
+    "2": 1607,
+    "4": 43,
+    "5": 3
   },
   "vehiclesByType": {
     "5": 642,
@@ -1974,6 +1975,21 @@
       "region": "South West",
       "dcId": 2353684,
       "dcName": "Somerset FCR ",
+      "dcAssign": "api"
+    },
+    {
+      "id": 2319695,
+      "name": "(HPS-008) Basingstoke Station",
+      "type": "Police Station",
+      "typeId": 6,
+      "level": 1,
+      "lat": 51.24520327400317,
+      "lon": -1.0952816585198275,
+      "personnel": 200,
+      "small": false,
+      "region": "London & South",
+      "dcId": 2311778,
+      "dcName": "Hampshire DC",
       "dcAssign": "api"
     },
     {
@@ -7002,21 +7018,6 @@
       "dcAssign": "self"
     },
     {
-      "id": 2330766,
-      "name": "Alliance Hospital - St Thomas Hospital",
-      "type": "Hospital",
-      "typeId": 4,
-      "level": 30,
-      "lat": 51.49882104927478,
-      "lon": -0.11859392142196024,
-      "personnel": 0,
-      "small": false,
-      "region": "South East",
-      "dcId": 1844373,
-      "dcName": "London FCR",
-      "dcAssign": "api"
-    },
-    {
       "id": 2663956,
       "name": "Abingdon Ambulance Station",
       "type": "Ambulance Station",
@@ -9702,21 +9703,6 @@
       "dcAssign": "api"
     },
     {
-      "id": 2429826,
-      "name": "Paulton Hospital  (MIU) (1-3617575955)",
-      "type": "Health Centre",
-      "typeId": 21,
-      "level": 5,
-      "lat": 51.29874962661729,
-      "lon": -2.4933505365978057,
-      "personnel": 200,
-      "small": false,
-      "region": "South West",
-      "dcId": 2353684,
-      "dcName": "Somerset FCR ",
-      "dcAssign": "api"
-    },
-    {
       "id": 2621012,
       "name": "CRH - Ambulance Station",
       "type": "Ambulance Station",
@@ -10539,21 +10525,6 @@
       "region": "Other / Overseas",
       "dcId": 2701608,
       "dcName": "Kent FCR",
-      "dcAssign": "api"
-    },
-    {
-      "id": 2319695,
-      "name": "(HPS-008) Basingstoke Station",
-      "type": "Police Station",
-      "typeId": 6,
-      "level": 1,
-      "lat": 51.24520327400317,
-      "lon": -1.0952816585198275,
-      "personnel": 200,
-      "small": false,
-      "region": "London & South",
-      "dcId": 2311778,
-      "dcName": "Hampshire DC",
       "dcAssign": "api"
     },
     {
@@ -11439,21 +11410,6 @@
       "region": "South West",
       "dcId": 2469519,
       "dcName": "𝙒𝙖𝙡𝙚𝙨 🏴󠁧󠁢󠁷󠁬󠁳󠁿 𝘾𝙮𝙢𝙧𝙪",
-      "dcAssign": "api"
-    },
-    {
-      "id": 2390847,
-      "name": "Royal United Hospital (RUH)",
-      "type": "Hospital",
-      "typeId": 4,
-      "level": 30,
-      "lat": 51.39141658271086,
-      "lon": -2.3916416733188,
-      "personnel": 0,
-      "small": false,
-      "region": "South West",
-      "dcId": 2353684,
-      "dcName": "Somerset FCR ",
       "dcAssign": "api"
     },
     {
@@ -12910,6 +12866,51 @@
       "dcId": 2469519,
       "dcName": "𝙒𝙖𝙡𝙚𝙨 🏴󠁧󠁢󠁷󠁬󠁳󠁿 𝘾𝙮𝙢𝙧𝙪",
       "dcAssign": "api"
+    },
+    {
+      "id": 2429826,
+      "name": "Paulton Hospital  (MIU) (1-3617575955)",
+      "type": "Health Centre",
+      "typeId": 21,
+      "level": 5,
+      "lat": 51.29874962661729,
+      "lon": -2.4933505365978057,
+      "personnel": 200,
+      "small": false,
+      "region": "South West",
+      "dcId": 2353684,
+      "dcName": "Somerset FCR ",
+      "dcAssign": "api"
+    },
+    {
+      "id": 2390847,
+      "name": "Royal United Hospital (RUH)",
+      "type": "Hospital",
+      "typeId": 4,
+      "level": 30,
+      "lat": 51.39141658271086,
+      "lon": -2.3916416733188,
+      "personnel": 0,
+      "small": false,
+      "region": "South West",
+      "dcId": 2353684,
+      "dcName": "Somerset FCR ",
+      "dcAssign": "api"
+    },
+    {
+      "id": 2330766,
+      "name": "Alliance Hospital - St Thomas Hospital",
+      "type": "Hospital",
+      "typeId": 4,
+      "level": 30,
+      "lat": 51.49882104927478,
+      "lon": -0.11859392142196024,
+      "personnel": 0,
+      "small": false,
+      "region": "South East",
+      "dcId": 1844373,
+      "dcName": "London FCR",
+      "dcAssign": "api"
     }
   ],
   "unitsSample": [
@@ -13205,14 +13206,14 @@
       "name": "HFS | NYF-001/WL-001",
       "type": 0,
       "buildingId": 1988057,
-      "status": 2
+      "status": 4
     },
     {
       "id": 5341847,
       "name": "HFS | NYF-001/WL-002",
       "type": 0,
       "buildingId": 1988057,
-      "status": 2
+      "status": 4
     },
     {
       "id": 5342846,
@@ -13226,14 +13227,14 @@
       "name": "HGFS | HRLNY-001/FO-001",
       "type": 3,
       "buildingId": 1988490,
-      "status": 2
+      "status": 4
     },
     {
       "id": 5343001,
       "name": "SMBR | NYF-004/WL-001",
       "type": 0,
       "buildingId": 1988549,
-      "status": 2
+      "status": 4
     },
     {
       "id": 5343568,
@@ -13247,7 +13248,7 @@
       "name": "H3T1",
       "type": 8,
       "buildingId": 1988767,
-      "status": 2
+      "status": 4
     },
     {
       "id": 5467024,
@@ -13345,7 +13346,7 @@
       "name": "H3T2",
       "type": 8,
       "buildingId": 1988767,
-      "status": 2
+      "status": 4
     },
     {
       "id": 5496872,
@@ -13387,7 +13388,7 @@
       "name": "HPS | M2XN/IRV-001",
       "type": 8,
       "buildingId": 2311530,
-      "status": 2
+      "status": 4
     },
     {
       "id": 6269475,
@@ -13401,21 +13402,21 @@
       "name": "HDH | HRLNY-OTL-001",
       "type": 20,
       "buildingId": 2311534,
-      "status": 2
+      "status": 4
     },
     {
       "id": 6269519,
       "name": "KBR | NYF-002/WL-001",
       "type": 0,
       "buildingId": 2311542,
-      "status": 2
+      "status": 4
     },
     {
       "id": 6269521,
       "name": "KBR | NYF-002/FO-001",
       "type": 3,
       "buildingId": 2311542,
-      "status": 2
+      "status": 4
     },
     {
       "id": 6270702,
@@ -13534,14 +13535,14 @@
       "name": "RPN | NYF-003/WL-001",
       "type": 0,
       "buildingId": 2312467,
-      "status": 2
+      "status": 4
     },
     {
       "id": 6273033,
       "name": "RPN | NYF-003/RP-001",
       "type": 16,
       "buildingId": 2312467,
-      "status": 2
+      "status": 4
     },
     {
       "id": 6283750,
@@ -13755,15 +13756,15 @@
     }
   ],
   "credits": {
-    "credits_user_current": 606158,
-    "credits_user_total": 173552043,
-    "credits_alliance_current": 404590812,
+    "credits_user_current": 735779,
+    "credits_user_total": 173695832,
+    "credits_alliance_current": 404648770,
     "coins_user_current": 1,
-    "credits_alliance_total": 30308077596
+    "credits_alliance_total": 30309425172
   },
   "alliance": {
     "users": 1841,
-    "online": 6,
+    "online": 4,
     "rank": 9,
     "financeActive": true
   }
