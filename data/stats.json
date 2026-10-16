@@ -1,8 +1,8 @@
 {
-  "updatedAt": "2026-10-16T13:50:26.336155+00:00",
+  "updatedAt": "2026-10-16T17:53:04.073738+00:00",
   "source": "missionchief.co.uk",
   "sync": {
-    "durationSeconds": 29,
+    "durationSeconds": 24,
     "schedule": "hourly"
   },
   "endpoints": {
@@ -26,9 +26,9 @@
   },
   "stationsByType": {
     "Ambulance Station": 414,
-    "Hospital": 22,
     "Police Station": 71,
     "Dispatch Centre": 49,
+    "Hospital": 22,
     "Fire Station": 53,
     "HART Base": 6,
     "Custody Suite": 1,
@@ -51,18 +51,19 @@
   },
   "stationsByRegion": {
     "Midlands": 117,
-    "South West": 236,
     "Other / Overseas": 75,
     "South East": 95,
     "London & South": 38,
+    "South West": 236,
     "North": 121,
     "Wales": 55,
     "Scotland": 4
   },
   "vehicleStatus": {
-    "2": 1604,
-    "4": 47,
-    "3": 2
+    "2": 1607,
+    "4": 24,
+    "1": 14,
+    "5": 8
   },
   "vehiclesByType": {
     "5": 642,
@@ -1810,21 +1811,6 @@
       "region": "Midlands",
       "dcId": 2714310,
       "dcName": "Cambridgeshire FCR",
-      "dcAssign": "api"
-    },
-    {
-      "id": 2567229,
-      "name": "Weston General Hospital",
-      "type": "Hospital",
-      "typeId": 4,
-      "level": 6,
-      "lat": 51.321611143618476,
-      "lon": -2.971186856353536,
-      "personnel": 0,
-      "small": false,
-      "region": "South West",
-      "dcId": 2353684,
-      "dcName": "Somerset FCR ",
       "dcAssign": "api"
     },
     {
@@ -3775,6 +3761,21 @@
       "region": "South East",
       "dcId": 1844373,
       "dcName": "London FCR",
+      "dcAssign": "api"
+    },
+    {
+      "id": 2567229,
+      "name": "Weston General Hospital",
+      "type": "Hospital",
+      "typeId": 4,
+      "level": 6,
+      "lat": 51.321611143618476,
+      "lon": -2.971186856353536,
+      "personnel": 0,
+      "small": false,
+      "region": "South West",
+      "dcId": 2353684,
+      "dcName": "Somerset FCR ",
       "dcAssign": "api"
     },
     {
@@ -13206,14 +13207,14 @@
       "name": "HFS | NYF-001/WL-001",
       "type": 0,
       "buildingId": 1988057,
-      "status": 4
+      "status": 2
     },
     {
       "id": 5341847,
       "name": "HFS | NYF-001/WL-002",
       "type": 0,
       "buildingId": 1988057,
-      "status": 4
+      "status": 2
     },
     {
       "id": 5342846,
@@ -13227,14 +13228,14 @@
       "name": "HGFS | HRLNY-001/FO-001",
       "type": 3,
       "buildingId": 1988490,
-      "status": 4
+      "status": 2
     },
     {
       "id": 5343001,
       "name": "SMBR | NYF-004/WL-001",
       "type": 0,
       "buildingId": 1988549,
-      "status": 4
+      "status": 2
     },
     {
       "id": 5343568,
@@ -13248,7 +13249,7 @@
       "name": "H3T1",
       "type": 8,
       "buildingId": 1988767,
-      "status": 4
+      "status": 2
     },
     {
       "id": 5467024,
@@ -13346,7 +13347,7 @@
       "name": "H3T2",
       "type": 8,
       "buildingId": 1988767,
-      "status": 4
+      "status": 2
     },
     {
       "id": 5496872,
@@ -13388,7 +13389,7 @@
       "name": "HPS | M2XN/IRV-001",
       "type": 8,
       "buildingId": 2311530,
-      "status": 4
+      "status": 2
     },
     {
       "id": 6269475,
@@ -13402,21 +13403,21 @@
       "name": "HDH | HRLNY-OTL-001",
       "type": 20,
       "buildingId": 2311534,
-      "status": 4
+      "status": 2
     },
     {
       "id": 6269519,
       "name": "KBR | NYF-002/WL-001",
       "type": 0,
       "buildingId": 2311542,
-      "status": 4
+      "status": 2
     },
     {
       "id": 6269521,
       "name": "KBR | NYF-002/FO-001",
       "type": 3,
       "buildingId": 2311542,
-      "status": 4
+      "status": 2
     },
     {
       "id": 6270702,
@@ -13451,28 +13452,28 @@
       "name": "SMPC | HPS-001/IRV-001",
       "type": 8,
       "buildingId": 2312174,
-      "status": 4
+      "status": 2
     },
     {
       "id": 6272172,
       "name": "SMPC | HPS-001/IRV-002",
       "type": 8,
       "buildingId": 2312174,
-      "status": 4
+      "status": 2
     },
     {
       "id": 6272673,
       "name": "SHPTCFS | HFS-001/WL-001",
       "type": 0,
       "buildingId": 2312349,
-      "status": 4
+      "status": 2
     },
     {
       "id": 6272676,
       "name": "SHPTCFS | HFS-001/WL-002",
       "type": 0,
       "buildingId": 2312349,
-      "status": 4
+      "status": 2
     },
     {
       "id": 6272808,
@@ -13486,14 +13487,14 @@
       "name": "STMRYFS | HFS-003/WL-001",
       "type": 0,
       "buildingId": 2312409,
-      "status": 4
+      "status": 2
     },
     {
       "id": 6272831,
       "name": "STMRYFS | HFS-003/RSU-001",
       "type": 4,
       "buildingId": 2312409,
-      "status": 4
+      "status": 2
     },
     {
       "id": 6272842,
@@ -13514,7 +13515,7 @@
       "name": "PW | HPS-002/IRV-001",
       "type": 8,
       "buildingId": 2312445,
-      "status": 4
+      "status": 2
     },
     {
       "id": 6272949,
@@ -13528,21 +13529,21 @@
       "name": "Fire Officer",
       "type": 3,
       "buildingId": 2312456,
-      "status": 4
+      "status": 2
     },
     {
       "id": 6272993,
       "name": "RPN | NYF-003/WL-001",
       "type": 0,
       "buildingId": 2312467,
-      "status": 4
+      "status": 2
     },
     {
       "id": 6273033,
       "name": "RPN | NYF-003/RP-001",
       "type": 16,
       "buildingId": 2312467,
-      "status": 4
+      "status": 2
     },
     {
       "id": 6283750,
@@ -13717,7 +13718,7 @@
       "name": "Fire Officer",
       "type": 3,
       "buildingId": 2318784,
-      "status": 4
+      "status": 2
     },
     {
       "id": 6292256,
@@ -13756,15 +13757,15 @@
     }
   ],
   "credits": {
-    "credits_user_current": 778968,
-    "credits_user_total": 173743820,
-    "credits_alliance_current": 404667700,
+    "credits_user_current": 827774,
+    "credits_user_total": 173798050,
+    "credits_alliance_current": 404744863,
     "coins_user_current": 1,
-    "credits_alliance_total": 30310533192
+    "credits_alliance_total": 30312269330
   },
   "alliance": {
     "users": 1841,
-    "online": 6,
+    "online": 9,
     "rank": 9,
     "financeActive": true
   }
