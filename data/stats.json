@@ -1,8 +1,8 @@
 {
-  "updatedAt": "2026-10-17T16:13:13.178432+00:00",
+  "updatedAt": "2026-10-17T19:06:42.382498+00:00",
   "source": "missionchief.co.uk",
   "sync": {
-    "durationSeconds": 25,
+    "durationSeconds": 24,
     "schedule": "hourly"
   },
   "endpoints": {
@@ -60,9 +60,12 @@
     "Scotland": 4
   },
   "vehicleStatus": {
-    "2": 1638,
-    "4": 9,
-    "5": 6
+    "2": 1612,
+    "3": 20,
+    "6": 1,
+    "1": 3,
+    "4": 13,
+    "7": 4
   },
   "vehiclesByType": {
     "5": 642,
@@ -3718,21 +3721,6 @@
       "dcAssign": "api"
     },
     {
-      "id": 2567229,
-      "name": "Weston General Hospital",
-      "type": "Hospital",
-      "typeId": 4,
-      "level": 6,
-      "lat": 51.321611143618476,
-      "lon": -2.971186856353536,
-      "personnel": 0,
-      "small": false,
-      "region": "South West",
-      "dcId": 2353684,
-      "dcName": "Somerset FCR ",
-      "dcAssign": "api"
-    },
-    {
       "id": 2715574,
       "name": "Chelmsford Ambulance Station",
       "type": "Ambulance Station",
@@ -6565,6 +6553,21 @@
       "region": "Midlands",
       "dcId": 2621062,
       "dcName": "Staffordshire DC",
+      "dcAssign": "api"
+    },
+    {
+      "id": 2567229,
+      "name": "Weston General Hospital",
+      "type": "Hospital",
+      "typeId": 4,
+      "level": 6,
+      "lat": 51.321611143618476,
+      "lon": -2.971186856353536,
+      "personnel": 0,
+      "small": false,
+      "region": "South West",
+      "dcId": 2353684,
+      "dcName": "Somerset FCR ",
       "dcAssign": "api"
     },
     {
@@ -13227,7 +13230,7 @@
       "name": "HGFS | HRLNY-001/FO-001",
       "type": 3,
       "buildingId": 1988490,
-      "status": 2
+      "status": 3
     },
     {
       "id": 5343001,
@@ -13640,7 +13643,7 @@
       "name": "CRV",
       "type": 57,
       "buildingId": 2318732,
-      "status": 2
+      "status": 3
     },
     {
       "id": 6290766,
@@ -13756,15 +13759,15 @@
     }
   ],
   "credits": {
-    "credits_user_current": 840184,
-    "credits_user_total": 173811839,
-    "credits_alliance_current": 404899343,
+    "credits_user_current": 887733,
+    "credits_user_total": 173863449,
+    "credits_alliance_current": 404931951,
     "coins_user_current": 1,
-    "credits_alliance_total": 30318475924
+    "credits_alliance_total": 30319355734
   },
   "alliance": {
     "users": 1842,
-    "online": 7,
+    "online": 6,
     "rank": 9,
     "financeActive": true
   }
