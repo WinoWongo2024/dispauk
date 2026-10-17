@@ -1,8 +1,8 @@
 {
-  "updatedAt": "2026-10-17T19:06:42.382498+00:00",
+  "updatedAt": "2026-10-17T22:03:46.624969+00:00",
   "source": "missionchief.co.uk",
   "sync": {
-    "durationSeconds": 24,
+    "durationSeconds": 26,
     "schedule": "hourly"
   },
   "endpoints": {
@@ -60,12 +60,10 @@
     "Scotland": 4
   },
   "vehicleStatus": {
-    "2": 1612,
-    "3": 20,
-    "6": 1,
-    "1": 3,
-    "4": 13,
-    "7": 4
+    "2": 1584,
+    "4": 56,
+    "1": 12,
+    "6": 1
   },
   "vehiclesByType": {
     "5": 642,
@@ -6556,21 +6554,6 @@
       "dcAssign": "api"
     },
     {
-      "id": 2567229,
-      "name": "Weston General Hospital",
-      "type": "Hospital",
-      "typeId": 4,
-      "level": 6,
-      "lat": 51.321611143618476,
-      "lon": -2.971186856353536,
-      "personnel": 0,
-      "small": false,
-      "region": "South West",
-      "dcId": 2353684,
-      "dcName": "Somerset FCR ",
-      "dcAssign": "api"
-    },
-    {
       "id": 2572699,
       "name": "St Martins Hospital",
       "type": "Hospital",
@@ -9688,6 +9671,21 @@
       "region": "Wales",
       "dcId": 2469519,
       "dcName": "𝙒𝙖𝙡𝙚𝙨 🏴󠁧󠁢󠁷󠁬󠁳󠁿 𝘾𝙮𝙢𝙧𝙪",
+      "dcAssign": "api"
+    },
+    {
+      "id": 2567229,
+      "name": "Weston General Hospital",
+      "type": "Hospital",
+      "typeId": 4,
+      "level": 6,
+      "lat": 51.321611143618476,
+      "lon": -2.971186856353536,
+      "personnel": 0,
+      "small": false,
+      "region": "South West",
+      "dcId": 2353684,
+      "dcName": "Somerset FCR ",
       "dcAssign": "api"
     },
     {
@@ -13209,14 +13207,14 @@
       "name": "HFS | NYF-001/WL-001",
       "type": 0,
       "buildingId": 1988057,
-      "status": 2
+      "status": 4
     },
     {
       "id": 5341847,
       "name": "HFS | NYF-001/WL-002",
       "type": 0,
       "buildingId": 1988057,
-      "status": 2
+      "status": 4
     },
     {
       "id": 5342846,
@@ -13230,7 +13228,7 @@
       "name": "HGFS | HRLNY-001/FO-001",
       "type": 3,
       "buildingId": 1988490,
-      "status": 3
+      "status": 1
     },
     {
       "id": 5343001,
@@ -13419,7 +13417,7 @@
       "name": "KBR | NYF-002/FO-001",
       "type": 3,
       "buildingId": 2311542,
-      "status": 2
+      "status": 4
     },
     {
       "id": 6270702,
@@ -13643,7 +13641,7 @@
       "name": "CRV",
       "type": 57,
       "buildingId": 2318732,
-      "status": 3
+      "status": 4
     },
     {
       "id": 6290766,
@@ -13759,11 +13757,11 @@
     }
   ],
   "credits": {
-    "credits_user_current": 887733,
-    "credits_user_total": 173863449,
-    "credits_alliance_current": 404931951,
+    "credits_user_current": 915261,
+    "credits_user_total": 173894037,
+    "credits_alliance_current": 404995634,
     "coins_user_current": 1,
-    "credits_alliance_total": 30319355734
+    "credits_alliance_total": 30320470824
   },
   "alliance": {
     "users": 1842,
