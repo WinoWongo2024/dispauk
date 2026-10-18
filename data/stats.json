@@ -1,8 +1,8 @@
 {
-  "updatedAt": "2026-10-18T05:34:30.447233+00:00",
+  "updatedAt": "2026-10-18T10:39:57.404900+00:00",
   "source": "missionchief.co.uk",
   "sync": {
-    "durationSeconds": 25,
+    "durationSeconds": 24,
     "schedule": "hourly"
   },
   "endpoints": {
@@ -60,11 +60,8 @@
     "Scotland": 4
   },
   "vehicleStatus": {
-    "2": 1574,
-    "4": 59,
-    "1": 10,
-    "6": 1,
-    "7": 4,
+    "2": 1627,
+    "4": 21,
     "5": 5
   },
   "vehiclesByType": {
@@ -6181,21 +6178,6 @@
       "dcAssign": "api"
     },
     {
-      "id": 2429046,
-      "name": "Bristol Royal Infirmary ",
-      "type": "Hospital",
-      "typeId": 4,
-      "level": 6,
-      "lat": 51.459167869232125,
-      "lon": -2.596142441448984,
-      "personnel": 0,
-      "small": false,
-      "region": "South West",
-      "dcId": 2353684,
-      "dcName": "Somerset FCR ",
-      "dcAssign": "api"
-    },
-    {
       "id": 2635503,
       "name": "Axminster Ambulance Station",
       "type": "Ambulance Station",
@@ -8893,6 +8875,21 @@
       "region": "Midlands",
       "dcId": 2633103,
       "dcName": "Lincolnshire DC",
+      "dcAssign": "api"
+    },
+    {
+      "id": 2429046,
+      "name": "Bristol Royal Infirmary ",
+      "type": "Hospital",
+      "typeId": 4,
+      "level": 6,
+      "lat": 51.459167869232125,
+      "lon": -2.596142441448984,
+      "personnel": 0,
+      "small": false,
+      "region": "South West",
+      "dcId": 2353684,
+      "dcName": "Somerset FCR ",
       "dcAssign": "api"
     },
     {
@@ -13230,7 +13227,7 @@
       "name": "HGFS | HRLNY-001/FO-001",
       "type": 3,
       "buildingId": 1988490,
-      "status": 4
+      "status": 2
     },
     {
       "id": 5343001,
@@ -13412,14 +13409,14 @@
       "name": "KBR | NYF-002/WL-001",
       "type": 0,
       "buildingId": 2311542,
-      "status": 4
+      "status": 2
     },
     {
       "id": 6269521,
       "name": "KBR | NYF-002/FO-001",
       "type": 3,
       "buildingId": 2311542,
-      "status": 4
+      "status": 2
     },
     {
       "id": 6270702,
@@ -13538,14 +13535,14 @@
       "name": "RPN | NYF-003/WL-001",
       "type": 0,
       "buildingId": 2312467,
-      "status": 4
+      "status": 2
     },
     {
       "id": 6273033,
       "name": "RPN | NYF-003/RP-001",
       "type": 16,
       "buildingId": 2312467,
-      "status": 4
+      "status": 2
     },
     {
       "id": 6283750,
@@ -13759,15 +13756,15 @@
     }
   ],
   "credits": {
-    "credits_user_current": 1296190,
-    "credits_user_total": 174315790,
-    "credits_alliance_current": 405126482,
+    "credits_user_current": 1313776,
+    "credits_user_total": 174335332,
+    "credits_alliance_current": 405158734,
     "coins_user_current": 0,
-    "credits_alliance_total": 30322662110
+    "credits_alliance_total": 30323672927
   },
   "alliance": {
-    "users": 1842,
-    "online": 2,
+    "users": 1841,
+    "online": 6,
     "rank": 9,
     "financeActive": true
   }
