@@ -1,8 +1,8 @@
 {
-  "updatedAt": "2026-10-18T14:22:47.837524+00:00",
+  "updatedAt": "2026-10-18T17:54:59.814815+00:00",
   "source": "missionchief.co.uk",
   "sync": {
-    "durationSeconds": 25,
+    "durationSeconds": 24,
     "schedule": "hourly"
   },
   "endpoints": {
@@ -26,10 +26,10 @@
   },
   "stationsByType": {
     "Ambulance Station": 414,
-    "Police Station": 71,
     "Dispatch Centre": 49,
     "Hospital": 22,
     "Fire Station": 53,
+    "Police Station": 71,
     "HART Base": 6,
     "Custody Suite": 1,
     "Coastguard Station": 22,
@@ -60,12 +60,12 @@
     "Scotland": 4
   },
   "vehicleStatus": {
-    "2": 1563,
-    "4": 48,
-    "7": 5,
-    "3": 32,
-    "5": 1,
-    "1": 4
+    "1": 19,
+    "2": 1541,
+    "4": 75,
+    "3": 14,
+    "5": 2,
+    "7": 2
   },
   "vehiclesByType": {
     "5": 642,
@@ -1813,21 +1813,6 @@
       "region": "Midlands",
       "dcId": 2714310,
       "dcName": "Cambridgeshire FCR",
-      "dcAssign": "api"
-    },
-    {
-      "id": 2312174,
-      "name": "(HPS-001) Southampton Central Station",
-      "type": "Police Station",
-      "typeId": 6,
-      "level": 6,
-      "lat": 50.90617839592439,
-      "lon": -1.4163815176393246,
-      "personnel": 200,
-      "small": false,
-      "region": "Other / Overseas",
-      "dcId": 2311778,
-      "dcName": "Hampshire DC",
       "dcAssign": "api"
     },
     {
@@ -4756,21 +4741,6 @@
       "dcAssign": "api"
     },
     {
-      "id": 2506985,
-      "name": "Frome Community Hospital",
-      "type": "Hospital",
-      "typeId": 4,
-      "level": 0,
-      "lat": 51.23805840499514,
-      "lon": -2.311358561144637,
-      "personnel": 0,
-      "small": false,
-      "region": "South West",
-      "dcId": 2353684,
-      "dcName": "Somerset FCR ",
-      "dcAssign": "api"
-    },
-    {
       "id": 2311793,
       "name": "SGH/HRL",
       "type": "Home Response / HRL",
@@ -5204,21 +5174,6 @@
       "dcId": 2339242,
       "dcName": "Heathrow Airport",
       "dcAssign": "self"
-    },
-    {
-      "id": 2325713,
-      "name": "Scarborough General Hospital",
-      "type": "Hospital",
-      "typeId": 4,
-      "level": 4,
-      "lat": 54.28179980467448,
-      "lon": -0.4370821595078071,
-      "personnel": 0,
-      "small": false,
-      "region": "North",
-      "dcId": 1988744,
-      "dcName": "(M2XN) North Yorkshire FCR",
-      "dcAssign": "api"
     },
     {
       "id": 2660728,
@@ -5894,21 +5849,6 @@
       "dcId": 2353684,
       "dcName": "Somerset FCR ",
       "dcAssign": "api"
-    },
-    {
-      "id": 2621314,
-      "name": "Southern Scotland DC",
-      "type": "Dispatch Centre",
-      "typeId": 7,
-      "level": 0,
-      "lat": 55.92727075021527,
-      "lon": -3.2182590869673215,
-      "personnel": 0,
-      "small": false,
-      "region": "Scotland",
-      "dcId": 2621314,
-      "dcName": "Southern Scotland DC",
-      "dcAssign": "self"
     },
     {
       "id": 2312467,
@@ -7231,6 +7171,21 @@
       "dcAssign": "api"
     },
     {
+      "id": 2696503,
+      "name": "Wexford General Hospital",
+      "type": "Hospital",
+      "typeId": 4,
+      "level": 7,
+      "lat": 52.34295602238424,
+      "lon": -6.482794804823036,
+      "personnel": 0,
+      "small": false,
+      "region": "Wales",
+      "dcId": 2650384,
+      "dcName": "Republic of Ireland (ROI) 🇮🇪",
+      "dcAssign": "api"
+    },
+    {
       "id": 2353683,
       "name": "SWAST: Radstock (SN10)",
       "type": "Ambulance Station",
@@ -7273,6 +7228,21 @@
       "region": "South West",
       "dcId": 2635513,
       "dcName": "Wiltshire DC",
+      "dcAssign": "api"
+    },
+    {
+      "id": 2601003,
+      "name": "Calais Hospital",
+      "type": "Hospital",
+      "typeId": 4,
+      "level": 0,
+      "lat": 50.94134178407311,
+      "lon": 1.8916250200624523,
+      "personnel": 0,
+      "small": false,
+      "region": "Other / Overseas",
+      "dcId": 2649006,
+      "dcName": "France 🇫🇷 FCR ",
       "dcAssign": "api"
     },
     {
@@ -8881,21 +8851,6 @@
       "dcAssign": "api"
     },
     {
-      "id": 2429046,
-      "name": "Bristol Royal Infirmary ",
-      "type": "Hospital",
-      "typeId": 4,
-      "level": 6,
-      "lat": 51.459167869232125,
-      "lon": -2.596142441448984,
-      "personnel": 0,
-      "small": false,
-      "region": "South West",
-      "dcId": 2353684,
-      "dcName": "Somerset FCR ",
-      "dcAssign": "api"
-    },
-    {
       "id": 2622180,
       "name": "Filey Ambulance Station",
       "type": "Ambulance Station",
@@ -9736,6 +9691,36 @@
       "dcAssign": "api"
     },
     {
+      "id": 2325713,
+      "name": "Scarborough General Hospital",
+      "type": "Hospital",
+      "typeId": 4,
+      "level": 4,
+      "lat": 54.28179980467448,
+      "lon": -0.4370821595078071,
+      "personnel": 0,
+      "small": false,
+      "region": "North",
+      "dcId": 1988744,
+      "dcName": "(M2XN) North Yorkshire FCR",
+      "dcAssign": "api"
+    },
+    {
+      "id": 2429046,
+      "name": "Bristol Royal Infirmary ",
+      "type": "Hospital",
+      "typeId": 4,
+      "level": 6,
+      "lat": 51.459167869232125,
+      "lon": -2.596142441448984,
+      "personnel": 0,
+      "small": false,
+      "region": "South West",
+      "dcId": 2353684,
+      "dcName": "Somerset FCR ",
+      "dcAssign": "api"
+    },
+    {
       "id": 2657778,
       "name": "RNLI Sharpness",
       "type": "Lifeboat Station",
@@ -9749,6 +9734,21 @@
       "dcId": 2582593,
       "dcName": "Gloucestershire Dispatch",
       "dcAssign": "api"
+    },
+    {
+      "id": 2621314,
+      "name": "Southern Scotland DC",
+      "type": "Dispatch Centre",
+      "typeId": 7,
+      "level": 0,
+      "lat": 55.92727075021527,
+      "lon": -3.2182590869673215,
+      "personnel": 0,
+      "small": false,
+      "region": "Scotland",
+      "dcId": 2621314,
+      "dcName": "Southern Scotland DC",
+      "dcAssign": "self"
     },
     {
       "id": 2349733,
@@ -10201,21 +10201,6 @@
       "dcAssign": "api"
     },
     {
-      "id": 2696503,
-      "name": "Wexford General Hospital",
-      "type": "Hospital",
-      "typeId": 4,
-      "level": 7,
-      "lat": 52.34295602238424,
-      "lon": -6.482794804823036,
-      "personnel": 0,
-      "small": false,
-      "region": "Wales",
-      "dcId": 2650384,
-      "dcName": "Republic of Ireland (ROI) 🇮🇪",
-      "dcAssign": "api"
-    },
-    {
       "id": 2692428,
       "name": "Northwich Ambulance Station",
       "type": "Ambulance Station",
@@ -10528,6 +10513,21 @@
       "region": "Midlands",
       "dcId": 2621069,
       "dcName": "Worcestershire DC",
+      "dcAssign": "api"
+    },
+    {
+      "id": 2506985,
+      "name": "Frome Community Hospital",
+      "type": "Hospital",
+      "typeId": 4,
+      "level": 0,
+      "lat": 51.23805840499514,
+      "lon": -2.311358561144637,
+      "personnel": 0,
+      "small": false,
+      "region": "South West",
+      "dcId": 2353684,
+      "dcName": "Somerset FCR ",
       "dcAssign": "api"
     },
     {
@@ -11008,6 +11008,21 @@
       "region": "South West",
       "dcId": 2582593,
       "dcName": "Gloucestershire Dispatch",
+      "dcAssign": "api"
+    },
+    {
+      "id": 2312174,
+      "name": "(HPS-001) Southampton Central Station",
+      "type": "Police Station",
+      "typeId": 6,
+      "level": 6,
+      "lat": 50.90617839592439,
+      "lon": -1.4163815176393246,
+      "personnel": 200,
+      "small": false,
+      "region": "Other / Overseas",
+      "dcId": 2311778,
+      "dcName": "Hampshire DC",
       "dcAssign": "api"
     },
     {
@@ -11773,21 +11788,6 @@
       "region": "South West",
       "dcId": 2353684,
       "dcName": "Somerset FCR ",
-      "dcAssign": "api"
-    },
-    {
-      "id": 2601003,
-      "name": "Calais Hospital",
-      "type": "Hospital",
-      "typeId": 4,
-      "level": 0,
-      "lat": 50.94134178407311,
-      "lon": 1.8916250200624523,
-      "personnel": 0,
-      "small": false,
-      "region": "Other / Overseas",
-      "dcId": 2649006,
-      "dcName": "France 🇫🇷 FCR ",
       "dcAssign": "api"
     },
     {
@@ -12922,7 +12922,7 @@
       "name": "WCP | LFB-008/WL-001",
       "type": 0,
       "buildingId": 1987510,
-      "status": 2
+      "status": 1
     },
     {
       "id": 4926743,
@@ -13013,7 +13013,7 @@
       "name": "EUS | LFB-004/WL-001",
       "type": 0,
       "buildingId": 1984004,
-      "status": 2
+      "status": 1
     },
     {
       "id": 5330618,
@@ -13041,7 +13041,7 @@
       "name": "QW | LFB-007/WL-001",
       "type": 0,
       "buildingId": 1984339,
-      "status": 2
+      "status": 1
     },
     {
       "id": 5331507,
@@ -13055,7 +13055,7 @@
       "name": "QW | LFB-007/WL-002",
       "type": 0,
       "buildingId": 1984339,
-      "status": 2
+      "status": 1
     },
     {
       "id": 5331632,
@@ -13083,7 +13083,7 @@
       "name": "WSTM’R | RNLI-001/4×4-001",
       "type": 66,
       "buildingId": 1984410,
-      "status": 2
+      "status": 4
     },
     {
       "id": 5331712,
@@ -13146,7 +13146,7 @@
       "name": "MA | LFB-005/WL-001",
       "type": 0,
       "buildingId": 1987510,
-      "status": 2
+      "status": 1
     },
     {
       "id": 5340155,
@@ -13223,7 +13223,7 @@
       "name": "HMC | M2XN/IRV-001",
       "type": 8,
       "buildingId": 1988488,
-      "status": 2
+      "status": 4
     },
     {
       "id": 5342848,
@@ -13244,14 +13244,14 @@
       "name": "SMBR | NYF-004/WL-002",
       "type": 0,
       "buildingId": 1988549,
-      "status": 4
+      "status": 2
     },
     {
       "id": 5343593,
       "name": "H3T1",
       "type": 8,
       "buildingId": 1988767,
-      "status": 2
+      "status": 4
     },
     {
       "id": 5467024,
@@ -13307,14 +13307,14 @@
       "name": "STR | MET-006/IRV-001",
       "type": 8,
       "buildingId": 2041380,
-      "status": 2
+      "status": 4
     },
     {
       "id": 5489761,
       "name": "WSTM’R | SAR-001/OSV-001",
       "type": 86,
       "buildingId": 2041378,
-      "status": 2
+      "status": 4
     },
     {
       "id": 5489786,
@@ -13349,14 +13349,14 @@
       "name": "H3T2",
       "type": 8,
       "buildingId": 1988767,
-      "status": 2
+      "status": 4
     },
     {
       "id": 5496872,
       "name": "HMC | M2XN/IRV-002",
       "type": 8,
       "buildingId": 1988488,
-      "status": 2
+      "status": 4
     },
     {
       "id": 5921429,
@@ -13377,7 +13377,7 @@
       "name": "HGTAS | YAS-002/AMB-002",
       "type": 5,
       "buildingId": 2311527,
-      "status": 7
+      "status": 2
     },
     {
       "id": 6269468,
@@ -13405,7 +13405,7 @@
       "name": "HDH | HRLNY-OTL-001",
       "type": 20,
       "buildingId": 2311534,
-      "status": 3
+      "status": 2
     },
     {
       "id": 6269519,
@@ -13468,14 +13468,14 @@
       "name": "SHPTCFS | HFS-001/WL-001",
       "type": 0,
       "buildingId": 2312349,
-      "status": 3
+      "status": 4
     },
     {
       "id": 6272676,
       "name": "SHPTCFS | HFS-001/WL-002",
       "type": 0,
       "buildingId": 2312349,
-      "status": 3
+      "status": 4
     },
     {
       "id": 6272808,
@@ -13489,14 +13489,14 @@
       "name": "STMRYFS | HFS-003/WL-001",
       "type": 0,
       "buildingId": 2312409,
-      "status": 3
+      "status": 4
     },
     {
       "id": 6272831,
       "name": "STMRYFS | HFS-003/RSU-001",
       "type": 4,
       "buildingId": 2312409,
-      "status": 2
+      "status": 4
     },
     {
       "id": 6272842,
@@ -13531,7 +13531,7 @@
       "name": "Fire Officer",
       "type": 3,
       "buildingId": 2312456,
-      "status": 3
+      "status": 4
     },
     {
       "id": 6272993,
@@ -13713,14 +13713,14 @@
       "name": "SWYG | HPS-006/IRV-001",
       "type": 8,
       "buildingId": 2318783,
-      "status": 4
+      "status": 2
     },
     {
       "id": 6290923,
       "name": "Fire Officer",
       "type": 3,
       "buildingId": 2318784,
-      "status": 3
+      "status": 4
     },
     {
       "id": 6292256,
@@ -13748,26 +13748,26 @@
       "name": "WSTM’R | SAR-001/OST-001",
       "type": 87,
       "buildingId": 2041378,
-      "status": 2
+      "status": 4
     },
     {
       "id": 6293908,
       "name": "ELGH | HFS-004/CARP-001",
       "type": 17,
       "buildingId": 2319651,
-      "status": 3
+      "status": 4
     }
   ],
   "credits": {
-    "credits_user_current": 1339756,
-    "credits_user_total": 174364199,
-    "credits_alliance_current": 405216183,
-    "coins_user_current": 0,
-    "credits_alliance_total": 30325151628
+    "credits_user_current": 1801666,
+    "credits_user_total": 174877458,
+    "credits_alliance_current": 405286633,
+    "coins_user_current": 1,
+    "credits_alliance_total": 30326292939
   },
   "alliance": {
     "users": 1841,
-    "online": 8,
+    "online": 7,
     "rank": 9,
     "financeActive": true
   }
