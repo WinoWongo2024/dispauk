@@ -1,8 +1,8 @@
 {
-  "updatedAt": "2026-10-17T22:03:46.624969+00:00",
+  "updatedAt": "2026-10-18T00:44:31.912424+00:00",
   "source": "missionchief.co.uk",
   "sync": {
-    "durationSeconds": 26,
+    "durationSeconds": 23,
     "schedule": "hourly"
   },
   "endpoints": {
@@ -60,10 +60,11 @@
     "Scotland": 4
   },
   "vehicleStatus": {
-    "2": 1584,
-    "4": 56,
-    "1": 12,
-    "6": 1
+    "2": 1576,
+    "6": 1,
+    "4": 72,
+    "1": 2,
+    "5": 2
   },
   "vehiclesByType": {
     "5": 642,
@@ -13207,14 +13208,14 @@
       "name": "HFS | NYF-001/WL-001",
       "type": 0,
       "buildingId": 1988057,
-      "status": 4
+      "status": 2
     },
     {
       "id": 5341847,
       "name": "HFS | NYF-001/WL-002",
       "type": 0,
       "buildingId": 1988057,
-      "status": 4
+      "status": 2
     },
     {
       "id": 5342846,
@@ -13228,7 +13229,7 @@
       "name": "HGFS | HRLNY-001/FO-001",
       "type": 3,
       "buildingId": 1988490,
-      "status": 1
+      "status": 2
     },
     {
       "id": 5343001,
@@ -13417,7 +13418,7 @@
       "name": "KBR | NYF-002/FO-001",
       "type": 3,
       "buildingId": 2311542,
-      "status": 4
+      "status": 2
     },
     {
       "id": 6270702,
@@ -13641,7 +13642,7 @@
       "name": "CRV",
       "type": 57,
       "buildingId": 2318732,
-      "status": 4
+      "status": 2
     },
     {
       "id": 6290766,
@@ -13757,15 +13758,15 @@
     }
   ],
   "credits": {
-    "credits_user_current": 915261,
-    "credits_user_total": 173894037,
-    "credits_alliance_current": 404995634,
+    "credits_user_current": 986867,
+    "credits_user_total": 173973617,
+    "credits_alliance_current": 405044706,
     "coins_user_current": 1,
-    "credits_alliance_total": 30320470824
+    "credits_alliance_total": 30321317328
   },
   "alliance": {
     "users": 1842,
-    "online": 6,
+    "online": 3,
     "rank": 9,
     "financeActive": true
   }
