@@ -1,8 +1,8 @@
 {
-  "updatedAt": "2026-10-19T12:56:11.510190+00:00",
+  "updatedAt": "2026-10-19T19:11:21.914853+00:00",
   "source": "missionchief.co.uk",
   "sync": {
-    "durationSeconds": 26,
+    "durationSeconds": 22,
     "schedule": "hourly"
   },
   "endpoints": {
@@ -60,9 +60,10 @@
     "Scotland": 4
   },
   "vehicleStatus": {
-    "2": 1593,
-    "4": 29,
-    "3": 31
+    "2": 1616,
+    "4": 33,
+    "6": 1,
+    "5": 3
   },
   "vehiclesByType": {
     "5": 642,
@@ -13360,7 +13361,7 @@
       "name": "H’GTE | YAS-001/AMB-001",
       "type": 5,
       "buildingId": 2188370,
-      "status": 4
+      "status": 2
     },
     {
       "id": 5921430,
@@ -13374,14 +13375,14 @@
       "name": "HGTAS | YAS-002/AMB-002",
       "type": 5,
       "buildingId": 2311527,
-      "status": 4
+      "status": 2
     },
     {
       "id": 6269468,
       "name": "HGTAS | YAS-002/AMB-001",
       "type": 5,
       "buildingId": 2311527,
-      "status": 4
+      "status": 2
     },
     {
       "id": 6269473,
@@ -13756,15 +13757,15 @@
     }
   ],
   "credits": {
-    "credits_user_current": 1932866,
-    "credits_user_total": 175021019,
-    "credits_alliance_current": 405429871,
+    "credits_user_current": 2067865,
+    "credits_user_total": 175171020,
+    "credits_alliance_current": 405499211,
     "coins_user_current": 1,
-    "credits_alliance_total": 30331264949
+    "credits_alliance_total": 30333636202
   },
   "alliance": {
     "users": 1842,
-    "online": 8,
+    "online": 12,
     "rank": 9,
     "financeActive": true
   }
