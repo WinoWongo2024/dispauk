@@ -1,8 +1,8 @@
 {
-  "updatedAt": "2026-10-19T05:59:11.740759+00:00",
+  "updatedAt": "2026-10-19T12:56:11.510190+00:00",
   "source": "missionchief.co.uk",
   "sync": {
-    "durationSeconds": 23,
+    "durationSeconds": 26,
     "schedule": "hourly"
   },
   "endpoints": {
@@ -22,7 +22,7 @@
     "dispatchCentres": 49,
     "allianceBuildings": 1199,
     "equipments": 11,
-    "missionTypes": 1083
+    "missionTypes": 1084
   },
   "stationsByType": {
     "Ambulance Station": 414,
@@ -60,11 +60,9 @@
     "Scotland": 4
   },
   "vehicleStatus": {
-    "2": 1646,
-    "5": 2,
-    "4": 3,
-    "6": 1,
-    "1": 1
+    "2": 1593,
+    "4": 29,
+    "3": 31
   },
   "vehiclesByType": {
     "5": 642,
@@ -13222,7 +13220,7 @@
       "name": "HMC | M2XN/IRV-001",
       "type": 8,
       "buildingId": 1988488,
-      "status": 5
+      "status": 2
     },
     {
       "id": 5342848,
@@ -13355,14 +13353,14 @@
       "name": "HMC | M2XN/IRV-002",
       "type": 8,
       "buildingId": 1988488,
-      "status": 4
+      "status": 2
     },
     {
       "id": 5921429,
       "name": "H’GTE | YAS-001/AMB-001",
       "type": 5,
       "buildingId": 2188370,
-      "status": 2
+      "status": 4
     },
     {
       "id": 5921430,
@@ -13376,21 +13374,21 @@
       "name": "HGTAS | YAS-002/AMB-002",
       "type": 5,
       "buildingId": 2311527,
-      "status": 2
+      "status": 4
     },
     {
       "id": 6269468,
       "name": "HGTAS | YAS-002/AMB-001",
       "type": 5,
       "buildingId": 2311527,
-      "status": 2
+      "status": 4
     },
     {
       "id": 6269473,
       "name": "HPS | M2XN/IRV-001",
       "type": 8,
       "buildingId": 2311530,
-      "status": 4
+      "status": 2
     },
     {
       "id": 6269475,
@@ -13758,15 +13756,15 @@
     }
   ],
   "credits": {
-    "credits_user_current": 1919646,
-    "credits_user_total": 175006329,
-    "credits_alliance_current": 405356893,
+    "credits_user_current": 1932866,
+    "credits_user_total": 175021019,
+    "credits_alliance_current": 405429871,
     "coins_user_current": 1,
-    "credits_alliance_total": 30329165505
+    "credits_alliance_total": 30331264949
   },
   "alliance": {
     "users": 1842,
-    "online": 4,
+    "online": 8,
     "rank": 9,
     "financeActive": true
   }
