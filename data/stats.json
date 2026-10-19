@@ -1,8 +1,8 @@
 {
-  "updatedAt": "2026-10-19T19:11:21.914853+00:00",
+  "updatedAt": "2026-10-19T23:28:35.343400+00:00",
   "source": "missionchief.co.uk",
   "sync": {
-    "durationSeconds": 22,
+    "durationSeconds": 21,
     "schedule": "hourly"
   },
   "endpoints": {
@@ -60,8 +60,8 @@
     "Scotland": 4
   },
   "vehicleStatus": {
-    "2": 1616,
-    "4": 33,
+    "2": 1625,
+    "4": 24,
     "6": 1,
     "5": 3
   },
@@ -3776,6 +3776,21 @@
       "region": "Other / Overseas",
       "dcId": 2701608,
       "dcName": "Kent FCR",
+      "dcAssign": "api"
+    },
+    {
+      "id": 2429046,
+      "name": "Bristol Royal Infirmary ",
+      "type": "Hospital",
+      "typeId": 4,
+      "level": 6,
+      "lat": 51.459167869232125,
+      "lon": -2.596142441448984,
+      "personnel": 0,
+      "small": false,
+      "region": "South West",
+      "dcId": 2353684,
+      "dcName": "Somerset FCR ",
       "dcAssign": "api"
     },
     {
@@ -9974,21 +9989,6 @@
       "dcAssign": "api"
     },
     {
-      "id": 2429046,
-      "name": "Bristol Royal Infirmary ",
-      "type": "Hospital",
-      "typeId": 4,
-      "level": 6,
-      "lat": 51.459167869232125,
-      "lon": -2.596142441448984,
-      "personnel": 0,
-      "small": false,
-      "region": "South West",
-      "dcId": 2353684,
-      "dcName": "Somerset FCR ",
-      "dcAssign": "api"
-    },
-    {
       "id": 2657778,
       "name": "RNLI Sharpness",
       "type": "Lifeboat Station",
@@ -13627,7 +13627,7 @@
       "name": "DEPT | LFB-003/RP-001",
       "type": 16,
       "buildingId": 2318646,
-      "status": 2
+      "status": 4
     },
     {
       "id": 6290534,
@@ -13757,15 +13757,15 @@
     }
   ],
   "credits": {
-    "credits_user_current": 2067865,
-    "credits_user_total": 175171020,
-    "credits_alliance_current": 405499211,
+    "credits_user_current": 2098979,
+    "credits_user_total": 175205594,
+    "credits_alliance_current": 405560390,
     "coins_user_current": 1,
-    "credits_alliance_total": 30333636202
+    "credits_alliance_total": 30335363355
   },
   "alliance": {
     "users": 1842,
-    "online": 12,
+    "online": 4,
     "rank": 9,
     "financeActive": true
   }
