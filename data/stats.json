@@ -1,8 +1,8 @@
 {
-  "updatedAt": "2026-10-20T14:50:35.125308+00:00",
+  "updatedAt": "2026-10-20T19:03:47.641361+00:00",
   "source": "missionchief.co.uk",
   "sync": {
-    "durationSeconds": 24,
+    "durationSeconds": 26,
     "schedule": "hourly"
   },
   "endpoints": {
@@ -60,10 +60,13 @@
     "Scotland": 4
   },
   "vehicleStatus": {
-    "2": 1597,
-    "4": 28,
-    "1": 26,
-    "5": 2
+    "2": 1591,
+    "4": 41,
+    "1": 12,
+    "6": 1,
+    "5": 6,
+    "7": 1,
+    "3": 1
   },
   "vehiclesByType": {
     "5": 642,
@@ -13004,7 +13007,7 @@
       "name": "KGXSP | BTP-002/IRV-002",
       "type": 8,
       "buildingId": 1983967,
-      "status": 4
+      "status": 2
     },
     {
       "id": 5330499,
@@ -13179,7 +13182,7 @@
       "name": "MBA | MET-003/IRV-001",
       "type": 8,
       "buildingId": 1987519,
-      "status": 4
+      "status": 2
     },
     {
       "id": 5340598,
@@ -13207,7 +13210,7 @@
       "name": "HFS | NYF-001/WL-001",
       "type": 0,
       "buildingId": 1988057,
-      "status": 1
+      "status": 2
     },
     {
       "id": 5341847,
@@ -13228,14 +13231,14 @@
       "name": "HGFS | HRLNY-001/FO-001",
       "type": 3,
       "buildingId": 1988490,
-      "status": 1
+      "status": 2
     },
     {
       "id": 5343001,
       "name": "SMBR | NYF-004/WL-001",
       "type": 0,
       "buildingId": 1988549,
-      "status": 1
+      "status": 2
     },
     {
       "id": 5343568,
@@ -13263,7 +13266,7 @@
       "name": "CoLP | MET-001/IRV-001",
       "type": 8,
       "buildingId": 2033679,
-      "status": 4
+      "status": 2
     },
     {
       "id": 5467027,
@@ -13410,14 +13413,14 @@
       "name": "KBR | NYF-002/WL-001",
       "type": 0,
       "buildingId": 2311542,
-      "status": 1
+      "status": 2
     },
     {
       "id": 6269521,
       "name": "KBR | NYF-002/FO-001",
       "type": 3,
       "buildingId": 2311542,
-      "status": 1
+      "status": 2
     },
     {
       "id": 6270702,
@@ -13452,14 +13455,14 @@
       "name": "SMPC | HPS-001/IRV-001",
       "type": 8,
       "buildingId": 2312174,
-      "status": 2
+      "status": 4
     },
     {
       "id": 6272172,
       "name": "SMPC | HPS-001/IRV-002",
       "type": 8,
       "buildingId": 2312174,
-      "status": 2
+      "status": 4
     },
     {
       "id": 6272673,
@@ -13536,14 +13539,14 @@
       "name": "RPN | NYF-003/WL-001",
       "type": 0,
       "buildingId": 2312467,
-      "status": 1
+      "status": 2
     },
     {
       "id": 6273033,
       "name": "RPN | NYF-003/RP-001",
       "type": 16,
       "buildingId": 2312467,
-      "status": 1
+      "status": 2
     },
     {
       "id": 6283750,
@@ -13585,7 +13588,7 @@
       "name": "MBA | MET-003/IRV-002",
       "type": 8,
       "buildingId": 1987519,
-      "status": 4
+      "status": 2
     },
     {
       "id": 6290340,
@@ -13669,7 +13672,7 @@
       "name": "TTNPS | HPS-004/IRV-001",
       "type": 8,
       "buildingId": 2318739,
-      "status": 2
+      "status": 4
     },
     {
       "id": 6290887,
@@ -13690,7 +13693,7 @@
       "name": "SHLYPS | HPS-005/IRV-001",
       "type": 8,
       "buildingId": 2318780,
-      "status": 2
+      "status": 4
     },
     {
       "id": 6290918,
@@ -13757,15 +13760,15 @@
     }
   ],
   "credits": {
-    "credits_user_current": 2171748,
-    "credits_user_total": 175284116,
-    "credits_alliance_current": 405667629,
+    "credits_user_current": 2291208,
+    "credits_user_total": 175416852,
+    "credits_alliance_current": 405720800,
     "coins_user_current": 1,
-    "credits_alliance_total": 30338481942
+    "credits_alliance_total": 30340270692
   },
   "alliance": {
     "users": 1842,
-    "online": 6,
+    "online": 8,
     "rank": 9,
     "financeActive": true
   }
