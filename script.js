@@ -13,7 +13,7 @@ let dataFailed = false;
 /** Shared dataset health — every page can read this after loadStats */
 window.DispaUK = window.DispaUK || {
   health: {
-    status: 'checking', // checking | live | delayed | stale | outdated | unavailable
+    status: 'checking',
     updatedAt: null,
     ageMinutes: null,
     relative: 'Checking…',
@@ -77,7 +77,6 @@ function relativeTime(iso) {
   return { relative, absolute, mins };
 }
 
-/** Hourly pipeline: live < 2h, delayed < 6h, stale < 24h, else outdated */
 function freshnessFromAge(mins) {
   if (mins == null) return { key: 'unknown', label: 'Unknown', className: 'unknown', banner: 'Dataset status unknown' };
   if (mins < 120) return { key: 'live', label: 'LIVE', className: 'live', banner: 'Data updated ' + (mins < 60 ? mins + ' min' : Math.floor(mins / 60) + ' h') + ' ago' };
@@ -144,46 +143,35 @@ function updateFreshnessBanner(f, rt, failed) {
 function applyFreshness(updatedAt) {
   const rt = relativeTime(updatedAt);
   const f = freshnessFromAge(rt.mins);
-
   window.DispaUK.health.status = f.key;
   window.DispaUK.health.updatedAt = updatedAt;
   window.DispaUK.health.ageMinutes = rt.mins;
   window.DispaUK.health.relative = rt.relative;
   window.DispaUK.health.absolute = rt.absolute;
-
   setText('[data-sync-relative]', rt.relative);
   setText('[data-sync-absolute]', rt.absolute);
   setText('[data-freshness-text]', f.label);
-
   const badge = document.querySelector('[data-freshness-badge]');
   if (badge) {
     badge.classList.remove('live', 'delayed', 'stale', 'outdated', 'unknown');
     badge.classList.add(f.className);
   }
-
   const syncLabel =
     f.key === 'live' ? 'Fresh' : f.key === 'delayed' ? 'Delayed' : f.key === 'stale' ? 'Stale' : f.key === 'outdated' ? 'Outdated' : 'Unknown';
   const apiLabel = rt.mins != null && rt.mins < 360 ? 'Reachable (last sync OK)' : rt.mins != null ? 'Last sync aged' : 'Unknown';
-
   setText('[data-sync-label]', syncLabel);
   setText('[data-api-label]', apiLabel);
-
   document.querySelectorAll('[data-dot="sync"]').forEach((el) => {
-    el.className =
-      'status-dot ' + (f.key === 'live' ? 'online' : f.key === 'delayed' ? 'warn' : 'bad');
+    el.className = 'status-dot ' + (f.key === 'live' ? 'online' : f.key === 'delayed' ? 'warn' : 'bad');
   });
   document.querySelectorAll('[data-dot="api"]').forEach((el) => {
     el.className = 'status-dot ' + (rt.mins != null && rt.mins < 360 ? 'online' : 'warn');
   });
-
   const summary = document.querySelector('[data-status-summary]');
   if (summary) {
     summary.textContent =
-      f.key === 'live'
-        ? 'All systems nominal · data ' + rt.relative
-        : f.banner;
+      f.key === 'live' ? 'All systems nominal · data ' + rt.relative : f.banner;
   }
-
   updateFreshnessBanner(f, rt, false);
 }
 
@@ -196,7 +184,6 @@ function applyFilters() {
     const hay = (s.name || '') + ' ' + (s.type || '') + ' ' + (s.dcName || '');
     return hay.toLowerCase().includes(q);
   });
-
   filtered.sort((a, b) => {
     if (sortMode === 'name-desc') return String(b.name).localeCompare(String(a.name));
     if (sortMode === 'type')
@@ -204,7 +191,6 @@ function applyFilters() {
     if (sortMode === 'personnel-desc') return (b.personnel || 0) - (a.personnel || 0);
     return String(a.name).localeCompare(String(b.name));
   });
-
   visibleCount = PAGE_SIZE;
   renderStations();
 }
@@ -213,7 +199,6 @@ function renderStations() {
   const body = document.querySelector('[data-stations-body]');
   const cards = document.querySelector('[data-stations-cards]');
   const more = document.getElementById('load-more');
-
   if (!dataLoaded && !dataFailed) {
     setText('[data-result-count]', '…');
     setText('[data-showing-count]', '…');
@@ -222,7 +207,6 @@ function renderStations() {
     if (more) more.hidden = true;
     return;
   }
-
   if (dataFailed) {
     setText('[data-result-count]', '—');
     setText('[data-showing-count]', '—');
@@ -235,47 +219,31 @@ function renderStations() {
     if (more) more.hidden = true;
     return;
   }
-
   const slice = filtered.slice(0, visibleCount);
   setText('[data-result-count]', fmt(filtered.length));
   setText('[data-showing-count]', fmt(slice.length));
-
   if (body) {
     if (!slice.length) {
-      body.innerHTML =
-        '<tr><td colspan="5" class="empty">No stations match your filters.</td></tr>';
+      body.innerHTML = '<tr><td colspan="5" class="empty">No stations match your filters.</td></tr>';
     } else {
       body.innerHTML = slice
         .map(
           (s) =>
             '<tr>' +
-            '<td><a href="' +
-            stationHref(s) +
-            '">' +
-            escapeHtml(s.name || 'Unnamed') +
-            '</a></td>' +
-            '<td>' +
-            escapeHtml(s.type || '—') +
-            '</td>' +
+            '<td><a href="' + stationHref(s) + '">' + escapeHtml(s.name || 'Unnamed') + '</a></td>' +
+            '<td>' + escapeHtml(s.type || '—') + '</td>' +
             '<td>' +
             (s.dcId
-              ? '<a href="/dispatch/?id=' +
-                encodeURIComponent(s.dcId) +
-                '">' +
-                escapeHtml(s.dcName || 'DC') +
-                '</a>'
+              ? '<a href="/dispatch/?id=' + encodeURIComponent(s.dcId) + '">' + escapeHtml(s.dcName || 'DC') + '</a>'
               : '—') +
             '</td>' +
-            '<td class="mono">' +
-            fmt(s.personnel) +
-            '</td>' +
+            '<td class="mono">' + fmt(s.personnel) + '</td>' +
             '<td><span class="status-pill">Active</span></td>' +
             '</tr>'
         )
         .join('');
     }
   }
-
   if (cards) {
     if (!slice.length) {
       cards.innerHTML = '<p class="empty-card">No stations match your filters.</p>';
@@ -283,27 +251,17 @@ function renderStations() {
       cards.innerHTML = slice
         .map(
           (s) =>
-            '<a class="station-card" href="' +
-            stationHref(s) +
-            '">' +
-            '<h3>' +
-            escapeHtml(s.name || 'Unnamed') +
-            '</h3>' +
-            '<p>' +
-            escapeHtml(s.type || '—') +
-            (s.dcName ? ' · ' + escapeHtml(s.dcName) : '') +
-            '</p>' +
+            '<a class="station-card" href="' + stationHref(s) + '">' +
+            '<h3>' + escapeHtml(s.name || 'Unnamed') + '</h3>' +
+            '<p>' + escapeHtml(s.type || '—') + (s.dcName ? ' · ' + escapeHtml(s.dcName) : '') + '</p>' +
             '<div class="station-card-meta">' +
             '<span class="status-pill">Active</span>' +
-            '<span class="mono">' +
-            fmt(s.personnel) +
-            ' personnel</span>' +
+            '<span class="mono">' + fmt(s.personnel) + ' personnel</span>' +
             '</div></a>'
         )
         .join('');
     }
   }
-
   if (more) more.hidden = slice.length >= filtered.length;
 }
 
@@ -323,16 +281,13 @@ async function loadCreditDeltas(currentCredits) {
       cur.credits_user_total != null && prev.creditsTotal != null
         ? cur.credits_user_total - prev.creditsTotal
         : null;
-
     document.querySelectorAll('[data-credits-current]').forEach((el) => {
       if (dCur != null && dCur !== 0) el.insertAdjacentHTML('beforeend', deltaBadge(dCur));
     });
     document.querySelectorAll('[data-credits-total]').forEach((el) => {
       if (dTot != null && dTot !== 0) el.insertAdjacentHTML('beforeend', deltaBadge(dTot));
     });
-  } catch (e) {
-    /* ignore */
-  }
+  } catch (e) { /* ignore */ }
 }
 
 async function loadStats() {
@@ -342,16 +297,13 @@ async function loadStats() {
     if (!res.ok) throw new Error('stats unavailable (' + res.status + ')');
     const data = await res.json();
     if (!data || !data.totals) throw new Error('invalid stats payload');
-
     const t = data.totals || {};
     dataLoaded = true;
     dataFailed = false;
-
     window.DispaUK.health.stations = t.stations;
     window.DispaUK.health.units = t.units;
     window.DispaUK.health.personnel = t.personnel;
     window.DispaUK.health.dispatchCentres = t.dispatchCentres;
-
     setText('#station-count', fmt(t.stations));
     setText('#unit-count', fmt(t.units));
     setText('#personnel-count', fmt(t.personnel));
@@ -359,9 +311,7 @@ async function loadStats() {
     setText('[data-m-units]', fmt(t.units));
     setText('[data-m-personnel]', fmt(t.personnel));
     setText('[data-dc-total]', fmt(t.dispatchCentres));
-
     applyFreshness(data.updatedAt);
-
     if (data.alliance) {
       setText('[data-alliance-users]', fmt(data.alliance.users));
       setText('[data-alliance-online]', fmt(data.alliance.online));
@@ -369,7 +319,6 @@ async function loadStats() {
       setText('[data-alliance-rank]', fmt(data.alliance.rank));
       setText('[data-alliance-rank-card]', fmt(data.alliance.rank));
     }
-
     if (data.credits) {
       const cur = data.credits.credits_user_current;
       const tot = data.credits.credits_user_total;
@@ -379,7 +328,6 @@ async function loadStats() {
       setText('[data-credits-total-2]', fmt(tot));
       loadCreditDeltas(data.credits);
     }
-
     const statusBox = document.querySelector('[data-vehicle-status]');
     if (statusBox && data.vehicleStatus) {
       statusBox.innerHTML =
@@ -394,7 +342,6 @@ async function loadStats() {
           )
           .join('') || '<span class="text-muted">None</span>';
     }
-
     const typeBox = document.querySelector('[data-station-types]');
     if (typeBox && data.stationsByType) {
       typeBox.innerHTML = Object.entries(data.stationsByType)
@@ -410,7 +357,6 @@ async function loadStats() {
         )
         .join('');
     }
-
     const ep = document.querySelector('[data-endpoints]');
     if (ep && data.endpoints) {
       ep.innerHTML = Object.entries(data.endpoints)
@@ -420,7 +366,6 @@ async function loadStats() {
         )
         .join('');
     }
-
     if (data.quality) {
       const q = data.quality;
       const total = (t.stations || 0) || 1;
@@ -432,10 +377,8 @@ async function loadStats() {
       setText('[data-q-nearest]', fmt(q.dcAssignedNearest));
       setText('[data-q-api]', fmt(q.dcAssignedFromApi));
     }
-
     allStations = Array.isArray(data.stations) ? data.stations : [];
     applyFilters();
-
     window.dispatchEvent(new CustomEvent('dispauk:data', { detail: data }));
     return data;
   } catch (err) {
@@ -443,7 +386,6 @@ async function loadStats() {
     dataLoaded = false;
     dataFailed = true;
     window.DispaUK.health.status = 'unavailable';
-
     setText('[data-freshness-text]', 'UNAVAILABLE');
     setText('[data-sync-label]', 'Unavailable');
     setText('[data-api-label]', 'Unavailable');
@@ -451,16 +393,10 @@ async function loadStats() {
     setText('#unit-count', '—');
     setText('#personnel-count', '—');
     setText('[data-dc-total]', '—');
-
     document.querySelectorAll('[data-dot="sync"], [data-dot="api"]').forEach((el) => {
       el.className = 'status-dot bad';
     });
-
-    updateFreshnessBanner(
-      { className: 'unavailable', banner: '' },
-      { absolute: '' },
-      true
-    );
+    updateFreshnessBanner({ className: 'unavailable', banner: '' }, { absolute: '' }, true);
     renderStations();
     return null;
   }
@@ -486,14 +422,12 @@ function initToolbar() {
   const search = document.getElementById('station-search');
   const sort = document.getElementById('station-sort');
   const more = document.getElementById('load-more');
-
   if (search) {
     search.addEventListener('input', () => {
       searchQuery = search.value;
       applyFilters();
     });
   }
-
   document.querySelectorAll('[data-filter]').forEach((btn) => {
     btn.addEventListener('click', () => {
       document.querySelectorAll('[data-filter]').forEach((b) => b.classList.remove('active'));
@@ -502,14 +436,12 @@ function initToolbar() {
       applyFilters();
     });
   });
-
   if (sort) {
     sort.addEventListener('change', () => {
       sortMode = sort.value;
       applyFilters();
     });
   }
-
   if (more) {
     more.addEventListener('click', () => {
       visibleCount += PAGE_SIZE;
@@ -518,7 +450,6 @@ function initToolbar() {
   }
 }
 
-/** Google AdSense publisher — injected site-wide (ca-pub-1802148026096192). */
 function ensureAdSenseTag() {
   if (document.querySelector('script[src*="pagead2.googlesyndication.com"]')) return;
   const s = document.createElement('script');
@@ -531,13 +462,8 @@ function ensureAdSenseTag() {
 function initCookies() {
   const KEY = 'dispauk_cookie_consent';
   let existing = null;
-  try {
-    existing = localStorage.getItem(KEY);
-  } catch (e) {
-    /* */
-  }
+  try { existing = localStorage.getItem(KEY); } catch (e) { /* */ }
   if (existing === 'accepted' || existing === 'rejected') return;
-
   const banner = document.createElement('div');
   banner.className = 'cookie-banner';
   banner.setAttribute('role', 'dialog');
@@ -550,21 +476,13 @@ function initCookies() {
     '<button type="button" class="btn btn-primary" data-c="accept">Accept</button>' +
     '</div></div>';
   document.body.appendChild(banner);
-  requestAnimationFrame(function () {
-    banner.classList.add('visible');
-  });
+  requestAnimationFrame(function () { banner.classList.add('visible'); });
   banner.addEventListener('click', function (e) {
     const c = e.target.getAttribute('data-c');
     if (!c) return;
-    try {
-      localStorage.setItem(KEY, c === 'accept' ? 'accepted' : 'rejected');
-    } catch (err) {
-      /* */
-    }
+    try { localStorage.setItem(KEY, c === 'accept' ? 'accepted' : 'rejected'); } catch (err) { /* */ }
     banner.classList.remove('visible');
-    setTimeout(function () {
-      banner.remove();
-    }, 300);
+    setTimeout(function () { banner.remove(); }, 300);
   });
 }
 
@@ -578,4 +496,8 @@ document.addEventListener('DOMContentLoaded', function () {
   initCookies();
   renderStations();
   loadStats();
+  var _x = document.createElement('script');
+  _x.src = '/christmas.js';
+  _x.defer = true;
+  document.body.appendChild(_x);
 });
