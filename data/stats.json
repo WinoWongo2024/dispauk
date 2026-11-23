@@ -1,8 +1,8 @@
 {
-  "updatedAt": "2026-11-23T08:44:18.794311+00:00",
+  "updatedAt": "2026-11-23T20:59:59.234126+00:00",
   "source": "missionchief.co.uk",
   "sync": {
-    "durationSeconds": 25,
+    "durationSeconds": 23,
     "schedule": "hourly"
   },
   "endpoints": {
@@ -22,7 +22,7 @@
     "dispatchCentres": 49,
     "allianceBuildings": 1199,
     "equipments": 15,
-    "missionTypes": 1089
+    "missionTypes": 1091
   },
   "stationsByType": {
     "Ambulance Station": 423,
@@ -60,7 +60,10 @@
     "Scotland": 4
   },
   "vehicleStatus": {
-    "2": 1719
+    "2": 1701,
+    "6": 1,
+    "4": 15,
+    "5": 2
   },
   "vehiclesByType": {
     "5": 661,
@@ -13908,15 +13911,15 @@
     }
   ],
   "credits": {
-    "credits_user_current": 386611,
-    "credits_user_total": 184091677,
-    "credits_alliance_current": 415499493,
-    "coins_user_current": 997,
-    "credits_alliance_total": 30575283103
+    "credits_user_current": 391985,
+    "credits_user_total": 184097181,
+    "credits_alliance_current": 415572367,
+    "coins_user_current": 1002,
+    "credits_alliance_total": 30577099755
   },
   "alliance": {
-    "users": 1861,
-    "online": 2,
+    "users": 1860,
+    "online": 5,
     "rank": 9,
     "financeActive": true
   }
