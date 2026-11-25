@@ -1,8 +1,8 @@
 {
-  "updatedAt": "2026-11-25T12:20:57.917831+00:00",
+  "updatedAt": "2026-11-25T22:14:02.811894+00:00",
   "source": "missionchief.co.uk",
   "sync": {
-    "durationSeconds": 23,
+    "durationSeconds": 25,
     "schedule": "hourly"
   },
   "endpoints": {
@@ -25,9 +25,10 @@
     "missionTypes": 1091
   },
   "stationsByType": {
-    "Hospital": 22,
+    "Health Centre": 2,
     "Dispatch Centre": 49,
     "Police Station": 71,
+    "Hospital": 22,
     "Ambulance Station": 423,
     "Fire Station": 53,
     "Custody Suite": 1,
@@ -42,7 +43,6 @@
     "Police Aviation": 3,
     "Police Academy": 1,
     "SAR Resource Centre": 1,
-    "Health Centre": 2,
     "Type 37": 6,
     "GP Surgery": 3,
     "Coastguard CRH": 3,
@@ -50,18 +50,20 @@
     "Bomb Disposal": 4
   },
   "stationsByRegion": {
-    "North": 121,
+    "South West": 236,
     "Other / Overseas": 75,
     "South East": 105,
-    "South West": 236,
     "London & South": 38,
+    "North": 121,
     "Midlands": 117,
     "Wales": 55,
     "Scotland": 4
   },
   "vehicleStatus": {
-    "1": 45,
-    "2": 1674
+    "2": 1660,
+    "4": 56,
+    "6": 1,
+    "5": 2
   },
   "vehiclesByType": {
     "5": 661,
@@ -1801,18 +1803,18 @@
   ],
   "stations": [
     {
-      "id": 2325713,
-      "name": "Scarborough General Hospital",
-      "type": "Hospital",
-      "typeId": 4,
-      "level": 4,
-      "lat": 54.28179980467448,
-      "lon": -0.4370821595078071,
-      "personnel": 0,
+      "id": 2429826,
+      "name": "Paulton Hospital  (MIU) (1-3617575955)",
+      "type": "Health Centre",
+      "typeId": 21,
+      "level": 5,
+      "lat": 51.29874962661729,
+      "lon": -2.4933505365978057,
+      "personnel": 200,
       "small": false,
-      "region": "North",
-      "dcId": 1988744,
-      "dcName": "(M2XN) North Yorkshire FCR",
+      "region": "South West",
+      "dcId": 2353684,
+      "dcName": "Somerset FCR ",
       "dcAssign": "api"
     },
     {
@@ -2023,6 +2025,21 @@
       "region": "South West",
       "dcId": 2353684,
       "dcName": "Somerset FCR ",
+      "dcAssign": "api"
+    },
+    {
+      "id": 2325713,
+      "name": "Scarborough General Hospital",
+      "type": "Hospital",
+      "typeId": 4,
+      "level": 4,
+      "lat": 54.28179980467448,
+      "lon": -0.4370821595078071,
+      "personnel": 0,
+      "small": false,
+      "region": "North",
+      "dcId": 1988744,
+      "dcName": "(M2XN) North Yorkshire FCR",
       "dcAssign": "api"
     },
     {
@@ -10501,21 +10518,6 @@
       "dcAssign": "api"
     },
     {
-      "id": 2429826,
-      "name": "Paulton Hospital  (MIU) (1-3617575955)",
-      "type": "Health Centre",
-      "typeId": 21,
-      "level": 5,
-      "lat": 51.29874962661729,
-      "lon": -2.4933505365978057,
-      "personnel": 200,
-      "small": false,
-      "region": "South West",
-      "dcId": 2353684,
-      "dcName": "Somerset FCR ",
-      "dcAssign": "api"
-    },
-    {
       "id": 2666324,
       "name": "Evesham Ambulance Station",
       "type": "Ambulance Station",
@@ -13072,7 +13074,7 @@
       "name": "WCP | LFB-008/WL-001",
       "type": 0,
       "buildingId": 1987510,
-      "status": 1
+      "status": 2
     },
     {
       "id": 4926743,
@@ -13135,7 +13137,7 @@
       "name": "HLBRN | HRL-004/FO-001",
       "type": 3,
       "buildingId": 1845393,
-      "status": 1
+      "status": 2
     },
     {
       "id": 4929766,
@@ -13163,7 +13165,7 @@
       "name": "EUS | LFB-004/WL-001",
       "type": 0,
       "buildingId": 1984004,
-      "status": 1
+      "status": 2
     },
     {
       "id": 5330618,
@@ -13191,7 +13193,7 @@
       "name": "QW | LFB-007/WL-001",
       "type": 0,
       "buildingId": 1984339,
-      "status": 1
+      "status": 2
     },
     {
       "id": 5331507,
@@ -13205,7 +13207,7 @@
       "name": "QW | LFB-007/WL-002",
       "type": 0,
       "buildingId": 1984339,
-      "status": 1
+      "status": 2
     },
     {
       "id": 5331632,
@@ -13296,7 +13298,7 @@
       "name": "MA | LFB-005/WL-001",
       "type": 0,
       "buildingId": 1987510,
-      "status": 1
+      "status": 2
     },
     {
       "id": 5340155,
@@ -13380,7 +13382,7 @@
       "name": "HGFS | HRLNY-001/FO-001",
       "type": 3,
       "buildingId": 1988490,
-      "status": 2
+      "status": 4
     },
     {
       "id": 5343001,
@@ -13422,7 +13424,7 @@
       "name": "CoL | HRL-001/FO-001",
       "type": 3,
       "buildingId": 2033681,
-      "status": 1
+      "status": 2
     },
     {
       "id": 5467039,
@@ -13562,14 +13564,14 @@
       "name": "KBR | NYF-002/WL-001",
       "type": 0,
       "buildingId": 2311542,
-      "status": 2
+      "status": 4
     },
     {
       "id": 6269521,
       "name": "KBR | NYF-002/FO-001",
       "type": 3,
       "buildingId": 2311542,
-      "status": 2
+      "status": 4
     },
     {
       "id": 6270702,
@@ -13597,7 +13599,7 @@
       "name": "LMBTH | HRL-003/FO-001",
       "type": 3,
       "buildingId": 2312031,
-      "status": 1
+      "status": 2
     },
     {
       "id": 6272134,
@@ -13639,14 +13641,14 @@
       "name": "STMRYFS | HFS-003/WL-001",
       "type": 0,
       "buildingId": 2312409,
-      "status": 2
+      "status": 4
     },
     {
       "id": 6272831,
       "name": "STMRYFS | HFS-003/RSU-001",
       "type": 4,
       "buildingId": 2312409,
-      "status": 2
+      "status": 4
     },
     {
       "id": 6272842,
@@ -13688,14 +13690,14 @@
       "name": "RPN | NYF-003/WL-001",
       "type": 0,
       "buildingId": 2312467,
-      "status": 2
+      "status": 4
     },
     {
       "id": 6273033,
       "name": "RPN | NYF-003/RP-001",
       "type": 16,
       "buildingId": 2312467,
-      "status": 2
+      "status": 4
     },
     {
       "id": 6283750,
@@ -13828,7 +13830,7 @@
       "name": "WFS | LFB-009/CARP-001",
       "type": 17,
       "buildingId": 2318768,
-      "status": 1
+      "status": 4
     },
     {
       "id": 6290890,
@@ -13909,15 +13911,15 @@
     }
   ],
   "credits": {
-    "credits_user_current": 477362,
-    "credits_user_total": 184191312,
-    "credits_alliance_current": 415873262,
+    "credits_user_current": 570338,
+    "credits_user_total": 184294621,
+    "credits_alliance_current": 415959773,
     "coins_user_current": 1000,
-    "credits_alliance_total": 30584029357
+    "credits_alliance_total": 30585816732
   },
   "alliance": {
     "users": 1860,
-    "online": 4,
+    "online": 6,
     "rank": 9,
     "financeActive": true
   }
