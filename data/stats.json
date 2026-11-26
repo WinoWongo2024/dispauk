@@ -1,8 +1,8 @@
 {
-  "updatedAt": "2026-11-26T14:50:16.964935+00:00",
+  "updatedAt": "2026-11-26T23:35:19.831490+00:00",
   "source": "missionchief.co.uk",
   "sync": {
-    "durationSeconds": 24,
+    "durationSeconds": 25,
     "schedule": "hourly"
   },
   "endpoints": {
@@ -60,8 +60,10 @@
     "Scotland": 4
   },
   "vehicleStatus": {
-    "2": 1694,
-    "4": 25
+    "2": 1687,
+    "4": 26,
+    "6": 1,
+    "5": 5
   },
   "vehiclesByType": {
     "5": 661,
@@ -3103,21 +3105,6 @@
       "region": "Midlands",
       "dcId": 2621080,
       "dcName": "West Midlands",
-      "dcAssign": "api"
-    },
-    {
-      "id": 2390847,
-      "name": "Royal United Hospital (RUH)",
-      "type": "Hospital",
-      "typeId": 4,
-      "level": 30,
-      "lat": 51.39141658271086,
-      "lon": -2.3916416733188,
-      "personnel": 0,
-      "small": false,
-      "region": "South West",
-      "dcId": 2353684,
-      "dcName": "Somerset FCR ",
       "dcAssign": "api"
     },
     {
@@ -11221,6 +11208,21 @@
       "dcAssign": "api"
     },
     {
+      "id": 2390847,
+      "name": "Royal United Hospital (RUH)",
+      "type": "Hospital",
+      "typeId": 4,
+      "level": 30,
+      "lat": 51.39141658271086,
+      "lon": -2.3916416733188,
+      "personnel": 0,
+      "small": false,
+      "region": "South West",
+      "dcId": 2353684,
+      "dcName": "Somerset FCR ",
+      "dcAssign": "api"
+    },
+    {
       "id": 2715576,
       "name": "Basildon Ambulance Station ",
       "type": "Ambulance Station",
@@ -13247,14 +13249,14 @@
       "name": "THML | MET-007/IRV-001",
       "type": 8,
       "buildingId": 1984600,
-      "status": 4
+      "status": 2
     },
     {
       "id": 5332267,
       "name": "THML | MET-007/IRV-002",
       "type": 8,
       "buildingId": 1984600,
-      "status": 4
+      "status": 2
     },
     {
       "id": 5332349,
@@ -13909,15 +13911,15 @@
     }
   ],
   "credits": {
-    "credits_user_current": 1126007,
-    "credits_user_total": 184910847,
-    "credits_alliance_current": 416173637,
-    "coins_user_current": 996,
-    "credits_alliance_total": 30590044070
+    "credits_user_current": 1231241,
+    "credits_user_total": 185027779,
+    "credits_alliance_current": 416268332,
+    "coins_user_current": 994,
+    "credits_alliance_total": 30592085928
   },
   "alliance": {
-    "users": 1860,
-    "online": 0,
+    "users": 1861,
+    "online": 4,
     "rank": 9,
     "financeActive": true
   }
